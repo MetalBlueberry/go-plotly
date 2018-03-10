@@ -1,9 +1,11 @@
-package offlinePlotly
+package offline
 
 import (
 	"fmt"
 	"strings"
 )
+
+type Scatter map[string]interface{}
 
 // ScatterMode : Type to set ScatterMode
 type ScatterMode int
@@ -33,12 +35,29 @@ func (md ScatterMode) MarshalJSON() ([]byte, error) {
 
 }
 
-func NewScatter() Trace {
-	return Trace{
-		"type": SCATTER,
+func NewScatter() Scatter {
+	return Scatter{
+		"type": "scatter",
 	}
 }
 
-func (trace Trace) SetMode(mode ScatterMode) {
-	trace["mode"] = mode
+func (s Scatter) SetMode(mode ScatterMode) {
+	s["mode"] = mode
+}
+
+func (s Scatter) SetName(name string) {
+	s["name"] = (name)
+}
+
+func (s Scatter) AddPoints(x, y interface{}) error {
+	if err := addNumbericValue(s, "x", x); err != nil {
+		return err
+	}
+	return addNumbericValue(s, "y", y)
+
+}
+
+func (s Scatter) NewMarker() Marker {
+	s["marker"] = NewMarker()
+	return s["marker"].(Marker)
 }

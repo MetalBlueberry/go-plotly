@@ -1,4 +1,4 @@
-package offlinePlotly
+package offline
 
 type Layout map[string]interface{}
 
