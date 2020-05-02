@@ -4,11 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 
-	"github.com/MetalBlueberry/go-plotly/plotly"
+	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/pkg/browser"
 )
 
@@ -16,9 +18,24 @@ type Options struct {
 	Addr string
 }
 
+// ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
+func ToHtml(fig *grob.Fig, path string) {
+	figBytes, err := json.Marshal(fig)
+	if err != nil {
+		panic(err)
+	}
+	tmpl, err := template.New("plotly").Parse(baseHtml)
+	if err != nil {
+		panic(err)
+	}
+	buf := &bytes.Buffer{}
+	tmpl.Execute(buf, string(figBytes))
+	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
+}
+
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
-func Show(fig *plotly.Fig) {
+func Show(fig *grob.Fig) {
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
@@ -33,7 +50,7 @@ func Show(fig *plotly.Fig) {
 }
 
 // Serve creates a local web server that displays the image using plotly.js
-func Serve(fig *plotly.Fig, opt ...Options) {
+func Serve(fig *grob.Fig, opt ...Options) {
 	opts := computeOptions(Options{
 		Addr: "localhost:8080",
 	}, opt...)
@@ -72,11 +89,9 @@ func computeOptions(def Options, opt ...Options) Options {
 	return def
 }
 
-// Serve allows you to see the figure in the browser at http://localhost:8080 by default
-
 var baseHtml = `
 	<head>
-		<script src="https://cdn.plot.ly/plotly-1.33.0.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-1.54.0.min.js"></script>
 	</head>
 	</body>
 		<div id="tester"></div>

@@ -1,8 +1,8 @@
 package main
 
 import (
+	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/offline"
-	"github.com/MetalBlueberry/go-plotly/plotly"
 )
 
 func main() {
@@ -14,16 +14,16 @@ func main() {
 	       "layout": {"title": {"text": "A Figure Specified By Python Dictionary"}}
 	   })
 	*/
-	fig := &plotly.Fig{
-		Data: plotly.Traces{
-			&plotly.Bar{
-				Type: plotly.TraceTypeBar,
+	fig := &grob.Fig{
+		Data: grob.Traces{
+			&grob.Bar{
+				Type: grob.TraceTypeBar,
 				X:    []float64{1, 2, 3},
 				Y:    []float64{1, 2, 3},
 			},
 		},
-		Layout: plotly.Layout{
-			Title: &plotly.LayoutTitle{
+		Layout: grob.Layout{
+			Title: &grob.LayoutTitle{
 				Text: "A Figure Specified By Go Struct",
 			},
 		},

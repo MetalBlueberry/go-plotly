@@ -52,4 +52,4 @@ See the examples dir for more examples.
 
 ## Tested
 
-Only with the version 1.33.0, but It should work with other versions as this library just generates standard JSON.
+Examples, Code generation and Offline package are based on version 1.54.0, but It should work with other versions as this library just generates standard JSON.
