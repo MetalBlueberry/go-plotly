@@ -47,3 +47,9 @@ This will open your browser and display the following plot
 ![Bar](img/Bar.png)
 
 And that's it.
+
+See the examples dir for more examples.
+
+## Tested
+
+Only with the version 1.33.0, but It should work with other versions as this library just generates standard JSON.
