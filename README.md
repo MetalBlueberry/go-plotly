@@ -14,3 +14,36 @@ The good thing about this package is that it's **automatically generated** based
 
 ## Example
 
+```go
+package main
+
+import (
+    "github.com/MetalBlueberry/go-plotly/offline"
+    "github.com/MetalBlueberry/go-plotly/plotly"
+)
+
+func main() {
+    fig := &plotly.Fig{
+        Data: plotly.Traces{
+            &plotly.Bar{
+                Type: plotly.TraceTypeBar,
+                X:    []float64{1, 2, 3},
+                Y:    []float64{1, 2, 3},
+            },
+        },
+        Layout: plotly.Layout{
+            Title: &plotly.LayoutTitle{
+                Text: "A Figure Specified By Go Struct",
+            },
+        },
+    }
+
+    offline.Show(fig)
+}
+```
+
+This will open your browser and display the following plot
+
+![Bar](img/Bar.png)
+
+And that's it.
