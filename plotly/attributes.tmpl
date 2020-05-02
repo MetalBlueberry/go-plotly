@@ -1,0 +1,39 @@
+{{- define "attributes" -}}
+{{- $g := . -}}
+{{- $enumerates := dict }}
+{{- $objects := dict }}
+{{- $flaglists := dict }}
+{{- range $attrName, $attr := .attributes }}
+    {{- $formatAttrName := $attrName | title }}
+    {{- $typeName := print $g.parent ($attrName | camelcase) }}
+    {{- if kindIs "map" $attr -}}
+    {{/* Add description */}}
+    // {{ $formatAttrName }} {{ $attr.valType }} {{ $attr.description }}
+    {{ if hasKey $attr "valType" -}}
+    {{/* Check if type map is defined and comment out if not*/}}
+    {{- if eq $attr.valType "enumerated" }}{{ $_ := set $enumerates $typeName $attr }} 
+    {{- else if eq $attr.valType "flaglist" -}}{{ $_ := set $flaglists $typeName $attr }}
+    {{- else if not (hasKey $g.ctx.typeMap $attr.valType) }}// Pending of type {{ quote $attr.valType }} 
+    {{- end }} 
+    {{- $formatAttrName }} {{ if eq $attr.valType "enumerated" -}}
+    {{- $typeName }}
+    {{- else if eq $attr.valType "flaglist" -}}
+    {{- $typeName }}
+    {{- else if $attr.arrayOk -}}
+    interface{} 
+    {{- else -}}
+    {{ get $g.ctx.typeMap $attr.valType }}
+    {{- end }} `json:"{{ $attrName }},omitempty"`
+    {{/* if not hasKey valType, not implemented*/}}
+    {{- else if hasKey $attr "role" }}
+    {{- $formatAttrName }} *{{ $typeName }} `json:"{{ $attrName }},omitempty"` // {{ $attr.role }} 
+    {{- $_ := set $objects $typeName $attr }}
+    {{- else -}}// Pending... {{ $formatAttrName }} No valTyp {{ $attr.role }} 
+    {{- end -}} 
+    {{- end -}}
+{{- end }}
+{{/* return values */}}
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "objects" $objects }}
+{{- $_ := set . "flaglists" $flaglists }}
+{{- end -}}

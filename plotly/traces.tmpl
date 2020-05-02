@@ -1,0 +1,52 @@
+{{- define "traces" -}}
+{{- $g := . -}}
+package plotly
+
+{{- $allTypes := dict }}
+{{- $enumerates := dict }}
+{{- $objects := dict }}
+{{- $flaglists := dict }}
+{{ range $name,$trace := .traces }}
+{{ $formatName := $name | title }}
+
+type {{ $formatName }} struct {
+
+    // Type is the type of the plot
+    Type TraceType `json:"type,omitempty"`
+    {{- $params := (dict "parent" $formatName "attributes" .attributes "ctx" $g.ctx ) }}
+    {{ template "attributes" $params }}
+    {{- $enumerates =  merge $enumerates $params.enumerates }}
+    {{- $objects = merge $objects $params.objects }}
+    {{- $flaglists = merge $flaglists $params.flaglists }}
+}
+
+
+func New{{ $formatName }}() *{{$formatName}} {
+    return &{{$formatName}}{
+    Type: TraceType{{ $formatName }},
+    }
+}
+
+func (this *{{$formatName}}) GetType() TraceType {
+    return this.Type
+}
+{{- $_ := set $allTypes $trace.attributes.type 1 }}
+{{ end }}
+
+
+type Trace interface {
+    GetType() TraceType
+}
+
+type TraceType string
+
+const (
+{{- range $name, $type := $allTypes }}
+    TraceType{{ $name | title }} TraceType = {{ quote $name }}
+{{- end }}
+)
+{{/* return values */}}
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "objects" $objects }}
+{{- $_ := set . "flaglists" $flaglists }}
+{{- end -}}

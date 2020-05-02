@@ -1,0 +1,17 @@
+{{- define "plotly" -}}
+package plotly
+
+//go:generate sh -c "cat schema.json | plate --template main.tmpl"
+
+// Plotly Schema SHA {{ .sha1 }}
+
+type Traces []Trace
+
+
+type Fig struct {
+	Data   Traces `json:"data,omitempty"`
+	Layout Layout `json:"layout,omitempty"`
+}
+
+
+{{- end -}}

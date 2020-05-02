@@ -1,0 +1,13 @@
+{{- define "flaglists" -}}
+package plotly
+
+{{ range $name,$attr := .flaglists }}
+type {{$name}} string
+
+const (
+    {{- range $flag := $attr.flags }}
+    {{$name}}{{ $flag | camelcase}} {{$name}} = {{ quote $flag }}
+    {{- end }}
+)
+{{ end -}}
+{{- end -}}

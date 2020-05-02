@@ -1,0 +1,56 @@
+
+
+{{- $g := . -}}
+{{- $_ := set $g "ctx" dict -}}
+
+{{ $_ := set $g.ctx "typeMap" (dict "flaglist" "string" "info_array" "interface{}" "subplotid" "string" "data_array" "interface{}" "any" "interface{}" "angle" "float64" "color" "string" "number" "float64" "string" "string" "integer" "int64" "boolean" "bool") }}
+
+Generating Go Plotly schema
+SHA {{ .sha1 }}
+
+{{- $err := file "plotly.go" "plotly" $g  -}}
+{{ if $err }}
+    Something went wrong rendering plotly.go {{ $err }}
+{{ end }}
+
+{{ $tracesInput := (dict "traces" $g.schema.traces "ctx" $g.ctx) }}
+{{- $err := file "traces.go" "traces" $tracesInput -}}
+{{ if $err }}
+    Something went wrong rendering traces.go {{ $err }}
+{{ end }}
+
+Objects in traces 
+{{ range $name, $_ := $tracesInput.objects }}
+    {{ $name }}
+{{- end }}
+
+{{ $layoutInput := (dict "layout" $g.schema.layout "ctx" $g.ctx) }}
+{{- $err := file "layout.go" "layout" $layoutInput -}}
+{{ if $err }}
+    Something went wrong rendering layout.go {{ $err }}
+{{ end }}
+Objects in layout 
+{{ range $name, $_ := $layoutInput.objects }}
+    {{ $name }}
+{{- end }}
+
+Rendering objects.go
+{{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects) "deep" 0 "ctx" $g.ctx) }}
+{{- $err := file "objects.go" "objects_recursive" $objectsInput -}}
+{{- if $err }}
+    Something went wrong rendering objects.go {{ $err }}
+{{- end -}}
+
+Rendering enumerates.go
+{{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates ) "ctx" $g.ctx) }}
+{{- $err := file "enumerates.go" "enumerates" $enumeratesInput -}}
+{{- if $err }}
+    Something went wrong rendering enumerates.go {{ $err }}
+{{- end }}
+
+{{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists ) "ctx" $g.ctx) }}
+{{- $err := file "flaglists.go" "flaglists" $flaglistsInput -}}
+{{- if $err }}
+    Something went wrong rendering flaglist.go {{ $err }}
+{{- end }}
+Finished

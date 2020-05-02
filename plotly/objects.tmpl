@@ -1,0 +1,58 @@
+{{- define "objects" -}}
+{{- $g := . -}}
+{{- $enumerates := dict -}}
+{{- $innerObjects := dict  -}}
+{{- $flaglists := dict }}
+
+{{- range $objName, $obj :=  .objects }} 
+{{ $typeName := print $objName }}
+type {{ $typeName }} struct {
+{{ $params := (dict "parent" $typeName "attributes" $obj "ctx" $g.ctx ) }}
+{{- template "attributes" $params -}}
+{{- /* For unknown reason, merge fails due to tyle... bug?, workarround with range loop */}}
+{{- /* $enumerates = mustMerge $enumerates $params.enumerates */}}
+{{- range $k,$v := $params.enumerates }}{{- $_ := set $enumerates $k $v }}{{- end }}
+{{- $innerObjects = mustMerge $innerObjects $params.objects -}}
+{{- $flaglists = merge $flaglists $params.flaglists -}}
+}
+{{ end -}}
+{{/* return values */}}
+{{- $_ := set . "innerObjects" $innerObjects }}
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "flaglists" $flaglists }}
+{{- end -}}
+
+{{- define "objects_recursive" -}}
+{{- $g := . -}}
+{{- $enumerates := dict }}
+{{- $objects := dict }}
+{{- $flaglists := dict }}
+{{- if eq .deep 0 -}}
+package plotly
+{{- end }}
+// DEEP {{ .deep -}}
+
+{{- $fileName := print "objects_" .deep ".go" }}
+{{- $objectsInput := (dict "objects" .objects "ctx" $g.ctx) }}
+{{- template "objects" $objectsInput -}}
+{{- $enumerates =  merge $enumerates $objectsInput.enumerates }}
+{{- $flaglists = merge $flaglists $objectsInput.flaglists }}
+
+{{- $objectsNested := dict }}
+{{ range $name, $value := $objectsInput.innerObjects }}
+{{- if not (hasKey $objectsInput.objects $name)  }}
+{{- $_ := set $objectsNested $name $value }}
+{{- end }}
+{{- end }}
+
+{{- if gt (len $objectsNested) 0 -}}
+{{ $nextInput := dict "objects" $objectsNested "deep" (add $g.deep 1) "ctx" $g.ctx }}
+{{- template "objects_recursive" $nextInput -}}
+{{- $enumerates =  merge $enumerates $nextInput.enumerates }}
+{{- $flaglists = merge $flaglists $nextInput.flaglists }}
+{{- end -}}
+{{/* return values */}}
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "flaglists" $flaglists }}
+
+{{- end -}}

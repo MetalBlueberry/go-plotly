@@ -1,0 +1,29 @@
+{{- define "layout" -}}
+{{- $g := . -}}
+{{- $enumerates := dict }}
+{{- $objects := dict }}
+{{- $flaglists := dict }}
+package plotly
+
+
+type Layout struct {
+{{- $params := (dict  "parent" "Layout" "attributes" .layout.layoutAttributes "ctx" $g.ctx ) }}
+{{ template "attributes" $params }}
+{{- $enumerates = $params.enumerates -}}
+{{- $objects = $params.objects }}
+{{- $flaglists = $params.flaglists }}
+
+    // Exceptional hardcoded cases due to schema limitation
+{{- range $id := list 2 3 4 5 6 }}
+    // Xaxis{{$id}} see Xaxis prop
+    Xaxis{{$id}} *LayoutXaxis `json:"xaxis{{$id}},omitempty"`  
+    // Yaxis{{$id}} see Yaxis prop
+    Yaxis{{$id}} *LayoutYaxis `json:"yaxis{{$id}},omitempty"` 
+{{ end -}}
+}
+
+{{/* return values */}}
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "objects" $objects }}
+{{- $_ := set . "flaglists" $flaglists }}
+{{- end -}}

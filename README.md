@@ -1,9 +1,13 @@
 # go-plotly
 
-This project helps you to generate offline plots based on Plotly.js
+Inspired by [Python Plotly](https://plotly.com/python/creating-and-updating-figures/)
 
-Right now it's just a prove-of-concept.
+The goal of the go-plotly package is to provide a pleasant Go interface for creating figure specifications which are displayed by the plotly.js JavaScript graphing library.
 
-Basically, it build the json input using map[string]interface{} and helps you with function than ensure the correctness of the data.
+In the context of the plotly.js library, a figure is specified by a declarative JSON data structure.
 
-See examples for more details
+Therefore, you should always keep in mind as you are creating and updating figures using the go-plotly package that its ultimate goal is to help users produce Go structures that can be automatically serialized into the JSON data structure that the plotly.js graphing library understands.
+
+> Yes, that text is a copy paste from Python description. 
+
+The good thing about this package is that it's **automatically generated** based on the schema described [here](https://plotly.com/chart-studio-help/json-chart-schema/) so It will be easy to keep it up to date or to generate different versions of it.

@@ -1,0 +1,42 @@
+{{- define "cleanupName" -}}
+{{- $charName := dict "=" "eq" ">" "gt" "-" "_"  "<" "lt" "|" "or" "/" "slash" "\\" "doublebackslash" "^" "_cape_" "(" "_lpar_" ")" "_rpar_" "[" "_lbracket_" "]" "_rbracket_" "+" "plus" "?" "_question_" "$" "_dollar_" -}}
+{{- $out := . | nospace -}}
+{{- range $char,$name := $charName }}
+{{- $out = replace $char $name $out -}}
+{{- end -}}
+{{ $out }}
+{{- end -}}
+
+{{- define "enumerates" -}}
+package plotly
+
+// Enumerate section
+
+{{ range $name, $attr := .enumerates }}
+{{- $formatName := $name | title }}
+{{- $containsBool := or (has true $attr.values) (has false $attr.values) }}
+// {{ $formatName }} {{ $attr.description }}
+type {{ $formatName }} {{ if $containsBool }}interface{}{{ else }}string{{ end }}
+
+const (
+{{- range $value := $attr.values }}
+    {{- if $containsBool }}
+    {{$formatName}}{{ $value | toString | title | nospace }} {{ kindOf $value }} = 
+    {{- if kindIs "string" $value }} {{ quote $value }}
+    {{- else }} {{ $value }}
+    {{- end }}
+    {{- else }}
+    {{- if kindIs "string" $value }}
+    {{- if ne $value "" }}
+    {{$formatName}}_{{ stemplate "cleanupName" $value }} {{ $formatName }} = {{ quote $value }} // {{ $value }}
+    {{- end }}
+    {{- else if kindIs "float64" $value }}
+    {{$formatName}}{{ $value | toString | title | replace "-" "_" }} {{ $formatName }} = {{ quote $value }} // {{ $value }}
+    {{- else }}
+    ERROR {{ kindOf $value }}
+    {{- end }}
+    {{- end }}
+{{- end }}
+)
+{{ end }}
+{{- end -}}
