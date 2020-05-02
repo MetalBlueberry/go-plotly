@@ -1,8 +1,6 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
@@ -35,12 +33,8 @@ func main() {
 			},
 		},
 	}
-	data, err := json.MarshalIndent(fig, "", " ")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Print(string(data))
 
+	offline.ToHtml(fig, "scatter.html")
 	offline.Show(fig)
 }
 

@@ -29,5 +29,6 @@ func main() {
 		},
 	}
 
+	offline.ToHtml(fig, "bar.html")
 	offline.Show(fig)
 }
