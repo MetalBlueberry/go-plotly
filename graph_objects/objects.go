@@ -78,7 +78,6 @@ type AreaTransforms interface{}
 type BarErrorX struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -130,7 +129,6 @@ type BarErrorX struct {
 type BarErrorY struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -631,7 +629,6 @@ type CandlestickTransforms interface{}
 type CarpetAaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Arraydtick integer The stride between grid lines along the axis
@@ -794,7 +791,6 @@ type CarpetAaxis struct {
 type CarpetBaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Arraydtick integer The stride between grid lines along the axis
@@ -978,7 +974,6 @@ type CarpetStream struct {
 type ChoroplethColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -1176,7 +1171,6 @@ type ChoroplethUnselected struct {
 type ChoroplethmapboxColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -1374,7 +1368,6 @@ type ChoroplethmapboxUnselected struct {
 type ConeColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -1576,7 +1569,6 @@ type ConeStream struct {
 type ContourColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -1804,7 +1796,6 @@ type ContourTransforms interface{}
 type ContourcarpetColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -1994,7 +1985,6 @@ type ContourcarpetStream struct {
 type DensitymapboxColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -2466,7 +2456,6 @@ type FunnelareaTransforms interface{}
 type HeatmapColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -2640,7 +2629,6 @@ type HeatmapTransforms interface{}
 type HeatmapglColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -2814,7 +2802,6 @@ type HeatmapglTransforms interface{}
 type Histogram2dColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -3021,7 +3008,6 @@ type Histogram2dYbins struct {
 type Histogram2dcontourColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -3294,7 +3280,6 @@ type HistogramCumulative struct {
 type HistogramErrorX struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -3346,7 +3331,6 @@ type HistogramErrorX struct {
 type HistogramErrorY struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -3693,7 +3677,6 @@ type IsosurfaceCaps struct {
 type IsosurfaceColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -4476,7 +4459,6 @@ type LayoutRadialaxis struct {
 type LayoutScene struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Annotations <no value> <no value>
@@ -4677,7 +4659,6 @@ type LayoutUpdatemenus interface{}
 type LayoutXaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Anchor enumerated If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
@@ -4903,7 +4884,6 @@ type LayoutXaxis struct {
 type LayoutYaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Anchor enumerated If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
@@ -5123,7 +5103,6 @@ type LayoutYaxis struct {
 type Mesh3dColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -6045,7 +6024,6 @@ type SankeyTextfont struct {
 type Scatter3dErrorX struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -6097,7 +6075,6 @@ type Scatter3dErrorX struct {
 type Scatter3dErrorY struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -6149,7 +6126,6 @@ type Scatter3dErrorY struct {
 type Scatter3dErrorZ struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -6386,7 +6362,6 @@ type Scatter3dTransforms interface{}
 type ScatterErrorX struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -6438,7 +6413,6 @@ type ScatterErrorX struct {
 type ScatterErrorY struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -7018,7 +6992,6 @@ type ScattergeoUnselected struct {
 type ScatterglErrorX struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -7070,7 +7043,6 @@ type ScatterglErrorX struct {
 type ScatterglErrorY struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Array data_array Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -8120,7 +8092,6 @@ type SplomUnselected struct {
 type StreamtubeColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -8516,7 +8487,6 @@ type SunburstTransforms interface{}
 type SurfaceColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -9202,7 +9172,6 @@ type VolumeCaps struct {
 type VolumeColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -9635,7 +9604,6 @@ type BarHoverlabelFont struct {
 type BarMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -9852,7 +9820,6 @@ type BarpolarHoverlabelFont struct {
 type BarpolarMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -10657,7 +10624,6 @@ type FunnelHoverlabelFont struct {
 type FunnelMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -11144,7 +11110,6 @@ type HistogramHoverlabelFont struct {
 type HistogramMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -11662,7 +11627,6 @@ type IsosurfaceSlicesZ struct {
 type LayoutColoraxisColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -12123,7 +12087,6 @@ type LayoutPolarDomain struct {
 type LayoutPolarRadialaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Angle angle Sets the angle (in degrees) from which the radial axis is drawn. Note that by default, radial axis line on the theta=0 line corresponds to a line pointing right (like what mathematicians prefer). Defaults to the first `polar.sector` angle.
@@ -12357,7 +12320,6 @@ type LayoutSceneDomain struct {
 type LayoutSceneXaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
@@ -12523,7 +12485,6 @@ type LayoutSceneXaxis struct {
 type LayoutSceneYaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
@@ -12689,7 +12650,6 @@ type LayoutSceneYaxis struct {
 type LayoutSceneZaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
@@ -12855,7 +12815,6 @@ type LayoutSceneZaxis struct {
 type LayoutTernaryAaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
@@ -12970,7 +12929,6 @@ type LayoutTernaryAaxis struct {
 type LayoutTernaryBaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
@@ -13085,7 +13043,6 @@ type LayoutTernaryBaxis struct {
 type LayoutTernaryCaxis struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
@@ -13507,7 +13464,6 @@ type OhlcIncreasingLine struct {
 type ParcatsLineColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -13634,7 +13590,6 @@ type ParcatsLineColorbar struct {
 type ParcoordsLineColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -13993,7 +13948,6 @@ type Scatter3dHoverlabelFont struct {
 type Scatter3dLineColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -14120,7 +14074,6 @@ type Scatter3dLineColorbar struct {
 type Scatter3dMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -14340,7 +14293,6 @@ type ScatterHoverlabelFont struct {
 type ScatterMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -14578,7 +14530,6 @@ type ScattercarpetHoverlabelFont struct {
 type ScattercarpetMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -14816,7 +14767,6 @@ type ScattergeoHoverlabelFont struct {
 type ScattergeoMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -15054,7 +15004,6 @@ type ScatterglHoverlabelFont struct {
 type ScatterglMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -15277,7 +15226,6 @@ type ScattermapboxHoverlabelFont struct {
 type ScattermapboxMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -15449,7 +15397,6 @@ type ScatterpolarHoverlabelFont struct {
 type ScatterpolarMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -15687,7 +15634,6 @@ type ScatterpolarglHoverlabelFont struct {
 type ScatterpolarglMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -15910,7 +15856,6 @@ type ScatterternaryHoverlabelFont struct {
 type ScatterternaryMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -16148,7 +16093,6 @@ type SplomHoverlabelFont struct {
 type SplomMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -16416,7 +16360,6 @@ type SunburstHoverlabelFont struct {
 type SunburstMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.
@@ -16855,7 +16798,6 @@ type TreemapHoverlabelFont struct {
 type TreemapMarkerColorbar struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Bgcolor color Sets the color of padded area.

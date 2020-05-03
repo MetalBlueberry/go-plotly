@@ -3,7 +3,6 @@ package graph_objects
 type Layout struct {
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Activeshape <no value> <no value>

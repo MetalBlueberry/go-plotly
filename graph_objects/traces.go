@@ -91,7 +91,6 @@ type Bar struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
@@ -2564,7 +2563,6 @@ type Histogram struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
@@ -3964,7 +3962,6 @@ type Pie struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Automargin boolean Determines whether outside text labels can push the margins.
@@ -6239,7 +6236,6 @@ type Surface struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// _deprecated <no value> <no value>
-
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.

@@ -27,7 +27,7 @@
     {{- else if hasKey $attr "role" }}
     {{- $formatAttrName }} *{{ $typeName }} 
     {{- $_ := set $objects $typeName $attr }}
-    {{- else }}
+    {{- else -}}
     // Pending... {{ $formatAttrName }} No valTyp {{ $attr.role -}} 
     {{- /*2*/ -}}{{- end }} `json:"{{ $attrName }},omitempty"` 
     {{/*1*/ -}}{{- end -}}
