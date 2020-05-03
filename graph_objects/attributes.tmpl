@@ -25,7 +25,11 @@
     {{ get $g.ctx.typeMap $attr.valType }}
     {{- /*3*/ -}}{{- end }} 
     {{- else if hasKey $attr "role" }}
+    {{- if hasKey $attr "items" }}
+    {{- $formatAttrName }} {{ $typeName }} 
+    {{- else -}}
     {{- $formatAttrName }} *{{ $typeName }} 
+    {{- end -}}
     {{- $_ := set $objects $typeName $attr }}
     {{- else -}}
     // Pending... {{ $formatAttrName }} No valTyp {{ $attr.role -}} 
