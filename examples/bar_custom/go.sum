@@ -1,6 +1,0 @@
-github.com/MetalBlueberry/go-plotly v0.0.0-20200503142240-1276ab260dcb h1:rznnaxX8kvmLuJmklEFBLCabYABpW0QFmavxr5SgO+k=
-github.com/MetalBlueberry/go-plotly v0.0.0-20200503142240-1276ab260dcb/go.mod h1:9NQ0+c3QE6NQQF4Zv1pH4bGJPg7pX9Pbc27YEvuds/c=
-github.com/lucasb-eyer/go-colorful v1.0.3 h1:QIbQXiugsb+q10B+MI+7DI1oQLdmnep86tWFlaaUAac=
-github.com/lucasb-eyer/go-colorful v1.0.3/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
-github.com/pkg/browser v0.0.0-20180916011732-0a3d74bf9ce4 h1:49lOXmGaUpV9Fz3gd7TFZY106KVlPVa5jcYD1gaQf98=
-github.com/pkg/browser v0.0.0-20180916011732-0a3d74bf9ce4/go.mod h1:4OwLy04Bl9Ef3GJJCoec+30X3LQs/0/m4HFRt/2LUSA=
