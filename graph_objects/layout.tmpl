@@ -5,11 +5,6 @@
 {{- $flaglists := dict }}
 package graph_objects
 
-/* 
-{{- range $k,$v := (merge .layout.layoutAttributes .extra )}}
-{{ $k }}
-{{- end }}
-*/
 
 type Layout struct {
 {{- $params := (dict  "parent" "Layout" "attributes" (merge .layout.layoutAttributes .extra ) "ctx" $g.ctx ) }}
