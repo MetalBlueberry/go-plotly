@@ -9,11 +9,9 @@
 type {{ $typeName }} struct {
 {{ $params := (dict "parent" $typeName "attributes" $obj "ctx" $g.ctx ) }}
 {{- template "attributes" $params -}}
-{{- /* For unknown reason, merge fails due to tyle... bug?, workarround with range loop */}}
-{{- /* $enumerates = mustMerge $enumerates $params.enumerates */}}
-{{- range $k,$v := $params.enumerates }}{{- $_ := set $enumerates $k $v }}{{- end }}
+{{- $enumerates = mustMerge $enumerates $params.enumerates }}
 {{- $innerObjects = mustMerge $innerObjects $params.objects -}}
-{{- $flaglists = merge $flaglists $params.flaglists -}}
+{{- $flaglists = mustMerge $flaglists $params.flaglists -}}
 }
 {{ end -}}
 {{/* return values */}}
