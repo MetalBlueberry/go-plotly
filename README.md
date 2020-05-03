@@ -97,3 +97,13 @@ The tmpl files are parsed mainly with go templates with just a few extra functio
 2. Generate an awesome dynamic plot in a local file with offline package.
 
 3. Tell me what you can do with this.
+
+### Why are the String and Bool types defined?
+
+This is to handle the omitempty flag in json serialization. Turns out that if the flag is set, you cannot create a json object with a flag set to `false`. For example, turn off visibility of the legend will be impossible without this.
+
+For bool, the solution is as simple as defining the types again inside graph_objects and it feels like using normal bool values.
+
+For strings... This is a little bit more complicated, In AWS package they are using `aws.String` which maps to `*string` to workaround this issue, but I find that really annoying because you have to wrap every single string with `aws.String("whatever")`. For now I've decided to define the type String but leave it as `interface{}` instead of `*string` to allow you to use raw strings. The draw back is that you can pass any value of your choice... Hopefully you can live with this :).
+
+For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`.
