@@ -1,0 +1,15 @@
+
+	<head>
+		<script src="https://cdn.plot.ly/plotly-1.54.0.min.js"></script>
+	</head>
+	</body>
+		<div id="tester"></div>
+	<script>
+		console.log("start")
+		data = JSON.parse('{"layout":{"shapes":[{"type":"line","x0":1,"x1":1,"y1":2,"line":{"color":"RoyalBlue","width":3}},{"type":"line","x0":2,"y0":2,"x1":5,"y1":2,"line":{"color":"LightSeaGreen","dash":"dashdot","width":4}},{"type":"line","x0":4,"x1":6,"y1":2,"line":{"color":"MediumPurple","dash":"dot","width":4}}],"title":{"text":"A Figure Specified By Go Struct"}}}')
+
+		TESTER = document.getElementById('tester');
+		Plotly.newPlot(TESTER, data);
+	</script>
+	<body>
+	
