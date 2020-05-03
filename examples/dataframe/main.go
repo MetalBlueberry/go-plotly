@@ -68,6 +68,10 @@ func main() {
 		})
 	}
 
+	fig.Layout = grob.Layout{
+		Barmode: grob.LayoutBarmode_stack,
+	}
+
 	offline.Show(fig)
 
 }
