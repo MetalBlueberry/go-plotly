@@ -3,7 +3,7 @@
 {{- $g := . -}}
 {{- $_ := set $g "ctx" dict -}}
 
-{{ $_ := set $g.ctx "typeMap" (dict "flaglist" "string" "info_array" "interface{}" "subplotid" "string" "data_array" "interface{}" "any" "interface{}" "angle" "float64" "color" "string" "number" "float64" "string" "string" "integer" "int64" "boolean" "bool") }}
+{{ $_ := set $g.ctx "typeMap" (dict "flaglist" "String" "info_array" "interface{}" "subplotid" "String" "data_array" "interface{}" "any" "interface{}" "angle" "float64" "color" "String" "number" "float64" "string" "String" "integer" "int64" "boolean" "Bool") }}
 
 Generating Go Plotly schema
 SHA {{ .sha1 }}

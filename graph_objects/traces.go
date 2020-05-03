@@ -11,13 +11,13 @@ type Area struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo AreaHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *AreaHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -25,10 +25,10 @@ type Area struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *AreaMarker `json:"marker,omitempty"` // object
@@ -36,10 +36,10 @@ type Area struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -48,10 +48,10 @@ type Area struct {
     R interface{} `json:"r,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *AreaStream `json:"stream,omitempty"` // object
@@ -61,10 +61,10 @@ type Area struct {
     // Transforms <no value> <no value>
     Transforms *AreaTransforms `json:"transforms,omitempty"` // object
     // Tsrc string Sets the source reference on Chart Studio Cloud for  t .
-    Tsrc string `json:"tsrc,omitempty"`
+    Tsrc String `json:"tsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -96,16 +96,16 @@ type Bar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Base any Sets where the bar base is drawn (in position axis units). In *stack* or *relative* barmode, traces that set *base* will be excluded and drawn in *overlay* mode instead.
     Base interface{} `json:"base,omitempty"`
     
     // Basesrc string Sets the source reference on Chart Studio Cloud for  base .
-    Basesrc string `json:"basesrc,omitempty"`
+    Basesrc String `json:"basesrc,omitempty"`
     
     // Cliponaxis boolean Determines whether the text nodes are clipped about the subplot axes. To show the text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Constraintext enumerated Constrain the size of text inside or outside a bar to be no larger than the bar itself.
     Constraintext BarConstraintext `json:"constraintext,omitempty"`
@@ -114,7 +114,7 @@ type Bar struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -130,7 +130,7 @@ type Bar struct {
     Hoverinfo BarHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *BarHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -138,19 +138,19 @@ type Bar struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextanchor enumerated Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
     Insidetextanchor BarInsidetextanchor `json:"insidetextanchor,omitempty"`
@@ -158,7 +158,7 @@ type Bar struct {
     // Insidetextfont <no value> Sets the font used for `text` lying inside the bar.
     Insidetextfont *BarInsidetextfont `json:"insidetextfont,omitempty"` // object
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *BarMarker `json:"marker,omitempty"` // object
@@ -166,19 +166,19 @@ type Bar struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Offset number Shifts the position where the bar is drawn (in position axis units). In *group* barmode, traces that set *offset* will be excluded and drawn in *overlay* mode instead.
     Offset interface{} `json:"offset,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Offsetsrc string Sets the source reference on Chart Studio Cloud for  offset .
-    Offsetsrc string `json:"offsetsrc,omitempty"`
+    Offsetsrc String `json:"offsetsrc,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -192,7 +192,7 @@ type Bar struct {
     R interface{} `json:"r,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *BarSelected `json:"selected,omitempty"` // object
@@ -200,7 +200,7 @@ type Bar struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *BarStream `json:"stream,omitempty"` // object
@@ -219,24 +219,24 @@ type Bar struct {
     Textposition BarTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *BarTransforms `json:"transforms,omitempty"` // object
     // Tsrc string Sets the source reference on Chart Studio Cloud for  t .
-    Tsrc string `json:"tsrc,omitempty"`
+    Tsrc String `json:"tsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -250,7 +250,7 @@ type Bar struct {
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
     // X data_array Sets the x coordinates.
     X interface{} `json:"x,omitempty"`
@@ -259,13 +259,13 @@ type Bar struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar BarXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -274,13 +274,13 @@ type Bar struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar BarYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -307,13 +307,13 @@ type Barpolar struct {
     Base interface{} `json:"base,omitempty"`
     
     // Basesrc string Sets the source reference on Chart Studio Cloud for  base .
-    Basesrc string `json:"basesrc,omitempty"`
+    Basesrc String `json:"basesrc,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dr number Sets the r coordinate step.
     Dr float64 `json:"dr,omitempty"`
@@ -325,7 +325,7 @@ type Barpolar struct {
     Hoverinfo BarpolarHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *BarpolarHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -333,22 +333,22 @@ type Barpolar struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *BarpolarMarker `json:"marker,omitempty"` // object
@@ -356,16 +356,16 @@ type Barpolar struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Offset number Shifts the angular position where the bar is drawn (in *thetatunit* units).
     Offset interface{} `json:"offset,omitempty"`
     
     // Offsetsrc string Sets the source reference on Chart Studio Cloud for  offset .
-    Offsetsrc string `json:"offsetsrc,omitempty"`
+    Offsetsrc String `json:"offsetsrc,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -377,7 +377,7 @@ type Barpolar struct {
     R0 interface{} `json:"r0,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *BarpolarSelected `json:"selected,omitempty"` // object
@@ -385,18 +385,18 @@ type Barpolar struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *BarpolarStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a polar subplot. If *polar* (the default value), the data refer to `layout.polar`. If *polar2*, the data refer to `layout.polar2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets hover text elements associated with each bar. If a single string, the same string appears over all bars. If an array of string, the items are mapped in order to the this trace's coordinates.
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Theta data_array Sets the angular coordinates
     Theta interface{} `json:"theta,omitempty"`
@@ -405,7 +405,7 @@ type Barpolar struct {
     Theta0 interface{} `json:"theta0,omitempty"`
     
     // Thetasrc string Sets the source reference on Chart Studio Cloud for  theta .
-    Thetasrc string `json:"thetasrc,omitempty"`
+    Thetasrc String `json:"thetasrc,omitempty"`
     
     // Thetaunit enumerated Sets the unit of input *theta* values. Has an effect only when on *linear* angular axes.
     Thetaunit BarpolarThetaunit `json:"thetaunit,omitempty"`
@@ -413,7 +413,7 @@ type Barpolar struct {
     // Transforms <no value> <no value>
     Transforms *BarpolarTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -427,7 +427,7 @@ type Barpolar struct {
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 
 }
@@ -451,7 +451,7 @@ type Box struct {
     Type TraceType `json:"type,omitempty"`
     
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Boxmean enumerated If *true*, the mean of the box(es)' underlying distribution is drawn as a dashed line inside the box(es). If *sd* the standard deviation is also drawn. Defaults to *true* when `mean` is set. Defaults to *sd* when `sd` is set Otherwise defaults to *false*.
     Boxmean BoxBoxmean `json:"boxmean,omitempty"`
@@ -463,7 +463,7 @@ type Box struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step for multi-box traces set using q1/median/q3.
     Dx float64 `json:"dx,omitempty"`
@@ -472,13 +472,13 @@ type Box struct {
     Dy float64 `json:"dy,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo BoxHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *BoxHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -489,25 +489,25 @@ type Box struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Jitter number Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the box(es).
     Jitter float64 `json:"jitter,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *BoxLine `json:"line,omitempty"` // object
@@ -515,7 +515,7 @@ type Box struct {
     Lowerfence interface{} `json:"lowerfence,omitempty"`
     
     // Lowerfencesrc string Sets the source reference on Chart Studio Cloud for  lowerfence .
-    Lowerfencesrc string `json:"lowerfencesrc,omitempty"`
+    Lowerfencesrc String `json:"lowerfencesrc,omitempty"`
     
     // Marker <no value> <no value>
     Marker *BoxMarker `json:"marker,omitempty"` // object
@@ -523,37 +523,37 @@ type Box struct {
     Mean interface{} `json:"mean,omitempty"`
     
     // Meansrc string Sets the source reference on Chart Studio Cloud for  mean .
-    Meansrc string `json:"meansrc,omitempty"`
+    Meansrc String `json:"meansrc,omitempty"`
     
     // Median data_array Sets the median values. There should be as many items as the number of boxes desired.
     Median interface{} `json:"median,omitempty"`
     
     // Mediansrc string Sets the source reference on Chart Studio Cloud for  median .
-    Mediansrc string `json:"mediansrc,omitempty"`
+    Mediansrc String `json:"mediansrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Notched boolean Determines whether or not notches are drawn. Notches displays a confidence interval around the median. We compute the confidence interval as median +/- 1.57 * IQR / sqrt(N), where IQR is the interquartile range and N is the sample size. If two boxes' notches do not overlap there is 95% confidence their medians differ. See https://sites.google.com/site/davidsstatistics/home/notched-box-plots for more info. Defaults to *false* unless `notchwidth` or `notchspan` is set.
-    Notched bool `json:"notched,omitempty"`
+    Notched Bool `json:"notched,omitempty"`
     
     // Notchspan data_array Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
     Notchspan interface{} `json:"notchspan,omitempty"`
     
     // Notchspansrc string Sets the source reference on Chart Studio Cloud for  notchspan .
-    Notchspansrc string `json:"notchspansrc,omitempty"`
+    Notchspansrc String `json:"notchspansrc,omitempty"`
     
     // Notchwidth number Sets the width of the notches relative to the box' width. For example, with 0, the notches are as wide as the box(es).
     Notchwidth float64 `json:"notchwidth,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -568,13 +568,13 @@ type Box struct {
     Q1 interface{} `json:"q1,omitempty"`
     
     // Q1src string Sets the source reference on Chart Studio Cloud for  q1 .
-    Q1src string `json:"q1src,omitempty"`
+    Q1src String `json:"q1src,omitempty"`
     
     // Q3 data_array Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
     Q3 interface{} `json:"q3,omitempty"`
     
     // Q3src string Sets the source reference on Chart Studio Cloud for  q3 .
-    Q3src string `json:"q3src,omitempty"`
+    Q3src String `json:"q3src,omitempty"`
     
     // Quartilemethod enumerated Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://www.amstat.org/publications/jse/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
     Quartilemethod BoxQuartilemethod `json:"quartilemethod,omitempty"`
@@ -583,7 +583,7 @@ type Box struct {
     Sd interface{} `json:"sd,omitempty"`
     
     // Sdsrc string Sets the source reference on Chart Studio Cloud for  sd .
-    Sdsrc string `json:"sdsrc,omitempty"`
+    Sdsrc String `json:"sdsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *BoxSelected `json:"selected,omitempty"` // object
@@ -591,7 +591,7 @@ type Box struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *BoxStream `json:"stream,omitempty"` // object
@@ -599,12 +599,12 @@ type Box struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *BoxTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -615,7 +615,7 @@ type Box struct {
     Upperfence interface{} `json:"upperfence,omitempty"`
     
     // Upperfencesrc string Sets the source reference on Chart Studio Cloud for  upperfence .
-    Upperfencesrc string `json:"upperfencesrc,omitempty"`
+    Upperfencesrc String `json:"upperfencesrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible BoxVisible `json:"visible,omitempty"`
@@ -633,13 +633,13 @@ type Box struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar BoxXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y sample data or coordinates. See overview for more info.
     Y interface{} `json:"y,omitempty"`
@@ -648,13 +648,13 @@ type Box struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar BoxYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -681,13 +681,13 @@ type Candlestick struct {
     Close interface{} `json:"close,omitempty"`
     
     // Closesrc string Sets the source reference on Chart Studio Cloud for  close .
-    Closesrc string `json:"closesrc,omitempty"`
+    Closesrc String `json:"closesrc,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Decreasing <no value> <no value>
     Decreasing *CandlestickDecreasing `json:"decreasing,omitempty"` // object
@@ -695,13 +695,13 @@ type Candlestick struct {
     High interface{} `json:"high,omitempty"`
     
     // Highsrc string Sets the source reference on Chart Studio Cloud for  high .
-    Highsrc string `json:"highsrc,omitempty"`
+    Highsrc String `json:"highsrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo CandlestickHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *CandlestickHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -709,18 +709,18 @@ type Candlestick struct {
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Increasing <no value> <no value>
     Increasing *CandlestickIncreasing `json:"increasing,omitempty"` // object
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *CandlestickLine `json:"line,omitempty"` // object
@@ -728,16 +728,16 @@ type Candlestick struct {
     Low interface{} `json:"low,omitempty"`
     
     // Lowsrc string Sets the source reference on Chart Studio Cloud for  low .
-    Lowsrc string `json:"lowsrc,omitempty"`
+    Lowsrc String `json:"lowsrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -746,13 +746,13 @@ type Candlestick struct {
     Open interface{} `json:"open,omitempty"`
     
     // Opensrc string Sets the source reference on Chart Studio Cloud for  open .
-    Opensrc string `json:"opensrc,omitempty"`
+    Opensrc String `json:"opensrc,omitempty"`
     
     // Selectedpoints any Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *CandlestickStream `json:"stream,omitempty"` // object
@@ -760,12 +760,12 @@ type Candlestick struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *CandlestickTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -780,16 +780,16 @@ type Candlestick struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar CandlestickXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
 
 }
@@ -821,7 +821,7 @@ type Carpet struct {
     // Aaxis <no value> <no value>
     Aaxis *CarpetAaxis `json:"aaxis,omitempty"` // object
     // Asrc string Sets the source reference on Chart Studio Cloud for  a .
-    Asrc string `json:"asrc,omitempty"`
+    Asrc String `json:"asrc,omitempty"`
     
     // B data_array A two dimensional array of y coordinates at each carpet point.
     B interface{} `json:"b,omitempty"`
@@ -832,22 +832,22 @@ type Carpet struct {
     // Baxis <no value> <no value>
     Baxis *CarpetBaxis `json:"baxis,omitempty"` // object
     // Bsrc string Sets the source reference on Chart Studio Cloud for  b .
-    Bsrc string `json:"bsrc,omitempty"`
+    Bsrc String `json:"bsrc,omitempty"`
     
     // Carpet string An identifier for this carpet, so that `scattercarpet` and `contourcarpet` traces can specify a carpet plot on which they lie
-    Carpet string `json:"carpet,omitempty"`
+    Carpet String `json:"carpet,omitempty"`
     
     // Cheaterslope number The shift applied to each successive row of data in creating a cheater plot. Only used if `x` is been ommitted.
     Cheaterslope float64 `json:"cheaterslope,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Da number Sets the a coordinate step. See `a0` for more info.
     Da float64 `json:"da,omitempty"`
@@ -861,16 +861,16 @@ type Carpet struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -878,7 +878,7 @@ type Carpet struct {
     // Stream <no value> <no value>
     Stream *CarpetStream `json:"stream,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -890,19 +890,19 @@ type Carpet struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array A two dimensional array of y coordinates at each carpet point.
     Y interface{} `json:"y,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -926,10 +926,10 @@ type Choropleth struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ChoroplethColorbar `json:"colorbar,omitempty"` // object
@@ -940,13 +940,13 @@ type Choropleth struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Featureidkey string Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Only has an effect when `geojson` is set. Support nested property, for example *properties.name*.
-    Featureidkey string `json:"featureidkey,omitempty"`
+    Featureidkey String `json:"featureidkey,omitempty"`
     
     // Geo subplotid Sets a reference between this trace's geospatial coordinates and a geographic map. If *geo* (the default value), the geospatial coordinates refer to `layout.geo`. If *geo2*, the geospatial coordinates refer to `layout.geo2`, and so on.
-    Geo string `json:"geo,omitempty"`
+    Geo String `json:"geo,omitempty"`
     
     // Geojson any Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
     Geojson interface{} `json:"geojson,omitempty"`
@@ -955,7 +955,7 @@ type Choropleth struct {
     Hoverinfo ChoroplethHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ChoroplethHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -963,22 +963,22 @@ type Choropleth struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Locationmode enumerated Determines the set of locations used to match entries in `locations` to regions on the map. Values *ISO-3*, *USA-states*, *country names* correspond to features on the base map and value *geojson-id* corresponds to features from a custom GeoJSON linked to the `geojson` attribute.
     Locationmode ChoroplethLocationmode `json:"locationmode,omitempty"`
@@ -987,7 +987,7 @@ type Choropleth struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Marker <no value> <no value>
     Marker *ChoroplethMarker `json:"marker,omitempty"` // object
@@ -995,13 +995,13 @@ type Choropleth struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Selected <no value> <no value>
     Selected *ChoroplethSelected `json:"selected,omitempty"` // object
@@ -1009,10 +1009,10 @@ type Choropleth struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ChoroplethStream `json:"stream,omitempty"` // object
@@ -1020,12 +1020,12 @@ type Choropleth struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ChoroplethTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -1039,7 +1039,7 @@ type Choropleth struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -1051,7 +1051,7 @@ type Choropleth struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1075,13 +1075,13 @@ type Choroplethmapbox struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Below string Determines if the choropleth polygons will be inserted before the layer with the specified ID. By default, choroplethmapbox traces are placed above the water layers. If set to '', the layer will be inserted above every existing layer.
-    Below string `json:"below,omitempty"`
+    Below String `json:"below,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ChoroplethmapboxColorbar `json:"colorbar,omitempty"` // object
@@ -1092,10 +1092,10 @@ type Choroplethmapbox struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Featureidkey string Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Support nested property, for example *properties.name*.
-    Featureidkey string `json:"featureidkey,omitempty"`
+    Featureidkey String `json:"featureidkey,omitempty"`
     
     // Geojson any Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
     Geojson interface{} `json:"geojson,omitempty"`
@@ -1104,7 +1104,7 @@ type Choroplethmapbox struct {
     Hoverinfo ChoroplethmapboxHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ChoroplethmapboxHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -1112,28 +1112,28 @@ type Choroplethmapbox struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Locations data_array Sets which features found in *geojson* to plot using their feature `id` field.
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Marker <no value> <no value>
     Marker *ChoroplethmapboxMarker `json:"marker,omitempty"` // object
@@ -1141,13 +1141,13 @@ type Choroplethmapbox struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Selected <no value> <no value>
     Selected *ChoroplethmapboxSelected `json:"selected,omitempty"` // object
@@ -1155,26 +1155,26 @@ type Choroplethmapbox struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ChoroplethmapboxStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets the text elements associated with each location.
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ChoroplethmapboxTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -1188,7 +1188,7 @@ type Choroplethmapbox struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -1200,7 +1200,7 @@ type Choroplethmapbox struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1227,10 +1227,10 @@ type Cone struct {
     Anchor ConeAnchor `json:"anchor,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here u/v/w norm) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as u/v/w norm and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -1242,7 +1242,7 @@ type Cone struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ConeColorbar `json:"colorbar,omitempty"` // object
@@ -1253,13 +1253,13 @@ type Cone struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ConeHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ConeHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -1267,22 +1267,22 @@ type Cone struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *ConeLighting `json:"lighting,omitempty"` // object
@@ -1292,25 +1292,25 @@ type Cone struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Sizemode enumerated Determines whether `sizeref` is set as a *scaled* (i.e unitless) scalar (normalized by the max u/v/w norm in the vector field) or as *absolute* value (in the same units as the vector field).
     Sizemode ConeSizemode `json:"sizemode,omitempty"`
@@ -1324,19 +1324,19 @@ type Cone struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // U data_array Sets the x components of the vector field.
     U interface{} `json:"u,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Usrc string Sets the source reference on Chart Studio Cloud for  u .
-    Usrc string `json:"usrc,omitempty"`
+    Usrc String `json:"usrc,omitempty"`
     
     // V data_array Sets the y components of the vector field.
     V interface{} `json:"v,omitempty"`
@@ -1345,31 +1345,31 @@ type Cone struct {
     Visible ConeVisible `json:"visible,omitempty"`
     
     // Vsrc string Sets the source reference on Chart Studio Cloud for  v .
-    Vsrc string `json:"vsrc,omitempty"`
+    Vsrc String `json:"vsrc,omitempty"`
     
     // W data_array Sets the z components of the vector field.
     W interface{} `json:"w,omitempty"`
     
     // Wsrc string Sets the source reference on Chart Studio Cloud for  w .
-    Wsrc string `json:"wsrc,omitempty"`
+    Wsrc String `json:"wsrc,omitempty"`
     
     // X data_array Sets the x coordinates of the vector field and of the displayed cones.
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates of the vector field and of the displayed cones.
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the z coordinates of the vector field and of the displayed cones.
     Z interface{} `json:"z,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1393,13 +1393,13 @@ type Contour struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Autocontour boolean Determines whether or not the contour level attributes are picked by an algorithm. If *true*, the number of contour levels can be set in `ncontours`. If *false*, set the contour level attributes in `contours`.
-    Autocontour bool `json:"autocontour,omitempty"`
+    Autocontour Bool `json:"autocontour,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ContourColorbar `json:"colorbar,omitempty"` // object
@@ -1407,7 +1407,7 @@ type Contour struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data are filled in. It is defaulted to true if `z` is a one dimensional array otherwise it is defaulted to false.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Contours <no value> <no value>
     Contours *ContourContours `json:"contours,omitempty"` // object
@@ -1415,7 +1415,7 @@ type Contour struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -1424,39 +1424,39 @@ type Contour struct {
     Dy float64 `json:"dy,omitempty"`
     
     // Fillcolor color Sets the fill color if `contours.type` is *constraint*. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ContourHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ContourHoverlabel `json:"hoverlabel,omitempty"` // object
     // Hoverongaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data have hover labels associated with them.
-    Hoverongaps bool `json:"hoverongaps,omitempty"`
+    Hoverongaps Bool `json:"hoverongaps,omitempty"`
     
     // Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext data_array Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ContourLine `json:"line,omitempty"` // object
@@ -1464,10 +1464,10 @@ type Contour struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Ncontours integer Sets the maximum number of contour levels. The actual number of contours will be chosen automatically to be less than or equal to the value of `ncontours`. Has an effect only if `autocontour` is *true* or if `contours.size` is missing.
     Ncontours int64 `json:"ncontours,omitempty"`
@@ -1476,13 +1476,13 @@ type Contour struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ContourStream `json:"stream,omitempty"` // object
@@ -1490,15 +1490,15 @@ type Contour struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ContourTransforms `json:"transforms,omitempty"` // object
     // Transpose boolean Transposes the z data.
-    Transpose bool `json:"transpose,omitempty"`
+    Transpose Bool `json:"transpose,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -1513,13 +1513,13 @@ type Contour struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar ContourXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Xtype enumerated If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
     Xtype ContourXtype `json:"xtype,omitempty"`
@@ -1531,13 +1531,13 @@ type Contour struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar ContourYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Ytype enumerated If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
     Ytype ContourYtype `json:"ytype,omitempty"`
@@ -1546,10 +1546,10 @@ type Contour struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zhoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Zhoverformat string `json:"zhoverformat,omitempty"`
+    Zhoverformat String `json:"zhoverformat,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -1561,7 +1561,7 @@ type Contour struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1591,16 +1591,16 @@ type Contourcarpet struct {
     A0 interface{} `json:"a0,omitempty"`
     
     // Asrc string Sets the source reference on Chart Studio Cloud for  a .
-    Asrc string `json:"asrc,omitempty"`
+    Asrc String `json:"asrc,omitempty"`
     
     // Atype enumerated If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
     Atype ContourcarpetAtype `json:"atype,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Autocontour boolean Determines whether or not the contour level attributes are picked by an algorithm. If *true*, the number of contour levels can be set in `ncontours`. If *false*, set the contour level attributes in `contours`.
-    Autocontour bool `json:"autocontour,omitempty"`
+    Autocontour Bool `json:"autocontour,omitempty"`
     
     // B data_array Sets the y coordinates.
     B interface{} `json:"b,omitempty"`
@@ -1609,16 +1609,16 @@ type Contourcarpet struct {
     B0 interface{} `json:"b0,omitempty"`
     
     // Bsrc string Sets the source reference on Chart Studio Cloud for  b .
-    Bsrc string `json:"bsrc,omitempty"`
+    Bsrc String `json:"bsrc,omitempty"`
     
     // Btype enumerated If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
     Btype ContourcarpetBtype `json:"btype,omitempty"`
     
     // Carpet string The `carpet` of the carpet axes on which this contour trace lies
-    Carpet string `json:"carpet,omitempty"`
+    Carpet String `json:"carpet,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ContourcarpetColorbar `json:"colorbar,omitempty"` // object
@@ -1631,7 +1631,7 @@ type Contourcarpet struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Da number Sets the x coordinate step. See `x0` for more info.
     Da float64 `json:"da,omitempty"`
@@ -1640,22 +1640,22 @@ type Contourcarpet struct {
     Db float64 `json:"db,omitempty"`
     
     // Fillcolor color Sets the fill color if `contours.type` is *constraint*. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hovertext data_array Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ContourcarpetLine `json:"line,omitempty"` // object
@@ -1663,10 +1663,10 @@ type Contourcarpet struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Ncontours integer Sets the maximum number of contour levels. The actual number of contours will be chosen automatically to be less than or equal to the value of `ncontours`. Has an effect only if `autocontour` is *true* or if `contours.size` is missing.
     Ncontours int64 `json:"ncontours,omitempty"`
@@ -1675,13 +1675,13 @@ type Contourcarpet struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ContourcarpetStream `json:"stream,omitempty"` // object
@@ -1689,13 +1689,13 @@ type Contourcarpet struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transpose boolean Transposes the z data.
-    Transpose bool `json:"transpose,omitempty"`
+    Transpose Bool `json:"transpose,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -1704,16 +1704,16 @@ type Contourcarpet struct {
     Visible ContourcarpetVisible `json:"visible,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Z data_array Sets the z data.
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -1725,7 +1725,7 @@ type Contourcarpet struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1749,13 +1749,13 @@ type Densitymapbox struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Below string Determines if the densitymapbox trace will be inserted before the layer with the specified ID. By default, densitymapbox traces are placed below the first layer of type symbol If set to '', the layer will be inserted above every existing layer.
-    Below string `json:"below,omitempty"`
+    Below String `json:"below,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *DensitymapboxColorbar `json:"colorbar,omitempty"` // object
@@ -1766,13 +1766,13 @@ type Densitymapbox struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo DensitymapboxHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *DensitymapboxHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -1780,43 +1780,43 @@ type Densitymapbox struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Lat data_array Sets the latitude coordinates (in degrees North).
     Lat interface{} `json:"lat,omitempty"`
     
     // Latsrc string Sets the source reference on Chart Studio Cloud for  lat .
-    Latsrc string `json:"latsrc,omitempty"`
+    Latsrc String `json:"latsrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lon data_array Sets the longitude coordinates (in degrees East).
     Lon interface{} `json:"lon,omitempty"`
     
     // Lonsrc string Sets the source reference on Chart Studio Cloud for  lon .
-    Lonsrc string `json:"lonsrc,omitempty"`
+    Lonsrc String `json:"lonsrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -1825,32 +1825,32 @@ type Densitymapbox struct {
     Radius interface{} `json:"radius,omitempty"`
     
     // Radiussrc string Sets the source reference on Chart Studio Cloud for  radius .
-    Radiussrc string `json:"radiussrc,omitempty"`
+    Radiussrc String `json:"radiussrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *DensitymapboxStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *DensitymapboxTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -1862,7 +1862,7 @@ type Densitymapbox struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -1874,7 +1874,7 @@ type Densitymapbox struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -1898,10 +1898,10 @@ type Funnel struct {
     Type TraceType `json:"type,omitempty"`
     
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Cliponaxis boolean Determines whether the text nodes are clipped about the subplot axes. To show the text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Connector <no value> <no value>
     Connector *FunnelConnector `json:"connector,omitempty"` // object
@@ -1912,7 +1912,7 @@ type Funnel struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -1924,7 +1924,7 @@ type Funnel struct {
     Hoverinfo FunnelHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *FunnelHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -1932,19 +1932,19 @@ type Funnel struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextanchor enumerated Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
     Insidetextanchor FunnelInsidetextanchor `json:"insidetextanchor,omitempty"`
@@ -1952,7 +1952,7 @@ type Funnel struct {
     // Insidetextfont <no value> Sets the font used for `text` lying inside the bar.
     Insidetextfont *FunnelInsidetextfont `json:"insidetextfont,omitempty"` // object
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *FunnelMarker `json:"marker,omitempty"` // object
@@ -1960,16 +1960,16 @@ type Funnel struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Offset number Shifts the position where the bar is drawn (in position axis units). In *group* barmode, traces that set *offset* will be excluded and drawn in *overlay* mode instead.
     Offset float64 `json:"offset,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -1983,7 +1983,7 @@ type Funnel struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *FunnelStream `json:"stream,omitempty"` // object
@@ -2002,21 +2002,21 @@ type Funnel struct {
     Textposition FunnelTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `percentInitial`, `percentPrevious`, `percentTotal`, `label` and `value`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *FunnelTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2034,10 +2034,10 @@ type Funnel struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -2046,10 +2046,10 @@ type Funnel struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -2082,7 +2082,7 @@ type Funnelarea struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dlabel number Sets the label step. See `label0` for more info.
     Dlabel float64 `json:"dlabel,omitempty"`
@@ -2093,7 +2093,7 @@ type Funnelarea struct {
     Hoverinfo FunnelareaHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *FunnelareaHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -2101,19 +2101,19 @@ type Funnelarea struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextfont <no value> Sets the font used for `textinfo` lying inside the sector.
     Insidetextfont *FunnelareaInsidetextfont `json:"insidetextfont,omitempty"` // object
@@ -2124,10 +2124,10 @@ type Funnelarea struct {
     Labels interface{} `json:"labels,omitempty"`
     
     // Labelssrc string Sets the source reference on Chart Studio Cloud for  labels .
-    Labelssrc string `json:"labelssrc,omitempty"`
+    Labelssrc String `json:"labelssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *FunnelareaMarker `json:"marker,omitempty"` // object
@@ -2135,19 +2135,19 @@ type Funnelarea struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Scalegroup string If there are multiple funnelareas that should be sized according to their totals, link them by providing a non-empty group id here shared by every trace in the same group.
-    Scalegroup string `json:"scalegroup,omitempty"`
+    Scalegroup String `json:"scalegroup,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *FunnelareaStream `json:"stream,omitempty"` // object
@@ -2163,23 +2163,23 @@ type Funnelarea struct {
     Textposition FunnelareaTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Title <no value> <no value>
     Title *FunnelareaTitle `json:"title,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *FunnelareaTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2188,7 +2188,7 @@ type Funnelarea struct {
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible FunnelareaVisible `json:"visible,omitempty"`
@@ -2215,10 +2215,10 @@ type Heatmap struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *HeatmapColorbar `json:"colorbar,omitempty"` // object
@@ -2226,13 +2226,13 @@ type Heatmap struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data are filled in. It is defaulted to true if `z` is a one dimensional array and `zsmooth` is not false; otherwise it is defaulted to false.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -2244,54 +2244,54 @@ type Heatmap struct {
     Hoverinfo HeatmapHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *HeatmapHoverlabel `json:"hoverlabel,omitempty"` // object
     // Hoverongaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data have hover labels associated with them.
-    Hoverongaps bool `json:"hoverongaps,omitempty"`
+    Hoverongaps Bool `json:"hoverongaps,omitempty"`
     
     // Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext data_array Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *HeatmapStream `json:"stream,omitempty"` // object
@@ -2299,15 +2299,15 @@ type Heatmap struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *HeatmapTransforms `json:"transforms,omitempty"` // object
     // Transpose boolean Transposes the z data.
-    Transpose bool `json:"transpose,omitempty"`
+    Transpose Bool `json:"transpose,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2322,7 +2322,7 @@ type Heatmap struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar HeatmapXcalendar `json:"xcalendar,omitempty"`
@@ -2331,7 +2331,7 @@ type Heatmap struct {
     Xgap float64 `json:"xgap,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Xtype enumerated If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
     Xtype HeatmapXtype `json:"xtype,omitempty"`
@@ -2343,7 +2343,7 @@ type Heatmap struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar HeatmapYcalendar `json:"ycalendar,omitempty"`
@@ -2352,7 +2352,7 @@ type Heatmap struct {
     Ygap float64 `json:"ygap,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Ytype enumerated If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
     Ytype HeatmapYtype `json:"ytype,omitempty"`
@@ -2361,10 +2361,10 @@ type Heatmap struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zhoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Zhoverformat string `json:"zhoverformat,omitempty"`
+    Zhoverformat String `json:"zhoverformat,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -2379,7 +2379,7 @@ type Heatmap struct {
     Zsmooth HeatmapZsmooth `json:"zsmooth,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -2403,10 +2403,10 @@ type Heatmapgl struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *HeatmapglColorbar `json:"colorbar,omitempty"` // object
@@ -2417,7 +2417,7 @@ type Heatmapgl struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -2429,7 +2429,7 @@ type Heatmapgl struct {
     Hoverinfo HeatmapglHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *HeatmapglHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -2437,25 +2437,25 @@ type Heatmapgl struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *HeatmapglStream `json:"stream,omitempty"` // object
@@ -2463,15 +2463,15 @@ type Heatmapgl struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *HeatmapglTransforms `json:"transforms,omitempty"` // object
     // Transpose boolean Transposes the z data.
-    Transpose bool `json:"transpose,omitempty"`
+    Transpose Bool `json:"transpose,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2486,10 +2486,10 @@ type Heatmapgl struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Xtype enumerated If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
     Xtype HeatmapglXtype `json:"xtype,omitempty"`
@@ -2501,10 +2501,10 @@ type Heatmapgl struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Ytype enumerated If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
     Ytype HeatmapglYtype `json:"ytype,omitempty"`
@@ -2513,7 +2513,7 @@ type Heatmapgl struct {
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -2525,7 +2525,7 @@ type Heatmapgl struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -2551,16 +2551,16 @@ type Histogram struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Autobinx boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobinx` is not needed. However, we accept `autobinx: true` or `false` and will update `xbins` accordingly before deleting `autobinx` from the trace.
-    Autobinx bool `json:"autobinx,omitempty"`
+    Autobinx Bool `json:"autobinx,omitempty"`
     
     // Autobiny boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobiny` is not needed. However, we accept `autobiny: true` or `false` and will update `ybins` accordingly before deleting `autobiny` from the trace.
-    Autobiny bool `json:"autobiny,omitempty"`
+    Autobiny Bool `json:"autobiny,omitempty"`
     
     // Bingroup string Set a group of histogram traces which will have compatible bin settings. Note that traces on the same subplot and with the same *orientation* under `barmode` *stack*, *relative* and *group* are forced into the same bingroup, Using `bingroup`, traces under `barmode` *overlay* and on different axes (of the same axis type) can have compatible bin settings. Note that histogram and histogram2d* trace can share the same `bingroup`
-    Bingroup string `json:"bingroup,omitempty"`
+    Bingroup String `json:"bingroup,omitempty"`
     
     // Cumulative <no value> <no value>
     Cumulative *HistogramCumulative `json:"cumulative,omitempty"` // object
@@ -2568,7 +2568,7 @@ type Histogram struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Error_x <no value> <no value>
     Error_x *HistogramErrorX `json:"error_x,omitempty"` // object
@@ -2584,7 +2584,7 @@ type Histogram struct {
     Hoverinfo HistogramHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *HistogramHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -2592,22 +2592,22 @@ type Histogram struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *HistogramMarker `json:"marker,omitempty"` // object
@@ -2615,10 +2615,10 @@ type Histogram struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Nbinsx integer Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `xbins.size` is provided.
     Nbinsx int64 `json:"nbinsx,omitempty"`
@@ -2627,7 +2627,7 @@ type Histogram struct {
     Nbinsy int64 `json:"nbinsy,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -2641,7 +2641,7 @@ type Histogram struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *HistogramStream `json:"stream,omitempty"` // object
@@ -2649,12 +2649,12 @@ type Histogram struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *HistogramTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2668,7 +2668,7 @@ type Histogram struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xbins <no value> <no value>
     Xbins *HistogramXbins `json:"xbins,omitempty"` // object
@@ -2676,13 +2676,13 @@ type Histogram struct {
     Xcalendar HistogramXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the sample data to be binned on the y axis.
     Y interface{} `json:"y,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ybins <no value> <no value>
     Ybins *HistogramYbins `json:"ybins,omitempty"` // object
@@ -2690,7 +2690,7 @@ type Histogram struct {
     Ycalendar HistogramYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -2714,19 +2714,19 @@ type Histogram2d struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autobinx boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobinx` is not needed. However, we accept `autobinx: true` or `false` and will update `xbins` accordingly before deleting `autobinx` from the trace.
-    Autobinx bool `json:"autobinx,omitempty"`
+    Autobinx Bool `json:"autobinx,omitempty"`
     
     // Autobiny boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobiny` is not needed. However, we accept `autobiny: true` or `false` and will update `ybins` accordingly before deleting `autobiny` from the trace.
-    Autobiny bool `json:"autobiny,omitempty"`
+    Autobiny Bool `json:"autobiny,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Bingroup string Set the `xbingroup` and `ybingroup` default prefix For example, setting a `bingroup` of *1* on two histogram2d traces will make them their x-bins and y-bins match separately.
-    Bingroup string `json:"bingroup,omitempty"`
+    Bingroup String `json:"bingroup,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *Histogram2dColorbar `json:"colorbar,omitempty"` // object
@@ -2737,7 +2737,7 @@ type Histogram2d struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Histfunc enumerated Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
     Histfunc Histogram2dHistfunc `json:"histfunc,omitempty"`
@@ -2749,7 +2749,7 @@ type Histogram2d struct {
     Hoverinfo Histogram2dHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *Histogram2dHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -2757,16 +2757,16 @@ type Histogram2d struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *Histogram2dMarker `json:"marker,omitempty"` // object
@@ -2774,10 +2774,10 @@ type Histogram2d struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Nbinsx integer Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `xbins.size` is provided.
     Nbinsx int64 `json:"nbinsx,omitempty"`
@@ -2789,20 +2789,20 @@ type Histogram2d struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *Histogram2dStream `json:"stream,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *Histogram2dTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -2814,10 +2814,10 @@ type Histogram2d struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xbingroup string Set a group of histogram traces which will have compatible x-bin settings. Using `xbingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible x-bin settings. Note that the same `xbingroup` value can be used to set (1D) histogram `bingroup`
-    Xbingroup string `json:"xbingroup,omitempty"`
+    Xbingroup String `json:"xbingroup,omitempty"`
     
     // Xbins <no value> <no value>
     Xbins *Histogram2dXbins `json:"xbins,omitempty"` // object
@@ -2828,16 +2828,16 @@ type Histogram2d struct {
     Xgap float64 `json:"xgap,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the sample data to be binned on the y axis.
     Y interface{} `json:"y,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ybingroup string Set a group of histogram traces which will have compatible y-bin settings. Using `ybingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible y-bin settings. Note that the same `ybingroup` value can be used to set (1D) histogram `bingroup`
-    Ybingroup string `json:"ybingroup,omitempty"`
+    Ybingroup String `json:"ybingroup,omitempty"`
     
     // Ybins <no value> <no value>
     Ybins *Histogram2dYbins `json:"ybins,omitempty"` // object
@@ -2848,16 +2848,16 @@ type Histogram2d struct {
     Ygap float64 `json:"ygap,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the aggregation data.
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zhoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Zhoverformat string `json:"zhoverformat,omitempty"`
+    Zhoverformat String `json:"zhoverformat,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -2872,7 +2872,7 @@ type Histogram2d struct {
     Zsmooth Histogram2dZsmooth `json:"zsmooth,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -2896,22 +2896,22 @@ type Histogram2dcontour struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autobinx boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobinx` is not needed. However, we accept `autobinx: true` or `false` and will update `xbins` accordingly before deleting `autobinx` from the trace.
-    Autobinx bool `json:"autobinx,omitempty"`
+    Autobinx Bool `json:"autobinx,omitempty"`
     
     // Autobiny boolean Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobiny` is not needed. However, we accept `autobiny: true` or `false` and will update `ybins` accordingly before deleting `autobiny` from the trace.
-    Autobiny bool `json:"autobiny,omitempty"`
+    Autobiny Bool `json:"autobiny,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Autocontour boolean Determines whether or not the contour level attributes are picked by an algorithm. If *true*, the number of contour levels can be set in `ncontours`. If *false*, set the contour level attributes in `contours`.
-    Autocontour bool `json:"autocontour,omitempty"`
+    Autocontour Bool `json:"autocontour,omitempty"`
     
     // Bingroup string Set the `xbingroup` and `ybingroup` default prefix For example, setting a `bingroup` of *1* on two histogram2d traces will make them their x-bins and y-bins match separately.
-    Bingroup string `json:"bingroup,omitempty"`
+    Bingroup String `json:"bingroup,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *Histogram2dcontourColorbar `json:"colorbar,omitempty"` // object
@@ -2924,7 +2924,7 @@ type Histogram2dcontour struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Histfunc enumerated Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
     Histfunc Histogram2dcontourHistfunc `json:"histfunc,omitempty"`
@@ -2936,7 +2936,7 @@ type Histogram2dcontour struct {
     Hoverinfo Histogram2dcontourHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *Histogram2dcontourHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -2944,16 +2944,16 @@ type Histogram2dcontour struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *Histogram2dcontourLine `json:"line,omitempty"` // object
@@ -2963,10 +2963,10 @@ type Histogram2dcontour struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Nbinsx integer Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `xbins.size` is provided.
     Nbinsx int64 `json:"nbinsx,omitempty"`
@@ -2981,20 +2981,20 @@ type Histogram2dcontour struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *Histogram2dcontourStream `json:"stream,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *Histogram2dcontourTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3006,10 +3006,10 @@ type Histogram2dcontour struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xbingroup string Set a group of histogram traces which will have compatible x-bin settings. Using `xbingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible x-bin settings. Note that the same `xbingroup` value can be used to set (1D) histogram `bingroup`
-    Xbingroup string `json:"xbingroup,omitempty"`
+    Xbingroup String `json:"xbingroup,omitempty"`
     
     // Xbins <no value> <no value>
     Xbins *Histogram2dcontourXbins `json:"xbins,omitempty"` // object
@@ -3017,16 +3017,16 @@ type Histogram2dcontour struct {
     Xcalendar Histogram2dcontourXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the sample data to be binned on the y axis.
     Y interface{} `json:"y,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ybingroup string Set a group of histogram traces which will have compatible y-bin settings. Using `ybingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible y-bin settings. Note that the same `ybingroup` value can be used to set (1D) histogram `bingroup`
-    Ybingroup string `json:"ybingroup,omitempty"`
+    Ybingroup String `json:"ybingroup,omitempty"`
     
     // Ybins <no value> <no value>
     Ybins *Histogram2dcontourYbins `json:"ybins,omitempty"` // object
@@ -3034,16 +3034,16 @@ type Histogram2dcontour struct {
     Ycalendar Histogram2dcontourYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the aggregation data.
     Z interface{} `json:"z,omitempty"`
     
     // Zauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
-    Zauto bool `json:"zauto,omitempty"`
+    Zauto Bool `json:"zauto,omitempty"`
     
     // Zhoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Zhoverformat string `json:"zhoverformat,omitempty"`
+    Zhoverformat String `json:"zhoverformat,omitempty"`
     
     // Zmax number Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
     Zmax float64 `json:"zmax,omitempty"`
@@ -3055,7 +3055,7 @@ type Histogram2dcontour struct {
     Zmin float64 `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -3085,7 +3085,7 @@ type Image struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Set the pixel's horizontal size.
     Dx float64 `json:"dx,omitempty"`
@@ -3097,7 +3097,7 @@ type Image struct {
     Hoverinfo ImageHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ImageHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -3105,28 +3105,28 @@ type Image struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext data_array Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -3137,10 +3137,10 @@ type Image struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3152,13 +3152,13 @@ type Image struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Y0 any Set the image's y position.
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Z data_array A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
     Z interface{} `json:"z,omitempty"`
@@ -3170,7 +3170,7 @@ type Image struct {
     Zmin interface{} `json:"zmin,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -3200,7 +3200,7 @@ type Indicator struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Delta <no value> <no value>
     Delta *IndicatorDelta `json:"delta,omitempty"` // object
@@ -3212,19 +3212,19 @@ type Indicator struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines how the value is displayed on the graph. `number` displays the value numerically in text. `delta` displays the difference to a reference value in text. Finally, `gauge` displays the value graphically on an axis.
     Mode IndicatorMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Number <no value> <no value>
     Number *IndicatorNumber `json:"number,omitempty"` // object
@@ -3235,7 +3235,7 @@ type Indicator struct {
     // Transforms <no value> <no value>
     Transforms *IndicatorTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3268,12 +3268,12 @@ type Isosurface struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Caps <no value> <no value>
     Caps *IsosurfaceCaps `json:"caps,omitempty"` // object
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as `value` and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -3285,7 +3285,7 @@ type Isosurface struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *IsosurfaceColorbar `json:"colorbar,omitempty"` // object
@@ -3298,16 +3298,16 @@ type Isosurface struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Flatshading boolean Determines whether or not normal smoothing is applied to the meshes, creating meshes with an angular, low-poly look via flat reflections.
-    Flatshading bool `json:"flatshading,omitempty"`
+    Flatshading Bool `json:"flatshading,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo IsosurfaceHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *IsosurfaceHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -3315,19 +3315,19 @@ type Isosurface struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Isomax number Sets the maximum boundary for iso-surface plot.
     Isomax float64 `json:"isomax,omitempty"`
@@ -3336,7 +3336,7 @@ type Isosurface struct {
     Isomin float64 `json:"isomin,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *IsosurfaceLighting `json:"lighting,omitempty"` // object
@@ -3346,25 +3346,25 @@ type Isosurface struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Slices <no value> <no value>
     Slices *IsosurfaceSlices `json:"slices,omitempty"` // object
@@ -3378,10 +3378,10 @@ type Isosurface struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3390,7 +3390,7 @@ type Isosurface struct {
     Value interface{} `json:"value,omitempty"`
     
     // Valuesrc string Sets the source reference on Chart Studio Cloud for  value .
-    Valuesrc string `json:"valuesrc,omitempty"`
+    Valuesrc String `json:"valuesrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible IsosurfaceVisible `json:"visible,omitempty"`
@@ -3399,19 +3399,19 @@ type Isosurface struct {
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the Y coordinates of the vertices on Y axis.
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the Z coordinates of the vertices on Z axis.
     Z interface{} `json:"z,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -3438,10 +3438,10 @@ type Mesh3d struct {
     Alphahull float64 `json:"alphahull,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here `intensity`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as `intensity` and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -3453,10 +3453,10 @@ type Mesh3d struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Color color Sets the color of the whole mesh
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *Mesh3dColorbar `json:"colorbar,omitempty"` // object
@@ -3469,7 +3469,7 @@ type Mesh3d struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Delaunayaxis enumerated Sets the Delaunay axis, which is the axis that is perpendicular to the surface of the Delaunay triangulation. It has an effect if `i`, `j`, `k` are not provided and `alphahull` is set to indicate Delaunay triangulation.
     Delaunayaxis Mesh3dDelaunayaxis `json:"delaunayaxis,omitempty"`
@@ -3478,16 +3478,16 @@ type Mesh3d struct {
     Facecolor interface{} `json:"facecolor,omitempty"`
     
     // Facecolorsrc string Sets the source reference on Chart Studio Cloud for  facecolor .
-    Facecolorsrc string `json:"facecolorsrc,omitempty"`
+    Facecolorsrc String `json:"facecolorsrc,omitempty"`
     
     // Flatshading boolean Determines whether or not normal smoothing is applied to the meshes, creating meshes with an angular, low-poly look via flat reflections.
-    Flatshading bool `json:"flatshading,omitempty"`
+    Flatshading Bool `json:"flatshading,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo Mesh3dHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *Mesh3dHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -3495,13 +3495,13 @@ type Mesh3d struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // I data_array A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
     I interface{} `json:"i,omitempty"`
@@ -3510,7 +3510,7 @@ type Mesh3d struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Intensity data_array Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
     Intensity interface{} `json:"intensity,omitempty"`
@@ -3519,25 +3519,25 @@ type Mesh3d struct {
     Intensitymode Mesh3dIntensitymode `json:"intensitymode,omitempty"`
     
     // Intensitysrc string Sets the source reference on Chart Studio Cloud for  intensity .
-    Intensitysrc string `json:"intensitysrc,omitempty"`
+    Intensitysrc String `json:"intensitysrc,omitempty"`
     
     // Isrc string Sets the source reference on Chart Studio Cloud for  i .
-    Isrc string `json:"isrc,omitempty"`
+    Isrc String `json:"isrc,omitempty"`
     
     // J data_array A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
     J interface{} `json:"j,omitempty"`
     
     // Jsrc string Sets the source reference on Chart Studio Cloud for  j .
-    Jsrc string `json:"jsrc,omitempty"`
+    Jsrc String `json:"jsrc,omitempty"`
     
     // K data_array A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
     K interface{} `json:"k,omitempty"`
     
     // Ksrc string Sets the source reference on Chart Studio Cloud for  k .
-    Ksrc string `json:"ksrc,omitempty"`
+    Ksrc String `json:"ksrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *Mesh3dLighting `json:"lighting,omitempty"` // object
@@ -3547,25 +3547,25 @@ type Mesh3d struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *Mesh3dStream `json:"stream,omitempty"` // object
@@ -3573,10 +3573,10 @@ type Mesh3d struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3585,7 +3585,7 @@ type Mesh3d struct {
     Vertexcolor interface{} `json:"vertexcolor,omitempty"`
     
     // Vertexcolorsrc string Sets the source reference on Chart Studio Cloud for  vertexcolor .
-    Vertexcolorsrc string `json:"vertexcolorsrc,omitempty"`
+    Vertexcolorsrc String `json:"vertexcolorsrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible Mesh3dVisible `json:"visible,omitempty"`
@@ -3597,7 +3597,7 @@ type Mesh3d struct {
     Xcalendar Mesh3dXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
     Y interface{} `json:"y,omitempty"`
@@ -3606,7 +3606,7 @@ type Mesh3d struct {
     Ycalendar Mesh3dYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
     Z interface{} `json:"z,omitempty"`
@@ -3615,7 +3615,7 @@ type Mesh3d struct {
     Zcalendar Mesh3dZcalendar `json:"zcalendar,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -3642,13 +3642,13 @@ type Ohlc struct {
     Close interface{} `json:"close,omitempty"`
     
     // Closesrc string Sets the source reference on Chart Studio Cloud for  close .
-    Closesrc string `json:"closesrc,omitempty"`
+    Closesrc String `json:"closesrc,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Decreasing <no value> <no value>
     Decreasing *OhlcDecreasing `json:"decreasing,omitempty"` // object
@@ -3656,13 +3656,13 @@ type Ohlc struct {
     High interface{} `json:"high,omitempty"`
     
     // Highsrc string Sets the source reference on Chart Studio Cloud for  high .
-    Highsrc string `json:"highsrc,omitempty"`
+    Highsrc String `json:"highsrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo OhlcHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *OhlcHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -3670,18 +3670,18 @@ type Ohlc struct {
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Increasing <no value> <no value>
     Increasing *OhlcIncreasing `json:"increasing,omitempty"` // object
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *OhlcLine `json:"line,omitempty"` // object
@@ -3689,16 +3689,16 @@ type Ohlc struct {
     Low interface{} `json:"low,omitempty"`
     
     // Lowsrc string Sets the source reference on Chart Studio Cloud for  low .
-    Lowsrc string `json:"lowsrc,omitempty"`
+    Lowsrc String `json:"lowsrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -3707,13 +3707,13 @@ type Ohlc struct {
     Open interface{} `json:"open,omitempty"`
     
     // Opensrc string Sets the source reference on Chart Studio Cloud for  open .
-    Opensrc string `json:"opensrc,omitempty"`
+    Opensrc String `json:"opensrc,omitempty"`
     
     // Selectedpoints any Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *OhlcStream `json:"stream,omitempty"` // object
@@ -3721,7 +3721,7 @@ type Ohlc struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Tickwidth number Sets the width of the open/close tick marks relative to the *x* minimal interval.
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -3729,7 +3729,7 @@ type Ohlc struct {
     // Transforms <no value> <no value>
     Transforms *OhlcTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3741,16 +3741,16 @@ type Ohlc struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar OhlcXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
 
 }
@@ -3777,13 +3777,13 @@ type Parcats struct {
     Arrangement ParcatsArrangement `json:"arrangement,omitempty"`
     
     // Bundlecolors boolean Sort paths so that like colors are bundled together within each category.
-    Bundlecolors bool `json:"bundlecolors,omitempty"`
+    Bundlecolors Bool `json:"bundlecolors,omitempty"`
     
     // Counts number The number of observations represented by each state. Defaults to 1 so that each state represents one observation
     Counts interface{} `json:"counts,omitempty"`
     
     // Countssrc string Sets the source reference on Chart Studio Cloud for  counts .
-    Countssrc string `json:"countssrc,omitempty"`
+    Countssrc String `json:"countssrc,omitempty"`
     
     // Dimensions <no value> <no value>
     Dimensions *ParcatsDimensions `json:"dimensions,omitempty"` // object
@@ -3796,7 +3796,7 @@ type Parcats struct {
     Hoveron ParcatsHoveron `json:"hoveron,omitempty"`
     
     // Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count`, `probability`, `category`, `categorycount`, `colorcount` and `bandcolorcount`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-    Hovertemplate string `json:"hovertemplate,omitempty"`
+    Hovertemplate String `json:"hovertemplate,omitempty"`
     
     // Labelfont <no value> Sets the font for the `dimension` labels.
     Labelfont *ParcatsLabelfont `json:"labelfont,omitempty"` // object
@@ -3806,10 +3806,10 @@ type Parcats struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Sortpaths enumerated Sets the path sorting algorithm. If `forward`, sort paths based on dimension categories from left to right. If `backward`, sort paths based on dimensions categories from right to left.
     Sortpaths ParcatsSortpaths `json:"sortpaths,omitempty"`
@@ -3821,7 +3821,7 @@ type Parcats struct {
     // Transforms <no value> <no value>
     Transforms *ParcatsTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3854,7 +3854,7 @@ type Parcoords struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dimensions <no value> <no value>
     Dimensions *ParcoordsDimensions `json:"dimensions,omitempty"` // object
@@ -3864,7 +3864,7 @@ type Parcoords struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Labelangle angle Sets the angle of the labels with respect to the horizontal. For example, a `tickangle` of -90 draws the labels vertically. Tilted labels with *labelangle* may be positioned better inside margins when `labelposition` is set to *bottom*.
     Labelangle float64 `json:"labelangle,omitempty"`
@@ -3880,10 +3880,10 @@ type Parcoords struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Rangefont <no value> Sets the font for the `dimension` range values.
     Rangefont *ParcoordsRangefont `json:"rangefont,omitempty"` // object
@@ -3894,7 +3894,7 @@ type Parcoords struct {
     // Transforms <no value> <no value>
     Transforms *ParcoordsTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -3926,13 +3926,13 @@ type Pie struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Automargin boolean Determines whether outside text labels can push the margins.
-    Automargin bool `json:"automargin,omitempty"`
+    Automargin Bool `json:"automargin,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Direction enumerated Specifies the direction at which succeeding sectors follow one another.
     Direction PieDirection `json:"direction,omitempty"`
@@ -3949,7 +3949,7 @@ type Pie struct {
     Hoverinfo PieHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *PieHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -3957,19 +3957,19 @@ type Pie struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextfont <no value> Sets the font used for `textinfo` lying inside the sector.
     Insidetextfont *PieInsidetextfont `json:"insidetextfont,omitempty"` // object
@@ -3983,10 +3983,10 @@ type Pie struct {
     Labels interface{} `json:"labels,omitempty"`
     
     // Labelssrc string Sets the source reference on Chart Studio Cloud for  labels .
-    Labelssrc string `json:"labelssrc,omitempty"`
+    Labelssrc String `json:"labelssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *PieMarker `json:"marker,omitempty"` // object
@@ -3994,10 +3994,10 @@ type Pie struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4008,19 +4008,19 @@ type Pie struct {
     Pull interface{} `json:"pull,omitempty"`
     
     // Pullsrc string Sets the source reference on Chart Studio Cloud for  pull .
-    Pullsrc string `json:"pullsrc,omitempty"`
+    Pullsrc String `json:"pullsrc,omitempty"`
     
     // Rotation number Instead of the first slice starting at 12 o'clock, rotate to some other angle.
     Rotation float64 `json:"rotation,omitempty"`
     
     // Scalegroup string If there are multiple pie charts that should be sized according to their totals, link them by providing a non-empty group id here shared by every trace in the same group.
-    Scalegroup string `json:"scalegroup,omitempty"`
+    Scalegroup String `json:"scalegroup,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Sort boolean Determines whether or not the sectors are reordered from largest to smallest.
-    Sort bool `json:"sort,omitempty"`
+    Sort Bool `json:"sort,omitempty"`
     
     // Stream <no value> <no value>
     Stream *PieStream `json:"stream,omitempty"` // object
@@ -4036,23 +4036,23 @@ type Pie struct {
     Textposition PieTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `percent` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Title <no value> <no value>
     Title *PieTitle `json:"title,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *PieTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4061,7 +4061,7 @@ type Pie struct {
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible PieVisible `json:"visible,omitempty"`
@@ -4091,13 +4091,13 @@ type Pointcloud struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo PointcloudHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *PointcloudHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4105,16 +4105,16 @@ type Pointcloud struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Indices data_array A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
     Indices interface{} `json:"indices,omitempty"`
     
     // Indicessrc string Sets the source reference on Chart Studio Cloud for  indices .
-    Indicessrc string `json:"indicessrc,omitempty"`
+    Indicessrc String `json:"indicessrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *PointcloudMarker `json:"marker,omitempty"` // object
@@ -4122,16 +4122,16 @@ type Pointcloud struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *PointcloudStream `json:"stream,omitempty"` // object
@@ -4139,10 +4139,10 @@ type Pointcloud struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4154,37 +4154,37 @@ type Pointcloud struct {
     X interface{} `json:"x,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xbounds data_array Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
     Xbounds interface{} `json:"xbounds,omitempty"`
     
     // Xboundssrc string Sets the source reference on Chart Studio Cloud for  xbounds .
-    Xboundssrc string `json:"xboundssrc,omitempty"`
+    Xboundssrc String `json:"xboundssrc,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Xy data_array Faster alternative to specifying `x` and `y` separately. If supplied, it must be a typed `Float32Array` array that represents points such that `xy[i * 2] = x[i]` and `xy[i * 2 + 1] = y[i]`
     Xy interface{} `json:"xy,omitempty"`
     
     // Xysrc string Sets the source reference on Chart Studio Cloud for  xy .
-    Xysrc string `json:"xysrc,omitempty"`
+    Xysrc String `json:"xysrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ybounds data_array Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
     Ybounds interface{} `json:"ybounds,omitempty"`
     
     // Yboundssrc string Sets the source reference on Chart Studio Cloud for  ybounds .
-    Yboundssrc string `json:"yboundssrc,omitempty"`
+    Yboundssrc String `json:"yboundssrc,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -4214,7 +4214,7 @@ type Sankey struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Domain <no value> <no value>
     Domain *SankeyDomain `json:"domain,omitempty"` // object
@@ -4227,7 +4227,7 @@ type Sankey struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Link <no value> The links of the Sankey plot.
     Link *SankeyLink `json:"link,omitempty"` // object
@@ -4235,10 +4235,10 @@ type Sankey struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Node <no value> The nodes of the Sankey plot.
     Node *SankeyNode `json:"node,omitempty"` // object
@@ -4253,16 +4253,16 @@ type Sankey struct {
     // Textfont <no value> Sets the font for node labels
     Textfont *SankeyTextfont `json:"textfont,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Valueformat string Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Valueformat string `json:"valueformat,omitempty"`
+    Valueformat String `json:"valueformat,omitempty"`
     
     // Valuesuffix string Adds a unit to follow the value in the hover tooltip. Add a space if a separation is necessary from the value.
-    Valuesuffix string `json:"valuesuffix,omitempty"`
+    Valuesuffix String `json:"valuesuffix,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible SankeyVisible `json:"visible,omitempty"`
@@ -4289,16 +4289,16 @@ type Scatter struct {
     Type TraceType `json:"type,omitempty"`
     
     // Cliponaxis boolean Determines whether or not markers and text nodes are clipped about the subplot axes. To show markers and text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -4314,7 +4314,7 @@ type Scatter struct {
     Fill ScatterFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Groupnorm enumerated Only relevant when `stackgroup` is used, and only the first `groupnorm` found in the `stackgroup` will be used - including if `visible` is *legendonly* but not if it is `false`. Sets the normalization for the sum of this `stackgroup`. With *fraction*, the value of each trace at each location is divided by the sum of all trace values at that location. *percent* is the same but multiplied by 100 to show percentages. If there are multiple subplots, or multiple `stackgroup`s on one subplot, each will be normalized within its own set.
     Groupnorm ScatterGroupnorm `json:"groupnorm,omitempty"`
@@ -4323,7 +4323,7 @@ type Scatter struct {
     Hoverinfo ScatterHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScatterHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4334,22 +4334,22 @@ type Scatter struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterLine `json:"line,omitempty"` // object
@@ -4359,13 +4359,13 @@ type Scatter struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScatterMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4377,7 +4377,7 @@ type Scatter struct {
     R interface{} `json:"r,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *ScatterSelected `json:"selected,omitempty"` // object
@@ -4385,13 +4385,13 @@ type Scatter struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stackgaps enumerated Only relevant when `stackgroup` is used, and only the first `stackgaps` found in the `stackgroup` will be used - including if `visible` is *legendonly* but not if it is `false`. Determines how we handle locations at which other traces in this group have data but this one does not. With *infer zero* we insert a zero at these locations. With *interpolate* we linearly interpolate between existing values, and extrapolate a constant beyond the existing values.
     Stackgaps ScatterStackgaps `json:"stackgaps,omitempty"`
     
     // Stackgroup string Set several scatter traces (on the same subplot) to the same stackgroup in order to add their y values (or their x values if `orientation` is *h*). If blank or omitted this trace will not be stacked. Stacking also turns `fill` on by default, using *tonexty* (*tonextx*) if `orientation` is *h* (*v*) and sets the default `mode` to *lines* irrespective of point count. You can only stack on a numeric (linear or log) axis. Traces in a `stackgroup` will only fill to (or be filled to) other traces in the same group. With multiple `stackgroup`s or some traces stacked and some not, if fill-linked traces are not already consecutive, the later ones will be pushed down in the drawing order.
-    Stackgroup string `json:"stackgroup,omitempty"`
+    Stackgroup String `json:"stackgroup,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScatterStream `json:"stream,omitempty"` // object
@@ -4407,24 +4407,24 @@ type Scatter struct {
     Textposition ScatterTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. 
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScatterTransforms `json:"transforms,omitempty"` // object
     // Tsrc string Sets the source reference on Chart Studio Cloud for  t .
-    Tsrc string `json:"tsrc,omitempty"`
+    Tsrc String `json:"tsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4441,13 +4441,13 @@ type Scatter struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar ScatterXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -4456,13 +4456,13 @@ type Scatter struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar ScatterYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -4486,13 +4486,13 @@ type Scatter3d struct {
     Type TraceType `json:"type,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Error_x <no value> <no value>
     Error_x *Scatter3dErrorX `json:"error_x,omitempty"` // object
@@ -4504,7 +4504,7 @@ type Scatter3d struct {
     Hoverinfo Scatter3dHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *Scatter3dHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4512,22 +4512,22 @@ type Scatter3d struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *Scatter3dLine `json:"line,omitempty"` // object
@@ -4537,13 +4537,13 @@ type Scatter3d struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode Scatter3dMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4551,10 +4551,10 @@ type Scatter3d struct {
     // Projection <no value> <no value>
     Projection *Scatter3dProjection `json:"projection,omitempty"` // object
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *Scatter3dStream `json:"stream,omitempty"` // object
@@ -4562,7 +4562,7 @@ type Scatter3d struct {
     Surfaceaxis Scatter3dSurfaceaxis `json:"surfaceaxis,omitempty"`
     
     // Surfacecolor color Sets the surface fill color.
-    Surfacecolor string `json:"surfacecolor,omitempty"`
+    Surfacecolor String `json:"surfacecolor,omitempty"`
     
     // Text string Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
@@ -4573,21 +4573,21 @@ type Scatter3d struct {
     Textposition Scatter3dTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. 
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *Scatter3dTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4602,7 +4602,7 @@ type Scatter3d struct {
     Xcalendar Scatter3dXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -4611,7 +4611,7 @@ type Scatter3d struct {
     Ycalendar Scatter3dYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the z coordinates.
     Z interface{} `json:"z,omitempty"`
@@ -4620,7 +4620,7 @@ type Scatter3d struct {
     Zcalendar Scatter3dZcalendar `json:"zcalendar,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -4647,37 +4647,37 @@ type Scattercarpet struct {
     A interface{} `json:"a,omitempty"`
     
     // Asrc string Sets the source reference on Chart Studio Cloud for  a .
-    Asrc string `json:"asrc,omitempty"`
+    Asrc String `json:"asrc,omitempty"`
     
     // B data_array Sets the b-axis coordinates.
     B interface{} `json:"b,omitempty"`
     
     // Bsrc string Sets the source reference on Chart Studio Cloud for  b .
-    Bsrc string `json:"bsrc,omitempty"`
+    Bsrc String `json:"bsrc,omitempty"`
     
     // Carpet string An identifier for this carpet, so that `scattercarpet` and `contourcarpet` traces can specify a carpet plot on which they lie
-    Carpet string `json:"carpet,omitempty"`
+    Carpet String `json:"carpet,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Fill enumerated Sets the area to fill with a solid color. Use with `fillcolor` if not *none*. scatterternary has a subset of the options available to scatter. *toself* connects the endpoints of the trace (or each segment of the trace if it has gaps) into a closed shape. *tonext* fills the space between two traces if one completely encloses the other (eg consecutive contour lines), and behaves like *toself* if there is no trace before it. *tonext* should not be used if one trace does not enclose the other.
     Fill ScattercarpetFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScattercarpetHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScattercarpetHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4688,22 +4688,22 @@ type Scattercarpet struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (a,b) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b). To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScattercarpetLine `json:"line,omitempty"` // object
@@ -4713,13 +4713,13 @@ type Scattercarpet struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScattercarpetMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4730,7 +4730,7 @@ type Scattercarpet struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScattercarpetStream `json:"stream,omitempty"` // object
@@ -4743,21 +4743,21 @@ type Scattercarpet struct {
     Textposition ScattercarpetTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScattercarpetTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4768,10 +4768,10 @@ type Scattercarpet struct {
     Visible ScattercarpetVisible `json:"visible,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
 
 }
@@ -4795,25 +4795,25 @@ type Scattergeo struct {
     Type TraceType `json:"type,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Featureidkey string Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Only has an effect when `geojson` is set. Support nested property, for example *properties.name*.
-    Featureidkey string `json:"featureidkey,omitempty"`
+    Featureidkey String `json:"featureidkey,omitempty"`
     
     // Fill enumerated Sets the area to fill with a solid color. Use with `fillcolor` if not *none*. *toself* connects the endpoints of the trace (or each segment of the trace if it has gaps) into a closed shape.
     Fill ScattergeoFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Geo subplotid Sets a reference between this trace's geospatial coordinates and a geographic map. If *geo* (the default value), the geospatial coordinates refer to `layout.geo`. If *geo2*, the geospatial coordinates refer to `layout.geo2`, and so on.
-    Geo string `json:"geo,omitempty"`
+    Geo String `json:"geo,omitempty"`
     
     // Geojson any Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
     Geojson interface{} `json:"geojson,omitempty"`
@@ -4822,7 +4822,7 @@ type Scattergeo struct {
     Hoverinfo ScattergeoHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScattergeoHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4830,28 +4830,28 @@ type Scattergeo struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (lon,lat) pair or item in `locations`. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) or `locations` coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Lat data_array Sets the latitude coordinates (in degrees North).
     Lat interface{} `json:"lat,omitempty"`
     
     // Latsrc string Sets the source reference on Chart Studio Cloud for  lat .
-    Latsrc string `json:"latsrc,omitempty"`
+    Latsrc String `json:"latsrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScattergeoLine `json:"line,omitempty"` // object
@@ -4862,13 +4862,13 @@ type Scattergeo struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Lon data_array Sets the longitude coordinates (in degrees East).
     Lon interface{} `json:"lon,omitempty"`
     
     // Lonsrc string Sets the source reference on Chart Studio Cloud for  lon .
-    Lonsrc string `json:"lonsrc,omitempty"`
+    Lonsrc String `json:"lonsrc,omitempty"`
     
     // Marker <no value> <no value>
     Marker *ScattergeoMarker `json:"marker,omitempty"` // object
@@ -4876,13 +4876,13 @@ type Scattergeo struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScattergeoMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4893,7 +4893,7 @@ type Scattergeo struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScattergeoStream `json:"stream,omitempty"` // object
@@ -4906,21 +4906,21 @@ type Scattergeo struct {
     Textposition ScattergeoTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon`, `location` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScattergeoTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -4952,13 +4952,13 @@ type Scattergl struct {
     Type TraceType `json:"type,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dx number Sets the x coordinate step. See `x0` for more info.
     Dx float64 `json:"dx,omitempty"`
@@ -4974,13 +4974,13 @@ type Scattergl struct {
     Fill ScatterglFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScatterglHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScatterglHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -4988,22 +4988,22 @@ type Scattergl struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterglLine `json:"line,omitempty"` // object
@@ -5013,13 +5013,13 @@ type Scattergl struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace.
     Mode ScatterglMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5030,7 +5030,7 @@ type Scattergl struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScatterglStream `json:"stream,omitempty"` // object
@@ -5043,21 +5043,21 @@ type Scattergl struct {
     Textposition ScatterglTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. 
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScatterglTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5074,13 +5074,13 @@ type Scattergl struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xcalendar enumerated Sets the calendar system to use with `x` date data.
     Xcalendar ScatterglXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -5089,13 +5089,13 @@ type Scattergl struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ycalendar enumerated Sets the calendar system to use with `y` date data.
     Ycalendar ScatterglYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -5119,28 +5119,28 @@ type Scattermapbox struct {
     Type TraceType `json:"type,omitempty"`
     
     // Below string Determines if this scattermapbox trace's layers are to be inserted before the layer with the specified ID. By default, scattermapbox layers are inserted above all the base layers. To place the scattermapbox layers above every other layer, set `below` to *''*.
-    Below string `json:"below,omitempty"`
+    Below String `json:"below,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Fill enumerated Sets the area to fill with a solid color. Use with `fillcolor` if not *none*. *toself* connects the endpoints of the trace (or each segment of the trace if it has gaps) into a closed shape.
     Fill ScattermapboxFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScattermapboxHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScattermapboxHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5148,28 +5148,28 @@ type Scattermapbox struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Lat data_array Sets the latitude coordinates (in degrees North).
     Lat interface{} `json:"lat,omitempty"`
     
     // Latsrc string Sets the source reference on Chart Studio Cloud for  lat .
-    Latsrc string `json:"latsrc,omitempty"`
+    Latsrc String `json:"latsrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScattermapboxLine `json:"line,omitempty"` // object
@@ -5177,7 +5177,7 @@ type Scattermapbox struct {
     Lon interface{} `json:"lon,omitempty"`
     
     // Lonsrc string Sets the source reference on Chart Studio Cloud for  lon .
-    Lonsrc string `json:"lonsrc,omitempty"`
+    Lonsrc String `json:"lonsrc,omitempty"`
     
     // Marker <no value> <no value>
     Marker *ScattermapboxMarker `json:"marker,omitempty"` // object
@@ -5185,13 +5185,13 @@ type Scattermapbox struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover.
     Mode ScattermapboxMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5202,12 +5202,12 @@ type Scattermapbox struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScattermapboxStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
@@ -5218,18 +5218,18 @@ type Scattermapbox struct {
     Textposition ScattermapboxTextposition `json:"textposition,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScattermapboxTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5261,16 +5261,16 @@ type Scatterpolar struct {
     Type TraceType `json:"type,omitempty"`
     
     // Cliponaxis boolean Determines whether or not markers and text nodes are clipped about the subplot axes. To show markers and text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dr number Sets the r coordinate step.
     Dr float64 `json:"dr,omitempty"`
@@ -5282,13 +5282,13 @@ type Scatterpolar struct {
     Fill ScatterpolarFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScatterpolarHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScatterpolarHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5299,22 +5299,22 @@ type Scatterpolar struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterpolarLine `json:"line,omitempty"` // object
@@ -5324,13 +5324,13 @@ type Scatterpolar struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScatterpolarMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5342,7 +5342,7 @@ type Scatterpolar struct {
     R0 interface{} `json:"r0,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *ScatterpolarSelected `json:"selected,omitempty"` // object
@@ -5350,12 +5350,12 @@ type Scatterpolar struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScatterpolarStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a polar subplot. If *polar* (the default value), the data refer to `layout.polar`. If *polar2*, the data refer to `layout.polar2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
@@ -5366,16 +5366,16 @@ type Scatterpolar struct {
     Textposition ScatterpolarTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `r`, `theta` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Theta data_array Sets the angular coordinates
     Theta interface{} `json:"theta,omitempty"`
@@ -5384,7 +5384,7 @@ type Scatterpolar struct {
     Theta0 interface{} `json:"theta0,omitempty"`
     
     // Thetasrc string Sets the source reference on Chart Studio Cloud for  theta .
-    Thetasrc string `json:"thetasrc,omitempty"`
+    Thetasrc String `json:"thetasrc,omitempty"`
     
     // Thetaunit enumerated Sets the unit of input *theta* values. Has an effect only when on *linear* angular axes.
     Thetaunit ScatterpolarThetaunit `json:"thetaunit,omitempty"`
@@ -5392,7 +5392,7 @@ type Scatterpolar struct {
     // Transforms <no value> <no value>
     Transforms *ScatterpolarTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5424,13 +5424,13 @@ type Scatterpolargl struct {
     Type TraceType `json:"type,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Dr number Sets the r coordinate step.
     Dr float64 `json:"dr,omitempty"`
@@ -5442,13 +5442,13 @@ type Scatterpolargl struct {
     Fill ScatterpolarglFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScatterpolarglHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScatterpolarglHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5456,22 +5456,22 @@ type Scatterpolargl struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterpolarglLine `json:"line,omitempty"` // object
@@ -5481,13 +5481,13 @@ type Scatterpolargl struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScatterpolarglMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5499,7 +5499,7 @@ type Scatterpolargl struct {
     R0 interface{} `json:"r0,omitempty"`
     
     // Rsrc string Sets the source reference on Chart Studio Cloud for  r .
-    Rsrc string `json:"rsrc,omitempty"`
+    Rsrc String `json:"rsrc,omitempty"`
     
     // Selected <no value> <no value>
     Selected *ScatterpolarglSelected `json:"selected,omitempty"` // object
@@ -5507,12 +5507,12 @@ type Scatterpolargl struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScatterpolarglStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a polar subplot. If *polar* (the default value), the data refer to `layout.polar`. If *polar2*, the data refer to `layout.polar2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Text string Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
@@ -5523,16 +5523,16 @@ type Scatterpolargl struct {
     Textposition ScatterpolarglTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `r`, `theta` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Theta data_array Sets the angular coordinates
     Theta interface{} `json:"theta,omitempty"`
@@ -5541,7 +5541,7 @@ type Scatterpolargl struct {
     Theta0 interface{} `json:"theta0,omitempty"`
     
     // Thetasrc string Sets the source reference on Chart Studio Cloud for  theta .
-    Thetasrc string `json:"thetasrc,omitempty"`
+    Thetasrc String `json:"thetasrc,omitempty"`
     
     // Thetaunit enumerated Sets the unit of input *theta* values. Has an effect only when on *linear* angular axes.
     Thetaunit ScatterpolarglThetaunit `json:"thetaunit,omitempty"`
@@ -5549,7 +5549,7 @@ type Scatterpolargl struct {
     // Transforms <no value> <no value>
     Transforms *ScatterpolarglTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5584,43 +5584,43 @@ type Scatterternary struct {
     A interface{} `json:"a,omitempty"`
     
     // Asrc string Sets the source reference on Chart Studio Cloud for  a .
-    Asrc string `json:"asrc,omitempty"`
+    Asrc String `json:"asrc,omitempty"`
     
     // B data_array Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
     B interface{} `json:"b,omitempty"`
     
     // Bsrc string Sets the source reference on Chart Studio Cloud for  b .
-    Bsrc string `json:"bsrc,omitempty"`
+    Bsrc String `json:"bsrc,omitempty"`
     
     // C data_array Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
     C interface{} `json:"c,omitempty"`
     
     // Cliponaxis boolean Determines whether or not markers and text nodes are clipped about the subplot axes. To show markers and text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Csrc string Sets the source reference on Chart Studio Cloud for  c .
-    Csrc string `json:"csrc,omitempty"`
+    Csrc String `json:"csrc,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Fill enumerated Sets the area to fill with a solid color. Use with `fillcolor` if not *none*. scatterternary has a subset of the options available to scatter. *toself* connects the endpoints of the trace (or each segment of the trace if it has gaps) into a closed shape. *tonext* fills the space between two traces if one completely encloses the other (eg consecutive contour lines), and behaves like *toself* if there is no trace before it. *tonext* should not be used if one trace does not enclose the other.
     Fill ScatterternaryFill `json:"fill,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ScatterternaryHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ScatterternaryHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5631,22 +5631,22 @@ type Scatterternary struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (a,b,c) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b,c). To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterternaryLine `json:"line,omitempty"` // object
@@ -5656,13 +5656,13 @@ type Scatterternary struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Mode flaglist Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
     Mode ScatterternaryMode `json:"mode,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5673,12 +5673,12 @@ type Scatterternary struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *ScatterternaryStream `json:"stream,omitempty"` // object
     // Subplot subplotid Sets a reference between this trace's data coordinates and a ternary subplot. If *ternary* (the default value), the data refer to `layout.ternary`. If *ternary2*, the data refer to `layout.ternary2`, and so on.
-    Subplot string `json:"subplot,omitempty"`
+    Subplot String `json:"subplot,omitempty"`
     
     // Sum number The number each triplet should sum to, if only two of `a`, `b`, and `c` are provided. This overrides `ternary<i>.sum` to normalize this specific trace, but does not affect the values displayed on the axes. 0 (or missing) means to use ternary<i>.sum
     Sum float64 `json:"sum,omitempty"`
@@ -5692,21 +5692,21 @@ type Scatterternary struct {
     Textposition ScatterternaryTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b`, `c` and `text`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ScatterternaryTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5741,7 +5741,7 @@ type Splom struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Diagonal <no value> <no value>
     Diagonal *SplomDiagonal `json:"diagonal,omitempty"` // object
@@ -5751,7 +5751,7 @@ type Splom struct {
     Hoverinfo SplomHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *SplomHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5759,22 +5759,22 @@ type Splom struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Marker <no value> <no value>
     Marker *SplomMarker `json:"marker,omitempty"` // object
@@ -5782,10 +5782,10 @@ type Splom struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5796,13 +5796,13 @@ type Splom struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showlowerhalf boolean Determines whether or not subplots on the lower half from the diagonal are displayed.
-    Showlowerhalf bool `json:"showlowerhalf,omitempty"`
+    Showlowerhalf Bool `json:"showlowerhalf,omitempty"`
     
     // Showupperhalf boolean Determines whether or not subplots on the upper half from the diagonal are displayed.
-    Showupperhalf bool `json:"showupperhalf,omitempty"`
+    Showupperhalf Bool `json:"showupperhalf,omitempty"`
     
     // Stream <no value> <no value>
     Stream *SplomStream `json:"stream,omitempty"` // object
@@ -5810,12 +5810,12 @@ type Splom struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *SplomTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -5853,10 +5853,10 @@ type Streamtube struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here u/v/w norm) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as u/v/w norm and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -5868,7 +5868,7 @@ type Streamtube struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *StreamtubeColorbar `json:"colorbar,omitempty"` // object
@@ -5879,13 +5879,13 @@ type Streamtube struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo StreamtubeHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *StreamtubeHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -5893,19 +5893,19 @@ type Streamtube struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
-    Hovertext string `json:"hovertext,omitempty"`
+    Hovertext String `json:"hovertext,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *StreamtubeLighting `json:"lighting,omitempty"` // object
@@ -5918,25 +5918,25 @@ type Streamtube struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Sizeref number The scaling factor for the streamtubes. The default is 1, which avoids two max divergence tubes from touching at adjacent starting positions.
     Sizeref float64 `json:"sizeref,omitempty"`
@@ -5946,19 +5946,19 @@ type Streamtube struct {
     // Stream <no value> <no value>
     Stream *StreamtubeStream `json:"stream,omitempty"` // object
     // Text string Sets a text element associated with this trace. If trace `hoverinfo` contains a *text* flag, this text element will be seen in all hover labels. Note that streamtube traces do not support array `text` values.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
     // U data_array Sets the x components of the vector field.
     U interface{} `json:"u,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Usrc string Sets the source reference on Chart Studio Cloud for  u .
-    Usrc string `json:"usrc,omitempty"`
+    Usrc String `json:"usrc,omitempty"`
     
     // V data_array Sets the y components of the vector field.
     V interface{} `json:"v,omitempty"`
@@ -5967,31 +5967,31 @@ type Streamtube struct {
     Visible StreamtubeVisible `json:"visible,omitempty"`
     
     // Vsrc string Sets the source reference on Chart Studio Cloud for  v .
-    Vsrc string `json:"vsrc,omitempty"`
+    Vsrc String `json:"vsrc,omitempty"`
     
     // W data_array Sets the z components of the vector field.
     W interface{} `json:"w,omitempty"`
     
     // Wsrc string Sets the source reference on Chart Studio Cloud for  w .
-    Wsrc string `json:"wsrc,omitempty"`
+    Wsrc String `json:"wsrc,omitempty"`
     
     // X data_array Sets the x coordinates of the vector field.
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates of the vector field.
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the z coordinates of the vector field.
     Z interface{} `json:"z,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -6024,7 +6024,7 @@ type Sunburst struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Domain <no value> <no value>
     Domain *SunburstDomain `json:"domain,omitempty"` // object
@@ -6032,7 +6032,7 @@ type Sunburst struct {
     Hoverinfo SunburstHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *SunburstHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6040,19 +6040,19 @@ type Sunburst struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextfont <no value> Sets the font used for `textinfo` lying inside the sector.
     Insidetextfont *SunburstInsidetextfont `json:"insidetextfont,omitempty"` // object
@@ -6063,7 +6063,7 @@ type Sunburst struct {
     Labels interface{} `json:"labels,omitempty"`
     
     // Labelssrc string Sets the source reference on Chart Studio Cloud for  labels .
-    Labelssrc string `json:"labelssrc,omitempty"`
+    Labelssrc String `json:"labelssrc,omitempty"`
     
     // Leaf <no value> <no value>
     Leaf *SunburstLeaf `json:"leaf,omitempty"` // object
@@ -6079,10 +6079,10 @@ type Sunburst struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6093,7 +6093,7 @@ type Sunburst struct {
     Parents interface{} `json:"parents,omitempty"`
     
     // Parentssrc string Sets the source reference on Chart Studio Cloud for  parents .
-    Parentssrc string `json:"parentssrc,omitempty"`
+    Parentssrc String `json:"parentssrc,omitempty"`
     
     // Stream <no value> <no value>
     Stream *SunburstStream `json:"stream,omitempty"` // object
@@ -6106,18 +6106,18 @@ type Sunburst struct {
     Textinfo SunburstTextinfo `json:"textinfo,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *SunburstTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6126,7 +6126,7 @@ type Sunburst struct {
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible SunburstVisible `json:"visible,omitempty"`
@@ -6155,10 +6155,10 @@ type Surface struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here z or surfacecolor) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as z or surfacecolor and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6170,7 +6170,7 @@ type Surface struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *SurfaceColorbar `json:"colorbar,omitempty"` // object
@@ -6178,7 +6178,7 @@ type Surface struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Connectgaps boolean Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data are filled in.
-    Connectgaps bool `json:"connectgaps,omitempty"`
+    Connectgaps Bool `json:"connectgaps,omitempty"`
     
     // Contours <no value> <no value>
     Contours *SurfaceContours `json:"contours,omitempty"` // object
@@ -6186,16 +6186,16 @@ type Surface struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hidesurface boolean Determines whether or not a surface is drawn. For example, set `hidesurface` to *false* `contours.x.show` to *true* and `contours.y.show` to *true* to draw a wire frame plot.
-    Hidesurface bool `json:"hidesurface,omitempty"`
+    Hidesurface Bool `json:"hidesurface,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo SurfaceHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *SurfaceHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6203,22 +6203,22 @@ type Surface struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *SurfaceLighting `json:"lighting,omitempty"` // object
@@ -6228,10 +6228,10 @@ type Surface struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6240,16 +6240,16 @@ type Surface struct {
     Opacityscale interface{} `json:"opacityscale,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Stream <no value> <no value>
     Stream *SurfaceStream `json:"stream,omitempty"` // object
@@ -6257,16 +6257,16 @@ type Surface struct {
     Surfacecolor interface{} `json:"surfacecolor,omitempty"`
     
     // Surfacecolorsrc string Sets the source reference on Chart Studio Cloud for  surfacecolor .
-    Surfacecolorsrc string `json:"surfacecolorsrc,omitempty"`
+    Surfacecolorsrc String `json:"surfacecolorsrc,omitempty"`
     
     // Text string Sets the text elements associated with each z value. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6281,7 +6281,7 @@ type Surface struct {
     Xcalendar SurfaceXcalendar `json:"xcalendar,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -6290,7 +6290,7 @@ type Surface struct {
     Ycalendar SurfaceYcalendar `json:"ycalendar,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the z coordinates.
     Z interface{} `json:"z,omitempty"`
@@ -6299,7 +6299,7 @@ type Surface struct {
     Zcalendar SurfaceZcalendar `json:"zcalendar,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -6328,19 +6328,19 @@ type Table struct {
     Columnorder interface{} `json:"columnorder,omitempty"`
     
     // Columnordersrc string Sets the source reference on Chart Studio Cloud for  columnorder .
-    Columnordersrc string `json:"columnordersrc,omitempty"`
+    Columnordersrc String `json:"columnordersrc,omitempty"`
     
     // Columnwidth number The width of columns expressed as a ratio. Columns fill the available width in proportion of their specified column widths.
     Columnwidth interface{} `json:"columnwidth,omitempty"`
     
     // Columnwidthsrc string Sets the source reference on Chart Studio Cloud for  columnwidth .
-    Columnwidthsrc string `json:"columnwidthsrc,omitempty"`
+    Columnwidthsrc String `json:"columnwidthsrc,omitempty"`
     
     // Customdata data_array Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Domain <no value> <no value>
     Domain *TableDomain `json:"domain,omitempty"` // object
@@ -6350,7 +6350,7 @@ type Table struct {
     Hoverinfo TableHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *TableHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6358,21 +6358,21 @@ type Table struct {
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Stream <no value> <no value>
     Stream *TableStream `json:"stream,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6411,7 +6411,7 @@ type Treemap struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Domain <no value> <no value>
     Domain *TreemapDomain `json:"domain,omitempty"` // object
@@ -6419,7 +6419,7 @@ type Treemap struct {
     Hoverinfo TreemapHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *TreemapHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6427,19 +6427,19 @@ type Treemap struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Insidetextfont <no value> Sets the font used for `textinfo` lying inside the sector.
     Insidetextfont *TreemapInsidetextfont `json:"insidetextfont,omitempty"` // object
@@ -6447,7 +6447,7 @@ type Treemap struct {
     Labels interface{} `json:"labels,omitempty"`
     
     // Labelssrc string Sets the source reference on Chart Studio Cloud for  labels .
-    Labelssrc string `json:"labelssrc,omitempty"`
+    Labelssrc String `json:"labelssrc,omitempty"`
     
     // Level any Sets the level from which this trace hierarchy is rendered. Set `level` to `''` to start from the root node in the hierarchy. Must be an "id" if `ids` is filled in, otherwise plotly attempts to find a matching item in `labels`.
     Level interface{} `json:"level,omitempty"`
@@ -6461,10 +6461,10 @@ type Treemap struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6475,7 +6475,7 @@ type Treemap struct {
     Parents interface{} `json:"parents,omitempty"`
     
     // Parentssrc string Sets the source reference on Chart Studio Cloud for  parents .
-    Parentssrc string `json:"parentssrc,omitempty"`
+    Parentssrc String `json:"parentssrc,omitempty"`
     
     // Pathbar <no value> <no value>
     Pathbar *TreemapPathbar `json:"pathbar,omitempty"` // object
@@ -6493,20 +6493,20 @@ type Treemap struct {
     Textposition TreemapTextposition `json:"textposition,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Tiling <no value> <no value>
     Tiling *TreemapTiling `json:"tiling,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *TreemapTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6515,7 +6515,7 @@ type Treemap struct {
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible TreemapVisible `json:"visible,omitempty"`
@@ -6542,7 +6542,7 @@ type Violin struct {
     Type TraceType `json:"type,omitempty"`
     
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Bandwidth number Sets the bandwidth used to compute the kernel density estimate. By default, the bandwidth is determined by Silverman's rule of thumb.
     Bandwidth float64 `json:"bandwidth,omitempty"`
@@ -6553,16 +6553,16 @@ type Violin struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo ViolinHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *ViolinHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6573,25 +6573,25 @@ type Violin struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Jitter number Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the violins.
     Jitter float64 `json:"jitter,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Line <no value> <no value>
     Line *ViolinLine `json:"line,omitempty"` // object
@@ -6603,13 +6603,13 @@ type Violin struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover. For violin traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical. Note that the trace name is also used as a default value for attribute `scalegroup` (please see its description for details).
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6624,7 +6624,7 @@ type Violin struct {
     Points ViolinPoints `json:"points,omitempty"`
     
     // Scalegroup string If there are multiple violins that should be sized according to to some metric (see `scalemode`), link them by providing a non-empty group id here shared by every trace in the same group. If a violin's `width` is undefined, `scalegroup` will default to the trace's name. In this case, violins with the same names will be linked together
-    Scalegroup string `json:"scalegroup,omitempty"`
+    Scalegroup String `json:"scalegroup,omitempty"`
     
     // Scalemode enumerated Sets the metric by which the width of each violin is determined.*width* means each violin has the same (max) width*count* means the violins are scaled by the number of sample points makingup each violin.
     Scalemode ViolinScalemode `json:"scalemode,omitempty"`
@@ -6635,7 +6635,7 @@ type Violin struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Side enumerated Determines on which side of the position value the density function making up one half of a violin is plotted. Useful when comparing two violin traces under *overlay* mode, where one trace has `side` set to *positive* and the other to *negative*.
     Side ViolinSide `json:"side,omitempty"`
@@ -6652,12 +6652,12 @@ type Violin struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Transforms <no value> <no value>
     Transforms *ViolinTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6677,10 +6677,10 @@ type Violin struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y sample data or coordinates. See overview for more info.
     Y interface{} `json:"y,omitempty"`
@@ -6689,10 +6689,10 @@ type Violin struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }
@@ -6716,12 +6716,12 @@ type Volume struct {
     Type TraceType `json:"type,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Caps <no value> <no value>
     Caps *VolumeCaps `json:"caps,omitempty"` // object
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as `value` and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6733,7 +6733,7 @@ type Volume struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *VolumeColorbar `json:"colorbar,omitempty"` // object
@@ -6746,16 +6746,16 @@ type Volume struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Flatshading boolean Determines whether or not normal smoothing is applied to the meshes, creating meshes with an angular, low-poly look via flat reflections.
-    Flatshading bool `json:"flatshading,omitempty"`
+    Flatshading Bool `json:"flatshading,omitempty"`
     
     // Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo VolumeHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *VolumeHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6763,19 +6763,19 @@ type Volume struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Same as `text`.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Isomax number Sets the maximum boundary for iso-surface plot.
     Isomax float64 `json:"isomax,omitempty"`
@@ -6784,7 +6784,7 @@ type Volume struct {
     Isomin float64 `json:"isomin,omitempty"`
     
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Lighting <no value> <no value>
     Lighting *VolumeLighting `json:"lighting,omitempty"` // object
@@ -6794,10 +6794,10 @@ type Volume struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Opacity number Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6806,16 +6806,16 @@ type Volume struct {
     Opacityscale interface{} `json:"opacityscale,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Scene subplotid Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-    Scene string `json:"scene,omitempty"`
+    Scene String `json:"scene,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Slices <no value> <no value>
     Slices *VolumeSlices `json:"slices,omitempty"` // object
@@ -6829,10 +6829,10 @@ type Volume struct {
     Text interface{} `json:"text,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -6841,7 +6841,7 @@ type Volume struct {
     Value interface{} `json:"value,omitempty"`
     
     // Valuesrc string Sets the source reference on Chart Studio Cloud for  value .
-    Valuesrc string `json:"valuesrc,omitempty"`
+    Valuesrc String `json:"valuesrc,omitempty"`
     
     // Visible enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
     Visible VolumeVisible `json:"visible,omitempty"`
@@ -6850,19 +6850,19 @@ type Volume struct {
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the Y coordinates of the vertices on Y axis.
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the Z coordinates of the vertices on Z axis.
     Z interface{} `json:"z,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 
 }
@@ -6886,13 +6886,13 @@ type Waterfall struct {
     Type TraceType `json:"type,omitempty"`
     
     // Alignmentgroup string Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-    Alignmentgroup string `json:"alignmentgroup,omitempty"`
+    Alignmentgroup String `json:"alignmentgroup,omitempty"`
     
     // Base number Sets where the bar base is drawn (in position axis units).
     Base float64 `json:"base,omitempty"`
     
     // Cliponaxis boolean Determines whether the text nodes are clipped about the subplot axes. To show the text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-    Cliponaxis bool `json:"cliponaxis,omitempty"`
+    Cliponaxis Bool `json:"cliponaxis,omitempty"`
     
     // Connector <no value> <no value>
     Connector *WaterfallConnector `json:"connector,omitempty"` // object
@@ -6903,7 +6903,7 @@ type Waterfall struct {
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Decreasing <no value> <no value>
     Decreasing *WaterfallDecreasing `json:"decreasing,omitempty"` // object
@@ -6917,7 +6917,7 @@ type Waterfall struct {
     Hoverinfo WaterfallHoverinfo `json:"hoverinfo,omitempty"`
     
     // Hoverinfosrc string Sets the source reference on Chart Studio Cloud for  hoverinfo .
-    Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+    Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
     
     // Hoverlabel <no value> <no value>
     Hoverlabel *WaterfallHoverlabel `json:"hoverlabel,omitempty"` // object
@@ -6925,19 +6925,19 @@ type Waterfall struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Hovertext string Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
     Hovertext interface{} `json:"hovertext,omitempty"`
     
     // Hovertextsrc string Sets the source reference on Chart Studio Cloud for  hovertext .
-    Hovertextsrc string `json:"hovertextsrc,omitempty"`
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
     
     // Ids data_array Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
     Ids interface{} `json:"ids,omitempty"`
     
     // Idssrc string Sets the source reference on Chart Studio Cloud for  ids .
-    Idssrc string `json:"idssrc,omitempty"`
+    Idssrc String `json:"idssrc,omitempty"`
     
     // Increasing <no value> <no value>
     Increasing *WaterfallIncreasing `json:"increasing,omitempty"` // object
@@ -6947,31 +6947,31 @@ type Waterfall struct {
     // Insidetextfont <no value> Sets the font used for `text` lying inside the bar.
     Insidetextfont *WaterfallInsidetextfont `json:"insidetextfont,omitempty"` // object
     // Legendgroup string Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-    Legendgroup string `json:"legendgroup,omitempty"`
+    Legendgroup String `json:"legendgroup,omitempty"`
     
     // Measure data_array An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
     Measure interface{} `json:"measure,omitempty"`
     
     // Measuresrc string Sets the source reference on Chart Studio Cloud for  measure .
-    Measuresrc string `json:"measuresrc,omitempty"`
+    Measuresrc String `json:"measuresrc,omitempty"`
     
     // Meta any Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Name string Sets the trace name. The trace name appear as the legend item and on hover.
-    Name string `json:"name,omitempty"`
+    Name String `json:"name,omitempty"`
     
     // Offset number Shifts the position where the bar is drawn (in position axis units). In *group* barmode, traces that set *offset* will be excluded and drawn in *overlay* mode instead.
     Offset interface{} `json:"offset,omitempty"`
     
     // Offsetgroup string Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-    Offsetgroup string `json:"offsetgroup,omitempty"`
+    Offsetgroup String `json:"offsetgroup,omitempty"`
     
     // Offsetsrc string Sets the source reference on Chart Studio Cloud for  offset .
-    Offsetsrc string `json:"offsetsrc,omitempty"`
+    Offsetsrc String `json:"offsetsrc,omitempty"`
     
     // Opacity number Sets the opacity of the trace.
     Opacity float64 `json:"opacity,omitempty"`
@@ -6985,7 +6985,7 @@ type Waterfall struct {
     Selectedpoints interface{} `json:"selectedpoints,omitempty"`
     
     // Showlegend boolean Determines whether or not an item corresponding to this trace is shown in the legend.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Stream <no value> <no value>
     Stream *WaterfallStream `json:"stream,omitempty"` // object
@@ -7004,23 +7004,23 @@ type Waterfall struct {
     Textposition WaterfallTextposition `json:"textposition,omitempty"`
     
     // Textpositionsrc string Sets the source reference on Chart Studio Cloud for  textposition .
-    Textpositionsrc string `json:"textpositionsrc,omitempty"`
+    Textpositionsrc String `json:"textpositionsrc,omitempty"`
     
     // Textsrc string Sets the source reference on Chart Studio Cloud for  text .
-    Textsrc string `json:"textsrc,omitempty"`
+    Textsrc String `json:"textsrc,omitempty"`
     
     // Texttemplate string Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta`, `final` and `label`.
     Texttemplate interface{} `json:"texttemplate,omitempty"`
     
     // Texttemplatesrc string Sets the source reference on Chart Studio Cloud for  texttemplate .
-    Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+    Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
     
     // Totals <no value> <no value>
     Totals *WaterfallTotals `json:"totals,omitempty"` // object
     // Transforms <no value> <no value>
     Transforms *WaterfallTransforms `json:"transforms,omitempty"` // object
     // Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-    Uid string `json:"uid,omitempty"`
+    Uid String `json:"uid,omitempty"`
     
     // Uirevision any Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
     Uirevision interface{} `json:"uirevision,omitempty"`
@@ -7032,7 +7032,7 @@ type Waterfall struct {
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
     // X data_array Sets the x coordinates.
     X interface{} `json:"x,omitempty"`
@@ -7041,10 +7041,10 @@ type Waterfall struct {
     X0 interface{} `json:"x0,omitempty"`
     
     // Xaxis subplotid Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-    Xaxis string `json:"xaxis,omitempty"`
+    Xaxis String `json:"xaxis,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y coordinates.
     Y interface{} `json:"y,omitempty"`
@@ -7053,10 +7053,10 @@ type Waterfall struct {
     Y0 interface{} `json:"y0,omitempty"`
     
     // Yaxis subplotid Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-    Yaxis string `json:"yaxis,omitempty"`
+    Yaxis String `json:"yaxis,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 
 }

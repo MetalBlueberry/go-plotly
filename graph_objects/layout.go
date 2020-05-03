@@ -95,7 +95,7 @@ type Layout struct {
     // Annotations <no value> <no value>
     Annotations *LayoutAnnotations `json:"annotations,omitempty"` // object
     // Autosize boolean Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
-    Autosize bool `json:"autosize,omitempty"`
+    Autosize Bool `json:"autosize,omitempty"`
     
     // Bargap number Sets the gap (in plot fraction) between bars of adjacent location coordinates.
     Bargap float64 `json:"bargap,omitempty"`
@@ -144,16 +144,16 @@ type Layout struct {
     Editrevision interface{} `json:"editrevision,omitempty"`
     
     // Extendfunnelareacolors boolean If `true`, the funnelarea slice colors (whether given by `funnelareacolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-    Extendfunnelareacolors bool `json:"extendfunnelareacolors,omitempty"`
+    Extendfunnelareacolors Bool `json:"extendfunnelareacolors,omitempty"`
     
     // Extendpiecolors boolean If `true`, the pie slice colors (whether given by `piecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-    Extendpiecolors bool `json:"extendpiecolors,omitempty"`
+    Extendpiecolors Bool `json:"extendpiecolors,omitempty"`
     
     // Extendsunburstcolors boolean If `true`, the sunburst slice colors (whether given by `sunburstcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-    Extendsunburstcolors bool `json:"extendsunburstcolors,omitempty"`
+    Extendsunburstcolors Bool `json:"extendsunburstcolors,omitempty"`
     
     // Extendtreemapcolors boolean If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-    Extendtreemapcolors bool `json:"extendtreemapcolors,omitempty"`
+    Extendtreemapcolors Bool `json:"extendtreemapcolors,omitempty"`
     
     // Font <no value> Sets the global font. Note that fonts used in traces and other layout components inherit from the global font.
     Font *LayoutFont `json:"font,omitempty"` // object
@@ -180,10 +180,10 @@ type Layout struct {
     Hiddenlabels interface{} `json:"hiddenlabels,omitempty"`
     
     // Hiddenlabelssrc string Sets the source reference on Chart Studio Cloud for  hiddenlabels .
-    Hiddenlabelssrc string `json:"hiddenlabelssrc,omitempty"`
+    Hiddenlabelssrc String `json:"hiddenlabelssrc,omitempty"`
     
     // Hidesources boolean Determines whether or not a text link citing the data source is placed at the bottom-right cored of the figure. Has only an effect only on graphs that have been generated via forked graphs from the Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise).
-    Hidesources bool `json:"hidesources,omitempty"`
+    Hidesources Bool `json:"hidesources,omitempty"`
     
     // Hoverdistance integer Sets the default distance (in pixels) to look for data to add hover labels (-1 means no cutoff, 0 means no looking for data). This is only a real distance for hovering on point-like objects, like scatter points. For area-like objects (bars, scatter fills, etc) hovering is on inside the area and off outside, but these objects will not supersede hover on point-like objects in case of conflict.
     Hoverdistance int64 `json:"hoverdistance,omitempty"`
@@ -205,7 +205,7 @@ type Layout struct {
     Meta interface{} `json:"meta,omitempty"`
     
     // Metasrc string Sets the source reference on Chart Studio Cloud for  meta .
-    Metasrc string `json:"metasrc,omitempty"`
+    Metasrc String `json:"metasrc,omitempty"`
     
     // Modebar <no value> <no value>
     Modebar *LayoutModebar `json:"modebar,omitempty"` // object
@@ -215,13 +215,13 @@ type Layout struct {
     Orientation float64 `json:"orientation,omitempty"`
     
     // Paper_bgcolor color Sets the background color of the paper where the graph is drawn.
-    Paper_bgcolor string `json:"paper_bgcolor,omitempty"`
+    Paper_bgcolor String `json:"paper_bgcolor,omitempty"`
     
     // Piecolorway colorlist Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
     // Pending of type "colorlist"Piecolorway  `json:"piecolorway,omitempty"`
     
     // Plot_bgcolor color Sets the background color of the plotting area in-between x and y axes.
-    Plot_bgcolor string `json:"plot_bgcolor,omitempty"`
+    Plot_bgcolor String `json:"plot_bgcolor,omitempty"`
     
     // Polar <no value> <no value>
     Polar *LayoutPolar `json:"polar,omitempty"` // object
@@ -236,12 +236,12 @@ type Layout struct {
     Selectionrevision interface{} `json:"selectionrevision,omitempty"`
     
     // Separators string Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
-    Separators string `json:"separators,omitempty"`
+    Separators String `json:"separators,omitempty"`
     
     // Shapes <no value> <no value>
     Shapes *LayoutShapes `json:"shapes,omitempty"` // object
     // Showlegend boolean Determines whether or not a legend is drawn. Default is `true` if there is a trace to show and any of these: a) Two or more traces would by default be shown in the legend. b) One pie trace is shown in the legend. c) One trace is explicitly given with `showlegend: true`.
-    Showlegend bool `json:"showlegend,omitempty"`
+    Showlegend Bool `json:"showlegend,omitempty"`
     
     // Sliders <no value> <no value>
     Sliders *LayoutSliders `json:"sliders,omitempty"` // object

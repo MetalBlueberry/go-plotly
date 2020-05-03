@@ -7,19 +7,19 @@ type AreaHoverlabel struct {
     Align AreaHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *AreaHoverlabelFont `json:"font,omitempty"` // object
@@ -27,7 +27,7 @@ type AreaHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -38,25 +38,25 @@ type AreaMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Opacity number Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker opacity.
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Size number Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol AreaMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -67,7 +67,7 @@ type AreaStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -90,19 +90,19 @@ type BarErrorX struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_ystyle boolean <no value>
-    Copy_ystyle bool `json:"copy_ystyle,omitempty"`
+    Copy_ystyle Bool `json:"copy_ystyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -123,7 +123,7 @@ type BarErrorX struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -142,16 +142,16 @@ type BarErrorY struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -172,7 +172,7 @@ type BarErrorY struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -186,19 +186,19 @@ type BarHoverlabel struct {
     Align BarHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *BarHoverlabelFont `json:"font,omitempty"` // object
@@ -206,7 +206,7 @@ type BarHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -217,19 +217,19 @@ type BarInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -237,10 +237,10 @@ type BarInsidetextfont struct {
 type BarMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -255,7 +255,7 @@ type BarMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *BarMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -263,7 +263,7 @@ type BarMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *BarMarkerLine `json:"line,omitempty"` // object
@@ -271,13 +271,13 @@ type BarMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -288,19 +288,19 @@ type BarOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -320,7 +320,7 @@ type BarStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -331,19 +331,19 @@ type BarTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -370,19 +370,19 @@ type BarpolarHoverlabel struct {
     Align BarpolarHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *BarpolarHoverlabelFont `json:"font,omitempty"` // object
@@ -390,7 +390,7 @@ type BarpolarHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -398,10 +398,10 @@ type BarpolarHoverlabel struct {
 type BarpolarMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -416,7 +416,7 @@ type BarpolarMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *BarpolarMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -424,7 +424,7 @@ type BarpolarMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *BarpolarMarkerLine `json:"line,omitempty"` // object
@@ -432,13 +432,13 @@ type BarpolarMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -458,7 +458,7 @@ type BarpolarStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -485,19 +485,19 @@ type BoxHoverlabel struct {
     Align BoxHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *BoxHoverlabelFont `json:"font,omitempty"` // object
@@ -505,7 +505,7 @@ type BoxHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -513,7 +513,7 @@ type BoxHoverlabel struct {
 type BoxLine struct {
 
     // Color color Sets the color of line bounding the box(es).
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of line bounding the box(es).
     Width float64 `json:"width,omitempty"`
@@ -524,7 +524,7 @@ type BoxLine struct {
 type BoxMarker struct {
 
     // Color color Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *BoxMarkerLine `json:"line,omitempty"` // object
@@ -532,7 +532,7 @@ type BoxMarker struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Outliercolor color Sets the color of the outlier sample points.
-    Outliercolor string `json:"outliercolor,omitempty"`
+    Outliercolor String `json:"outliercolor,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size float64 `json:"size,omitempty"`
@@ -556,7 +556,7 @@ type BoxStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -578,7 +578,7 @@ type BoxUnselected struct {
 type CandlestickDecreasing struct {
 
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Line <no value> <no value>
     Line *CandlestickDecreasingLine `json:"line,omitempty"` // object
@@ -591,19 +591,19 @@ type CandlestickHoverlabel struct {
     Align CandlestickHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *CandlestickHoverlabelFont `json:"font,omitempty"` // object
@@ -611,10 +611,10 @@ type CandlestickHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
     // Split boolean Show hover information (open, close, high, low) in separate labels.
-    Split bool `json:"split,omitempty"`
+    Split Bool `json:"split,omitempty"`
     
 }
  
@@ -622,7 +622,7 @@ type CandlestickHoverlabel struct {
 type CandlestickIncreasing struct {
 
     // Fillcolor color Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Line <no value> <no value>
     Line *CandlestickIncreasingLine `json:"line,omitempty"` // object
@@ -643,7 +643,7 @@ type CandlestickStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -672,7 +672,7 @@ type CarpetAaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
     Categoryorder CarpetAaxisCategoryorder `json:"categoryorder,omitempty"`
@@ -681,16 +681,16 @@ type CarpetAaxis struct {
     Cheatertype CarpetAaxisCheatertype `json:"cheatertype,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick number The stride between grid lines along the axis
     Dtick float64 `json:"dtick,omitempty"`
     
     // Endline boolean Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
-    Endline bool `json:"endline,omitempty"`
+    Endline Bool `json:"endline,omitempty"`
     
     // Endlinecolor color Sets the line color of the end line.
-    Endlinecolor string `json:"endlinecolor,omitempty"`
+    Endlinecolor String `json:"endlinecolor,omitempty"`
     
     // Endlinewidth number Sets the width (in px) of the end line.
     Endlinewidth float64 `json:"endlinewidth,omitempty"`
@@ -699,10 +699,10 @@ type CarpetAaxis struct {
     Exponentformat CarpetAaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Fixedrange boolean Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-    Fixedrange bool `json:"fixedrange,omitempty"`
+    Fixedrange Bool `json:"fixedrange,omitempty"`
     
     // Gridcolor color Sets the axis line color.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the axis line.
     Gridwidth float64 `json:"gridwidth,omitempty"`
@@ -711,19 +711,19 @@ type CarpetAaxis struct {
     Labelpadding int64 `json:"labelpadding,omitempty"`
     
     // Labelprefix string Sets a axis label prefix.
-    Labelprefix string `json:"labelprefix,omitempty"`
+    Labelprefix String `json:"labelprefix,omitempty"`
     
     // Labelsuffix string Sets a axis label suffix.
-    Labelsuffix string `json:"labelsuffix,omitempty"`
+    Labelsuffix String `json:"labelsuffix,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
     
     // Minorgridcolor color Sets the color of the grid lines.
-    Minorgridcolor string `json:"minorgridcolor,omitempty"`
+    Minorgridcolor String `json:"minorgridcolor,omitempty"`
     
     // Minorgridcount integer Sets the number of minor grid ticks per major grid tick
     Minorgridcount int64 `json:"minorgridcount,omitempty"`
@@ -741,16 +741,16 @@ type CarpetAaxis struct {
     Rangemode CarpetAaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent CarpetAaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels enumerated Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
     Showticklabels CarpetAaxisShowticklabels `json:"showticklabels,omitempty"`
@@ -765,10 +765,10 @@ type CarpetAaxis struct {
     Smoothing float64 `json:"smoothing,omitempty"`
     
     // Startline boolean Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
-    Startline bool `json:"startline,omitempty"`
+    Startline Bool `json:"startline,omitempty"`
     
     // Startlinecolor color Sets the line color of the start line.
-    Startlinecolor string `json:"startlinecolor,omitempty"`
+    Startlinecolor String `json:"startlinecolor,omitempty"`
     
     // Startlinewidth number Sets the width (in px) of the start line.
     Startlinewidth float64 `json:"startlinewidth,omitempty"`
@@ -782,7 +782,7 @@ type CarpetAaxis struct {
     // Tickfont <no value> Sets the tick font.
     Tickfont *CarpetAaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see:  We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *CarpetAaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -790,22 +790,22 @@ type CarpetAaxis struct {
     Tickmode CarpetAaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Title <no value> <no value>
     Title *CarpetAaxisTitle `json:"title,omitempty"` // object
@@ -832,7 +832,7 @@ type CarpetBaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
     Categoryorder CarpetBaxisCategoryorder `json:"categoryorder,omitempty"`
@@ -841,16 +841,16 @@ type CarpetBaxis struct {
     Cheatertype CarpetBaxisCheatertype `json:"cheatertype,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick number The stride between grid lines along the axis
     Dtick float64 `json:"dtick,omitempty"`
     
     // Endline boolean Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
-    Endline bool `json:"endline,omitempty"`
+    Endline Bool `json:"endline,omitempty"`
     
     // Endlinecolor color Sets the line color of the end line.
-    Endlinecolor string `json:"endlinecolor,omitempty"`
+    Endlinecolor String `json:"endlinecolor,omitempty"`
     
     // Endlinewidth number Sets the width (in px) of the end line.
     Endlinewidth float64 `json:"endlinewidth,omitempty"`
@@ -859,10 +859,10 @@ type CarpetBaxis struct {
     Exponentformat CarpetBaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Fixedrange boolean Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-    Fixedrange bool `json:"fixedrange,omitempty"`
+    Fixedrange Bool `json:"fixedrange,omitempty"`
     
     // Gridcolor color Sets the axis line color.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the axis line.
     Gridwidth float64 `json:"gridwidth,omitempty"`
@@ -871,19 +871,19 @@ type CarpetBaxis struct {
     Labelpadding int64 `json:"labelpadding,omitempty"`
     
     // Labelprefix string Sets a axis label prefix.
-    Labelprefix string `json:"labelprefix,omitempty"`
+    Labelprefix String `json:"labelprefix,omitempty"`
     
     // Labelsuffix string Sets a axis label suffix.
-    Labelsuffix string `json:"labelsuffix,omitempty"`
+    Labelsuffix String `json:"labelsuffix,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
     
     // Minorgridcolor color Sets the color of the grid lines.
-    Minorgridcolor string `json:"minorgridcolor,omitempty"`
+    Minorgridcolor String `json:"minorgridcolor,omitempty"`
     
     // Minorgridcount integer Sets the number of minor grid ticks per major grid tick
     Minorgridcount int64 `json:"minorgridcount,omitempty"`
@@ -901,16 +901,16 @@ type CarpetBaxis struct {
     Rangemode CarpetBaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent CarpetBaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels enumerated Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
     Showticklabels CarpetBaxisShowticklabels `json:"showticklabels,omitempty"`
@@ -925,10 +925,10 @@ type CarpetBaxis struct {
     Smoothing float64 `json:"smoothing,omitempty"`
     
     // Startline boolean Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
-    Startline bool `json:"startline,omitempty"`
+    Startline Bool `json:"startline,omitempty"`
     
     // Startlinecolor color Sets the line color of the start line.
-    Startlinecolor string `json:"startlinecolor,omitempty"`
+    Startlinecolor String `json:"startlinecolor,omitempty"`
     
     // Startlinewidth number Sets the width (in px) of the start line.
     Startlinewidth float64 `json:"startlinewidth,omitempty"`
@@ -942,7 +942,7 @@ type CarpetBaxis struct {
     // Tickfont <no value> Sets the tick font.
     Tickfont *CarpetBaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see:  We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *CarpetBaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -950,22 +950,22 @@ type CarpetBaxis struct {
     Tickmode CarpetBaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Title <no value> <no value>
     Title *CarpetBaxisTitle `json:"title,omitempty"` // object
@@ -978,10 +978,10 @@ type CarpetBaxis struct {
 type CarpetFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -995,7 +995,7 @@ type CarpetStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -1005,10 +1005,10 @@ type ChoroplethColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -1029,19 +1029,19 @@ type ChoroplethColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ChoroplethColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ChoroplethColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -1062,12 +1062,12 @@ type ChoroplethColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ChoroplethColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ChoroplethColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -1078,25 +1078,25 @@ type ChoroplethColorbar struct {
     Tickmode ChoroplethColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ChoroplethColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -1130,19 +1130,19 @@ type ChoroplethHoverlabel struct {
     Align ChoroplethHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ChoroplethHoverlabelFont `json:"font,omitempty"` // object
@@ -1150,7 +1150,7 @@ type ChoroplethHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -1163,7 +1163,7 @@ type ChoroplethMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
 }
  
@@ -1181,7 +1181,7 @@ type ChoroplethStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -1205,10 +1205,10 @@ type ChoroplethmapboxColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -1229,19 +1229,19 @@ type ChoroplethmapboxColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ChoroplethmapboxColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ChoroplethmapboxColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -1262,12 +1262,12 @@ type ChoroplethmapboxColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ChoroplethmapboxColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ChoroplethmapboxColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -1278,25 +1278,25 @@ type ChoroplethmapboxColorbar struct {
     Tickmode ChoroplethmapboxColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ChoroplethmapboxColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -1330,19 +1330,19 @@ type ChoroplethmapboxHoverlabel struct {
     Align ChoroplethmapboxHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ChoroplethmapboxHoverlabelFont `json:"font,omitempty"` // object
@@ -1350,7 +1350,7 @@ type ChoroplethmapboxHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -1363,7 +1363,7 @@ type ChoroplethmapboxMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
 }
  
@@ -1381,7 +1381,7 @@ type ChoroplethmapboxStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -1405,10 +1405,10 @@ type ConeColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -1429,19 +1429,19 @@ type ConeColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ConeColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ConeColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -1462,12 +1462,12 @@ type ConeColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ConeColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ConeColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -1478,25 +1478,25 @@ type ConeColorbar struct {
     Tickmode ConeColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ConeColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -1530,19 +1530,19 @@ type ConeHoverlabel struct {
     Align ConeHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ConeHoverlabelFont `json:"font,omitempty"` // object
@@ -1550,7 +1550,7 @@ type ConeHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -1601,7 +1601,7 @@ type ConeStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -1611,10 +1611,10 @@ type ContourColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -1635,19 +1635,19 @@ type ContourColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ContourColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ContourColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -1668,12 +1668,12 @@ type ContourColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ContourColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ContourColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -1684,25 +1684,25 @@ type ContourColorbar struct {
     Tickmode ContourColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ContourColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -1743,16 +1743,16 @@ type ContourContours struct {
     // Labelfont <no value> Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`.
     Labelfont *ContourContoursLabelfont `json:"labelfont,omitempty"` // object
     // Labelformat string Sets the contour label formatting rule using d3 formatting mini-language which is very similar to Python, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Labelformat string `json:"labelformat,omitempty"`
+    Labelformat String `json:"labelformat,omitempty"`
     
     // Operation enumerated Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
     Operation ContourContoursOperation `json:"operation,omitempty"`
     
     // Showlabels boolean Determines whether to label the contour lines with their values.
-    Showlabels bool `json:"showlabels,omitempty"`
+    Showlabels Bool `json:"showlabels,omitempty"`
     
     // Showlines boolean Determines whether or not the contour lines are drawn. Has an effect only if `contours.coloring` is set to *fill*.
-    Showlines bool `json:"showlines,omitempty"`
+    Showlines Bool `json:"showlines,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -1775,19 +1775,19 @@ type ContourHoverlabel struct {
     Align ContourHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ContourHoverlabelFont `json:"font,omitempty"` // object
@@ -1795,7 +1795,7 @@ type ContourHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -1803,10 +1803,10 @@ type ContourHoverlabel struct {
 type ContourLine struct {
 
     // Color color Sets the color of the contour level. Has no effect if `contours.coloring` is set to *lines*.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Smoothing number Sets the amount of smoothing for the contour lines, where *0* corresponds to no smoothing.
     Smoothing float64 `json:"smoothing,omitempty"`
@@ -1823,7 +1823,7 @@ type ContourStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -1840,10 +1840,10 @@ type ContourcarpetColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -1864,19 +1864,19 @@ type ContourcarpetColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ContourcarpetColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ContourcarpetColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -1897,12 +1897,12 @@ type ContourcarpetColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ContourcarpetColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ContourcarpetColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -1913,25 +1913,25 @@ type ContourcarpetColorbar struct {
     Tickmode ContourcarpetColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ContourcarpetColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -1972,16 +1972,16 @@ type ContourcarpetContours struct {
     // Labelfont <no value> Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`.
     Labelfont *ContourcarpetContoursLabelfont `json:"labelfont,omitempty"` // object
     // Labelformat string Sets the contour label formatting rule using d3 formatting mini-language which is very similar to Python, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Labelformat string `json:"labelformat,omitempty"`
+    Labelformat String `json:"labelformat,omitempty"`
     
     // Operation enumerated Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
     Operation ContourcarpetContoursOperation `json:"operation,omitempty"`
     
     // Showlabels boolean Determines whether to label the contour lines with their values.
-    Showlabels bool `json:"showlabels,omitempty"`
+    Showlabels Bool `json:"showlabels,omitempty"`
     
     // Showlines boolean Determines whether or not the contour lines are drawn. Has an effect only if `contours.coloring` is set to *fill*.
-    Showlines bool `json:"showlines,omitempty"`
+    Showlines Bool `json:"showlines,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -2001,10 +2001,10 @@ type ContourcarpetContours struct {
 type ContourcarpetLine struct {
 
     // Color color Sets the color of the contour level. Has no effect if `contours.coloring` is set to *lines*.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Smoothing number Sets the amount of smoothing for the contour lines, where *0* corresponds to no smoothing.
     Smoothing float64 `json:"smoothing,omitempty"`
@@ -2021,7 +2021,7 @@ type ContourcarpetStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2031,10 +2031,10 @@ type DensitymapboxColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -2055,19 +2055,19 @@ type DensitymapboxColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent DensitymapboxColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix DensitymapboxColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -2088,12 +2088,12 @@ type DensitymapboxColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *DensitymapboxColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *DensitymapboxColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -2104,25 +2104,25 @@ type DensitymapboxColorbar struct {
     Tickmode DensitymapboxColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks DensitymapboxColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -2156,19 +2156,19 @@ type DensitymapboxHoverlabel struct {
     Align DensitymapboxHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *DensitymapboxHoverlabelFont `json:"font,omitempty"` // object
@@ -2176,7 +2176,7 @@ type DensitymapboxHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -2187,7 +2187,7 @@ type DensitymapboxStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2202,12 +2202,12 @@ type DensitymapboxTransforms struct {
 type FunnelConnector struct {
 
     // Fillcolor color Sets the fill color.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Line <no value> <no value>
     Line *FunnelConnectorLine `json:"line,omitempty"` // object
     // Visible boolean Determines if connector regions and lines are drawn.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -2218,19 +2218,19 @@ type FunnelHoverlabel struct {
     Align FunnelHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *FunnelHoverlabelFont `json:"font,omitempty"` // object
@@ -2238,7 +2238,7 @@ type FunnelHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -2249,19 +2249,19 @@ type FunnelInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -2269,10 +2269,10 @@ type FunnelInsidetextfont struct {
 type FunnelMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -2287,7 +2287,7 @@ type FunnelMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *FunnelMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -2295,7 +2295,7 @@ type FunnelMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *FunnelMarkerLine `json:"line,omitempty"` // object
@@ -2303,13 +2303,13 @@ type FunnelMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -2320,19 +2320,19 @@ type FunnelOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -2343,7 +2343,7 @@ type FunnelStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2354,19 +2354,19 @@ type FunnelTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -2401,19 +2401,19 @@ type FunnelareaHoverlabel struct {
     Align FunnelareaHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *FunnelareaHoverlabelFont `json:"font,omitempty"` // object
@@ -2421,7 +2421,7 @@ type FunnelareaHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -2432,19 +2432,19 @@ type FunnelareaInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -2455,7 +2455,7 @@ type FunnelareaMarker struct {
     Colors interface{} `json:"colors,omitempty"`
     
     // Colorssrc string Sets the source reference on Chart Studio Cloud for  colors .
-    Colorssrc string `json:"colorssrc,omitempty"`
+    Colorssrc String `json:"colorssrc,omitempty"`
     
     // Line <no value> <no value>
     Line *FunnelareaMarkerLine `json:"line,omitempty"` // object
@@ -2468,7 +2468,7 @@ type FunnelareaStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2479,19 +2479,19 @@ type FunnelareaTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -2504,7 +2504,7 @@ type FunnelareaTitle struct {
     Position FunnelareaTitlePosition `json:"position,omitempty"`
     
     // Text string Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -2521,10 +2521,10 @@ type HeatmapColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -2545,19 +2545,19 @@ type HeatmapColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent HeatmapColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix HeatmapColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -2578,12 +2578,12 @@ type HeatmapColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *HeatmapColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *HeatmapColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -2594,25 +2594,25 @@ type HeatmapColorbar struct {
     Tickmode HeatmapColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks HeatmapColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -2646,19 +2646,19 @@ type HeatmapHoverlabel struct {
     Align HeatmapHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *HeatmapHoverlabelFont `json:"font,omitempty"` // object
@@ -2666,7 +2666,7 @@ type HeatmapHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -2677,7 +2677,7 @@ type HeatmapStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2694,10 +2694,10 @@ type HeatmapglColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -2718,19 +2718,19 @@ type HeatmapglColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent HeatmapglColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix HeatmapglColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -2751,12 +2751,12 @@ type HeatmapglColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *HeatmapglColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *HeatmapglColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -2767,25 +2767,25 @@ type HeatmapglColorbar struct {
     Tickmode HeatmapglColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks HeatmapglColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -2819,19 +2819,19 @@ type HeatmapglHoverlabel struct {
     Align HeatmapglHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *HeatmapglHoverlabelFont `json:"font,omitempty"` // object
@@ -2839,7 +2839,7 @@ type HeatmapglHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -2850,7 +2850,7 @@ type HeatmapglStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -2867,10 +2867,10 @@ type Histogram2dColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -2891,19 +2891,19 @@ type Histogram2dColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent Histogram2dColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix Histogram2dColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -2924,12 +2924,12 @@ type Histogram2dColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *Histogram2dColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *Histogram2dColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -2940,25 +2940,25 @@ type Histogram2dColorbar struct {
     Tickmode Histogram2dColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks Histogram2dColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -2992,19 +2992,19 @@ type Histogram2dHoverlabel struct {
     Align Histogram2dHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *Histogram2dHoverlabelFont `json:"font,omitempty"` // object
@@ -3012,7 +3012,7 @@ type Histogram2dHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -3023,7 +3023,7 @@ type Histogram2dMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
 }
  
@@ -3034,7 +3034,7 @@ type Histogram2dStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -3079,10 +3079,10 @@ type Histogram2dcontourColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -3103,19 +3103,19 @@ type Histogram2dcontourColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent Histogram2dcontourColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix Histogram2dcontourColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -3136,12 +3136,12 @@ type Histogram2dcontourColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *Histogram2dcontourColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *Histogram2dcontourColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -3152,25 +3152,25 @@ type Histogram2dcontourColorbar struct {
     Tickmode Histogram2dcontourColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks Histogram2dcontourColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -3211,16 +3211,16 @@ type Histogram2dcontourContours struct {
     // Labelfont <no value> Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`.
     Labelfont *Histogram2dcontourContoursLabelfont `json:"labelfont,omitempty"` // object
     // Labelformat string Sets the contour label formatting rule using d3 formatting mini-language which is very similar to Python, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Labelformat string `json:"labelformat,omitempty"`
+    Labelformat String `json:"labelformat,omitempty"`
     
     // Operation enumerated Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
     Operation Histogram2dcontourContoursOperation `json:"operation,omitempty"`
     
     // Showlabels boolean Determines whether to label the contour lines with their values.
-    Showlabels bool `json:"showlabels,omitempty"`
+    Showlabels Bool `json:"showlabels,omitempty"`
     
     // Showlines boolean Determines whether or not the contour lines are drawn. Has an effect only if `contours.coloring` is set to *fill*.
-    Showlines bool `json:"showlines,omitempty"`
+    Showlines Bool `json:"showlines,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -3243,19 +3243,19 @@ type Histogram2dcontourHoverlabel struct {
     Align Histogram2dcontourHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *Histogram2dcontourHoverlabelFont `json:"font,omitempty"` // object
@@ -3263,7 +3263,7 @@ type Histogram2dcontourHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -3271,10 +3271,10 @@ type Histogram2dcontourHoverlabel struct {
 type Histogram2dcontourLine struct {
 
     // Color color Sets the color of the contour level. Has no effect if `contours.coloring` is set to *lines*.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Smoothing number Sets the amount of smoothing for the contour lines, where *0* corresponds to no smoothing.
     Smoothing float64 `json:"smoothing,omitempty"`
@@ -3291,7 +3291,7 @@ type Histogram2dcontourMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
 }
  
@@ -3302,7 +3302,7 @@ type Histogram2dcontourStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -3351,7 +3351,7 @@ type HistogramCumulative struct {
     Direction HistogramCumulativeDirection `json:"direction,omitempty"`
     
     // Enabled boolean If true, display the cumulative distribution by summing the binned values. Use the `direction` and `centralbin` attributes to tune the accumulation method. Note: in this mode, the *density* `histnorm` settings behave the same as their equivalents without *density*: ** and *density* both rise to the number of data points, and *probability* and *probability density* both rise to the number of sample points.
-    Enabled bool `json:"enabled,omitempty"`
+    Enabled Bool `json:"enabled,omitempty"`
     
 }
  
@@ -3367,19 +3367,19 @@ type HistogramErrorX struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_ystyle boolean <no value>
-    Copy_ystyle bool `json:"copy_ystyle,omitempty"`
+    Copy_ystyle Bool `json:"copy_ystyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -3400,7 +3400,7 @@ type HistogramErrorX struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -3419,16 +3419,16 @@ type HistogramErrorY struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -3449,7 +3449,7 @@ type HistogramErrorY struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -3463,19 +3463,19 @@ type HistogramHoverlabel struct {
     Align HistogramHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *HistogramHoverlabelFont `json:"font,omitempty"` // object
@@ -3483,7 +3483,7 @@ type HistogramHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -3491,10 +3491,10 @@ type HistogramHoverlabel struct {
 type HistogramMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -3509,7 +3509,7 @@ type HistogramMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *HistogramMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -3517,7 +3517,7 @@ type HistogramMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *HistogramMarkerLine `json:"line,omitempty"` // object
@@ -3525,13 +3525,13 @@ type HistogramMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -3551,7 +3551,7 @@ type HistogramStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -3606,19 +3606,19 @@ type ImageHoverlabel struct {
     Align ImageHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ImageHoverlabelFont `json:"font,omitempty"` // object
@@ -3626,7 +3626,7 @@ type ImageHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -3637,7 +3637,7 @@ type ImageStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -3657,10 +3657,10 @@ type IndicatorDelta struct {
     Reference float64 `json:"reference,omitempty"`
     
     // Relative boolean Show relative change
-    Relative bool `json:"relative,omitempty"`
+    Relative Bool `json:"relative,omitempty"`
     
     // Valueformat string Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Valueformat string `json:"valueformat,omitempty"`
+    Valueformat String `json:"valueformat,omitempty"`
     
 }
  
@@ -3689,10 +3689,10 @@ type IndicatorGauge struct {
     // Bar <no value> Set the appearance of the gauge's value
     Bar *IndicatorGaugeBar `json:"bar,omitempty"` // object
     // Bgcolor color Sets the gauge background color.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the color of the border enclosing the gauge.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) of the border enclosing the gauge.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -3712,13 +3712,13 @@ type IndicatorNumber struct {
     // Font <no value> Set the font used to display main number
     Font *IndicatorNumberFont `json:"font,omitempty"` // object
     // Prefix string Sets a prefix appearing before the number.
-    Prefix string `json:"prefix,omitempty"`
+    Prefix String `json:"prefix,omitempty"`
     
     // Suffix string Sets a suffix appearing next to the number.
-    Suffix string `json:"suffix,omitempty"`
+    Suffix String `json:"suffix,omitempty"`
     
     // Valueformat string Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
-    Valueformat string `json:"valueformat,omitempty"`
+    Valueformat String `json:"valueformat,omitempty"`
     
 }
  
@@ -3729,7 +3729,7 @@ type IndicatorStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -3742,7 +3742,7 @@ type IndicatorTitle struct {
     // Font <no value> Set the font used to display the title
     Font *IndicatorTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this indicator.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -3770,10 +3770,10 @@ type IsosurfaceColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -3794,19 +3794,19 @@ type IsosurfaceColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent IsosurfaceColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix IsosurfaceColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -3827,12 +3827,12 @@ type IsosurfaceColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *IsosurfaceColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *IsosurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -3843,25 +3843,25 @@ type IsosurfaceColorbar struct {
     Tickmode IsosurfaceColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks IsosurfaceColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -3892,10 +3892,10 @@ type IsosurfaceColorbar struct {
 type IsosurfaceContour struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Show boolean Sets whether or not dynamic contours are shown on hover
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -3909,19 +3909,19 @@ type IsosurfaceHoverlabel struct {
     Align IsosurfaceHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *IsosurfaceHoverlabelFont `json:"font,omitempty"` // object
@@ -3929,7 +3929,7 @@ type IsosurfaceHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -3991,7 +3991,7 @@ type IsosurfaceSpaceframe struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Displays/hides tetrahedron shapes between minimum and maximum iso-values. Often useful when either caps or surfaces are disabled or filled with values less than 1.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -4002,7 +4002,7 @@ type IsosurfaceStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -4019,7 +4019,7 @@ type IsosurfaceSurface struct {
     Pattern IsosurfaceSurfacePattern `json:"pattern,omitempty"`
     
     // Show boolean Hides/displays surfaces between minimum and maximum iso-values.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -4027,7 +4027,7 @@ type IsosurfaceSurface struct {
 type LayoutActiveshape struct {
 
     // Fillcolor color Sets the color filling the active shape' interior.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Opacity number Sets the opacity of the active shape.
     Opacity float64 `json:"opacity,omitempty"`
@@ -4047,13 +4047,13 @@ type LayoutAngularaxis struct {
     Range interface{} `json:"range,omitempty"`
     
     // Showline boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the line bounding this angular axis will be shown on the figure.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the angular axis ticks will feature tick labels.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Tickcolor color Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the color of the tick lines on this angular axis.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Ticklen number Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this angular axis.
     Ticklen float64 `json:"ticklen,omitempty"`
@@ -4062,10 +4062,10 @@ type LayoutAngularaxis struct {
     Tickorientation LayoutAngularaxisTickorientation `json:"tickorientation,omitempty"`
     
     // Ticksuffix string Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this angular axis.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Visible boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not this axis will be visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -4080,10 +4080,10 @@ type LayoutAnnotations struct {
 type LayoutColoraxis struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here corresponding trace color array(s)) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Value should have the same units as corresponding trace color array(s) and if set, `cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -4100,10 +4100,10 @@ type LayoutColoraxis struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -4125,10 +4125,10 @@ type LayoutColorscale struct {
 type LayoutFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -4139,18 +4139,18 @@ type LayoutFont struct {
 type LayoutGeo struct {
 
     // Bgcolor color Set the background color of the map
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Center <no value> <no value>
     Center *LayoutGeoCenter `json:"center,omitempty"` // object
     // Coastlinecolor color Sets the coastline color.
-    Coastlinecolor string `json:"coastlinecolor,omitempty"`
+    Coastlinecolor String `json:"coastlinecolor,omitempty"`
     
     // Coastlinewidth number Sets the coastline stroke width (in px).
     Coastlinewidth float64 `json:"coastlinewidth,omitempty"`
     
     // Countrycolor color Sets line color of the country boundaries.
-    Countrycolor string `json:"countrycolor,omitempty"`
+    Countrycolor String `json:"countrycolor,omitempty"`
     
     // Countrywidth number Sets line width (in px) of the country boundaries.
     Countrywidth float64 `json:"countrywidth,omitempty"`
@@ -4161,23 +4161,23 @@ type LayoutGeo struct {
     Fitbounds LayoutGeoFitbounds `json:"fitbounds,omitempty"`
     
     // Framecolor color Sets the color the frame.
-    Framecolor string `json:"framecolor,omitempty"`
+    Framecolor String `json:"framecolor,omitempty"`
     
     // Framewidth number Sets the stroke width (in px) of the frame.
     Framewidth float64 `json:"framewidth,omitempty"`
     
     // Lakecolor color Sets the color of the lakes.
-    Lakecolor string `json:"lakecolor,omitempty"`
+    Lakecolor String `json:"lakecolor,omitempty"`
     
     // Landcolor color Sets the land mass color.
-    Landcolor string `json:"landcolor,omitempty"`
+    Landcolor String `json:"landcolor,omitempty"`
     
     // Lataxis <no value> <no value>
     Lataxis *LayoutGeoLataxis `json:"lataxis,omitempty"` // object
     // Lonaxis <no value> <no value>
     Lonaxis *LayoutGeoLonaxis `json:"lonaxis,omitempty"` // object
     // Oceancolor color Sets the ocean color
-    Oceancolor string `json:"oceancolor,omitempty"`
+    Oceancolor String `json:"oceancolor,omitempty"`
     
     // Projection <no value> <no value>
     Projection *LayoutGeoProjection `json:"projection,omitempty"` // object
@@ -4185,7 +4185,7 @@ type LayoutGeo struct {
     Resolution LayoutGeoResolution `json:"resolution,omitempty"`
     
     // Rivercolor color Sets color of the rivers.
-    Rivercolor string `json:"rivercolor,omitempty"`
+    Rivercolor String `json:"rivercolor,omitempty"`
     
     // Riverwidth number Sets the stroke width (in px) of the rivers.
     Riverwidth float64 `json:"riverwidth,omitempty"`
@@ -4194,31 +4194,31 @@ type LayoutGeo struct {
     Scope LayoutGeoScope `json:"scope,omitempty"`
     
     // Showcoastlines boolean Sets whether or not the coastlines are drawn.
-    Showcoastlines bool `json:"showcoastlines,omitempty"`
+    Showcoastlines Bool `json:"showcoastlines,omitempty"`
     
     // Showcountries boolean Sets whether or not country boundaries are drawn.
-    Showcountries bool `json:"showcountries,omitempty"`
+    Showcountries Bool `json:"showcountries,omitempty"`
     
     // Showframe boolean Sets whether or not a frame is drawn around the map.
-    Showframe bool `json:"showframe,omitempty"`
+    Showframe Bool `json:"showframe,omitempty"`
     
     // Showlakes boolean Sets whether or not lakes are drawn.
-    Showlakes bool `json:"showlakes,omitempty"`
+    Showlakes Bool `json:"showlakes,omitempty"`
     
     // Showland boolean Sets whether or not land masses are filled in color.
-    Showland bool `json:"showland,omitempty"`
+    Showland Bool `json:"showland,omitempty"`
     
     // Showocean boolean Sets whether or not oceans are filled in color.
-    Showocean bool `json:"showocean,omitempty"`
+    Showocean Bool `json:"showocean,omitempty"`
     
     // Showrivers boolean Sets whether or not rivers are drawn.
-    Showrivers bool `json:"showrivers,omitempty"`
+    Showrivers Bool `json:"showrivers,omitempty"`
     
     // Showsubunits boolean Sets whether or not boundaries of subunits within countries (e.g. states, provinces) are drawn.
-    Showsubunits bool `json:"showsubunits,omitempty"`
+    Showsubunits Bool `json:"showsubunits,omitempty"`
     
     // Subunitcolor color Sets the color of the subunits boundaries.
-    Subunitcolor string `json:"subunitcolor,omitempty"`
+    Subunitcolor String `json:"subunitcolor,omitempty"`
     
     // Subunitwidth number Sets the stroke width (in px) of the subunits boundaries.
     Subunitwidth float64 `json:"subunitwidth,omitempty"`
@@ -4227,7 +4227,7 @@ type LayoutGeo struct {
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Visible boolean Sets the default visibility of the base layers.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -4278,10 +4278,10 @@ type LayoutHoverlabel struct {
     Align LayoutHoverlabelAlign `json:"align,omitempty"`
     
     // Bgcolor color Sets the background color of all hover labels on graph
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the border color of all hover labels on graph.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Font <no value> Sets the default hover label font used by all traces on the graph.
     Font *LayoutHoverlabelFont `json:"font,omitempty"` // object
@@ -4301,10 +4301,10 @@ type LayoutImages struct {
 type LayoutLegend struct {
 
     // Bgcolor color Sets the legend background color. Defaults to `layout.paper_bgcolor`.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the color of the border enclosing the legend.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) of the border enclosing the legend.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -4355,7 +4355,7 @@ type LayoutLegend struct {
 type LayoutMapbox struct {
 
     // Accesstoken string Sets the mapbox access token to be used for this mapbox map. Alternatively, the mapbox access token can be set in the configuration options under `mapboxAccessToken`. Note that accessToken are only required when `style` (e.g with values : basic, streets, outdoors, light, dark, satellite, satellite-streets ) and/or a layout layer references the Mapbox server.
-    Accesstoken string `json:"accesstoken,omitempty"`
+    Accesstoken String `json:"accesstoken,omitempty"`
     
     // Bearing number Sets the bearing angle of the map in degrees counter-clockwise from North (mapbox.bearing).
     Bearing float64 `json:"bearing,omitempty"`
@@ -4384,7 +4384,7 @@ type LayoutMapbox struct {
 type LayoutMargin struct {
 
     // Autoexpand boolean Turns on/off margin expansion computations. Legends, colorbars, updatemenus, sliders, axis rangeselector and rangeslider are allowed to push the margins by defaults.
-    Autoexpand bool `json:"autoexpand,omitempty"`
+    Autoexpand Bool `json:"autoexpand,omitempty"`
     
     // B number Sets the bottom margin (in px).
     B float64 `json:"b,omitempty"`
@@ -4407,13 +4407,13 @@ type LayoutMargin struct {
 type LayoutModebar struct {
 
     // Activecolor color Sets the color of the active or hovered on icons in the modebar.
-    Activecolor string `json:"activecolor,omitempty"`
+    Activecolor String `json:"activecolor,omitempty"`
     
     // Bgcolor color Sets the background color of the modebar.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Color color Sets the color of the icons in the modebar.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Orientation enumerated Sets the orientation of the modebar.
     Orientation LayoutModebarOrientation `json:"orientation,omitempty"`
@@ -4430,7 +4430,7 @@ type LayoutNewshape struct {
     Drawdirection LayoutNewshapeDrawdirection `json:"drawdirection,omitempty"`
     
     // Fillcolor color Sets the color filling new shapes' interior. Please note that if using a fillcolor with alpha greater than half, drag inside the active shape starts moving the shape underneath, otherwise a new shape could be started over.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Fillrule enumerated Determines the path's interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
     Fillrule LayoutNewshapeFillrule `json:"fillrule,omitempty"`
@@ -4451,7 +4451,7 @@ type LayoutPolar struct {
     // Angularaxis <no value> <no value>
     Angularaxis *LayoutPolarAngularaxis `json:"angularaxis,omitempty"` // object
     // Bgcolor color Set the background color of the subplot
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Domain <no value> <no value>
     Domain *LayoutPolarDomain `json:"domain,omitempty"` // object
@@ -4487,13 +4487,13 @@ type LayoutRadialaxis struct {
     Range interface{} `json:"range,omitempty"`
     
     // Showline boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the line bounding this radial axis will be shown on the figure.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the radial axis ticks will feature tick labels.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Tickcolor color Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the color of the tick lines on this radial axis.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Ticklen number Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this radial axis.
     Ticklen float64 `json:"ticklen,omitempty"`
@@ -4502,10 +4502,10 @@ type LayoutRadialaxis struct {
     Tickorientation LayoutRadialaxisTickorientation `json:"tickorientation,omitempty"`
     
     // Ticksuffix string Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this radial axis.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Visible boolean Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not this axis will be visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -4522,7 +4522,7 @@ type LayoutScene struct {
     // Aspectratio <no value> Sets this scene's axis aspectratio.
     Aspectratio *LayoutSceneAspectratio `json:"aspectratio,omitempty"` // object
     // Bgcolor color <no value>
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Camera <no value> <no value>
     Camera *LayoutSceneCamera `json:"camera,omitempty"` // object
@@ -4567,7 +4567,7 @@ type LayoutTernary struct {
     // Baxis <no value> <no value>
     Baxis *LayoutTernaryBaxis `json:"baxis,omitempty"` // object
     // Bgcolor color Set the background color of the subplot
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Caxis <no value> <no value>
     Caxis *LayoutTernaryCaxis `json:"caxis,omitempty"` // object
@@ -4589,7 +4589,7 @@ type LayoutTitle struct {
     // Pad <no value> Sets the padding of the title. Each padding value only applies when the corresponding `xanchor`/`yanchor` value is set accordingly. E.g. for left padding to take effect, `xanchor` must be set to *left*. The same rule applies if `xanchor`/`yanchor` is determined automatically. Padding is muted if the respective anchor value is *middle*/*center*.
     Pad *LayoutTitlePad `json:"pad,omitempty"` // object
     // Text string Sets the plot's title. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
     // X number Sets the x position with respect to `xref` in normalized coordinates from *0* (left) to *1* (right).
     X float64 `json:"x,omitempty"`
@@ -4652,7 +4652,7 @@ type LayoutXaxis struct {
     Anchor LayoutXaxisAnchor `json:"anchor,omitempty"`
     
     // Automargin boolean Determines whether long tick labels automatically grow the figure margins.
-    Automargin bool `json:"automargin,omitempty"`
+    Automargin Bool `json:"automargin,omitempty"`
     
     // Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
     Autorange LayoutXaxisAutorange `json:"autorange,omitempty"`
@@ -4664,13 +4664,13 @@ type LayoutXaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutXaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
     Constrain LayoutXaxisConstrain `json:"constrain,omitempty"`
@@ -4679,7 +4679,7 @@ type LayoutXaxis struct {
     Constraintoward LayoutXaxisConstraintoward `json:"constraintoward,omitempty"`
     
     // Dividercolor color Sets the color of the dividers Only has an effect on *multicategory* axes.
-    Dividercolor string `json:"dividercolor,omitempty"`
+    Dividercolor String `json:"dividercolor,omitempty"`
     
     // Dividerwidth number Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
     Dividerwidth float64 `json:"dividerwidth,omitempty"`
@@ -4694,22 +4694,22 @@ type LayoutXaxis struct {
     Exponentformat LayoutXaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Fixedrange boolean Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-    Fixedrange bool `json:"fixedrange,omitempty"`
+    Fixedrange Bool `json:"fixedrange,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutXaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -4748,25 +4748,25 @@ type LayoutXaxis struct {
     Scaleratio float64 `json:"scaleratio,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showdividers boolean Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
-    Showdividers bool `json:"showdividers,omitempty"`
+    Showdividers Bool `json:"showdividers,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutXaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showspikes boolean Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
-    Showspikes bool `json:"showspikes,omitempty"`
+    Showspikes Bool `json:"showspikes,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutXaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -4778,10 +4778,10 @@ type LayoutXaxis struct {
     Side LayoutXaxisSide `json:"side,omitempty"`
     
     // Spikecolor color Sets the spike color. If undefined, will use the series color
-    Spikecolor string `json:"spikecolor,omitempty"`
+    Spikecolor String `json:"spikecolor,omitempty"`
     
     // Spikedash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Spikedash string `json:"spikedash,omitempty"`
+    Spikedash String `json:"spikedash,omitempty"`
     
     // Spikemode flaglist Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
     Spikemode LayoutXaxisSpikemode `json:"spikemode,omitempty"`
@@ -4799,12 +4799,12 @@ type LayoutXaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutXaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutXaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -4815,7 +4815,7 @@ type LayoutXaxis struct {
     Tickmode LayoutXaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutXaxisTicks `json:"ticks,omitempty"`
@@ -4824,19 +4824,19 @@ type LayoutXaxis struct {
     Tickson LayoutXaxisTickson `json:"tickson,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -4850,13 +4850,13 @@ type LayoutXaxis struct {
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Zeroline boolean Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-    Zeroline bool `json:"zeroline,omitempty"`
+    Zeroline Bool `json:"zeroline,omitempty"`
     
     // Zerolinecolor color Sets the line color of the zero line.
-    Zerolinecolor string `json:"zerolinecolor,omitempty"`
+    Zerolinecolor String `json:"zerolinecolor,omitempty"`
     
     // Zerolinewidth number Sets the width (in px) of the zero line.
     Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
@@ -4872,7 +4872,7 @@ type LayoutYaxis struct {
     Anchor LayoutYaxisAnchor `json:"anchor,omitempty"`
     
     // Automargin boolean Determines whether long tick labels automatically grow the figure margins.
-    Automargin bool `json:"automargin,omitempty"`
+    Automargin Bool `json:"automargin,omitempty"`
     
     // Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
     Autorange LayoutYaxisAutorange `json:"autorange,omitempty"`
@@ -4884,13 +4884,13 @@ type LayoutYaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutYaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
     Constrain LayoutYaxisConstrain `json:"constrain,omitempty"`
@@ -4899,7 +4899,7 @@ type LayoutYaxis struct {
     Constraintoward LayoutYaxisConstraintoward `json:"constraintoward,omitempty"`
     
     // Dividercolor color Sets the color of the dividers Only has an effect on *multicategory* axes.
-    Dividercolor string `json:"dividercolor,omitempty"`
+    Dividercolor String `json:"dividercolor,omitempty"`
     
     // Dividerwidth number Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
     Dividerwidth float64 `json:"dividerwidth,omitempty"`
@@ -4914,22 +4914,22 @@ type LayoutYaxis struct {
     Exponentformat LayoutYaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Fixedrange boolean Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-    Fixedrange bool `json:"fixedrange,omitempty"`
+    Fixedrange Bool `json:"fixedrange,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutYaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -4964,25 +4964,25 @@ type LayoutYaxis struct {
     Scaleratio float64 `json:"scaleratio,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showdividers boolean Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
-    Showdividers bool `json:"showdividers,omitempty"`
+    Showdividers Bool `json:"showdividers,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutYaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showspikes boolean Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
-    Showspikes bool `json:"showspikes,omitempty"`
+    Showspikes Bool `json:"showspikes,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutYaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -4994,10 +4994,10 @@ type LayoutYaxis struct {
     Side LayoutYaxisSide `json:"side,omitempty"`
     
     // Spikecolor color Sets the spike color. If undefined, will use the series color
-    Spikecolor string `json:"spikecolor,omitempty"`
+    Spikecolor String `json:"spikecolor,omitempty"`
     
     // Spikedash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Spikedash string `json:"spikedash,omitempty"`
+    Spikedash String `json:"spikedash,omitempty"`
     
     // Spikemode flaglist Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
     Spikemode LayoutYaxisSpikemode `json:"spikemode,omitempty"`
@@ -5015,12 +5015,12 @@ type LayoutYaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutYaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutYaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -5031,7 +5031,7 @@ type LayoutYaxis struct {
     Tickmode LayoutYaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutYaxisTicks `json:"ticks,omitempty"`
@@ -5040,19 +5040,19 @@ type LayoutYaxis struct {
     Tickson LayoutYaxisTickson `json:"tickson,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -5066,13 +5066,13 @@ type LayoutYaxis struct {
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Zeroline boolean Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-    Zeroline bool `json:"zeroline,omitempty"`
+    Zeroline Bool `json:"zeroline,omitempty"`
     
     // Zerolinecolor color Sets the line color of the zero line.
-    Zerolinecolor string `json:"zerolinecolor,omitempty"`
+    Zerolinecolor String `json:"zerolinecolor,omitempty"`
     
     // Zerolinewidth number Sets the width (in px) of the zero line.
     Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
@@ -5085,10 +5085,10 @@ type Mesh3dColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -5109,19 +5109,19 @@ type Mesh3dColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent Mesh3dColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix Mesh3dColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -5142,12 +5142,12 @@ type Mesh3dColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *Mesh3dColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *Mesh3dColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -5158,25 +5158,25 @@ type Mesh3dColorbar struct {
     Tickmode Mesh3dColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks Mesh3dColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -5207,10 +5207,10 @@ type Mesh3dColorbar struct {
 type Mesh3dContour struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Show boolean Sets whether or not dynamic contours are shown on hover
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -5224,19 +5224,19 @@ type Mesh3dHoverlabel struct {
     Align Mesh3dHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *Mesh3dHoverlabelFont `json:"font,omitempty"` // object
@@ -5244,7 +5244,7 @@ type Mesh3dHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -5295,7 +5295,7 @@ type Mesh3dStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5313,19 +5313,19 @@ type OhlcHoverlabel struct {
     Align OhlcHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *OhlcHoverlabelFont `json:"font,omitempty"` // object
@@ -5333,10 +5333,10 @@ type OhlcHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
     // Split boolean Show hover information (open, close, high, low) in separate labels.
-    Split bool `json:"split,omitempty"`
+    Split Bool `json:"split,omitempty"`
     
 }
  
@@ -5351,7 +5351,7 @@ type OhlcIncreasing struct {
 type OhlcLine struct {
 
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*). Note that this style setting can also be set per direction via `increasing.line.dash` and `decreasing.line.dash`.
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number [object Object] Note that this style setting can also be set per direction via `increasing.line.width` and `decreasing.line.width`.
     Width float64 `json:"width,omitempty"`
@@ -5365,7 +5365,7 @@ type OhlcStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5404,10 +5404,10 @@ type ParcatsDomain struct {
 type ParcatsLabelfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -5418,10 +5418,10 @@ type ParcatsLabelfont struct {
 type ParcatsLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax`  Has an effect only if in `line.color`is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -5436,7 +5436,7 @@ type ParcatsLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ParcatsLineColorbar `json:"colorbar,omitempty"` // object
@@ -5444,19 +5444,19 @@ type ParcatsLine struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count` and `probability`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-    Hovertemplate string `json:"hovertemplate,omitempty"`
+    Hovertemplate String `json:"hovertemplate,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Shape enumerated Sets the shape of the paths. If `linear`, paths are composed of straight lines. If `hspline`, paths are composed of horizontal curved splines
     Shape ParcatsLineShape `json:"shape,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -5467,7 +5467,7 @@ type ParcatsStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5475,10 +5475,10 @@ type ParcatsStream struct {
 type ParcatsTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -5520,10 +5520,10 @@ type ParcoordsDomain struct {
 type ParcoordsLabelfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -5534,10 +5534,10 @@ type ParcoordsLabelfont struct {
 type ParcoordsLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax`  Has an effect only if in `line.color`is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -5552,7 +5552,7 @@ type ParcoordsLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ParcoordsLineColorbar `json:"colorbar,omitempty"` // object
@@ -5560,13 +5560,13 @@ type ParcoordsLine struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -5574,10 +5574,10 @@ type ParcoordsLine struct {
 type ParcoordsRangefont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -5591,7 +5591,7 @@ type ParcoordsStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5599,10 +5599,10 @@ type ParcoordsStream struct {
 type ParcoordsTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -5640,19 +5640,19 @@ type PieHoverlabel struct {
     Align PieHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *PieHoverlabelFont `json:"font,omitempty"` // object
@@ -5660,7 +5660,7 @@ type PieHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -5671,19 +5671,19 @@ type PieInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -5694,7 +5694,7 @@ type PieMarker struct {
     Colors interface{} `json:"colors,omitempty"`
     
     // Colorssrc string Sets the source reference on Chart Studio Cloud for  colors .
-    Colorssrc string `json:"colorssrc,omitempty"`
+    Colorssrc String `json:"colorssrc,omitempty"`
     
     // Line <no value> <no value>
     Line *PieMarkerLine `json:"line,omitempty"` // object
@@ -5707,19 +5707,19 @@ type PieOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -5730,7 +5730,7 @@ type PieStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5741,19 +5741,19 @@ type PieTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -5766,7 +5766,7 @@ type PieTitle struct {
     Position PieTitlePosition `json:"position,omitempty"`
     
     // Text string Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -5784,19 +5784,19 @@ type PointcloudHoverlabel struct {
     Align PointcloudHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *PointcloudHoverlabelFont `json:"font,omitempty"` // object
@@ -5804,7 +5804,7 @@ type PointcloudHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -5812,12 +5812,12 @@ type PointcloudHoverlabel struct {
 type PointcloudMarker struct {
 
     // Blend boolean Determines if colors are blended together for a translucency effect in case `opacity` is specified as a value less then `1`. Setting `blend` to `true` reduces zoom/pan speed if used with large numbers of points.
-    Blend bool `json:"blend,omitempty"`
+    Blend Bool `json:"blend,omitempty"`
     
     // Border <no value> <no value>
     Border *PointcloudMarkerBorder `json:"border,omitempty"` // object
     // Color color Sets the marker fill color. It accepts a specific color.If the color is not fully opaque and there are hundreds of thousandsof points, it may cause slower zooming and panning.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity. The default value is `1` (fully opaque). If the markers are not fully opaque and there are hundreds of thousands of points, it may cause slower zooming and panning. Opacity fades the color even if `blend` is left on `false` even if there is no translucency effect in that case.
     Opacity float64 `json:"opacity,omitempty"`
@@ -5837,7 +5837,7 @@ type PointcloudStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -5865,19 +5865,19 @@ type SankeyHoverlabel struct {
     Align SankeyHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SankeyHoverlabelFont `json:"font,omitempty"` // object
@@ -5885,7 +5885,7 @@ type SankeyHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -5898,13 +5898,13 @@ type SankeyLink struct {
     // Colorscales <no value> <no value>
     Colorscales *SankeyLinkColorscales `json:"colorscales,omitempty"` // object
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Customdata data_array Assigns extra data to each link.
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Hoverinfo enumerated Determines which trace information appear when hovering links. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
     Hoverinfo SankeyLinkHoverinfo `json:"hoverinfo,omitempty"`
@@ -5915,13 +5915,13 @@ type SankeyLink struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Label data_array The shown name of the link.
     Label interface{} `json:"label,omitempty"`
     
     // Labelsrc string Sets the source reference on Chart Studio Cloud for  label .
-    Labelsrc string `json:"labelsrc,omitempty"`
+    Labelsrc String `json:"labelsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *SankeyLinkLine `json:"line,omitempty"` // object
@@ -5929,19 +5929,19 @@ type SankeyLink struct {
     Source interface{} `json:"source,omitempty"`
     
     // Sourcesrc string Sets the source reference on Chart Studio Cloud for  source .
-    Sourcesrc string `json:"sourcesrc,omitempty"`
+    Sourcesrc String `json:"sourcesrc,omitempty"`
     
     // Target data_array An integer number `[0..nodes.length - 1]` that represents the target node.
     Target interface{} `json:"target,omitempty"`
     
     // Targetsrc string Sets the source reference on Chart Studio Cloud for  target .
-    Targetsrc string `json:"targetsrc,omitempty"`
+    Targetsrc String `json:"targetsrc,omitempty"`
     
     // Value data_array A numeric value representing the flow volume value.
     Value interface{} `json:"value,omitempty"`
     
     // Valuesrc string Sets the source reference on Chart Studio Cloud for  value .
-    Valuesrc string `json:"valuesrc,omitempty"`
+    Valuesrc String `json:"valuesrc,omitempty"`
     
 }
  
@@ -5952,13 +5952,13 @@ type SankeyNode struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Customdata data_array Assigns extra data to each node.
     Customdata interface{} `json:"customdata,omitempty"`
     
     // Customdatasrc string Sets the source reference on Chart Studio Cloud for  customdata .
-    Customdatasrc string `json:"customdatasrc,omitempty"`
+    Customdatasrc String `json:"customdatasrc,omitempty"`
     
     // Groups info_array Groups of nodes. Each group is defined by an array with the indices of the nodes it contains. Multiple groups can be specified.
     Groups interface{} `json:"groups,omitempty"`
@@ -5972,13 +5972,13 @@ type SankeyNode struct {
     Hovertemplate interface{} `json:"hovertemplate,omitempty"`
     
     // Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
-    Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+    Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
     
     // Label data_array The shown name of the node.
     Label interface{} `json:"label,omitempty"`
     
     // Labelsrc string Sets the source reference on Chart Studio Cloud for  label .
-    Labelsrc string `json:"labelsrc,omitempty"`
+    Labelsrc String `json:"labelsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *SankeyNodeLine `json:"line,omitempty"` // object
@@ -5992,13 +5992,13 @@ type SankeyNode struct {
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array The normalized vertical position of the node.
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
 }
  
@@ -6009,7 +6009,7 @@ type SankeyStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -6017,10 +6017,10 @@ type SankeyStream struct {
 type SankeyTextfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -6039,19 +6039,19 @@ type Scatter3dErrorX struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_zstyle boolean <no value>
-    Copy_zstyle bool `json:"copy_zstyle,omitempty"`
+    Copy_zstyle Bool `json:"copy_zstyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -6072,7 +6072,7 @@ type Scatter3dErrorX struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -6091,19 +6091,19 @@ type Scatter3dErrorY struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_zstyle boolean <no value>
-    Copy_zstyle bool `json:"copy_zstyle,omitempty"`
+    Copy_zstyle Bool `json:"copy_zstyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -6124,7 +6124,7 @@ type Scatter3dErrorY struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -6143,16 +6143,16 @@ type Scatter3dErrorZ struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -6173,7 +6173,7 @@ type Scatter3dErrorZ struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -6187,19 +6187,19 @@ type Scatter3dHoverlabel struct {
     Align Scatter3dHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *Scatter3dHoverlabelFont `json:"font,omitempty"` // object
@@ -6207,7 +6207,7 @@ type Scatter3dHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -6215,10 +6215,10 @@ type Scatter3dHoverlabel struct {
 type Scatter3dLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax`  Has an effect only if in `line.color`is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6233,7 +6233,7 @@ type Scatter3dLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *Scatter3dLineColorbar `json:"colorbar,omitempty"` // object
@@ -6241,16 +6241,16 @@ type Scatter3dLine struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Dash enumerated Sets the dash style of the lines.
     Dash Scatter3dLineDash `json:"dash,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -6261,10 +6261,10 @@ type Scatter3dLine struct {
 type Scatter3dMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6279,7 +6279,7 @@ type Scatter3dMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *Scatter3dMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -6287,7 +6287,7 @@ type Scatter3dMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *Scatter3dMarkerLine `json:"line,omitempty"` // object
@@ -6295,10 +6295,10 @@ type Scatter3dMarker struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -6313,13 +6313,13 @@ type Scatter3dMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type.
     Symbol Scatter3dMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -6341,7 +6341,7 @@ type Scatter3dStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -6352,16 +6352,16 @@ type Scatter3dTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -6384,19 +6384,19 @@ type ScatterErrorX struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_ystyle boolean <no value>
-    Copy_ystyle bool `json:"copy_ystyle,omitempty"`
+    Copy_ystyle Bool `json:"copy_ystyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -6417,7 +6417,7 @@ type ScatterErrorX struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -6436,16 +6436,16 @@ type ScatterErrorY struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -6466,7 +6466,7 @@ type ScatterErrorY struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -6480,19 +6480,19 @@ type ScatterHoverlabel struct {
     Align ScatterHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScatterHoverlabelFont `json:"font,omitempty"` // object
@@ -6500,7 +6500,7 @@ type ScatterHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -6508,16 +6508,16 @@ type ScatterHoverlabel struct {
 type ScatterLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Shape enumerated Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes.
     Shape ScatterLineShape `json:"shape,omitempty"`
     
     // Simplify boolean Simplifies lines by removing nearly-collinear points. When transitioning lines, it may be desirable to disable this so that the number of points along the resulting SVG path is unaffected.
-    Simplify bool `json:"simplify,omitempty"`
+    Simplify Bool `json:"simplify,omitempty"`
     
     // Smoothing number Has an effect only if `shape` is set to *spline* Sets the amount of smoothing. *0* corresponds to no smoothing (equivalent to a *linear* shape).
     Smoothing float64 `json:"smoothing,omitempty"`
@@ -6531,10 +6531,10 @@ type ScatterLine struct {
 type ScatterMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6549,7 +6549,7 @@ type ScatterMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScatterMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -6557,7 +6557,7 @@ type ScatterMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Gradient <no value> <no value>
     Gradient *ScatterMarkerGradient `json:"gradient,omitempty"` // object
@@ -6570,13 +6570,13 @@ type ScatterMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -6591,13 +6591,13 @@ type ScatterMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScatterMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -6617,7 +6617,7 @@ type ScatterStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -6628,19 +6628,19 @@ type ScatterTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -6667,19 +6667,19 @@ type ScattercarpetHoverlabel struct {
     Align ScattercarpetHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScattercarpetHoverlabelFont `json:"font,omitempty"` // object
@@ -6687,7 +6687,7 @@ type ScattercarpetHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -6695,10 +6695,10 @@ type ScattercarpetHoverlabel struct {
 type ScattercarpetLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Shape enumerated Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes.
     Shape ScattercarpetLineShape `json:"shape,omitempty"`
@@ -6715,10 +6715,10 @@ type ScattercarpetLine struct {
 type ScattercarpetMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6733,7 +6733,7 @@ type ScattercarpetMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScattercarpetMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -6741,7 +6741,7 @@ type ScattercarpetMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Gradient <no value> <no value>
     Gradient *ScattercarpetMarkerGradient `json:"gradient,omitempty"` // object
@@ -6754,13 +6754,13 @@ type ScattercarpetMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -6775,13 +6775,13 @@ type ScattercarpetMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScattercarpetMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -6801,7 +6801,7 @@ type ScattercarpetStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -6812,19 +6812,19 @@ type ScattercarpetTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -6851,19 +6851,19 @@ type ScattergeoHoverlabel struct {
     Align ScattergeoHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScattergeoHoverlabelFont `json:"font,omitempty"` // object
@@ -6871,7 +6871,7 @@ type ScattergeoHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -6879,10 +6879,10 @@ type ScattergeoHoverlabel struct {
 type ScattergeoLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -6893,10 +6893,10 @@ type ScattergeoLine struct {
 type ScattergeoMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -6911,7 +6911,7 @@ type ScattergeoMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScattergeoMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -6919,7 +6919,7 @@ type ScattergeoMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Gradient <no value> <no value>
     Gradient *ScattergeoMarkerGradient `json:"gradient,omitempty"` // object
@@ -6929,13 +6929,13 @@ type ScattergeoMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -6950,13 +6950,13 @@ type ScattergeoMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScattergeoMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -6976,7 +6976,7 @@ type ScattergeoStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -6987,19 +6987,19 @@ type ScattergeoTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -7031,19 +7031,19 @@ type ScatterglErrorX struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Copy_ystyle boolean <no value>
-    Copy_ystyle bool `json:"copy_ystyle,omitempty"`
+    Copy_ystyle Bool `json:"copy_ystyle,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -7064,7 +7064,7 @@ type ScatterglErrorX struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -7083,16 +7083,16 @@ type ScatterglErrorY struct {
     Arrayminus interface{} `json:"arrayminus,omitempty"`
     
     // Arrayminussrc string Sets the source reference on Chart Studio Cloud for  arrayminus .
-    Arrayminussrc string `json:"arrayminussrc,omitempty"`
+    Arrayminussrc String `json:"arrayminussrc,omitempty"`
     
     // Arraysrc string Sets the source reference on Chart Studio Cloud for  array .
-    Arraysrc string `json:"arraysrc,omitempty"`
+    Arraysrc String `json:"arraysrc,omitempty"`
     
     // Color color Sets the stoke color of the error bars.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symmetric boolean Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-    Symmetric bool `json:"symmetric,omitempty"`
+    Symmetric Bool `json:"symmetric,omitempty"`
     
     // Thickness number Sets the thickness (in px) of the error bars.
     Thickness float64 `json:"thickness,omitempty"`
@@ -7113,7 +7113,7 @@ type ScatterglErrorY struct {
     Valueminus float64 `json:"valueminus,omitempty"`
     
     // Visible boolean Determines whether or not this set of error bars is visible.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width (in px) of the cross-bar at both ends of the error bars.
     Width float64 `json:"width,omitempty"`
@@ -7127,19 +7127,19 @@ type ScatterglHoverlabel struct {
     Align ScatterglHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScatterglHoverlabelFont `json:"font,omitempty"` // object
@@ -7147,7 +7147,7 @@ type ScatterglHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -7155,7 +7155,7 @@ type ScatterglHoverlabel struct {
 type ScatterglLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash enumerated Sets the style of the lines.
     Dash ScatterglLineDash `json:"dash,omitempty"`
@@ -7172,10 +7172,10 @@ type ScatterglLine struct {
 type ScatterglMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -7190,7 +7190,7 @@ type ScatterglMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScatterglMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -7198,7 +7198,7 @@ type ScatterglMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterglMarkerLine `json:"line,omitempty"` // object
@@ -7206,13 +7206,13 @@ type ScatterglMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -7227,13 +7227,13 @@ type ScatterglMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScatterglMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -7253,7 +7253,7 @@ type ScatterglStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -7264,19 +7264,19 @@ type ScatterglTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -7303,19 +7303,19 @@ type ScattermapboxHoverlabel struct {
     Align ScattermapboxHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScattermapboxHoverlabelFont `json:"font,omitempty"` // object
@@ -7323,7 +7323,7 @@ type ScattermapboxHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -7331,7 +7331,7 @@ type ScattermapboxHoverlabel struct {
 type ScattermapboxLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -7342,19 +7342,19 @@ type ScattermapboxLine struct {
 type ScattermapboxMarker struct {
 
     // Allowoverlap boolean Flag to draw all symbols, even if they overlap.
-    Allowoverlap bool `json:"allowoverlap,omitempty"`
+    Allowoverlap Bool `json:"allowoverlap,omitempty"`
     
     // Angle number Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
     Angle interface{} `json:"angle,omitempty"`
     
     // Anglesrc string Sets the source reference on Chart Studio Cloud for  angle .
-    Anglesrc string `json:"anglesrc,omitempty"`
+    Anglesrc String `json:"anglesrc,omitempty"`
     
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -7369,7 +7369,7 @@ type ScattermapboxMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScattermapboxMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -7377,19 +7377,19 @@ type ScattermapboxMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Opacity number Sets the marker opacity.
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -7404,13 +7404,13 @@ type ScattermapboxMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol string Sets the marker symbol. Full list: https://www.mapbox.com/maki-icons/ Note that the array `marker.color` and `marker.size` are only available for *circle* symbols.
     Symbol interface{} `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -7428,7 +7428,7 @@ type ScattermapboxStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -7436,10 +7436,10 @@ type ScattermapboxStream struct {
 type ScattermapboxTextfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -7467,19 +7467,19 @@ type ScatterpolarHoverlabel struct {
     Align ScatterpolarHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScatterpolarHoverlabelFont `json:"font,omitempty"` // object
@@ -7487,7 +7487,7 @@ type ScatterpolarHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -7495,10 +7495,10 @@ type ScatterpolarHoverlabel struct {
 type ScatterpolarLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Shape enumerated Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes.
     Shape ScatterpolarLineShape `json:"shape,omitempty"`
@@ -7515,10 +7515,10 @@ type ScatterpolarLine struct {
 type ScatterpolarMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -7533,7 +7533,7 @@ type ScatterpolarMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScatterpolarMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -7541,7 +7541,7 @@ type ScatterpolarMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Gradient <no value> <no value>
     Gradient *ScatterpolarMarkerGradient `json:"gradient,omitempty"` // object
@@ -7554,13 +7554,13 @@ type ScatterpolarMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -7575,13 +7575,13 @@ type ScatterpolarMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScatterpolarMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -7601,7 +7601,7 @@ type ScatterpolarStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -7612,19 +7612,19 @@ type ScatterpolarTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -7651,19 +7651,19 @@ type ScatterpolarglHoverlabel struct {
     Align ScatterpolarglHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScatterpolarglHoverlabelFont `json:"font,omitempty"` // object
@@ -7671,7 +7671,7 @@ type ScatterpolarglHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -7679,7 +7679,7 @@ type ScatterpolarglHoverlabel struct {
 type ScatterpolarglLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash enumerated Sets the style of the lines.
     Dash ScatterpolarglLineDash `json:"dash,omitempty"`
@@ -7696,10 +7696,10 @@ type ScatterpolarglLine struct {
 type ScatterpolarglMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -7714,7 +7714,7 @@ type ScatterpolarglMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScatterpolarglMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -7722,7 +7722,7 @@ type ScatterpolarglMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *ScatterpolarglMarkerLine `json:"line,omitempty"` // object
@@ -7730,13 +7730,13 @@ type ScatterpolarglMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -7751,13 +7751,13 @@ type ScatterpolarglMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScatterpolarglMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -7777,7 +7777,7 @@ type ScatterpolarglStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -7788,19 +7788,19 @@ type ScatterpolarglTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -7827,19 +7827,19 @@ type ScatterternaryHoverlabel struct {
     Align ScatterternaryHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ScatterternaryHoverlabelFont `json:"font,omitempty"` // object
@@ -7847,7 +7847,7 @@ type ScatterternaryHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -7855,10 +7855,10 @@ type ScatterternaryHoverlabel struct {
 type ScatterternaryLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Shape enumerated Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes.
     Shape ScatterternaryLineShape `json:"shape,omitempty"`
@@ -7875,10 +7875,10 @@ type ScatterternaryLine struct {
 type ScatterternaryMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -7893,7 +7893,7 @@ type ScatterternaryMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *ScatterternaryMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -7901,7 +7901,7 @@ type ScatterternaryMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Gradient <no value> <no value>
     Gradient *ScatterternaryMarkerGradient `json:"gradient,omitempty"` // object
@@ -7914,13 +7914,13 @@ type ScatterternaryMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -7935,13 +7935,13 @@ type ScatterternaryMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol ScatterternaryMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -7961,7 +7961,7 @@ type ScatterternaryStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -7972,19 +7972,19 @@ type ScatterternaryTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -8008,7 +8008,7 @@ type ScatterternaryUnselected struct {
 type SplomDiagonal struct {
 
     // Visible boolean Determines whether or not subplots on the diagonal are displayed.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -8026,19 +8026,19 @@ type SplomHoverlabel struct {
     Align SplomHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SplomHoverlabelFont `json:"font,omitempty"` // object
@@ -8046,7 +8046,7 @@ type SplomHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8054,10 +8054,10 @@ type SplomHoverlabel struct {
 type SplomMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -8072,7 +8072,7 @@ type SplomMarker struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *SplomMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -8080,7 +8080,7 @@ type SplomMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Line <no value> <no value>
     Line *SplomMarkerLine `json:"line,omitempty"` // object
@@ -8088,13 +8088,13 @@ type SplomMarker struct {
     Opacity interface{} `json:"opacity,omitempty"`
     
     // Opacitysrc string Sets the source reference on Chart Studio Cloud for  opacity .
-    Opacitysrc string `json:"opacitysrc,omitempty"`
+    Opacitysrc String `json:"opacitysrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size interface{} `json:"size,omitempty"`
@@ -8109,13 +8109,13 @@ type SplomMarker struct {
     Sizeref float64 `json:"sizeref,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
     // Symbol enumerated Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
     Symbol SplomMarkerSymbol `json:"symbol,omitempty"`
     
     // Symbolsrc string Sets the source reference on Chart Studio Cloud for  symbol .
-    Symbolsrc string `json:"symbolsrc,omitempty"`
+    Symbolsrc String `json:"symbolsrc,omitempty"`
     
 }
  
@@ -8133,7 +8133,7 @@ type SplomStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -8157,10 +8157,10 @@ type StreamtubeColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -8181,19 +8181,19 @@ type StreamtubeColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent StreamtubeColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix StreamtubeColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -8214,12 +8214,12 @@ type StreamtubeColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *StreamtubeColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *StreamtubeColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -8230,25 +8230,25 @@ type StreamtubeColorbar struct {
     Tickmode StreamtubeColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks StreamtubeColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -8282,19 +8282,19 @@ type StreamtubeHoverlabel struct {
     Align StreamtubeHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *StreamtubeHoverlabelFont `json:"font,omitempty"` // object
@@ -8302,7 +8302,7 @@ type StreamtubeHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8353,19 +8353,19 @@ type StreamtubeStarts struct {
     X interface{} `json:"x,omitempty"`
     
     // Xsrc string Sets the source reference on Chart Studio Cloud for  x .
-    Xsrc string `json:"xsrc,omitempty"`
+    Xsrc String `json:"xsrc,omitempty"`
     
     // Y data_array Sets the y components of the starting position of the streamtubes
     Y interface{} `json:"y,omitempty"`
     
     // Ysrc string Sets the source reference on Chart Studio Cloud for  y .
-    Ysrc string `json:"ysrc,omitempty"`
+    Ysrc String `json:"ysrc,omitempty"`
     
     // Z data_array Sets the z components of the starting position of the streamtubes
     Z interface{} `json:"z,omitempty"`
     
     // Zsrc string Sets the source reference on Chart Studio Cloud for  z .
-    Zsrc string `json:"zsrc,omitempty"`
+    Zsrc String `json:"zsrc,omitempty"`
     
 }
  
@@ -8376,7 +8376,7 @@ type StreamtubeStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -8404,19 +8404,19 @@ type SunburstHoverlabel struct {
     Align SunburstHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SunburstHoverlabelFont `json:"font,omitempty"` // object
@@ -8424,7 +8424,7 @@ type SunburstHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8435,19 +8435,19 @@ type SunburstInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -8463,10 +8463,10 @@ type SunburstLeaf struct {
 type SunburstMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if colorsis set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here colors) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if colorsis set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if colorsis set to a numerical array. Value should have the same units as colors and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -8478,7 +8478,7 @@ type SunburstMarker struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *SunburstMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -8489,15 +8489,15 @@ type SunburstMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorssrc string Sets the source reference on Chart Studio Cloud for  colors .
-    Colorssrc string `json:"colorssrc,omitempty"`
+    Colorssrc String `json:"colorssrc,omitempty"`
     
     // Line <no value> <no value>
     Line *SunburstMarkerLine `json:"line,omitempty"` // object
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if colorsis set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if colorsis set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -8508,19 +8508,19 @@ type SunburstOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -8531,7 +8531,7 @@ type SunburstStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -8542,19 +8542,19 @@ type SunburstTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -8571,10 +8571,10 @@ type SurfaceColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -8595,19 +8595,19 @@ type SurfaceColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent SurfaceColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix SurfaceColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -8628,12 +8628,12 @@ type SurfaceColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *SurfaceColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *SurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -8644,25 +8644,25 @@ type SurfaceColorbar struct {
     Tickmode SurfaceColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks SurfaceColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -8707,19 +8707,19 @@ type SurfaceHoverlabel struct {
     Align SurfaceHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SurfaceHoverlabelFont `json:"font,omitempty"` // object
@@ -8727,7 +8727,7 @@ type SurfaceHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8772,7 +8772,7 @@ type SurfaceStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -8783,7 +8783,7 @@ type TableCells struct {
     Align TableCellsAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Fill <no value> <no value>
     Fill *TableCellsFill `json:"fill,omitempty"` // object
@@ -8793,7 +8793,7 @@ type TableCells struct {
     Format interface{} `json:"format,omitempty"`
     
     // Formatsrc string Sets the source reference on Chart Studio Cloud for  format .
-    Formatsrc string `json:"formatsrc,omitempty"`
+    Formatsrc String `json:"formatsrc,omitempty"`
     
     // Height number The height of cells.
     Height float64 `json:"height,omitempty"`
@@ -8804,19 +8804,19 @@ type TableCells struct {
     Prefix interface{} `json:"prefix,omitempty"`
     
     // Prefixsrc string Sets the source reference on Chart Studio Cloud for  prefix .
-    Prefixsrc string `json:"prefixsrc,omitempty"`
+    Prefixsrc String `json:"prefixsrc,omitempty"`
     
     // Suffix string Suffix for cell values.
     Suffix interface{} `json:"suffix,omitempty"`
     
     // Suffixsrc string Sets the source reference on Chart Studio Cloud for  suffix .
-    Suffixsrc string `json:"suffixsrc,omitempty"`
+    Suffixsrc String `json:"suffixsrc,omitempty"`
     
     // Values data_array Cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
 }
  
@@ -8844,7 +8844,7 @@ type TableHeader struct {
     Align TableHeaderAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Fill <no value> <no value>
     Fill *TableHeaderFill `json:"fill,omitempty"` // object
@@ -8854,7 +8854,7 @@ type TableHeader struct {
     Format interface{} `json:"format,omitempty"`
     
     // Formatsrc string Sets the source reference on Chart Studio Cloud for  format .
-    Formatsrc string `json:"formatsrc,omitempty"`
+    Formatsrc String `json:"formatsrc,omitempty"`
     
     // Height number The height of cells.
     Height float64 `json:"height,omitempty"`
@@ -8865,19 +8865,19 @@ type TableHeader struct {
     Prefix interface{} `json:"prefix,omitempty"`
     
     // Prefixsrc string Sets the source reference on Chart Studio Cloud for  prefix .
-    Prefixsrc string `json:"prefixsrc,omitempty"`
+    Prefixsrc String `json:"prefixsrc,omitempty"`
     
     // Suffix string Suffix for cell values.
     Suffix interface{} `json:"suffix,omitempty"`
     
     // Suffixsrc string Sets the source reference on Chart Studio Cloud for  suffix .
-    Suffixsrc string `json:"suffixsrc,omitempty"`
+    Suffixsrc String `json:"suffixsrc,omitempty"`
     
     // Values data_array Header cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
     Values interface{} `json:"values,omitempty"`
     
     // Valuessrc string Sets the source reference on Chart Studio Cloud for  values .
-    Valuessrc string `json:"valuessrc,omitempty"`
+    Valuessrc String `json:"valuessrc,omitempty"`
     
 }
  
@@ -8888,19 +8888,19 @@ type TableHoverlabel struct {
     Align TableHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *TableHoverlabelFont `json:"font,omitempty"` // object
@@ -8908,7 +8908,7 @@ type TableHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8919,7 +8919,7 @@ type TableStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -8947,19 +8947,19 @@ type TreemapHoverlabel struct {
     Align TreemapHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *TreemapHoverlabelFont `json:"font,omitempty"` // object
@@ -8967,7 +8967,7 @@ type TreemapHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -8978,19 +8978,19 @@ type TreemapInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -8998,10 +8998,10 @@ type TreemapInsidetextfont struct {
 type TreemapMarker struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if colorsis set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here colors) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if colorsis set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if colorsis set to a numerical array. Value should have the same units as colors and if set, `marker.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -9013,7 +9013,7 @@ type TreemapMarker struct {
     Cmin float64 `json:"cmin,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorbar <no value> <no value>
     Colorbar *TreemapMarkerColorbar `json:"colorbar,omitempty"` // object
@@ -9024,7 +9024,7 @@ type TreemapMarker struct {
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorssrc string Sets the source reference on Chart Studio Cloud for  colors .
-    Colorssrc string `json:"colorssrc,omitempty"`
+    Colorssrc String `json:"colorssrc,omitempty"`
     
     // Depthfade enumerated Determines if the sector colors are faded towards the background from the leaves up to the headers. This option is unavailable when a `colorscale` is present, defaults to false when `marker.colors` is set, but otherwise defaults to true. When set to *reversed*, the fading direction is inverted, that is the top elements within hierarchy are drawn with fully saturated colors while the leaves are faded towards the background color.
     Depthfade TreemapMarkerDepthfade `json:"depthfade,omitempty"`
@@ -9034,10 +9034,10 @@ type TreemapMarker struct {
     // Pad <no value> <no value>
     Pad *TreemapMarkerPad `json:"pad,omitempty"` // object
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if colorsis set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Showscale boolean Determines whether or not a colorbar is displayed for this trace. Has an effect only if colorsis set to a numerical array.
-    Showscale bool `json:"showscale,omitempty"`
+    Showscale Bool `json:"showscale,omitempty"`
     
 }
  
@@ -9048,19 +9048,19 @@ type TreemapOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9079,7 +9079,7 @@ type TreemapPathbar struct {
     Thickness float64 `json:"thickness,omitempty"`
     
     // Visible boolean Determines if the path bar is drawn i.e. outside the trace `domain` and with one pixel gap.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -9090,7 +9090,7 @@ type TreemapStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -9101,19 +9101,19 @@ type TreemapTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9145,12 +9145,12 @@ type TreemapTransforms struct {
 type ViolinBox struct {
 
     // Fillcolor color Sets the inner box plot fill color.
-    Fillcolor string `json:"fillcolor,omitempty"`
+    Fillcolor String `json:"fillcolor,omitempty"`
     
     // Line <no value> <no value>
     Line *ViolinBoxLine `json:"line,omitempty"` // object
     // Visible boolean Determines if an miniature box plot is drawn inside the violins. 
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the width of the inner box plots relative to the violins' width. For example, with 1, the inner box plots are as wide as the violins.
     Width float64 `json:"width,omitempty"`
@@ -9164,19 +9164,19 @@ type ViolinHoverlabel struct {
     Align ViolinHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *ViolinHoverlabelFont `json:"font,omitempty"` // object
@@ -9184,7 +9184,7 @@ type ViolinHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -9192,7 +9192,7 @@ type ViolinHoverlabel struct {
 type ViolinLine struct {
 
     // Color color Sets the color of line bounding the violin(s).
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of line bounding the violin(s).
     Width float64 `json:"width,omitempty"`
@@ -9203,7 +9203,7 @@ type ViolinLine struct {
 type ViolinMarker struct {
 
     // Color color Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *ViolinMarkerLine `json:"line,omitempty"` // object
@@ -9211,7 +9211,7 @@ type ViolinMarker struct {
     Opacity float64 `json:"opacity,omitempty"`
     
     // Outliercolor color Sets the color of the outlier sample points.
-    Outliercolor string `json:"outliercolor,omitempty"`
+    Outliercolor String `json:"outliercolor,omitempty"`
     
     // Size number Sets the marker size (in px).
     Size float64 `json:"size,omitempty"`
@@ -9225,10 +9225,10 @@ type ViolinMarker struct {
 type ViolinMeanline struct {
 
     // Color color Sets the mean line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Visible boolean Determines if a line corresponding to the sample's mean is shown inside the violins. If `box.visible` is turned on, the mean line is drawn inside the inner box. Otherwise, the mean line is drawn from one side of the violin to other.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Width number Sets the mean line width.
     Width float64 `json:"width,omitempty"`
@@ -9249,7 +9249,7 @@ type ViolinStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -9284,10 +9284,10 @@ type VolumeColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -9308,19 +9308,19 @@ type VolumeColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent VolumeColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix VolumeColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -9341,12 +9341,12 @@ type VolumeColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *VolumeColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *VolumeColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -9357,25 +9357,25 @@ type VolumeColorbar struct {
     Tickmode VolumeColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks VolumeColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -9406,10 +9406,10 @@ type VolumeColorbar struct {
 type VolumeContour struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Show boolean Sets whether or not dynamic contours are shown on hover
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -9423,19 +9423,19 @@ type VolumeHoverlabel struct {
     Align VolumeHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *VolumeHoverlabelFont `json:"font,omitempty"` // object
@@ -9443,7 +9443,7 @@ type VolumeHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -9505,7 +9505,7 @@ type VolumeSpaceframe struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Displays/hides tetrahedron shapes between minimum and maximum iso-values. Often useful when either caps or surfaces are disabled or filled with values less than 1.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -9516,7 +9516,7 @@ type VolumeStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -9533,7 +9533,7 @@ type VolumeSurface struct {
     Pattern VolumeSurfacePattern `json:"pattern,omitempty"`
     
     // Show boolean Hides/displays surfaces between minimum and maximum iso-values.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -9546,7 +9546,7 @@ type WaterfallConnector struct {
     Mode WaterfallConnectorMode `json:"mode,omitempty"`
     
     // Visible boolean Determines if connector lines are drawn. 
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -9564,19 +9564,19 @@ type WaterfallHoverlabel struct {
     Align WaterfallHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *WaterfallHoverlabelFont `json:"font,omitempty"` // object
@@ -9584,7 +9584,7 @@ type WaterfallHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -9602,19 +9602,19 @@ type WaterfallInsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9625,19 +9625,19 @@ type WaterfallOutsidetextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9648,7 +9648,7 @@ type WaterfallStream struct {
     Maxpoints float64 `json:"maxpoints,omitempty"`
     
     // Token string The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-    Token string `json:"token,omitempty"`
+    Token String `json:"token,omitempty"`
     
 }
  
@@ -9659,19 +9659,19 @@ type WaterfallTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9698,19 +9698,19 @@ type AreaHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9721,19 +9721,19 @@ type BarHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9743,10 +9743,10 @@ type BarMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -9767,19 +9767,19 @@ type BarMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent BarMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix BarMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -9800,12 +9800,12 @@ type BarMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *BarMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *BarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -9816,25 +9816,25 @@ type BarMarkerColorbar struct {
     Tickmode BarMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks BarMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -9865,10 +9865,10 @@ type BarMarkerColorbar struct {
 type BarMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -9883,22 +9883,22 @@ type BarMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -9906,7 +9906,7 @@ type BarMarkerLine struct {
 type BarSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -9917,7 +9917,7 @@ type BarSelectedMarker struct {
 type BarSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -9925,7 +9925,7 @@ type BarSelectedTextfont struct {
 type BarUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -9936,7 +9936,7 @@ type BarUnselectedMarker struct {
 type BarUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -9947,19 +9947,19 @@ type BarpolarHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -9969,10 +9969,10 @@ type BarpolarMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -9993,19 +9993,19 @@ type BarpolarMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent BarpolarMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix BarpolarMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -10026,12 +10026,12 @@ type BarpolarMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *BarpolarMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *BarpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -10042,25 +10042,25 @@ type BarpolarMarkerColorbar struct {
     Tickmode BarpolarMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks BarpolarMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -10091,10 +10091,10 @@ type BarpolarMarkerColorbar struct {
 type BarpolarMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -10109,22 +10109,22 @@ type BarpolarMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -10132,7 +10132,7 @@ type BarpolarMarkerLine struct {
 type BarpolarSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -10143,7 +10143,7 @@ type BarpolarSelectedMarker struct {
 type BarpolarSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -10151,7 +10151,7 @@ type BarpolarSelectedTextfont struct {
 type BarpolarUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -10162,7 +10162,7 @@ type BarpolarUnselectedMarker struct {
 type BarpolarUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -10173,19 +10173,19 @@ type BoxHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10193,10 +10193,10 @@ type BoxHoverlabelFont struct {
 type BoxMarkerLine struct {
 
     // Color color Sets themarker.linecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Outliercolor color Sets the border line color of the outlier sample points. Defaults to marker.color
-    Outliercolor string `json:"outliercolor,omitempty"`
+    Outliercolor String `json:"outliercolor,omitempty"`
     
     // Outlierwidth number Sets the border line width (in px) of the outlier sample points.
     Outlierwidth float64 `json:"outlierwidth,omitempty"`
@@ -10210,7 +10210,7 @@ type BoxMarkerLine struct {
 type BoxSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -10224,7 +10224,7 @@ type BoxSelectedMarker struct {
 type BoxUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -10238,7 +10238,7 @@ type BoxUnselectedMarker struct {
 type CandlestickDecreasingLine struct {
 
     // Color color Sets the color of line bounding the box(es).
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of line bounding the box(es).
     Width float64 `json:"width,omitempty"`
@@ -10252,19 +10252,19 @@ type CandlestickHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10272,7 +10272,7 @@ type CandlestickHoverlabelFont struct {
 type CandlestickIncreasingLine struct {
 
     // Color color Sets the color of line bounding the box(es).
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of line bounding the box(es).
     Width float64 `json:"width,omitempty"`
@@ -10283,10 +10283,10 @@ type CandlestickIncreasingLine struct {
 type CarpetAaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10309,7 +10309,7 @@ type CarpetAaxisTitle struct {
     Offset float64 `json:"offset,omitempty"`
     
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10317,10 +10317,10 @@ type CarpetAaxisTitle struct {
 type CarpetBaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10343,7 +10343,7 @@ type CarpetBaxisTitle struct {
     Offset float64 `json:"offset,omitempty"`
     
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10351,10 +10351,10 @@ type CarpetBaxisTitle struct {
 type ChoroplethColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10377,7 +10377,7 @@ type ChoroplethColorbarTitle struct {
     Side ChoroplethColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10388,19 +10388,19 @@ type ChoroplethHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10411,13 +10411,13 @@ type ChoroplethMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -10441,10 +10441,10 @@ type ChoroplethUnselectedMarker struct {
 type ChoroplethmapboxColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10467,7 +10467,7 @@ type ChoroplethmapboxColorbarTitle struct {
     Side ChoroplethmapboxColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10478,19 +10478,19 @@ type ChoroplethmapboxHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10501,13 +10501,13 @@ type ChoroplethmapboxMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -10531,10 +10531,10 @@ type ChoroplethmapboxUnselectedMarker struct {
 type ConeColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10557,7 +10557,7 @@ type ConeColorbarTitle struct {
     Side ConeColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10568,19 +10568,19 @@ type ConeHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10588,10 +10588,10 @@ type ConeHoverlabelFont struct {
 type ContourColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10614,7 +10614,7 @@ type ContourColorbarTitle struct {
     Side ContourColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10627,10 +10627,10 @@ type ContourContoursImpliededits struct {
 type ContourContoursLabelfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10644,19 +10644,19 @@ type ContourHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10664,10 +10664,10 @@ type ContourHoverlabelFont struct {
 type ContourcarpetColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10690,7 +10690,7 @@ type ContourcarpetColorbarTitle struct {
     Side ContourcarpetColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10703,10 +10703,10 @@ type ContourcarpetContoursImpliededits struct {
 type ContourcarpetContoursLabelfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10717,10 +10717,10 @@ type ContourcarpetContoursLabelfont struct {
 type DensitymapboxColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -10743,7 +10743,7 @@ type DensitymapboxColorbarTitle struct {
     Side DensitymapboxColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -10754,19 +10754,19 @@ type DensitymapboxHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10774,10 +10774,10 @@ type DensitymapboxHoverlabelFont struct {
 type FunnelConnectorLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -10791,19 +10791,19 @@ type FunnelHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -10813,10 +10813,10 @@ type FunnelMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -10837,19 +10837,19 @@ type FunnelMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent FunnelMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix FunnelMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -10870,12 +10870,12 @@ type FunnelMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *FunnelMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *FunnelMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -10886,25 +10886,25 @@ type FunnelMarkerColorbar struct {
     Tickmode FunnelMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks FunnelMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -10935,10 +10935,10 @@ type FunnelMarkerColorbar struct {
 type FunnelMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -10953,22 +10953,22 @@ type FunnelMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -10979,19 +10979,19 @@ type FunnelareaHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11002,13 +11002,13 @@ type FunnelareaMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the line enclosing each sector.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -11019,19 +11019,19 @@ type FunnelareaTitleFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11039,10 +11039,10 @@ type FunnelareaTitleFont struct {
 type HeatmapColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11065,7 +11065,7 @@ type HeatmapColorbarTitle struct {
     Side HeatmapColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -11076,19 +11076,19 @@ type HeatmapHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11096,10 +11096,10 @@ type HeatmapHoverlabelFont struct {
 type HeatmapglColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11122,7 +11122,7 @@ type HeatmapglColorbarTitle struct {
     Side HeatmapglColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -11133,19 +11133,19 @@ type HeatmapglHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11153,10 +11153,10 @@ type HeatmapglHoverlabelFont struct {
 type Histogram2dColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11179,7 +11179,7 @@ type Histogram2dColorbarTitle struct {
     Side Histogram2dColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -11190,19 +11190,19 @@ type Histogram2dHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11210,10 +11210,10 @@ type Histogram2dHoverlabelFont struct {
 type Histogram2dcontourColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11236,7 +11236,7 @@ type Histogram2dcontourColorbarTitle struct {
     Side Histogram2dcontourColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -11249,10 +11249,10 @@ type Histogram2dcontourContoursImpliededits struct {
 type Histogram2dcontourContoursLabelfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11266,19 +11266,19 @@ type Histogram2dcontourHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11289,19 +11289,19 @@ type HistogramHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11311,10 +11311,10 @@ type HistogramMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -11335,19 +11335,19 @@ type HistogramMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent HistogramMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix HistogramMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -11368,12 +11368,12 @@ type HistogramMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *HistogramMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *HistogramMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -11384,25 +11384,25 @@ type HistogramMarkerColorbar struct {
     Tickmode HistogramMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks HistogramMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -11433,10 +11433,10 @@ type HistogramMarkerColorbar struct {
 type HistogramMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -11451,22 +11451,22 @@ type HistogramMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -11474,7 +11474,7 @@ type HistogramMarkerLine struct {
 type HistogramSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -11485,7 +11485,7 @@ type HistogramSelectedMarker struct {
 type HistogramSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -11493,7 +11493,7 @@ type HistogramSelectedTextfont struct {
 type HistogramUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -11504,7 +11504,7 @@ type HistogramUnselectedMarker struct {
 type HistogramUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -11515,19 +11515,19 @@ type ImageHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11535,10 +11535,10 @@ type ImageHoverlabelFont struct {
 type IndicatorDeltaDecreasing struct {
 
     // Color color Sets the color for increasing value.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symbol string Sets the symbol to display for increasing value
-    Symbol string `json:"symbol,omitempty"`
+    Symbol String `json:"symbol,omitempty"`
     
 }
  
@@ -11546,10 +11546,10 @@ type IndicatorDeltaDecreasing struct {
 type IndicatorDeltaFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11560,10 +11560,10 @@ type IndicatorDeltaFont struct {
 type IndicatorDeltaIncreasing struct {
 
     // Color color Sets the color for increasing value.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Symbol string Sets the symbol to display for increasing value
-    Symbol string `json:"symbol,omitempty"`
+    Symbol String `json:"symbol,omitempty"`
     
 }
  
@@ -11583,13 +11583,13 @@ type IndicatorGaugeAxis struct {
     Range interface{} `json:"range,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent IndicatorGaugeAxisShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix IndicatorGaugeAxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -11604,12 +11604,12 @@ type IndicatorGaugeAxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *IndicatorGaugeAxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *IndicatorGaugeAxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -11620,31 +11620,31 @@ type IndicatorGaugeAxis struct {
     Tickmode IndicatorGaugeAxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks IndicatorGaugeAxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -11652,7 +11652,7 @@ type IndicatorGaugeAxis struct {
 type IndicatorGaugeBar struct {
 
     // Color color Sets the background color of the arc.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *IndicatorGaugeBarLine `json:"line,omitempty"` // object
@@ -11685,10 +11685,10 @@ type IndicatorGaugeThreshold struct {
 type IndicatorNumberFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11699,10 +11699,10 @@ type IndicatorNumberFont struct {
 type IndicatorTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11716,7 +11716,7 @@ type IsosurfaceCapsX struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the x `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11727,7 +11727,7 @@ type IsosurfaceCapsY struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the y `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11738,7 +11738,7 @@ type IsosurfaceCapsZ struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the z `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11746,10 +11746,10 @@ type IsosurfaceCapsZ struct {
 type IsosurfaceColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -11772,7 +11772,7 @@ type IsosurfaceColorbarTitle struct {
     Side IsosurfaceColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -11783,19 +11783,19 @@ type IsosurfaceHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -11809,10 +11809,10 @@ type IsosurfaceSlicesX struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the x dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11826,10 +11826,10 @@ type IsosurfaceSlicesY struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the y dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11843,10 +11843,10 @@ type IsosurfaceSlicesZ struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the z dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -11856,10 +11856,10 @@ type LayoutColoraxisColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -11880,19 +11880,19 @@ type LayoutColoraxisColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutColoraxisColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutColoraxisColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -11913,12 +11913,12 @@ type LayoutColoraxisColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *LayoutColoraxisColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutColoraxisColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -11929,25 +11929,25 @@ type LayoutColoraxisColorbar struct {
     Tickmode LayoutColoraxisColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutColoraxisColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12009,7 +12009,7 @@ type LayoutGeoLataxis struct {
     Dtick float64 `json:"dtick,omitempty"`
     
     // Gridcolor color Sets the graticule's stroke color.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the graticule's stroke width (in px).
     Gridwidth float64 `json:"gridwidth,omitempty"`
@@ -12018,7 +12018,7 @@ type LayoutGeoLataxis struct {
     Range interface{} `json:"range,omitempty"`
     
     // Showgrid boolean Sets whether or not graticule are shown on the map.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Tick0 number Sets the graticule's starting tick longitude/latitude.
     Tick0 float64 `json:"tick0,omitempty"`
@@ -12032,7 +12032,7 @@ type LayoutGeoLonaxis struct {
     Dtick float64 `json:"dtick,omitempty"`
     
     // Gridcolor color Sets the graticule's stroke color.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the graticule's stroke width (in px).
     Gridwidth float64 `json:"gridwidth,omitempty"`
@@ -12041,7 +12041,7 @@ type LayoutGeoLonaxis struct {
     Range interface{} `json:"range,omitempty"`
     
     // Showgrid boolean Sets whether or not graticule are shown on the map.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Tick0 number Sets the graticule's starting tick longitude/latitude.
     Tick0 float64 `json:"tick0,omitempty"`
@@ -12079,10 +12079,10 @@ type LayoutGridDomain struct {
 type LayoutHoverlabelFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -12093,10 +12093,10 @@ type LayoutHoverlabelFont struct {
 type LayoutLegendFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -12112,7 +12112,7 @@ type LayoutLegendTitle struct {
     Side LayoutLegendTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the legend.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -12155,10 +12155,10 @@ type LayoutMapboxLayers struct {
 type LayoutNewshapeLine struct {
 
     // Color color Sets the line color. By default uses either dark grey or white to increase contrast with background color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -12172,13 +12172,13 @@ type LayoutPolarAngularaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutPolarAngularaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Direction enumerated Sets the direction corresponding to positive angles.
     Direction LayoutPolarAngularaxisDirection `json:"direction,omitempty"`
@@ -12190,19 +12190,19 @@ type LayoutPolarAngularaxis struct {
     Exponentformat LayoutPolarAngularaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutPolarAngularaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -12217,19 +12217,19 @@ type LayoutPolarAngularaxis struct {
     Rotation float64 `json:"rotation,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutPolarAngularaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutPolarAngularaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -12247,12 +12247,12 @@ type LayoutPolarAngularaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutPolarAngularaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutPolarAngularaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -12263,25 +12263,25 @@ type LayoutPolarAngularaxis struct {
     Tickmode LayoutPolarAngularaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutPolarAngularaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12293,7 +12293,7 @@ type LayoutPolarAngularaxis struct {
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -12332,13 +12332,13 @@ type LayoutPolarRadialaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutPolarRadialaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -12347,19 +12347,19 @@ type LayoutPolarRadialaxis struct {
     Exponentformat LayoutPolarRadialaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutPolarRadialaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -12374,19 +12374,19 @@ type LayoutPolarRadialaxis struct {
     Rangemode LayoutPolarRadialaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutPolarRadialaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutPolarRadialaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -12404,12 +12404,12 @@ type LayoutPolarRadialaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutPolarRadialaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutPolarRadialaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -12420,25 +12420,25 @@ type LayoutPolarRadialaxis struct {
     Tickmode LayoutPolarRadialaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutPolarRadialaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12452,7 +12452,7 @@ type LayoutPolarRadialaxis struct {
     Uirevision interface{} `json:"uirevision,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
 }
  
@@ -12518,7 +12518,7 @@ type LayoutSceneXaxis struct {
     Autorange LayoutSceneXaxisAutorange `json:"autorange,omitempty"`
     
     // Backgroundcolor color Sets the background color of this axis' wall.
-    Backgroundcolor string `json:"backgroundcolor,omitempty"`
+    Backgroundcolor String `json:"backgroundcolor,omitempty"`
     
     // Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
     Calendar LayoutSceneXaxisCalendar `json:"calendar,omitempty"`
@@ -12527,13 +12527,13 @@ type LayoutSceneXaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutSceneXaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -12542,16 +12542,16 @@ type LayoutSceneXaxis struct {
     Exponentformat LayoutSceneXaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -12569,28 +12569,28 @@ type LayoutSceneXaxis struct {
     Rangemode LayoutSceneXaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showaxeslabels boolean Sets whether or not this axis is labeled
-    Showaxeslabels bool `json:"showaxeslabels,omitempty"`
+    Showaxeslabels Bool `json:"showaxeslabels,omitempty"`
     
     // Showbackground boolean Sets whether or not this axis' wall has a background color.
-    Showbackground bool `json:"showbackground,omitempty"`
+    Showbackground Bool `json:"showbackground,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutSceneXaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showspikes boolean Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-    Showspikes bool `json:"showspikes,omitempty"`
+    Showspikes Bool `json:"showspikes,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutSceneXaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -12599,10 +12599,10 @@ type LayoutSceneXaxis struct {
     Showticksuffix LayoutSceneXaxisShowticksuffix `json:"showticksuffix,omitempty"`
     
     // Spikecolor color Sets the color of the spikes.
-    Spikecolor string `json:"spikecolor,omitempty"`
+    Spikecolor String `json:"spikecolor,omitempty"`
     
     // Spikesides boolean Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-    Spikesides bool `json:"spikesides,omitempty"`
+    Spikesides Bool `json:"spikesides,omitempty"`
     
     // Spikethickness number Sets the thickness (in px) of the spikes.
     Spikethickness float64 `json:"spikethickness,omitempty"`
@@ -12614,12 +12614,12 @@ type LayoutSceneXaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutSceneXaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutSceneXaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -12630,25 +12630,25 @@ type LayoutSceneXaxis struct {
     Tickmode LayoutSceneXaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutSceneXaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12659,13 +12659,13 @@ type LayoutSceneXaxis struct {
     Type LayoutSceneXaxisType `json:"type,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Zeroline boolean Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-    Zeroline bool `json:"zeroline,omitempty"`
+    Zeroline Bool `json:"zeroline,omitempty"`
     
     // Zerolinecolor color Sets the line color of the zero line.
-    Zerolinecolor string `json:"zerolinecolor,omitempty"`
+    Zerolinecolor String `json:"zerolinecolor,omitempty"`
     
     // Zerolinewidth number Sets the width (in px) of the zero line.
     Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
@@ -12681,7 +12681,7 @@ type LayoutSceneYaxis struct {
     Autorange LayoutSceneYaxisAutorange `json:"autorange,omitempty"`
     
     // Backgroundcolor color Sets the background color of this axis' wall.
-    Backgroundcolor string `json:"backgroundcolor,omitempty"`
+    Backgroundcolor String `json:"backgroundcolor,omitempty"`
     
     // Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
     Calendar LayoutSceneYaxisCalendar `json:"calendar,omitempty"`
@@ -12690,13 +12690,13 @@ type LayoutSceneYaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutSceneYaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -12705,16 +12705,16 @@ type LayoutSceneYaxis struct {
     Exponentformat LayoutSceneYaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -12732,28 +12732,28 @@ type LayoutSceneYaxis struct {
     Rangemode LayoutSceneYaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showaxeslabels boolean Sets whether or not this axis is labeled
-    Showaxeslabels bool `json:"showaxeslabels,omitempty"`
+    Showaxeslabels Bool `json:"showaxeslabels,omitempty"`
     
     // Showbackground boolean Sets whether or not this axis' wall has a background color.
-    Showbackground bool `json:"showbackground,omitempty"`
+    Showbackground Bool `json:"showbackground,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutSceneYaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showspikes boolean Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-    Showspikes bool `json:"showspikes,omitempty"`
+    Showspikes Bool `json:"showspikes,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutSceneYaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -12762,10 +12762,10 @@ type LayoutSceneYaxis struct {
     Showticksuffix LayoutSceneYaxisShowticksuffix `json:"showticksuffix,omitempty"`
     
     // Spikecolor color Sets the color of the spikes.
-    Spikecolor string `json:"spikecolor,omitempty"`
+    Spikecolor String `json:"spikecolor,omitempty"`
     
     // Spikesides boolean Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-    Spikesides bool `json:"spikesides,omitempty"`
+    Spikesides Bool `json:"spikesides,omitempty"`
     
     // Spikethickness number Sets the thickness (in px) of the spikes.
     Spikethickness float64 `json:"spikethickness,omitempty"`
@@ -12777,12 +12777,12 @@ type LayoutSceneYaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutSceneYaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutSceneYaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -12793,25 +12793,25 @@ type LayoutSceneYaxis struct {
     Tickmode LayoutSceneYaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutSceneYaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12822,13 +12822,13 @@ type LayoutSceneYaxis struct {
     Type LayoutSceneYaxisType `json:"type,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Zeroline boolean Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-    Zeroline bool `json:"zeroline,omitempty"`
+    Zeroline Bool `json:"zeroline,omitempty"`
     
     // Zerolinecolor color Sets the line color of the zero line.
-    Zerolinecolor string `json:"zerolinecolor,omitempty"`
+    Zerolinecolor String `json:"zerolinecolor,omitempty"`
     
     // Zerolinewidth number Sets the width (in px) of the zero line.
     Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
@@ -12844,7 +12844,7 @@ type LayoutSceneZaxis struct {
     Autorange LayoutSceneZaxisAutorange `json:"autorange,omitempty"`
     
     // Backgroundcolor color Sets the background color of this axis' wall.
-    Backgroundcolor string `json:"backgroundcolor,omitempty"`
+    Backgroundcolor String `json:"backgroundcolor,omitempty"`
     
     // Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
     Calendar LayoutSceneZaxisCalendar `json:"calendar,omitempty"`
@@ -12853,13 +12853,13 @@ type LayoutSceneZaxis struct {
     Categoryarray interface{} `json:"categoryarray,omitempty"`
     
     // Categoryarraysrc string Sets the source reference on Chart Studio Cloud for  categoryarray .
-    Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+    Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
     
     // Categoryorder enumerated Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
     Categoryorder LayoutSceneZaxisCategoryorder `json:"categoryorder,omitempty"`
     
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -12868,16 +12868,16 @@ type LayoutSceneZaxis struct {
     Exponentformat LayoutSceneZaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -12895,28 +12895,28 @@ type LayoutSceneZaxis struct {
     Rangemode LayoutSceneZaxisRangemode `json:"rangemode,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showaxeslabels boolean Sets whether or not this axis is labeled
-    Showaxeslabels bool `json:"showaxeslabels,omitempty"`
+    Showaxeslabels Bool `json:"showaxeslabels,omitempty"`
     
     // Showbackground boolean Sets whether or not this axis' wall has a background color.
-    Showbackground bool `json:"showbackground,omitempty"`
+    Showbackground Bool `json:"showbackground,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutSceneZaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showspikes boolean Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-    Showspikes bool `json:"showspikes,omitempty"`
+    Showspikes Bool `json:"showspikes,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutSceneZaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -12925,10 +12925,10 @@ type LayoutSceneZaxis struct {
     Showticksuffix LayoutSceneZaxisShowticksuffix `json:"showticksuffix,omitempty"`
     
     // Spikecolor color Sets the color of the spikes.
-    Spikecolor string `json:"spikecolor,omitempty"`
+    Spikecolor String `json:"spikecolor,omitempty"`
     
     // Spikesides boolean Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-    Spikesides bool `json:"spikesides,omitempty"`
+    Spikesides Bool `json:"spikesides,omitempty"`
     
     // Spikethickness number Sets the thickness (in px) of the spikes.
     Spikethickness float64 `json:"spikethickness,omitempty"`
@@ -12940,12 +12940,12 @@ type LayoutSceneZaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutSceneZaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutSceneZaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -12956,25 +12956,25 @@ type LayoutSceneZaxis struct {
     Tickmode LayoutSceneZaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutSceneZaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -12985,13 +12985,13 @@ type LayoutSceneZaxis struct {
     Type LayoutSceneZaxisType `json:"type,omitempty"`
     
     // Visible boolean A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Zeroline boolean Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-    Zeroline bool `json:"zeroline,omitempty"`
+    Zeroline Bool `json:"zeroline,omitempty"`
     
     // Zerolinecolor color Sets the line color of the zero line.
-    Zerolinecolor string `json:"zerolinecolor,omitempty"`
+    Zerolinecolor String `json:"zerolinecolor,omitempty"`
     
     // Zerolinewidth number Sets the width (in px) of the zero line.
     Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
@@ -13004,7 +13004,7 @@ type LayoutTernaryAaxis struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -13013,19 +13013,19 @@ type LayoutTernaryAaxis struct {
     Exponentformat LayoutTernaryAaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutTernaryAaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -13037,19 +13037,19 @@ type LayoutTernaryAaxis struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutTernaryAaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutTernaryAaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -13064,12 +13064,12 @@ type LayoutTernaryAaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutTernaryAaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutTernaryAaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -13080,25 +13080,25 @@ type LayoutTernaryAaxis struct {
     Tickmode LayoutTernaryAaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutTernaryAaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -13116,7 +13116,7 @@ type LayoutTernaryBaxis struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -13125,19 +13125,19 @@ type LayoutTernaryBaxis struct {
     Exponentformat LayoutTernaryBaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutTernaryBaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -13149,19 +13149,19 @@ type LayoutTernaryBaxis struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutTernaryBaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutTernaryBaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -13176,12 +13176,12 @@ type LayoutTernaryBaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutTernaryBaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutTernaryBaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -13192,25 +13192,25 @@ type LayoutTernaryBaxis struct {
     Tickmode LayoutTernaryBaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutTernaryBaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -13228,7 +13228,7 @@ type LayoutTernaryCaxis struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dtick any Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
     Dtick interface{} `json:"dtick,omitempty"`
@@ -13237,19 +13237,19 @@ type LayoutTernaryCaxis struct {
     Exponentformat LayoutTernaryCaxisExponentformat `json:"exponentformat,omitempty"`
     
     // Gridcolor color Sets the color of the grid lines.
-    Gridcolor string `json:"gridcolor,omitempty"`
+    Gridcolor String `json:"gridcolor,omitempty"`
     
     // Gridwidth number Sets the width (in px) of the grid lines.
     Gridwidth float64 `json:"gridwidth,omitempty"`
     
     // Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Hoverformat string `json:"hoverformat,omitempty"`
+    Hoverformat String `json:"hoverformat,omitempty"`
     
     // Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
     Layer LayoutTernaryCaxisLayer `json:"layer,omitempty"`
     
     // Linecolor color Sets the axis line color.
-    Linecolor string `json:"linecolor,omitempty"`
+    Linecolor String `json:"linecolor,omitempty"`
     
     // Linewidth number Sets the width (in px) of the axis line.
     Linewidth float64 `json:"linewidth,omitempty"`
@@ -13261,19 +13261,19 @@ type LayoutTernaryCaxis struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent LayoutTernaryCaxisShowexponent `json:"showexponent,omitempty"`
     
     // Showgrid boolean Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-    Showgrid bool `json:"showgrid,omitempty"`
+    Showgrid Bool `json:"showgrid,omitempty"`
     
     // Showline boolean Determines whether or not a line bounding this axis is drawn.
-    Showline bool `json:"showline,omitempty"`
+    Showline Bool `json:"showline,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix LayoutTernaryCaxisShowtickprefix `json:"showtickprefix,omitempty"`
@@ -13288,12 +13288,12 @@ type LayoutTernaryCaxis struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the tick font.
     Tickfont *LayoutTernaryCaxisTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *LayoutTernaryCaxisTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -13304,25 +13304,25 @@ type LayoutTernaryCaxis struct {
     Tickmode LayoutTernaryCaxisTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks LayoutTernaryCaxisTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -13355,10 +13355,10 @@ type LayoutTernaryDomain struct {
 type LayoutTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -13393,13 +13393,13 @@ type LayoutXaxisRangebreaks struct {
 type LayoutXaxisRangeselector struct {
 
     // Activecolor color Sets the background color of the active range selector button.
-    Activecolor string `json:"activecolor,omitempty"`
+    Activecolor String `json:"activecolor,omitempty"`
     
     // Bgcolor color Sets the background color of the range selector buttons.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the color of the border enclosing the range selector.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) of the border enclosing the range selector.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -13409,7 +13409,7 @@ type LayoutXaxisRangeselector struct {
     // Font <no value> Sets the font of the range selector button text.
     Font *LayoutXaxisRangeselectorFont `json:"font,omitempty"` // object
     // Visible boolean Determines whether or not this range selector is visible. Note that range selectors are only available for x axes of `type` set to or auto-typed to *date*.
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // X number Sets the x position (in normalized coordinates) of the range selector.
     X float64 `json:"x,omitempty"`
@@ -13429,13 +13429,13 @@ type LayoutXaxisRangeselector struct {
 type LayoutXaxisRangeslider struct {
 
     // Autorange boolean Determines whether or not the range slider range is computed in relation to the input data. If `range` is provided, then `autorange` is set to *false*.
-    Autorange bool `json:"autorange,omitempty"`
+    Autorange Bool `json:"autorange,omitempty"`
     
     // Bgcolor color Sets the background color of the range slider.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the border color of the range slider.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth integer Sets the border width of the range slider.
     Borderwidth int64 `json:"borderwidth,omitempty"`
@@ -13447,7 +13447,7 @@ type LayoutXaxisRangeslider struct {
     Thickness float64 `json:"thickness,omitempty"`
     
     // Visible boolean Determines whether or not the range slider will be visible. If visible, perpendicular axes will be set to `fixedrange`
-    Visible bool `json:"visible,omitempty"`
+    Visible Bool `json:"visible,omitempty"`
     
     // Yaxis <no value> <no value>
     Yaxis *LayoutXaxisRangesliderYaxis `json:"yaxis,omitempty"` // object
@@ -13457,10 +13457,10 @@ type LayoutXaxisRangeslider struct {
 type LayoutXaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -13483,7 +13483,7 @@ type LayoutXaxisTitle struct {
     Standoff float64 `json:"standoff,omitempty"`
     
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -13498,10 +13498,10 @@ type LayoutYaxisRangebreaks struct {
 type LayoutYaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -13524,7 +13524,7 @@ type LayoutYaxisTitle struct {
     Standoff float64 `json:"standoff,omitempty"`
     
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -13532,10 +13532,10 @@ type LayoutYaxisTitle struct {
 type Mesh3dColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -13558,7 +13558,7 @@ type Mesh3dColorbarTitle struct {
     Side Mesh3dColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -13569,19 +13569,19 @@ type Mesh3dHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -13589,10 +13589,10 @@ type Mesh3dHoverlabelFont struct {
 type OhlcDecreasingLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -13606,19 +13606,19 @@ type OhlcHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -13626,10 +13626,10 @@ type OhlcHoverlabelFont struct {
 type OhlcIncreasingLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -13642,10 +13642,10 @@ type ParcatsLineColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -13666,19 +13666,19 @@ type ParcatsLineColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ParcatsLineColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ParcatsLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -13699,12 +13699,12 @@ type ParcatsLineColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ParcatsLineColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ParcatsLineColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -13715,25 +13715,25 @@ type ParcatsLineColorbar struct {
     Tickmode ParcatsLineColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ParcatsLineColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -13766,10 +13766,10 @@ type ParcoordsLineColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -13790,19 +13790,19 @@ type ParcoordsLineColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ParcoordsLineColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ParcoordsLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -13823,12 +13823,12 @@ type ParcoordsLineColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ParcoordsLineColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ParcoordsLineColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -13839,25 +13839,25 @@ type ParcoordsLineColorbar struct {
     Tickmode ParcoordsLineColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ParcoordsLineColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -13891,19 +13891,19 @@ type PieHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -13914,13 +13914,13 @@ type PieMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the line enclosing each sector.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -13931,19 +13931,19 @@ type PieTitleFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -13954,19 +13954,19 @@ type PointcloudHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -13977,7 +13977,7 @@ type PointcloudMarkerBorder struct {
     Arearatio float64 `json:"arearatio,omitempty"`
     
     // Color color Sets the stroke color. It accepts a specific color. If the color is not fully opaque and there are hundreds of thousands of points, it may cause slower zooming and panning.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -13988,19 +13988,19 @@ type SankeyHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -14018,19 +14018,19 @@ type SankeyLinkHoverlabel struct {
     Align SankeyLinkHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SankeyLinkHoverlabelFont `json:"font,omitempty"` // object
@@ -14038,7 +14038,7 @@ type SankeyLinkHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -14049,13 +14049,13 @@ type SankeyLinkLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the `line` around each `link`.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -14066,19 +14066,19 @@ type SankeyNodeHoverlabel struct {
     Align SankeyNodeHoverlabelAlign `json:"align,omitempty"`
     
     // Alignsrc string Sets the source reference on Chart Studio Cloud for  align .
-    Alignsrc string `json:"alignsrc,omitempty"`
+    Alignsrc String `json:"alignsrc,omitempty"`
     
     // Bgcolor color Sets the background color of the hover labels for this trace
     Bgcolor interface{} `json:"bgcolor,omitempty"`
     
     // Bgcolorsrc string Sets the source reference on Chart Studio Cloud for  bgcolor .
-    Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+    Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
     
     // Bordercolor color Sets the border color of the hover labels for this trace.
     Bordercolor interface{} `json:"bordercolor,omitempty"`
     
     // Bordercolorsrc string Sets the source reference on Chart Studio Cloud for  bordercolor .
-    Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+    Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
     
     // Font <no value> Sets the font used in hover labels.
     Font *SankeyNodeHoverlabelFont `json:"font,omitempty"` // object
@@ -14086,7 +14086,7 @@ type SankeyNodeHoverlabel struct {
     Namelength interface{} `json:"namelength,omitempty"`
     
     // Namelengthsrc string Sets the source reference on Chart Studio Cloud for  namelength .
-    Namelengthsrc string `json:"namelengthsrc,omitempty"`
+    Namelengthsrc String `json:"namelengthsrc,omitempty"`
     
 }
  
@@ -14097,13 +14097,13 @@ type SankeyNodeLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the `line` around each `node`.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -14114,19 +14114,19 @@ type Scatter3dHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -14136,10 +14136,10 @@ type Scatter3dLineColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -14160,19 +14160,19 @@ type Scatter3dLineColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent Scatter3dLineColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix Scatter3dLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -14193,12 +14193,12 @@ type Scatter3dLineColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *Scatter3dLineColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *Scatter3dLineColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -14209,25 +14209,25 @@ type Scatter3dLineColorbar struct {
     Tickmode Scatter3dLineColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks Scatter3dLineColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -14260,10 +14260,10 @@ type Scatter3dMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -14284,19 +14284,19 @@ type Scatter3dMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent Scatter3dMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix Scatter3dMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -14317,12 +14317,12 @@ type Scatter3dMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *Scatter3dMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *Scatter3dMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -14333,25 +14333,25 @@ type Scatter3dMarkerColorbar struct {
     Tickmode Scatter3dMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks Scatter3dMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -14382,10 +14382,10 @@ type Scatter3dMarkerColorbar struct {
 type Scatter3dMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -14400,16 +14400,16 @@ type Scatter3dMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width float64 `json:"width,omitempty"`
@@ -14426,7 +14426,7 @@ type Scatter3dProjectionX struct {
     Scale float64 `json:"scale,omitempty"`
     
     // Show boolean Sets whether or not projections are shown along the x axis.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -14440,7 +14440,7 @@ type Scatter3dProjectionY struct {
     Scale float64 `json:"scale,omitempty"`
     
     // Show boolean Sets whether or not projections are shown along the y axis.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -14454,7 +14454,7 @@ type Scatter3dProjectionZ struct {
     Scale float64 `json:"scale,omitempty"`
     
     // Show boolean Sets whether or not projections are shown along the z axis.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -14465,19 +14465,19 @@ type ScatterHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -14487,10 +14487,10 @@ type ScatterMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -14511,19 +14511,19 @@ type ScatterMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScatterMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScatterMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -14544,12 +14544,12 @@ type ScatterMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScatterMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScatterMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -14560,25 +14560,25 @@ type ScatterMarkerColorbar struct {
     Tickmode ScatterMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScatterMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -14612,13 +14612,13 @@ type ScatterMarkerGradient struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Type enumerated Sets the type of gradient used to fill the markers
     Type ScatterMarkerGradientType `json:"type,omitempty"`
     
     // Typesrc string Sets the source reference on Chart Studio Cloud for  type .
-    Typesrc string `json:"typesrc,omitempty"`
+    Typesrc String `json:"typesrc,omitempty"`
     
 }
  
@@ -14626,10 +14626,10 @@ type ScatterMarkerGradient struct {
 type ScatterMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -14644,22 +14644,22 @@ type ScatterMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -14667,7 +14667,7 @@ type ScatterMarkerLine struct {
 type ScatterSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -14681,7 +14681,7 @@ type ScatterSelectedMarker struct {
 type ScatterSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -14689,7 +14689,7 @@ type ScatterSelectedTextfont struct {
 type ScatterUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -14703,7 +14703,7 @@ type ScatterUnselectedMarker struct {
 type ScatterUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -14714,19 +14714,19 @@ type ScattercarpetHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -14736,10 +14736,10 @@ type ScattercarpetMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -14760,19 +14760,19 @@ type ScattercarpetMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScattercarpetMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScattercarpetMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -14793,12 +14793,12 @@ type ScattercarpetMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScattercarpetMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScattercarpetMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -14809,25 +14809,25 @@ type ScattercarpetMarkerColorbar struct {
     Tickmode ScattercarpetMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScattercarpetMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -14861,13 +14861,13 @@ type ScattercarpetMarkerGradient struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Type enumerated Sets the type of gradient used to fill the markers
     Type ScattercarpetMarkerGradientType `json:"type,omitempty"`
     
     // Typesrc string Sets the source reference on Chart Studio Cloud for  type .
-    Typesrc string `json:"typesrc,omitempty"`
+    Typesrc String `json:"typesrc,omitempty"`
     
 }
  
@@ -14875,10 +14875,10 @@ type ScattercarpetMarkerGradient struct {
 type ScattercarpetMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -14893,22 +14893,22 @@ type ScattercarpetMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -14916,7 +14916,7 @@ type ScattercarpetMarkerLine struct {
 type ScattercarpetSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -14930,7 +14930,7 @@ type ScattercarpetSelectedMarker struct {
 type ScattercarpetSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -14938,7 +14938,7 @@ type ScattercarpetSelectedTextfont struct {
 type ScattercarpetUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -14952,7 +14952,7 @@ type ScattercarpetUnselectedMarker struct {
 type ScattercarpetUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -14963,19 +14963,19 @@ type ScattergeoHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -14985,10 +14985,10 @@ type ScattergeoMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -15009,19 +15009,19 @@ type ScattergeoMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScattergeoMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScattergeoMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -15042,12 +15042,12 @@ type ScattergeoMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScattergeoMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScattergeoMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -15058,25 +15058,25 @@ type ScattergeoMarkerColorbar struct {
     Tickmode ScattergeoMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScattergeoMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -15110,13 +15110,13 @@ type ScattergeoMarkerGradient struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Type enumerated Sets the type of gradient used to fill the markers
     Type ScattergeoMarkerGradientType `json:"type,omitempty"`
     
     // Typesrc string Sets the source reference on Chart Studio Cloud for  type .
-    Typesrc string `json:"typesrc,omitempty"`
+    Typesrc String `json:"typesrc,omitempty"`
     
 }
  
@@ -15124,10 +15124,10 @@ type ScattergeoMarkerGradient struct {
 type ScattergeoMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -15142,22 +15142,22 @@ type ScattergeoMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -15165,7 +15165,7 @@ type ScattergeoMarkerLine struct {
 type ScattergeoSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15179,7 +15179,7 @@ type ScattergeoSelectedMarker struct {
 type ScattergeoSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15187,7 +15187,7 @@ type ScattergeoSelectedTextfont struct {
 type ScattergeoUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15201,7 +15201,7 @@ type ScattergeoUnselectedMarker struct {
 type ScattergeoUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15212,19 +15212,19 @@ type ScatterglHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -15234,10 +15234,10 @@ type ScatterglMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -15258,19 +15258,19 @@ type ScatterglMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScatterglMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScatterglMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -15291,12 +15291,12 @@ type ScatterglMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScatterglMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScatterglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -15307,25 +15307,25 @@ type ScatterglMarkerColorbar struct {
     Tickmode ScatterglMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScatterglMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -15356,10 +15356,10 @@ type ScatterglMarkerColorbar struct {
 type ScatterglMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -15374,22 +15374,22 @@ type ScatterglMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -15397,7 +15397,7 @@ type ScatterglMarkerLine struct {
 type ScatterglSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15411,7 +15411,7 @@ type ScatterglSelectedMarker struct {
 type ScatterglSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15419,7 +15419,7 @@ type ScatterglSelectedTextfont struct {
 type ScatterglUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15433,7 +15433,7 @@ type ScatterglUnselectedMarker struct {
 type ScatterglUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15444,19 +15444,19 @@ type ScattermapboxHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -15466,10 +15466,10 @@ type ScattermapboxMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -15490,19 +15490,19 @@ type ScattermapboxMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScattermapboxMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScattermapboxMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -15523,12 +15523,12 @@ type ScattermapboxMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScattermapboxMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScattermapboxMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -15539,25 +15539,25 @@ type ScattermapboxMarkerColorbar struct {
     Tickmode ScattermapboxMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScattermapboxMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -15588,7 +15588,7 @@ type ScattermapboxMarkerColorbar struct {
 type ScattermapboxSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15602,7 +15602,7 @@ type ScattermapboxSelectedMarker struct {
 type ScattermapboxUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15619,19 +15619,19 @@ type ScatterpolarHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -15641,10 +15641,10 @@ type ScatterpolarMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -15665,19 +15665,19 @@ type ScatterpolarMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScatterpolarMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScatterpolarMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -15698,12 +15698,12 @@ type ScatterpolarMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScatterpolarMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScatterpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -15714,25 +15714,25 @@ type ScatterpolarMarkerColorbar struct {
     Tickmode ScatterpolarMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScatterpolarMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -15766,13 +15766,13 @@ type ScatterpolarMarkerGradient struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Type enumerated Sets the type of gradient used to fill the markers
     Type ScatterpolarMarkerGradientType `json:"type,omitempty"`
     
     // Typesrc string Sets the source reference on Chart Studio Cloud for  type .
-    Typesrc string `json:"typesrc,omitempty"`
+    Typesrc String `json:"typesrc,omitempty"`
     
 }
  
@@ -15780,10 +15780,10 @@ type ScatterpolarMarkerGradient struct {
 type ScatterpolarMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -15798,22 +15798,22 @@ type ScatterpolarMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -15821,7 +15821,7 @@ type ScatterpolarMarkerLine struct {
 type ScatterpolarSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15835,7 +15835,7 @@ type ScatterpolarSelectedMarker struct {
 type ScatterpolarSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15843,7 +15843,7 @@ type ScatterpolarSelectedTextfont struct {
 type ScatterpolarUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -15857,7 +15857,7 @@ type ScatterpolarUnselectedMarker struct {
 type ScatterpolarUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -15868,19 +15868,19 @@ type ScatterpolarglHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -15890,10 +15890,10 @@ type ScatterpolarglMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -15914,19 +15914,19 @@ type ScatterpolarglMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScatterpolarglMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScatterpolarglMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -15947,12 +15947,12 @@ type ScatterpolarglMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScatterpolarglMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScatterpolarglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -15963,25 +15963,25 @@ type ScatterpolarglMarkerColorbar struct {
     Tickmode ScatterpolarglMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScatterpolarglMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -16012,10 +16012,10 @@ type ScatterpolarglMarkerColorbar struct {
 type ScatterpolarglMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -16030,22 +16030,22 @@ type ScatterpolarglMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -16053,7 +16053,7 @@ type ScatterpolarglMarkerLine struct {
 type ScatterpolarglSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16067,7 +16067,7 @@ type ScatterpolarglSelectedMarker struct {
 type ScatterpolarglSelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -16075,7 +16075,7 @@ type ScatterpolarglSelectedTextfont struct {
 type ScatterpolarglUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16089,7 +16089,7 @@ type ScatterpolarglUnselectedMarker struct {
 type ScatterpolarglUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -16100,19 +16100,19 @@ type ScatterternaryHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16122,10 +16122,10 @@ type ScatterternaryMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -16146,19 +16146,19 @@ type ScatterternaryMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent ScatterternaryMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix ScatterternaryMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -16179,12 +16179,12 @@ type ScatterternaryMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *ScatterternaryMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *ScatterternaryMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -16195,25 +16195,25 @@ type ScatterternaryMarkerColorbar struct {
     Tickmode ScatterternaryMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks ScatterternaryMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -16247,13 +16247,13 @@ type ScatterternaryMarkerGradient struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Type enumerated Sets the type of gradient used to fill the markers
     Type ScatterternaryMarkerGradientType `json:"type,omitempty"`
     
     // Typesrc string Sets the source reference on Chart Studio Cloud for  type .
-    Typesrc string `json:"typesrc,omitempty"`
+    Typesrc String `json:"typesrc,omitempty"`
     
 }
  
@@ -16261,10 +16261,10 @@ type ScatterternaryMarkerGradient struct {
 type ScatterternaryMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -16279,22 +16279,22 @@ type ScatterternaryMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -16302,7 +16302,7 @@ type ScatterternaryMarkerLine struct {
 type ScatterternarySelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16316,7 +16316,7 @@ type ScatterternarySelectedMarker struct {
 type ScatterternarySelectedTextfont struct {
 
     // Color color Sets the text font color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -16324,7 +16324,7 @@ type ScatterternarySelectedTextfont struct {
 type ScatterternaryUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16338,7 +16338,7 @@ type ScatterternaryUnselectedMarker struct {
 type ScatterternaryUnselectedTextfont struct {
 
     // Color color Sets the text font color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
 }
  
@@ -16349,19 +16349,19 @@ type SplomHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16371,10 +16371,10 @@ type SplomMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -16395,19 +16395,19 @@ type SplomMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent SplomMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix SplomMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -16428,12 +16428,12 @@ type SplomMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *SplomMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *SplomMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -16444,25 +16444,25 @@ type SplomMarkerColorbar struct {
     Tickmode SplomMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks SplomMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -16493,10 +16493,10 @@ type SplomMarkerColorbar struct {
 type SplomMarkerLine struct {
 
     // Autocolorscale boolean Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-    Autocolorscale bool `json:"autocolorscale,omitempty"`
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
     
     // Cauto boolean Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-    Cauto bool `json:"cauto,omitempty"`
+    Cauto Bool `json:"cauto,omitempty"`
     
     // Cmax number Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
     Cmax float64 `json:"cmax,omitempty"`
@@ -16511,22 +16511,22 @@ type SplomMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Coloraxis subplotid Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-    Coloraxis string `json:"coloraxis,omitempty"`
+    Coloraxis String `json:"coloraxis,omitempty"`
     
     // Colorscale colorscale Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
     // Pending of type "colorscale"Colorscale  `json:"colorscale,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Reversescale boolean Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-    Reversescale bool `json:"reversescale,omitempty"`
+    Reversescale Bool `json:"reversescale,omitempty"`
     
     // Width number Sets the width (in px) of the lines bounding the marker points.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -16534,7 +16534,7 @@ type SplomMarkerLine struct {
 type SplomSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16548,7 +16548,7 @@ type SplomSelectedMarker struct {
 type SplomUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -16562,10 +16562,10 @@ type SplomUnselectedMarker struct {
 type StreamtubeColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -16588,7 +16588,7 @@ type StreamtubeColorbarTitle struct {
     Side StreamtubeColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -16599,19 +16599,19 @@ type StreamtubeHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16622,19 +16622,19 @@ type SunburstHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16644,10 +16644,10 @@ type SunburstMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -16668,19 +16668,19 @@ type SunburstMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent SunburstMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix SunburstMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -16701,12 +16701,12 @@ type SunburstMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *SunburstMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *SunburstMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -16717,25 +16717,25 @@ type SunburstMarkerColorbar struct {
     Tickmode SunburstMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks SunburstMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -16769,13 +16769,13 @@ type SunburstMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the line enclosing each sector.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -16783,10 +16783,10 @@ type SunburstMarkerLine struct {
 type SurfaceColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -16809,7 +16809,7 @@ type SurfaceColorbarTitle struct {
     Side SurfaceColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -16817,16 +16817,16 @@ type SurfaceColorbarTitle struct {
 type SurfaceContoursX struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // End number Sets the end contour level value. Must be more than `contours.start`
     End float64 `json:"end,omitempty"`
     
     // Highlight boolean Determines whether or not contour lines about the x dimension are highlighted on hover.
-    Highlight bool `json:"highlight,omitempty"`
+    Highlight Bool `json:"highlight,omitempty"`
     
     // Highlightcolor color Sets the color of the highlighted contour lines.
-    Highlightcolor string `json:"highlightcolor,omitempty"`
+    Highlightcolor String `json:"highlightcolor,omitempty"`
     
     // Highlightwidth number Sets the width of the highlighted contour lines.
     Highlightwidth float64 `json:"highlightwidth,omitempty"`
@@ -16834,7 +16834,7 @@ type SurfaceContoursX struct {
     // Project <no value> <no value>
     Project *SurfaceContoursXProject `json:"project,omitempty"` // object
     // Show boolean Determines whether or not contour lines about the x dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -16843,7 +16843,7 @@ type SurfaceContoursX struct {
     Start float64 `json:"start,omitempty"`
     
     // Usecolormap boolean An alternate to *color*. Determines whether or not the contour lines are colored using the trace *colorscale*.
-    Usecolormap bool `json:"usecolormap,omitempty"`
+    Usecolormap Bool `json:"usecolormap,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -16854,16 +16854,16 @@ type SurfaceContoursX struct {
 type SurfaceContoursY struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // End number Sets the end contour level value. Must be more than `contours.start`
     End float64 `json:"end,omitempty"`
     
     // Highlight boolean Determines whether or not contour lines about the y dimension are highlighted on hover.
-    Highlight bool `json:"highlight,omitempty"`
+    Highlight Bool `json:"highlight,omitempty"`
     
     // Highlightcolor color Sets the color of the highlighted contour lines.
-    Highlightcolor string `json:"highlightcolor,omitempty"`
+    Highlightcolor String `json:"highlightcolor,omitempty"`
     
     // Highlightwidth number Sets the width of the highlighted contour lines.
     Highlightwidth float64 `json:"highlightwidth,omitempty"`
@@ -16871,7 +16871,7 @@ type SurfaceContoursY struct {
     // Project <no value> <no value>
     Project *SurfaceContoursYProject `json:"project,omitempty"` // object
     // Show boolean Determines whether or not contour lines about the y dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -16880,7 +16880,7 @@ type SurfaceContoursY struct {
     Start float64 `json:"start,omitempty"`
     
     // Usecolormap boolean An alternate to *color*. Determines whether or not the contour lines are colored using the trace *colorscale*.
-    Usecolormap bool `json:"usecolormap,omitempty"`
+    Usecolormap Bool `json:"usecolormap,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -16891,16 +16891,16 @@ type SurfaceContoursY struct {
 type SurfaceContoursZ struct {
 
     // Color color Sets the color of the contour lines.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // End number Sets the end contour level value. Must be more than `contours.start`
     End float64 `json:"end,omitempty"`
     
     // Highlight boolean Determines whether or not contour lines about the z dimension are highlighted on hover.
-    Highlight bool `json:"highlight,omitempty"`
+    Highlight Bool `json:"highlight,omitempty"`
     
     // Highlightcolor color Sets the color of the highlighted contour lines.
-    Highlightcolor string `json:"highlightcolor,omitempty"`
+    Highlightcolor String `json:"highlightcolor,omitempty"`
     
     // Highlightwidth number Sets the width of the highlighted contour lines.
     Highlightwidth float64 `json:"highlightwidth,omitempty"`
@@ -16908,7 +16908,7 @@ type SurfaceContoursZ struct {
     // Project <no value> <no value>
     Project *SurfaceContoursZProject `json:"project,omitempty"` // object
     // Show boolean Determines whether or not contour lines about the z dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
     // Size number Sets the step between each contour level. Must be positive.
     Size float64 `json:"size,omitempty"`
@@ -16917,7 +16917,7 @@ type SurfaceContoursZ struct {
     Start float64 `json:"start,omitempty"`
     
     // Usecolormap boolean An alternate to *color*. Determines whether or not the contour lines are colored using the trace *colorscale*.
-    Usecolormap bool `json:"usecolormap,omitempty"`
+    Usecolormap Bool `json:"usecolormap,omitempty"`
     
     // Width number Sets the width of the contour lines.
     Width float64 `json:"width,omitempty"`
@@ -16931,19 +16931,19 @@ type SurfaceHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16954,7 +16954,7 @@ type TableCellsFill struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
 }
  
@@ -16965,19 +16965,19 @@ type TableCellsFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -16988,13 +16988,13 @@ type TableCellsLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number <no value>
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -17005,7 +17005,7 @@ type TableHeaderFill struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
 }
  
@@ -17016,19 +17016,19 @@ type TableHeaderFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17039,13 +17039,13 @@ type TableHeaderLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number <no value>
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -17056,19 +17056,19 @@ type TableHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17079,19 +17079,19 @@ type TreemapHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17101,10 +17101,10 @@ type TreemapMarkerColorbar struct {
     // _deprecated <no value> <no value>
     // Pending... _deprecated No valTyp <no value>
     // Bgcolor color Sets the color of padded area.
-    Bgcolor string `json:"bgcolor,omitempty"`
+    Bgcolor String `json:"bgcolor,omitempty"`
     
     // Bordercolor color Sets the axis line color.
-    Bordercolor string `json:"bordercolor,omitempty"`
+    Bordercolor String `json:"bordercolor,omitempty"`
     
     // Borderwidth number Sets the width (in px) or the border enclosing this color bar.
     Borderwidth float64 `json:"borderwidth,omitempty"`
@@ -17125,19 +17125,19 @@ type TreemapMarkerColorbar struct {
     Nticks int64 `json:"nticks,omitempty"`
     
     // Outlinecolor color Sets the axis line color.
-    Outlinecolor string `json:"outlinecolor,omitempty"`
+    Outlinecolor String `json:"outlinecolor,omitempty"`
     
     // Outlinewidth number Sets the width (in px) of the axis line.
     Outlinewidth float64 `json:"outlinewidth,omitempty"`
     
     // Separatethousands boolean If "true", even 4-digit integers are separated
-    Separatethousands bool `json:"separatethousands,omitempty"`
+    Separatethousands Bool `json:"separatethousands,omitempty"`
     
     // Showexponent enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
     Showexponent TreemapMarkerColorbarShowexponent `json:"showexponent,omitempty"`
     
     // Showticklabels boolean Determines whether or not the tick labels are drawn.
-    Showticklabels bool `json:"showticklabels,omitempty"`
+    Showticklabels Bool `json:"showticklabels,omitempty"`
     
     // Showtickprefix enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
     Showtickprefix TreemapMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
@@ -17158,12 +17158,12 @@ type TreemapMarkerColorbar struct {
     Tickangle float64 `json:"tickangle,omitempty"`
     
     // Tickcolor color Sets the tick color.
-    Tickcolor string `json:"tickcolor,omitempty"`
+    Tickcolor String `json:"tickcolor,omitempty"`
     
     // Tickfont <no value> Sets the color bar's tick label font
     Tickfont *TreemapMarkerColorbarTickfont `json:"tickfont,omitempty"` // object
     // Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-    Tickformat string `json:"tickformat,omitempty"`
+    Tickformat String `json:"tickformat,omitempty"`
     
     // Tickformatstops <no value> <no value>
     Tickformatstops *TreemapMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"` // object
@@ -17174,25 +17174,25 @@ type TreemapMarkerColorbar struct {
     Tickmode TreemapMarkerColorbarTickmode `json:"tickmode,omitempty"`
     
     // Tickprefix string Sets a tick label prefix.
-    Tickprefix string `json:"tickprefix,omitempty"`
+    Tickprefix String `json:"tickprefix,omitempty"`
     
     // Ticks enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
     Ticks TreemapMarkerColorbarTicks `json:"ticks,omitempty"`
     
     // Ticksuffix string Sets a tick label suffix.
-    Ticksuffix string `json:"ticksuffix,omitempty"`
+    Ticksuffix String `json:"ticksuffix,omitempty"`
     
     // Ticktext data_array Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
     Ticktext interface{} `json:"ticktext,omitempty"`
     
     // Ticktextsrc string Sets the source reference on Chart Studio Cloud for  ticktext .
-    Ticktextsrc string `json:"ticktextsrc,omitempty"`
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
     
     // Tickvals data_array Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
     Tickvals interface{} `json:"tickvals,omitempty"`
     
     // Tickvalssrc string Sets the source reference on Chart Studio Cloud for  tickvals .
-    Tickvalssrc string `json:"tickvalssrc,omitempty"`
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
     
     // Tickwidth number Sets the tick width (in px).
     Tickwidth float64 `json:"tickwidth,omitempty"`
@@ -17226,13 +17226,13 @@ type TreemapMarkerLine struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Width number Sets the width (in px) of the line enclosing each sector.
     Width interface{} `json:"width,omitempty"`
     
     // Widthsrc string Sets the source reference on Chart Studio Cloud for  width .
-    Widthsrc string `json:"widthsrc,omitempty"`
+    Widthsrc String `json:"widthsrc,omitempty"`
     
 }
  
@@ -17260,19 +17260,19 @@ type TreemapPathbarTextfont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17280,7 +17280,7 @@ type TreemapPathbarTextfont struct {
 type ViolinBoxLine struct {
 
     // Color color Sets the inner box plot bounding line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the inner box plot bounding line width.
     Width float64 `json:"width,omitempty"`
@@ -17294,19 +17294,19 @@ type ViolinHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17314,10 +17314,10 @@ type ViolinHoverlabelFont struct {
 type ViolinMarkerLine struct {
 
     // Color color Sets themarker.linecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Outliercolor color Sets the border line color of the outlier sample points. Defaults to marker.color
-    Outliercolor string `json:"outliercolor,omitempty"`
+    Outliercolor String `json:"outliercolor,omitempty"`
     
     // Outlierwidth number Sets the border line width (in px) of the outlier sample points.
     Outlierwidth float64 `json:"outlierwidth,omitempty"`
@@ -17331,7 +17331,7 @@ type ViolinMarkerLine struct {
 type ViolinSelectedMarker struct {
 
     // Color color Sets the marker color of selected points.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of selected points.
     Opacity float64 `json:"opacity,omitempty"`
@@ -17345,7 +17345,7 @@ type ViolinSelectedMarker struct {
 type ViolinUnselectedMarker struct {
 
     // Color color Sets the marker color of unselected points, applied only when a selection exists.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Opacity number Sets the marker opacity of unselected points, applied only when a selection exists.
     Opacity float64 `json:"opacity,omitempty"`
@@ -17362,7 +17362,7 @@ type VolumeCapsX struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the x `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17373,7 +17373,7 @@ type VolumeCapsY struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the y `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17384,7 +17384,7 @@ type VolumeCapsZ struct {
     Fill float64 `json:"fill,omitempty"`
     
     // Show boolean Sets the fill ratio of the `slices`. The default fill value of the z `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17392,10 +17392,10 @@ type VolumeCapsZ struct {
 type VolumeColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17418,7 +17418,7 @@ type VolumeColorbarTitle struct {
     Side VolumeColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17429,19 +17429,19 @@ type VolumeHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17455,10 +17455,10 @@ type VolumeSlicesX struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the x dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17472,10 +17472,10 @@ type VolumeSlicesY struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the y dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17489,10 +17489,10 @@ type VolumeSlicesZ struct {
     Locations interface{} `json:"locations,omitempty"`
     
     // Locationssrc string Sets the source reference on Chart Studio Cloud for  locations .
-    Locationssrc string `json:"locationssrc,omitempty"`
+    Locationssrc String `json:"locationssrc,omitempty"`
     
     // Show boolean Determines whether or not slice planes about the z dimension are drawn.
-    Show bool `json:"show,omitempty"`
+    Show Bool `json:"show,omitempty"`
     
 }
  
@@ -17500,10 +17500,10 @@ type VolumeSlicesZ struct {
 type WaterfallConnectorLine struct {
 
     // Color color Sets the line color.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Dash string Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-    Dash string `json:"dash,omitempty"`
+    Dash String `json:"dash,omitempty"`
     
     // Width number Sets the line width (in px).
     Width float64 `json:"width,omitempty"`
@@ -17514,7 +17514,7 @@ type WaterfallConnectorLine struct {
 type WaterfallDecreasingMarker struct {
 
     // Color color Sets the marker color of all decreasing values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *WaterfallDecreasingMarkerLine `json:"line,omitempty"` // object
@@ -17527,19 +17527,19 @@ type WaterfallHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -17547,7 +17547,7 @@ type WaterfallHoverlabelFont struct {
 type WaterfallIncreasingMarker struct {
 
     // Color color Sets the marker color of all increasing values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *WaterfallIncreasingMarkerLine `json:"line,omitempty"` // object
@@ -17557,7 +17557,7 @@ type WaterfallIncreasingMarker struct {
 type WaterfallTotalsMarker struct {
 
     // Color color Sets the marker color of all intermediate sums and total values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Line <no value> <no value>
     Line *WaterfallTotalsMarkerLine `json:"line,omitempty"` // object
@@ -17569,10 +17569,10 @@ type WaterfallTotalsMarker struct {
 type BarMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17595,7 +17595,7 @@ type BarMarkerColorbarTitle struct {
     Side BarMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17603,10 +17603,10 @@ type BarMarkerColorbarTitle struct {
 type BarpolarMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17629,7 +17629,7 @@ type BarpolarMarkerColorbarTitle struct {
     Side BarpolarMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17637,10 +17637,10 @@ type BarpolarMarkerColorbarTitle struct {
 type CarpetAaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17651,10 +17651,10 @@ type CarpetAaxisTitleFont struct {
 type CarpetBaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17665,10 +17665,10 @@ type CarpetBaxisTitleFont struct {
 type ChoroplethColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17679,10 +17679,10 @@ type ChoroplethColorbarTitleFont struct {
 type ChoroplethmapboxColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17693,10 +17693,10 @@ type ChoroplethmapboxColorbarTitleFont struct {
 type ConeColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17707,10 +17707,10 @@ type ConeColorbarTitleFont struct {
 type ContourColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17721,10 +17721,10 @@ type ContourColorbarTitleFont struct {
 type ContourcarpetColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17735,10 +17735,10 @@ type ContourcarpetColorbarTitleFont struct {
 type DensitymapboxColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17749,10 +17749,10 @@ type DensitymapboxColorbarTitleFont struct {
 type FunnelMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17775,7 +17775,7 @@ type FunnelMarkerColorbarTitle struct {
     Side FunnelMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17783,10 +17783,10 @@ type FunnelMarkerColorbarTitle struct {
 type HeatmapColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17797,10 +17797,10 @@ type HeatmapColorbarTitleFont struct {
 type HeatmapglColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17811,10 +17811,10 @@ type HeatmapglColorbarTitleFont struct {
 type Histogram2dColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17825,10 +17825,10 @@ type Histogram2dColorbarTitleFont struct {
 type Histogram2dcontourColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17839,10 +17839,10 @@ type Histogram2dcontourColorbarTitleFont struct {
 type HistogramMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17865,7 +17865,7 @@ type HistogramMarkerColorbarTitle struct {
     Side HistogramMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17873,10 +17873,10 @@ type HistogramMarkerColorbarTitle struct {
 type IndicatorGaugeAxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17894,7 +17894,7 @@ type IndicatorGaugeAxisTickformatstops struct {
 type IndicatorGaugeBarLine struct {
 
     // Color color Sets the color of the line enclosing each sector.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of the line enclosing each sector.
     Width float64 `json:"width,omitempty"`
@@ -17905,7 +17905,7 @@ type IndicatorGaugeBarLine struct {
 type IndicatorGaugeThresholdLine struct {
 
     // Color color Sets the color of the threshold line.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the width (in px) of the threshold line.
     Width float64 `json:"width,omitempty"`
@@ -17916,10 +17916,10 @@ type IndicatorGaugeThresholdLine struct {
 type IsosurfaceColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17930,10 +17930,10 @@ type IsosurfaceColorbarTitleFont struct {
 type LayoutColoraxisColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17956,7 +17956,7 @@ type LayoutColoraxisColorbarTitle struct {
     Side LayoutColoraxisColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -17978,10 +17978,10 @@ type LayoutGeoProjectionRotation struct {
 type LayoutLegendTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -17992,10 +17992,10 @@ type LayoutLegendTitleFont struct {
 type LayoutPolarAngularaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18013,10 +18013,10 @@ type LayoutPolarAngularaxisTickformatstops struct {
 type LayoutPolarRadialaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18036,7 +18036,7 @@ type LayoutPolarRadialaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutPolarRadialaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18099,10 +18099,10 @@ type LayoutSceneCameraUp struct {
 type LayoutSceneXaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18122,7 +18122,7 @@ type LayoutSceneXaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutSceneXaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18130,10 +18130,10 @@ type LayoutSceneXaxisTitle struct {
 type LayoutSceneYaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18153,7 +18153,7 @@ type LayoutSceneYaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutSceneYaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18161,10 +18161,10 @@ type LayoutSceneYaxisTitle struct {
 type LayoutSceneZaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18184,7 +18184,7 @@ type LayoutSceneZaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutSceneZaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18192,10 +18192,10 @@ type LayoutSceneZaxisTitle struct {
 type LayoutTernaryAaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18215,7 +18215,7 @@ type LayoutTernaryAaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutTernaryAaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18223,10 +18223,10 @@ type LayoutTernaryAaxisTitle struct {
 type LayoutTernaryBaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18246,7 +18246,7 @@ type LayoutTernaryBaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutTernaryBaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18254,10 +18254,10 @@ type LayoutTernaryBaxisTitle struct {
 type LayoutTernaryCaxisTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18277,7 +18277,7 @@ type LayoutTernaryCaxisTitle struct {
     // Font <no value> Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
     Font *LayoutTernaryCaxisTitleFont `json:"font,omitempty"` // object
     // Text string Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18292,10 +18292,10 @@ type LayoutXaxisRangeselectorButtons struct {
 type LayoutXaxisRangeselectorFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18317,10 +18317,10 @@ type LayoutXaxisRangesliderYaxis struct {
 type LayoutXaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18331,10 +18331,10 @@ type LayoutXaxisTitleFont struct {
 type LayoutYaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18345,10 +18345,10 @@ type LayoutYaxisTitleFont struct {
 type Mesh3dColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18359,10 +18359,10 @@ type Mesh3dColorbarTitleFont struct {
 type ParcatsLineColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18385,7 +18385,7 @@ type ParcatsLineColorbarTitle struct {
     Side ParcatsLineColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18393,10 +18393,10 @@ type ParcatsLineColorbarTitle struct {
 type ParcoordsLineColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18419,7 +18419,7 @@ type ParcoordsLineColorbarTitle struct {
     Side ParcoordsLineColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18430,19 +18430,19 @@ type SankeyLinkHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -18453,19 +18453,19 @@ type SankeyNodeHoverlabelFont struct {
     Color interface{} `json:"color,omitempty"`
     
     // Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
-    Colorsrc string `json:"colorsrc,omitempty"`
+    Colorsrc String `json:"colorsrc,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
     Family interface{} `json:"family,omitempty"`
     
     // Familysrc string Sets the source reference on Chart Studio Cloud for  family .
-    Familysrc string `json:"familysrc,omitempty"`
+    Familysrc String `json:"familysrc,omitempty"`
     
     // Size number <no value>
     Size interface{} `json:"size,omitempty"`
     
     // Sizesrc string Sets the source reference on Chart Studio Cloud for  size .
-    Sizesrc string `json:"sizesrc,omitempty"`
+    Sizesrc String `json:"sizesrc,omitempty"`
     
 }
  
@@ -18473,10 +18473,10 @@ type SankeyNodeHoverlabelFont struct {
 type Scatter3dLineColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18499,7 +18499,7 @@ type Scatter3dLineColorbarTitle struct {
     Side Scatter3dLineColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18507,10 +18507,10 @@ type Scatter3dLineColorbarTitle struct {
 type Scatter3dMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18533,7 +18533,7 @@ type Scatter3dMarkerColorbarTitle struct {
     Side Scatter3dMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18541,10 +18541,10 @@ type Scatter3dMarkerColorbarTitle struct {
 type ScatterMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18567,7 +18567,7 @@ type ScatterMarkerColorbarTitle struct {
     Side ScatterMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18575,10 +18575,10 @@ type ScatterMarkerColorbarTitle struct {
 type ScattercarpetMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18601,7 +18601,7 @@ type ScattercarpetMarkerColorbarTitle struct {
     Side ScattercarpetMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18609,10 +18609,10 @@ type ScattercarpetMarkerColorbarTitle struct {
 type ScattergeoMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18635,7 +18635,7 @@ type ScattergeoMarkerColorbarTitle struct {
     Side ScattergeoMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18643,10 +18643,10 @@ type ScattergeoMarkerColorbarTitle struct {
 type ScatterglMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18669,7 +18669,7 @@ type ScatterglMarkerColorbarTitle struct {
     Side ScatterglMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18677,10 +18677,10 @@ type ScatterglMarkerColorbarTitle struct {
 type ScattermapboxMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18703,7 +18703,7 @@ type ScattermapboxMarkerColorbarTitle struct {
     Side ScattermapboxMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18711,10 +18711,10 @@ type ScattermapboxMarkerColorbarTitle struct {
 type ScatterpolarMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18737,7 +18737,7 @@ type ScatterpolarMarkerColorbarTitle struct {
     Side ScatterpolarMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18745,10 +18745,10 @@ type ScatterpolarMarkerColorbarTitle struct {
 type ScatterpolarglMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18771,7 +18771,7 @@ type ScatterpolarglMarkerColorbarTitle struct {
     Side ScatterpolarglMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18779,10 +18779,10 @@ type ScatterpolarglMarkerColorbarTitle struct {
 type ScatterternaryMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18805,7 +18805,7 @@ type ScatterternaryMarkerColorbarTitle struct {
     Side ScatterternaryMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18813,10 +18813,10 @@ type ScatterternaryMarkerColorbarTitle struct {
 type SplomMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18839,7 +18839,7 @@ type SplomMarkerColorbarTitle struct {
     Side SplomMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18847,10 +18847,10 @@ type SplomMarkerColorbarTitle struct {
 type StreamtubeColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18861,10 +18861,10 @@ type StreamtubeColorbarTitleFont struct {
 type SunburstMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18887,7 +18887,7 @@ type SunburstMarkerColorbarTitle struct {
     Side SunburstMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18895,10 +18895,10 @@ type SunburstMarkerColorbarTitle struct {
 type SurfaceColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18909,13 +18909,13 @@ type SurfaceColorbarTitleFont struct {
 type SurfaceContoursXProject struct {
 
     // X boolean Determines whether or not these contour lines are projected on the x plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    X bool `json:"x,omitempty"`
+    X Bool `json:"x,omitempty"`
     
     // Y boolean Determines whether or not these contour lines are projected on the y plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Y bool `json:"y,omitempty"`
+    Y Bool `json:"y,omitempty"`
     
     // Z boolean Determines whether or not these contour lines are projected on the z plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Z bool `json:"z,omitempty"`
+    Z Bool `json:"z,omitempty"`
     
 }
  
@@ -18923,13 +18923,13 @@ type SurfaceContoursXProject struct {
 type SurfaceContoursYProject struct {
 
     // X boolean Determines whether or not these contour lines are projected on the x plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    X bool `json:"x,omitempty"`
+    X Bool `json:"x,omitempty"`
     
     // Y boolean Determines whether or not these contour lines are projected on the y plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Y bool `json:"y,omitempty"`
+    Y Bool `json:"y,omitempty"`
     
     // Z boolean Determines whether or not these contour lines are projected on the z plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Z bool `json:"z,omitempty"`
+    Z Bool `json:"z,omitempty"`
     
 }
  
@@ -18937,13 +18937,13 @@ type SurfaceContoursYProject struct {
 type SurfaceContoursZProject struct {
 
     // X boolean Determines whether or not these contour lines are projected on the x plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    X bool `json:"x,omitempty"`
+    X Bool `json:"x,omitempty"`
     
     // Y boolean Determines whether or not these contour lines are projected on the y plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Y bool `json:"y,omitempty"`
+    Y Bool `json:"y,omitempty"`
     
     // Z boolean Determines whether or not these contour lines are projected on the z plane. If `highlight` is set to *true* (the default), the projected lines are shown on hover. If `show` is set to *true*, the projected lines are shown in permanence.
-    Z bool `json:"z,omitempty"`
+    Z Bool `json:"z,omitempty"`
     
 }
  
@@ -18951,10 +18951,10 @@ type SurfaceContoursZProject struct {
 type TreemapMarkerColorbarTickfont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18977,7 +18977,7 @@ type TreemapMarkerColorbarTitle struct {
     Side TreemapMarkerColorbarTitleSide `json:"side,omitempty"`
     
     // Text string Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-    Text string `json:"text,omitempty"`
+    Text String `json:"text,omitempty"`
     
 }
  
@@ -18985,10 +18985,10 @@ type TreemapMarkerColorbarTitle struct {
 type VolumeColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -18999,7 +18999,7 @@ type VolumeColorbarTitleFont struct {
 type WaterfallDecreasingMarkerLine struct {
 
     // Color color Sets the line color of all decreasing values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the line width of all decreasing values.
     Width float64 `json:"width,omitempty"`
@@ -19010,7 +19010,7 @@ type WaterfallDecreasingMarkerLine struct {
 type WaterfallIncreasingMarkerLine struct {
 
     // Color color Sets the line color of all increasing values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the line width of all increasing values.
     Width float64 `json:"width,omitempty"`
@@ -19021,7 +19021,7 @@ type WaterfallIncreasingMarkerLine struct {
 type WaterfallTotalsMarkerLine struct {
 
     // Color color Sets the line color of all intermediate sums and total values.
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Width number Sets the line width of all intermediate sums and total values.
     Width float64 `json:"width,omitempty"`
@@ -19034,10 +19034,10 @@ type WaterfallTotalsMarkerLine struct {
 type BarMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19048,10 +19048,10 @@ type BarMarkerColorbarTitleFont struct {
 type BarpolarMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19062,10 +19062,10 @@ type BarpolarMarkerColorbarTitleFont struct {
 type FunnelMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19076,10 +19076,10 @@ type FunnelMarkerColorbarTitleFont struct {
 type HistogramMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19090,10 +19090,10 @@ type HistogramMarkerColorbarTitleFont struct {
 type LayoutColoraxisColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19104,10 +19104,10 @@ type LayoutColoraxisColorbarTitleFont struct {
 type LayoutPolarRadialaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19118,10 +19118,10 @@ type LayoutPolarRadialaxisTitleFont struct {
 type LayoutSceneXaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19132,10 +19132,10 @@ type LayoutSceneXaxisTitleFont struct {
 type LayoutSceneYaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19146,10 +19146,10 @@ type LayoutSceneYaxisTitleFont struct {
 type LayoutSceneZaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19160,10 +19160,10 @@ type LayoutSceneZaxisTitleFont struct {
 type LayoutTernaryAaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19174,10 +19174,10 @@ type LayoutTernaryAaxisTitleFont struct {
 type LayoutTernaryBaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19188,10 +19188,10 @@ type LayoutTernaryBaxisTitleFont struct {
 type LayoutTernaryCaxisTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19202,10 +19202,10 @@ type LayoutTernaryCaxisTitleFont struct {
 type ParcatsLineColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19216,10 +19216,10 @@ type ParcatsLineColorbarTitleFont struct {
 type ParcoordsLineColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19230,10 +19230,10 @@ type ParcoordsLineColorbarTitleFont struct {
 type Scatter3dLineColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19244,10 +19244,10 @@ type Scatter3dLineColorbarTitleFont struct {
 type Scatter3dMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19258,10 +19258,10 @@ type Scatter3dMarkerColorbarTitleFont struct {
 type ScatterMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19272,10 +19272,10 @@ type ScatterMarkerColorbarTitleFont struct {
 type ScattercarpetMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19286,10 +19286,10 @@ type ScattercarpetMarkerColorbarTitleFont struct {
 type ScattergeoMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19300,10 +19300,10 @@ type ScattergeoMarkerColorbarTitleFont struct {
 type ScatterglMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19314,10 +19314,10 @@ type ScatterglMarkerColorbarTitleFont struct {
 type ScattermapboxMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19328,10 +19328,10 @@ type ScattermapboxMarkerColorbarTitleFont struct {
 type ScatterpolarMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19342,10 +19342,10 @@ type ScatterpolarMarkerColorbarTitleFont struct {
 type ScatterpolarglMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19356,10 +19356,10 @@ type ScatterpolarglMarkerColorbarTitleFont struct {
 type ScatterternaryMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19370,10 +19370,10 @@ type ScatterternaryMarkerColorbarTitleFont struct {
 type SplomMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19384,10 +19384,10 @@ type SplomMarkerColorbarTitleFont struct {
 type SunburstMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
@@ -19398,10 +19398,10 @@ type SunburstMarkerColorbarTitleFont struct {
 type TreemapMarkerColorbarTitleFont struct {
 
     // Color color <no value>
-    Color string `json:"color,omitempty"`
+    Color String `json:"color,omitempty"`
     
     // Family string HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-    Family string `json:"family,omitempty"`
+    Family String `json:"family,omitempty"`
     
     // Size number <no value>
     Size float64 `json:"size,omitempty"`
