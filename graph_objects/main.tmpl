@@ -24,7 +24,7 @@ Objects in traces
     {{ $name }}
 {{- end }}
 
-{{ $layoutInput := (dict "layout" $g.schema.layout "ctx" $g.ctx) }}
+{{ $layoutInput := (dict "layout" $g.schema.layout "extra" $tracesInput.layoutAttributes "ctx" $g.ctx) }}
 {{- $err := file "layout.go" "layout" $layoutInput -}}
 {{ if $err }}
     Something went wrong rendering layout.go {{ $err }}

@@ -6,6 +6,7 @@ package graph_objects
 
 type Traces []Trace
 
+
 type Fig struct {
 	Data   Traces `json:"data,omitempty"`
 	Layout Layout `json:"layout,omitempty"`

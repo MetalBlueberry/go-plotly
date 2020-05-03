@@ -6,6 +6,7 @@ package graph_objects
 {{- $enumerates := dict }}
 {{- $objects := dict }}
 {{- $flaglists := dict }}
+{{- $layoutAttributes := dict }}
 {{ range $name,$trace := .traces }}
 {{ $formatName := $name | title }}
 
@@ -30,6 +31,7 @@ func New{{ $formatName }}() *{{$formatName}} {
 func (this *{{$formatName}}) GetType() TraceType {
     return this.Type
 }
+{{- $layoutAttributes = merge $layoutAttributes $trace.layoutAttributes }}
 {{- $_ := set $allTypes $trace.attributes.type 1 }}
 {{ end }}
 
@@ -49,4 +51,5 @@ const (
 {{- $_ := set . "enumerates" $enumerates }}
 {{- $_ := set . "objects" $objects }}
 {{- $_ := set . "flaglists" $flaglists }}
+{{- $_ := set . "layoutAttributes" $layoutAttributes }}
 {{- end -}}
