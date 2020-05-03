@@ -115,8 +115,8 @@ func main() {
 		"Total<br>Costs",
 		"Total",
 	}
-	// yData := []int{400, 660, 660, 590, 400, 400, 340}
-	// textList := []string{"$430K", "$260K", "$690K", "$-120K", "$-200K", "$-320K", "$370K"}
+	yData := []int{400, 660, 660, 590, 400, 400, 340}
+	textList := []string{"$430K", "$260K", "$690K", "$-120K", "$-200K", "$-320K", "$370K"}
 
 	// Base
 
@@ -175,6 +175,22 @@ func main() {
 	}
 
 	data := grob.Traces{trace1, trace2, trace3, trace4}
+
+	annotations := make([]Annotation, 7)
+	for i := 0; i < len(annotations); i++ {
+		annotations[i] = Annotation{
+			X:    xData[i],
+			Y:    yData[i],
+			Text: textList[i],
+			Font: AnnotationFont{
+				Family: "Arial",
+				Size:   14,
+				Color:  "rgba(245,246,249,1)",
+			},
+			Showarrow: false,
+		}
+	}
+
 	layout := grob.Layout{
 		Title: &grob.LayoutTitle{
 			Text: "Annual Profit 2015",
@@ -185,7 +201,7 @@ func main() {
 		Width:         600,
 		Height:        600,
 		Showlegend:    grob.False,
-		Annotations:   nil, // Not implemented yet
+		Annotations:   annotations, // Not implemented yet
 	}
 
 	fig := &grob.Fig{
@@ -195,4 +211,18 @@ func main() {
 
 	offline.ToHtml(fig, "waterfall.html")
 	offline.Show(fig)
+}
+
+type Annotation struct {
+	X         string         `json:"x"`
+	Y         int            `json:"y"`
+	Text      string         `json:"text"`
+	Font      AnnotationFont `json:"font"`
+	Showarrow bool           `json:"showarrow"`
+}
+
+type AnnotationFont struct {
+	Family string `json:"family"`
+	Size   int64  `json:"size"`
+	Color  string `json:"color"`
 }
