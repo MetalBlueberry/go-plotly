@@ -5,8 +5,13 @@ package graph_objects
 type {{$name}} string
 
 const (
+    // Flags
     {{- range $flag := $attr.flags }}
     {{$name}}{{ $flag | camelcase}} {{$name}} = {{ quote $flag }}
+    {{- end }}
+    // Extras
+    {{- range $extra := $attr.extras }}
+    {{$name}}{{ $extra | camelcase}} {{$name}} = {{ quote $extra }}
     {{- end }}
 )
 {{ end -}}
