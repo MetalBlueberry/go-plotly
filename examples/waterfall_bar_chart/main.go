@@ -177,7 +177,7 @@ func main() {
 	data := grob.Traces{trace1, trace2, trace3, trace4}
 	layout := grob.Layout{
 		Title: &grob.LayoutTitle{
-			Text: "",
+			Text: "Annual Profit 2015",
 		},
 		Barmode:       grob.LayoutBarmode_stack,
 		Paper_bgcolor: "rgba(245,246,249,1)",
@@ -185,7 +185,7 @@ func main() {
 		Width:         600,
 		Height:        600,
 		Showlegend:    grob.False,
-		Annotations:   &grob.LayoutAnnotations{}, // Not implemented yet
+		Annotations:   nil, // Not implemented yet
 	}
 
 	fig := &grob.Fig{
