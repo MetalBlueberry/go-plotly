@@ -758,7 +758,7 @@ type CarpetAaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *CarpetAaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops CarpetAaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Tickmode enumerated <no value>
 	Tickmode CarpetAaxisTickmode `json:"tickmode,omitempty"`
@@ -920,7 +920,7 @@ type CarpetBaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *CarpetBaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops CarpetBaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Tickmode enumerated <no value>
 	Tickmode CarpetBaxisTickmode `json:"tickmode,omitempty"`
@@ -1043,7 +1043,7 @@ type ChoroplethColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ChoroplethColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ChoroplethColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1240,7 +1240,7 @@ type ChoroplethmapboxColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ChoroplethmapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ChoroplethmapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1437,7 +1437,7 @@ type ConeColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ConeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ConeColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1638,7 +1638,7 @@ type ContourColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ContourColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ContourColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1865,7 +1865,7 @@ type ContourcarpetColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ContourcarpetColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ContourcarpetColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2054,7 +2054,7 @@ type DensitymapboxColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *DensitymapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops DensitymapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2525,7 +2525,7 @@ type HeatmapColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *HeatmapColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops HeatmapColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2698,7 +2698,7 @@ type HeatmapglColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *HeatmapglColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops HeatmapglColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2871,7 +2871,7 @@ type Histogram2dColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *Histogram2dColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops Histogram2dColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -3077,7 +3077,7 @@ type Histogram2dcontourColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *Histogram2dcontourColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops Histogram2dcontourColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -3612,7 +3612,7 @@ type IndicatorGauge struct {
 	Shape IndicatorGaugeShape `json:"shape,omitempty"`
 
 	// Steps <no value> <no value>
-	Steps *IndicatorGaugeSteps `json:"steps,omitempty"`
+	Steps IndicatorGaugeSteps `json:"steps,omitempty"`
 
 	// Threshold <no value> <no value>
 	Threshold *IndicatorGaugeThreshold `json:"threshold,omitempty"`
@@ -3746,7 +3746,7 @@ type IsosurfaceColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *IsosurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops IsosurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -4318,7 +4318,7 @@ type LayoutMapbox struct {
 	Domain *LayoutMapboxDomain `json:"domain,omitempty"`
 
 	// Layers <no value> <no value>
-	Layers *LayoutMapboxLayers `json:"layers,omitempty"`
+	Layers LayoutMapboxLayers `json:"layers,omitempty"`
 
 	// Pitch number Sets the pitch angle of the map (in degrees, where *0* means perpendicular to the surface of the map) (mapbox.pitch).
 	Pitch float64 `json:"pitch,omitempty"`
@@ -4462,7 +4462,7 @@ type LayoutScene struct {
 	// Pending... _deprecated No valTyp <no value> `json:"_deprecated,omitempty"`
 
 	// Annotations <no value> <no value>
-	Annotations *LayoutSceneAnnotations `json:"annotations,omitempty"`
+	Annotations LayoutSceneAnnotations `json:"annotations,omitempty"`
 
 	// Aspectmode enumerated If *cube*, this scene's axes are drawn as a cube, regardless of the axes' ranges. If *data*, this scene's axes are drawn in proportion with the axes' ranges. If *manual*, this scene's axes are drawn in proportion with the input of *aspectratio* (the default behavior if *aspectratio* is provided). If *auto*, this scene's axes are drawn using the results of *data* except when one axis is more than four times the size of the two others, where in that case the results of *cube* are used.
 	Aspectmode LayoutSceneAspectmode `json:"aspectmode,omitempty"`
@@ -4746,7 +4746,7 @@ type LayoutXaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks <no value> <no value>
-	Rangebreaks *LayoutXaxisRangebreaks `json:"rangebreaks,omitempty"`
+	Rangebreaks LayoutXaxisRangebreaks `json:"rangebreaks,omitempty"`
 
 	// Rangemode enumerated If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
 	Rangemode LayoutXaxisRangemode `json:"rangemode,omitempty"`
@@ -4824,7 +4824,7 @@ type LayoutXaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutXaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutXaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -4971,7 +4971,7 @@ type LayoutYaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks <no value> <no value>
-	Rangebreaks *LayoutYaxisRangebreaks `json:"rangebreaks,omitempty"`
+	Rangebreaks LayoutYaxisRangebreaks `json:"rangebreaks,omitempty"`
 
 	// Rangemode enumerated If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
 	Rangemode LayoutYaxisRangemode `json:"rangemode,omitempty"`
@@ -5043,7 +5043,7 @@ type LayoutYaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutYaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutYaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -5172,7 +5172,7 @@ type Mesh3dColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *Mesh3dColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops Mesh3dColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -5892,7 +5892,7 @@ type SankeyLink struct {
 	Color interface{} `json:"color,omitempty"`
 
 	// Colorscales <no value> <no value>
-	Colorscales *SankeyLinkColorscales `json:"colorscales,omitempty"`
+	Colorscales SankeyLinkColorscales `json:"colorscales,omitempty"`
 
 	// Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
 	Colorsrc String `json:"colorsrc,omitempty"`
@@ -8161,7 +8161,7 @@ type StreamtubeColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *StreamtubeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops StreamtubeColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -8556,7 +8556,7 @@ type SurfaceColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *SurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops SurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9241,7 +9241,7 @@ type VolumeColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *VolumeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops VolumeColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9673,7 +9673,7 @@ type BarMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *BarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops BarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9889,7 +9889,7 @@ type BarpolarMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *BarpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops BarpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -10693,7 +10693,7 @@ type FunnelMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *FunnelMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops FunnelMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11179,7 +11179,7 @@ type HistogramMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *HistogramMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops HistogramMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11398,7 +11398,7 @@ type IndicatorGaugeAxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *IndicatorGaugeAxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops IndicatorGaugeAxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11696,7 +11696,7 @@ type LayoutColoraxisColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutColoraxisColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutColoraxisColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12027,7 +12027,7 @@ type LayoutPolarAngularaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutPolarAngularaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutPolarAngularaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12183,7 +12183,7 @@ type LayoutPolarRadialaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutPolarRadialaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutPolarRadialaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12431,7 +12431,7 @@ type LayoutSceneXaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutSceneXaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutSceneXaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12596,7 +12596,7 @@ type LayoutSceneYaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutSceneYaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutSceneYaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12761,7 +12761,7 @@ type LayoutSceneZaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutSceneZaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutSceneZaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -12887,7 +12887,7 @@ type LayoutTernaryAaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutTernaryAaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutTernaryAaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -13001,7 +13001,7 @@ type LayoutTernaryBaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutTernaryBaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutTernaryBaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -13115,7 +13115,7 @@ type LayoutTernaryCaxis struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *LayoutTernaryCaxisTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops LayoutTernaryCaxisTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -13225,7 +13225,7 @@ type LayoutXaxisRangeselector struct {
 	Borderwidth float64 `json:"borderwidth,omitempty"`
 
 	// Buttons <no value> <no value>
-	Buttons *LayoutXaxisRangeselectorButtons `json:"buttons,omitempty"`
+	Buttons LayoutXaxisRangeselectorButtons `json:"buttons,omitempty"`
 
 	// Font <no value> Sets the font of the range selector button text.
 	Font *LayoutXaxisRangeselectorFont `json:"font,omitempty"`
@@ -13533,7 +13533,7 @@ type ParcatsLineColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ParcatsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ParcatsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -13659,7 +13659,7 @@ type ParcoordsLineColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ParcoordsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ParcoordsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14017,7 +14017,7 @@ type Scatter3dLineColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *Scatter3dLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops Scatter3dLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14143,7 +14143,7 @@ type Scatter3dMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *Scatter3dMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops Scatter3dMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14362,7 +14362,7 @@ type ScatterMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScatterMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScatterMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14599,7 +14599,7 @@ type ScattercarpetMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScattercarpetMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScattercarpetMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14836,7 +14836,7 @@ type ScattergeoMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScattergeoMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScattergeoMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15073,7 +15073,7 @@ type ScatterglMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScatterglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScatterglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15295,7 +15295,7 @@ type ScattermapboxMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScattermapboxMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScattermapboxMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15466,7 +15466,7 @@ type ScatterpolarMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScatterpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScatterpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15703,7 +15703,7 @@ type ScatterpolarglMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScatterpolarglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScatterpolarglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15925,7 +15925,7 @@ type ScatterternaryMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *ScatterternaryMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops ScatterternaryMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16162,7 +16162,7 @@ type SplomMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *SplomMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops SplomMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16429,7 +16429,7 @@ type SunburstMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *SunburstMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops SunburstMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16867,7 +16867,7 @@ type TreemapMarkerColorbar struct {
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
-	Tickformatstops *TreemapMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+	Tickformatstops TreemapMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`

@@ -12,7 +12,7 @@ type Layout struct {
 	Angularaxis *LayoutAngularaxis `json:"angularaxis,omitempty"`
 
 	// Annotations <no value> <no value>
-	Annotations *LayoutAnnotations `json:"annotations,omitempty"`
+	Annotations LayoutAnnotations `json:"annotations,omitempty"`
 
 	// Autosize boolean Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
 	Autosize Bool `json:"autosize,omitempty"`
@@ -120,7 +120,7 @@ type Layout struct {
 	Hovermode LayoutHovermode `json:"hovermode,omitempty"`
 
 	// Images <no value> <no value>
-	Images *LayoutImages `json:"images,omitempty"`
+	Images LayoutImages `json:"images,omitempty"`
 
 	// Legend <no value> <no value>
 	Legend *LayoutLegend `json:"legend,omitempty"`
@@ -174,13 +174,13 @@ type Layout struct {
 	Separators String `json:"separators,omitempty"`
 
 	// Shapes <no value> <no value>
-	Shapes *LayoutShapes `json:"shapes,omitempty"`
+	Shapes LayoutShapes `json:"shapes,omitempty"`
 
 	// Showlegend boolean Determines whether or not a legend is drawn. Default is `true` if there is a trace to show and any of these: a) Two or more traces would by default be shown in the legend. b) One pie trace is shown in the legend. c) One trace is explicitly given with `showlegend: true`.
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Sliders <no value> <no value>
-	Sliders *LayoutSliders `json:"sliders,omitempty"`
+	Sliders LayoutSliders `json:"sliders,omitempty"`
 
 	// Spikedistance integer Sets the default distance (in pixels) to look for data to draw spikelines to (-1 means no cutoff, 0 means no looking for data). As with hoverdistance, distance does not apply to area-like objects. In addition, some objects can be hovered on but will not generate spikelines, such as scatter fills.
 	Spikedistance int64 `json:"spikedistance,omitempty"`
@@ -210,7 +210,7 @@ type Layout struct {
 	Uniformtext *LayoutUniformtext `json:"uniformtext,omitempty"`
 
 	// Updatemenus <no value> <no value>
-	Updatemenus *LayoutUpdatemenus `json:"updatemenus,omitempty"`
+	Updatemenus LayoutUpdatemenus `json:"updatemenus,omitempty"`
 
 	// Violingap number Sets the gap (in plot fraction) between violins of adjacent location coordinates. Has no effect on traces that have *width* set.
 	Violingap float64 `json:"violingap,omitempty"`

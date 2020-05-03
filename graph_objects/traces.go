@@ -60,7 +60,7 @@ type Area struct {
 	T interface{} `json:"t,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *AreaTransforms `json:"transforms,omitempty"`
+	Transforms AreaTransforms `json:"transforms,omitempty"`
 
 	// Tsrc string Sets the source reference on Chart Studio Cloud for  t .
 	Tsrc String `json:"tsrc,omitempty"`
@@ -238,7 +238,7 @@ type Bar struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *BarTransforms `json:"transforms,omitempty"`
+	Transforms BarTransforms `json:"transforms,omitempty"`
 
 	// Tsrc string Sets the source reference on Chart Studio Cloud for  t .
 	Tsrc String `json:"tsrc,omitempty"`
@@ -419,7 +419,7 @@ type Barpolar struct {
 	Thetaunit BarpolarThetaunit `json:"thetaunit,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *BarpolarTransforms `json:"transforms,omitempty"`
+	Transforms BarpolarTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -612,7 +612,7 @@ type Box struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *BoxTransforms `json:"transforms,omitempty"`
+	Transforms BoxTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -775,7 +775,7 @@ type Candlestick struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *CandlestickTransforms `json:"transforms,omitempty"`
+	Transforms CandlestickTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -1035,7 +1035,7 @@ type Choropleth struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ChoroplethTransforms `json:"transforms,omitempty"`
+	Transforms ChoroplethTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -1186,7 +1186,7 @@ type Choroplethmapbox struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ChoroplethmapboxTransforms `json:"transforms,omitempty"`
+	Transforms ChoroplethmapboxTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -1509,7 +1509,7 @@ type Contour struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ContourTransforms `json:"transforms,omitempty"`
+	Transforms ContourTransforms `json:"transforms,omitempty"`
 
 	// Transpose boolean Transposes the z data.
 	Transpose Bool `json:"transpose,omitempty"`
@@ -1862,7 +1862,7 @@ type Densitymapbox struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *DensitymapboxTransforms `json:"transforms,omitempty"`
+	Transforms DensitymapboxTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -2031,7 +2031,7 @@ type Funnel struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *FunnelTransforms `json:"transforms,omitempty"`
+	Transforms FunnelTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -2197,7 +2197,7 @@ type Funnelarea struct {
 	Title *FunnelareaTitle `json:"title,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *FunnelareaTransforms `json:"transforms,omitempty"`
+	Transforms FunnelareaTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -2321,7 +2321,7 @@ type Heatmap struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *HeatmapTransforms `json:"transforms,omitempty"`
+	Transforms HeatmapTransforms `json:"transforms,omitempty"`
 
 	// Transpose boolean Transposes the z data.
 	Transpose Bool `json:"transpose,omitempty"`
@@ -2484,7 +2484,7 @@ type Heatmapgl struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *HeatmapglTransforms `json:"transforms,omitempty"`
+	Transforms HeatmapglTransforms `json:"transforms,omitempty"`
 
 	// Transpose boolean Transposes the z data.
 	Transpose Bool `json:"transpose,omitempty"`
@@ -2674,7 +2674,7 @@ type Histogram struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *HistogramTransforms `json:"transforms,omitempty"`
+	Transforms HistogramTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -2825,7 +2825,7 @@ type Histogram2d struct {
 	Stream *Histogram2dStream `json:"stream,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *Histogram2dTransforms `json:"transforms,omitempty"`
+	Transforms Histogram2dTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -3021,7 +3021,7 @@ type Histogram2dcontour struct {
 	Stream *Histogram2dcontourStream `json:"stream,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *Histogram2dcontourTransforms `json:"transforms,omitempty"`
+	Transforms Histogram2dcontourTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -3263,7 +3263,7 @@ type Indicator struct {
 	Title *IndicatorTitle `json:"title,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *IndicatorTransforms `json:"transforms,omitempty"`
+	Transforms IndicatorTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -3764,7 +3764,7 @@ type Ohlc struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *OhlcTransforms `json:"transforms,omitempty"`
+	Transforms OhlcTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -3819,7 +3819,7 @@ type Parcats struct {
 	Countssrc String `json:"countssrc,omitempty"`
 
 	// Dimensions <no value> <no value>
-	Dimensions *ParcatsDimensions `json:"dimensions,omitempty"`
+	Dimensions ParcatsDimensions `json:"dimensions,omitempty"`
 
 	// Domain <no value> <no value>
 	Domain *ParcatsDomain `json:"domain,omitempty"`
@@ -3858,7 +3858,7 @@ type Parcats struct {
 	Tickfont *ParcatsTickfont `json:"tickfont,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ParcatsTransforms `json:"transforms,omitempty"`
+	Transforms ParcatsTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -3892,7 +3892,7 @@ type Parcoords struct {
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Dimensions <no value> <no value>
-	Dimensions *ParcoordsDimensions `json:"dimensions,omitempty"`
+	Dimensions ParcoordsDimensions `json:"dimensions,omitempty"`
 
 	// Domain <no value> <no value>
 	Domain *ParcoordsDomain `json:"domain,omitempty"`
@@ -3934,7 +3934,7 @@ type Parcoords struct {
 	Tickfont *ParcoordsTickfont `json:"tickfont,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ParcoordsTransforms `json:"transforms,omitempty"`
+	Transforms ParcoordsTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -4097,7 +4097,7 @@ type Pie struct {
 	Title *PieTitle `json:"title,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *PieTransforms `json:"transforms,omitempty"`
+	Transforms PieTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -4469,7 +4469,7 @@ type Scatter struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScatterTransforms `json:"transforms,omitempty"`
+	Transforms ScatterTransforms `json:"transforms,omitempty"`
 
 	// Tsrc string Sets the source reference on Chart Studio Cloud for  t .
 	Tsrc String `json:"tsrc,omitempty"`
@@ -4641,7 +4641,7 @@ type Scatter3d struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *Scatter3dTransforms `json:"transforms,omitempty"`
+	Transforms Scatter3dTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -4813,7 +4813,7 @@ type Scattercarpet struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScattercarpetTransforms `json:"transforms,omitempty"`
+	Transforms ScattercarpetTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -4979,7 +4979,7 @@ type Scattergeo struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScattergeoTransforms `json:"transforms,omitempty"`
+	Transforms ScattergeoTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5121,7 +5121,7 @@ type Scattergl struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScatterglTransforms `json:"transforms,omitempty"`
+	Transforms ScatterglTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5296,7 +5296,7 @@ type Scattermapbox struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScattermapboxTransforms `json:"transforms,omitempty"`
+	Transforms ScattermapboxTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5462,7 +5462,7 @@ type Scatterpolar struct {
 	Thetaunit ScatterpolarThetaunit `json:"thetaunit,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScatterpolarTransforms `json:"transforms,omitempty"`
+	Transforms ScatterpolarTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5622,7 +5622,7 @@ type Scatterpolargl struct {
 	Thetaunit ScatterpolarglThetaunit `json:"thetaunit,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScatterpolarglTransforms `json:"transforms,omitempty"`
+	Transforms ScatterpolarglTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5782,7 +5782,7 @@ type Scatterternary struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ScatterternaryTransforms `json:"transforms,omitempty"`
+	Transforms ScatterternaryTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -5822,7 +5822,7 @@ type Splom struct {
 	Diagonal *SplomDiagonal `json:"diagonal,omitempty"`
 
 	// Dimensions <no value> <no value>
-	Dimensions *SplomDimensions `json:"dimensions,omitempty"`
+	Dimensions SplomDimensions `json:"dimensions,omitempty"`
 
 	// Hoverinfo flaglist Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
 	Hoverinfo SplomHoverinfo `json:"hoverinfo,omitempty"`
@@ -5894,7 +5894,7 @@ type Splom struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *SplomTransforms `json:"transforms,omitempty"`
+	Transforms SplomTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -6202,7 +6202,7 @@ type Sunburst struct {
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *SunburstTransforms `json:"transforms,omitempty"`
+	Transforms SunburstTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -6598,7 +6598,7 @@ type Treemap struct {
 	Tiling *TreemapTiling `json:"tiling,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *TreemapTransforms `json:"transforms,omitempty"`
+	Transforms TreemapTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -6752,7 +6752,7 @@ type Violin struct {
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *ViolinTransforms `json:"transforms,omitempty"`
+	Transforms ViolinTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
@@ -7126,7 +7126,7 @@ type Waterfall struct {
 	Totals *WaterfallTotals `json:"totals,omitempty"`
 
 	// Transforms <no value> <no value>
-	Transforms *WaterfallTransforms `json:"transforms,omitempty"`
+	Transforms WaterfallTransforms `json:"transforms,omitempty"`
 
 	// Uid string Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
 	Uid String `json:"uid,omitempty"`
