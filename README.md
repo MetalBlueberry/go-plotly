@@ -66,6 +66,14 @@ Flaglist Properties are defined like Enumerated values as constant fields. The d
 
 Examples, Code generation and Offline package are based on version 1.54.0, but It should work with other versions as this library just generates standard JSON.
 
+## Testing
+
+The package lacks of unit testing basically because it's just build JSON to be consumed by plotly.js. This means that I do not see a clear way of building valuable unit testing that doesn't involve the usage of plotly.js. If the package compiles, It means that types are generated correctly.
+
+Said that, I'm thinking about adding some integration testing with Docker, but for now, I've enough if the examples are working.
+
+If you have any good idea of how to test this code, I will be happy to hear it.
+
 ## Progress
 
 The main focus is to have the structures to hold the data and provide auto competition. Once we get there, we will be on v1.0.0.
