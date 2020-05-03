@@ -6,20 +6,17 @@ package graph_objects
 
 type Traces []Trace
 
-
 type Fig struct {
 	Data   Traces `json:"data,omitempty"`
 	Layout Layout `json:"layout,omitempty"`
 }
-
 
 // This section is to workaround the omitempty for json serialization.
 
 type Bool *bool
 
 var (
-
-	trueValue bool = true
+	trueValue  bool = true
 	falseValue bool = false
 
 	True  Bool = &trueValue

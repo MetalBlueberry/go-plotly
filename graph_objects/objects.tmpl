@@ -6,6 +6,17 @@
 
 {{- range $objName, $obj :=  .objects }} 
 {{ $typeName := print $objName }}
+{{- /*1*/}}{{- if hasKey $obj "items" }}
+// {{ $typeName }} It's an items array and what goes inside it's... messy... check the docs
+// Here is a hint to help you to define your own type
+{{- range $itemName, $item := $obj.items }}
+// {{ $itemName }}
+    {{- range $itemAttrName, $itemAttr := $item }}
+//      {{ $itemAttrName }}
+    {{- end }}
+{{- end }}
+type {{ $typeName }} interface{}
+{{/*1*/}}{{- else -}}
 type {{ $typeName }} struct {
 {{ $params := (dict "parent" $typeName "attributes" $obj "ctx" $g.ctx ) }}
 {{- template "attributes" $params -}}
@@ -13,7 +24,9 @@ type {{ $typeName }} struct {
 {{- $innerObjects = mustMerge $innerObjects $params.objects -}}
 {{- $flaglists = mustMerge $flaglists $params.flaglists -}}
 }
+{{/*1*/}}{{ end -}}
 {{ end -}}
+
 {{/* return values */}}
 {{- $_ := set . "innerObjects" $innerObjects }}
 {{- $_ := set . "enumerates" $enumerates }}

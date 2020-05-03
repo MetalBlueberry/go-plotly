@@ -3,55 +3,35 @@
 {{- $enumerates := dict }}
 {{- $objects := dict }}
 {{- $flaglists := dict }}
-{{- /*0*/ -}}
-{{- range $attrName, $attr := .attributes }}
+{{- /*0*/ -}}{{- range $attrName, $attr := .attributes }}
     {{- $formatAttrName := $attrName | title }}
     {{- $typeName := print $g.parent ($attrName | camelcase) }}
-    {{- /*1*/ -}}
-    {{- if kindIs "map" $attr -}}
+    {{- /*1*/ -}}{{- if kindIs "map" $attr -}}
     {{/* Add description */}}
     // {{ $formatAttrName }} {{ $attr.valType }} {{ $attr.description }}
-    {{- /*2*/}}
-    {{ if hasKey $attr "valType" -}}
+    {{/*2*/}}{{ if hasKey $attr "valType" -}}
     {{/* Check if type map is defined and comment out if not*/}}
-    {{- /*3*/ -}}
-    {{- if eq $attr.valType "enumerated" }}{{ $_ := set $enumerates $typeName $attr }} 
-    {{- else if eq $attr.valType "flaglist" -}}{{ $_ := set $flaglists $typeName $attr }}
-    {{- else if not (hasKey $g.ctx.typeMap $attr.valType) }}// Pending of type {{ quote $attr.valType -}} 
-    {{- /*3*/ -}}
-    {{- end -}} 
-    {{/*3*/}}
-    {{- $formatAttrName }} {{ if eq $attr.valType "enumerated" -}}
+    {{- /*3*/ -}}{{- if eq $attr.valType "enumerated" }}{{ $_ := set $enumerates $typeName $attr }} 
+    {{- /*3*/ -}}{{- else if eq $attr.valType "flaglist" -}}{{ $_ := set $flaglists $typeName $attr }}
+    {{- /*3*/ -}}{{- else if not (hasKey $g.ctx.typeMap $attr.valType) }}// Pending of type {{ quote $attr.valType -}} 
+    {{- /*3*/ -}}{{- end -}} 
+    {{- $formatAttrName }} {{/*3*/}}{{ if eq $attr.valType "enumerated" -}}
     {{- $typeName }}
-    {{- else if eq $attr.valType "flaglist" -}}
+    {{- /*3*/}}{{- else if eq $attr.valType "flaglist" -}}
     {{- $typeName }}
-    {{- else if $attr.arrayOk -}}
+    {{- /*3*/}}{{- else if $attr.arrayOk -}}
     interface{} 
     {{- else -}}
     {{ get $g.ctx.typeMap $attr.valType }}
-    {{- /*3*/ -}}
-    {{- end }} 
+    {{- /*3*/ -}}{{- end }} 
     {{- else if hasKey $attr "role" }}
     {{- $formatAttrName }} *{{ $typeName }} 
     {{- $_ := set $objects $typeName $attr }}
-    {{- else if eq $attrName "items" -}}
-    // It's an items array and what goes inside it's... messy... check the docs
-    // Here is a hint
-    {{- range $itemName, $item := $attr }}
-    // {{ $itemName }}
-        {{- range $itemAttrName, $itemAttr := $item }}
-    //      {{ $itemAttrName }}
-        {{- end }}
-    {{- end }}
-    {{ $formatAttrName }} interface{}
     {{- else }}
     // Pending... {{ $formatAttrName }} No valTyp {{ $attr.role -}} 
-    {{- /*2*/ -}}
-    {{- end }} `json:"{{ $attrName }},omitempty"` 
-    {{/*1*/ -}}
-    {{- end -}}
-{{- /*0*/ -}}
-{{- end }}
+    {{- /*2*/ -}}{{- end }} `json:"{{ $attrName }},omitempty"` 
+    {{/*1*/ -}}{{- end -}}
+{{- /*0*/ -}}{{- end }}
 {{/* return values */}}
 {{- $_ := set . "enumerates" $enumerates }}
 {{- $_ := set . "objects" $objects }}
