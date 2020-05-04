@@ -68,7 +68,7 @@ func main() {
 		})
 	}
 
-	fig.Layout = grob.Layout{
+	fig.Layout = &grob.Layout{
 		Barmode: grob.LayoutBarmode_stack,
 	}
 

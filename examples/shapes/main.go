@@ -15,7 +15,7 @@ func main() {
 	   })
 	*/
 	fig := &grob.Fig{
-		Layout: grob.Layout{
+		Layout: &grob.Layout{
 			Title: &grob.LayoutTitle{
 				Text: "A Figure Specified By Go Struct",
 			},

@@ -66,7 +66,7 @@ func main() {
 		},
 	}
 
-	layout := grob.Layout{
+	layout := &grob.Layout{
 		Title: &grob.LayoutTitle{
 			Text: "A Figure Specified By Go Struct",
 		},

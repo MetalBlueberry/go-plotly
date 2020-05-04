@@ -191,7 +191,7 @@ func main() {
 		}
 	}
 
-	layout := grob.Layout{
+	layout := &grob.Layout{
 		Title: &grob.LayoutTitle{
 			Text: "Annual Profit 2015",
 		},

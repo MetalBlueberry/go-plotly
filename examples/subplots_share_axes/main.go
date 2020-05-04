@@ -81,7 +81,7 @@ func main() {
 				Yaxis: "y4",
 			},
 		},
-		Layout: grob.Layout{
+		Layout: &grob.Layout{
 			Grid: &grob.LayoutGrid{
 				Rows:    2,
 				Columns: 2,

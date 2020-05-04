@@ -83,7 +83,7 @@ func main() {
 		Y:    df.Col("High").Float(),
 	})
 
-	fig.Layout = grob.Layout{
+	fig.Layout = &grob.Layout{
 		Title: &grob.LayoutTitle{
 			Text: "Time series with range slider and selectors",
 		},

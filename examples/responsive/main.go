@@ -27,6 +27,9 @@ func main() {
 				Text: "A Figure Specified By Go Struct",
 			},
 		},
+		Config: &grob.Config{
+			Responsive: grob.True,
+		},
 	}
 
 	offline.ToHtml(fig, "bar.html")
