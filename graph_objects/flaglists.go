@@ -130,6 +130,19 @@ const (
 	ConeHoverinfoSkip ConeHoverinfo = "skip"
 )
 
+type ConfigScrollzoom interface{}
+
+var (
+	// Flags
+	ConfigScrollzoomCartesian ConfigScrollzoom = "cartesian"
+	ConfigScrollzoomGl3d      ConfigScrollzoom = "gl3d"
+	ConfigScrollzoomGeo       ConfigScrollzoom = "geo"
+	ConfigScrollzoomMapbox    ConfigScrollzoom = "mapbox"
+	// Extras
+	ConfigScrollzoomTrue  ConfigScrollzoom = true
+	ConfigScrollzoomFalse ConfigScrollzoom = false
+)
+
 type ContourHoverinfo string
 
 const (

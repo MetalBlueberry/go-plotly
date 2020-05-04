@@ -1,0 +1,21 @@
+{{- define "config" -}}
+{{- $g := . -}}
+{{- $enumerates := dict }}
+{{- $objects := dict }}
+{{- $flaglists := dict }}
+{{- $layoutAttributes := dict -}}
+package graph_objects
+
+
+type Config struct {
+{{- $params := (dict "parent" "Config" "attributes" .config "ctx" $g.ctx ) }}
+{{ template "attributes" $params }}
+}
+{{- $enumerates =  merge $enumerates $params.enumerates }}
+{{- $objects = merge $objects $params.objects }}
+{{- $flaglists = merge $flaglists $params.flaglists }}
+
+{{- $_ := set . "enumerates" $enumerates }}
+{{- $_ := set . "objects" $objects }}
+{{- $_ := set . "flaglists" $flaglists }}
+{{- end -}}

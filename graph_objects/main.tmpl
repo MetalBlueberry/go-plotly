@@ -34,23 +34,30 @@ Objects in layout
     {{ $name }}
 {{- end }}
 
+{{- $configInput := (dict "config" $g.schema.config  "ctx" $g.ctx) }}
+{{- $err := file "config.go" "config" $configInput -}}
+{{ if $err }}
+    Something went wrong rendering config.go {{ $err }}
+{{ end }}
+
 Rendering objects.go
-{{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects) "deep" 0 "ctx" $g.ctx) }}
+{{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects $configInput.objects) "deep" 0 "ctx" $g.ctx) }}
 {{- $err := file "objects.go" "objects_recursive" $objectsInput -}}
 {{- if $err }}
     Something went wrong rendering objects.go {{ $err }}
 {{- end -}}
 
 Rendering enumerates.go
-{{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates ) "ctx" $g.ctx) }}
+{{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates $configInput.enumerates ) "ctx" $g.ctx) }}
 {{- $err := file "enumerates.go" "enumerates" $enumeratesInput -}}
 {{- if $err }}
     Something went wrong rendering enumerates.go {{ $err }}
 {{- end }}
 
-{{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists ) "ctx" $g.ctx) }}
+{{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists $configInput.flaglists ) "ctx" $g.ctx) }}
 {{- $err := file "flaglists.go" "flaglists" $flaglistsInput -}}
 {{- if $err }}
     Something went wrong rendering flaglist.go {{ $err }}
 {{- end }}
+
 Finished

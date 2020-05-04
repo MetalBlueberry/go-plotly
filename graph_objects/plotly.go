@@ -7,8 +7,9 @@ package graph_objects
 type Traces []Trace
 
 type Fig struct {
-	Data   Traces `json:"data,omitempty"`
-	Layout Layout `json:"layout,omitempty"`
+	Data   Traces  `json:"data,omitempty"`
+	Layout *Layout `json:"layout,omitempty"`
+	Config *Config `json:"config,omitempty"`
 }
 
 // This section is to workaround the omitempty for json serialization.

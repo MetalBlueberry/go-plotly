@@ -1566,6 +1566,39 @@ type ConeStream struct {
 	Token String `json:"token,omitempty"`
 }
 
+type ConfigEdits struct {
+
+	// AnnotationPosition boolean Determines if the main anchor of the annotation is editable. The main anchor corresponds to the text (if no arrow) or the arrow (which drags the whole thing leaving the arrow length & direction unchanged).
+	AnnotationPosition Bool `json:"annotationPosition,omitempty"`
+
+	// AnnotationTail boolean Has only an effect for annotations with arrows. Enables changing the length and direction of the arrow.
+	AnnotationTail Bool `json:"annotationTail,omitempty"`
+
+	// AnnotationText boolean Enables editing annotation text.
+	AnnotationText Bool `json:"annotationText,omitempty"`
+
+	// AxisTitleText boolean Enables editing axis title text.
+	AxisTitleText Bool `json:"axisTitleText,omitempty"`
+
+	// ColorbarPosition boolean Enables moving colorbars.
+	ColorbarPosition Bool `json:"colorbarPosition,omitempty"`
+
+	// ColorbarTitleText boolean Enables editing colorbar title text.
+	ColorbarTitleText Bool `json:"colorbarTitleText,omitempty"`
+
+	// LegendPosition boolean Enables moving the legend.
+	LegendPosition Bool `json:"legendPosition,omitempty"`
+
+	// LegendText boolean Enables editing the trace name fields from the legend
+	LegendText Bool `json:"legendText,omitempty"`
+
+	// ShapePosition boolean Enables moving shapes.
+	ShapePosition Bool `json:"shapePosition,omitempty"`
+
+	// TitleText boolean Enables editing the global layout title.
+	TitleText Bool `json:"titleText,omitempty"`
+}
+
 type ContourColorbar struct {
 
 	// _deprecated <no value> <no value>

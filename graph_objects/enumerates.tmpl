@@ -17,24 +17,22 @@ package graph_objects
 {{- $containsBool := or (has true $attr.values) (has false $attr.values) }}
 // {{ $formatName }} {{ $attr.description }}
 type {{ $formatName }} {{ if $containsBool }}interface{}{{ else }}string{{ end }}
-
+{{ if $containsBool }}
+var (
+{{- else}}
 const (
+{{- end}}
 {{- range $value := $attr.values }}
-    {{- if $containsBool }}
-    {{$formatName}}{{ $value | toString | title | nospace }} {{ kindOf $value }} = 
-    {{- if kindIs "string" $value }} {{ quote $value }}
-    {{- else }} {{ $value }}
-    {{- end }}
-    {{- else }}
     {{- if kindIs "string" $value }}
     {{- if ne $value "" }}
-    {{$formatName}}_{{ stemplate "cleanupName" $value }} {{ $formatName }} = {{ quote $value }} // {{ $value }}
+    {{$formatName}}_{{ stemplate "cleanupName" $value }} {{ $formatName }} = {{ quote $value }}
     {{- end }}
     {{- else if kindIs "float64" $value }}
-    {{$formatName}}{{ $value | toString | title | replace "-" "_" }} {{ $formatName }} = {{ quote $value }} // {{ $value }}
+    {{$formatName}}{{ $value | toString | title | replace "-" "_" }} {{ $formatName }} = {{ quote $value }}
+    {{- else if kindIs "bool" $value }}
+    {{$formatName}}_{{ $value | toString | title }} {{ $formatName }} = {{ $value }} 
     {{- else }}
     ERROR {{ kindOf $value }}
-    {{- end }}
     {{- end }}
 {{- end }}
 )
