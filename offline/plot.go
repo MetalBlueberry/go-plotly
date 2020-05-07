@@ -3,7 +3,6 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -20,22 +19,18 @@ type Options struct {
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
 func ToHtml(fig *grob.Fig, path string) {
-	figBytes, err := json.Marshal(fig)
-	if err != nil {
-		panic(err)
-	}
-	tmpl, err := template.New("plotly").Parse(baseHtml)
-	if err != nil {
-		panic(err)
-	}
-	buf := &bytes.Buffer{}
-	tmpl.Execute(buf, string(figBytes))
+	buf := figToBuffer(fig)
 	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
 func Show(fig *grob.Fig) {
+	buf := figToBuffer(fig)
+	browser.OpenReader(buf)
+}
+
+func figToBuffer(fig *grob.Fig) *bytes.Buffer {
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
@@ -46,10 +41,11 @@ func Show(fig *grob.Fig) {
 	}
 	buf := &bytes.Buffer{}
 	tmpl.Execute(buf, string(figBytes))
-	browser.OpenReader(buf)
+	return buf
 }
 
 // Serve creates a local web server that displays the image using plotly.js
+// Is a good alternative to Show to avoid creating tmp files.
 func Serve(fig *grob.Fig, opt ...Options) {
 	opts := computeOptions(Options{
 		Addr: "localhost:8080",
@@ -60,23 +56,16 @@ func Serve(fig *grob.Fig, opt ...Options) {
 		Handler: mux,
 		Addr:    opts.Addr,
 	}
-	mux.HandleFunc("/data", func(w http.ResponseWriter, r *http.Request) {
-		log.Print("Served data")
-		encoder := json.NewEncoder(w)
-		err := encoder.Encode(fig)
-		if err != nil {
-			log.Printf("Error! %s", err)
-		}
-	})
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		log.Print("Served page")
-		fmt.Fprint(w, baseHtml)
+		buf := figToBuffer(fig)
+		buf.WriteTo(w)
 	})
 
 	log.Print("Starting server")
-	err := srv.ListenAndServe()
-	log.Print(err)
-	log.Print("Plot served")
+	if err := srv.ListenAndServe(); err != nil {
+		log.Print(err)
+	}
+	log.Print("Stop server")
 }
 
 func computeOptions(def Options, opt ...Options) Options {
