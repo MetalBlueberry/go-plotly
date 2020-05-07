@@ -44,7 +44,7 @@ func main() {
 
 This will open your browser and display the following plot
 
-![Bar](img/Bar.png)
+![Bar](./examples/bar/Bar.png)
 
 And that's it.
 
