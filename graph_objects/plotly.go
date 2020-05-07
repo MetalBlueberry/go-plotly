@@ -12,6 +12,10 @@ type Fig struct {
 	Config *Config `json:"config,omitempty"`
 }
 
+func (fig *Fig) AddTraces(traces ...Trace) {
+	fig.Data = append(fig.Data, traces...)
+}
+
 // This section is to workaround the omitempty for json serialization.
 
 type Bool *bool
