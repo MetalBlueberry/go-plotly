@@ -83,13 +83,10 @@ var baseHtml = `
 		<script src="https://cdn.plot.ly/plotly-1.54.0.min.js"></script>
 	</head>
 	</body>
-		<div id="tester"></div>
+		<div id="plot"></div>
 	<script>
-		console.log("start")
 		data = JSON.parse('{{ . }}')
-
-		TESTER = document.getElementById('tester');
-		Plotly.newPlot(TESTER, data);
+		Plotly.newPlot(plot, data);
 	</script>
 	<body>
 	`
