@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/MetalBlueberry/go-plotly)](https://goreportcard.com/report/github.com/MetalBlueberry/go-plotly)
 # go-plotly
 
 Inspired by [Python Plotly](https://plotly.com/python/creating-and-updating-figures/)
