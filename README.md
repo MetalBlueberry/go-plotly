@@ -1,4 +1,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/MetalBlueberry/go-plotly)](https://goreportcard.com/report/github.com/MetalBlueberry/go-plotly)
+[![godoc](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/mod/github.com/MetalBlueberry/go-plotly?tab=overview)
+
 # go-plotly
 
 Inspired by [Python Plotly](https://plotly.com/python/creating-and-updating-figures/)
