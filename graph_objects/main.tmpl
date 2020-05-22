@@ -8,13 +8,13 @@
 Generating Go Plotly schema
 SHA {{ .sha1 }}
 
-{{- $err := file "plotly.go" "plotly" $g  -}}
+{{- $err := file "auto_plotly.go" "plotly" $g  -}}
 {{ if $err }}
     Something went wrong rendering plotly.go {{ $err }}
 {{ end }}
 
 {{ $tracesInput := (dict "traces" $g.schema.traces "ctx" $g.ctx) }}
-{{- $err := file "traces.go" "traces" $tracesInput -}}
+{{- $err := file "auto_traces.go" "traces" $tracesInput -}}
 {{ if $err }}
     Something went wrong rendering traces.go {{ $err }}
 {{ end }}
@@ -25,7 +25,7 @@ Objects in traces
 {{- end }}
 
 {{ $layoutInput := (dict "layout" $g.schema.layout "extra" $tracesInput.layoutAttributes "ctx" $g.ctx) }}
-{{- $err := file "layout.go" "layout" $layoutInput -}}
+{{- $err := file "auto_layout.go" "layout" $layoutInput -}}
 {{ if $err }}
     Something went wrong rendering layout.go {{ $err }}
 {{ end }}
@@ -35,27 +35,27 @@ Objects in layout
 {{- end }}
 
 {{- $configInput := (dict "config" $g.schema.config  "ctx" $g.ctx) }}
-{{- $err := file "config.go" "config" $configInput -}}
+{{- $err := file "auto_config.go" "config" $configInput -}}
 {{ if $err }}
     Something went wrong rendering config.go {{ $err }}
 {{ end }}
 
 Rendering objects.go
 {{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects $configInput.objects) "deep" 0 "ctx" $g.ctx) }}
-{{- $err := file "objects.go" "objects_recursive" $objectsInput -}}
+{{- $err := file "auto_objects.go" "objects_recursive" $objectsInput -}}
 {{- if $err }}
     Something went wrong rendering objects.go {{ $err }}
 {{- end -}}
 
 Rendering enumerates.go
 {{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates $configInput.enumerates ) "ctx" $g.ctx) }}
-{{- $err := file "enumerates.go" "enumerates" $enumeratesInput -}}
+{{- $err := file "auto_enumerates.go" "enumerates" $enumeratesInput -}}
 {{- if $err }}
     Something went wrong rendering enumerates.go {{ $err }}
 {{- end }}
 
 {{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists $configInput.flaglists ) "ctx" $g.ctx) }}
-{{- $err := file "flaglists.go" "flaglists" $flaglistsInput -}}
+{{- $err := file "auto_flaglists.go" "flaglists" $flaglistsInput -}}
 {{- if $err }}
     Something went wrong rendering flaglist.go {{ $err }}
 {{- end }}

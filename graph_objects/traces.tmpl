@@ -2,6 +2,10 @@
 {{- $g := . -}}
 package graph_objects
 
+import (
+	"encoding/json"
+	"errors"
+)
 {{- $allTypes := dict }}
 {{- $enumerates := dict }}
 {{- $objects := dict }}
@@ -47,6 +51,32 @@ const (
     TraceType{{ $name | title }} TraceType = {{ quote $name }}
 {{- end }}
 )
+
+type unmarshalType struct {
+	Type TraceType `json:"type,omitempty"`
+}
+
+
+func UnmarshallTrace(data []byte) (Trace,error) {
+	traceType := unmarshalType{}
+	err := json.Unmarshal(data, &traceType)
+	if err != nil {
+		return nil, err
+	}
+	switch traceType.Type {
+{{- range $name, $type := $allTypes }}
+    case TraceType{{ $name | title }}:
+        trace := &{{ $name | title }}{}
+        err = json.Unmarshal(data,trace)
+        if err != nil {
+            return nil, err
+        }
+        return trace, nil
+{{- end }}
+    default:
+        return nil, errors.New("Trace Type is not registered")
+	}
+}
 {{/* return values */}}
 {{- $_ := set . "enumerates" $enumerates }}
 {{- $_ := set . "objects" $objects }}
