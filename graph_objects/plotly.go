@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-//go:generate sh -c "cat schema.json | plate --template main.tmpl"
+//go:generate sh -c "cat schema.json | plate --template main.tmpl; go fmt"
 
 type Traces []Trace
 
