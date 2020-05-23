@@ -19,7 +19,7 @@ type {{ $formatName }} struct {
 
     // Type is the type of the plot
     Type TraceType `json:"type,omitempty"`
-    {{- $params := (dict "parent" $formatName "attributes" .attributes "ctx" $g.ctx ) }}
+    {{- $params := (dict "parent" $formatName "attributes" .attributes  ) }}
     {{ template "attributes" $params }}
     {{- $enumerates =  merge $enumerates $params.enumerates }}
     {{- $objects = merge $objects $params.objects }}

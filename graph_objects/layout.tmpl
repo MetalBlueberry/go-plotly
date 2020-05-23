@@ -7,7 +7,7 @@ package grob
 
 
 type Layout struct {
-{{- $params := (dict  "parent" "Layout" "attributes" (merge .layout.layoutAttributes .extra ) "ctx" $g.ctx ) }}
+{{- $params := (dict  "parent" "Layout" "attributes" (merge .layout.layoutAttributes .extra )  ) }}
 {{ template "attributes" $params }}
 {{- $enumerates = $params.enumerates -}}
 {{- $objects = $params.objects }}

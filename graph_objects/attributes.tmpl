@@ -1,5 +1,6 @@
 {{- define "attributes" -}}
 {{- $g := . -}}
+{{ $typeMap :=  dict "flaglist" "String" "info_array" "interface{}" "subplotid" "String" "data_array" "interface{}" "any" "interface{}" "angle" "float64" "color" "String" "number" "float64" "string" "String" "integer" "int64" "boolean" "Bool" }}
 {{- $enumerates := dict }}
 {{- $objects := dict }}
 {{- $flaglists := dict }}
@@ -13,7 +14,7 @@
     {{/* Check if type map is defined and comment out if not*/}}
     {{- /*3*/ -}}{{- if eq $attr.valType "enumerated" }}{{ $_ := set $enumerates $typeName $attr }} 
     {{- /*3*/ -}}{{- else if eq $attr.valType "flaglist" -}}{{ $_ := set $flaglists $typeName $attr }}
-    {{- /*3*/ -}}{{- else if not (hasKey $g.ctx.typeMap $attr.valType) }}// Pending of type {{ quote $attr.valType -}} 
+    {{- /*3*/ -}}{{- else if not (hasKey $typeMap $attr.valType) }}// Pending of type {{ quote $attr.valType -}} 
     {{- /*3*/ -}}{{- end -}} 
     {{- $formatAttrName }} {{/*3*/}}{{ if eq $attr.valType "enumerated" -}}
     {{- $typeName }}
@@ -22,7 +23,7 @@
     {{- /*3*/}}{{- else if $attr.arrayOk -}}
     interface{} 
     {{- else -}}
-    {{ get $g.ctx.typeMap $attr.valType }}
+    {{ get $typeMap $attr.valType }}
     {{- /*3*/ -}}{{- end }} 
     {{- else if hasKey $attr "role" }}
     {{- if hasKey $attr "items" }}

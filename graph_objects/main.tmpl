@@ -1,9 +1,6 @@
 
 
 {{- $g := . -}}
-{{- $_ := set $g "ctx" dict -}}
-
-{{ $_ := set $g.ctx "typeMap" (dict "flaglist" "String" "info_array" "interface{}" "subplotid" "String" "data_array" "interface{}" "any" "interface{}" "angle" "float64" "color" "String" "number" "float64" "string" "String" "integer" "int64" "boolean" "Bool") }}
 
 Generating Go Plotly schema
 SHA {{ .sha1 }}
@@ -13,7 +10,7 @@ SHA {{ .sha1 }}
     Something went wrong rendering plotly.go {{ $err }}
 {{ end }}
 
-{{ $tracesInput := (dict "traces" $g.schema.traces "ctx" $g.ctx) }}
+{{ $tracesInput := (dict "traces" $g.schema.traces ) }}
 {{- $err := file "auto_traces.go" "traces" $tracesInput -}}
 {{ if $err }}
     Something went wrong rendering traces.go {{ $err }}
@@ -24,7 +21,7 @@ Objects in traces
     {{ $name }}
 {{- end }}
 
-{{ $layoutInput := (dict "layout" $g.schema.layout "extra" $tracesInput.layoutAttributes "ctx" $g.ctx) }}
+{{ $layoutInput := (dict "layout" $g.schema.layout "extra" $tracesInput.layoutAttributes ) }}
 {{- $err := file "auto_layout.go" "layout" $layoutInput -}}
 {{ if $err }}
     Something went wrong rendering layout.go {{ $err }}
@@ -34,27 +31,27 @@ Objects in layout
     {{ $name }}
 {{- end }}
 
-{{- $configInput := (dict "config" $g.schema.config  "ctx" $g.ctx) }}
+{{- $configInput := (dict "config" $g.schema.config ) }}
 {{- $err := file "auto_config.go" "config" $configInput -}}
 {{ if $err }}
     Something went wrong rendering config.go {{ $err }}
 {{ end }}
 
 Rendering objects.go
-{{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects $configInput.objects) "deep" 0 "ctx" $g.ctx) }}
+{{ $objectsInput := (dict "objects" (merge $tracesInput.objects $layoutInput.objects $configInput.objects) "deep" 0 ) }}
 {{- $err := file "auto_objects.go" "objects_recursive" $objectsInput -}}
 {{- if $err }}
     Something went wrong rendering objects.go {{ $err }}
 {{- end -}}
 
 Rendering enumerates.go
-{{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates $configInput.enumerates ) "ctx" $g.ctx) }}
+{{ $enumeratesInput := (dict "enumerates" (merge $tracesInput.enumerates $layoutInput.enumerates $objectsInput.enumerates $configInput.enumerates ) ) }}
 {{- $err := file "auto_enumerates.go" "enumerates" $enumeratesInput -}}
 {{- if $err }}
     Something went wrong rendering enumerates.go {{ $err }}
 {{- end }}
 
-{{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists $configInput.flaglists ) "ctx" $g.ctx) }}
+{{- $flaglistsInput := (dict "flaglists" (merge $tracesInput.flaglists $layoutInput.flaglists $objectsInput.flaglists $configInput.flaglists ) ) }}
 {{- $err := file "auto_flaglists.go" "flaglists" $flaglistsInput -}}
 {{- if $err }}
     Something went wrong rendering flaglist.go {{ $err }}

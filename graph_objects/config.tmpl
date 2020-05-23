@@ -8,7 +8,7 @@ package grob
 
 
 type Config struct {
-{{- $params := (dict "parent" "Config" "attributes" .config "ctx" $g.ctx ) }}
+{{- $params := (dict "parent" "Config" "attributes" .config ) }}
 {{ template "attributes" $params }}
 }
 {{- $enumerates =  merge $enumerates $params.enumerates }}

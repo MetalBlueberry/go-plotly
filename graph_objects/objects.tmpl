@@ -18,7 +18,7 @@
 type {{ $typeName }} interface{}
 {{/*1*/}}{{- else -}}
 type {{ $typeName }} struct {
-{{ $params := (dict "parent" $typeName "attributes" $obj "ctx" $g.ctx ) }}
+{{ $params := (dict "parent" $typeName "attributes" $obj  ) }}
 {{- template "attributes" $params -}}
 {{- $enumerates = mustMerge $enumerates $params.enumerates }}
 {{- $innerObjects = mustMerge $innerObjects $params.objects -}}
@@ -44,7 +44,7 @@ package grob
 // DEEP {{ .deep -}}
 
 {{- $fileName := print "objects_" .deep ".go" }}
-{{- $objectsInput := (dict "objects" .objects "ctx" $g.ctx) }}
+{{- $objectsInput := (dict "objects" .objects ) }}
 {{- template "objects" $objectsInput -}}
 {{- $enumerates =  mustMerge $enumerates $objectsInput.enumerates }}
 {{- $flaglists = mustMerge $flaglists $objectsInput.flaglists }}
@@ -57,7 +57,7 @@ package grob
 {{- end }}
 
 {{- if gt (len $objectsNested) 0 -}}
-{{ $nextInput := dict "objects" $objectsNested "deep" (add $g.deep 1) "ctx" $g.ctx }}
+{{ $nextInput := dict "objects" $objectsNested "deep" (add $g.deep 1)  }}
 {{- template "objects_recursive" $nextInput -}}
 {{- $enumerates =  merge $enumerates $nextInput.enumerates }}
 {{- $flaglists = merge $flaglists $nextInput.flaglists }}
