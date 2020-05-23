@@ -1,5 +1,5 @@
 {{- define "flaglists" -}}
-package graph_objects
+package grob
 
 {{ range $name,$attr := .flaglists }}
 {{- $containsBool := or (has true $attr.flags) (has false $attr.flags) (has false $attr.extras) (has false $attr.extras) }}
