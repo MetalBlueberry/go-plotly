@@ -7230,10 +7230,12 @@ func (this *Waterfall) GetType() TraceType {
 	return this.Type
 }
 
+// Trace is an interface to identify all available traces. The main purpose is to provide autocompletion.
 type Trace interface {
 	GetType() TraceType
 }
 
+// TraceType represents an specific trace type.
 type TraceType string
 
 const (
@@ -7290,6 +7292,7 @@ type unmarshalType struct {
 	Type TraceType `json:"type,omitempty"`
 }
 
+// UnmarshallTrace decodes an array of bytes into a Trace interface.
 func UnmarshallTrace(data []byte) (Trace, error) {
 	traceType := unmarshalType{}
 	err := json.Unmarshal(data, &traceType)
