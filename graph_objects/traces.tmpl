@@ -14,6 +14,7 @@ import (
 {{ range $name,$trace := .traces }}
 {{ $formatName := $name | title }}
 
+// {{ $formatName }} {{ .meta.description }}
 type {{ $formatName }} struct {
 
     // Type is the type of the plot

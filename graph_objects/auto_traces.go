@@ -5,6 +5,7 @@ import (
 	"errors"
 )
 
+// Area <no value>
 type Area struct {
 
 	// Type is the type of the plot
@@ -90,6 +91,7 @@ func (this *Area) GetType() TraceType {
 	return this.Type
 }
 
+// Bar The data visualized by the span of the bars is set in `y` if `orientation` is set th *v* (the default) and the labels are set in `x`. By setting `orientation` to *h*, the roles are interchanged.
 type Bar struct {
 
 	// Type is the type of the plot
@@ -307,6 +309,7 @@ func (this *Bar) GetType() TraceType {
 	return this.Type
 }
 
+// Barpolar The data visualized by the radial span of the bars is set in `r`
 type Barpolar struct {
 
 	// Type is the type of the plot
@@ -455,6 +458,7 @@ func (this *Barpolar) GetType() TraceType {
 	return this.Type
 }
 
+// Box Each box spans from quartile 1 (Q1) to quartile 3 (Q3). The second quartile (Q2, i.e. the median) is marked by a line inside the box. The fences grow outward from the boxes' edges, by default they span +/- 1.5 times the interquartile range (IQR: Q3-Q1), The sample mean and standard deviation as well as notches and the sample, outlier and suspected outliers points can be optionally added to the box plot. The values and positions corresponding to each boxes can be input using two signatures. The first signature expects users to supply the sample values in the `y` data array for vertical boxes (`x` for horizontal boxes). By supplying an `x` (`y`) array, one box per distinct `x` (`y`) value is drawn If no `x` (`y`) {array} is provided, a single box is drawn. In this case, the box is positioned with the trace `name` or with `x0` (`y0`) if provided. The second signature expects users to supply the boxes corresponding Q1, median and Q3 statistics in the `q1`, `median` and `q3` data arrays respectively. Other box features relying on statistics namely `lowerfence`, `upperfence`, `notchspan` can be set directly by the users. To have plotly compute them or to show sample points besides the boxes, users can set the `y` data array for vertical boxes (`x` for horizontal boxes) to a 2D array with the outer length corresponding to the number of boxes in the traces and the inner length corresponding the sample size.
 type Box struct {
 
 	// Type is the type of the plot
@@ -684,6 +688,7 @@ func (this *Box) GetType() TraceType {
 	return this.Type
 }
 
+// Candlestick The candlestick is a style of financial chart describing open, high, low and close for a given `x` coordinate (most likely time). The boxes represent the spread between the `open` and `close` values and the lines represent the spread between the `low` and `high` values Sample points where the close value is higher (lower) then the open value are called increasing (decreasing). By default, increasing candles are drawn in green whereas decreasing are drawn in red.
 type Candlestick struct {
 
 	// Type is the type of the plot
@@ -820,6 +825,7 @@ func (this *Candlestick) GetType() TraceType {
 	return this.Type
 }
 
+// Carpet The data describing carpet axis layout is set in `y` and (optionally) also `x`. If only `y` is present, `x` the plot is interpreted as a cheater plot and is filled in using the `y` values. `x` and `y` may either be 2D arrays matching with each dimension matching that of `a` and `b`, or they may be 1D arrays with total length equal to that of `a` and `b`.
 type Carpet struct {
 
 	// Type is the type of the plot
@@ -932,6 +938,7 @@ func (this *Carpet) GetType() TraceType {
 	return this.Type
 }
 
+// Choropleth The data that describes the choropleth value-to-color mapping is set in `z`. The geographic locations corresponding to each value in `z` are set in `locations`.
 type Choropleth struct {
 
 	// Type is the type of the plot
@@ -1083,6 +1090,7 @@ func (this *Choropleth) GetType() TraceType {
 	return this.Type
 }
 
+// Choroplethmapbox GeoJSON features to be filled are set in `geojson` The data that describes the choropleth value-to-color mapping is set in `locations` and `z`.
 type Choroplethmapbox struct {
 
 	// Type is the type of the plot
@@ -1234,6 +1242,7 @@ func (this *Choroplethmapbox) GetType() TraceType {
 	return this.Type
 }
 
+// Cone Use cone traces to visualize vector fields.  Specify a vector field using 6 1D arrays, 3 position arrays `x`, `y` and `z` and 3 vector component arrays `u`, `v`, `w`. The cones are drawn exactly at the positions given by `x`, `y` and `z`.
 type Cone struct {
 
 	// Type is the type of the plot
@@ -1403,6 +1412,7 @@ func (this *Cone) GetType() TraceType {
 	return this.Type
 }
 
+// Contour The data from which contour lines are computed is set in `z`. Data in `z` must be a {2D array} of numbers. Say that `z` has N rows and M columns, then by default, these N rows correspond to N y coordinates (set in `y` or auto-generated) and the M columns correspond to M x coordinates (set in `x` or auto-generated). By setting `transpose` to *true*, the above behavior is flipped.
 type Contour struct {
 
 	// Type is the type of the plot
@@ -1596,6 +1606,7 @@ func (this *Contour) GetType() TraceType {
 	return this.Type
 }
 
+// Contourcarpet Plots contours on either the first carpet axis or the carpet axis with a matching `carpet` attribute. Data `z` is interpreted as matching that of the corresponding carpet axis.
 type Contourcarpet struct {
 
 	// Type is the type of the plot
@@ -1759,6 +1770,7 @@ func (this *Contourcarpet) GetType() TraceType {
 	return this.Type
 }
 
+// Densitymapbox Draws a bivariate kernel density estimation with a Gaussian kernel from `lon` and `lat` coordinates and optional `z` values using a colorscale.
 type Densitymapbox struct {
 
 	// Type is the type of the plot
@@ -1907,6 +1919,7 @@ func (this *Densitymapbox) GetType() TraceType {
 	return this.Type
 }
 
+// Funnel Visualize stages in a process using length-encoded bars. This trace can be used to show data in either a part-to-whole representation wherein each item appears in a single stage, or in a "drop-off" representation wherein each item appears in each stage it traversed. See also the "funnelarea" trace type for a different approach to visualizing funnel data.
 type Funnel struct {
 
 	// Type is the type of the plot
@@ -2085,6 +2098,7 @@ func (this *Funnel) GetType() TraceType {
 	return this.Type
 }
 
+// Funnelarea Visualize stages in a process using area-encoded trapezoids. This trace can be used to show data in a part-to-whole representation similar to a "pie" trace, wherein each item appears in a single stage. See also the "funnel" trace type for a different approach to visualizing funnel data.
 type Funnelarea struct {
 
 	// Type is the type of the plot
@@ -2230,6 +2244,7 @@ func (this *Funnelarea) GetType() TraceType {
 	return this.Type
 }
 
+// Heatmap The data that describes the heatmap value-to-color mapping is set in `z`. Data in `z` can either be a {2D array} of values (ragged or not) or a 1D array of values. In the case where `z` is a {2D array}, say that `z` has N rows and M columns. Then, by default, the resulting heatmap will have N partitions along the y axis and M partitions along the x axis. In other words, the i-th row/ j-th column cell in `z` is mapped to the i-th partition of the y axis (starting from the bottom of the plot) and the j-th partition of the x-axis (starting from the left of the plot). This behavior can be flipped by using `transpose`. Moreover, `x` (`y`) can be provided with M or M+1 (N or N+1) elements. If M (N), then the coordinates correspond to the center of the heatmap cells and the cells have equal width. If M+1 (N+1), then the coordinates correspond to the edges of the heatmap cells. In the case where `z` is a 1D {array}, the x and y coordinates must be provided in `x` and `y` respectively to form data triplets.
 type Heatmap struct {
 
 	// Type is the type of the plot
@@ -2417,6 +2432,7 @@ func (this *Heatmap) GetType() TraceType {
 	return this.Type
 }
 
+// Heatmapgl WebGL version of the heatmap trace type.
 type Heatmapgl struct {
 
 	// Type is the type of the plot
@@ -2562,6 +2578,7 @@ func (this *Heatmapgl) GetType() TraceType {
 	return this.Type
 }
 
+// Histogram The sample data from which statistics are computed is set in `x` for vertically spanning histograms and in `y` for horizontally spanning histograms. Binning options are set `xbins` and `ybins` respectively if no aggregation data is provided.
 type Histogram struct {
 
 	// Type is the type of the plot
@@ -2734,6 +2751,7 @@ func (this *Histogram) GetType() TraceType {
 	return this.Type
 }
 
+// Histogram2d The sample data from which statistics are computed is set in `x` and `y` (where `x` and `y` represent marginal distributions, binning is set in `xbins` and `ybins` in this case) or `z` (where `z` represent the 2D distribution and binning set, binning is set by `x` and `y` in this case). The resulting distribution is visualized as a heatmap.
 type Histogram2d struct {
 
 	// Type is the type of the plot
@@ -2918,6 +2936,7 @@ func (this *Histogram2d) GetType() TraceType {
 	return this.Type
 }
 
+// Histogram2dcontour The sample data from which statistics are computed is set in `x` and `y` (where `x` and `y` represent marginal distributions, binning is set in `xbins` and `ybins` in this case) or `z` (where `z` represent the 2D distribution and binning set, binning is set by `x` and `y` in this case). The resulting distribution is visualized as a contour plot.
 type Histogram2dcontour struct {
 
 	// Type is the type of the plot
@@ -3105,6 +3124,7 @@ func (this *Histogram2dcontour) GetType() TraceType {
 	return this.Type
 }
 
+// Image Display an image, i.e. data on a 2D regular raster. By default, when an image is displayed in a subplot, its y axis will be reversed (ie. `autorange: 'reversed'`), constrained to the domain (ie. `constrain: 'domain'`) and it will have the same scale as its x axis (ie. `scaleanchor: 'x,`) in order for pixels to be rendered as squares.
 type Image struct {
 
 	// Type is the type of the plot
@@ -3217,6 +3237,7 @@ func (this *Image) GetType() TraceType {
 	return this.Type
 }
 
+// Indicator An indicator is used to visualize a single `value` along with some contextual information such as `steps` or a `threshold`, using a combination of three visual elements: a number, a delta, and/or a gauge. Deltas are taken with respect to a `reference`. Gauges can be either angular or bullet (aka linear) gauges.
 type Indicator struct {
 
 	// Type is the type of the plot
@@ -3293,6 +3314,7 @@ func (this *Indicator) GetType() TraceType {
 	return this.Type
 }
 
+// Isosurface Draws isosurfaces between iso-min and iso-max values with coordinates given by four 1-dimensional arrays containing the `value`, `x`, `y` and `z` of every vertex of a uniform or non-uniform 3-D grid. Horizontal or vertical slices, caps as well as spaceframe between iso-min and iso-max values could also be drawn using this trace.
 type Isosurface struct {
 
 	// Type is the type of the plot
@@ -3465,6 +3487,7 @@ func (this *Isosurface) GetType() TraceType {
 	return this.Type
 }
 
+// Mesh3d Draws sets of triangles with coordinates given by three 1-dimensional arrays in `x`, `y`, `z` and (1) a sets of `i`, `j`, `k` indices (2) Delaunay triangulation or (3) the Alpha-shape algorithm or (4) the Convex-hull algorithm
 type Mesh3d struct {
 
 	// Type is the type of the plot
@@ -3670,6 +3693,7 @@ func (this *Mesh3d) GetType() TraceType {
 	return this.Type
 }
 
+// Ohlc The ohlc (short for Open-High-Low-Close) is a style of financial chart describing open, high, low and close for a given `x` coordinate (most likely time). The tip of the lines represent the `low` and `high` values and the horizontal segments represent the `open` and `close` values. Sample points where the close value is higher (lower) then the open value are called increasing (decreasing). By default, increasing items are drawn in green whereas decreasing are drawn in red.
 type Ohlc struct {
 
 	// Type is the type of the plot
@@ -3806,6 +3830,7 @@ func (this *Ohlc) GetType() TraceType {
 	return this.Type
 }
 
+// Parcats Parallel categories diagram for multidimensional categorical data.
 type Parcats struct {
 
 	// Type is the type of the plot
@@ -3885,6 +3910,7 @@ func (this *Parcats) GetType() TraceType {
 	return this.Type
 }
 
+// Parcoords Parallel coordinates for multidimensional exploratory data analysis. The samples are specified in `dimensions`. The colors are set in `line.color`.
 type Parcoords struct {
 
 	// Type is the type of the plot
@@ -3961,6 +3987,7 @@ func (this *Parcoords) GetType() TraceType {
 	return this.Type
 }
 
+// Pie A data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`
 type Pie struct {
 
 	// Type is the type of the plot
@@ -4130,6 +4157,7 @@ func (this *Pie) GetType() TraceType {
 	return this.Type
 }
 
+// Pointcloud The data visualized as a point cloud set in `x` and `y` using the WebGl plotting engine.
 type Pointcloud struct {
 
 	// Type is the type of the plot
@@ -4248,6 +4276,7 @@ func (this *Pointcloud) GetType() TraceType {
 	return this.Type
 }
 
+// Sankey Sankey plots for network flow data analysis. The nodes are specified in `nodes` and the links between sources and targets in `links`. The colors are set in `nodes[i].color` and `links[i].color`, otherwise defaults are used.
 type Sankey struct {
 
 	// Type is the type of the plot
@@ -4330,6 +4359,7 @@ func (this *Sankey) GetType() TraceType {
 	return this.Type
 }
 
+// Scatter The scatter trace type encompasses line charts, scatter charts, text charts, and bubble charts. The data visualized as scatter point or lines is set in `x` and `y`. Text (appearing either on the chart or on hover only) is via `text`. Bubble charts are achieved by setting `marker.size` and/or `marker.color` to numerical arrays.
 type Scatter struct {
 
 	// Type is the type of the plot
@@ -4532,6 +4562,7 @@ func (this *Scatter) GetType() TraceType {
 	return this.Type
 }
 
+// Scatter3d The data visualized as scatter point or lines in 3D dimension is set in `x`, `y`, `z`. Text (appearing either on the chart or on hover only) is via `text`. Bubble charts are achieved by setting `marker.size` and/or `marker.color` Projections are achieved via `projection`. Surface fills are achieved via `surfaceaxis`.
 type Scatter3d struct {
 
 	// Type is the type of the plot
@@ -4695,6 +4726,7 @@ func (this *Scatter3d) GetType() TraceType {
 	return this.Type
 }
 
+// Scattercarpet Plots a scatter trace on either the first carpet axis or the carpet axis with a matching `carpet` attribute.
 type Scattercarpet struct {
 
 	// Type is the type of the plot
@@ -4849,6 +4881,7 @@ func (this *Scattercarpet) GetType() TraceType {
 	return this.Type
 }
 
+// Scattergeo The data visualized as scatter point or lines on a geographic map is provided either by longitude/latitude pairs in `lon` and `lat` respectively or by geographic location IDs or names in `locations`.
 type Scattergeo struct {
 
 	// Type is the type of the plot
@@ -5009,6 +5042,7 @@ func (this *Scattergeo) GetType() TraceType {
 	return this.Type
 }
 
+// Scattergl The data visualized as scatter point or lines is set in `x` and `y` using the WebGL plotting engine. Bubble charts are achieved by setting `marker.size` and/or `marker.color` to a numerical arrays.
 type Scattergl struct {
 
 	// Type is the type of the plot
@@ -5181,6 +5215,7 @@ func (this *Scattergl) GetType() TraceType {
 	return this.Type
 }
 
+// Scattermapbox The data visualized as scatter point, lines or marker symbols on a Mapbox GL geographic map is provided by longitude/latitude pairs in `lon` and `lat`.
 type Scattermapbox struct {
 
 	// Type is the type of the plot
@@ -5326,6 +5361,7 @@ func (this *Scattermapbox) GetType() TraceType {
 	return this.Type
 }
 
+// Scatterpolar The scatterpolar trace type encompasses line charts, scatter charts, text charts, and bubble charts in polar coordinates. The data visualized as scatter point or lines is set in `r` (radial) and `theta` (angular) coordinates Text (appearing either on the chart or on hover only) is via `text`. Bubble charts are achieved by setting `marker.size` and/or `marker.color` to numerical arrays.
 type Scatterpolar struct {
 
 	// Type is the type of the plot
@@ -5492,6 +5528,7 @@ func (this *Scatterpolar) GetType() TraceType {
 	return this.Type
 }
 
+// Scatterpolargl The scatterpolargl trace type encompasses line charts, scatter charts, and bubble charts in polar coordinates using the WebGL plotting engine. The data visualized as scatter point or lines is set in `r` (radial) and `theta` (angular) coordinates Bubble charts are achieved by setting `marker.size` and/or `marker.color` to numerical arrays.
 type Scatterpolargl struct {
 
 	// Type is the type of the plot
@@ -5652,6 +5689,7 @@ func (this *Scatterpolargl) GetType() TraceType {
 	return this.Type
 }
 
+// Scatterternary Provides similar functionality to the *scatter* type but on a ternary phase diagram. The data is provided by at least two arrays out of `a`, `b`, `c` triplets.
 type Scatterternary struct {
 
 	// Type is the type of the plot
@@ -5812,6 +5850,7 @@ func (this *Scatterternary) GetType() TraceType {
 	return this.Type
 }
 
+// Splom Splom traces generate scatter plot matrix visualizations. Each splom `dimensions` items correspond to a generated axis. Values for each of those dimensions are set in `dimensions[i].values`. Splom traces support all `scattergl` marker style attributes. Specify `layout.grid` attributes and/or layout x-axis and y-axis attributes for more control over the axis positioning and style.
 type Splom struct {
 
 	// Type is the type of the plot
@@ -5930,6 +5969,7 @@ func (this *Splom) GetType() TraceType {
 	return this.Type
 }
 
+// Streamtube Use a streamtube trace to visualize flow in a vector field.  Specify a vector field using 6 1D arrays of equal length, 3 position arrays `x`, `y` and `z` and 3 vector component arrays `u`, `v`, and `w`.  By default, the tubes' starting positions will be cut from the vector field's x-z plane at its minimum y value. To specify your own starting position, use attributes `starts.x`, `starts.y` and `starts.z`. The color is encoded by the norm of (u, v, w), and the local radius by the divergence of (u, v, w).
 type Streamtube struct {
 
 	// Type is the type of the plot
@@ -6093,6 +6133,7 @@ func (this *Streamtube) GetType() TraceType {
 	return this.Type
 }
 
+// Sunburst Visualize hierarchal data spanning outward radially from root to leaves. The sunburst sectors are determined by the entries in *labels* or *ids* and in *parents*.
 type Sunburst struct {
 
 	// Type is the type of the plot
@@ -6235,6 +6276,7 @@ func (this *Sunburst) GetType() TraceType {
 	return this.Type
 }
 
+// Surface The data the describes the coordinates of the surface is set in `z`. Data in `z` should be a {2D array}. Coordinates in `x` and `y` can either be 1D {arrays} or {2D arrays} (e.g. to graph parametric surfaces). If not provided in `x` and `y`, the x and y coordinates are assumed to be linear starting at 0 with a unit step. The color scale corresponds to the `z` values by default. For custom color scales, use `surfacecolor` which should be a {2D array}, where its bounds can be controlled using `cmin` and `cmax`.
 type Surface struct {
 
 	// Type is the type of the plot
@@ -6407,6 +6449,7 @@ func (this *Surface) GetType() TraceType {
 	return this.Type
 }
 
+// Table Table view for detailed data viewing. The data are arranged in a grid of rows and columns. Most styling can be specified for columns, rows or individual cells. Table is using a column-major order, ie. the grid is represented as a vector of column vectors.
 type Table struct {
 
 	// Type is the type of the plot
@@ -6486,6 +6529,7 @@ func (this *Table) GetType() TraceType {
 	return this.Type
 }
 
+// Treemap Visualize hierarchal data from leaves (and/or outer branches) towards root with rectangles. The treemap sectors are determined by the entries in *labels* or *ids* and in *parents*.
 type Treemap struct {
 
 	// Type is the type of the plot
@@ -6631,6 +6675,7 @@ func (this *Treemap) GetType() TraceType {
 	return this.Type
 }
 
+// Violin In vertical (horizontal) violin plots, statistics are computed using `y` (`x`) values. By supplying an `x` (`y`) array, one violin per distinct x (y) value is drawn If no `x` (`y`) {array} is provided, a single violin is drawn. That violin position is then positioned with with `name` or with `x0` (`y0`) if provided.
 type Violin struct {
 
 	// Type is the type of the plot
@@ -6809,6 +6854,7 @@ func (this *Violin) GetType() TraceType {
 	return this.Type
 }
 
+// Volume Draws volume trace between iso-min and iso-max values with coordinates given by four 1-dimensional arrays containing the `value`, `x`, `y` and `z` of every vertex of a uniform or non-uniform 3-D grid. Horizontal or vertical slices, caps as well as spaceframe between iso-min and iso-max values could also be drawn using this trace.
 type Volume struct {
 
 	// Type is the type of the plot
@@ -6984,6 +7030,7 @@ func (this *Volume) GetType() TraceType {
 	return this.Type
 }
 
+// Waterfall Draws waterfall trace which is useful graph to displays the contribution of various elements (either positive or negative) in a bar chart. The data visualized by the span of the bars is set in `y` if `orientation` is set th *v* (the default) and the labels are set in `x`. By setting `orientation` to *h*, the roles are interchanged.
 type Waterfall struct {
 
 	// Type is the type of the plot
