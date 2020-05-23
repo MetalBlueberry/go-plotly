@@ -25,7 +25,7 @@ const (
 {{- range $value := $attr.values }}
     {{- if kindIs "string" $value }}
     {{- if ne $value "" }}
-    {{$formatName}}_{{ stemplate "cleanupName" $value }} {{ $formatName }} = {{ quote $value }}
+    {{$formatName}}_{{ template "cleanupName" $value }} {{ $formatName }} = {{ quote $value }}
     {{- end }}
     {{- else if kindIs "float64" $value }}
     {{$formatName}}{{ $value | toString | title | replace "-" "_" }} {{ $formatName }} = {{ quote $value }}
