@@ -34,7 +34,7 @@ func main() {
                 Y:    []float64{1, 2, 3},
             },
         },
-        Layout: grob.Layout{
+        Layout: &grob.Layout{
             Title: &grob.LayoutTitle{
                 Text: "A Figure Specified By Go Struct",
             },
@@ -55,7 +55,7 @@ See the examples dir for more examples.
 
 ## Structure
 
-All the traces are defined in [traces.go](./graph_objects/traces.go) and identified by the interface "Trace". Feel free to browse that file, but I prefer to use [Plotly's documentation](https://plotly.com/python/).
+All the traces are defined in [auto_traces.go](./graph_objects/auto_traces.go) and identified by the interface "Trace". Feel free to browse that file, but I prefer to use [Plotly's documentation](https://plotly.com/python/).
 
 The values that can hold single values or arrays are defined as `interfaces{}`. Most common case are X and Y values. You can pass any number slice and it will work (`[]float64`,`[]int`,`[]int64`...). In case of Hovertext, you can provide a `[]string` to display a text for each point, a `string` to display the same for all or `[]int` to display a number.
 
