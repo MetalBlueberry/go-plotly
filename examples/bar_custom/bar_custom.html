@@ -3,13 +3,10 @@
 		<script src="https://cdn.plot.ly/plotly-1.54.0.min.js"></script>
 	</head>
 	</body>
-		<div id="tester"></div>
+		<div id="plot"></div>
 	<script>
-		console.log("start")
 		data = JSON.parse('{"data":[{"type":"bar","hoverinfo":"none","marker":{"color":"#9ec9e0","line":{"color":"rgb(8,48,107)","width":1.5},"opacity":0.6},"text":["20","14","23"],"textposition":"auto","x":["Product A","Product B","Product C"],"y":[20,14,23]}],"layout":{"title":{"text":"A Figure Specified By Go Struct"}}}')
-
-		TESTER = document.getElementById('tester');
-		Plotly.newPlot(TESTER, data);
+		Plotly.newPlot('plot', data);
 	</script>
 	<body>
 	

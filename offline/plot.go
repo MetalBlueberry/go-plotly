@@ -86,7 +86,7 @@ var baseHtml = `
 		<div id="plot"></div>
 	<script>
 		data = JSON.parse('{{ . }}')
-		Plotly.newPlot(plot, data);
+		Plotly.newPlot('plot', data);
 	</script>
 	<body>
 	`
