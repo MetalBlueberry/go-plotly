@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"sort"
 	"strings"
 )
 
@@ -51,12 +52,22 @@ type ValObject struct {
 
 type Traces map[string]*Trace
 
+func (t Traces) Sorted() []string {
+	keys := make([]string, 0, len(t))
+	for k := range t {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	return keys
+}
+
 type Trace struct {
 	Meta *Meta `json:"meta,omitempty"`
 	// Categories []string   `json:"categories,omitempty"`
-	Animatable bool       `json:"animatable,omitempty"`
-	Type       string     `json:"type,omitempty"`
-	Attributes Attributes `json:"attributes,omitempty"`
+	Animatable       bool                  `json:"animatable,omitempty"`
+	Type             string                `json:"type,omitempty"`
+	Attributes       Attributes            `json:"attributes,omitempty"`
+	LayoutAttributes map[string]*Attribute `json:"layoutAttributes,omitempty"`
 }
 
 type Meta struct {
@@ -68,7 +79,14 @@ type Attributes struct {
 	Names map[string]*Attribute `json:"-"`
 }
 
-// type AttributeObject map[string]*interface{}
+func (a *Attributes) Sorted() []string {
+	keys := make([]string, 0, len(a.Names))
+	for k := range a.Names {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	return keys
+}
 
 func (obj *Attributes) UnmarshalJSON(b []byte) error {
 	var err error
@@ -156,18 +174,19 @@ const (
 )
 
 type Attribute struct {
-	Role        Role          `json:"role,omitempty"`
-	ValType     string        `json:"valType,omitempty"`
-	Values      []interface{} `json:"values,omitempty"`
-	Flags       []string      `json:"flags,omitempty"`
-	Extras      []string      `json:"extras,omitempty"`
-	Dflt        interface{}   `json:"dflt,omitempty"`
-	EditType    string        `json:"editType,omitempty"`
-	Description string        `json:"description,omitempty"`
-	Min         json.Number   `json:"min,omitempty"`
-	Max         json.Number   `json:"max,omitempty"`
-	ArrayOK     bool          `json:"arrayOk,omitempty"`
-	Anim        bool          `json:"anim,omitempty"`
+	Role        Role   `json:"role,omitempty"`
+	Description string `json:"description,omitempty"`
+	EditType    string `json:"editType,omitempty"`
+
+	ValType string        `json:"valType,omitempty"`
+	Values  []interface{} `json:"values,omitempty"`
+	Flags   []string      `json:"flags,omitempty"`
+	Extras  []string      `json:"extras,omitempty"`
+	Dflt    interface{}   `json:"dflt,omitempty"`
+	Min     json.Number   `json:"min,omitempty"`
+	Max     json.Number   `json:"max,omitempty"`
+	ArrayOK bool          `json:"arrayOk,omitempty"`
+	Anim    bool          `json:"anim,omitempty"`
 
 	Name       string                `json:"-"`
 	Attributes map[string]*Attribute `json:"-"`

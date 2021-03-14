@@ -1,0 +1,8 @@
+// {{.Name }} {{.Description}}
+type {{.Name }} struct {
+    {{ range .Fields -}}
+    // {{.Name }} {{.Description}}
+    {{.Name }} {{.Type}} `json:"{{.JSONName}},omitempty"`
+
+    {{ end }}
+}
