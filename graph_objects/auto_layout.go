@@ -17,6 +17,9 @@ type Layout struct {
 	// Autosize boolean Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
 	Autosize Bool `json:"autosize,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
+	Autotypenumbers LayoutAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Bargap number Sets the gap (in plot fraction) between bars of adjacent location coordinates.
 	Bargap float64 `json:"bargap,omitempty"`
 
@@ -52,6 +55,9 @@ type Layout struct {
 
 	// Colorway colorlist Sets the default trace colors.
 	// Pending of type "colorlist"Colorway  `json:"colorway,omitempty"`
+
+	// Computed any Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+	Computed interface{} `json:"computed,omitempty"`
 
 	// Datarevision any If provided, a changed value tells `Plotly.react` that one or more data arrays has changed. This way you can modify arrays in-place rather than making a complete new copy for an incremental change. If NOT provided, `Plotly.react` assumes that data arrays are being treated as immutable, thus any data array with a different identity from its predecessor contains new data.
 	Datarevision interface{} `json:"datarevision,omitempty"`

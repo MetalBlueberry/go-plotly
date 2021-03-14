@@ -80,7 +80,7 @@ func computeOptions(def Options, opt ...Options) Options {
 
 var baseHtml = `
 	<head>
-		<script src="https://cdn.plot.ly/plotly-1.54.0.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-1.58.4.min.js"></script>
 	</head>
 	</body>
 		<div id="plot"></div>

@@ -110,7 +110,7 @@ type BarErrorX struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type BarErrorXType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -158,7 +158,7 @@ type BarErrorY struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type BarErrorYType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -640,6 +640,9 @@ type CarpetAaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange CarpetAaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers CarpetAaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Categoryarray data_array Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	Categoryarray interface{} `json:"categoryarray,omitempty"`
 
@@ -693,6 +696,9 @@ type CarpetAaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Minorgridcolor color Sets the color of the grid lines.
 	Minorgridcolor String `json:"minorgridcolor,omitempty"`
@@ -802,6 +808,9 @@ type CarpetBaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange CarpetBaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers CarpetBaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Categoryarray data_array Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	Categoryarray interface{} `json:"categoryarray,omitempty"`
 
@@ -855,6 +864,9 @@ type CarpetBaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Minorgridcolor color Sets the color of the grid lines.
 	Minorgridcolor String `json:"minorgridcolor,omitempty"`
@@ -997,6 +1009,9 @@ type ChoroplethColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ChoroplethColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -1039,11 +1054,14 @@ type ChoroplethColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ChoroplethColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ChoroplethColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ChoroplethColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1194,6 +1212,9 @@ type ChoroplethmapboxColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ChoroplethmapboxColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -1236,11 +1257,14 @@ type ChoroplethmapboxColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ChoroplethmapboxColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ChoroplethmapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ChoroplethmapboxColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1391,6 +1415,9 @@ type ConeColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ConeColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -1433,11 +1460,14 @@ type ConeColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ConeColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ConeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ConeColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1625,6 +1655,9 @@ type ContourColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ContourColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -1667,11 +1700,14 @@ type ContourColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ContourColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ContourColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ContourColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -1852,6 +1888,9 @@ type ContourcarpetColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ContourcarpetColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -1894,11 +1933,14 @@ type ContourcarpetColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ContourcarpetColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ContourcarpetColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ContourcarpetColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2041,6 +2083,9 @@ type DensitymapboxColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode DensitymapboxColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -2083,11 +2128,14 @@ type DensitymapboxColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *DensitymapboxColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops DensitymapboxColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition DensitymapboxColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2512,6 +2560,9 @@ type HeatmapColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode HeatmapColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -2554,11 +2605,14 @@ type HeatmapColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *HeatmapColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops HeatmapColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition HeatmapColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2685,6 +2739,9 @@ type HeatmapglColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode HeatmapglColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -2727,11 +2784,14 @@ type HeatmapglColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *HeatmapglColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops HeatmapglColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition HeatmapglColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -2858,6 +2918,9 @@ type Histogram2dColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode Histogram2dColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -2900,11 +2963,14 @@ type Histogram2dColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *Histogram2dColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops Histogram2dColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition Histogram2dColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -3064,6 +3130,9 @@ type Histogram2dcontourColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode Histogram2dcontourColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -3106,11 +3175,14 @@ type Histogram2dcontourColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *Histogram2dcontourColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops Histogram2dcontourColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition Histogram2dcontourColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -3345,7 +3417,7 @@ type HistogramErrorX struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type HistogramErrorXType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -3393,7 +3465,7 @@ type HistogramErrorY struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type HistogramErrorYType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -3733,6 +3805,9 @@ type IsosurfaceColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode IsosurfaceColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -3775,11 +3850,14 @@ type IsosurfaceColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *IsosurfaceColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops IsosurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition IsosurfaceColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -4305,6 +4383,9 @@ type LayoutLegend struct {
 	// Itemsizing enumerated Determines if the legend items symbols scale with their corresponding *trace* attributes or remain *constant* independent of the symbol size on the graph.
 	Itemsizing LayoutLegendItemsizing `json:"itemsizing,omitempty"`
 
+	// Itemwidth number Sets the width (in px) of the legend item symbols (the part other than the title.text).
+	Itemwidth float64 `json:"itemwidth,omitempty"`
+
 	// Orientation enumerated Sets the orientation of the legend.
 	Orientation LayoutLegendOrientation `json:"orientation,omitempty"`
 
@@ -4703,6 +4784,9 @@ type LayoutXaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutXaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutXaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
 	Calendar LayoutXaxisCalendar `json:"calendar,omitempty"`
 
@@ -4718,7 +4802,7 @@ type LayoutXaxis struct {
 	// Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
 	Color String `json:"color,omitempty"`
 
-	// Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
+	// Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
 	Constrain LayoutXaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
@@ -4748,7 +4832,7 @@ type LayoutXaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -4762,6 +4846,9 @@ type LayoutXaxis struct {
 
 	// Matches enumerated If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
 	Matches LayoutXaxisMatches `json:"matches,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror enumerated Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
 	Mirror LayoutXaxisMirror `json:"mirror,omitempty"`
@@ -4853,11 +4940,17 @@ type LayoutXaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutXaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops LayoutXaxisTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelmode enumerated Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+	Ticklabelmode LayoutXaxisTicklabelmode `json:"ticklabelmode,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+	Ticklabelposition LayoutXaxisTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -4928,6 +5021,9 @@ type LayoutYaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutYaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutYaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
 	Calendar LayoutYaxisCalendar `json:"calendar,omitempty"`
 
@@ -4943,7 +5039,7 @@ type LayoutYaxis struct {
 	// Color color Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
 	Color String `json:"color,omitempty"`
 
-	// Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
+	// Constrain enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
 	Constrain LayoutYaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward enumerated If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
@@ -4973,7 +5069,7 @@ type LayoutYaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -4987,6 +5083,9 @@ type LayoutYaxis struct {
 
 	// Matches enumerated If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
 	Matches LayoutYaxisMatches `json:"matches,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror enumerated Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
 	Mirror LayoutYaxisMirror `json:"mirror,omitempty"`
@@ -5072,11 +5171,17 @@ type LayoutYaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutYaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops LayoutYaxisTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelmode enumerated Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+	Ticklabelmode LayoutYaxisTicklabelmode `json:"ticklabelmode,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+	Ticklabelposition LayoutYaxisTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -5159,6 +5264,9 @@ type Mesh3dColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode Mesh3dColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -5201,11 +5309,14 @@ type Mesh3dColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *Mesh3dColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops Mesh3dColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition Mesh3dColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -5494,7 +5605,7 @@ type ParcatsLine struct {
 	// Colorsrc string Sets the source reference on Chart Studio Cloud for  color .
 	Colorsrc String `json:"colorsrc,omitempty"`
 
-	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count` and `probability`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count` and `probability`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Reversescale boolean Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
@@ -5942,7 +6053,7 @@ type SankeyLink struct {
 	// Hoverlabel <no value> <no value>
 	Hoverlabel *SankeyLinkHoverlabel `json:"hoverlabel,omitempty"`
 
-	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate interface{} `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
@@ -5999,7 +6110,7 @@ type SankeyNode struct {
 	// Hoverlabel <no value> <no value>
 	Hoverlabel *SankeyNodeHoverlabel `json:"hoverlabel,omitempty"`
 
-	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Hovertemplate string Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate interface{} `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc string Sets the source reference on Chart Studio Cloud for  hovertemplate .
@@ -6089,7 +6200,7 @@ type Scatter3dErrorX struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type Scatter3dErrorXType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -6140,7 +6251,7 @@ type Scatter3dErrorY struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type Scatter3dErrorYType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -6188,7 +6299,7 @@ type Scatter3dErrorZ struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type Scatter3dErrorZType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -6427,7 +6538,7 @@ type ScatterErrorX struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type ScatterErrorXType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -6475,7 +6586,7 @@ type ScatterErrorY struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type ScatterErrorYType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -7057,7 +7168,7 @@ type ScatterglErrorX struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type ScatterglErrorXType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -7105,7 +7216,7 @@ type ScatterglErrorY struct {
 	// Tracerefminus integer <no value>
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
-	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// Type enumerated Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
 	Type ScatterglErrorYType `json:"type,omitempty"`
 
 	// Value number Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
@@ -8148,6 +8259,9 @@ type StreamtubeColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode StreamtubeColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -8190,11 +8304,14 @@ type StreamtubeColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *StreamtubeColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops StreamtubeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition StreamtubeColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -8479,6 +8596,12 @@ type SunburstOutsidetextfont struct {
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
+type SunburstRoot struct {
+
+	// Color color sets the color of the root node for a sunburst or a treemap trace. this has no effect when a colorscale is used to set the markers.
+	Color String `json:"color,omitempty"`
+}
+
 type SunburstStream struct {
 
 	// Maxpoints number Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
@@ -8543,6 +8666,9 @@ type SurfaceColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode SurfaceColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -8585,11 +8711,14 @@ type SurfaceColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *SurfaceColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops SurfaceColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition SurfaceColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9021,6 +9150,12 @@ type TreemapPathbar struct {
 	Visible Bool `json:"visible,omitempty"`
 }
 
+type TreemapRoot struct {
+
+	// Color color sets the color of the root node for a sunburst or a treemap trace. this has no effect when a colorscale is used to set the markers.
+	Color String `json:"color,omitempty"`
+}
+
 type TreemapStream struct {
 
 	// Maxpoints number Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
@@ -9228,6 +9363,9 @@ type VolumeColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode VolumeColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -9270,11 +9408,14 @@ type VolumeColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *VolumeColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops VolumeColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition VolumeColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9660,6 +9801,9 @@ type BarMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode BarMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -9702,11 +9846,14 @@ type BarMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *BarMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops BarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition BarMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -9876,6 +10023,9 @@ type BarpolarMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode BarpolarMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -9918,11 +10068,14 @@ type BarpolarMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *BarpolarMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops BarpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition BarpolarMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -10680,6 +10833,9 @@ type FunnelMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode FunnelMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -10722,11 +10878,14 @@ type FunnelMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *FunnelMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops FunnelMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition FunnelMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11166,6 +11325,9 @@ type HistogramMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode HistogramMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -11208,11 +11370,14 @@ type HistogramMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *HistogramMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops HistogramMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition HistogramMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11394,6 +11559,9 @@ type IndicatorGaugeAxis struct {
 	// Exponentformat enumerated Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat IndicatorGaugeAxisExponentformat `json:"exponentformat,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -11427,7 +11595,7 @@ type IndicatorGaugeAxis struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *IndicatorGaugeAxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -11683,6 +11851,9 @@ type LayoutColoraxisColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode LayoutColoraxisColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -11725,11 +11896,14 @@ type LayoutColoraxisColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *LayoutColoraxisColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops LayoutColoraxisColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition LayoutColoraxisColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -11972,6 +12146,9 @@ type LayoutNewshapeLine struct {
 
 type LayoutPolarAngularaxis struct {
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutPolarAngularaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Categoryarray data_array Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	Categoryarray interface{} `json:"categoryarray,omitempty"`
 
@@ -11999,7 +12176,7 @@ type LayoutPolarAngularaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -12010,6 +12187,9 @@ type LayoutPolarAngularaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
@@ -12056,7 +12236,7 @@ type LayoutPolarAngularaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutPolarAngularaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12128,6 +12308,9 @@ type LayoutPolarRadialaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutPolarRadialaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutPolarRadialaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Calendar enumerated Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
 	Calendar LayoutPolarRadialaxisCalendar `json:"calendar,omitempty"`
 
@@ -12155,7 +12338,7 @@ type LayoutPolarRadialaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -12166,6 +12349,9 @@ type LayoutPolarRadialaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
@@ -12212,7 +12398,7 @@ type LayoutPolarRadialaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutPolarRadialaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12358,6 +12544,9 @@ type LayoutSceneXaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutSceneXaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutSceneXaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Backgroundcolor color Sets the background color of this axis' wall.
 	Backgroundcolor String `json:"backgroundcolor,omitempty"`
 
@@ -12388,7 +12577,7 @@ type LayoutSceneXaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Linecolor color Sets the axis line color.
@@ -12396,6 +12585,9 @@ type LayoutSceneXaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror enumerated Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
 	Mirror LayoutSceneXaxisMirror `json:"mirror,omitempty"`
@@ -12460,7 +12652,7 @@ type LayoutSceneXaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutSceneXaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12523,6 +12715,9 @@ type LayoutSceneYaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutSceneYaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutSceneYaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Backgroundcolor color Sets the background color of this axis' wall.
 	Backgroundcolor String `json:"backgroundcolor,omitempty"`
 
@@ -12553,7 +12748,7 @@ type LayoutSceneYaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Linecolor color Sets the axis line color.
@@ -12561,6 +12756,9 @@ type LayoutSceneYaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror enumerated Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
 	Mirror LayoutSceneYaxisMirror `json:"mirror,omitempty"`
@@ -12625,7 +12823,7 @@ type LayoutSceneYaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutSceneYaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12688,6 +12886,9 @@ type LayoutSceneZaxis struct {
 	// Autorange enumerated Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange LayoutSceneZaxisAutorange `json:"autorange,omitempty"`
 
+	// Autotypenumbers enumerated Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	Autotypenumbers LayoutSceneZaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
+
 	// Backgroundcolor color Sets the background color of this axis' wall.
 	Backgroundcolor String `json:"backgroundcolor,omitempty"`
 
@@ -12718,7 +12919,7 @@ type LayoutSceneZaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Linecolor color Sets the axis line color.
@@ -12726,6 +12927,9 @@ type LayoutSceneZaxis struct {
 
 	// Linewidth number Sets the width (in px) of the axis line.
 	Linewidth float64 `json:"linewidth,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror enumerated Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
 	Mirror LayoutSceneZaxisMirror `json:"mirror,omitempty"`
@@ -12790,7 +12994,7 @@ type LayoutSceneZaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutSceneZaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12865,7 +13069,7 @@ type LayoutTernaryAaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -12879,6 +13083,9 @@ type LayoutTernaryAaxis struct {
 
 	// Min number The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
 	Min float64 `json:"min,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
@@ -12916,7 +13123,7 @@ type LayoutTernaryAaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutTernaryAaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -12979,7 +13186,7 @@ type LayoutTernaryBaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -12993,6 +13200,9 @@ type LayoutTernaryBaxis struct {
 
 	// Min number The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
 	Min float64 `json:"min,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
@@ -13030,7 +13240,7 @@ type LayoutTernaryBaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutTernaryBaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -13093,7 +13303,7 @@ type LayoutTernaryCaxis struct {
 	// Gridwidth number Sets the width (in px) of the grid lines.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
 
-	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Hoverformat string Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Hoverformat String `json:"hoverformat,omitempty"`
 
 	// Layer enumerated Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -13107,6 +13317,9 @@ type LayoutTernaryCaxis struct {
 
 	// Min number The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
 	Min float64 `json:"min,omitempty"`
+
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
@@ -13144,7 +13357,7 @@ type LayoutTernaryCaxis struct {
 	// Tickfont <no value> Sets the tick font.
 	Tickfont *LayoutTernaryCaxisTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
@@ -13520,6 +13733,9 @@ type ParcatsLineColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ParcatsLineColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -13562,11 +13778,14 @@ type ParcatsLineColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ParcatsLineColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ParcatsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ParcatsLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -13646,6 +13865,9 @@ type ParcoordsLineColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ParcoordsLineColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -13688,11 +13910,14 @@ type ParcoordsLineColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ParcoordsLineColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ParcoordsLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ParcoordsLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14004,6 +14229,9 @@ type Scatter3dLineColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode Scatter3dLineColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -14046,11 +14274,14 @@ type Scatter3dLineColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *Scatter3dLineColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops Scatter3dLineColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition Scatter3dLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14130,6 +14361,9 @@ type Scatter3dMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode Scatter3dMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -14172,11 +14406,14 @@ type Scatter3dMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *Scatter3dMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops Scatter3dMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition Scatter3dMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14349,6 +14586,9 @@ type ScatterMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScatterMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -14391,11 +14631,14 @@ type ScatterMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScatterMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScatterMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScatterMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14586,6 +14829,9 @@ type ScattercarpetMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScattercarpetMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -14628,11 +14874,14 @@ type ScattercarpetMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScattercarpetMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScattercarpetMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScattercarpetMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -14823,6 +15072,9 @@ type ScattergeoMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScattergeoMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -14865,11 +15117,14 @@ type ScattergeoMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScattergeoMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScattergeoMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScattergeoMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15060,6 +15315,9 @@ type ScatterglMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScatterglMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -15102,11 +15360,14 @@ type ScatterglMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScatterglMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScatterglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScatterglMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15282,6 +15543,9 @@ type ScattermapboxMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScattermapboxMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -15324,11 +15588,14 @@ type ScattermapboxMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScattermapboxMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScattermapboxMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScattermapboxMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15453,6 +15720,9 @@ type ScatterpolarMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScatterpolarMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -15495,11 +15765,14 @@ type ScatterpolarMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScatterpolarMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScatterpolarMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScatterpolarMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15690,6 +15963,9 @@ type ScatterpolarglMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScatterpolarglMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -15732,11 +16008,14 @@ type ScatterpolarglMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScatterpolarglMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScatterpolarglMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScatterpolarglMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -15912,6 +16191,9 @@ type ScatterternaryMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode ScatterternaryMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -15954,11 +16236,14 @@ type ScatterternaryMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *ScatterternaryMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops ScatterternaryMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition ScatterternaryMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16149,6 +16434,9 @@ type SplomMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode SplomMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -16191,11 +16479,14 @@ type SplomMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *SplomMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops SplomMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition SplomMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16416,6 +16707,9 @@ type SunburstMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode SunburstMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -16458,11 +16752,14 @@ type SunburstMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *SunburstMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops SunburstMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition SunburstMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
@@ -16854,6 +17151,9 @@ type TreemapMarkerColorbar struct {
 	// Lenmode enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	Lenmode TreemapMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
+	// Minexponent number Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	Minexponent float64 `json:"minexponent,omitempty"`
+
 	// Nticks integer Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
 
@@ -16896,11 +17196,14 @@ type TreemapMarkerColorbar struct {
 	// Tickfont <no value> Sets the color bar's tick label font
 	Tickfont *TreemapMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
-	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Tickformat string Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops <no value> <no value>
 	Tickformatstops TreemapMarkerColorbarTickformatstops `json:"tickformatstops,omitempty"`
+
+	// Ticklabelposition enumerated Determines where tick labels are drawn.
+	Ticklabelposition TreemapMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklen number Sets the tick length (in px).
 	Ticklen float64 `json:"ticklen,omitempty"`
