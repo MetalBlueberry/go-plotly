@@ -7,7 +7,7 @@ import (
 	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 )
 
-func getPlot(this js.Value, inputs []js.Value) interface{} {
+func plot(this js.Value, inputs []js.Value) interface{} {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Choropleth{
@@ -29,7 +29,11 @@ func getPlot(this js.Value, inputs []js.Value) interface{} {
 	if err != nil {
 		return nil
 	}
-	return string(b)
+
+	plot := js.Global().Get("JSON").Call("parse", string(b))
+	plotly := js.Global().Get("Plotly")
+	plotly.Call("plot", "plot", plot)
+	return nil
 }
 
 var c chan bool
@@ -44,7 +48,7 @@ func stop(this js.Value, inputs []js.Value) interface{} {
 }
 
 func main() {
-	js.Global().Set("getPlot", js.FuncOf(getPlot))
+	js.Global().Set("plot", js.FuncOf(plot))
 	js.Global().Set("stop", js.FuncOf(stop))
 	<-c
 	println("We are out of here")

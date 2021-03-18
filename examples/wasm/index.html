@@ -12,9 +12,8 @@
         WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
             go.run(result.instance);
 
-            data = JSON.parse(getPlot())
-            console.log(data)
-            Plotly.newPlot('plot', data);
+            plot()
+            stop()
         });
     </script>
 </html>
