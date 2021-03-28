@@ -36,13 +36,11 @@ type Schema struct {
 }
 
 type Defs struct {
-	ValObjects ValObjects `json:"valObjects,omitempty"`
-	// MetaKeys   []string
+	ValObjects map[string]*ValObject `json:"valObjects,omitempty"`
+	MetaKeys   []string              `json:"meta_keys,omitempty"`
 	// EditType     *EditType
 	// ImpliedEdits *ImpliedEdits
 }
-
-type ValObjects map[string]*ValObject
 
 type ValObject struct {
 	Description  string   `json:"description,omitempty"`
@@ -105,8 +103,16 @@ func (obj *Attributes) UnmarshalJSON(b []byte) error {
 func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[string]*Attribute, err error) {
 	attributes := make(map[string]*Attribute)
 	for name, value := range fields {
+
+		if isMetaKey(name) {
+			// is a metakey and it is not required to
+			// generate the schema
+			continue
+		}
+
 		role := &struct {
-			Role Role
+			Role  Role            `json:"role,omitempty"`
+			Items json.RawMessage `json:"items,omitempty"`
 		}{}
 		err = json.Unmarshal(value, role)
 		if err != nil {
@@ -114,8 +120,30 @@ func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[st
 			log.Printf("%s", value)
 			continue
 		}
-		switch role.Role {
-		case RoleObject:
+		switch {
+		case role.Role == RoleObject && len(role.Items) > 0:
+			log.Println("It is an object list")
+
+			subFields := map[string]json.RawMessage{}
+
+			err = json.Unmarshal(role.Items, &subFields)
+			if err != nil {
+				return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
+			}
+
+			attr := &Attribute{
+				Role:   role.Role,
+				Name:   name,
+				Parent: parent,
+			}
+			subAttr, err := parseFields(subFields, attr)
+			if err != nil {
+				return nil, fmt.Errorf("on %s, %w", name, err)
+			}
+			attr.Items = subAttr
+			attributes[name] = attr
+
+		case role.Role == RoleObject:
 			subFields := map[string]json.RawMessage{}
 
 			err = json.Unmarshal(value, &subFields)
@@ -152,10 +180,10 @@ func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[st
 			delete(subFields, "description")
 
 			subAttr, err := parseFields(subFields, attr)
-
 			if err != nil {
 				return nil, fmt.Errorf("on %s, %w", name, err)
 			}
+
 			attr.Attributes = subAttr
 			attributes[name] = attr
 		default:
@@ -185,18 +213,20 @@ const (
 type ValType string
 
 const (
-	ValTypeEnum      ValType = "enumerated"
-	ValTypeFlagList  ValType = "flaglist"
-	ValTypeInfoArray ValType = "info_array"
-	ValTypeSubplotID ValType = "subplotid"
-	ValTypeDataArray ValType = "data_array"
-	ValTypeAny       ValType = "any"
-	ValTypeAngle     ValType = "angle"
-	ValTypeColor     ValType = "color"
-	ValTypeNumber    ValType = "number"
-	ValTypeString    ValType = "string"
-	ValTypeInteger   ValType = "integer"
-	ValTypeBoolean   ValType = "boolean"
+	ValTypeDataArray  ValType = "data_array"
+	ValTypeEnum       ValType = "enumerated"
+	ValTypeBoolean    ValType = "boolean"
+	ValTypeNumber     ValType = "number"
+	ValTypeInteger    ValType = "integer"
+	ValTypeString     ValType = "string"
+	ValTypeColor      ValType = "color"
+	ValTypeColorlist  ValType = "colorlist"
+	ValTypeColorscale ValType = "colorscale"
+	ValTypeAngle      ValType = "angle"
+	ValTypeSubplotID  ValType = "subplotid"
+	ValTypeFlagList   ValType = "flaglist"
+	ValTypeAny        ValType = "any"
+	ValTypeInfoArray  ValType = "info_array"
 )
 
 func UnmarshalRole(obj json.RawMessage, role *Role) error {
@@ -221,7 +251,7 @@ type Attribute struct {
 	ValType ValType       `json:"valType,omitempty"`
 	Values  []interface{} `json:"values,omitempty"`
 	Flags   []string      `json:"flags,omitempty"`
-	Extras  []string      `json:"extras,omitempty"`
+	Extras  []interface{} `json:"extras,omitempty"`
 	Dflt    interface{}   `json:"dflt,omitempty"`
 	Min     json.Number   `json:"min,omitempty"`
 	Max     json.Number   `json:"max,omitempty"`
@@ -230,6 +260,7 @@ type Attribute struct {
 
 	Name       string                `json:"-"`
 	Attributes map[string]*Attribute `json:"-"`
+	Items      map[string]*Attribute `json:"-"`
 	Parent     *Attribute            `json:"-"`
 }
 
@@ -241,4 +272,26 @@ func (attr *Attribute) String() string {
 		i = i.Parent
 	}
 	return strings.Join(path, "->")
+}
+
+type MetaKey string
+
+var MetaKeys = []MetaKey{
+	"_isSubplotObj",
+	"_isLinkedToArray",
+	"_arrayAttrRegexps",
+	"_deprecated",
+	"description",
+	"role",
+	"editType",
+	"impliedEdits",
+}
+
+func isMetaKey(v string) bool {
+	for _, k := range MetaKeys {
+		if string(k) == v {
+			return true
+		}
+	}
+	return false
 }

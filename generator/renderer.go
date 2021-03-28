@@ -73,6 +73,18 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 		attr := attr[name]
 
 		switch {
+		case attr.Role == RoleObject && len(attr.Items) > 0:
+			fields = append(fields, StructField{
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     "interface{}",
+				Description: []string{
+					"It's an items array and what goes inside it's... messy... check the docs",
+					"I will be happy if you want to contribute by implementing this",
+					"just raise an issue before you start so we do not overlap",
+				},
+			})
+
 		case attr.Role == RoleObject:
 			name := prefix + xstrings.ToCamelCase(attr.Name)
 			err := r.parseObject(name, attr)
@@ -83,16 +95,20 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
 				Type:        name,
-				Description: string(attr.ValType) + " " + attr.Description,
+				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
 		case attr.ValType == ValTypeFlagList:
-			// TODO: Not Finished
+			name := prefix + xstrings.ToCamelCase(attr.Name)
+			err := r.parseFlaglist(name, attr)
+			if err != nil {
+				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
+			}
 			fields = append(fields, StructField{
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
 				Type:        prefix + xstrings.ToCamelCase(attr.Name),
-				Description: string(attr.ValType) + " " + attr.Description,
+				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
 		case attr.ValType == ValTypeEnum:
@@ -105,16 +121,20 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
 				Type:        name,
-				Description: string(attr.ValType) + " " + attr.Description,
+				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
+		// case attr.ValType == ValTypeColor
 		default:
 			ty := ValTypeMap[attr.ValType]
 			fields = append(fields, StructField{
-				Name:        xstrings.ToCamelCase(attr.Name),
-				JSONName:    attr.Name,
-				Type:        ty,
-				Description: string(attr.ValType) + " " + attr.Description,
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     ty,
+				Description: []string{
+					string(attr.ValType),
+					attr.Description,
+				},
 			})
 		}
 	}
@@ -200,6 +220,84 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 	return nil
 }
 
+func (r *TraceFile) parseFlaglist(name string, attr *Attribute) error {
+
+	flags := make([]FlaglistValue, 0, len(attr.Flags))
+	for _, attrValue := range attr.Flags {
+		if attrValue == "" {
+			flags = append(flags, FlaglistValue{
+				Value: "\"\"",
+				Name:  name + "Empty",
+			})
+		} else {
+			flags = append(flags, FlaglistValue{
+				Value: "\"" + attrValue + "\"",
+				Name:  name + xstrings.ToCamelCase(attrValue),
+			})
+		}
+	}
+
+	extra := make([]FlaglistValue, 0, len(attr.Extras))
+	for _, attrValue := range attr.Extras {
+		switch v := attrValue.(type) {
+		case string:
+			if v == "" {
+				extra = append(extra, FlaglistValue{
+					Value: "\"\"",
+					Name:  name + "Empty",
+				})
+			} else {
+				extra = append(extra, FlaglistValue{
+					Value: "\"" + v + "\"",
+					Name:  name + xstrings.ToCamelCase(v),
+				})
+			}
+		case bool:
+			strBool := strconv.FormatBool(v)
+			extra = append(extra, FlaglistValue{
+				Value: v,
+				Name:  name + xstrings.ToCamelCase(strBool),
+			})
+		case float64:
+			strFloat := strings.Replace(strconv.FormatFloat(v, 'g', -1, 64), "-", "negative", 1)
+			extra = append(extra, FlaglistValue{
+				Value: v,
+				Name:  name + "Number" + xstrings.ToCamelCase(strFloat),
+			})
+
+		default:
+			return fmt.Errorf("unhandled error type %T,%v", attrValue, attrValue)
+		}
+	}
+
+	ConstOrVar := Const
+	Type := "string"
+	for _, attrValue := range attr.Values {
+		if _, ok := attrValue.(bool); ok {
+			ConstOrVar = Var
+			Type = "interface{}"
+			break
+		}
+		if _, ok := attrValue.(float64); ok {
+			ConstOrVar = Var
+			Type = "interface{}"
+			break
+		}
+	}
+
+	flaglist := FlagList{
+		Name:        name,
+		Description: attr.Description,
+		ConstOrVar:  ConstOrVar,
+		Type:        Type,
+		Flags:       flags,
+		Extra:       extra,
+	}
+
+	r.FlagLists = append(r.FlagLists, flaglist)
+	return nil
+}
+
 func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 	trace := r.root.Schema.Traces[traceName]
 
@@ -212,12 +310,13 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 					Name:        "Type",
 					JSONName:    "type",
 					Type:        "TraceType",
-					Description: "is the type of the plot",
+					Description: []string{"is the type of the plot"},
 				},
 			},
 		},
-		Objects: []Struct{},
-		Enums:   []Enum{},
+		Objects:   []Struct{},
+		Enums:     []Enum{},
+		FlagLists: []FlagList{},
 	}
 
 	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, trace.Attributes.Names)
@@ -247,6 +346,12 @@ var TraceType%s TraceType = "%s"
 			return err
 		}
 	}
+	for i := range traceFile.FlagLists {
+		err := r.tmpl.ExecuteTemplate(w, "flaglist.tmpl", traceFile.FlagLists[i])
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 
@@ -263,9 +368,10 @@ func (r *Renderer) WriteFlaglist(w io.Writer) error {
 }
 
 type TraceFile struct {
-	Trace   Struct
-	Objects []Struct
-	Enums   []Enum
+	Trace     Struct
+	Objects   []Struct
+	Enums     []Enum
+	FlagLists []FlagList
 }
 
 type ConstOrVar string
@@ -282,9 +388,23 @@ type EnumValue struct {
 type Enum struct {
 	Name        string
 	Description string
-	Values      []EnumValue
 	Type        string
 	ConstOrVar  ConstOrVar
+	Values      []EnumValue
+}
+
+type FlaglistValue struct {
+	Name  string
+	Value interface{}
+}
+
+type FlagList struct {
+	Name        string
+	Description string
+	Type        string
+	ConstOrVar  ConstOrVar
+	Flags       []FlaglistValue
+	Extra       []FlaglistValue
 }
 
 type Struct struct {
@@ -296,7 +416,7 @@ type StructField struct {
 	Name        string
 	JSONName    string
 	Type        string
-	Description string
+	Description []string
 }
 
 var ValTypeMap = map[ValType]string{
