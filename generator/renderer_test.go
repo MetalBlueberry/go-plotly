@@ -58,16 +58,17 @@ var _ = Describe("Renderer", func() {
 		err = r.CreateTrace("scatter")
 		Expect(err).To(BeNil())
 
+		f, err := os.Create("gen/scatter.go")
+		Expect(err).To(BeNil())
+		f.Write(buf.Bytes())
+		f.Close()
+
 		formatted, err := format.Source(buf.Bytes())
 		Expect(err).To(BeNil())
 
 		Expect(string(formatted)).To(ContainSubstring(`package grob`))
 		Expect(string(formatted)).To(ContainSubstring(`type Scatter struct`))
 
-		f, err := os.Create("gen/scatter.go")
-		Expect(err).To(BeNil())
-		f.Write(formatted)
-		f.Close()
 	})
 })
 

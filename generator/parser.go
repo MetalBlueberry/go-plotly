@@ -52,15 +52,6 @@ type ValObject struct {
 
 type Traces map[string]*Trace
 
-func (t Traces) Sorted() []string {
-	keys := make([]string, 0, len(t))
-	for k := range t {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	return keys
-}
-
 type Trace struct {
 	Meta *Meta `json:"meta,omitempty"`
 	// Categories []string   `json:"categories,omitempty"`
@@ -191,6 +182,23 @@ const (
 	RoleData   Role = "data"
 )
 
+type ValType string
+
+const (
+	ValTypeEnum      ValType = "enumerated"
+	ValTypeFlagList  ValType = "flaglist"
+	ValTypeInfoArray ValType = "info_array"
+	ValTypeSubplotID ValType = "subplotid"
+	ValTypeDataArray ValType = "data_array"
+	ValTypeAny       ValType = "any"
+	ValTypeAngle     ValType = "angle"
+	ValTypeColor     ValType = "color"
+	ValTypeNumber    ValType = "number"
+	ValTypeString    ValType = "string"
+	ValTypeInteger   ValType = "integer"
+	ValTypeBoolean   ValType = "boolean"
+)
+
 func UnmarshalRole(obj json.RawMessage, role *Role) error {
 	err := json.Unmarshal(obj, role)
 	if err != nil {
@@ -210,7 +218,7 @@ type Attribute struct {
 	Description string `json:"description,omitempty"`
 	EditType    string `json:"editType,omitempty"`
 
-	ValType string        `json:"valType,omitempty"`
+	ValType ValType       `json:"valType,omitempty"`
 	Values  []interface{} `json:"values,omitempty"`
 	Flags   []string      `json:"flags,omitempty"`
 	Extras  []string      `json:"extras,omitempty"`
@@ -223,15 +231,6 @@ type Attribute struct {
 	Name       string                `json:"-"`
 	Attributes map[string]*Attribute `json:"-"`
 	Parent     *Attribute            `json:"-"`
-}
-
-func (attr *Attribute) SortedAttributes() []string {
-	keys := make([]string, 0, len(attr.Attributes))
-	for k := range attr.Attributes {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	return keys
 }
 
 func (attr *Attribute) String() string {

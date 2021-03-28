@@ -1,0 +1,9 @@
+{{- $root := . -}}
+// {{.Name }} {{.Description}}
+type {{.Name }} {{.Type}} 
+
+{{ .ConstOrVar }} (
+    {{ range .Values -}}
+    {{.Name}} {{$root.Name}} = {{.Value}}
+    {{ end }}
+)
