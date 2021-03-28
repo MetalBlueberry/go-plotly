@@ -126,16 +126,34 @@ func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[st
 		switch role.Role {
 		case RoleObject:
 			subFields := map[string]json.RawMessage{}
+
 			err = json.Unmarshal(value, &subFields)
 			if err != nil {
 				return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
 			}
+
 			attr := &Attribute{
-				Name:        name,
-				Parent:      parent,
-				Role:        Role(subFields["role"]),
-				EditType:    string(subFields["editType"]),
-				Description: string(subFields["description"]),
+				Name:   name,
+				Parent: parent,
+			}
+
+			err := UnmarshalRole(subFields["role"], &attr.Role)
+			if err != nil {
+				return nil, fmt.Errorf("cannot unmarshal role, %w", err)
+			}
+
+			if editType, ok := subFields["editType"]; ok {
+				err = json.Unmarshal(editType, &attr.EditType)
+				if err != nil {
+					return nil, fmt.Errorf("cannot unmarshal editType, %w", err)
+				}
+			}
+
+			if description, ok := subFields["description"]; ok {
+				err = json.Unmarshal(description, &attr.Description)
+				if err != nil {
+					return nil, fmt.Errorf("cannot unmarshal description, %w", err)
+				}
 			}
 
 			delete(subFields, "role")
@@ -173,6 +191,20 @@ const (
 	RoleData   Role = "data"
 )
 
+func UnmarshalRole(obj json.RawMessage, role *Role) error {
+	err := json.Unmarshal(obj, role)
+	if err != nil {
+		return err
+	}
+
+	switch *role {
+	case RoleObject, RoleInfo, RoleStyle, RoleData:
+		return nil
+	default:
+		return fmt.Errorf("Invalid role %s", *role)
+	}
+}
+
 type Attribute struct {
 	Role        Role   `json:"role,omitempty"`
 	Description string `json:"description,omitempty"`
@@ -191,6 +223,15 @@ type Attribute struct {
 	Name       string                `json:"-"`
 	Attributes map[string]*Attribute `json:"-"`
 	Parent     *Attribute            `json:"-"`
+}
+
+func (attr *Attribute) SortedAttributes() []string {
+	keys := make([]string, 0, len(attr.Attributes))
+	for k := range attr.Attributes {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	return keys
 }
 
 func (attr *Attribute) String() string {
