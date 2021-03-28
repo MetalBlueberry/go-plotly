@@ -57,9 +57,8 @@ func sortKeys(attr map[string]*Attribute) []string {
 	return keys
 }
 
-func (r *Renderer) parseAttributes(prefix string, attr map[string]*Attribute) ([]StructField, []Struct, error) {
-	fields := []StructField{}
-	structs := []Struct{}
+func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) ([]StructField, error) {
+	fields := make([]StructField, 0, len(attr))
 
 	for _, name := range sortKeys(attr) {
 		if name == "_deprecated" {
@@ -70,16 +69,16 @@ func (r *Renderer) parseAttributes(prefix string, attr map[string]*Attribute) ([
 
 		switch {
 		case attr.Role == "object":
-			obj, err := r.parseObject(prefix, attr)
+			name := prefix + xstrings.ToCamelCase(attr.Name)
+			err := r.parseObject(name, attr)
 			if err != nil {
-				return nil, nil, fmt.Errorf("cannot parse object %s, %w", attr.Name, err)
+				return nil, fmt.Errorf("cannot parse object %s, %w", attr.Name, err)
 			}
-			structs = append(structs, obj...)
 			fields = append(fields, StructField{
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
-				Type:        obj[0].Name,
-				Description: attr.Description,
+				Type:        name,
+				Description: attr.ValType + " " + attr.Description,
 			})
 
 		case attr.ValType == "flaglist":
@@ -87,7 +86,7 @@ func (r *Renderer) parseAttributes(prefix string, attr map[string]*Attribute) ([
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
 				Type:        prefix + xstrings.ToCamelCase(attr.Name),
-				Description: attr.Description,
+				Description: attr.ValType + " " + attr.Description,
 			})
 
 		default:
@@ -96,60 +95,67 @@ func (r *Renderer) parseAttributes(prefix string, attr map[string]*Attribute) ([
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
 				Type:        ty,
-				Description: attr.Description + " " + attr.ValType,
+				Description: attr.ValType + " " + attr.Description,
 			})
 		}
 	}
-	return fields, structs, nil
+	return fields, nil
 }
 
-func (r *Renderer) parseObject(prefix string, attr *Attribute) ([]Struct, error) {
-	structs := []Struct{}
-
+func (r *TraceFile) parseObject(name string, attr *Attribute) error {
 	objStruct := Struct{
-		Name:        prefix + xstrings.ToCamelCase(attr.Name),
+		Name:        name,
 		Description: attr.Description,
 		Fields:      []StructField{},
 	}
 
-	fields, structs, err := r.parseAttributes(objStruct.Name, attr.Attributes)
-	if err != nil {
-		return nil, fmt.Errorf("cannot parse attributes, %w", err)
-	}
-	objStruct.Fields = fields
-
-	structs = append([]Struct{objStruct}, structs...)
-	return structs, nil
-}
-
-func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
-	fmt.Fprint(w, "package grob")
-
-	trace := r.root.Schema.Traces[traceName]
-	traceStruct := Struct{
-		Name:        xstrings.ToCamelCase(trace.Type),
-		Description: trace.Meta.Description,
-		Fields: []StructField{
-			{
-				Name:        "Type",
-				JSONName:    "type",
-				Type:        "TraceType",
-				Description: "is the type of the plot",
-			},
-		},
-	}
-	fields, objectStructs, err := r.parseAttributes(traceStruct.Name, trace.Attributes.Names)
+	fields, err := r.parseAttributes(objStruct.Name, attr.Attributes)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
-	traceStruct.Fields = append(traceStruct.Fields, fields...)
+	objStruct.Fields = fields
 
-	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceStruct)
+	r.Objects = append(r.Objects, objStruct)
+	return nil
+}
+
+func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
+	trace := r.root.Schema.Traces[traceName]
+
+	traceFile := TraceFile{
+		Trace: Struct{
+			Name:        xstrings.ToCamelCase(trace.Type),
+			Description: trace.Meta.Description,
+			Fields: []StructField{
+				{
+					Name:        "Type",
+					JSONName:    "type",
+					Type:        "TraceType",
+					Description: "is the type of the plot",
+				},
+			},
+		},
+		Objects: []Struct{},
+		Enums:   []Enum{},
+	}
+
+	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, trace.Attributes.Names)
+	if err != nil {
+		return fmt.Errorf("cannot parse attributes, %w", err)
+	}
+	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+
+	fmt.Fprintf(w, `package grob
+
+var TraceType%s TraceType = "%s"
+`, traceFile.Trace.Name, traceName)
+
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
 	if err != nil {
 		return err
 	}
-	for i := range objectStructs {
-		err := r.tmpl.ExecuteTemplate(w, "trace.tmpl", objectStructs[i])
+	for i := range traceFile.Objects {
+		err := r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Objects[i])
 		if err != nil {
 			return err
 		}
@@ -167,6 +173,18 @@ func (r *Renderer) WriteFlaglist(w io.Writer) error {
 	fmt.Fprintln(w, "package grob")
 
 	return nil
+}
+
+type TraceFile struct {
+	Trace   Struct
+	Objects []Struct
+	Enums   []Enum
+}
+
+type Enum struct {
+	Name        string
+	Description string
+	Values      []string
 }
 
 type Struct struct {
