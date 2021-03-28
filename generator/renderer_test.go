@@ -32,7 +32,7 @@ var _ = Describe("Renderer", func() {
 		ctrl.Finish()
 	})
 
-	It("Should render traces", func() {
+	FIt("Should render traces", func() {
 
 		root, err := generator.LoadSchema(bytes.NewReader(schema))
 		Expect(err).To(BeNil())
@@ -40,11 +40,11 @@ var _ = Describe("Renderer", func() {
 		r, err := generator.NewRenderer(mockCreator, root)
 		Expect(err).To(BeNil())
 
-		err = r.WriteTraces(os.Stdout)
+		err = r.WriteTraces("gen/")
 		Expect(err).To(BeNil())
 
 	})
-	FIt("Should create package", func() {
+	It("Should create package", func() {
 		buf := NopWriterCloser{&bytes.Buffer{}}
 
 		mockCreator.EXPECT().Create(gomock.Eq("scatter.go")).Return(buf, nil).Times(1)

@@ -4,6 +4,8 @@ import (
 	"embed"
 	"fmt"
 	"io"
+	"os"
+	"path"
 	"sort"
 	"strconv"
 	"strings"
@@ -182,7 +184,7 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 				})
 			} else {
 				values = append(values, EnumValue{
-					Value: "\"" + v + "\"",
+					Value: "\"" + cleanValue(v) + "\"",
 					Name:  name + xstrings.ToCamelCase(v),
 				})
 			}
@@ -202,6 +204,10 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 		default:
 			return fmt.Errorf("unhandled error type %T,%v", attrValue, attrValue)
 		}
+	}
+
+	for i := range values {
+		values[i].Name = cleanName(values[i].Name)
 	}
 
 	ConstOrVar := Const
@@ -386,15 +392,23 @@ var TraceType%s TraceType = "%s"
 	return nil
 }
 
-func (r *Renderer) WriteTraces(w io.Writer) error {
-	panic("Not Implemented Yet")
-	fmt.Fprintln(w, "package grob")
-	return nil
-}
-
-func (r *Renderer) WriteFlaglist(w io.Writer) error {
-	fmt.Fprintln(w, "package grob")
-
+func (r *Renderer) WriteTraces(dir string) error {
+	traceNames := make([]string, 0, len(r.root.Schema.Traces))
+	for n := range r.root.Schema.Traces {
+		traceNames = append(traceNames, n)
+	}
+	sort.Strings(traceNames)
+	for _, name := range traceNames {
+		f, err := os.Create(path.Join(dir, name+".go"))
+		if err != nil {
+			return fmt.Errorf("cannot create file, %w", err)
+		}
+		defer f.Close()
+		err = r.WriteTrace(name, f)
+		if err != nil {
+			return fmt.Errorf("cannot write trace, %w", err)
+		}
+	}
 	return nil
 }
 
@@ -461,4 +475,30 @@ var ValTypeMap = map[ValType]string{
 	ValTypeString:    "String",
 	ValTypeInteger:   "int64",
 	ValTypeBoolean:   "Bool",
+}
+
+var SymbolMap = []string{
+	"=", "Eq",
+	">", "Gt",
+	"-", "Hyphen",
+	"<", "Lt",
+	"|", "Or",
+	"/", "Slash",
+	"\\", "Doublebackslash",
+	"^", "Cape",
+	"(", "Lpar",
+	")", "Rpar",
+	"[", "Lbracket",
+	"]", "Rbracket",
+	"+", "Plus",
+	"?", "Question",
+	"$", "Dollar",
+}
+
+func cleanName(name string) string {
+	replacer := strings.NewReplacer(SymbolMap...)
+	return replacer.Replace(name)
+}
+func cleanValue(value string) string {
+	return strings.ReplaceAll(value, "\\", "\\\\")
 }
