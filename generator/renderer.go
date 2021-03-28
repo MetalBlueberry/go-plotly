@@ -124,7 +124,18 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
-		// case attr.ValType == ValTypeColor
+		case attr.ValType == ValTypeColorscale:
+			fields = append(fields, StructField{
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     "ColorScale",
+				Description: []string{
+					string(attr.ValType),
+					attr.Description,
+					fmt.Sprintf("Default: %v", attr.Dflt),
+				},
+			})
+
 		default:
 			ty := ValTypeMap[attr.ValType]
 			fields = append(fields, StructField{
@@ -205,6 +216,26 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 			ConstOrVar = Var
 			Type = "interface{}"
 			break
+		}
+	}
+
+	duplicated := map[string]int{}
+	for i := range values {
+		_, ok := duplicated[values[i].Name]
+		if !ok {
+			duplicated[values[i].Name] = i
+			continue
+		}
+		values[duplicated[values[i].Name]].Name += "1"
+		index := 2
+		for {
+			values[i].Name = values[i].Name + strconv.Itoa(index)
+			_, ok := duplicated[values[i].Name]
+			if !ok {
+				duplicated[values[i].Name] = i
+				break
+			}
+			index++
 		}
 	}
 
