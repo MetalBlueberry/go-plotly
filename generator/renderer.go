@@ -4,7 +4,6 @@ import (
 	"embed"
 	"fmt"
 	"io"
-	"os"
 	"path"
 	"sort"
 	"strconv"
@@ -399,7 +398,7 @@ func (r *Renderer) WriteTraces(dir string) error {
 	}
 	sort.Strings(traceNames)
 	for _, name := range traceNames {
-		f, err := os.Create(path.Join(dir, name+".go"))
+		f, err := r.fs.Create(path.Join(dir, name+"_gen.go"))
 		if err != nil {
 			return fmt.Errorf("cannot create file, %w", err)
 		}
@@ -465,16 +464,20 @@ type StructField struct {
 }
 
 var ValTypeMap = map[ValType]string{
-	ValTypeInfoArray: "interface{}",
-	ValTypeSubplotID: "String",
-	ValTypeDataArray: "interface{}",
-	ValTypeAny:       "interface{}",
-	ValTypeAngle:     "float64",
-	ValTypeColor:     "String",
-	ValTypeNumber:    "float64",
-	ValTypeString:    "String",
-	ValTypeInteger:   "int64",
-	ValTypeBoolean:   "Bool",
+	ValTypeDataArray:  "interface{}",
+	ValTypeEnum:       "NO-TYPE",
+	ValTypeBoolean:    "Bool",
+	ValTypeNumber:     "float64",
+	ValTypeInteger:    "int64",
+	ValTypeString:     "String",
+	ValTypeColor:      "Color",
+	ValTypeColorlist:  "ColorList",
+	ValTypeColorscale: "ColorScale",
+	ValTypeAngle:      "float64",
+	ValTypeSubplotID:  "String",
+	ValTypeFlagList:   "NO-TYPE",
+	ValTypeAny:        "interface{}",
+	ValTypeInfoArray:  "interface{}",
 }
 
 var SymbolMap = []string{
