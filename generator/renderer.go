@@ -428,11 +428,20 @@ func (r *Renderer) WriteLayout(dir string) error {
 		Enums:     []Enum{},
 		FlagLists: []FlagList{},
 	}
+
 	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
 	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+
+	for name, trace := range r.root.Schema.Traces {
+		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), trace.LayoutAttributes.Names)
+		if err != nil {
+			return fmt.Errorf("cannot parse attributes, %w", err)
+		}
+		traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+	}
 
 	fmt.Fprintf(w, `package grob
 

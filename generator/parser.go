@@ -61,10 +61,10 @@ type Traces map[string]*Trace
 type Trace struct {
 	Meta *Meta `json:"meta,omitempty"`
 	// Categories []string   `json:"categories,omitempty"`
-	Animatable       bool                  `json:"animatable,omitempty"`
-	Type             string                `json:"type,omitempty"`
-	Attributes       TraceAttributes       `json:"attributes,omitempty"`
-	LayoutAttributes map[string]*Attribute `json:"layoutAttributes,omitempty"`
+	Animatable       bool             `json:"animatable,omitempty"`
+	Type             string           `json:"type,omitempty"`
+	Attributes       TraceAttributes  `json:"attributes,omitempty"`
+	LayoutAttributes LayoutAttributes `json:"layoutAttributes,omitempty"`
 }
 
 type Meta struct {
