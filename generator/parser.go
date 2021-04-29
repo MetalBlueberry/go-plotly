@@ -28,11 +28,15 @@ type Root struct {
 type Schema struct {
 	Defs   *Defs  `json:"defs,omitempty"`
 	Traces Traces `json:"traces,omitempty"`
-	// Layout     *Layout     `json:"layout,omitempty"`
+	Layout Layout `json:"layout,omitempty"`
 	// Transforms *Transforms `json:"transforms,omitempty"`
 	// Frames     *Frames     `json:"frames,omitempty"`
 	// Animation  *Animation  `json:"animation,omitempty"`
 	// Config     *Config     `json:"config,omitempty"`
+}
+
+type Layout struct {
+	LayoutAttributes LayoutAttributes `json:"layoutAttributes,omitempty"`
 }
 
 type Defs struct {
@@ -55,7 +59,7 @@ type Trace struct {
 	// Categories []string   `json:"categories,omitempty"`
 	Animatable       bool                  `json:"animatable,omitempty"`
 	Type             string                `json:"type,omitempty"`
-	Attributes       Attributes            `json:"attributes,omitempty"`
+	Attributes       TraceAttributes       `json:"attributes,omitempty"`
 	LayoutAttributes map[string]*Attribute `json:"layoutAttributes,omitempty"`
 }
 
@@ -63,12 +67,12 @@ type Meta struct {
 	Description string `json:"description,omitempty"`
 }
 
-type Attributes struct {
+type TraceAttributes struct {
 	Type  string                `json:"type"`
 	Names map[string]*Attribute `json:"-"`
 }
 
-func (a *Attributes) Sorted() []string {
+func (a *TraceAttributes) Sorted() []string {
 	keys := make([]string, 0, len(a.Names))
 	for k := range a.Names {
 		keys = append(keys, k)
@@ -77,7 +81,7 @@ func (a *Attributes) Sorted() []string {
 	return keys
 }
 
-func (obj *Attributes) UnmarshalJSON(b []byte) error {
+func (obj *TraceAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
 	fields := map[string]json.RawMessage{}
@@ -97,6 +101,27 @@ func (obj *Attributes) UnmarshalJSON(b []byte) error {
 	}
 	obj.Names = names
 
+	return nil
+}
+
+type LayoutAttributes struct {
+	Names map[string]*Attribute `json:"-"`
+}
+
+func (obj *LayoutAttributes) UnmarshalJSON(b []byte) error {
+	var err error
+
+	fields := map[string]json.RawMessage{}
+	err = json.Unmarshal(b, &fields)
+	if err != nil {
+		return err
+	}
+
+	names, err := parseFields(fields, nil)
+	if err != nil {
+		return err
+	}
+	obj.Names = names
 	return nil
 }
 

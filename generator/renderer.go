@@ -411,6 +411,59 @@ func (r *Renderer) WriteTraces(dir string) error {
 	return nil
 }
 
+func (r *Renderer) WriteLayout(dir string) error {
+	w, err := r.fs.Create(path.Join(dir, "layout_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer w.Close()
+
+	traceFile := TraceFile{
+		Trace: Struct{
+			Name:        "Layout",
+			Description: "Plot layout options",
+			Fields:      []StructField{},
+		},
+		Objects:   []Struct{},
+		Enums:     []Enum{},
+		FlagLists: []FlagList{},
+	}
+	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	if err != nil {
+		return fmt.Errorf("cannot parse attributes, %w", err)
+	}
+	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+
+	fmt.Fprintf(w, `package grob
+
+var TraceType%s TraceType = "%s"
+`, traceFile.Trace.Name, traceFile.Trace.Name)
+
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
+	if err != nil {
+		return err
+	}
+	for i := range traceFile.Objects {
+		err := r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Objects[i])
+		if err != nil {
+			return err
+		}
+	}
+	for i := range traceFile.Enums {
+		err := r.tmpl.ExecuteTemplate(w, "enum.tmpl", traceFile.Enums[i])
+		if err != nil {
+			return err
+		}
+	}
+	for i := range traceFile.FlagLists {
+		err := r.tmpl.ExecuteTemplate(w, "flaglist.tmpl", traceFile.FlagLists[i])
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 type TraceFile struct {
 	Trace     Struct
 	Objects   []Struct
