@@ -37,7 +37,7 @@ var _ = Describe("Integration", func() {
 		Expect(err).To(BeNil())
 
 	})
-	FIt("Should render layout", func() {
+	It("Should render layout", func() {
 		root, err := generator.LoadSchema(bytes.NewReader(schema))
 		Expect(err).To(BeNil())
 
@@ -45,6 +45,16 @@ var _ = Describe("Integration", func() {
 		Expect(err).To(BeNil())
 
 		err = r.WriteLayout("gen/")
+		Expect(err).To(BeNil())
+	})
+	FIt("Should render config", func() {
+		root, err := generator.LoadSchema(bytes.NewReader(schema))
+		Expect(err).To(BeNil())
+
+		r, err := generator.NewRenderer(Creator{}, root)
+		Expect(err).To(BeNil())
+
+		err = r.WriteConfig("gen/")
 		Expect(err).To(BeNil())
 	})
 })

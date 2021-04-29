@@ -32,7 +32,11 @@ type Schema struct {
 	// Transforms *Transforms `json:"transforms,omitempty"`
 	// Frames     *Frames     `json:"frames,omitempty"`
 	// Animation  *Animation  `json:"animation,omitempty"`
-	// Config     *Config     `json:"config,omitempty"`
+	Config *ConfigAttributes `json:"config,omitempty"`
+}
+
+type ConfigAttributes struct {
+	Names map[string]*Attribute `json:"-"`
 }
 
 type Layout struct {
@@ -109,6 +113,23 @@ type LayoutAttributes struct {
 }
 
 func (obj *LayoutAttributes) UnmarshalJSON(b []byte) error {
+	var err error
+
+	fields := map[string]json.RawMessage{}
+	err = json.Unmarshal(b, &fields)
+	if err != nil {
+		return err
+	}
+
+	names, err := parseFields(fields, nil)
+	if err != nil {
+		return err
+	}
+	obj.Names = names
+	return nil
+}
+
+func (obj *ConfigAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
 	fields := map[string]json.RawMessage{}
