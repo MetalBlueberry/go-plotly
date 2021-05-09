@@ -63,7 +63,9 @@ func sortKeys(attr map[string]*Attribute) []string {
 	return keys
 }
 
-func (r *TraceFile) parseAttributes(namePrefix string, typePrefix string, attr map[string]*Attribute) ([]StructField, error) {
+// parseAttributes returns a []StructField containing all the fields for the attributes parsed.
+// Nested structures found such as enums, flags u other objects are stored in the TypeFile caller.
+func (r *TypeFile) parseAttributes(namePrefix string, typePrefix string, attr map[string]*Attribute) ([]StructField, error) {
 	fields := make([]StructField, 0, len(attr))
 
 	for _, name := range sortKeys(attr) {
@@ -154,7 +156,7 @@ func (r *TraceFile) parseAttributes(namePrefix string, typePrefix string, attr m
 	return fields, nil
 }
 
-func (r *TraceFile) parseObject(name string, attr *Attribute) error {
+func (r *TypeFile) parseObject(name string, attr *Attribute) error {
 	objStruct := Struct{
 		Name:        name,
 		Description: attr.Description,
@@ -171,7 +173,7 @@ func (r *TraceFile) parseObject(name string, attr *Attribute) error {
 	return nil
 }
 
-func (r *TraceFile) parseEnum(typeName string, valuePrefix string, attr *Attribute) error {
+func (r *TypeFile) parseEnum(typeName string, valuePrefix string, attr *Attribute) error {
 
 	values := make([]EnumValue, 0, len(attr.Values))
 	for _, attrValue := range attr.Values {
@@ -257,7 +259,7 @@ func (r *TraceFile) parseEnum(typeName string, valuePrefix string, attr *Attribu
 	return nil
 }
 
-func (r *TraceFile) parseFlaglist(name string, attr *Attribute) error {
+func (r *TypeFile) parseFlaglist(name string, attr *Attribute) error {
 
 	flags := make([]FlaglistValue, 0, len(attr.Flags))
 	for _, attrValue := range attr.Flags {
@@ -338,8 +340,8 @@ func (r *TraceFile) parseFlaglist(name string, attr *Attribute) error {
 func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 	trace := r.root.Schema.Traces[traceName]
 
-	traceFile := TraceFile{
-		Trace: Struct{
+	traceFile := TypeFile{
+		MainType: Struct{
 			Name:        xstrings.ToCamelCase(trace.Type),
 			Description: trace.Meta.Description,
 			Fields: []StructField{
@@ -356,11 +358,11 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		FlagLists: []FlagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, trace.Attributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, trace.Attributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
-	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 
 	fmt.Fprintf(w, `package grob
 
@@ -370,13 +372,13 @@ func (trace *%s) GetType() TraceType {
 	return TraceType%s
 }
 `,
-		traceFile.Trace.Name,
+		traceFile.MainType.Name,
 		traceName,
-		traceFile.Trace.Name,
-		traceFile.Trace.Name,
+		traceFile.MainType.Name,
+		traceFile.MainType.Name,
 	)
 
-	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
 		return err
 	}
@@ -428,8 +430,8 @@ func (r *Renderer) WriteLayout(dir string) error {
 	}
 	defer w.Close()
 
-	traceFile := TraceFile{
-		Trace: Struct{
+	traceFile := TypeFile{
+		MainType: Struct{
 			Name:        "Layout",
 			Description: "Plot layout options",
 			Fields:      []StructField{},
@@ -439,24 +441,24 @@ func (r *Renderer) WriteLayout(dir string) error {
 		FlagLists: []FlagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
-	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 
 	for name, trace := range r.root.Schema.Traces {
 		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
 		if err != nil {
 			return fmt.Errorf("cannot parse attributes, %w", err)
 		}
-		traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+		traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 	}
 
 	// remove duplicate fields
-	uniqueFields := make([]StructField, 0, len(traceFile.Trace.Fields))
+	uniqueFields := make([]StructField, 0, len(traceFile.MainType.Fields))
 	fieldMap := map[string]int{}
-	for i, field := range traceFile.Trace.Fields {
+	for i, field := range traceFile.MainType.Fields {
 		_, ok := fieldMap[field.Name]
 		if !ok {
 			fieldMap[field.Name] = i
@@ -464,7 +466,7 @@ func (r *Renderer) WriteLayout(dir string) error {
 			continue
 		}
 	}
-	traceFile.Trace.Fields = uniqueFields
+	traceFile.MainType.Fields = uniqueFields
 
 	// merge duplicate enums
 	uniqueEnums := make([]Enum, 0, len(traceFile.Enums))
@@ -484,7 +486,7 @@ func (r *Renderer) WriteLayout(dir string) error {
 
 `)
 
-	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
 		return err
 	}
@@ -516,8 +518,8 @@ func (r *Renderer) WriteConfig(dir string) error {
 	}
 	defer w.Close()
 
-	traceFile := TraceFile{
-		Trace: Struct{
+	traceFile := TypeFile{
+		MainType: Struct{
 			Name:        "Config",
 			Description: "Plot config options",
 			Fields:      []StructField{},
@@ -526,17 +528,17 @@ func (r *Renderer) WriteConfig(dir string) error {
 		Enums:     []Enum{},
 		FlagLists: []FlagList{},
 	}
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
-	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
+	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 
 	fmt.Fprint(w, `package grob
 
 `)
 
-	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
 		return err
 	}
@@ -561,8 +563,8 @@ func (r *Renderer) WriteConfig(dir string) error {
 	return nil
 }
 
-type TraceFile struct {
-	Trace     Struct
+type TypeFile struct {
+	MainType  Struct
 	Objects   []Struct
 	Enums     []Enum
 	FlagLists []FlagList
