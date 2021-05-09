@@ -26,7 +26,7 @@ func (c Creator) Create(name string) (io.WriteCloser, error) {
 }
 
 var _ = Describe("Integration", func() {
-	It("Should render traces", func() {
+	FIt("Should render traces", func() {
 		root, err := generator.LoadSchema(bytes.NewReader(schema))
 		Expect(err).To(BeNil())
 
@@ -37,7 +37,7 @@ var _ = Describe("Integration", func() {
 		Expect(err).To(BeNil())
 
 	})
-	FIt("Should render layout", func() {
+	It("Should render layout", func() {
 		root, err := generator.LoadSchema(bytes.NewReader(schema))
 		Expect(err).To(BeNil())
 

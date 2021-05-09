@@ -63,7 +63,7 @@ func sortKeys(attr map[string]*Attribute) []string {
 	return keys
 }
 
-func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) ([]StructField, error) {
+func (r *TraceFile) parseAttributes(namePrefix string, typePrefix string, attr map[string]*Attribute) ([]StructField, error) {
 	fields := make([]StructField, 0, len(attr))
 
 	for _, name := range sortKeys(attr) {
@@ -87,7 +87,7 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 			})
 
 		case attr.Role == RoleObject:
-			name := prefix + xstrings.ToCamelCase(attr.Name)
+			name := namePrefix + xstrings.ToCamelCase(attr.Name)
 			err := r.parseObject(name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)
@@ -100,7 +100,7 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 			})
 
 		case attr.ValType == ValTypeFlagList:
-			name := prefix + xstrings.ToCamelCase(attr.Name)
+			name := namePrefix + xstrings.ToCamelCase(attr.Name)
 			err := r.parseFlaglist(name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
@@ -108,20 +108,21 @@ func (r *TraceFile) parseAttributes(prefix string, attr map[string]*Attribute) (
 			fields = append(fields, StructField{
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
-				Type:        prefix + xstrings.ToCamelCase(attr.Name),
+				Type:        typePrefix + xstrings.ToCamelCase(attr.Name),
 				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
 		case attr.ValType == ValTypeEnum:
-			name := prefix + xstrings.ToCamelCase(attr.Name)
-			err := r.parseEnum(name, attr)
+			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
+			valueName := namePrefix + xstrings.ToCamelCase(attr.Name)
+			err := r.parseEnum(typeName, valueName, attr)
 			if err != nil {
-				return nil, fmt.Errorf("cannot parse enum %s, %w", name, err)
+				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
 			fields = append(fields, StructField{
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
-				Type:        name,
+				Type:        typeName,
 				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
@@ -160,7 +161,7 @@ func (r *TraceFile) parseObject(name string, attr *Attribute) error {
 		Fields:      []StructField{},
 	}
 
-	fields, err := r.parseAttributes(objStruct.Name, attr.Attributes)
+	fields, err := r.parseAttributes(objStruct.Name, objStruct.Name, attr.Attributes)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -170,7 +171,7 @@ func (r *TraceFile) parseObject(name string, attr *Attribute) error {
 	return nil
 }
 
-func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
+func (r *TraceFile) parseEnum(typeName string, valuePrefix string, attr *Attribute) error {
 
 	values := make([]EnumValue, 0, len(attr.Values))
 	for _, attrValue := range attr.Values {
@@ -179,25 +180,25 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 			if v == "" {
 				values = append(values, EnumValue{
 					Value: "\"\"",
-					Name:  name + "Empty",
+					Name:  valuePrefix + "Empty",
 				})
 			} else {
 				values = append(values, EnumValue{
 					Value: "\"" + cleanValue(v) + "\"",
-					Name:  name + xstrings.ToCamelCase(v),
+					Name:  valuePrefix + xstrings.ToCamelCase(v),
 				})
 			}
 		case bool:
 			strBool := strconv.FormatBool(v)
 			values = append(values, EnumValue{
 				Value: v,
-				Name:  name + xstrings.ToCamelCase(strBool),
+				Name:  valuePrefix + xstrings.ToCamelCase(strBool),
 			})
 		case float64:
 			strFloat := strings.Replace(strconv.FormatFloat(v, 'g', -1, 64), "-", "negative", 1)
 			values = append(values, EnumValue{
 				Value: v,
-				Name:  name + "Number" + xstrings.ToCamelCase(strFloat),
+				Name:  valuePrefix + "Number" + xstrings.ToCamelCase(strFloat),
 			})
 
 		default:
@@ -245,7 +246,7 @@ func (r *TraceFile) parseEnum(name string, attr *Attribute) error {
 	}
 
 	enum := Enum{
-		Name:        name,
+		Name:        typeName,
 		Description: attr.Description,
 		Values:      values,
 		ConstOrVar:  ConstOrVar,
@@ -355,7 +356,7 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		FlagLists: []FlagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, trace.Attributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, trace.Attributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -364,7 +365,16 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 	fmt.Fprintf(w, `package grob
 
 var TraceType%s TraceType = "%s"
-`, traceFile.Trace.Name, traceName)
+
+func (trace *%s) GetType() TraceType {
+	return TraceType%s
+}
+`,
+		traceFile.Trace.Name,
+		traceName,
+		traceFile.Trace.Name,
+		traceFile.Trace.Name,
+	)
 
 	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
 	if err != nil {
@@ -429,24 +439,50 @@ func (r *Renderer) WriteLayout(dir string) error {
 		FlagLists: []FlagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
 	traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
 
 	for name, trace := range r.root.Schema.Traces {
-		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), trace.LayoutAttributes.Names)
+		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
 		if err != nil {
 			return fmt.Errorf("cannot parse attributes, %w", err)
 		}
 		traceFile.Trace.Fields = append(traceFile.Trace.Fields, fields...)
 	}
 
-	fmt.Fprintf(w, `package grob
+	// remove duplicate fields
+	uniqueFields := make([]StructField, 0, len(traceFile.Trace.Fields))
+	fieldMap := map[string]int{}
+	for i, field := range traceFile.Trace.Fields {
+		_, ok := fieldMap[field.Name]
+		if !ok {
+			fieldMap[field.Name] = i
+			uniqueFields = append(uniqueFields, field)
+			continue
+		}
+	}
+	traceFile.Trace.Fields = uniqueFields
 
-var TraceType%s TraceType = "%s"
-`, traceFile.Trace.Name, traceFile.Trace.Name)
+	// merge duplicate enums
+	uniqueEnums := make([]Enum, 0, len(traceFile.Enums))
+	enumMap := map[string]int{}
+	for _, enum := range traceFile.Enums {
+		previous, ok := enumMap[enum.Name]
+		if !ok {
+			uniqueEnums = append(uniqueEnums, enum)
+			enumMap[enum.Name] = len(uniqueEnums) - 1
+			continue
+		}
+		uniqueEnums[previous].Values = append(uniqueEnums[previous].Values, enum.Values...)
+	}
+	traceFile.Enums = uniqueEnums
+
+	fmt.Fprint(w, `package grob
+
+`)
 
 	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Trace)
 	if err != nil {
@@ -490,7 +526,7 @@ func (r *Renderer) WriteConfig(dir string) error {
 		Enums:     []Enum{},
 		FlagLists: []FlagList{},
 	}
-	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.Trace.Name, traceFile.Trace.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -618,4 +654,13 @@ func cleanName(name string) string {
 }
 func cleanValue(value string) string {
 	return strings.ReplaceAll(value, "\\", "\\\\")
+}
+
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }
