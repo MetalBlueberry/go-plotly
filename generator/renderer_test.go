@@ -3,8 +3,6 @@ package generator_test
 import (
 	"bytes"
 	"go/format"
-	"io"
-	"os"
 
 	_ "embed"
 
@@ -18,46 +16,6 @@ import (
 
 //go:embed schema.json
 var schema []byte
-
-type Creator struct{}
-
-func (c Creator) Create(name string) (io.WriteCloser, error) {
-	return os.Create(name)
-}
-
-var _ = Describe("Integration", func() {
-	FIt("Should render traces", func() {
-		root, err := generator.LoadSchema(bytes.NewReader(schema))
-		Expect(err).To(BeNil())
-
-		r, err := generator.NewRenderer(Creator{}, root)
-		Expect(err).To(BeNil())
-
-		err = r.WriteTraces("gen/")
-		Expect(err).To(BeNil())
-
-	})
-	It("Should render layout", func() {
-		root, err := generator.LoadSchema(bytes.NewReader(schema))
-		Expect(err).To(BeNil())
-
-		r, err := generator.NewRenderer(Creator{}, root)
-		Expect(err).To(BeNil())
-
-		err = r.WriteLayout("gen/")
-		Expect(err).To(BeNil())
-	})
-	It("Should render config", func() {
-		root, err := generator.LoadSchema(bytes.NewReader(schema))
-		Expect(err).To(BeNil())
-
-		r, err := generator.NewRenderer(Creator{}, root)
-		Expect(err).To(BeNil())
-
-		err = r.WriteConfig("gen/")
-		Expect(err).To(BeNil())
-	})
-})
 
 var _ = Describe("Renderer", func() {
 
@@ -91,7 +49,10 @@ var _ = Describe("Renderer", func() {
 		Expect(err).To(BeNil())
 
 		Expect(string(formatted)).To(ContainSubstring(`package grob`))
+		// Type is defined
 		Expect(string(formatted)).To(ContainSubstring(`type Scatter struct`))
+		// Implements interface GetType()
+		Expect(string(formatted)).To(ContainSubstring(`func (trace *Scatter) GetType() TraceType`))
 
 	})
 })
