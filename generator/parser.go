@@ -163,13 +163,10 @@ func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[st
 		err = json.Unmarshal(value, role)
 		if err != nil {
 			log.Printf("cannot detect role for attribute %s on %v, %s", name, parent, err)
-			log.Printf("%s", value)
 			continue
 		}
 		switch {
 		case role.Role == RoleObject && len(role.Items) > 0:
-			log.Println("It is an object list")
-
 			subFields := map[string]json.RawMessage{}
 
 			err = json.Unmarshal(role.Items, &subFields)
