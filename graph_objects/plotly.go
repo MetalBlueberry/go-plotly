@@ -4,10 +4,15 @@ import (
 	"encoding/json"
 )
 
+// Generate the files
 //go:generate go run ../generator/cmd/generator/main.go --schema ../generator/schema.json --output-directory .
 
+// TraceType is the type for the TraceType field on every trace
 type TraceType string
 
+// Trace Every trace implements this interface
+// It is useful for autocompletion, it is a better idea to use
+// type assertions/switches to identify trace types
 type Trace interface {
 	GetType() TraceType
 }
@@ -17,9 +22,20 @@ type Traces []Trace
 
 // Fig is the base type for figures.
 type Fig struct {
-	Data   Traces  `json:"data,omitempty"`
+	// Data The data to be plotted is described in an array usually called data, whose elements are trace objects of various types (e.g. scatter, bar etc) as documented in the Full Reference.
+	// https://plotly.com/javascript/reference
+	Data Traces `json:"data,omitempty"`
+
+	// Layout The layout of the plot – non-data-related visual attributes such as the title, annotations etc – is described in an object usually called layout, as documented in/ the Full Reference.
+	// https://plotly.com/javascript/reference/layout
 	Layout *Layout `json:"layout,omitempty"`
+
+	// Config High-level configuration options for the plot, such as the scroll/zoom/hover behaviour, is described in an object usually called config, as documented here. The difference between config and layout is that layout relates to the content of the plot, whereas config relates to the context in which the plot is being shown.
+	// https://plotly.com/javascript/configuration-options
 	Config *Config `json:"config,omitempty"`
+
+	// Animation is not yet implemented, feel free to insert custom a struct
+	Animation interface{} `json:"animation,omitempty"`
 }
 
 // AddTraces Is a shorthand  to add figures to a given figure. It handles the case where the Traces value is nil.
