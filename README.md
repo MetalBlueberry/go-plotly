@@ -15,6 +15,8 @@ Therefore, you should always keep in mind as you are creating and updating figur
 
 The good thing about this package is that it's **automatically generated** based on the schema described [here](https://plotly.com/chart-studio-help/json-chart-schema/) so It will be easy to keep it up to date or to generate different versions of it.
 
+> Just a reminder from semver: **Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.**
+
 ## Example
 
 ```go
