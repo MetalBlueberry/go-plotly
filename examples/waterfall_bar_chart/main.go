@@ -195,13 +195,13 @@ func main() {
 		Title: &grob.LayoutTitle{
 			Text: "Annual Profit 2015",
 		},
-		Barmode:       grob.LayoutBarmode_stack,
-		Paper_bgcolor: "rgba(245,246,249,1)",
-		Plot_bgcolor:  "rgba(245,246,249,1)",
-		Width:         600,
-		Height:        600,
-		Showlegend:    grob.False,
-		Annotations:   annotations, // Not implemented yet
+		Barmode:      grob.BarBarmodeStack,
+		PaperBgcolor: "rgba(245,246,249,1)",
+		PlotBgcolor:  "rgba(245,246,249,1)",
+		Width:        600,
+		Height:       600,
+		Showlegend:   grob.False,
+		Annotations:  annotations, // Not implemented yet
 	}
 
 	fig := &grob.Fig{

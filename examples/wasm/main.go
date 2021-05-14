@@ -13,7 +13,7 @@ func plot(this js.Value, inputs []js.Value) interface{} {
 			&grob.Choropleth{
 				Type:           grob.TraceTypeChoropleth,
 				Autocolorscale: grob.True,
-				Locationmode:   grob.ChoroplethLocationmode_USA_states,
+				Locationmode:   grob.ChoroplethLocationmodeUsaStates,
 			},
 		},
 		Layout: &grob.Layout{
@@ -21,7 +21,7 @@ func plot(this js.Value, inputs []js.Value) interface{} {
 				Text: "Demo",
 			},
 			Geo: &grob.LayoutGeo{
-				Scope: grob.LayoutGeoScope_usa,
+				Scope: grob.LayoutGeoScopeUsa,
 			},
 		},
 	}
