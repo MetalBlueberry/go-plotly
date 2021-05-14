@@ -1,0 +1,799 @@
+package grob
+
+var TraceTypeContourcarpet TraceType = "contourcarpet"
+
+func (trace *Contourcarpet) GetType() TraceType {
+	return TraceTypeContourcarpet
+}
+// Contourcarpet Plots contours on either the first carpet axis or the carpet axis with a matching `carpet` attribute. Data `z` is interpreted as matching that of the corresponding carpet axis.
+type Contourcarpet struct {
+    
+    // Type 
+    // is the type of the plot 
+    Type TraceType `json:"type,omitempty"`
+    
+    // A 
+    // data_array 
+    // Sets the x coordinates. 
+    A interface{} `json:"a,omitempty"`
+    
+    // A0 
+    // any 
+    // Alternate to `x`. Builds a linear space of x coordinates. Use with `dx` where `x0` is the starting coordinate and `dx` the step. 
+    A0 interface{} `json:"a0,omitempty"`
+    
+    // Asrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  a . 
+    Asrc String `json:"asrc,omitempty"`
+    
+    // Atype 
+    // enumerated If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided). 
+    Atype ContourcarpetAtype `json:"atype,omitempty"`
+    
+    // Autocolorscale 
+    // boolean 
+    // Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed. 
+    Autocolorscale Bool `json:"autocolorscale,omitempty"`
+    
+    // Autocontour 
+    // boolean 
+    // Determines whether or not the contour level attributes are picked by an algorithm. If *true*, the number of contour levels can be set in `ncontours`. If *false*, set the contour level attributes in `contours`. 
+    Autocontour Bool `json:"autocontour,omitempty"`
+    
+    // B 
+    // data_array 
+    // Sets the y coordinates. 
+    B interface{} `json:"b,omitempty"`
+    
+    // B0 
+    // any 
+    // Alternate to `y`. Builds a linear space of y coordinates. Use with `dy` where `y0` is the starting coordinate and `dy` the step. 
+    B0 interface{} `json:"b0,omitempty"`
+    
+    // Bsrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  b . 
+    Bsrc String `json:"bsrc,omitempty"`
+    
+    // Btype 
+    // enumerated If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided) 
+    Btype ContourcarpetBtype `json:"btype,omitempty"`
+    
+    // Carpet 
+    // string 
+    // The `carpet` of the carpet axes on which this contour trace lies 
+    Carpet String `json:"carpet,omitempty"`
+    
+    // Coloraxis 
+    // subplotid 
+    // Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis. 
+    Coloraxis String `json:"coloraxis,omitempty"`
+    
+    // Colorbar 
+    //   
+    Colorbar *ContourcarpetColorbar `json:"colorbar,omitempty"`
+    
+    // Colorscale 
+    // colorscale 
+    // Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis. 
+    // Default: <nil> 
+    Colorscale ColorScale `json:"colorscale,omitempty"`
+    
+    // Contours 
+    //   
+    Contours *ContourcarpetContours `json:"contours,omitempty"`
+    
+    // Customdata 
+    // data_array 
+    // Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements 
+    Customdata interface{} `json:"customdata,omitempty"`
+    
+    // Customdatasrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  customdata . 
+    Customdatasrc String `json:"customdatasrc,omitempty"`
+    
+    // Da 
+    // number 
+    // Sets the x coordinate step. See `x0` for more info. 
+    Da float64 `json:"da,omitempty"`
+    
+    // Db 
+    // number 
+    // Sets the y coordinate step. See `y0` for more info. 
+    Db float64 `json:"db,omitempty"`
+    
+    // Fillcolor 
+    // color 
+    // Sets the fill color if `contours.type` is *constraint*. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available. 
+    Fillcolor Color `json:"fillcolor,omitempty"`
+    
+    // Hovertext 
+    // data_array 
+    // Same as `text`. 
+    Hovertext interface{} `json:"hovertext,omitempty"`
+    
+    // Hovertextsrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  hovertext . 
+    Hovertextsrc String `json:"hovertextsrc,omitempty"`
+    
+    // Ids 
+    // data_array 
+    // Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type. 
+    Ids interface{} `json:"ids,omitempty"`
+    
+    // Idssrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  ids . 
+    Idssrc String `json:"idssrc,omitempty"`
+    
+    // Legendgroup 
+    // string 
+    // Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items. 
+    Legendgroup String `json:"legendgroup,omitempty"`
+    
+    // Line 
+    //   
+    Line *ContourcarpetLine `json:"line,omitempty"`
+    
+    // Meta 
+    // any 
+    // Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index. 
+    Meta interface{} `json:"meta,omitempty"`
+    
+    // Metasrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  meta . 
+    Metasrc String `json:"metasrc,omitempty"`
+    
+    // Name 
+    // string 
+    // Sets the trace name. The trace name appear as the legend item and on hover. 
+    Name String `json:"name,omitempty"`
+    
+    // Ncontours 
+    // integer 
+    // Sets the maximum number of contour levels. The actual number of contours will be chosen automatically to be less than or equal to the value of `ncontours`. Has an effect only if `autocontour` is *true* or if `contours.size` is missing. 
+    Ncontours int64 `json:"ncontours,omitempty"`
+    
+    // Opacity 
+    // number 
+    // Sets the opacity of the trace. 
+    Opacity float64 `json:"opacity,omitempty"`
+    
+    // Reversescale 
+    // boolean 
+    // Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color. 
+    Reversescale Bool `json:"reversescale,omitempty"`
+    
+    // Showlegend 
+    // boolean 
+    // Determines whether or not an item corresponding to this trace is shown in the legend. 
+    Showlegend Bool `json:"showlegend,omitempty"`
+    
+    // Showscale 
+    // boolean 
+    // Determines whether or not a colorbar is displayed for this trace. 
+    Showscale Bool `json:"showscale,omitempty"`
+    
+    // Stream 
+    //   
+    Stream *ContourcarpetStream `json:"stream,omitempty"`
+    
+    // Text 
+    // data_array 
+    // Sets the text elements associated with each z value. 
+    Text interface{} `json:"text,omitempty"`
+    
+    // Textsrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  text . 
+    Textsrc String `json:"textsrc,omitempty"`
+    
+    // Transpose 
+    // boolean 
+    // Transposes the z data. 
+    Transpose Bool `json:"transpose,omitempty"`
+    
+    // Uid 
+    // string 
+    // Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions. 
+    Uid String `json:"uid,omitempty"`
+    
+    // Uirevision 
+    // any 
+    // Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves. 
+    Uirevision interface{} `json:"uirevision,omitempty"`
+    
+    // Visible 
+    // enumerated Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible). 
+    Visible ContourcarpetVisible `json:"visible,omitempty"`
+    
+    // Xaxis 
+    // subplotid 
+    // Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on. 
+    Xaxis String `json:"xaxis,omitempty"`
+    
+    // Yaxis 
+    // subplotid 
+    // Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on. 
+    Yaxis String `json:"yaxis,omitempty"`
+    
+    // Z 
+    // data_array 
+    // Sets the z data. 
+    Z interface{} `json:"z,omitempty"`
+    
+    // Zauto 
+    // boolean 
+    // Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user. 
+    Zauto Bool `json:"zauto,omitempty"`
+    
+    // Zmax 
+    // number 
+    // Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well. 
+    Zmax float64 `json:"zmax,omitempty"`
+    
+    // Zmid 
+    // number 
+    // Sets the mid-point of the color domain by scaling `zmin` and/or `zmax` to be equidistant to this point. Value should have the same units as in `z`. Has no effect when `zauto` is `false`. 
+    Zmid float64 `json:"zmid,omitempty"`
+    
+    // Zmin 
+    // number 
+    // Sets the lower bound of the color domain. Value should have the same units as in `z` and if set, `zmax` must be set as well. 
+    Zmin float64 `json:"zmin,omitempty"`
+    
+    // Zsrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  z . 
+    Zsrc String `json:"zsrc,omitempty"`
+    
+}
+// ContourcarpetColorbarTickfont Sets the color bar's tick label font
+type ContourcarpetColorbarTickfont struct {
+    
+    // Color 
+    // color 
+    //  
+    Color Color `json:"color,omitempty"`
+    
+    // Family 
+    // string 
+    // HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*. 
+    Family String `json:"family,omitempty"`
+    
+    // Size 
+    // number 
+    //  
+    Size float64 `json:"size,omitempty"`
+    
+}
+// ContourcarpetColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
+type ContourcarpetColorbarTitleFont struct {
+    
+    // Color 
+    // color 
+    //  
+    Color Color `json:"color,omitempty"`
+    
+    // Family 
+    // string 
+    // HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*. 
+    Family String `json:"family,omitempty"`
+    
+    // Size 
+    // number 
+    //  
+    Size float64 `json:"size,omitempty"`
+    
+}
+// ContourcarpetColorbarTitle 
+type ContourcarpetColorbarTitle struct {
+    
+    // Font 
+    //  Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute. 
+    Font *ContourcarpetColorbarTitleFont `json:"font,omitempty"`
+    
+    // Side 
+    // enumerated Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute. 
+    Side ContourcarpetColorbarTitleSide `json:"side,omitempty"`
+    
+    // Text 
+    // string 
+    // Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated. 
+    Text String `json:"text,omitempty"`
+    
+}
+// ContourcarpetColorbar 
+type ContourcarpetColorbar struct {
+    
+    // Bgcolor 
+    // color 
+    // Sets the color of padded area. 
+    Bgcolor Color `json:"bgcolor,omitempty"`
+    
+    // Bordercolor 
+    // color 
+    // Sets the axis line color. 
+    Bordercolor Color `json:"bordercolor,omitempty"`
+    
+    // Borderwidth 
+    // number 
+    // Sets the width (in px) or the border enclosing this color bar. 
+    Borderwidth float64 `json:"borderwidth,omitempty"`
+    
+    // Dtick 
+    // any 
+    // Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48* 
+    Dtick interface{} `json:"dtick,omitempty"`
+    
+    // Exponentformat 
+    // enumerated Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B. 
+    Exponentformat ContourcarpetColorbarExponentformat `json:"exponentformat,omitempty"`
+    
+    // Len 
+    // number 
+    // Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends. 
+    Len float64 `json:"len,omitempty"`
+    
+    // Lenmode 
+    // enumerated Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value. 
+    Lenmode ContourcarpetColorbarLenmode `json:"lenmode,omitempty"`
+    
+    // Minexponent 
+    // number 
+    // Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*. 
+    Minexponent float64 `json:"minexponent,omitempty"`
+    
+    // Nticks 
+    // integer 
+    // Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*. 
+    Nticks int64 `json:"nticks,omitempty"`
+    
+    // Outlinecolor 
+    // color 
+    // Sets the axis line color. 
+    Outlinecolor Color `json:"outlinecolor,omitempty"`
+    
+    // Outlinewidth 
+    // number 
+    // Sets the width (in px) of the axis line. 
+    Outlinewidth float64 `json:"outlinewidth,omitempty"`
+    
+    // Separatethousands 
+    // boolean 
+    // If "true", even 4-digit integers are separated 
+    Separatethousands Bool `json:"separatethousands,omitempty"`
+    
+    // Showexponent 
+    // enumerated If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear. 
+    Showexponent ContourcarpetColorbarShowexponent `json:"showexponent,omitempty"`
+    
+    // Showticklabels 
+    // boolean 
+    // Determines whether or not the tick labels are drawn. 
+    Showticklabels Bool `json:"showticklabels,omitempty"`
+    
+    // Showtickprefix 
+    // enumerated If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden. 
+    Showtickprefix ContourcarpetColorbarShowtickprefix `json:"showtickprefix,omitempty"`
+    
+    // Showticksuffix 
+    // enumerated Same as `showtickprefix` but for tick suffixes. 
+    Showticksuffix ContourcarpetColorbarShowticksuffix `json:"showticksuffix,omitempty"`
+    
+    // Thickness 
+    // number 
+    // Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels. 
+    Thickness float64 `json:"thickness,omitempty"`
+    
+    // Thicknessmode 
+    // enumerated Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value. 
+    Thicknessmode ContourcarpetColorbarThicknessmode `json:"thicknessmode,omitempty"`
+    
+    // Tick0 
+    // any 
+    // Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears. 
+    Tick0 interface{} `json:"tick0,omitempty"`
+    
+    // Tickangle 
+    // angle 
+    // Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically. 
+    Tickangle float64 `json:"tickangle,omitempty"`
+    
+    // Tickcolor 
+    // color 
+    // Sets the tick color. 
+    Tickcolor Color `json:"tickcolor,omitempty"`
+    
+    // Tickfont 
+    //  Sets the color bar's tick label font 
+    Tickfont *ContourcarpetColorbarTickfont `json:"tickfont,omitempty"`
+    
+    // Tickformat 
+    // string 
+    // Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46* 
+    Tickformat String `json:"tickformat,omitempty"`
+    
+    // Tickformatstops 
+    // It's an items array and what goes inside it's... messy... check the docs 
+    // I will be happy if you want to contribute by implementing this 
+    // just raise an issue before you start so we do not overlap 
+    Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+    
+    // Ticklabelposition 
+    // enumerated Determines where tick labels are drawn. 
+    Ticklabelposition ContourcarpetColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+    
+    // Ticklen 
+    // number 
+    // Sets the tick length (in px). 
+    Ticklen float64 `json:"ticklen,omitempty"`
+    
+    // Tickmode 
+    // enumerated Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). 
+    Tickmode ContourcarpetColorbarTickmode `json:"tickmode,omitempty"`
+    
+    // Tickprefix 
+    // string 
+    // Sets a tick label prefix. 
+    Tickprefix String `json:"tickprefix,omitempty"`
+    
+    // Ticks 
+    // enumerated Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines. 
+    Ticks ContourcarpetColorbarTicks `json:"ticks,omitempty"`
+    
+    // Ticksuffix 
+    // string 
+    // Sets a tick label suffix. 
+    Ticksuffix String `json:"ticksuffix,omitempty"`
+    
+    // Ticktext 
+    // data_array 
+    // Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`. 
+    Ticktext interface{} `json:"ticktext,omitempty"`
+    
+    // Ticktextsrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  ticktext . 
+    Ticktextsrc String `json:"ticktextsrc,omitempty"`
+    
+    // Tickvals 
+    // data_array 
+    // Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`. 
+    Tickvals interface{} `json:"tickvals,omitempty"`
+    
+    // Tickvalssrc 
+    // string 
+    // Sets the source reference on Chart Studio Cloud for  tickvals . 
+    Tickvalssrc String `json:"tickvalssrc,omitempty"`
+    
+    // Tickwidth 
+    // number 
+    // Sets the tick width (in px). 
+    Tickwidth float64 `json:"tickwidth,omitempty"`
+    
+    // Title 
+    //   
+    Title *ContourcarpetColorbarTitle `json:"title,omitempty"`
+    
+    // X 
+    // number 
+    // Sets the x position of the color bar (in plot fraction). 
+    X float64 `json:"x,omitempty"`
+    
+    // Xanchor 
+    // enumerated Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. 
+    Xanchor ContourcarpetColorbarXanchor `json:"xanchor,omitempty"`
+    
+    // Xpad 
+    // number 
+    // Sets the amount of padding (in px) along the x direction. 
+    Xpad float64 `json:"xpad,omitempty"`
+    
+    // Y 
+    // number 
+    // Sets the y position of the color bar (in plot fraction). 
+    Y float64 `json:"y,omitempty"`
+    
+    // Yanchor 
+    // enumerated Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. 
+    Yanchor ContourcarpetColorbarYanchor `json:"yanchor,omitempty"`
+    
+    // Ypad 
+    // number 
+    // Sets the amount of padding (in px) along the y direction. 
+    Ypad float64 `json:"ypad,omitempty"`
+    
+}
+// ContourcarpetContoursLabelfont Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`.
+type ContourcarpetContoursLabelfont struct {
+    
+    // Color 
+    // color 
+    //  
+    Color Color `json:"color,omitempty"`
+    
+    // Family 
+    // string 
+    // HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*. 
+    Family String `json:"family,omitempty"`
+    
+    // Size 
+    // number 
+    //  
+    Size float64 `json:"size,omitempty"`
+    
+}
+// ContourcarpetContours 
+type ContourcarpetContours struct {
+    
+    // Coloring 
+    // enumerated Determines the coloring method showing the contour values. If *fill*, coloring is done evenly between each contour level If *lines*, coloring is done on the contour lines. If *none*, no coloring is applied on this trace. 
+    Coloring ContourcarpetContoursColoring `json:"coloring,omitempty"`
+    
+    // End 
+    // number 
+    // Sets the end contour level value. Must be more than `contours.start` 
+    End float64 `json:"end,omitempty"`
+    
+    // Labelfont 
+    //  Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`. 
+    Labelfont *ContourcarpetContoursLabelfont `json:"labelfont,omitempty"`
+    
+    // Labelformat 
+    // string 
+    // Sets the contour label formatting rule using d3 formatting mini-language which is very similar to Python, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format 
+    Labelformat String `json:"labelformat,omitempty"`
+    
+    // Operation 
+    // enumerated Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms. 
+    Operation ContourcarpetContoursOperation `json:"operation,omitempty"`
+    
+    // Showlabels 
+    // boolean 
+    // Determines whether to label the contour lines with their values. 
+    Showlabels Bool `json:"showlabels,omitempty"`
+    
+    // Showlines 
+    // boolean 
+    // Determines whether or not the contour lines are drawn. Has an effect only if `contours.coloring` is set to *fill*. 
+    Showlines Bool `json:"showlines,omitempty"`
+    
+    // Size 
+    // number 
+    // Sets the step between each contour level. Must be positive. 
+    Size float64 `json:"size,omitempty"`
+    
+    // Start 
+    // number 
+    // Sets the starting contour level value. Must be less than `contours.end` 
+    Start float64 `json:"start,omitempty"`
+    
+    // Type 
+    // enumerated If `levels`, the data is represented as a contour plot with multiple levels displayed. If `constraint`, the data is represented as constraints with the invalid region shaded as specified by the `operation` and `value` parameters. 
+    Type ContourcarpetContoursType `json:"type,omitempty"`
+    
+    // Value 
+    // any 
+    // Sets the value or values of the constraint boundary. When `operation` is set to one of the comparison values (=,<,>=,>,<=) *value* is expected to be a number. When `operation` is set to one of the interval values ([],(),[),(],][,)(,](,)[) *value* is expected to be an array of two numbers where the first is the lower bound and the second is the upper bound. 
+    Value interface{} `json:"value,omitempty"`
+    
+}
+// ContourcarpetLine 
+type ContourcarpetLine struct {
+    
+    // Color 
+    // color 
+    // Sets the color of the contour level. Has no effect if `contours.coloring` is set to *lines*. 
+    Color Color `json:"color,omitempty"`
+    
+    // Dash 
+    // string 
+    // Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*). 
+    Dash String `json:"dash,omitempty"`
+    
+    // Smoothing 
+    // number 
+    // Sets the amount of smoothing for the contour lines, where *0* corresponds to no smoothing. 
+    Smoothing float64 `json:"smoothing,omitempty"`
+    
+    // Width 
+    // number 
+    // Sets the contour line width in (in px) Defaults to *0.5* when `contours.type` is *levels*. Defaults to *2* when `contour.type` is *constraint*. 
+    Width float64 `json:"width,omitempty"`
+    
+}
+// ContourcarpetStream 
+type ContourcarpetStream struct {
+    
+    // Maxpoints 
+    // number 
+    // Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot. 
+    Maxpoints float64 `json:"maxpoints,omitempty"`
+    
+    // Token 
+    // string 
+    // The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details. 
+    Token String `json:"token,omitempty"`
+    
+}
+// ContourcarpetAtype If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
+type ContourcarpetAtype string 
+
+const (
+    ContourcarpetAtypeArray ContourcarpetAtype = "array"
+    ContourcarpetAtypeScaled ContourcarpetAtype = "scaled"
+    
+)
+// ContourcarpetBtype If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
+type ContourcarpetBtype string 
+
+const (
+    ContourcarpetBtypeArray ContourcarpetBtype = "array"
+    ContourcarpetBtypeScaled ContourcarpetBtype = "scaled"
+    
+)
+// ContourcarpetColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+type ContourcarpetColorbarExponentformat string 
+
+const (
+    ContourcarpetColorbarExponentformatNone ContourcarpetColorbarExponentformat = "none"
+    ContourcarpetColorbarExponentformatE1 ContourcarpetColorbarExponentformat = "e"
+    ContourcarpetColorbarExponentformatE2 ContourcarpetColorbarExponentformat = "E"
+    ContourcarpetColorbarExponentformatPower ContourcarpetColorbarExponentformat = "power"
+    ContourcarpetColorbarExponentformatSi ContourcarpetColorbarExponentformat = "SI"
+    ContourcarpetColorbarExponentformatB ContourcarpetColorbarExponentformat = "B"
+    
+)
+// ContourcarpetColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+type ContourcarpetColorbarLenmode string 
+
+const (
+    ContourcarpetColorbarLenmodeFraction ContourcarpetColorbarLenmode = "fraction"
+    ContourcarpetColorbarLenmodePixels ContourcarpetColorbarLenmode = "pixels"
+    
+)
+// ContourcarpetColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+type ContourcarpetColorbarShowexponent string 
+
+const (
+    ContourcarpetColorbarShowexponentAll ContourcarpetColorbarShowexponent = "all"
+    ContourcarpetColorbarShowexponentFirst ContourcarpetColorbarShowexponent = "first"
+    ContourcarpetColorbarShowexponentLast ContourcarpetColorbarShowexponent = "last"
+    ContourcarpetColorbarShowexponentNone ContourcarpetColorbarShowexponent = "none"
+    
+)
+// ContourcarpetColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+type ContourcarpetColorbarShowtickprefix string 
+
+const (
+    ContourcarpetColorbarShowtickprefixAll ContourcarpetColorbarShowtickprefix = "all"
+    ContourcarpetColorbarShowtickprefixFirst ContourcarpetColorbarShowtickprefix = "first"
+    ContourcarpetColorbarShowtickprefixLast ContourcarpetColorbarShowtickprefix = "last"
+    ContourcarpetColorbarShowtickprefixNone ContourcarpetColorbarShowtickprefix = "none"
+    
+)
+// ContourcarpetColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+type ContourcarpetColorbarShowticksuffix string 
+
+const (
+    ContourcarpetColorbarShowticksuffixAll ContourcarpetColorbarShowticksuffix = "all"
+    ContourcarpetColorbarShowticksuffixFirst ContourcarpetColorbarShowticksuffix = "first"
+    ContourcarpetColorbarShowticksuffixLast ContourcarpetColorbarShowticksuffix = "last"
+    ContourcarpetColorbarShowticksuffixNone ContourcarpetColorbarShowticksuffix = "none"
+    
+)
+// ContourcarpetColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+type ContourcarpetColorbarThicknessmode string 
+
+const (
+    ContourcarpetColorbarThicknessmodeFraction ContourcarpetColorbarThicknessmode = "fraction"
+    ContourcarpetColorbarThicknessmodePixels ContourcarpetColorbarThicknessmode = "pixels"
+    
+)
+// ContourcarpetColorbarTicklabelposition Determines where tick labels are drawn.
+type ContourcarpetColorbarTicklabelposition string 
+
+const (
+    ContourcarpetColorbarTicklabelpositionOutside ContourcarpetColorbarTicklabelposition = "outside"
+    ContourcarpetColorbarTicklabelpositionInside ContourcarpetColorbarTicklabelposition = "inside"
+    ContourcarpetColorbarTicklabelpositionOutsideTop ContourcarpetColorbarTicklabelposition = "outside top"
+    ContourcarpetColorbarTicklabelpositionInsideTop ContourcarpetColorbarTicklabelposition = "inside top"
+    ContourcarpetColorbarTicklabelpositionOutsideBottom ContourcarpetColorbarTicklabelposition = "outside bottom"
+    ContourcarpetColorbarTicklabelpositionInsideBottom ContourcarpetColorbarTicklabelposition = "inside bottom"
+    
+)
+// ContourcarpetColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+type ContourcarpetColorbarTickmode string 
+
+const (
+    ContourcarpetColorbarTickmodeAuto ContourcarpetColorbarTickmode = "auto"
+    ContourcarpetColorbarTickmodeLinear ContourcarpetColorbarTickmode = "linear"
+    ContourcarpetColorbarTickmodeArray ContourcarpetColorbarTickmode = "array"
+    
+)
+// ContourcarpetColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+type ContourcarpetColorbarTicks string 
+
+const (
+    ContourcarpetColorbarTicksOutside ContourcarpetColorbarTicks = "outside"
+    ContourcarpetColorbarTicksInside ContourcarpetColorbarTicks = "inside"
+    ContourcarpetColorbarTicksEmpty ContourcarpetColorbarTicks = ""
+    
+)
+// ContourcarpetColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+type ContourcarpetColorbarTitleSide string 
+
+const (
+    ContourcarpetColorbarTitleSideRight ContourcarpetColorbarTitleSide = "right"
+    ContourcarpetColorbarTitleSideTop ContourcarpetColorbarTitleSide = "top"
+    ContourcarpetColorbarTitleSideBottom ContourcarpetColorbarTitleSide = "bottom"
+    
+)
+// ContourcarpetColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+type ContourcarpetColorbarXanchor string 
+
+const (
+    ContourcarpetColorbarXanchorLeft ContourcarpetColorbarXanchor = "left"
+    ContourcarpetColorbarXanchorCenter ContourcarpetColorbarXanchor = "center"
+    ContourcarpetColorbarXanchorRight ContourcarpetColorbarXanchor = "right"
+    
+)
+// ContourcarpetColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+type ContourcarpetColorbarYanchor string 
+
+const (
+    ContourcarpetColorbarYanchorTop ContourcarpetColorbarYanchor = "top"
+    ContourcarpetColorbarYanchorMiddle ContourcarpetColorbarYanchor = "middle"
+    ContourcarpetColorbarYanchorBottom ContourcarpetColorbarYanchor = "bottom"
+    
+)
+// ContourcarpetContoursColoring Determines the coloring method showing the contour values. If *fill*, coloring is done evenly between each contour level If *lines*, coloring is done on the contour lines. If *none*, no coloring is applied on this trace.
+type ContourcarpetContoursColoring string 
+
+const (
+    ContourcarpetContoursColoringFill ContourcarpetContoursColoring = "fill"
+    ContourcarpetContoursColoringLines ContourcarpetContoursColoring = "lines"
+    ContourcarpetContoursColoringNone ContourcarpetContoursColoring = "none"
+    
+)
+// ContourcarpetContoursOperation Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
+type ContourcarpetContoursOperation string 
+
+const (
+    ContourcarpetContoursOperationEq ContourcarpetContoursOperation = "="
+    ContourcarpetContoursOperationLt ContourcarpetContoursOperation = "<"
+    ContourcarpetContoursOperationGtEq ContourcarpetContoursOperation = ">="
+    ContourcarpetContoursOperationGt ContourcarpetContoursOperation = ">"
+    ContourcarpetContoursOperationLtEq ContourcarpetContoursOperation = "<="
+    ContourcarpetContoursOperationLbracketRbracket ContourcarpetContoursOperation = "[]"
+    ContourcarpetContoursOperationLparRpar ContourcarpetContoursOperation = "()"
+    ContourcarpetContoursOperationLbracketRpar ContourcarpetContoursOperation = "[)"
+    ContourcarpetContoursOperationLparRbracket ContourcarpetContoursOperation = "(]"
+    ContourcarpetContoursOperationRbracketLbracket ContourcarpetContoursOperation = "]["
+    ContourcarpetContoursOperationRparLpar ContourcarpetContoursOperation = ")("
+    ContourcarpetContoursOperationRbracketLpar ContourcarpetContoursOperation = "]("
+    ContourcarpetContoursOperationRparLbracket ContourcarpetContoursOperation = ")["
+    
+)
+// ContourcarpetContoursType If `levels`, the data is represented as a contour plot with multiple levels displayed. If `constraint`, the data is represented as constraints with the invalid region shaded as specified by the `operation` and `value` parameters.
+type ContourcarpetContoursType string 
+
+const (
+    ContourcarpetContoursTypeLevels ContourcarpetContoursType = "levels"
+    ContourcarpetContoursTypeConstraint ContourcarpetContoursType = "constraint"
+    
+)
+// ContourcarpetVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+type ContourcarpetVisible interface{} 
+
+var (
+    ContourcarpetVisibleTrue ContourcarpetVisible = true
+    ContourcarpetVisibleFalse ContourcarpetVisible = false
+    ContourcarpetVisibleLegendonly ContourcarpetVisible = "legendonly"
+    
+)
