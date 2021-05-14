@@ -563,6 +563,32 @@ func (r *Renderer) WriteConfig(dir string) error {
 	return nil
 }
 
+func (r *Renderer) WriteUnmarshal(dir string) error {
+	w, err := r.fs.Create(path.Join(dir, "unmarshal_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer w.Close()
+
+	unmarshalFile := UnmarshalFile{
+		Types: make([]string, 0, len(r.root.Schema.Traces)),
+	}
+
+	for trace := range r.root.Schema.Traces {
+		unmarshalFile.Types = append(unmarshalFile.Types, xstrings.ToCamelCase(trace))
+	}
+
+	err = r.tmpl.ExecuteTemplate(w, "unmarshal.tmpl", unmarshalFile)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+type UnmarshalFile struct {
+	Types []string
+}
+
 type TypeFile struct {
 	MainType  Struct
 	Objects   []Struct

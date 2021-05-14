@@ -249,6 +249,24 @@ type Layout struct {
     //   
     Yaxis *LayoutYaxis `json:"yaxis,omitempty"`
     
+    // Bargap 
+    // number 
+    // Sets the gap (in plot fraction) between bars of adjacent location coordinates. 
+    Bargap float64 `json:"bargap,omitempty"`
+    
+    // Bargroupgap 
+    // number 
+    // Sets the gap (in plot fraction) between bars of the same location coordinate. 
+    Bargroupgap float64 `json:"bargroupgap,omitempty"`
+    
+    // Barmode 
+    // enumerated Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars. 
+    Barmode LayoutBarmode `json:"barmode,omitempty"`
+    
+    // Barnorm 
+    // enumerated Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages. 
+    Barnorm LayoutBarnorm `json:"barnorm,omitempty"`
+    
     // Boxgap 
     // number 
     // Sets the gap (in plot fraction) between boxes of adjacent location coordinates. Has no effect on traces that have *width* set. 
@@ -262,43 +280,6 @@ type Layout struct {
     // Boxmode 
     // enumerated Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set. 
     Boxmode LayoutBoxmode `json:"boxmode,omitempty"`
-    
-    // Funnelgap 
-    // number 
-    // Sets the gap (in plot fraction) between bars of adjacent location coordinates. 
-    Funnelgap float64 `json:"funnelgap,omitempty"`
-    
-    // Funnelgroupgap 
-    // number 
-    // Sets the gap (in plot fraction) between bars of the same location coordinate. 
-    Funnelgroupgap float64 `json:"funnelgroupgap,omitempty"`
-    
-    // Funnelmode 
-    // enumerated Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars. 
-    Funnelmode LayoutFunnelmode `json:"funnelmode,omitempty"`
-    
-    // Violingap 
-    // number 
-    // Sets the gap (in plot fraction) between violins of adjacent location coordinates. Has no effect on traces that have *width* set. 
-    Violingap float64 `json:"violingap,omitempty"`
-    
-    // Violingroupgap 
-    // number 
-    // Sets the gap (in plot fraction) between violins of the same location coordinate. Has no effect on traces that have *width* set. 
-    Violingroupgap float64 `json:"violingroupgap,omitempty"`
-    
-    // Violinmode 
-    // enumerated Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set. 
-    Violinmode LayoutViolinmode `json:"violinmode,omitempty"`
-    
-    // Bargap 
-    // number 
-    // Sets the gap between bars of adjacent location coordinates. Values are unitless, they represent fractions of the minimum difference in bar positions in the data. 
-    Bargap float64 `json:"bargap,omitempty"`
-    
-    // Barmode 
-    // enumerated Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars. 
-    Barmode LayoutBarmode `json:"barmode,omitempty"`
     
     // Waterfallgap 
     // number 
@@ -324,16 +305,6 @@ type Layout struct {
     // Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`. 
     Sunburstcolorway ColorList `json:"sunburstcolorway,omitempty"`
     
-    // Extendtreemapcolors 
-    // boolean 
-    // If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended. 
-    Extendtreemapcolors Bool `json:"extendtreemapcolors,omitempty"`
-    
-    // Treemapcolorway 
-    // colorlist 
-    // Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`. 
-    Treemapcolorway ColorList `json:"treemapcolorway,omitempty"`
-    
     // Extendfunnelareacolors 
     // boolean 
     // If `true`, the funnelarea slice colors (whether given by `funnelareacolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended. 
@@ -354,14 +325,33 @@ type Layout struct {
     // Sets the source reference on Chart Studio Cloud for  hiddenlabels . 
     Hiddenlabelssrc String `json:"hiddenlabelssrc,omitempty"`
     
-    // Bargroupgap 
+    // Violingap 
+    // number 
+    // Sets the gap (in plot fraction) between violins of adjacent location coordinates. Has no effect on traces that have *width* set. 
+    Violingap float64 `json:"violingap,omitempty"`
+    
+    // Violingroupgap 
+    // number 
+    // Sets the gap (in plot fraction) between violins of the same location coordinate. Has no effect on traces that have *width* set. 
+    Violingroupgap float64 `json:"violingroupgap,omitempty"`
+    
+    // Violinmode 
+    // enumerated Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set. 
+    Violinmode LayoutViolinmode `json:"violinmode,omitempty"`
+    
+    // Funnelgap 
+    // number 
+    // Sets the gap (in plot fraction) between bars of adjacent location coordinates. 
+    Funnelgap float64 `json:"funnelgap,omitempty"`
+    
+    // Funnelgroupgap 
     // number 
     // Sets the gap (in plot fraction) between bars of the same location coordinate. 
-    Bargroupgap float64 `json:"bargroupgap,omitempty"`
+    Funnelgroupgap float64 `json:"funnelgroupgap,omitempty"`
     
-    // Barnorm 
-    // enumerated Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages. 
-    Barnorm LayoutBarnorm `json:"barnorm,omitempty"`
+    // Funnelmode 
+    // enumerated Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars. 
+    Funnelmode LayoutFunnelmode `json:"funnelmode,omitempty"`
     
     // Extendpiecolors 
     // boolean 
@@ -372,6 +362,16 @@ type Layout struct {
     // colorlist 
     // Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`. 
     Piecolorway ColorList `json:"piecolorway,omitempty"`
+    
+    // Extendtreemapcolors 
+    // boolean 
+    // If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended. 
+    Extendtreemapcolors Bool `json:"extendtreemapcolors,omitempty"`
+    
+    // Treemapcolorway 
+    // colorlist 
+    // Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`. 
+    Treemapcolorway ColorList `json:"treemapcolorway,omitempty"`
     
 }
 // LayoutActiveshape 
@@ -7204,47 +7204,42 @@ const (
     LayoutYaxisTypeMulticategory LayoutYaxisType = "multicategory"
     
 )
-// LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
-type LayoutBoxmode string 
-
-const (
-    BoxBoxmodeGroup LayoutBoxmode = "group"
-    BoxBoxmodeOverlay LayoutBoxmode = "overlay"
-    CandlestickBoxmodeGroup LayoutBoxmode = "group"
-    CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
-    
-)
-// LayoutFunnelmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
-type LayoutFunnelmode string 
-
-const (
-    FunnelFunnelmodeStack LayoutFunnelmode = "stack"
-    FunnelFunnelmodeGroup LayoutFunnelmode = "group"
-    FunnelFunnelmodeOverlay LayoutFunnelmode = "overlay"
-    
-)
-// LayoutViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
-type LayoutViolinmode string 
-
-const (
-    ViolinViolinmodeGroup LayoutViolinmode = "group"
-    ViolinViolinmodeOverlay LayoutViolinmode = "overlay"
-    
-)
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 type LayoutBarmode string 
 
 const (
+    HistogramBarmodeStack LayoutBarmode = "stack"
+    HistogramBarmodeGroup LayoutBarmode = "group"
+    HistogramBarmodeOverlay LayoutBarmode = "overlay"
+    HistogramBarmodeRelative LayoutBarmode = "relative"
     BarpolarBarmodeStack LayoutBarmode = "stack"
     BarpolarBarmodeOverlay LayoutBarmode = "overlay"
     BarBarmodeStack LayoutBarmode = "stack"
     BarBarmodeGroup LayoutBarmode = "group"
     BarBarmodeOverlay LayoutBarmode = "overlay"
     BarBarmodeRelative LayoutBarmode = "relative"
-    HistogramBarmodeStack LayoutBarmode = "stack"
-    HistogramBarmodeGroup LayoutBarmode = "group"
-    HistogramBarmodeOverlay LayoutBarmode = "overlay"
-    HistogramBarmodeRelative LayoutBarmode = "relative"
+    
+)
+// LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
+type LayoutBarnorm string 
+
+const (
+    HistogramBarnormEmpty LayoutBarnorm = ""
+    HistogramBarnormFraction LayoutBarnorm = "fraction"
+    HistogramBarnormPercent LayoutBarnorm = "percent"
+    BarBarnormEmpty LayoutBarnorm = ""
+    BarBarnormFraction LayoutBarnorm = "fraction"
+    BarBarnormPercent LayoutBarnorm = "percent"
+    
+)
+// LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
+type LayoutBoxmode string 
+
+const (
+    CandlestickBoxmodeGroup LayoutBoxmode = "group"
+    CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
+    BoxBoxmodeGroup LayoutBoxmode = "group"
+    BoxBoxmodeOverlay LayoutBoxmode = "overlay"
     
 )
 // LayoutWaterfallmode Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
@@ -7255,16 +7250,21 @@ const (
     WaterfallWaterfallmodeOverlay LayoutWaterfallmode = "overlay"
     
 )
-// LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
-type LayoutBarnorm string 
+// LayoutViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
+type LayoutViolinmode string 
 
 const (
-    BarBarnormEmpty LayoutBarnorm = ""
-    BarBarnormFraction LayoutBarnorm = "fraction"
-    BarBarnormPercent LayoutBarnorm = "percent"
-    HistogramBarnormEmpty LayoutBarnorm = ""
-    HistogramBarnormFraction LayoutBarnorm = "fraction"
-    HistogramBarnormPercent LayoutBarnorm = "percent"
+    ViolinViolinmodeGroup LayoutViolinmode = "group"
+    ViolinViolinmodeOverlay LayoutViolinmode = "overlay"
+    
+)
+// LayoutFunnelmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+type LayoutFunnelmode string 
+
+const (
+    FunnelFunnelmodeStack LayoutFunnelmode = "stack"
+    FunnelFunnelmodeGroup LayoutFunnelmode = "group"
+    FunnelFunnelmodeOverlay LayoutFunnelmode = "overlay"
     
 )
 // LayoutClickmode Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.

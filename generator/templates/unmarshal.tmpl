@@ -1,0 +1,32 @@
+package grob
+
+import (
+	"encoding/json"
+	"errors"
+)
+
+type unmarshalType struct {
+	Type TraceType `json:"type,omitempty"`
+}
+
+// UnmarshalTrace decodes an array of bytes into a Trace interface.
+func UnmarshalTrace(data []byte) (Trace,error) {
+	traceType := unmarshalType{}
+	err := json.Unmarshal(data, &traceType)
+	if err != nil {
+		return nil, err
+	}
+	switch traceType.Type {
+{{- range $name := .Types }}
+    case TraceType{{ $name }}:
+        trace := &{{ $name }}{}
+        err = json.Unmarshal(data,trace)
+        if err != nil {
+            return nil, err
+        }
+        return trace, nil
+{{- end }}
+    default:
+        return nil, errors.New("Trace Type is not registered")
+	}
+}

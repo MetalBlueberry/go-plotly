@@ -46,6 +46,28 @@ func (fig *Fig) AddTraces(traces ...Trace) {
 	fig.Data = append(fig.Data, traces...)
 }
 
+// UnmarshalJSON is a custom unmarshal function to properly handle special cases.
+func (fig *Fig) UnmarshalJSON(data []byte) error {
+	var err error
+	tmp := unmarshalFig{}
+	err = json.Unmarshal(data, &tmp)
+	if err != nil {
+		return err
+	}
+
+	fig.Layout = tmp.Layout
+	fig.Config = tmp.Config
+
+	for i := range tmp.Data {
+		trace, err := UnmarshalTrace(tmp.Data[i])
+		if err != nil {
+			return err
+		}
+		fig.AddTraces(trace)
+	}
+	return nil
+}
+
 type unmarshalFig struct {
 	Data   []json.RawMessage `json:"data,omitempty"`
 	Layout *Layout           `json:"layout,omitempty"`

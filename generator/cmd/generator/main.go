@@ -53,4 +53,9 @@ func main() {
 	if err != nil {
 		log.Fatal("unable to write config, %w", err)
 	}
+
+	err = r.WriteUnmarshal(output)
+	if err != nil {
+		log.Fatal("unable to write unmarshal, %w", err)
+	}
 }
