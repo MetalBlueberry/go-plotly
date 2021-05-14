@@ -97,7 +97,7 @@ func (r *TypeFile) parseAttributes(namePrefix string, typePrefix string, attr ma
 			fields = append(fields, StructField{
 				Name:        xstrings.ToCamelCase(attr.Name),
 				JSONName:    attr.Name,
-				Type:        name,
+				Type:        "*" + name,
 				Description: []string{string(attr.ValType) + " " + attr.Description},
 			})
 
@@ -311,7 +311,7 @@ func (r *TypeFile) parseFlaglist(name string, attr *Attribute) error {
 
 	ConstOrVar := Const
 	Type := "string"
-	for _, attrValue := range attr.Values {
+	for _, attrValue := range attr.Extras {
 		if _, ok := attrValue.(bool); ok {
 			ConstOrVar = Var
 			Type = "interface{}"
@@ -528,7 +528,7 @@ func (r *Renderer) WriteConfig(dir string) error {
 		Enums:     []Enum{},
 		FlagLists: []FlagList{},
 	}
-	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Config.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
