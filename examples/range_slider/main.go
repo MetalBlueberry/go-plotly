@@ -122,7 +122,7 @@ func main() {
 			Rangeslider: &grob.LayoutXaxisRangeslider{
 				Visible: grob.True,
 			},
-			Type: grob.LayoutXaxisType_date,
+			Type: grob.LayoutXaxisTypeDate,
 		},
 	}
 

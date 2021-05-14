@@ -89,7 +89,7 @@ func main() {
 					{"xy", "x2y"},
 					{"xy3", "x4y4"},
 				},
-				Roworder: grob.LayoutGridRoworder_bottomtotop,
+				Roworder: grob.LayoutGridRoworderBottomToTop,
 			},
 		},
 	}

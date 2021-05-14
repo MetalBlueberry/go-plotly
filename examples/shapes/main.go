@@ -40,7 +40,7 @@ func main() {
 					Line: grob.ScatterLine{
 						Color: "LightSeaGreen",
 						Width: 4,
-						Dash:  grob.Scatter3dLineDash_dashdot,
+						Dash:  grob.Scatter3dLineDashDashdot,
 					},
 				},
 				{
@@ -52,7 +52,7 @@ func main() {
 					Line: grob.ScatterLine{
 						Color: "MediumPurple",
 						Width: 4,
-						Dash:  grob.Scatter3dLineDash_dot,
+						Dash:  grob.Scatter3dLineDashDot,
 					},
 				},
 			},
