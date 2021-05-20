@@ -19,8 +19,15 @@ type typeFile struct {
 type sstruct struct {
 	Name        string
 	Description string
-	Fields      []structField
+	Fields      structFields
 }
+
+type structFields []structField
+
+func (a structFields) Len() int           { return len(a) }
+func (a structFields) Less(i, j int) bool { return a[i].Name < a[j].Name }
+func (a structFields) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
 type structField struct {
 	Name        string
 	JSONName    string

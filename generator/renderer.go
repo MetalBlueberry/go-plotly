@@ -178,6 +178,8 @@ func (r *Renderer) CreateLayout(dir string) error {
 		traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 	}
 
+	sort.Sort(traceFile.MainType.Fields)
+
 	// remove duplicate fields
 	uniqueFields := make([]structField, 0, len(traceFile.MainType.Fields))
 	fieldMap := map[string]int{}
@@ -302,6 +304,7 @@ func (r *Renderer) CreateUnmarshal(dir string) error {
 	for trace := range r.root.Schema.Traces {
 		file.Types = append(file.Types, xstrings.ToCamelCase(trace))
 	}
+	sort.Strings(file.Types)
 
 	err = r.tmpl.ExecuteTemplate(w, "unmarshal.tmpl", file)
 	if err != nil {
