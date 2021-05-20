@@ -76,16 +76,16 @@ type TraceAttributes struct {
 	Names map[string]*Attribute `json:"-"`
 }
 
-func (a *TraceAttributes) Sorted() []string {
-	keys := make([]string, 0, len(a.Names))
-	for k := range a.Names {
+func (attr *TraceAttributes) Sorted() []string {
+	keys := make([]string, 0, len(attr.Names))
+	for k := range attr.Names {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
 	return keys
 }
 
-func (obj *TraceAttributes) UnmarshalJSON(b []byte) error {
+func (attr *TraceAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
 	fields := map[string]json.RawMessage{}
@@ -93,7 +93,7 @@ func (obj *TraceAttributes) UnmarshalJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
-	err = json.Unmarshal(fields["type"], &obj.Type)
+	err = json.Unmarshal(fields["type"], &attr.Type)
 	if err != nil {
 		return err
 	}
@@ -103,7 +103,7 @@ func (obj *TraceAttributes) UnmarshalJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
-	obj.Names = names
+	attr.Names = names
 
 	return nil
 }
@@ -112,7 +112,7 @@ type LayoutAttributes struct {
 	Names map[string]*Attribute `json:"-"`
 }
 
-func (obj *LayoutAttributes) UnmarshalJSON(b []byte) error {
+func (attr *LayoutAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
 	fields := map[string]json.RawMessage{}
@@ -125,11 +125,11 @@ func (obj *LayoutAttributes) UnmarshalJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
-	obj.Names = names
+	attr.Names = names
 	return nil
 }
 
-func (obj *ConfigAttributes) UnmarshalJSON(b []byte) error {
+func (attr *ConfigAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
 	fields := map[string]json.RawMessage{}
@@ -142,7 +142,7 @@ func (obj *ConfigAttributes) UnmarshalJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
-	obj.Names = names
+	attr.Names = names
 	return nil
 }
 

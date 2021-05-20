@@ -39,22 +39,22 @@ func main() {
 
 	output := *outputDirectory
 
-	err = r.WriteTraces(output)
+	err = r.CreateTraces(output)
 	if err != nil {
 		log.Fatal("unable to write traces, %w", err)
 	}
 
-	err = r.WriteLayout(output)
+	err = r.CreateLayout(output)
 	if err != nil {
 		log.Fatal("unable to write layout, %w", err)
 	}
 
-	err = r.WriteConfig(output)
+	err = r.CreateConfig(output)
 	if err != nil {
 		log.Fatal("unable to write config, %w", err)
 	}
 
-	err = r.WriteUnmarshal(output)
+	err = r.CreateUnmarshal(output)
 	if err != nil {
 		log.Fatal("unable to write unmarshal, %w", err)
 	}
