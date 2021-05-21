@@ -101,10 +101,12 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)
 			}
 			fields = append(fields, structField{
-				Name:        xstrings.ToCamelCase(attr.Name),
-				JSONName:    attr.Name,
-				Type:        "*" + name,
-				Description: []string{string(attr.ValType) + " " + attr.Description},
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     "*" + name,
+				Description: []string{
+					"role: Object",
+				},
 			})
 
 		case attr.ValType == ValTypeFlagList:
@@ -114,10 +116,14 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
 			}
 			fields = append(fields, structField{
-				Name:        xstrings.ToCamelCase(attr.Name),
-				JSONName:    attr.Name,
-				Type:        typePrefix + xstrings.ToCamelCase(attr.Name),
-				Description: []string{string(attr.ValType) + " " + attr.Description},
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     typePrefix + xstrings.ToCamelCase(attr.Name),
+				Description: []string{
+					fmt.Sprintf("default: %s", attr.Dflt),
+					fmt.Sprintf("type: %s", attr.ValType),
+					attr.Description,
+				},
 			})
 
 		case attr.ValType == ValTypeEnum:
@@ -128,10 +134,14 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
 			fields = append(fields, structField{
-				Name:        xstrings.ToCamelCase(attr.Name),
-				JSONName:    attr.Name,
-				Type:        typeName,
-				Description: []string{string(attr.ValType) + " " + attr.Description},
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     typeName,
+				Description: []string{
+					fmt.Sprintf("default: %s", attr.Dflt),
+					fmt.Sprintf("type: %s", attr.ValType),
+					attr.Description,
+				},
 			})
 
 		case attr.ValType == ValTypeColorscale:
@@ -140,9 +150,9 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				JSONName: attr.Name,
 				Type:     "ColorScale",
 				Description: []string{
-					string(attr.ValType),
+					fmt.Sprintf("default: %s", attr.Dflt),
+					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
-					fmt.Sprintf("Default: %v", attr.Dflt),
 				},
 			})
 
@@ -153,7 +163,8 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				JSONName: attr.Name,
 				Type:     ty,
 				Description: []string{
-					string(attr.ValType),
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
+					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
 				},
 			})
