@@ -34,7 +34,7 @@ var _ = Describe("Renderer", func() {
 	It("Should create package", func() {
 		buf := NopWriterCloser{&bytes.Buffer{}}
 
-		mockCreator.EXPECT().Create(gomock.Eq("scatter.go")).Return(buf, nil).Times(1)
+		mockCreator.EXPECT().Create(gomock.Eq("scatter_gen.go")).Return(buf, nil).Times(1)
 
 		root, err := generator.LoadSchema(bytes.NewReader(schema))
 		Expect(err).To(BeNil())
@@ -42,7 +42,7 @@ var _ = Describe("Renderer", func() {
 		r, err := generator.NewRenderer(mockCreator, root)
 		Expect(err).To(BeNil())
 
-		err = r.CreateTrace("scatter")
+		err = r.CreateTrace(".", "scatter")
 		Expect(err).To(BeNil())
 
 		formatted, err := format.Source(buf.Bytes())

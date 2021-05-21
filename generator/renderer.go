@@ -1,8 +1,10 @@
 package generator
 
 import (
+	"bytes"
 	"embed"
 	"fmt"
+	"go/format"
 	"io"
 	"path"
 	"sort"
@@ -43,15 +45,27 @@ func NewRenderer(fs Creator, root *Root) (*Renderer, error) {
 }
 
 // CreateTrace creates a file with the content of a trace by name
-func (r *Renderer) CreateTrace(traceName string) error {
-	traceFile, err := r.fs.Create(traceName + ".go")
+func (r *Renderer) CreateTrace(dir string, name string) error {
+	src := &bytes.Buffer{}
+	err := r.WriteTrace(name, src)
 	if err != nil {
 		return err
 	}
-	defer traceFile.Close()
-	err = r.WriteTrace(traceName, traceFile)
+
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, name+"_gen.go"))
 	if err != nil {
 		return err
+	}
+	defer file.Close()
+
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
 	}
 
 	return nil
@@ -132,14 +146,9 @@ func (r *Renderer) CreateTraces(dir string) error {
 	}
 	sort.Strings(traceNames)
 	for _, name := range traceNames {
-		f, err := r.fs.Create(path.Join(dir, name+"_gen.go"))
+		err := r.CreateTrace(dir, name)
 		if err != nil {
-			return fmt.Errorf("cannot create file, %w", err)
-		}
-		defer f.Close()
-		err = r.WriteTrace(name, f)
-		if err != nil {
-			return fmt.Errorf("cannot write trace, %w", err)
+			return fmt.Errorf("cannot create trace, %w", err)
 		}
 	}
 	return nil
@@ -147,12 +156,32 @@ func (r *Renderer) CreateTraces(dir string) error {
 
 // CreateLayout creates the layout file in the given directory
 func (r *Renderer) CreateLayout(dir string) error {
-	w, err := r.fs.Create(path.Join(dir, "layout_gen.go"))
+	src := &bytes.Buffer{}
+	err := r.WriteLayout(src)
 	if err != nil {
 		return err
 	}
-	defer w.Close()
 
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "layout_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteLayout writes layout to the given writer
+func (r *Renderer) WriteLayout(w io.Writer) error {
 	traceFile := typeFile{
 		MainType: sstruct{
 			Name:        "Layout",
@@ -234,16 +263,37 @@ func (r *Renderer) CreateLayout(dir string) error {
 		}
 	}
 	return nil
+
 }
 
 // CreateConfig creates the config file in the given director
 func (r *Renderer) CreateConfig(dir string) error {
-	w, err := r.fs.Create(path.Join(dir, "config_gen.go"))
+	src := &bytes.Buffer{}
+	err := r.WriteConfig(src)
 	if err != nil {
 		return err
 	}
-	defer w.Close()
 
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "config_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteConfig writes config to the given writer
+func (r *Renderer) WriteConfig(w io.Writer) error {
 	traceFile := typeFile{
 		MainType: sstruct{
 			Name:        "Config",
@@ -291,12 +341,32 @@ func (r *Renderer) CreateConfig(dir string) error {
 
 // CreateUnmarshal creates the unmarshal file on the given directory
 func (r *Renderer) CreateUnmarshal(dir string) error {
-	w, err := r.fs.Create(path.Join(dir, "unmarshal_gen.go"))
+	src := &bytes.Buffer{}
+	err := r.WriteUnmarshal(src)
 	if err != nil {
 		return err
 	}
-	defer w.Close()
 
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "unmarshal_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteUnmarshal writes unmarshal to the given writer
+func (r *Renderer) WriteUnmarshal(w io.Writer) error {
 	file := unmarshalFile{
 		Types: make([]string, 0, len(r.root.Schema.Traces)),
 	}
@@ -306,11 +376,7 @@ func (r *Renderer) CreateUnmarshal(dir string) error {
 	}
 	sort.Strings(file.Types)
 
-	err = r.tmpl.ExecuteTemplate(w, "unmarshal.tmpl", file)
-	if err != nil {
-		return err
-	}
-	return nil
+	return r.tmpl.ExecuteTemplate(w, "unmarshal.tmpl", file)
 }
 
 // unmarshalFile is a structure used to render unmarshal.tmpl
