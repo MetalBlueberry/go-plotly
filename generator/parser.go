@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// LoadSchema loads the plotly schema file
 func LoadSchema(r io.Reader) (*Root, error) {
 	decoder := json.NewDecoder(r)
 	root := &Root{}
@@ -19,6 +20,8 @@ func LoadSchema(r io.Reader) (*Root, error) {
 	return root, nil
 }
 
+// Root represents the root of the plotly schema
+// It is basically the struct representation of the json schema content
 type Root struct {
 	SHA1     string  `json:"sha1,omitempty"`
 	Modified bool    `json:"modified,omitempty"`
