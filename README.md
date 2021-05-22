@@ -57,23 +57,21 @@ See the examples dir for more examples.
 
 ## Structure
 
-All the traces are defined in [auto_traces.go](./graph_objects/auto_traces.go) and identified by the interface "Trace". Feel free to browse that file, but I prefer to use [Plotly's documentation](https://plotly.com/python/).
+Each trace type has its own file on **graph_objecs (grob)** package. The file contains the main structure and all the needed nested objects. Files ending with **_gen** are automatically generated files running `go generate`. This is executing the code in **generator** package to generate the structures from the plotly schema. The types are documented, but you can find more examples and extended documentation at [Plotly's documentation](https://plotly.com/python/).
 
-The values that can hold single values or arrays are defined as `interfaces{}`. Most common case are X and Y values. You can pass any number slice and it will work (`[]float64`,`[]int`,`[]int64`...). In case of Hovertext, you can provide a `[]string` to display a text for each point, a `string` to display the same for all or `[]int` to display a number.
-
-Enumerated values doesn't have a special type and you can assign whatever you want to them. But for type safety and autocompletion, you can look for the const value associated. For example, in case of "visible" you have to look for the const {{Type}}Visible{{Value}}. to hide a Scatter trace. `grob.ScatterVisibleFalse`. To known if a field is Enumerated, check the field description. the second word should be **enumerated**
+The values that can hold single values or arrays are defined as custom types that are a type definition of `interfaces{}`. Most common case are X and Y values. You can pass any number slice and it will work (`[]float64`,`[]int`,`[]int64`...). In case of Hovertext, you can provide a `[]string` to display a text for each point, a `string` to display the same for all or `[]int` to display a number.
 
 Nested Properties, are defined as new types. This is great for auto completion using vscode because you can write all the boilerplate with ctrl+space. For example, the field `Title.Text` is accessed by the property `Title` of type {{Type}}Title that contains the property `Text`. The Type is always the struct that contains the field. For Layout It is `LayoutTitle`.
 
-Flaglist Properties are defined like Enumerated values as constant fields. The difference is that they can be composed. Right now there is no special tool to deal with this and you can use the const to have autocompletion but you must be careful when joining them. For example, Scatter with mode="markers+lines" is `Mode: grob.ScatterModeMarkers + "+" + grob.ScatterModeLines,`
+Flaglist and Enumerated fields are defined with a type and its constant values. This provides useful autocompletion. Keep in mind that you can compose multiple values for a Flaglist like `Mode: grob.ScatterModeMarkers + "+" + grob.ScatterModeLines,`. You can read de inline documentation to see the default value.
 
 ## Tested
 
-Examples, Code generation and Offline package are based on version 1.54.0, but It should work with other versions as this library just generates standard JSON.
+Examples, Code generation and Offline package are based on version 1.58.4, but It should work with other versions as this library just generates standard JSON.
 
 ## Testing
 
-The package lacks of unit testing basically because it's just build JSON to be consumed by plotly.js. This means that I do not see a clear way of building valuable unit testing that doesn't involve the usage of plotly.js. If the package compiles, It means that types are generated correctly.
+The package lacks of unit testing basically because it's just building JSON to be consumed by plotly.js. This means that I do not see a clear way of building valuable unit testing that doesn't involve the usage of plotly.js. If the package compiles, It means that types are generated correctly.
 
 Said that, I'm thinking about adding some integration testing with Docker, but for now, I've enough if the examples are working.
 
@@ -93,7 +91,7 @@ In python, the component is called graph_objects, like in this package, but that
 
 ### How are the graph_object files generated?
 
-The tmpl files are parsed mainly with go templates with just a few extra functions that I've publish as a CLI tool called "[plate](https://github.com/MetalBlueberry/plate)". You can go there to read more about It. The good thing is that you don't need to use plate unless you want to contribute to this repo.
+I was using "[plate](https://github.com/MetalBlueberry/plate)", but it was a bad idea. Now it is just plan go code inside the **generator package**. This should be much easier to understand and to contribute. Let me know if you want to contribute!!
 
 ### What are the usecases?
 
@@ -101,9 +99,11 @@ The tmpl files are parsed mainly with go templates with just a few extra functio
 
 2. Generate an awesome dynamic plot in a local file with offline package.
 
-3. Tell me what you can do with this.
+3. I don't know, just do something awesome and let me know it.
 
 ### Why are the String and Bool types defined?
+
+> I'm thinking about defining everything as a pointer, it should be better in the long run
 
 This is to handle the omitempty flag in json serialization. Turns out that if the flag is set, you cannot create a json object with a flag set to `false`. For example, turn off visibility of the legend will be impossible without this.
 
