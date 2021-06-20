@@ -35,10 +35,12 @@ func main() {
 		},
 	}
 
+	fmt.Fprint(os.Stderr, "saving to PNG...\n")
 	err := savePNG(fig, "out.png")
 	if err != nil {
 		panic(err)
 	}
+	fmt.Fprint(os.Stderr, "Done!\n")
 }
 
 func savePNG(fig *grob.Fig, path string) error {
@@ -47,7 +49,6 @@ func savePNG(fig *grob.Fig, path string) error {
 
 	in, err := cmd.StdinPipe()
 	if err != nil {
-		panic(err)
 		return fmt.Errorf("Failed to open StdIn, %w", err)
 	}
 	go func() {
@@ -58,23 +59,29 @@ func savePNG(fig *grob.Fig, path string) error {
 		err = in.Close()
 	}()
 
-	go func() {
-		err := cmd.Run()
-		if err != nil {
-			panic(err)
-		}
-	}()
+	out, err := cmd.StdoutPipe()
+	if err != nil {
+		return fmt.Errorf("Failed to open StdOut, %w", err)
+	}
 
 	f, err := os.Create(path)
 	if err != nil {
 		return fmt.Errorf("Cannot create output file")
 	}
-	defer f.Close()
+	go func() {
+		defer f.Close()
+		_, err = io.Copy(f, out)
+		if err != nil {
+			panic(err)
+		}
+	}()
 
-	out, err := cmd.StdoutPipe()
-	_, err = io.Copy(f, out)
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Run()
 	if err != nil {
-		return fmt.Errorf("Failed to open StdOut, %w", err)
+		return fmt.Errorf("Failed to run command, %w", err)
 	}
+
 	return nil
 }
