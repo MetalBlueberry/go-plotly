@@ -12,7 +12,7 @@ import (
 type typeFile struct {
 	MainType  sstruct
 	Objects   []sstruct
-	Enums     []enumFile
+	Enums     enumFields
 	FlagLists []flagList
 }
 
@@ -34,6 +34,12 @@ type structField struct {
 	Type        string
 	Description []string
 }
+
+type enumFields []enumFile
+
+func (a enumFields) Len() int           { return len(a) }
+func (a enumFields) Less(i, j int) bool { return a[i].Name < a[j].Name }
+func (a enumFields) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 type enumFile struct {
 	Name        string

@@ -213,6 +213,7 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	}
 
 	sort.Sort(traceFile.MainType.Fields)
+	sort.Sort(traceFile.Enums)
 
 	// remove duplicate fields
 	uniqueFields := make([]structField, 0, len(traceFile.MainType.Fields))
