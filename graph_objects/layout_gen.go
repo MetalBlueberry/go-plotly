@@ -32,7 +32,7 @@ type Layout struct {
 	// Bargap
 	// arrayOK: false
 	// type: number
-	// Sets the gap between bars of adjacent location coordinates. Values are unitless, they represent fractions of the minimum difference in bar positions in the data.
+	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
 	Bargap float64 `json:"bargap,omitempty"`
 
 	// Bargroupgap
@@ -42,9 +42,9 @@ type Layout struct {
 	Bargroupgap float64 `json:"bargroupgap,omitempty"`
 
 	// Barmode
-	// default: group
+	// default: stack
 	// type: enumerated
-	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
@@ -438,6 +438,46 @@ type Layout struct {
 	// Yaxis
 	// role: Object
 	Yaxis *LayoutYaxis `json:"yaxis,omitempty"`
+
+	// XAxis2
+	// X Axis number 2
+	XAxis2 LayoutXaxis `json:"xaxis2,omitempty"`
+
+	// XAxis3
+	// X Axis number 3
+	XAxis3 LayoutXaxis `json:"xaxis3,omitempty"`
+
+	// XAxis4
+	// X Axis number 4
+	XAxis4 LayoutXaxis `json:"xaxis4,omitempty"`
+
+	// XAxis5
+	// X Axis number 5
+	XAxis5 LayoutXaxis `json:"xaxis5,omitempty"`
+
+	// XAxis6
+	// X Axis number 6
+	XAxis6 LayoutXaxis `json:"xaxis6,omitempty"`
+
+	// YAxis2
+	// Y Axis number 2
+	YAxis2 LayoutYaxis `json:"yaxis2,omitempty"`
+
+	// YAxis3
+	// Y Axis number 3
+	YAxis3 LayoutYaxis `json:"yaxis3,omitempty"`
+
+	// YAxis4
+	// Y Axis number 4
+	YAxis4 LayoutYaxis `json:"yaxis4,omitempty"`
+
+	// YAxis5
+	// Y Axis number 5
+	YAxis5 LayoutYaxis `json:"yaxis5,omitempty"`
+
+	// YAxis6
+	// Y Axis number 6
+	YAxis6 LayoutYaxis `json:"yaxis6,omitempty"`
 }
 
 // LayoutActiveshape

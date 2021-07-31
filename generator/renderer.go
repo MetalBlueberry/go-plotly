@@ -242,6 +242,18 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	}
 	traceFile.Enums = uniqueEnums
 
+	// add multiple x and y axis
+	for _, label := range []string{"X", "Y"} {
+		for i := 2; i < 7; i++ {
+			traceFile.MainType.Fields = append(traceFile.MainType.Fields, structField{
+				Name:        fmt.Sprintf("%sAxis%d", label, i),
+				Description: []string{fmt.Sprintf("%s Axis number %d", label, i)},
+				JSONName:    strings.ToLower(fmt.Sprintf("%saxis%d", label, i)),
+				Type:        fmt.Sprintf("Layout%saxis", label),
+			})
+		}
+	}
+
 	fmt.Fprint(w, `package grob
 
 `, doNotEdit)
