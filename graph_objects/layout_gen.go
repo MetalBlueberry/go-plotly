@@ -42,9 +42,9 @@ type Layout struct {
 	Bargroupgap float64 `json:"bargroupgap,omitempty"`
 
 	// Barmode
-	// default: stack
+	// default: group
 	// type: enumerated
-	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
@@ -6296,16 +6296,16 @@ const (
 	LayoutAutotypenumbersStrict       LayoutAutotypenumbers = "strict"
 )
 
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 type LayoutBarmode string
 
 const (
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 	BarBarmodeStack          LayoutBarmode = "stack"
 	BarBarmodeGroup          LayoutBarmode = "group"
 	BarBarmodeOverlay        LayoutBarmode = "overlay"
 	BarBarmodeRelative       LayoutBarmode = "relative"
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 	HistogramBarmodeStack    LayoutBarmode = "stack"
 	HistogramBarmodeGroup    LayoutBarmode = "group"
 	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
@@ -6316,22 +6316,22 @@ const (
 type LayoutBarnorm string
 
 const (
-	HistogramBarnormEmpty    LayoutBarnorm = ""
-	HistogramBarnormFraction LayoutBarnorm = "fraction"
-	HistogramBarnormPercent  LayoutBarnorm = "percent"
 	BarBarnormEmpty          LayoutBarnorm = ""
 	BarBarnormFraction       LayoutBarnorm = "fraction"
 	BarBarnormPercent        LayoutBarnorm = "percent"
+	HistogramBarnormEmpty    LayoutBarnorm = ""
+	HistogramBarnormFraction LayoutBarnorm = "fraction"
+	HistogramBarnormPercent  LayoutBarnorm = "percent"
 )
 
 // LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
 type LayoutBoxmode string
 
 const (
-	BoxBoxmodeGroup           LayoutBoxmode = "group"
-	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
 	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
+	BoxBoxmodeGroup           LayoutBoxmode = "group"
+	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
