@@ -249,14 +249,12 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 				Name:        fmt.Sprintf("%sAxis%d", label, i),
 				Description: []string{fmt.Sprintf("%s Axis number %d", label, i)},
 				JSONName:    strings.ToLower(fmt.Sprintf("%saxis%d", label, i)),
-				Type:        fmt.Sprintf("Layout%saxis", label),
+				Type:        fmt.Sprintf("* Layout%saxis", label),
 			})
 		}
 	}
 
-	fmt.Fprint(w, `package grob
-
-`, doNotEdit)
+	fmt.Fprint(w, "package grob\n\n", doNotEdit)
 
 	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
