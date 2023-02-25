@@ -32,7 +32,7 @@ type Layout struct {
 	// Bargap
 	// arrayOK: false
 	// type: number
-	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
+	// Sets the gap between bars of adjacent location coordinates. Values are unitless, they represent fractions of the minimum difference in bar positions in the data.
 	Bargap float64 `json:"bargap,omitempty"`
 
 	// Bargroupgap
@@ -441,43 +441,43 @@ type Layout struct {
 
 	// XAxis2
 	// X Axis number 2
-	XAxis2 LayoutXaxis `json:"xaxis2,omitempty"`
+	XAxis2 *LayoutXaxis `json:"xaxis2,omitempty"`
 
 	// XAxis3
 	// X Axis number 3
-	XAxis3 LayoutXaxis `json:"xaxis3,omitempty"`
+	XAxis3 *LayoutXaxis `json:"xaxis3,omitempty"`
 
 	// XAxis4
 	// X Axis number 4
-	XAxis4 LayoutXaxis `json:"xaxis4,omitempty"`
+	XAxis4 *LayoutXaxis `json:"xaxis4,omitempty"`
 
 	// XAxis5
 	// X Axis number 5
-	XAxis5 LayoutXaxis `json:"xaxis5,omitempty"`
+	XAxis5 *LayoutXaxis `json:"xaxis5,omitempty"`
 
 	// XAxis6
 	// X Axis number 6
-	XAxis6 LayoutXaxis `json:"xaxis6,omitempty"`
+	XAxis6 *LayoutXaxis `json:"xaxis6,omitempty"`
 
 	// YAxis2
 	// Y Axis number 2
-	YAxis2 LayoutYaxis `json:"yaxis2,omitempty"`
+	YAxis2 *LayoutYaxis `json:"yaxis2,omitempty"`
 
 	// YAxis3
 	// Y Axis number 3
-	YAxis3 LayoutYaxis `json:"yaxis3,omitempty"`
+	YAxis3 *LayoutYaxis `json:"yaxis3,omitempty"`
 
 	// YAxis4
 	// Y Axis number 4
-	YAxis4 LayoutYaxis `json:"yaxis4,omitempty"`
+	YAxis4 *LayoutYaxis `json:"yaxis4,omitempty"`
 
 	// YAxis5
 	// Y Axis number 5
-	YAxis5 LayoutYaxis `json:"yaxis5,omitempty"`
+	YAxis5 *LayoutYaxis `json:"yaxis5,omitempty"`
 
 	// YAxis6
 	// Y Axis number 6
-	YAxis6 LayoutYaxis `json:"yaxis6,omitempty"`
+	YAxis6 *LayoutYaxis `json:"yaxis6,omitempty"`
 }
 
 // LayoutActiveshape
@@ -6300,16 +6300,16 @@ const (
 type LayoutBarmode string
 
 const (
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
-	BarBarmodeStack          LayoutBarmode = "stack"
-	BarBarmodeGroup          LayoutBarmode = "group"
-	BarBarmodeOverlay        LayoutBarmode = "overlay"
-	BarBarmodeRelative       LayoutBarmode = "relative"
 	HistogramBarmodeStack    LayoutBarmode = "stack"
 	HistogramBarmodeGroup    LayoutBarmode = "group"
 	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
 	HistogramBarmodeRelative LayoutBarmode = "relative"
+	BarBarmodeStack          LayoutBarmode = "stack"
+	BarBarmodeGroup          LayoutBarmode = "group"
+	BarBarmodeOverlay        LayoutBarmode = "overlay"
+	BarBarmodeRelative       LayoutBarmode = "relative"
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
