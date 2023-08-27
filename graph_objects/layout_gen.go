@@ -42,9 +42,9 @@ type Layout struct {
 	Bargroupgap float64 `json:"bargroupgap,omitempty"`
 
 	// Barmode
-	// default: stack
+	// default: group
 	// type: enumerated
-	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
@@ -6296,7 +6296,7 @@ const (
 	LayoutAutotypenumbersStrict       LayoutAutotypenumbers = "strict"
 )
 
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 type LayoutBarmode string
 
 const (
