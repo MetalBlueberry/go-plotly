@@ -1,6 +1,3 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/MetalBlueberry/go-plotly)](https://goreportcard.com/report/github.com/MetalBlueberry/go-plotly)
-[![godoc](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/mod/github.com/MetalBlueberry/go-plotly?tab=overview)
-
 # go-plotly
 
 Inspired by [Python Plotly](https://plotly.com/python/creating-and-updating-figures/)
@@ -113,6 +110,35 @@ For strings... This is a little bit more complicated, In AWS package they are us
 
 For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`. I would like to avoid using interface{} or defining types again to keep the package interface as simple as possible.
 
+### Go Ploly Update to plotly version v2.29.0
+
+The Schema has to be of the format as defined in:
+https://api.plot.ly/v2/plot-schema?format=json&sha1=%27%27
+
+However, the version in this file is often not updated.
+
+Download the latest plotly schema from the plotly repository:
+https://github.com/plotly/plotly.js/blob/master/dist/plot-schema.json
+```json
+{
+   "sha1": "11b662302a42aa0698df091a9974ac8f6e1a2292",
+  "modified": true,
+  "schema": "<INSERT NEW SCHEMA HERE>"
+} 
+```
+Save this file as your new schema file and use it as input to regenerate your library.
+The library should be in graph_objects to overwrite the old types, and to be in the same folder as plotly.go.
+
+To solve multiple issues with generating invalid go files due to line-comments being too long, many descriptions
+are also shortened.
+```shell
+go run generator/cmd/generator/main.go -schema=generator/schema.json -output-directory=graph_objects
+```
+
+### plotly online editor sandbox
+http://plotly-json-editor.getforge.io/
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Metalblueberry/go-plotly&type=Date)](https://star-history.com/#Metalblueberry/go-plotly&Date)
+

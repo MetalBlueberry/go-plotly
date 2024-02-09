@@ -18,7 +18,7 @@ type Volume struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Caps
@@ -28,7 +28,7 @@ type Volume struct {
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
@@ -62,7 +62,7 @@ type Volume struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
@@ -78,7 +78,7 @@ type Volume struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Flatshading
@@ -96,7 +96,7 @@ type Volume struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -106,13 +106,13 @@ type Volume struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -124,7 +124,7 @@ type Volume struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -136,7 +136,7 @@ type Volume struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Isomax
@@ -151,11 +151,33 @@ type Volume struct {
 	// Sets the minimum boundary for iso-surface plot.
 	Isomin float64 `json:"isomin,omitempty"`
 
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *VolumeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
 	// role: Object
@@ -174,13 +196,13 @@ type Volume struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -244,7 +266,7 @@ type Volume struct {
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Uid
@@ -265,10 +287,16 @@ type Volume struct {
 	// Sets the 4th dimension (value) of the vertices.
 	Value interface{} `json:"value,omitempty"`
 
+	// Valuehoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `value`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
+	Valuehoverformat String `json:"valuehoverformat,omitempty"`
+
 	// Valuesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  value .
+	// Sets the source reference on Chart Studio Cloud for `value`.
 	Valuesrc String `json:"valuesrc,omitempty"`
 
 	// Visible
@@ -283,10 +311,16 @@ type Volume struct {
 	// Sets the X coordinates of the vertices on X axis.
 	X interface{} `json:"x,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -295,10 +329,16 @@ type Volume struct {
 	// Sets the Y coordinates of the vertices on Y axis.
 	Y interface{} `json:"y,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 
 	// Z
@@ -307,10 +347,16 @@ type Volume struct {
 	// Sets the Z coordinates of the vertices on Z axis.
 	Z interface{} `json:"z,omitempty"`
 
+	// Zhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+	Zhoverformat String `json:"zhoverformat,omitempty"`
+
 	// Zsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  z .
+	// Sets the source reference on Chart Studio Cloud for `z`.
 	Zsrc String `json:"zsrc,omitempty"`
 }
 
@@ -430,9 +476,9 @@ type VolumeColorbarTitle struct {
 	Font *VolumeColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side VolumeColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -475,6 +521,12 @@ type VolumeColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat VolumeColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -498,6 +550,12 @@ type VolumeColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation VolumeColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -578,7 +636,7 @@ type VolumeColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -587,11 +645,23 @@ type VolumeColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow VolumeColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition VolumeColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -632,7 +702,7 @@ type VolumeColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -644,7 +714,7 @@ type VolumeColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -660,13 +730,13 @@ type VolumeColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor VolumeColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -675,16 +745,22 @@ type VolumeColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref VolumeColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor VolumeColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -692,6 +768,12 @@ type VolumeColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref VolumeColorbarYref `json:"yref,omitempty"`
 }
 
 // VolumeContour
@@ -728,7 +810,7 @@ type VolumeHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -740,7 +822,7 @@ type VolumeHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -752,7 +834,7 @@ type VolumeHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -768,7 +850,7 @@ type VolumeHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -780,7 +862,7 @@ type VolumeHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -792,7 +874,7 @@ type VolumeHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -808,8 +890,44 @@ type VolumeHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// VolumeLegendgrouptitleFont Sets this legend group's title font.
+type VolumeLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// VolumeLegendgrouptitle
+type VolumeLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *VolumeLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // VolumeLighting
@@ -898,7 +1016,7 @@ type VolumeSlicesX struct {
 	// Locationssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  locations .
+	// Sets the source reference on Chart Studio Cloud for `locations`.
 	Locationssrc String `json:"locationssrc,omitempty"`
 
 	// Show
@@ -926,7 +1044,7 @@ type VolumeSlicesY struct {
 	// Locationssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  locations .
+	// Sets the source reference on Chart Studio Cloud for `locations`.
 	Locationssrc String `json:"locationssrc,omitempty"`
 
 	// Show
@@ -954,7 +1072,7 @@ type VolumeSlicesZ struct {
 	// Locationssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  locations .
+	// Sets the source reference on Chart Studio Cloud for `locations`.
 	Locationssrc String `json:"locationssrc,omitempty"`
 
 	// Show
@@ -1048,7 +1166,7 @@ const (
 	VolumeColorbarExponentformatE1    VolumeColorbarExponentformat = "e"
 	VolumeColorbarExponentformatE2    VolumeColorbarExponentformat = "E"
 	VolumeColorbarExponentformatPower VolumeColorbarExponentformat = "power"
-	VolumeColorbarExponentformatSi    VolumeColorbarExponentformat = "SI"
+	VolumeColorbarExponentformatSI    VolumeColorbarExponentformat = "SI"
 	VolumeColorbarExponentformatB     VolumeColorbarExponentformat = "B"
 )
 
@@ -1058,6 +1176,14 @@ type VolumeColorbarLenmode string
 const (
 	VolumeColorbarLenmodeFraction VolumeColorbarLenmode = "fraction"
 	VolumeColorbarLenmodePixels   VolumeColorbarLenmode = "pixels"
+)
+
+// VolumeColorbarOrientation Sets the orientation of the colorbar.
+type VolumeColorbarOrientation string
+
+const (
+	VolumeColorbarOrientationH VolumeColorbarOrientation = "h"
+	VolumeColorbarOrientationV VolumeColorbarOrientation = "v"
 )
 
 // VolumeColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -1098,7 +1224,16 @@ const (
 	VolumeColorbarThicknessmodePixels   VolumeColorbarThicknessmode = "pixels"
 )
 
-// VolumeColorbarTicklabelposition Determines where tick labels are drawn.
+// VolumeColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type VolumeColorbarTicklabeloverflow string
+
+const (
+	VolumeColorbarTicklabeloverflowAllow          VolumeColorbarTicklabeloverflow = "allow"
+	VolumeColorbarTicklabeloverflowHidePastDiv    VolumeColorbarTicklabeloverflow = "hide past div"
+	VolumeColorbarTicklabeloverflowHidePastDomain VolumeColorbarTicklabeloverflow = "hide past domain"
+)
+
+// VolumeColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type VolumeColorbarTicklabelposition string
 
 const (
@@ -1106,6 +1241,10 @@ const (
 	VolumeColorbarTicklabelpositionInside        VolumeColorbarTicklabelposition = "inside"
 	VolumeColorbarTicklabelpositionOutsideTop    VolumeColorbarTicklabelposition = "outside top"
 	VolumeColorbarTicklabelpositionInsideTop     VolumeColorbarTicklabelposition = "inside top"
+	VolumeColorbarTicklabelpositionOutsideLeft   VolumeColorbarTicklabelposition = "outside left"
+	VolumeColorbarTicklabelpositionInsideLeft    VolumeColorbarTicklabelposition = "inside left"
+	VolumeColorbarTicklabelpositionOutsideRight  VolumeColorbarTicklabelposition = "outside right"
+	VolumeColorbarTicklabelpositionInsideRight   VolumeColorbarTicklabelposition = "inside right"
 	VolumeColorbarTicklabelpositionOutsideBottom VolumeColorbarTicklabelposition = "outside bottom"
 	VolumeColorbarTicklabelpositionInsideBottom  VolumeColorbarTicklabelposition = "inside bottom"
 )
@@ -1128,7 +1267,7 @@ const (
 	VolumeColorbarTicksEmpty   VolumeColorbarTicks = ""
 )
 
-// VolumeColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// VolumeColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type VolumeColorbarTitleSide string
 
 const (
@@ -1137,7 +1276,7 @@ const (
 	VolumeColorbarTitleSideBottom VolumeColorbarTitleSide = "bottom"
 )
 
-// VolumeColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// VolumeColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type VolumeColorbarXanchor string
 
 const (
@@ -1146,13 +1285,29 @@ const (
 	VolumeColorbarXanchorRight  VolumeColorbarXanchor = "right"
 )
 
-// VolumeColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// VolumeColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type VolumeColorbarXref string
+
+const (
+	VolumeColorbarXrefContainer VolumeColorbarXref = "container"
+	VolumeColorbarXrefPaper     VolumeColorbarXref = "paper"
+)
+
+// VolumeColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type VolumeColorbarYanchor string
 
 const (
 	VolumeColorbarYanchorTop    VolumeColorbarYanchor = "top"
 	VolumeColorbarYanchorMiddle VolumeColorbarYanchor = "middle"
 	VolumeColorbarYanchorBottom VolumeColorbarYanchor = "bottom"
+)
+
+// VolumeColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type VolumeColorbarYref string
+
+const (
+	VolumeColorbarYrefContainer VolumeColorbarYref = "container"
+	VolumeColorbarYrefPaper     VolumeColorbarYref = "paper"
 )
 
 // VolumeHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines

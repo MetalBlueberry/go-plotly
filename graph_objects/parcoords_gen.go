@@ -24,7 +24,7 @@ type Parcoords struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Dimensions
@@ -46,7 +46,7 @@ type Parcoords struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Labelangle
@@ -65,6 +65,28 @@ type Parcoords struct {
 	// Specifies the location of the `label`. *top* positions labels above, next to the title *bottom* positions labels below the graph Tilted labels with *labelangle* may be positioned better inside margins when `labelposition` is set to *bottom*.
 	Labelside ParcoordsLabelside `json:"labelside,omitempty"`
 
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *ParcoordsLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
+
 	// Line
 	// role: Object
 	Line *ParcoordsLine `json:"line,omitempty"`
@@ -78,13 +100,13 @@ type Parcoords struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Rangefont
@@ -116,6 +138,10 @@ type Parcoords struct {
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
 	Uirevision interface{} `json:"uirevision,omitempty"`
+
+	// Unselected
+	// role: Object
+	Unselected *ParcoordsUnselected `json:"unselected,omitempty"`
 
 	// Visible
 	// default: %!s(bool=true)
@@ -174,6 +200,42 @@ type ParcoordsLabelfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// ParcoordsLegendgrouptitleFont Sets this legend group's title font.
+type ParcoordsLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// ParcoordsLegendgrouptitle
+type ParcoordsLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *ParcoordsLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
+}
+
 // ParcoordsLineColorbarTickfont Sets the color bar's tick label font
 type ParcoordsLineColorbarTickfont struct {
 
@@ -226,9 +288,9 @@ type ParcoordsLineColorbarTitle struct {
 	Font *ParcoordsLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side ParcoordsLineColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -271,6 +333,12 @@ type ParcoordsLineColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat ParcoordsLineColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -294,6 +362,12 @@ type ParcoordsLineColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation ParcoordsLineColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -374,7 +448,7 @@ type ParcoordsLineColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -383,11 +457,23 @@ type ParcoordsLineColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow ParcoordsLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition ParcoordsLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -428,7 +514,7 @@ type ParcoordsLineColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -440,7 +526,7 @@ type ParcoordsLineColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -456,13 +542,13 @@ type ParcoordsLineColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor ParcoordsLineColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -471,16 +557,22 @@ type ParcoordsLineColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref ParcoordsLineColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor ParcoordsLineColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -488,6 +580,12 @@ type ParcoordsLineColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref ParcoordsLineColorbarYref `json:"yref,omitempty"`
 }
 
 // ParcoordsLine
@@ -496,37 +594,37 @@ type ParcoordsLine struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax`  Has an effect only if in `line.color`is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax` Has an effect only if in `line.color` is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets thelinecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
+	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -542,25 +640,25 @@ type ParcoordsLine struct {
 	// Colorscale
 	// default: [[%!s(float64=0) #440154] [%!s(float64=0.06274509803921569) #48186a] [%!s(float64=0.12549019607843137) #472d7b] [%!s(float64=0.18823529411764706) #424086] [%!s(float64=0.25098039215686274) #3b528b] [%!s(float64=0.3137254901960784) #33638d] [%!s(float64=0.3764705882352941) #2c728e] [%!s(float64=0.4392156862745098) #26828e] [%!s(float64=0.5019607843137255) #21918c] [%!s(float64=0.5647058823529412) #1fa088] [%!s(float64=0.6274509803921569) #28ae80] [%!s(float64=0.6901960784313725) #3fbc73] [%!s(float64=0.7529411764705882) #5ec962] [%!s(float64=0.8156862745098039) #84d44b] [%!s(float64=0.8784313725490196) #addc30] [%!s(float64=0.9411764705882353) #d8e219] [%!s(float64=1) #fde725]]
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `line.color` is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color`is set to a numerical array.
+	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color` is set to a numerical array.
 	Showscale Bool `json:"showscale,omitempty"`
 }
 
@@ -624,6 +722,30 @@ type ParcoordsTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// ParcoordsUnselectedLine
+type ParcoordsUnselectedLine struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the base color of unselected lines. in connection with `unselected.line.opacity`.
+	Color Color `json:"color,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of unselected lines. The default *auto* decreases the opacity smoothly as the number of lines increases. Use *1* to achieve exact `unselected.line.color`.
+	Opacity float64 `json:"opacity,omitempty"`
+}
+
+// ParcoordsUnselected
+type ParcoordsUnselected struct {
+
+	// Line
+	// role: Object
+	Line *ParcoordsUnselectedLine `json:"line,omitempty"`
+}
+
 // ParcoordsLabelside Specifies the location of the `label`. *top* positions labels above, next to the title *bottom* positions labels below the graph Tilted labels with *labelangle* may be positioned better inside margins when `labelposition` is set to *bottom*.
 type ParcoordsLabelside string
 
@@ -640,7 +762,7 @@ const (
 	ParcoordsLineColorbarExponentformatE1    ParcoordsLineColorbarExponentformat = "e"
 	ParcoordsLineColorbarExponentformatE2    ParcoordsLineColorbarExponentformat = "E"
 	ParcoordsLineColorbarExponentformatPower ParcoordsLineColorbarExponentformat = "power"
-	ParcoordsLineColorbarExponentformatSi    ParcoordsLineColorbarExponentformat = "SI"
+	ParcoordsLineColorbarExponentformatSI    ParcoordsLineColorbarExponentformat = "SI"
 	ParcoordsLineColorbarExponentformatB     ParcoordsLineColorbarExponentformat = "B"
 )
 
@@ -650,6 +772,14 @@ type ParcoordsLineColorbarLenmode string
 const (
 	ParcoordsLineColorbarLenmodeFraction ParcoordsLineColorbarLenmode = "fraction"
 	ParcoordsLineColorbarLenmodePixels   ParcoordsLineColorbarLenmode = "pixels"
+)
+
+// ParcoordsLineColorbarOrientation Sets the orientation of the colorbar.
+type ParcoordsLineColorbarOrientation string
+
+const (
+	ParcoordsLineColorbarOrientationH ParcoordsLineColorbarOrientation = "h"
+	ParcoordsLineColorbarOrientationV ParcoordsLineColorbarOrientation = "v"
 )
 
 // ParcoordsLineColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -690,7 +820,16 @@ const (
 	ParcoordsLineColorbarThicknessmodePixels   ParcoordsLineColorbarThicknessmode = "pixels"
 )
 
-// ParcoordsLineColorbarTicklabelposition Determines where tick labels are drawn.
+// ParcoordsLineColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type ParcoordsLineColorbarTicklabeloverflow string
+
+const (
+	ParcoordsLineColorbarTicklabeloverflowAllow          ParcoordsLineColorbarTicklabeloverflow = "allow"
+	ParcoordsLineColorbarTicklabeloverflowHidePastDiv    ParcoordsLineColorbarTicklabeloverflow = "hide past div"
+	ParcoordsLineColorbarTicklabeloverflowHidePastDomain ParcoordsLineColorbarTicklabeloverflow = "hide past domain"
+)
+
+// ParcoordsLineColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type ParcoordsLineColorbarTicklabelposition string
 
 const (
@@ -698,6 +837,10 @@ const (
 	ParcoordsLineColorbarTicklabelpositionInside        ParcoordsLineColorbarTicklabelposition = "inside"
 	ParcoordsLineColorbarTicklabelpositionOutsideTop    ParcoordsLineColorbarTicklabelposition = "outside top"
 	ParcoordsLineColorbarTicklabelpositionInsideTop     ParcoordsLineColorbarTicklabelposition = "inside top"
+	ParcoordsLineColorbarTicklabelpositionOutsideLeft   ParcoordsLineColorbarTicklabelposition = "outside left"
+	ParcoordsLineColorbarTicklabelpositionInsideLeft    ParcoordsLineColorbarTicklabelposition = "inside left"
+	ParcoordsLineColorbarTicklabelpositionOutsideRight  ParcoordsLineColorbarTicklabelposition = "outside right"
+	ParcoordsLineColorbarTicklabelpositionInsideRight   ParcoordsLineColorbarTicklabelposition = "inside right"
 	ParcoordsLineColorbarTicklabelpositionOutsideBottom ParcoordsLineColorbarTicklabelposition = "outside bottom"
 	ParcoordsLineColorbarTicklabelpositionInsideBottom  ParcoordsLineColorbarTicklabelposition = "inside bottom"
 )
@@ -720,7 +863,7 @@ const (
 	ParcoordsLineColorbarTicksEmpty   ParcoordsLineColorbarTicks = ""
 )
 
-// ParcoordsLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// ParcoordsLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type ParcoordsLineColorbarTitleSide string
 
 const (
@@ -729,7 +872,7 @@ const (
 	ParcoordsLineColorbarTitleSideBottom ParcoordsLineColorbarTitleSide = "bottom"
 )
 
-// ParcoordsLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// ParcoordsLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type ParcoordsLineColorbarXanchor string
 
 const (
@@ -738,13 +881,29 @@ const (
 	ParcoordsLineColorbarXanchorRight  ParcoordsLineColorbarXanchor = "right"
 )
 
-// ParcoordsLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// ParcoordsLineColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type ParcoordsLineColorbarXref string
+
+const (
+	ParcoordsLineColorbarXrefContainer ParcoordsLineColorbarXref = "container"
+	ParcoordsLineColorbarXrefPaper     ParcoordsLineColorbarXref = "paper"
+)
+
+// ParcoordsLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type ParcoordsLineColorbarYanchor string
 
 const (
 	ParcoordsLineColorbarYanchorTop    ParcoordsLineColorbarYanchor = "top"
 	ParcoordsLineColorbarYanchorMiddle ParcoordsLineColorbarYanchor = "middle"
 	ParcoordsLineColorbarYanchorBottom ParcoordsLineColorbarYanchor = "bottom"
+)
+
+// ParcoordsLineColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type ParcoordsLineColorbarYref string
+
+const (
+	ParcoordsLineColorbarYrefContainer ParcoordsLineColorbarYref = "container"
+	ParcoordsLineColorbarYrefPaper     ParcoordsLineColorbarYref = "paper"
 )
 
 // ParcoordsVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).

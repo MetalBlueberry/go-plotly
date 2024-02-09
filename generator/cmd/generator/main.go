@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -18,7 +19,7 @@ func (c Creator) Create(name string) (io.WriteCloser, error) {
 func main() {
 	schema := flag.String("schema", "schema.json", "plotly schema")
 	outputDirectory := flag.String("output-directory", "gen/", "output directory, must exist before generation")
-
+	*schema = "plotly-schema_v2.29.0.json"
 	flag.Parse()
 
 	file, err := os.Open(*schema)
@@ -39,23 +40,28 @@ func main() {
 
 	output := *outputDirectory
 
+	if err = os.MkdirAll(output, 0755); err != nil {
+		fmt.Println("Error creating directory:", err)
+		log.Fatalf("unable to write traces, %w", err)
+	}
+
 	err = r.CreateTraces(output)
 	if err != nil {
-		log.Fatal("unable to write traces, %w", err)
+		log.Fatalf("unable to write traces, %w", err)
 	}
 
 	err = r.CreateLayout(output)
 	if err != nil {
-		log.Fatal("unable to write layout, %w", err)
+		log.Fatalf("unable to write layout, %w", err)
 	}
 
 	err = r.CreateConfig(output)
 	if err != nil {
-		log.Fatal("unable to write config, %w", err)
+		log.Fatalf("unable to write config, %w", err)
 	}
 
 	err = r.CreateUnmarshal(output)
 	if err != nil {
-		log.Fatal("unable to write unmarshal, %w", err)
+		log.Fatalf("unable to write unmarshal, %w", err)
 	}
 }

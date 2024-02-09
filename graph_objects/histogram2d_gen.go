@@ -30,7 +30,7 @@ type Histogram2d struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Bingroup
@@ -52,7 +52,7 @@ type Histogram2d struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Customdata
@@ -64,7 +64,7 @@ type Histogram2d struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Histfunc
@@ -88,7 +88,7 @@ type Histogram2d struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -98,13 +98,13 @@ type Histogram2d struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Ids
@@ -116,14 +116,36 @@ type Histogram2d struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *Histogram2dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
 	// role: Object
@@ -138,13 +160,13 @@ type Histogram2d struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Nbinsx
@@ -186,6 +208,16 @@ type Histogram2d struct {
 	// Stream
 	// role: Object
 	Stream *Histogram2dStream `json:"stream,omitempty"`
+
+	// Textfont
+	// role: Object
+	Textfont *Histogram2dTextfont `json:"textfont,omitempty"`
+
+	// Texttemplate
+	// arrayOK: false
+	// type: string
+	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variable `z`
+	Texttemplate String `json:"texttemplate,omitempty"`
 
 	// Transforms
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -245,10 +277,16 @@ type Histogram2d struct {
 	// Sets the horizontal gap (in pixels) between bricks.
 	Xgap float64 `json:"xgap,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -285,10 +323,16 @@ type Histogram2d struct {
 	// Sets the vertical gap (in pixels) between bricks.
 	Ygap float64 `json:"ygap,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 
 	// Z
@@ -300,13 +344,13 @@ type Histogram2d struct {
 	// Zauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax` Defaults to `false` when `zmin` and `zmax` are set by the user.
 	Zauto Bool `json:"zauto,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
 	// type: string
-	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
 	Zhoverformat String `json:"zhoverformat,omitempty"`
 
 	// Zmax
@@ -336,7 +380,7 @@ type Histogram2d struct {
 	// Zsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  z .
+	// Sets the source reference on Chart Studio Cloud for `z`.
 	Zsrc String `json:"zsrc,omitempty"`
 }
 
@@ -392,9 +436,9 @@ type Histogram2dColorbarTitle struct {
 	Font *Histogram2dColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side Histogram2dColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -437,6 +481,12 @@ type Histogram2dColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat Histogram2dColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -460,6 +510,12 @@ type Histogram2dColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation Histogram2dColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -540,7 +596,7 @@ type Histogram2dColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -549,11 +605,23 @@ type Histogram2dColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow Histogram2dColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition Histogram2dColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -594,7 +662,7 @@ type Histogram2dColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -606,7 +674,7 @@ type Histogram2dColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -622,13 +690,13 @@ type Histogram2dColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor Histogram2dColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -637,16 +705,22 @@ type Histogram2dColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref Histogram2dColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor Histogram2dColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -654,6 +728,12 @@ type Histogram2dColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref Histogram2dColorbarYref `json:"yref,omitempty"`
 }
 
 // Histogram2dHoverlabelFont Sets the font used in hover labels.
@@ -668,7 +748,7 @@ type Histogram2dHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -680,7 +760,7 @@ type Histogram2dHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -692,7 +772,7 @@ type Histogram2dHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -708,7 +788,7 @@ type Histogram2dHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -720,7 +800,7 @@ type Histogram2dHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -732,7 +812,7 @@ type Histogram2dHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -748,8 +828,44 @@ type Histogram2dHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// Histogram2dLegendgrouptitleFont Sets this legend group's title font.
+type Histogram2dLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// Histogram2dLegendgrouptitle
+type Histogram2dLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *Histogram2dLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // Histogram2dMarker
@@ -764,7 +880,7 @@ type Histogram2dMarker struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 }
 
@@ -782,6 +898,28 @@ type Histogram2dStream struct {
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
 	Token String `json:"token,omitempty"`
+}
+
+// Histogram2dTextfont Sets the text font.
+type Histogram2dTextfont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
 }
 
 // Histogram2dXbins
@@ -836,7 +974,7 @@ const (
 	Histogram2dColorbarExponentformatE1    Histogram2dColorbarExponentformat = "e"
 	Histogram2dColorbarExponentformatE2    Histogram2dColorbarExponentformat = "E"
 	Histogram2dColorbarExponentformatPower Histogram2dColorbarExponentformat = "power"
-	Histogram2dColorbarExponentformatSi    Histogram2dColorbarExponentformat = "SI"
+	Histogram2dColorbarExponentformatSI    Histogram2dColorbarExponentformat = "SI"
 	Histogram2dColorbarExponentformatB     Histogram2dColorbarExponentformat = "B"
 )
 
@@ -846,6 +984,14 @@ type Histogram2dColorbarLenmode string
 const (
 	Histogram2dColorbarLenmodeFraction Histogram2dColorbarLenmode = "fraction"
 	Histogram2dColorbarLenmodePixels   Histogram2dColorbarLenmode = "pixels"
+)
+
+// Histogram2dColorbarOrientation Sets the orientation of the colorbar.
+type Histogram2dColorbarOrientation string
+
+const (
+	Histogram2dColorbarOrientationH Histogram2dColorbarOrientation = "h"
+	Histogram2dColorbarOrientationV Histogram2dColorbarOrientation = "v"
 )
 
 // Histogram2dColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -886,7 +1032,16 @@ const (
 	Histogram2dColorbarThicknessmodePixels   Histogram2dColorbarThicknessmode = "pixels"
 )
 
-// Histogram2dColorbarTicklabelposition Determines where tick labels are drawn.
+// Histogram2dColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type Histogram2dColorbarTicklabeloverflow string
+
+const (
+	Histogram2dColorbarTicklabeloverflowAllow          Histogram2dColorbarTicklabeloverflow = "allow"
+	Histogram2dColorbarTicklabeloverflowHidePastDiv    Histogram2dColorbarTicklabeloverflow = "hide past div"
+	Histogram2dColorbarTicklabeloverflowHidePastDomain Histogram2dColorbarTicklabeloverflow = "hide past domain"
+)
+
+// Histogram2dColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type Histogram2dColorbarTicklabelposition string
 
 const (
@@ -894,6 +1049,10 @@ const (
 	Histogram2dColorbarTicklabelpositionInside        Histogram2dColorbarTicklabelposition = "inside"
 	Histogram2dColorbarTicklabelpositionOutsideTop    Histogram2dColorbarTicklabelposition = "outside top"
 	Histogram2dColorbarTicklabelpositionInsideTop     Histogram2dColorbarTicklabelposition = "inside top"
+	Histogram2dColorbarTicklabelpositionOutsideLeft   Histogram2dColorbarTicklabelposition = "outside left"
+	Histogram2dColorbarTicklabelpositionInsideLeft    Histogram2dColorbarTicklabelposition = "inside left"
+	Histogram2dColorbarTicklabelpositionOutsideRight  Histogram2dColorbarTicklabelposition = "outside right"
+	Histogram2dColorbarTicklabelpositionInsideRight   Histogram2dColorbarTicklabelposition = "inside right"
 	Histogram2dColorbarTicklabelpositionOutsideBottom Histogram2dColorbarTicklabelposition = "outside bottom"
 	Histogram2dColorbarTicklabelpositionInsideBottom  Histogram2dColorbarTicklabelposition = "inside bottom"
 )
@@ -916,7 +1075,7 @@ const (
 	Histogram2dColorbarTicksEmpty   Histogram2dColorbarTicks = ""
 )
 
-// Histogram2dColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// Histogram2dColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type Histogram2dColorbarTitleSide string
 
 const (
@@ -925,7 +1084,7 @@ const (
 	Histogram2dColorbarTitleSideBottom Histogram2dColorbarTitleSide = "bottom"
 )
 
-// Histogram2dColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// Histogram2dColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type Histogram2dColorbarXanchor string
 
 const (
@@ -934,13 +1093,29 @@ const (
 	Histogram2dColorbarXanchorRight  Histogram2dColorbarXanchor = "right"
 )
 
-// Histogram2dColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// Histogram2dColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type Histogram2dColorbarXref string
+
+const (
+	Histogram2dColorbarXrefContainer Histogram2dColorbarXref = "container"
+	Histogram2dColorbarXrefPaper     Histogram2dColorbarXref = "paper"
+)
+
+// Histogram2dColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type Histogram2dColorbarYanchor string
 
 const (
 	Histogram2dColorbarYanchorTop    Histogram2dColorbarYanchor = "top"
 	Histogram2dColorbarYanchorMiddle Histogram2dColorbarYanchor = "middle"
 	Histogram2dColorbarYanchorBottom Histogram2dColorbarYanchor = "bottom"
+)
+
+// Histogram2dColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type Histogram2dColorbarYref string
+
+const (
+	Histogram2dColorbarYrefContainer Histogram2dColorbarYref = "container"
+	Histogram2dColorbarYrefPaper     Histogram2dColorbarYref = "paper"
 )
 
 // Histogram2dHistfunc Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
@@ -987,19 +1162,19 @@ var (
 type Histogram2dXcalendar string
 
 const (
-	Histogram2dXcalendarGregorian  Histogram2dXcalendar = "gregorian"
 	Histogram2dXcalendarChinese    Histogram2dXcalendar = "chinese"
 	Histogram2dXcalendarCoptic     Histogram2dXcalendar = "coptic"
 	Histogram2dXcalendarDiscworld  Histogram2dXcalendar = "discworld"
 	Histogram2dXcalendarEthiopian  Histogram2dXcalendar = "ethiopian"
+	Histogram2dXcalendarGregorian  Histogram2dXcalendar = "gregorian"
 	Histogram2dXcalendarHebrew     Histogram2dXcalendar = "hebrew"
 	Histogram2dXcalendarIslamic    Histogram2dXcalendar = "islamic"
+	Histogram2dXcalendarJalali     Histogram2dXcalendar = "jalali"
 	Histogram2dXcalendarJulian     Histogram2dXcalendar = "julian"
 	Histogram2dXcalendarMayan      Histogram2dXcalendar = "mayan"
 	Histogram2dXcalendarNanakshahi Histogram2dXcalendar = "nanakshahi"
 	Histogram2dXcalendarNepali     Histogram2dXcalendar = "nepali"
 	Histogram2dXcalendarPersian    Histogram2dXcalendar = "persian"
-	Histogram2dXcalendarJalali     Histogram2dXcalendar = "jalali"
 	Histogram2dXcalendarTaiwan     Histogram2dXcalendar = "taiwan"
 	Histogram2dXcalendarThai       Histogram2dXcalendar = "thai"
 	Histogram2dXcalendarUmmalqura  Histogram2dXcalendar = "ummalqura"
@@ -1009,19 +1184,19 @@ const (
 type Histogram2dYcalendar string
 
 const (
-	Histogram2dYcalendarGregorian  Histogram2dYcalendar = "gregorian"
 	Histogram2dYcalendarChinese    Histogram2dYcalendar = "chinese"
 	Histogram2dYcalendarCoptic     Histogram2dYcalendar = "coptic"
 	Histogram2dYcalendarDiscworld  Histogram2dYcalendar = "discworld"
 	Histogram2dYcalendarEthiopian  Histogram2dYcalendar = "ethiopian"
+	Histogram2dYcalendarGregorian  Histogram2dYcalendar = "gregorian"
 	Histogram2dYcalendarHebrew     Histogram2dYcalendar = "hebrew"
 	Histogram2dYcalendarIslamic    Histogram2dYcalendar = "islamic"
+	Histogram2dYcalendarJalali     Histogram2dYcalendar = "jalali"
 	Histogram2dYcalendarJulian     Histogram2dYcalendar = "julian"
 	Histogram2dYcalendarMayan      Histogram2dYcalendar = "mayan"
 	Histogram2dYcalendarNanakshahi Histogram2dYcalendar = "nanakshahi"
 	Histogram2dYcalendarNepali     Histogram2dYcalendar = "nepali"
 	Histogram2dYcalendarPersian    Histogram2dYcalendar = "persian"
-	Histogram2dYcalendarJalali     Histogram2dYcalendar = "jalali"
 	Histogram2dYcalendarTaiwan     Histogram2dYcalendar = "taiwan"
 	Histogram2dYcalendarThai       Histogram2dYcalendar = "thai"
 	Histogram2dYcalendarUmmalqura  Histogram2dYcalendar = "ummalqura"
