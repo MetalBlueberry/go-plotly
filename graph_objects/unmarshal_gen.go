@@ -19,13 +19,6 @@ func UnmarshalTrace(data []byte) (Trace, error) {
 		return nil, err
 	}
 	switch traceType.Type {
-	case TraceTypeArea:
-		trace := &Area{}
-		err = json.Unmarshal(data, trace)
-		if err != nil {
-			return nil, err
-		}
-		return trace, nil
 	case TraceTypeBar:
 		trace := &Bar{}
 		err = json.Unmarshal(data, trace)
@@ -152,6 +145,13 @@ func UnmarshalTrace(data []byte) (Trace, error) {
 			return nil, err
 		}
 		return trace, nil
+	case TraceTypeIcicle:
+		trace := &Icicle{}
+		err = json.Unmarshal(data, trace)
+		if err != nil {
+			return nil, err
+		}
+		return trace, nil
 	case TraceTypeImage:
 		trace := &Image{}
 		err = json.Unmarshal(data, trace)
@@ -273,6 +273,13 @@ func UnmarshalTrace(data []byte) (Trace, error) {
 		return trace, nil
 	case TraceTypeScatterpolargl:
 		trace := &Scatterpolargl{}
+		err = json.Unmarshal(data, trace)
+		if err != nil {
+			return nil, err
+		}
+		return trace, nil
+	case TraceTypeScattersmith:
+		trace := &Scattersmith{}
 		err = json.Unmarshal(data, trace)
 		if err != nil {
 			return nil, err

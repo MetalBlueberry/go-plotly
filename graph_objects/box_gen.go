@@ -42,7 +42,7 @@ type Box struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Dx
@@ -72,7 +72,7 @@ type Box struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -88,13 +88,13 @@ type Box struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -106,7 +106,7 @@ type Box struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -118,7 +118,7 @@ type Box struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Jitter
@@ -127,11 +127,33 @@ type Box struct {
 	// Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the box(es).
 	Jitter float64 `json:"jitter,omitempty"`
 
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *BoxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
 	// role: Object
@@ -146,7 +168,7 @@ type Box struct {
 	// Lowerfencesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  lowerfence .
+	// Sets the source reference on Chart Studio Cloud for `lowerfence`.
 	Lowerfencesrc String `json:"lowerfencesrc,omitempty"`
 
 	// Marker
@@ -162,7 +184,7 @@ type Box struct {
 	// Meansrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  mean .
+	// Sets the source reference on Chart Studio Cloud for `mean`.
 	Meansrc String `json:"meansrc,omitempty"`
 
 	// Median
@@ -174,7 +196,7 @@ type Box struct {
 	// Mediansrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  median .
+	// Sets the source reference on Chart Studio Cloud for `median`.
 	Mediansrc String `json:"mediansrc,omitempty"`
 
 	// Meta
@@ -186,13 +208,13 @@ type Box struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
+	// Sets the trace name. The trace name appears as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
 	Name String `json:"name,omitempty"`
 
 	// Notched
@@ -210,7 +232,7 @@ type Box struct {
 	// Notchspansrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  notchspan .
+	// Sets the source reference on Chart Studio Cloud for `notchspan`.
 	Notchspansrc String `json:"notchspansrc,omitempty"`
 
 	// Notchwidth
@@ -252,7 +274,7 @@ type Box struct {
 	// Q1src
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  q1 .
+	// Sets the source reference on Chart Studio Cloud for `q1`.
 	Q1src String `json:"q1src,omitempty"`
 
 	// Q3
@@ -264,13 +286,13 @@ type Box struct {
 	// Q3src
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  q3 .
+	// Sets the source reference on Chart Studio Cloud for `q3`.
 	Q3src String `json:"q3src,omitempty"`
 
 	// Quartilemethod
 	// default: linear
 	// type: enumerated
-	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://www.amstat.org/publications/jse/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
 	Quartilemethod BoxQuartilemethod `json:"quartilemethod,omitempty"`
 
 	// Sd
@@ -279,10 +301,16 @@ type Box struct {
 	// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
 	Sd interface{} `json:"sd,omitempty"`
 
+	// Sdmultiple
+	// arrayOK: false
+	// type: number
+	// Scales the box size when sizemode=sd Allowing boxes to be drawn across any stddev range For example 1-stddev, 3-stddev, 5-stddev
+	Sdmultiple float64 `json:"sdmultiple,omitempty"`
+
 	// Sdsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  sd .
+	// Sets the source reference on Chart Studio Cloud for `sd`.
 	Sdsrc String `json:"sdsrc,omitempty"`
 
 	// Selected
@@ -301,6 +329,18 @@ type Box struct {
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
 	Showlegend Bool `json:"showlegend,omitempty"`
 
+	// Showwhiskers
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not whiskers are visible. Defaults to true for `sizemode` *quartiles*, false for *sd*.
+	Showwhiskers Bool `json:"showwhiskers,omitempty"`
+
+	// Sizemode
+	// default: quartiles
+	// type: enumerated
+	// Sets the upper and lower bound for the boxes quartiles means box is drawn between Q1 and Q3 SD means the box is drawn between Mean +- Standard Deviation Argument sdmultiple (default 1) to scale the box size So it could be drawn 1-stddev, 3-stddev etc
+	Sizemode BoxSizemode `json:"sizemode,omitempty"`
+
 	// Stream
 	// role: Object
 	Stream *BoxStream `json:"stream,omitempty"`
@@ -314,7 +354,7 @@ type Box struct {
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms
@@ -342,13 +382,13 @@ type Box struct {
 	// Upperfence
 	// arrayOK: false
 	// type: data_array
-	// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
+	// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the upper as the last sample point above 1.5 times the IQR.
 	Upperfence interface{} `json:"upperfence,omitempty"`
 
 	// Upperfencesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  upperfence .
+	// Sets the source reference on Chart Studio Cloud for `upperfence`.
 	Upperfencesrc String `json:"upperfencesrc,omitempty"`
 
 	// Visible
@@ -393,6 +433,12 @@ type Box struct {
 	// Sets the calendar system to use with `x` date data.
 	Xcalendar BoxXcalendar `json:"xcalendar,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xperiod
 	// arrayOK: false
 	// type: any
@@ -414,7 +460,7 @@ type Box struct {
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -441,6 +487,12 @@ type Box struct {
 	// Sets the calendar system to use with `y` date data.
 	Ycalendar BoxYcalendar `json:"ycalendar,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Yperiod
 	// arrayOK: false
 	// type: any
@@ -462,7 +514,7 @@ type Box struct {
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 }
 
@@ -478,7 +530,7 @@ type BoxHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -490,7 +542,7 @@ type BoxHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -502,7 +554,7 @@ type BoxHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -518,7 +570,7 @@ type BoxHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -530,7 +582,7 @@ type BoxHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -542,7 +594,7 @@ type BoxHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -558,8 +610,44 @@ type BoxHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// BoxLegendgrouptitleFont Sets this legend group's title font.
+type BoxLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// BoxLegendgrouptitle
+type BoxLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *BoxLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // BoxLine
@@ -584,7 +672,7 @@ type BoxMarkerLine struct {
 	// Color
 	// arrayOK: false
 	// type: color
-	// Sets themarker.linecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Outliercolor
@@ -609,10 +697,16 @@ type BoxMarkerLine struct {
 // BoxMarker
 type BoxMarker struct {
 
+	// Angle
+	// arrayOK: false
+	// type: angle
+	// Sets the marker angle in respect to `angleref`.
+	Angle float64 `json:"angle,omitempty"`
+
 	// Color
 	// arrayOK: false
 	// type: color
-	// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Line
@@ -1226,6 +1320,18 @@ var (
 	BoxMarkerSymbolNumber152               BoxMarkerSymbol = 152
 	BoxMarkerSymbol152                     BoxMarkerSymbol = "152"
 	BoxMarkerSymbolArrowBarRightOpen       BoxMarkerSymbol = "arrow-bar-right-open"
+	BoxMarkerSymbolNumber53                BoxMarkerSymbol = 53
+	BoxMarkerSymbol53                      BoxMarkerSymbol = "53"
+	BoxMarkerSymbolArrow                   BoxMarkerSymbol = "arrow"
+	BoxMarkerSymbolNumber153               BoxMarkerSymbol = 153
+	BoxMarkerSymbol153                     BoxMarkerSymbol = "153"
+	BoxMarkerSymbolArrowOpen               BoxMarkerSymbol = "arrow-open"
+	BoxMarkerSymbolNumber54                BoxMarkerSymbol = 54
+	BoxMarkerSymbol54                      BoxMarkerSymbol = "54"
+	BoxMarkerSymbolArrowWide               BoxMarkerSymbol = "arrow-wide"
+	BoxMarkerSymbolNumber154               BoxMarkerSymbol = 154
+	BoxMarkerSymbol154                     BoxMarkerSymbol = "154"
+	BoxMarkerSymbolArrowWideOpen           BoxMarkerSymbol = "arrow-wide-open"
 )
 
 // BoxOrientation Sets the orientation of the box(es). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
@@ -1236,13 +1342,21 @@ const (
 	BoxOrientationH BoxOrientation = "h"
 )
 
-// BoxQuartilemethod Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://www.amstat.org/publications/jse/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+// BoxQuartilemethod Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
 type BoxQuartilemethod string
 
 const (
 	BoxQuartilemethodLinear    BoxQuartilemethod = "linear"
 	BoxQuartilemethodExclusive BoxQuartilemethod = "exclusive"
 	BoxQuartilemethodInclusive BoxQuartilemethod = "inclusive"
+)
+
+// BoxSizemode Sets the upper and lower bound for the boxes quartiles means box is drawn between Q1 and Q3 SD means the box is drawn between Mean +- Standard Deviation Argument sdmultiple (default 1) to scale the box size So it could be drawn 1-stddev, 3-stddev etc
+type BoxSizemode string
+
+const (
+	BoxSizemodeQuartiles BoxSizemode = "quartiles"
+	BoxSizemodeSd        BoxSizemode = "sd"
 )
 
 // BoxVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -1258,19 +1372,19 @@ var (
 type BoxXcalendar string
 
 const (
-	BoxXcalendarGregorian  BoxXcalendar = "gregorian"
 	BoxXcalendarChinese    BoxXcalendar = "chinese"
 	BoxXcalendarCoptic     BoxXcalendar = "coptic"
 	BoxXcalendarDiscworld  BoxXcalendar = "discworld"
 	BoxXcalendarEthiopian  BoxXcalendar = "ethiopian"
+	BoxXcalendarGregorian  BoxXcalendar = "gregorian"
 	BoxXcalendarHebrew     BoxXcalendar = "hebrew"
 	BoxXcalendarIslamic    BoxXcalendar = "islamic"
+	BoxXcalendarJalali     BoxXcalendar = "jalali"
 	BoxXcalendarJulian     BoxXcalendar = "julian"
 	BoxXcalendarMayan      BoxXcalendar = "mayan"
 	BoxXcalendarNanakshahi BoxXcalendar = "nanakshahi"
 	BoxXcalendarNepali     BoxXcalendar = "nepali"
 	BoxXcalendarPersian    BoxXcalendar = "persian"
-	BoxXcalendarJalali     BoxXcalendar = "jalali"
 	BoxXcalendarTaiwan     BoxXcalendar = "taiwan"
 	BoxXcalendarThai       BoxXcalendar = "thai"
 	BoxXcalendarUmmalqura  BoxXcalendar = "ummalqura"
@@ -1289,19 +1403,19 @@ const (
 type BoxYcalendar string
 
 const (
-	BoxYcalendarGregorian  BoxYcalendar = "gregorian"
 	BoxYcalendarChinese    BoxYcalendar = "chinese"
 	BoxYcalendarCoptic     BoxYcalendar = "coptic"
 	BoxYcalendarDiscworld  BoxYcalendar = "discworld"
 	BoxYcalendarEthiopian  BoxYcalendar = "ethiopian"
+	BoxYcalendarGregorian  BoxYcalendar = "gregorian"
 	BoxYcalendarHebrew     BoxYcalendar = "hebrew"
 	BoxYcalendarIslamic    BoxYcalendar = "islamic"
+	BoxYcalendarJalali     BoxYcalendar = "jalali"
 	BoxYcalendarJulian     BoxYcalendar = "julian"
 	BoxYcalendarMayan      BoxYcalendar = "mayan"
 	BoxYcalendarNanakshahi BoxYcalendar = "nanakshahi"
 	BoxYcalendarNepali     BoxYcalendar = "nepali"
 	BoxYcalendarPersian    BoxYcalendar = "persian"
-	BoxYcalendarJalali     BoxYcalendar = "jalali"
 	BoxYcalendarTaiwan     BoxYcalendar = "taiwan"
 	BoxYcalendarThai       BoxYcalendar = "thai"
 	BoxYcalendarUmmalqura  BoxYcalendar = "ummalqura"
