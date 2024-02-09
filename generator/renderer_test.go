@@ -2,9 +2,8 @@ package generator_test
 
 import (
 	"bytes"
-	"go/format"
-
 	_ "embed"
+	"go/format"
 
 	"github.com/golang/mock/gomock"
 	. "github.com/onsi/ginkgo/v2"

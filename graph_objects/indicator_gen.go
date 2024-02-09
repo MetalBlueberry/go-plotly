@@ -30,7 +30,7 @@ type Indicator struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Delta
@@ -54,8 +54,30 @@ type Indicator struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *IndicatorLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -66,7 +88,7 @@ type Indicator struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Mode
@@ -78,7 +100,7 @@ type Indicator struct {
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Number
@@ -199,6 +221,12 @@ type IndicatorDelta struct {
 	// Sets the position of delta with respect to the number.
 	Position IndicatorDeltaPosition `json:"position,omitempty"`
 
+	// Prefix
+	// arrayOK: false
+	// type: string
+	// Sets a prefix appearing before the delta.
+	Prefix String `json:"prefix,omitempty"`
+
 	// Reference
 	// arrayOK: false
 	// type: number
@@ -211,10 +239,16 @@ type IndicatorDelta struct {
 	// Show relative change
 	Relative Bool `json:"relative,omitempty"`
 
+	// Suffix
+	// arrayOK: false
+	// type: string
+	// Sets a suffix appearing next to the delta.
+	Suffix String `json:"suffix,omitempty"`
+
 	// Valueformat
 	// arrayOK: false
 	// type: string
-	// Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	Valueformat String `json:"valueformat,omitempty"`
 }
 
@@ -282,6 +316,12 @@ type IndicatorGaugeAxis struct {
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat IndicatorGaugeAxisExponentformat `json:"exponentformat,omitempty"`
+
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
@@ -356,7 +396,7 @@ type IndicatorGaugeAxis struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -364,6 +404,12 @@ type IndicatorGaugeAxis struct {
 	// I will be happy if you want to contribute by implementing this
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -404,7 +450,7 @@ type IndicatorGaugeAxis struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -416,7 +462,7 @@ type IndicatorGaugeAxis struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -550,6 +596,42 @@ type IndicatorGauge struct {
 	Threshold *IndicatorGaugeThreshold `json:"threshold,omitempty"`
 }
 
+// IndicatorLegendgrouptitleFont Sets this legend group's title font.
+type IndicatorLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// IndicatorLegendgrouptitle
+type IndicatorLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *IndicatorLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
+}
+
 // IndicatorNumberFont Set the font used to display main number
 type IndicatorNumberFont struct {
 
@@ -594,7 +676,7 @@ type IndicatorNumber struct {
 	// Valueformat
 	// arrayOK: false
 	// type: string
-	// Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	Valueformat String `json:"valueformat,omitempty"`
 }
 
@@ -683,7 +765,7 @@ const (
 	IndicatorGaugeAxisExponentformatE1    IndicatorGaugeAxisExponentformat = "e"
 	IndicatorGaugeAxisExponentformatE2    IndicatorGaugeAxisExponentformat = "E"
 	IndicatorGaugeAxisExponentformatPower IndicatorGaugeAxisExponentformat = "power"
-	IndicatorGaugeAxisExponentformatSi    IndicatorGaugeAxisExponentformat = "SI"
+	IndicatorGaugeAxisExponentformatSI    IndicatorGaugeAxisExponentformat = "SI"
 	IndicatorGaugeAxisExponentformatB     IndicatorGaugeAxisExponentformat = "B"
 )
 

@@ -28,7 +28,7 @@ type Table struct {
 	// Columnordersrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  columnorder .
+	// Sets the source reference on Chart Studio Cloud for `columnorder`.
 	Columnordersrc String `json:"columnordersrc,omitempty"`
 
 	// Columnwidth
@@ -40,7 +40,7 @@ type Table struct {
 	// Columnwidthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  columnwidth .
+	// Sets the source reference on Chart Studio Cloud for `columnwidth`.
 	Columnwidthsrc String `json:"columnwidthsrc,omitempty"`
 
 	// Customdata
@@ -52,7 +52,7 @@ type Table struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Domain
@@ -72,7 +72,7 @@ type Table struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -88,8 +88,30 @@ type Table struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *TableLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -100,13 +122,13 @@ type Table struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Stream
@@ -144,7 +166,7 @@ type TableCellsFill struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 }
 
@@ -160,7 +182,7 @@ type TableCellsFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -172,7 +194,7 @@ type TableCellsFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -184,7 +206,7 @@ type TableCellsFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -200,7 +222,7 @@ type TableCellsLine struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Width
@@ -212,7 +234,7 @@ type TableCellsLine struct {
 	// Widthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  width .
+	// Sets the source reference on Chart Studio Cloud for `width`.
 	Widthsrc String `json:"widthsrc,omitempty"`
 }
 
@@ -228,7 +250,7 @@ type TableCells struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Fill
@@ -242,13 +264,13 @@ type TableCells struct {
 	// Format
 	// arrayOK: false
 	// type: data_array
-	// Sets the cell value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	Format interface{} `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  format .
+	// Sets the source reference on Chart Studio Cloud for `format`.
 	Formatsrc String `json:"formatsrc,omitempty"`
 
 	// Height
@@ -270,7 +292,7 @@ type TableCells struct {
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  prefix .
+	// Sets the source reference on Chart Studio Cloud for `prefix`.
 	Prefixsrc String `json:"prefixsrc,omitempty"`
 
 	// Suffix
@@ -282,7 +304,7 @@ type TableCells struct {
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  suffix .
+	// Sets the source reference on Chart Studio Cloud for `suffix`.
 	Suffixsrc String `json:"suffixsrc,omitempty"`
 
 	// Values
@@ -294,7 +316,7 @@ type TableCells struct {
 	// Valuessrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  values .
+	// Sets the source reference on Chart Studio Cloud for `values`.
 	Valuessrc String `json:"valuessrc,omitempty"`
 }
 
@@ -338,7 +360,7 @@ type TableHeaderFill struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 }
 
@@ -354,7 +376,7 @@ type TableHeaderFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -366,7 +388,7 @@ type TableHeaderFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -378,7 +400,7 @@ type TableHeaderFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -394,7 +416,7 @@ type TableHeaderLine struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Width
@@ -406,7 +428,7 @@ type TableHeaderLine struct {
 	// Widthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  width .
+	// Sets the source reference on Chart Studio Cloud for `width`.
 	Widthsrc String `json:"widthsrc,omitempty"`
 }
 
@@ -422,7 +444,7 @@ type TableHeader struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Fill
@@ -436,13 +458,13 @@ type TableHeader struct {
 	// Format
 	// arrayOK: false
 	// type: data_array
-	// Sets the cell value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	Format interface{} `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  format .
+	// Sets the source reference on Chart Studio Cloud for `format`.
 	Formatsrc String `json:"formatsrc,omitempty"`
 
 	// Height
@@ -464,7 +486,7 @@ type TableHeader struct {
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  prefix .
+	// Sets the source reference on Chart Studio Cloud for `prefix`.
 	Prefixsrc String `json:"prefixsrc,omitempty"`
 
 	// Suffix
@@ -476,7 +498,7 @@ type TableHeader struct {
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  suffix .
+	// Sets the source reference on Chart Studio Cloud for `suffix`.
 	Suffixsrc String `json:"suffixsrc,omitempty"`
 
 	// Values
@@ -488,7 +510,7 @@ type TableHeader struct {
 	// Valuessrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  values .
+	// Sets the source reference on Chart Studio Cloud for `values`.
 	Valuessrc String `json:"valuessrc,omitempty"`
 }
 
@@ -504,7 +526,7 @@ type TableHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -516,7 +538,7 @@ type TableHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -528,7 +550,7 @@ type TableHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -544,7 +566,7 @@ type TableHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -556,7 +578,7 @@ type TableHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -568,7 +590,7 @@ type TableHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -584,8 +606,44 @@ type TableHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// TableLegendgrouptitleFont Sets this legend group's title font.
+type TableLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// TableLegendgrouptitle
+type TableLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *TableLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // TableStream

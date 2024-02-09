@@ -34,7 +34,7 @@ type Carpet struct {
 	// Asrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  a .
+	// Sets the source reference on Chart Studio Cloud for `a`.
 	Asrc String `json:"asrc,omitempty"`
 
 	// B
@@ -56,7 +56,7 @@ type Carpet struct {
 	// Bsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  b .
+	// Sets the source reference on Chart Studio Cloud for `b`.
 	Bsrc String `json:"bsrc,omitempty"`
 
 	// Carpet
@@ -86,7 +86,7 @@ type Carpet struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Da
@@ -114,8 +114,30 @@ type Carpet struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *CarpetLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -126,13 +148,13 @@ type Carpet struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -178,7 +200,7 @@ type Carpet struct {
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -196,7 +218,7 @@ type Carpet struct {
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 }
 
@@ -300,7 +322,7 @@ type CarpetAaxis struct {
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  categoryarray .
+	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
 	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -363,11 +385,23 @@ type CarpetAaxis struct {
 	// Sets the axis line color.
 	Gridcolor Color `json:"gridcolor,omitempty"`
 
+	// Griddash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Griddash String `json:"griddash,omitempty"`
+
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
+
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Labelpadding
 	// arrayOK: false
@@ -416,6 +450,12 @@ type CarpetAaxis struct {
 	// type: integer
 	// Sets the number of minor grid ticks per major grid tick
 	Minorgridcount int64 `json:"minorgridcount,omitempty"`
+
+	// Minorgriddash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Minorgriddash String `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
@@ -526,7 +566,7 @@ type CarpetAaxis struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see:  We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -562,7 +602,7 @@ type CarpetAaxis struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -574,7 +614,7 @@ type CarpetAaxis struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Title
@@ -688,7 +728,7 @@ type CarpetBaxis struct {
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  categoryarray .
+	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
 	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -751,11 +791,23 @@ type CarpetBaxis struct {
 	// Sets the axis line color.
 	Gridcolor Color `json:"gridcolor,omitempty"`
 
+	// Griddash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Griddash String `json:"griddash,omitempty"`
+
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
 	Gridwidth float64 `json:"gridwidth,omitempty"`
+
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Labelpadding
 	// arrayOK: false
@@ -804,6 +856,12 @@ type CarpetBaxis struct {
 	// type: integer
 	// Sets the number of minor grid ticks per major grid tick
 	Minorgridcount int64 `json:"minorgridcount,omitempty"`
+
+	// Minorgriddash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Minorgriddash String `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
@@ -914,7 +972,7 @@ type CarpetBaxis struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see:  We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -950,7 +1008,7 @@ type CarpetBaxis struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -962,7 +1020,7 @@ type CarpetBaxis struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Title
@@ -996,6 +1054,42 @@ type CarpetFont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// CarpetLegendgrouptitleFont Sets this legend group's title font.
+type CarpetLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// CarpetLegendgrouptitle
+type CarpetLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *CarpetLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // CarpetStream
@@ -1057,7 +1151,7 @@ const (
 	CarpetAaxisExponentformatE1    CarpetAaxisExponentformat = "e"
 	CarpetAaxisExponentformatE2    CarpetAaxisExponentformat = "E"
 	CarpetAaxisExponentformatPower CarpetAaxisExponentformat = "power"
-	CarpetAaxisExponentformatSi    CarpetAaxisExponentformat = "SI"
+	CarpetAaxisExponentformatSI    CarpetAaxisExponentformat = "SI"
 	CarpetAaxisExponentformatB     CarpetAaxisExponentformat = "B"
 )
 
@@ -1171,7 +1265,7 @@ const (
 	CarpetBaxisExponentformatE1    CarpetBaxisExponentformat = "e"
 	CarpetBaxisExponentformatE2    CarpetBaxisExponentformat = "E"
 	CarpetBaxisExponentformatPower CarpetBaxisExponentformat = "power"
-	CarpetBaxisExponentformatSi    CarpetBaxisExponentformat = "SI"
+	CarpetBaxisExponentformatSI    CarpetBaxisExponentformat = "SI"
 	CarpetBaxisExponentformatB     CarpetBaxisExponentformat = "B"
 )
 

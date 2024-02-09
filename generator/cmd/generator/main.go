@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -54,15 +55,17 @@ func main() {
 		}
 	}
 
-	err = os.MkdirAll(output, 0755)
-	if err != nil {
-		log.Fatalf("Failed to create output dir %s, %s", *outputDirectory, err)
-
+	if err = os.MkdirAll(output, 0755); err != nil {
+		log.Fatalf("Failed to create output dir %s, %s", output, err)
 	}
 
 	err = r.CreatePlotly(output)
 	if err != nil {
 		log.Fatalf("unable to write plotly, %s", err)
+	}
+	if err = os.MkdirAll(output, 0755); err != nil {
+		fmt.Println("Error creating directory:", err)
+		log.Fatalf("unable to write traces, %s", err)
 	}
 
 	err = r.CreateTraces(output)

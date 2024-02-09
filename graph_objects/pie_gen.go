@@ -30,7 +30,7 @@ type Pie struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Direction
@@ -64,7 +64,7 @@ type Pie struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -74,13 +74,13 @@ type Pie struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `percent` and `text`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `percent` and `text`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -92,7 +92,7 @@ type Pie struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -104,7 +104,7 @@ type Pie struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Insidetextfont
@@ -132,14 +132,36 @@ type Pie struct {
 	// Labelssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  labels .
+	// Sets the source reference on Chart Studio Cloud for `labels`.
 	Labelssrc String `json:"labelssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *PieLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
 	// role: Object
@@ -154,13 +176,13 @@ type Pie struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -182,12 +204,12 @@ type Pie struct {
 	// Pullsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  pull .
+	// Sets the source reference on Chart Studio Cloud for `pull`.
 	Pullsrc String `json:"pullsrc,omitempty"`
 
 	// Rotation
 	// arrayOK: false
-	// type: number
+	// type: angle
 	// Instead of the first slice starting at 12 o'clock, rotate to some other angle.
 	Rotation float64 `json:"rotation,omitempty"`
 
@@ -238,25 +260,25 @@ type Pie struct {
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  textposition .
+	// Sets the source reference on Chart Studio Cloud for `textposition`.
 	Textpositionsrc String `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `percent` and `text`.
+	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `percent` and `text`.
 	Texttemplate String `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  texttemplate .
+	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Title
@@ -290,7 +312,7 @@ type Pie struct {
 	// Valuessrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  values .
+	// Sets the source reference on Chart Studio Cloud for `values`.
 	Valuessrc String `json:"valuessrc,omitempty"`
 
 	// Visible
@@ -340,7 +362,7 @@ type PieHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -352,7 +374,7 @@ type PieHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -364,7 +386,7 @@ type PieHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -380,7 +402,7 @@ type PieHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -392,7 +414,7 @@ type PieHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -404,7 +426,7 @@ type PieHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -420,7 +442,7 @@ type PieHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
 }
 
@@ -436,7 +458,7 @@ type PieInsidetextfont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -448,7 +470,7 @@ type PieInsidetextfont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -460,8 +482,44 @@ type PieInsidetextfont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
+}
+
+// PieLegendgrouptitleFont Sets this legend group's title font.
+type PieLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// PieLegendgrouptitle
+type PieLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *PieLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // PieMarkerLine
@@ -476,7 +534,7 @@ type PieMarkerLine struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Width
@@ -488,8 +546,84 @@ type PieMarkerLine struct {
 	// Widthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  width .
+	// Sets the source reference on Chart Studio Cloud for `width`.
 	Widthsrc String `json:"widthsrc,omitempty"`
+}
+
+// PieMarkerPattern Sets the pattern within the marker.
+type PieMarkerPattern struct {
+
+	// Bgcolor
+	// arrayOK: true
+	// type: color
+	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	Bgcolor Color `json:"bgcolor,omitempty"`
+
+	// Bgcolorsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
+
+	// Fgcolor
+	// arrayOK: true
+	// type: color
+	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	Fgcolor Color `json:"fgcolor,omitempty"`
+
+	// Fgcolorsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	Fgcolorsrc String `json:"fgcolorsrc,omitempty"`
+
+	// Fgopacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	Fgopacity float64 `json:"fgopacity,omitempty"`
+
+	// Fillmode
+	// default: replace
+	// type: enumerated
+	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	Fillmode PieMarkerPatternFillmode `json:"fillmode,omitempty"`
+
+	// Shape
+	// default:
+	// type: enumerated
+	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	Shape PieMarkerPatternShape `json:"shape,omitempty"`
+
+	// Shapesrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `shape`.
+	Shapesrc String `json:"shapesrc,omitempty"`
+
+	// Size
+	// arrayOK: true
+	// type: number
+	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	Size float64 `json:"size,omitempty"`
+
+	// Sizesrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `size`.
+	Sizesrc String `json:"sizesrc,omitempty"`
+
+	// Solidity
+	// arrayOK: true
+	// type: number
+	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	Solidity float64 `json:"solidity,omitempty"`
+
+	// Soliditysrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	Soliditysrc String `json:"soliditysrc,omitempty"`
 }
 
 // PieMarker
@@ -504,12 +638,16 @@ type PieMarker struct {
 	// Colorssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  colors .
+	// Sets the source reference on Chart Studio Cloud for `colors`.
 	Colorssrc String `json:"colorssrc,omitempty"`
 
 	// Line
 	// role: Object
 	Line *PieMarkerLine `json:"line,omitempty"`
+
+	// Pattern
+	// role: Object
+	Pattern *PieMarkerPattern `json:"pattern,omitempty"`
 }
 
 // PieOutsidetextfont Sets the font used for `textinfo` lying outside the sector.
@@ -524,7 +662,7 @@ type PieOutsidetextfont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -536,7 +674,7 @@ type PieOutsidetextfont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -548,7 +686,7 @@ type PieOutsidetextfont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -580,7 +718,7 @@ type PieTextfont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -592,7 +730,7 @@ type PieTextfont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -604,7 +742,7 @@ type PieTextfont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -620,7 +758,7 @@ type PieTitleFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -632,7 +770,7 @@ type PieTitleFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -644,7 +782,7 @@ type PieTitleFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -693,6 +831,28 @@ const (
 	PieInsidetextorientationRadial     PieInsidetextorientation = "radial"
 	PieInsidetextorientationTangential PieInsidetextorientation = "tangential"
 	PieInsidetextorientationAuto       PieInsidetextorientation = "auto"
+)
+
+// PieMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+type PieMarkerPatternFillmode string
+
+const (
+	PieMarkerPatternFillmodeReplace PieMarkerPatternFillmode = "replace"
+	PieMarkerPatternFillmodeOverlay PieMarkerPatternFillmode = "overlay"
+)
+
+// PieMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+type PieMarkerPatternShape string
+
+const (
+	PieMarkerPatternShapeEmpty           PieMarkerPatternShape = ""
+	PieMarkerPatternShapeSlash           PieMarkerPatternShape = "/"
+	PieMarkerPatternShapeDoublebackslash PieMarkerPatternShape = "\\"
+	PieMarkerPatternShapeX               PieMarkerPatternShape = "x"
+	PieMarkerPatternShapeHyphenHyphen    PieMarkerPatternShape = "-"
+	PieMarkerPatternShapeOr              PieMarkerPatternShape = "|"
+	PieMarkerPatternShapePlus            PieMarkerPatternShape = "+"
+	PieMarkerPatternShapeDot             PieMarkerPatternShape = "."
 )
 
 // PieTextposition Specifies the location of the `textinfo`.

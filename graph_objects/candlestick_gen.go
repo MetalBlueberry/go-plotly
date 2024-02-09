@@ -24,7 +24,7 @@ type Candlestick struct {
 	// Closesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  close .
+	// Sets the source reference on Chart Studio Cloud for `close`.
 	Closesrc String `json:"closesrc,omitempty"`
 
 	// Customdata
@@ -36,7 +36,7 @@ type Candlestick struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Decreasing
@@ -52,7 +52,7 @@ type Candlestick struct {
 	// Highsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  high .
+	// Sets the source reference on Chart Studio Cloud for `high`.
 	Highsrc String `json:"highsrc,omitempty"`
 
 	// Hoverinfo
@@ -64,7 +64,7 @@ type Candlestick struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -80,7 +80,7 @@ type Candlestick struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -92,18 +92,40 @@ type Candlestick struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Increasing
 	// role: Object
 	Increasing *CandlestickIncreasing `json:"increasing,omitempty"`
 
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
+
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *CandlestickLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
 	// role: Object
@@ -118,7 +140,7 @@ type Candlestick struct {
 	// Lowsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  low .
+	// Sets the source reference on Chart Studio Cloud for `low`.
 	Lowsrc String `json:"lowsrc,omitempty"`
 
 	// Meta
@@ -130,13 +152,13 @@ type Candlestick struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -154,7 +176,7 @@ type Candlestick struct {
 	// Opensrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  open .
+	// Sets the source reference on Chart Studio Cloud for `open`.
 	Opensrc String `json:"opensrc,omitempty"`
 
 	// Selectedpoints
@@ -182,7 +204,7 @@ type Candlestick struct {
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Transforms
@@ -233,6 +255,12 @@ type Candlestick struct {
 	// Sets the calendar system to use with `x` date data.
 	Xcalendar CandlestickXcalendar `json:"xcalendar,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xperiod
 	// arrayOK: false
 	// type: any
@@ -254,7 +282,7 @@ type Candlestick struct {
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Yaxis
@@ -262,6 +290,12 @@ type Candlestick struct {
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
 	Yaxis String `json:"yaxis,omitempty"`
+
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
 }
 
 // CandlestickDecreasingLine
@@ -306,7 +340,7 @@ type CandlestickHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -318,7 +352,7 @@ type CandlestickHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -330,7 +364,7 @@ type CandlestickHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -346,7 +380,7 @@ type CandlestickHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -358,7 +392,7 @@ type CandlestickHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -370,7 +404,7 @@ type CandlestickHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -386,7 +420,7 @@ type CandlestickHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
 
 	// Split
@@ -424,6 +458,42 @@ type CandlestickIncreasing struct {
 	// Line
 	// role: Object
 	Line *CandlestickIncreasingLine `json:"line,omitempty"`
+}
+
+// CandlestickLegendgrouptitleFont Sets this legend group's title font.
+type CandlestickLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// CandlestickLegendgrouptitle
+type CandlestickLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *CandlestickLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // CandlestickLine
@@ -474,19 +544,19 @@ var (
 type CandlestickXcalendar string
 
 const (
-	CandlestickXcalendarGregorian  CandlestickXcalendar = "gregorian"
 	CandlestickXcalendarChinese    CandlestickXcalendar = "chinese"
 	CandlestickXcalendarCoptic     CandlestickXcalendar = "coptic"
 	CandlestickXcalendarDiscworld  CandlestickXcalendar = "discworld"
 	CandlestickXcalendarEthiopian  CandlestickXcalendar = "ethiopian"
+	CandlestickXcalendarGregorian  CandlestickXcalendar = "gregorian"
 	CandlestickXcalendarHebrew     CandlestickXcalendar = "hebrew"
 	CandlestickXcalendarIslamic    CandlestickXcalendar = "islamic"
+	CandlestickXcalendarJalali     CandlestickXcalendar = "jalali"
 	CandlestickXcalendarJulian     CandlestickXcalendar = "julian"
 	CandlestickXcalendarMayan      CandlestickXcalendar = "mayan"
 	CandlestickXcalendarNanakshahi CandlestickXcalendar = "nanakshahi"
 	CandlestickXcalendarNepali     CandlestickXcalendar = "nepali"
 	CandlestickXcalendarPersian    CandlestickXcalendar = "persian"
-	CandlestickXcalendarJalali     CandlestickXcalendar = "jalali"
 	CandlestickXcalendarTaiwan     CandlestickXcalendar = "taiwan"
 	CandlestickXcalendarThai       CandlestickXcalendar = "thai"
 	CandlestickXcalendarUmmalqura  CandlestickXcalendar = "ummalqura"
