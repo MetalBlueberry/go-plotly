@@ -18,7 +18,7 @@ type Heatmap struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Coloraxis
@@ -34,7 +34,7 @@ type Heatmap struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Connectgaps
@@ -52,7 +52,7 @@ type Heatmap struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Dx
@@ -76,7 +76,7 @@ type Heatmap struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -92,13 +92,13 @@ type Heatmap struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -110,7 +110,7 @@ type Heatmap struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -122,14 +122,36 @@ type Heatmap struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *HeatmapLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -140,13 +162,13 @@ type Heatmap struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -183,11 +205,21 @@ type Heatmap struct {
 	// Sets the text elements associated with each z value.
 	Text interface{} `json:"text,omitempty"`
 
+	// Textfont
+	// role: Object
+	Textfont *HeatmapTextfont `json:"textfont,omitempty"`
+
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
+
+	// Texttemplate
+	// arrayOK: false
+	// type: string
+	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `x`, `y`, `z` and `text`.
+	Texttemplate String `json:"texttemplate,omitempty"`
 
 	// Transforms
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -249,6 +281,12 @@ type Heatmap struct {
 	// Sets the horizontal gap (in pixels) between bricks.
 	Xgap float64 `json:"xgap,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xperiod
 	// arrayOK: false
 	// type: any
@@ -270,7 +308,7 @@ type Heatmap struct {
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Xtype
@@ -309,6 +347,12 @@ type Heatmap struct {
 	// Sets the vertical gap (in pixels) between bricks.
 	Ygap float64 `json:"ygap,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Yperiod
 	// arrayOK: false
 	// type: any
@@ -330,7 +374,7 @@ type Heatmap struct {
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 
 	// Ytype
@@ -348,13 +392,13 @@ type Heatmap struct {
 	// Zauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax` Defaults to `false` when `zmin` and `zmax` are set by the user.
 	Zauto Bool `json:"zauto,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
 	// type: string
-	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
 	Zhoverformat String `json:"zhoverformat,omitempty"`
 
 	// Zmax
@@ -384,7 +428,7 @@ type Heatmap struct {
 	// Zsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  z .
+	// Sets the source reference on Chart Studio Cloud for `z`.
 	Zsrc String `json:"zsrc,omitempty"`
 }
 
@@ -440,9 +484,9 @@ type HeatmapColorbarTitle struct {
 	Font *HeatmapColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side HeatmapColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -485,6 +529,12 @@ type HeatmapColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat HeatmapColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -508,6 +558,12 @@ type HeatmapColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation HeatmapColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -588,7 +644,7 @@ type HeatmapColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -597,11 +653,23 @@ type HeatmapColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow HeatmapColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition HeatmapColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -642,7 +710,7 @@ type HeatmapColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -654,7 +722,7 @@ type HeatmapColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -670,13 +738,13 @@ type HeatmapColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor HeatmapColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -685,16 +753,22 @@ type HeatmapColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref HeatmapColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor HeatmapColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -702,6 +776,12 @@ type HeatmapColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref HeatmapColorbarYref `json:"yref,omitempty"`
 }
 
 // HeatmapHoverlabelFont Sets the font used in hover labels.
@@ -716,7 +796,7 @@ type HeatmapHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -728,7 +808,7 @@ type HeatmapHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -740,7 +820,7 @@ type HeatmapHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -756,7 +836,7 @@ type HeatmapHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -768,7 +848,7 @@ type HeatmapHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -780,7 +860,7 @@ type HeatmapHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -796,8 +876,44 @@ type HeatmapHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// HeatmapLegendgrouptitleFont Sets this legend group's title font.
+type HeatmapLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// HeatmapLegendgrouptitle
+type HeatmapLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *HeatmapLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // HeatmapStream
@@ -816,6 +932,28 @@ type HeatmapStream struct {
 	Token String `json:"token,omitempty"`
 }
 
+// HeatmapTextfont Sets the text font.
+type HeatmapTextfont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
 // HeatmapColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 type HeatmapColorbarExponentformat string
 
@@ -824,7 +962,7 @@ const (
 	HeatmapColorbarExponentformatE1    HeatmapColorbarExponentformat = "e"
 	HeatmapColorbarExponentformatE2    HeatmapColorbarExponentformat = "E"
 	HeatmapColorbarExponentformatPower HeatmapColorbarExponentformat = "power"
-	HeatmapColorbarExponentformatSi    HeatmapColorbarExponentformat = "SI"
+	HeatmapColorbarExponentformatSI    HeatmapColorbarExponentformat = "SI"
 	HeatmapColorbarExponentformatB     HeatmapColorbarExponentformat = "B"
 )
 
@@ -834,6 +972,14 @@ type HeatmapColorbarLenmode string
 const (
 	HeatmapColorbarLenmodeFraction HeatmapColorbarLenmode = "fraction"
 	HeatmapColorbarLenmodePixels   HeatmapColorbarLenmode = "pixels"
+)
+
+// HeatmapColorbarOrientation Sets the orientation of the colorbar.
+type HeatmapColorbarOrientation string
+
+const (
+	HeatmapColorbarOrientationH HeatmapColorbarOrientation = "h"
+	HeatmapColorbarOrientationV HeatmapColorbarOrientation = "v"
 )
 
 // HeatmapColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -874,7 +1020,16 @@ const (
 	HeatmapColorbarThicknessmodePixels   HeatmapColorbarThicknessmode = "pixels"
 )
 
-// HeatmapColorbarTicklabelposition Determines where tick labels are drawn.
+// HeatmapColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type HeatmapColorbarTicklabeloverflow string
+
+const (
+	HeatmapColorbarTicklabeloverflowAllow          HeatmapColorbarTicklabeloverflow = "allow"
+	HeatmapColorbarTicklabeloverflowHidePastDiv    HeatmapColorbarTicklabeloverflow = "hide past div"
+	HeatmapColorbarTicklabeloverflowHidePastDomain HeatmapColorbarTicklabeloverflow = "hide past domain"
+)
+
+// HeatmapColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type HeatmapColorbarTicklabelposition string
 
 const (
@@ -882,6 +1037,10 @@ const (
 	HeatmapColorbarTicklabelpositionInside        HeatmapColorbarTicklabelposition = "inside"
 	HeatmapColorbarTicklabelpositionOutsideTop    HeatmapColorbarTicklabelposition = "outside top"
 	HeatmapColorbarTicklabelpositionInsideTop     HeatmapColorbarTicklabelposition = "inside top"
+	HeatmapColorbarTicklabelpositionOutsideLeft   HeatmapColorbarTicklabelposition = "outside left"
+	HeatmapColorbarTicklabelpositionInsideLeft    HeatmapColorbarTicklabelposition = "inside left"
+	HeatmapColorbarTicklabelpositionOutsideRight  HeatmapColorbarTicklabelposition = "outside right"
+	HeatmapColorbarTicklabelpositionInsideRight   HeatmapColorbarTicklabelposition = "inside right"
 	HeatmapColorbarTicklabelpositionOutsideBottom HeatmapColorbarTicklabelposition = "outside bottom"
 	HeatmapColorbarTicklabelpositionInsideBottom  HeatmapColorbarTicklabelposition = "inside bottom"
 )
@@ -904,7 +1063,7 @@ const (
 	HeatmapColorbarTicksEmpty   HeatmapColorbarTicks = ""
 )
 
-// HeatmapColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// HeatmapColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type HeatmapColorbarTitleSide string
 
 const (
@@ -913,7 +1072,7 @@ const (
 	HeatmapColorbarTitleSideBottom HeatmapColorbarTitleSide = "bottom"
 )
 
-// HeatmapColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// HeatmapColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type HeatmapColorbarXanchor string
 
 const (
@@ -922,13 +1081,29 @@ const (
 	HeatmapColorbarXanchorRight  HeatmapColorbarXanchor = "right"
 )
 
-// HeatmapColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// HeatmapColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type HeatmapColorbarXref string
+
+const (
+	HeatmapColorbarXrefContainer HeatmapColorbarXref = "container"
+	HeatmapColorbarXrefPaper     HeatmapColorbarXref = "paper"
+)
+
+// HeatmapColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type HeatmapColorbarYanchor string
 
 const (
 	HeatmapColorbarYanchorTop    HeatmapColorbarYanchor = "top"
 	HeatmapColorbarYanchorMiddle HeatmapColorbarYanchor = "middle"
 	HeatmapColorbarYanchorBottom HeatmapColorbarYanchor = "bottom"
+)
+
+// HeatmapColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type HeatmapColorbarYref string
+
+const (
+	HeatmapColorbarYrefContainer HeatmapColorbarYref = "container"
+	HeatmapColorbarYrefPaper     HeatmapColorbarYref = "paper"
 )
 
 // HeatmapHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
@@ -953,19 +1128,19 @@ var (
 type HeatmapXcalendar string
 
 const (
-	HeatmapXcalendarGregorian  HeatmapXcalendar = "gregorian"
 	HeatmapXcalendarChinese    HeatmapXcalendar = "chinese"
 	HeatmapXcalendarCoptic     HeatmapXcalendar = "coptic"
 	HeatmapXcalendarDiscworld  HeatmapXcalendar = "discworld"
 	HeatmapXcalendarEthiopian  HeatmapXcalendar = "ethiopian"
+	HeatmapXcalendarGregorian  HeatmapXcalendar = "gregorian"
 	HeatmapXcalendarHebrew     HeatmapXcalendar = "hebrew"
 	HeatmapXcalendarIslamic    HeatmapXcalendar = "islamic"
+	HeatmapXcalendarJalali     HeatmapXcalendar = "jalali"
 	HeatmapXcalendarJulian     HeatmapXcalendar = "julian"
 	HeatmapXcalendarMayan      HeatmapXcalendar = "mayan"
 	HeatmapXcalendarNanakshahi HeatmapXcalendar = "nanakshahi"
 	HeatmapXcalendarNepali     HeatmapXcalendar = "nepali"
 	HeatmapXcalendarPersian    HeatmapXcalendar = "persian"
-	HeatmapXcalendarJalali     HeatmapXcalendar = "jalali"
 	HeatmapXcalendarTaiwan     HeatmapXcalendar = "taiwan"
 	HeatmapXcalendarThai       HeatmapXcalendar = "thai"
 	HeatmapXcalendarUmmalqura  HeatmapXcalendar = "ummalqura"
@@ -992,19 +1167,19 @@ const (
 type HeatmapYcalendar string
 
 const (
-	HeatmapYcalendarGregorian  HeatmapYcalendar = "gregorian"
 	HeatmapYcalendarChinese    HeatmapYcalendar = "chinese"
 	HeatmapYcalendarCoptic     HeatmapYcalendar = "coptic"
 	HeatmapYcalendarDiscworld  HeatmapYcalendar = "discworld"
 	HeatmapYcalendarEthiopian  HeatmapYcalendar = "ethiopian"
+	HeatmapYcalendarGregorian  HeatmapYcalendar = "gregorian"
 	HeatmapYcalendarHebrew     HeatmapYcalendar = "hebrew"
 	HeatmapYcalendarIslamic    HeatmapYcalendar = "islamic"
+	HeatmapYcalendarJalali     HeatmapYcalendar = "jalali"
 	HeatmapYcalendarJulian     HeatmapYcalendar = "julian"
 	HeatmapYcalendarMayan      HeatmapYcalendar = "mayan"
 	HeatmapYcalendarNanakshahi HeatmapYcalendar = "nanakshahi"
 	HeatmapYcalendarNepali     HeatmapYcalendar = "nepali"
 	HeatmapYcalendarPersian    HeatmapYcalendar = "persian"
-	HeatmapYcalendarJalali     HeatmapYcalendar = "jalali"
 	HeatmapYcalendarTaiwan     HeatmapYcalendar = "taiwan"
 	HeatmapYcalendarThai       HeatmapYcalendar = "thai"
 	HeatmapYcalendarUmmalqura  HeatmapYcalendar = "ummalqura"

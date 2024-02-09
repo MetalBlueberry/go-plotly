@@ -24,7 +24,7 @@ type Barpolar struct {
 	// Basesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  base .
+	// Sets the source reference on Chart Studio Cloud for `base`.
 	Basesrc String `json:"basesrc,omitempty"`
 
 	// Customdata
@@ -36,7 +36,7 @@ type Barpolar struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Dr
@@ -60,7 +60,7 @@ type Barpolar struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -70,13 +70,13 @@ type Barpolar struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -88,7 +88,7 @@ type Barpolar struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -100,14 +100,36 @@ type Barpolar struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *BarpolarLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
 	// role: Object
@@ -122,13 +144,13 @@ type Barpolar struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Offset
@@ -140,7 +162,7 @@ type Barpolar struct {
 	// Offsetsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  offset .
+	// Sets the source reference on Chart Studio Cloud for `offset`.
 	Offsetsrc String `json:"offsetsrc,omitempty"`
 
 	// Opacity
@@ -164,7 +186,7 @@ type Barpolar struct {
 	// Rsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  r .
+	// Sets the source reference on Chart Studio Cloud for `r`.
 	Rsrc String `json:"rsrc,omitempty"`
 
 	// Selected
@@ -202,7 +224,7 @@ type Barpolar struct {
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Theta
@@ -220,7 +242,7 @@ type Barpolar struct {
 	// Thetasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  theta .
+	// Sets the source reference on Chart Studio Cloud for `theta`.
 	Thetasrc String `json:"thetasrc,omitempty"`
 
 	// Thetaunit
@@ -266,7 +288,7 @@ type Barpolar struct {
 	// Widthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  width .
+	// Sets the source reference on Chart Studio Cloud for `width`.
 	Widthsrc String `json:"widthsrc,omitempty"`
 }
 
@@ -282,7 +304,7 @@ type BarpolarHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -294,7 +316,7 @@ type BarpolarHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -306,7 +328,7 @@ type BarpolarHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -322,7 +344,7 @@ type BarpolarHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -334,7 +356,7 @@ type BarpolarHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -346,7 +368,7 @@ type BarpolarHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -362,8 +384,44 @@ type BarpolarHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// BarpolarLegendgrouptitleFont Sets this legend group's title font.
+type BarpolarLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// BarpolarLegendgrouptitle
+type BarpolarLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *BarpolarLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // BarpolarMarkerColorbarTickfont Sets the color bar's tick label font
@@ -418,9 +476,9 @@ type BarpolarMarkerColorbarTitle struct {
 	Font *BarpolarMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side BarpolarMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -463,6 +521,12 @@ type BarpolarMarkerColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat BarpolarMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -486,6 +550,12 @@ type BarpolarMarkerColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation BarpolarMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -566,7 +636,7 @@ type BarpolarMarkerColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -575,11 +645,23 @@ type BarpolarMarkerColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow BarpolarMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition BarpolarMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -620,7 +702,7 @@ type BarpolarMarkerColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -632,7 +714,7 @@ type BarpolarMarkerColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -648,13 +730,13 @@ type BarpolarMarkerColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor BarpolarMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -663,16 +745,22 @@ type BarpolarMarkerColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref BarpolarMarkerColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor BarpolarMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -680,6 +768,12 @@ type BarpolarMarkerColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref BarpolarMarkerColorbarYref `json:"yref,omitempty"`
 }
 
 // BarpolarMarkerLine
@@ -688,37 +782,37 @@ type BarpolarMarkerLine struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets themarker.linecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -730,19 +824,19 @@ type BarpolarMarkerLine struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Width
@@ -754,8 +848,84 @@ type BarpolarMarkerLine struct {
 	// Widthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  width .
+	// Sets the source reference on Chart Studio Cloud for `width`.
 	Widthsrc String `json:"widthsrc,omitempty"`
+}
+
+// BarpolarMarkerPattern Sets the pattern within the marker.
+type BarpolarMarkerPattern struct {
+
+	// Bgcolor
+	// arrayOK: true
+	// type: color
+	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	Bgcolor Color `json:"bgcolor,omitempty"`
+
+	// Bgcolorsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
+
+	// Fgcolor
+	// arrayOK: true
+	// type: color
+	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	Fgcolor Color `json:"fgcolor,omitempty"`
+
+	// Fgcolorsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	Fgcolorsrc String `json:"fgcolorsrc,omitempty"`
+
+	// Fgopacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	Fgopacity float64 `json:"fgopacity,omitempty"`
+
+	// Fillmode
+	// default: replace
+	// type: enumerated
+	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	Fillmode BarpolarMarkerPatternFillmode `json:"fillmode,omitempty"`
+
+	// Shape
+	// default:
+	// type: enumerated
+	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	Shape BarpolarMarkerPatternShape `json:"shape,omitempty"`
+
+	// Shapesrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `shape`.
+	Shapesrc String `json:"shapesrc,omitempty"`
+
+	// Size
+	// arrayOK: true
+	// type: number
+	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	Size float64 `json:"size,omitempty"`
+
+	// Sizesrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `size`.
+	Sizesrc String `json:"sizesrc,omitempty"`
+
+	// Solidity
+	// arrayOK: true
+	// type: number
+	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	Solidity float64 `json:"solidity,omitempty"`
+
+	// Soliditysrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	Soliditysrc String `json:"soliditysrc,omitempty"`
 }
 
 // BarpolarMarker
@@ -764,37 +934,37 @@ type BarpolarMarker struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -810,13 +980,13 @@ type BarpolarMarker struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `marker.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Line
@@ -832,19 +1002,23 @@ type BarpolarMarker struct {
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  opacity .
+	// Sets the source reference on Chart Studio Cloud for `opacity`.
 	Opacitysrc String `json:"opacitysrc,omitempty"`
+
+	// Pattern
+	// role: Object
+	Pattern *BarpolarMarkerPattern `json:"pattern,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
+	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
 	Showscale Bool `json:"showscale,omitempty"`
 }
 
@@ -957,7 +1131,7 @@ const (
 	BarpolarMarkerColorbarExponentformatE1    BarpolarMarkerColorbarExponentformat = "e"
 	BarpolarMarkerColorbarExponentformatE2    BarpolarMarkerColorbarExponentformat = "E"
 	BarpolarMarkerColorbarExponentformatPower BarpolarMarkerColorbarExponentformat = "power"
-	BarpolarMarkerColorbarExponentformatSi    BarpolarMarkerColorbarExponentformat = "SI"
+	BarpolarMarkerColorbarExponentformatSI    BarpolarMarkerColorbarExponentformat = "SI"
 	BarpolarMarkerColorbarExponentformatB     BarpolarMarkerColorbarExponentformat = "B"
 )
 
@@ -967,6 +1141,14 @@ type BarpolarMarkerColorbarLenmode string
 const (
 	BarpolarMarkerColorbarLenmodeFraction BarpolarMarkerColorbarLenmode = "fraction"
 	BarpolarMarkerColorbarLenmodePixels   BarpolarMarkerColorbarLenmode = "pixels"
+)
+
+// BarpolarMarkerColorbarOrientation Sets the orientation of the colorbar.
+type BarpolarMarkerColorbarOrientation string
+
+const (
+	BarpolarMarkerColorbarOrientationH BarpolarMarkerColorbarOrientation = "h"
+	BarpolarMarkerColorbarOrientationV BarpolarMarkerColorbarOrientation = "v"
 )
 
 // BarpolarMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -1007,7 +1189,16 @@ const (
 	BarpolarMarkerColorbarThicknessmodePixels   BarpolarMarkerColorbarThicknessmode = "pixels"
 )
 
-// BarpolarMarkerColorbarTicklabelposition Determines where tick labels are drawn.
+// BarpolarMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type BarpolarMarkerColorbarTicklabeloverflow string
+
+const (
+	BarpolarMarkerColorbarTicklabeloverflowAllow          BarpolarMarkerColorbarTicklabeloverflow = "allow"
+	BarpolarMarkerColorbarTicklabeloverflowHidePastDiv    BarpolarMarkerColorbarTicklabeloverflow = "hide past div"
+	BarpolarMarkerColorbarTicklabeloverflowHidePastDomain BarpolarMarkerColorbarTicklabeloverflow = "hide past domain"
+)
+
+// BarpolarMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type BarpolarMarkerColorbarTicklabelposition string
 
 const (
@@ -1015,6 +1206,10 @@ const (
 	BarpolarMarkerColorbarTicklabelpositionInside        BarpolarMarkerColorbarTicklabelposition = "inside"
 	BarpolarMarkerColorbarTicklabelpositionOutsideTop    BarpolarMarkerColorbarTicklabelposition = "outside top"
 	BarpolarMarkerColorbarTicklabelpositionInsideTop     BarpolarMarkerColorbarTicklabelposition = "inside top"
+	BarpolarMarkerColorbarTicklabelpositionOutsideLeft   BarpolarMarkerColorbarTicklabelposition = "outside left"
+	BarpolarMarkerColorbarTicklabelpositionInsideLeft    BarpolarMarkerColorbarTicklabelposition = "inside left"
+	BarpolarMarkerColorbarTicklabelpositionOutsideRight  BarpolarMarkerColorbarTicklabelposition = "outside right"
+	BarpolarMarkerColorbarTicklabelpositionInsideRight   BarpolarMarkerColorbarTicklabelposition = "inside right"
 	BarpolarMarkerColorbarTicklabelpositionOutsideBottom BarpolarMarkerColorbarTicklabelposition = "outside bottom"
 	BarpolarMarkerColorbarTicklabelpositionInsideBottom  BarpolarMarkerColorbarTicklabelposition = "inside bottom"
 )
@@ -1037,7 +1232,7 @@ const (
 	BarpolarMarkerColorbarTicksEmpty   BarpolarMarkerColorbarTicks = ""
 )
 
-// BarpolarMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// BarpolarMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type BarpolarMarkerColorbarTitleSide string
 
 const (
@@ -1046,7 +1241,7 @@ const (
 	BarpolarMarkerColorbarTitleSideBottom BarpolarMarkerColorbarTitleSide = "bottom"
 )
 
-// BarpolarMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// BarpolarMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type BarpolarMarkerColorbarXanchor string
 
 const (
@@ -1055,13 +1250,51 @@ const (
 	BarpolarMarkerColorbarXanchorRight  BarpolarMarkerColorbarXanchor = "right"
 )
 
-// BarpolarMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// BarpolarMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type BarpolarMarkerColorbarXref string
+
+const (
+	BarpolarMarkerColorbarXrefContainer BarpolarMarkerColorbarXref = "container"
+	BarpolarMarkerColorbarXrefPaper     BarpolarMarkerColorbarXref = "paper"
+)
+
+// BarpolarMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type BarpolarMarkerColorbarYanchor string
 
 const (
 	BarpolarMarkerColorbarYanchorTop    BarpolarMarkerColorbarYanchor = "top"
 	BarpolarMarkerColorbarYanchorMiddle BarpolarMarkerColorbarYanchor = "middle"
 	BarpolarMarkerColorbarYanchorBottom BarpolarMarkerColorbarYanchor = "bottom"
+)
+
+// BarpolarMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type BarpolarMarkerColorbarYref string
+
+const (
+	BarpolarMarkerColorbarYrefContainer BarpolarMarkerColorbarYref = "container"
+	BarpolarMarkerColorbarYrefPaper     BarpolarMarkerColorbarYref = "paper"
+)
+
+// BarpolarMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+type BarpolarMarkerPatternFillmode string
+
+const (
+	BarpolarMarkerPatternFillmodeReplace BarpolarMarkerPatternFillmode = "replace"
+	BarpolarMarkerPatternFillmodeOverlay BarpolarMarkerPatternFillmode = "overlay"
+)
+
+// BarpolarMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+type BarpolarMarkerPatternShape string
+
+const (
+	BarpolarMarkerPatternShapeEmpty           BarpolarMarkerPatternShape = ""
+	BarpolarMarkerPatternShapeSlash           BarpolarMarkerPatternShape = "/"
+	BarpolarMarkerPatternShapeDoublebackslash BarpolarMarkerPatternShape = "\\"
+	BarpolarMarkerPatternShapeX               BarpolarMarkerPatternShape = "x"
+	BarpolarMarkerPatternShapeHyphenHyphen    BarpolarMarkerPatternShape = "-"
+	BarpolarMarkerPatternShapeOr              BarpolarMarkerPatternShape = "|"
+	BarpolarMarkerPatternShapePlus            BarpolarMarkerPatternShape = "+"
+	BarpolarMarkerPatternShapeDot             BarpolarMarkerPatternShape = "."
 )
 
 // BarpolarThetaunit Sets the unit of input *theta* values. Has an effect only when on *linear* angular axes.

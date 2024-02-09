@@ -30,7 +30,7 @@ type Scatter3d struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// ErrorX
@@ -54,7 +54,7 @@ type Scatter3d struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -64,13 +64,13 @@ type Scatter3d struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -82,7 +82,7 @@ type Scatter3d struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -94,14 +94,36 @@ type Scatter3d struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *Scatter3dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
 	// role: Object
@@ -120,7 +142,7 @@ type Scatter3d struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Mode
@@ -132,7 +154,7 @@ type Scatter3d struct {
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -192,25 +214,25 @@ type Scatter3d struct {
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  textposition .
+	// Sets the source reference on Chart Studio Cloud for `textposition`.
 	Textpositionsrc String `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
 	Texttemplate String `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  texttemplate .
+	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
 	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
@@ -249,10 +271,16 @@ type Scatter3d struct {
 	// Sets the calendar system to use with `x` date data.
 	Xcalendar Scatter3dXcalendar `json:"xcalendar,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -267,10 +295,16 @@ type Scatter3d struct {
 	// Sets the calendar system to use with `y` date data.
 	Ycalendar Scatter3dYcalendar `json:"ycalendar,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 
 	// Z
@@ -285,10 +319,16 @@ type Scatter3d struct {
 	// Sets the calendar system to use with `z` date data.
 	Zcalendar Scatter3dZcalendar `json:"zcalendar,omitempty"`
 
+	// Zhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+	Zhoverformat String `json:"zhoverformat,omitempty"`
+
 	// Zsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  z .
+	// Sets the source reference on Chart Studio Cloud for `z`.
 	Zsrc String `json:"zsrc,omitempty"`
 }
 
@@ -310,13 +350,13 @@ type Scatter3dErrorX struct {
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  arrayminus .
+	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
 	Arrayminussrc String `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  array .
+	// Sets the source reference on Chart Studio Cloud for `array`.
 	Arraysrc String `json:"arraysrc,omitempty"`
 
 	// Color
@@ -404,13 +444,13 @@ type Scatter3dErrorY struct {
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  arrayminus .
+	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
 	Arrayminussrc String `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  array .
+	// Sets the source reference on Chart Studio Cloud for `array`.
 	Arraysrc String `json:"arraysrc,omitempty"`
 
 	// Color
@@ -498,13 +538,13 @@ type Scatter3dErrorZ struct {
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  arrayminus .
+	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
 	Arrayminussrc String `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  array .
+	// Sets the source reference on Chart Studio Cloud for `array`.
 	Arraysrc String `json:"arraysrc,omitempty"`
 
 	// Color
@@ -580,7 +620,7 @@ type Scatter3dHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -592,7 +632,7 @@ type Scatter3dHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -604,7 +644,7 @@ type Scatter3dHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -620,7 +660,7 @@ type Scatter3dHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -632,7 +672,7 @@ type Scatter3dHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -644,7 +684,7 @@ type Scatter3dHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -660,8 +700,44 @@ type Scatter3dHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// Scatter3dLegendgrouptitleFont Sets this legend group's title font.
+type Scatter3dLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// Scatter3dLegendgrouptitle
+type Scatter3dLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *Scatter3dLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // Scatter3dLineColorbarTickfont Sets the color bar's tick label font
@@ -716,9 +792,9 @@ type Scatter3dLineColorbarTitle struct {
 	Font *Scatter3dLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side Scatter3dLineColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -761,6 +837,12 @@ type Scatter3dLineColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat Scatter3dLineColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -784,6 +866,12 @@ type Scatter3dLineColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation Scatter3dLineColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -864,7 +952,7 @@ type Scatter3dLineColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -873,11 +961,23 @@ type Scatter3dLineColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow Scatter3dLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition Scatter3dLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -918,7 +1018,7 @@ type Scatter3dLineColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -930,7 +1030,7 @@ type Scatter3dLineColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -946,13 +1046,13 @@ type Scatter3dLineColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor Scatter3dLineColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -961,16 +1061,22 @@ type Scatter3dLineColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref Scatter3dLineColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor Scatter3dLineColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -978,6 +1084,12 @@ type Scatter3dLineColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref Scatter3dLineColorbarYref `json:"yref,omitempty"`
 }
 
 // Scatter3dLine
@@ -986,37 +1098,37 @@ type Scatter3dLine struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax`  Has an effect only if in `line.color`is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax` Has an effect only if in `line.color` is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `line.color`is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets thelinecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
+	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -1032,13 +1144,13 @@ type Scatter3dLine struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Dash
@@ -1050,13 +1162,13 @@ type Scatter3dLine struct {
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `line.color`is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `line.color` is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color`is set to a numerical array.
+	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color` is set to a numerical array.
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Width
@@ -1118,9 +1230,9 @@ type Scatter3dMarkerColorbarTitle struct {
 	Font *Scatter3dMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side Scatter3dMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -1163,6 +1275,12 @@ type Scatter3dMarkerColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat Scatter3dMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -1186,6 +1304,12 @@ type Scatter3dMarkerColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation Scatter3dMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -1266,7 +1390,7 @@ type Scatter3dMarkerColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -1275,11 +1399,23 @@ type Scatter3dMarkerColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow Scatter3dMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition Scatter3dMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -1320,7 +1456,7 @@ type Scatter3dMarkerColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1332,7 +1468,7 @@ type Scatter3dMarkerColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -1348,13 +1484,13 @@ type Scatter3dMarkerColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor Scatter3dMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -1363,16 +1499,22 @@ type Scatter3dMarkerColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref Scatter3dMarkerColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor Scatter3dMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -1380,6 +1522,12 @@ type Scatter3dMarkerColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref Scatter3dMarkerColorbarYref `json:"yref,omitempty"`
 }
 
 // Scatter3dMarkerLine
@@ -1388,37 +1536,37 @@ type Scatter3dMarkerLine struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax`  Has an effect only if in `marker.line.color`is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color`is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets themarker.linecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -1430,19 +1578,19 @@ type Scatter3dMarkerLine struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `marker.line.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `marker.line.color`is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Width
@@ -1458,37 +1606,37 @@ type Scatter3dMarker struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color`is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
-	// Sets the upper bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
+	// Sets the upper bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
 	Cmax float64 `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
-	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
+	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
 	Cmid float64 `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
-	// Sets the lower bound of the color domain. Has an effect only if in `marker.color`is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
+	// Sets the lower bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
-	// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
 	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
@@ -1504,13 +1652,13 @@ type Scatter3dMarker struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. Has an effect only if in `marker.color`is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Line
@@ -1526,13 +1674,13 @@ type Scatter3dMarker struct {
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
-	// Reverses the color mapping if true. Has an effect only if in `marker.color`is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color`is set to a numerical array.
+	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Size
@@ -1562,7 +1710,7 @@ type Scatter3dMarker struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 
 	// Symbol
@@ -1574,7 +1722,7 @@ type Scatter3dMarker struct {
 	// Symbolsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  symbol .
+	// Sets the source reference on Chart Studio Cloud for `symbol`.
 	Symbolsrc String `json:"symbolsrc,omitempty"`
 }
 
@@ -1688,7 +1836,7 @@ type Scatter3dTextfont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -1706,7 +1854,7 @@ type Scatter3dTextfont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -1757,7 +1905,7 @@ const (
 	Scatter3dLineColorbarExponentformatE1    Scatter3dLineColorbarExponentformat = "e"
 	Scatter3dLineColorbarExponentformatE2    Scatter3dLineColorbarExponentformat = "E"
 	Scatter3dLineColorbarExponentformatPower Scatter3dLineColorbarExponentformat = "power"
-	Scatter3dLineColorbarExponentformatSi    Scatter3dLineColorbarExponentformat = "SI"
+	Scatter3dLineColorbarExponentformatSI    Scatter3dLineColorbarExponentformat = "SI"
 	Scatter3dLineColorbarExponentformatB     Scatter3dLineColorbarExponentformat = "B"
 )
 
@@ -1767,6 +1915,14 @@ type Scatter3dLineColorbarLenmode string
 const (
 	Scatter3dLineColorbarLenmodeFraction Scatter3dLineColorbarLenmode = "fraction"
 	Scatter3dLineColorbarLenmodePixels   Scatter3dLineColorbarLenmode = "pixels"
+)
+
+// Scatter3dLineColorbarOrientation Sets the orientation of the colorbar.
+type Scatter3dLineColorbarOrientation string
+
+const (
+	Scatter3dLineColorbarOrientationH Scatter3dLineColorbarOrientation = "h"
+	Scatter3dLineColorbarOrientationV Scatter3dLineColorbarOrientation = "v"
 )
 
 // Scatter3dLineColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -1807,7 +1963,16 @@ const (
 	Scatter3dLineColorbarThicknessmodePixels   Scatter3dLineColorbarThicknessmode = "pixels"
 )
 
-// Scatter3dLineColorbarTicklabelposition Determines where tick labels are drawn.
+// Scatter3dLineColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type Scatter3dLineColorbarTicklabeloverflow string
+
+const (
+	Scatter3dLineColorbarTicklabeloverflowAllow          Scatter3dLineColorbarTicklabeloverflow = "allow"
+	Scatter3dLineColorbarTicklabeloverflowHidePastDiv    Scatter3dLineColorbarTicklabeloverflow = "hide past div"
+	Scatter3dLineColorbarTicklabeloverflowHidePastDomain Scatter3dLineColorbarTicklabeloverflow = "hide past domain"
+)
+
+// Scatter3dLineColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type Scatter3dLineColorbarTicklabelposition string
 
 const (
@@ -1815,6 +1980,10 @@ const (
 	Scatter3dLineColorbarTicklabelpositionInside        Scatter3dLineColorbarTicklabelposition = "inside"
 	Scatter3dLineColorbarTicklabelpositionOutsideTop    Scatter3dLineColorbarTicklabelposition = "outside top"
 	Scatter3dLineColorbarTicklabelpositionInsideTop     Scatter3dLineColorbarTicklabelposition = "inside top"
+	Scatter3dLineColorbarTicklabelpositionOutsideLeft   Scatter3dLineColorbarTicklabelposition = "outside left"
+	Scatter3dLineColorbarTicklabelpositionInsideLeft    Scatter3dLineColorbarTicklabelposition = "inside left"
+	Scatter3dLineColorbarTicklabelpositionOutsideRight  Scatter3dLineColorbarTicklabelposition = "outside right"
+	Scatter3dLineColorbarTicklabelpositionInsideRight   Scatter3dLineColorbarTicklabelposition = "inside right"
 	Scatter3dLineColorbarTicklabelpositionOutsideBottom Scatter3dLineColorbarTicklabelposition = "outside bottom"
 	Scatter3dLineColorbarTicklabelpositionInsideBottom  Scatter3dLineColorbarTicklabelposition = "inside bottom"
 )
@@ -1837,7 +2006,7 @@ const (
 	Scatter3dLineColorbarTicksEmpty   Scatter3dLineColorbarTicks = ""
 )
 
-// Scatter3dLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// Scatter3dLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type Scatter3dLineColorbarTitleSide string
 
 const (
@@ -1846,7 +2015,7 @@ const (
 	Scatter3dLineColorbarTitleSideBottom Scatter3dLineColorbarTitleSide = "bottom"
 )
 
-// Scatter3dLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// Scatter3dLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type Scatter3dLineColorbarXanchor string
 
 const (
@@ -1855,7 +2024,15 @@ const (
 	Scatter3dLineColorbarXanchorRight  Scatter3dLineColorbarXanchor = "right"
 )
 
-// Scatter3dLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// Scatter3dLineColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type Scatter3dLineColorbarXref string
+
+const (
+	Scatter3dLineColorbarXrefContainer Scatter3dLineColorbarXref = "container"
+	Scatter3dLineColorbarXrefPaper     Scatter3dLineColorbarXref = "paper"
+)
+
+// Scatter3dLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type Scatter3dLineColorbarYanchor string
 
 const (
@@ -1864,16 +2041,24 @@ const (
 	Scatter3dLineColorbarYanchorBottom Scatter3dLineColorbarYanchor = "bottom"
 )
 
+// Scatter3dLineColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type Scatter3dLineColorbarYref string
+
+const (
+	Scatter3dLineColorbarYrefContainer Scatter3dLineColorbarYref = "container"
+	Scatter3dLineColorbarYrefPaper     Scatter3dLineColorbarYref = "paper"
+)
+
 // Scatter3dLineDash Sets the dash style of the lines.
 type Scatter3dLineDash string
 
 const (
-	Scatter3dLineDashSolid       Scatter3dLineDash = "solid"
-	Scatter3dLineDashDot         Scatter3dLineDash = "dot"
 	Scatter3dLineDashDash        Scatter3dLineDash = "dash"
-	Scatter3dLineDashLongdash    Scatter3dLineDash = "longdash"
 	Scatter3dLineDashDashdot     Scatter3dLineDash = "dashdot"
+	Scatter3dLineDashDot         Scatter3dLineDash = "dot"
+	Scatter3dLineDashLongdash    Scatter3dLineDash = "longdash"
 	Scatter3dLineDashLongdashdot Scatter3dLineDash = "longdashdot"
+	Scatter3dLineDashSolid       Scatter3dLineDash = "solid"
 )
 
 // Scatter3dMarkerColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -1884,7 +2069,7 @@ const (
 	Scatter3dMarkerColorbarExponentformatE1    Scatter3dMarkerColorbarExponentformat = "e"
 	Scatter3dMarkerColorbarExponentformatE2    Scatter3dMarkerColorbarExponentformat = "E"
 	Scatter3dMarkerColorbarExponentformatPower Scatter3dMarkerColorbarExponentformat = "power"
-	Scatter3dMarkerColorbarExponentformatSi    Scatter3dMarkerColorbarExponentformat = "SI"
+	Scatter3dMarkerColorbarExponentformatSI    Scatter3dMarkerColorbarExponentformat = "SI"
 	Scatter3dMarkerColorbarExponentformatB     Scatter3dMarkerColorbarExponentformat = "B"
 )
 
@@ -1894,6 +2079,14 @@ type Scatter3dMarkerColorbarLenmode string
 const (
 	Scatter3dMarkerColorbarLenmodeFraction Scatter3dMarkerColorbarLenmode = "fraction"
 	Scatter3dMarkerColorbarLenmodePixels   Scatter3dMarkerColorbarLenmode = "pixels"
+)
+
+// Scatter3dMarkerColorbarOrientation Sets the orientation of the colorbar.
+type Scatter3dMarkerColorbarOrientation string
+
+const (
+	Scatter3dMarkerColorbarOrientationH Scatter3dMarkerColorbarOrientation = "h"
+	Scatter3dMarkerColorbarOrientationV Scatter3dMarkerColorbarOrientation = "v"
 )
 
 // Scatter3dMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -1934,7 +2127,16 @@ const (
 	Scatter3dMarkerColorbarThicknessmodePixels   Scatter3dMarkerColorbarThicknessmode = "pixels"
 )
 
-// Scatter3dMarkerColorbarTicklabelposition Determines where tick labels are drawn.
+// Scatter3dMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type Scatter3dMarkerColorbarTicklabeloverflow string
+
+const (
+	Scatter3dMarkerColorbarTicklabeloverflowAllow          Scatter3dMarkerColorbarTicklabeloverflow = "allow"
+	Scatter3dMarkerColorbarTicklabeloverflowHidePastDiv    Scatter3dMarkerColorbarTicklabeloverflow = "hide past div"
+	Scatter3dMarkerColorbarTicklabeloverflowHidePastDomain Scatter3dMarkerColorbarTicklabeloverflow = "hide past domain"
+)
+
+// Scatter3dMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type Scatter3dMarkerColorbarTicklabelposition string
 
 const (
@@ -1942,6 +2144,10 @@ const (
 	Scatter3dMarkerColorbarTicklabelpositionInside        Scatter3dMarkerColorbarTicklabelposition = "inside"
 	Scatter3dMarkerColorbarTicklabelpositionOutsideTop    Scatter3dMarkerColorbarTicklabelposition = "outside top"
 	Scatter3dMarkerColorbarTicklabelpositionInsideTop     Scatter3dMarkerColorbarTicklabelposition = "inside top"
+	Scatter3dMarkerColorbarTicklabelpositionOutsideLeft   Scatter3dMarkerColorbarTicklabelposition = "outside left"
+	Scatter3dMarkerColorbarTicklabelpositionInsideLeft    Scatter3dMarkerColorbarTicklabelposition = "inside left"
+	Scatter3dMarkerColorbarTicklabelpositionOutsideRight  Scatter3dMarkerColorbarTicklabelposition = "outside right"
+	Scatter3dMarkerColorbarTicklabelpositionInsideRight   Scatter3dMarkerColorbarTicklabelposition = "inside right"
 	Scatter3dMarkerColorbarTicklabelpositionOutsideBottom Scatter3dMarkerColorbarTicklabelposition = "outside bottom"
 	Scatter3dMarkerColorbarTicklabelpositionInsideBottom  Scatter3dMarkerColorbarTicklabelposition = "inside bottom"
 )
@@ -1964,7 +2170,7 @@ const (
 	Scatter3dMarkerColorbarTicksEmpty   Scatter3dMarkerColorbarTicks = ""
 )
 
-// Scatter3dMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// Scatter3dMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type Scatter3dMarkerColorbarTitleSide string
 
 const (
@@ -1973,7 +2179,7 @@ const (
 	Scatter3dMarkerColorbarTitleSideBottom Scatter3dMarkerColorbarTitleSide = "bottom"
 )
 
-// Scatter3dMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// Scatter3dMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type Scatter3dMarkerColorbarXanchor string
 
 const (
@@ -1982,13 +2188,29 @@ const (
 	Scatter3dMarkerColorbarXanchorRight  Scatter3dMarkerColorbarXanchor = "right"
 )
 
-// Scatter3dMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// Scatter3dMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type Scatter3dMarkerColorbarXref string
+
+const (
+	Scatter3dMarkerColorbarXrefContainer Scatter3dMarkerColorbarXref = "container"
+	Scatter3dMarkerColorbarXrefPaper     Scatter3dMarkerColorbarXref = "paper"
+)
+
+// Scatter3dMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type Scatter3dMarkerColorbarYanchor string
 
 const (
 	Scatter3dMarkerColorbarYanchorTop    Scatter3dMarkerColorbarYanchor = "top"
 	Scatter3dMarkerColorbarYanchorMiddle Scatter3dMarkerColorbarYanchor = "middle"
 	Scatter3dMarkerColorbarYanchorBottom Scatter3dMarkerColorbarYanchor = "bottom"
+)
+
+// Scatter3dMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type Scatter3dMarkerColorbarYref string
+
+const (
+	Scatter3dMarkerColorbarYrefContainer Scatter3dMarkerColorbarYref = "container"
+	Scatter3dMarkerColorbarYrefPaper     Scatter3dMarkerColorbarYref = "paper"
 )
 
 // Scatter3dMarkerSizemode Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.
@@ -2005,11 +2227,11 @@ type Scatter3dMarkerSymbol string
 const (
 	Scatter3dMarkerSymbolCircle      Scatter3dMarkerSymbol = "circle"
 	Scatter3dMarkerSymbolCircleOpen  Scatter3dMarkerSymbol = "circle-open"
-	Scatter3dMarkerSymbolSquare      Scatter3dMarkerSymbol = "square"
-	Scatter3dMarkerSymbolSquareOpen  Scatter3dMarkerSymbol = "square-open"
+	Scatter3dMarkerSymbolCross       Scatter3dMarkerSymbol = "cross"
 	Scatter3dMarkerSymbolDiamond     Scatter3dMarkerSymbol = "diamond"
 	Scatter3dMarkerSymbolDiamondOpen Scatter3dMarkerSymbol = "diamond-open"
-	Scatter3dMarkerSymbolCross       Scatter3dMarkerSymbol = "cross"
+	Scatter3dMarkerSymbolSquare      Scatter3dMarkerSymbol = "square"
+	Scatter3dMarkerSymbolSquareOpen  Scatter3dMarkerSymbol = "square-open"
 	Scatter3dMarkerSymbolX           Scatter3dMarkerSymbol = "x"
 )
 
@@ -2051,19 +2273,19 @@ var (
 type Scatter3dXcalendar string
 
 const (
-	Scatter3dXcalendarGregorian  Scatter3dXcalendar = "gregorian"
 	Scatter3dXcalendarChinese    Scatter3dXcalendar = "chinese"
 	Scatter3dXcalendarCoptic     Scatter3dXcalendar = "coptic"
 	Scatter3dXcalendarDiscworld  Scatter3dXcalendar = "discworld"
 	Scatter3dXcalendarEthiopian  Scatter3dXcalendar = "ethiopian"
+	Scatter3dXcalendarGregorian  Scatter3dXcalendar = "gregorian"
 	Scatter3dXcalendarHebrew     Scatter3dXcalendar = "hebrew"
 	Scatter3dXcalendarIslamic    Scatter3dXcalendar = "islamic"
+	Scatter3dXcalendarJalali     Scatter3dXcalendar = "jalali"
 	Scatter3dXcalendarJulian     Scatter3dXcalendar = "julian"
 	Scatter3dXcalendarMayan      Scatter3dXcalendar = "mayan"
 	Scatter3dXcalendarNanakshahi Scatter3dXcalendar = "nanakshahi"
 	Scatter3dXcalendarNepali     Scatter3dXcalendar = "nepali"
 	Scatter3dXcalendarPersian    Scatter3dXcalendar = "persian"
-	Scatter3dXcalendarJalali     Scatter3dXcalendar = "jalali"
 	Scatter3dXcalendarTaiwan     Scatter3dXcalendar = "taiwan"
 	Scatter3dXcalendarThai       Scatter3dXcalendar = "thai"
 	Scatter3dXcalendarUmmalqura  Scatter3dXcalendar = "ummalqura"
@@ -2073,19 +2295,19 @@ const (
 type Scatter3dYcalendar string
 
 const (
-	Scatter3dYcalendarGregorian  Scatter3dYcalendar = "gregorian"
 	Scatter3dYcalendarChinese    Scatter3dYcalendar = "chinese"
 	Scatter3dYcalendarCoptic     Scatter3dYcalendar = "coptic"
 	Scatter3dYcalendarDiscworld  Scatter3dYcalendar = "discworld"
 	Scatter3dYcalendarEthiopian  Scatter3dYcalendar = "ethiopian"
+	Scatter3dYcalendarGregorian  Scatter3dYcalendar = "gregorian"
 	Scatter3dYcalendarHebrew     Scatter3dYcalendar = "hebrew"
 	Scatter3dYcalendarIslamic    Scatter3dYcalendar = "islamic"
+	Scatter3dYcalendarJalali     Scatter3dYcalendar = "jalali"
 	Scatter3dYcalendarJulian     Scatter3dYcalendar = "julian"
 	Scatter3dYcalendarMayan      Scatter3dYcalendar = "mayan"
 	Scatter3dYcalendarNanakshahi Scatter3dYcalendar = "nanakshahi"
 	Scatter3dYcalendarNepali     Scatter3dYcalendar = "nepali"
 	Scatter3dYcalendarPersian    Scatter3dYcalendar = "persian"
-	Scatter3dYcalendarJalali     Scatter3dYcalendar = "jalali"
 	Scatter3dYcalendarTaiwan     Scatter3dYcalendar = "taiwan"
 	Scatter3dYcalendarThai       Scatter3dYcalendar = "thai"
 	Scatter3dYcalendarUmmalqura  Scatter3dYcalendar = "ummalqura"
@@ -2095,19 +2317,19 @@ const (
 type Scatter3dZcalendar string
 
 const (
-	Scatter3dZcalendarGregorian  Scatter3dZcalendar = "gregorian"
 	Scatter3dZcalendarChinese    Scatter3dZcalendar = "chinese"
 	Scatter3dZcalendarCoptic     Scatter3dZcalendar = "coptic"
 	Scatter3dZcalendarDiscworld  Scatter3dZcalendar = "discworld"
 	Scatter3dZcalendarEthiopian  Scatter3dZcalendar = "ethiopian"
+	Scatter3dZcalendarGregorian  Scatter3dZcalendar = "gregorian"
 	Scatter3dZcalendarHebrew     Scatter3dZcalendar = "hebrew"
 	Scatter3dZcalendarIslamic    Scatter3dZcalendar = "islamic"
+	Scatter3dZcalendarJalali     Scatter3dZcalendar = "jalali"
 	Scatter3dZcalendarJulian     Scatter3dZcalendar = "julian"
 	Scatter3dZcalendarMayan      Scatter3dZcalendar = "mayan"
 	Scatter3dZcalendarNanakshahi Scatter3dZcalendar = "nanakshahi"
 	Scatter3dZcalendarNepali     Scatter3dZcalendar = "nepali"
 	Scatter3dZcalendarPersian    Scatter3dZcalendar = "persian"
-	Scatter3dZcalendarJalali     Scatter3dZcalendar = "jalali"
 	Scatter3dZcalendarTaiwan     Scatter3dZcalendar = "taiwan"
 	Scatter3dZcalendarThai       Scatter3dZcalendar = "thai"
 	Scatter3dZcalendarUmmalqura  Scatter3dZcalendar = "ummalqura"

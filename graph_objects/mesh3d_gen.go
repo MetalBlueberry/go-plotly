@@ -24,13 +24,13 @@ type Mesh3d struct {
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
-	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default  palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
-	// Determines whether or not the color domain is computed with respect to the input data (here `intensity`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
+	// Determines whether or not the color domain is computed with respect to the input data (here `intensity`) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
 	Cauto Bool `json:"cauto,omitempty"`
 
 	// Cmax
@@ -70,7 +70,7 @@ type Mesh3d struct {
 	// Colorscale
 	// default: %!s(<nil>)
 	// type: colorscale
-	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use`cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Greys,YlGnBu,Greens,YlOrRd,Bluered,RdBu,Reds,Blues,Picnic,Rainbow,Portland,Jet,Hot,Blackbody,Earth,Electric,Viridis,Cividis.
+	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
@@ -86,7 +86,7 @@ type Mesh3d struct {
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  customdata .
+	// Sets the source reference on Chart Studio Cloud for `customdata`.
 	Customdatasrc String `json:"customdatasrc,omitempty"`
 
 	// Delaunayaxis
@@ -104,7 +104,7 @@ type Mesh3d struct {
 	// Facecolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  facecolor .
+	// Sets the source reference on Chart Studio Cloud for `facecolor`.
 	Facecolorsrc String `json:"facecolorsrc,omitempty"`
 
 	// Flatshading
@@ -122,7 +122,7 @@ type Mesh3d struct {
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hoverinfo .
+	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
 	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
@@ -132,13 +132,13 @@ type Mesh3d struct {
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
-	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
 	Hovertemplate String `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertemplate .
+	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
 	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
@@ -150,7 +150,7 @@ type Mesh3d struct {
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  hovertext .
+	// Sets the source reference on Chart Studio Cloud for `hovertext`.
 	Hovertextsrc String `json:"hovertextsrc,omitempty"`
 
 	// I
@@ -168,7 +168,7 @@ type Mesh3d struct {
 	// Idssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ids .
+	// Sets the source reference on Chart Studio Cloud for `ids`.
 	Idssrc String `json:"idssrc,omitempty"`
 
 	// Intensity
@@ -186,13 +186,13 @@ type Mesh3d struct {
 	// Intensitysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  intensity .
+	// Sets the source reference on Chart Studio Cloud for `intensity`.
 	Intensitysrc String `json:"intensitysrc,omitempty"`
 
 	// Isrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  i .
+	// Sets the source reference on Chart Studio Cloud for `i`.
 	Isrc String `json:"isrc,omitempty"`
 
 	// J
@@ -204,7 +204,7 @@ type Mesh3d struct {
 	// Jsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  j .
+	// Sets the source reference on Chart Studio Cloud for `j`.
 	Jsrc String `json:"jsrc,omitempty"`
 
 	// K
@@ -216,14 +216,36 @@ type Mesh3d struct {
 	// Ksrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  k .
+	// Sets the source reference on Chart Studio Cloud for `k`.
 	Ksrc String `json:"ksrc,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
-	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
 	Legendgroup String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// role: Object
+	Legendgrouptitle *Mesh3dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this trace.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
 	// role: Object
@@ -242,13 +264,13 @@ type Mesh3d struct {
 	// Metasrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  meta .
+	// Sets the source reference on Chart Studio Cloud for `meta`.
 	Metasrc String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
-	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// Sets the trace name. The trace name appears as the legend item and on hover.
 	Name String `json:"name,omitempty"`
 
 	// Opacity
@@ -294,7 +316,7 @@ type Mesh3d struct {
 	// Textsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  text .
+	// Sets the source reference on Chart Studio Cloud for `text`.
 	Textsrc String `json:"textsrc,omitempty"`
 
 	// Uid
@@ -318,7 +340,7 @@ type Mesh3d struct {
 	// Vertexcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  vertexcolor .
+	// Sets the source reference on Chart Studio Cloud for `vertexcolor`.
 	Vertexcolorsrc String `json:"vertexcolorsrc,omitempty"`
 
 	// Visible
@@ -339,10 +361,16 @@ type Mesh3d struct {
 	// Sets the calendar system to use with `x` date data.
 	Xcalendar Mesh3dXcalendar `json:"xcalendar,omitempty"`
 
+	// Xhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	Xhoverformat String `json:"xhoverformat,omitempty"`
+
 	// Xsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  x .
+	// Sets the source reference on Chart Studio Cloud for `x`.
 	Xsrc String `json:"xsrc,omitempty"`
 
 	// Y
@@ -357,10 +385,16 @@ type Mesh3d struct {
 	// Sets the calendar system to use with `y` date data.
 	Ycalendar Mesh3dYcalendar `json:"ycalendar,omitempty"`
 
+	// Yhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	Yhoverformat String `json:"yhoverformat,omitempty"`
+
 	// Ysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  y .
+	// Sets the source reference on Chart Studio Cloud for `y`.
 	Ysrc String `json:"ysrc,omitempty"`
 
 	// Z
@@ -375,10 +409,16 @@ type Mesh3d struct {
 	// Sets the calendar system to use with `z` date data.
 	Zcalendar Mesh3dZcalendar `json:"zcalendar,omitempty"`
 
+	// Zhoverformat
+	// arrayOK: false
+	// type: string
+	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+	Zhoverformat String `json:"zhoverformat,omitempty"`
+
 	// Zsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  z .
+	// Sets the source reference on Chart Studio Cloud for `z`.
 	Zsrc String `json:"zsrc,omitempty"`
 }
 
@@ -434,9 +474,9 @@ type Mesh3dColorbarTitle struct {
 	Font *Mesh3dColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
-	// default: top
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 	Side Mesh3dColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
@@ -479,6 +519,12 @@ type Mesh3dColorbar struct {
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
 	Exponentformat Mesh3dColorbarExponentformat `json:"exponentformat,omitempty"`
 
+	// Labelalias
+	// arrayOK: false
+	// type: any
+	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	Labelalias interface{} `json:"labelalias,omitempty"`
+
 	// Len
 	// arrayOK: false
 	// type: number
@@ -502,6 +548,12 @@ type Mesh3dColorbar struct {
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
 	Nticks int64 `json:"nticks,omitempty"`
+
+	// Orientation
+	// default: v
+	// type: enumerated
+	// Sets the orientation of the colorbar.
+	Orientation Mesh3dColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
@@ -582,7 +634,7 @@ type Mesh3dColorbar struct {
 	// Tickformat
 	// arrayOK: false
 	// type: string
-	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-time-format#locale_format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
 	Tickformat String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
@@ -591,11 +643,23 @@ type Mesh3dColorbar struct {
 	// just raise an issue before you start so we do not overlap
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
+	// Ticklabeloverflow
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	Ticklabeloverflow Mesh3dColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
+
 	// Ticklabelposition
 	// default: outside
 	// type: enumerated
-	// Determines where tick labels are drawn.
+	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 	Ticklabelposition Mesh3dColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
+
+	// Ticklabelstep
+	// arrayOK: false
+	// type: integer
+	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -636,7 +700,7 @@ type Mesh3dColorbar struct {
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  ticktext .
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
 	Ticktextsrc String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -648,7 +712,7 @@ type Mesh3dColorbar struct {
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  tickvals .
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
 	Tickvalssrc String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
@@ -664,13 +728,13 @@ type Mesh3dColorbar struct {
 	// X
 	// arrayOK: false
 	// type: number
-	// Sets the x position of the color bar (in plot fraction).
+	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
-	// default: left
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 	Xanchor Mesh3dColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
@@ -679,16 +743,22 @@ type Mesh3dColorbar struct {
 	// Sets the amount of padding (in px) along the x direction.
 	Xpad float64 `json:"xpad,omitempty"`
 
+	// Xref
+	// default: paper
+	// type: enumerated
+	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	Xref Mesh3dColorbarXref `json:"xref,omitempty"`
+
 	// Y
 	// arrayOK: false
 	// type: number
-	// Sets the y position of the color bar (in plot fraction).
+	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
-	// default: middle
+	// default: %!s(<nil>)
 	// type: enumerated
-	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 	Yanchor Mesh3dColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
@@ -696,6 +766,12 @@ type Mesh3dColorbar struct {
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
 	Ypad float64 `json:"ypad,omitempty"`
+
+	// Yref
+	// default: paper
+	// type: enumerated
+	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	Yref Mesh3dColorbarYref `json:"yref,omitempty"`
 }
 
 // Mesh3dContour
@@ -732,7 +808,7 @@ type Mesh3dHoverlabelFont struct {
 	// Colorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  color .
+	// Sets the source reference on Chart Studio Cloud for `color`.
 	Colorsrc String `json:"colorsrc,omitempty"`
 
 	// Family
@@ -744,7 +820,7 @@ type Mesh3dHoverlabelFont struct {
 	// Familysrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  family .
+	// Sets the source reference on Chart Studio Cloud for `family`.
 	Familysrc String `json:"familysrc,omitempty"`
 
 	// Size
@@ -756,7 +832,7 @@ type Mesh3dHoverlabelFont struct {
 	// Sizesrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  size .
+	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc String `json:"sizesrc,omitempty"`
 }
 
@@ -772,7 +848,7 @@ type Mesh3dHoverlabel struct {
 	// Alignsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  align .
+	// Sets the source reference on Chart Studio Cloud for `align`.
 	Alignsrc String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
@@ -784,7 +860,7 @@ type Mesh3dHoverlabel struct {
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bgcolor .
+	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
 	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
@@ -796,7 +872,7 @@ type Mesh3dHoverlabel struct {
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  bordercolor .
+	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
 	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
 
 	// Font
@@ -812,8 +888,44 @@ type Mesh3dHoverlabel struct {
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
-	// Sets the source reference on Chart Studio Cloud for  namelength .
+	// Sets the source reference on Chart Studio Cloud for `namelength`.
 	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+}
+
+// Mesh3dLegendgrouptitleFont Sets this legend group's title font.
+type Mesh3dLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// Mesh3dLegendgrouptitle
+type Mesh3dLegendgrouptitle struct {
+
+	// Font
+	// role: Object
+	Font *Mesh3dLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text String `json:"text,omitempty"`
 }
 
 // Mesh3dLighting
@@ -908,7 +1020,7 @@ const (
 	Mesh3dColorbarExponentformatE1    Mesh3dColorbarExponentformat = "e"
 	Mesh3dColorbarExponentformatE2    Mesh3dColorbarExponentformat = "E"
 	Mesh3dColorbarExponentformatPower Mesh3dColorbarExponentformat = "power"
-	Mesh3dColorbarExponentformatSi    Mesh3dColorbarExponentformat = "SI"
+	Mesh3dColorbarExponentformatSI    Mesh3dColorbarExponentformat = "SI"
 	Mesh3dColorbarExponentformatB     Mesh3dColorbarExponentformat = "B"
 )
 
@@ -918,6 +1030,14 @@ type Mesh3dColorbarLenmode string
 const (
 	Mesh3dColorbarLenmodeFraction Mesh3dColorbarLenmode = "fraction"
 	Mesh3dColorbarLenmodePixels   Mesh3dColorbarLenmode = "pixels"
+)
+
+// Mesh3dColorbarOrientation Sets the orientation of the colorbar.
+type Mesh3dColorbarOrientation string
+
+const (
+	Mesh3dColorbarOrientationH Mesh3dColorbarOrientation = "h"
+	Mesh3dColorbarOrientationV Mesh3dColorbarOrientation = "v"
 )
 
 // Mesh3dColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -958,7 +1078,16 @@ const (
 	Mesh3dColorbarThicknessmodePixels   Mesh3dColorbarThicknessmode = "pixels"
 )
 
-// Mesh3dColorbarTicklabelposition Determines where tick labels are drawn.
+// Mesh3dColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+type Mesh3dColorbarTicklabeloverflow string
+
+const (
+	Mesh3dColorbarTicklabeloverflowAllow          Mesh3dColorbarTicklabeloverflow = "allow"
+	Mesh3dColorbarTicklabeloverflowHidePastDiv    Mesh3dColorbarTicklabeloverflow = "hide past div"
+	Mesh3dColorbarTicklabeloverflowHidePastDomain Mesh3dColorbarTicklabeloverflow = "hide past domain"
+)
+
+// Mesh3dColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
 type Mesh3dColorbarTicklabelposition string
 
 const (
@@ -966,6 +1095,10 @@ const (
 	Mesh3dColorbarTicklabelpositionInside        Mesh3dColorbarTicklabelposition = "inside"
 	Mesh3dColorbarTicklabelpositionOutsideTop    Mesh3dColorbarTicklabelposition = "outside top"
 	Mesh3dColorbarTicklabelpositionInsideTop     Mesh3dColorbarTicklabelposition = "inside top"
+	Mesh3dColorbarTicklabelpositionOutsideLeft   Mesh3dColorbarTicklabelposition = "outside left"
+	Mesh3dColorbarTicklabelpositionInsideLeft    Mesh3dColorbarTicklabelposition = "inside left"
+	Mesh3dColorbarTicklabelpositionOutsideRight  Mesh3dColorbarTicklabelposition = "outside right"
+	Mesh3dColorbarTicklabelpositionInsideRight   Mesh3dColorbarTicklabelposition = "inside right"
 	Mesh3dColorbarTicklabelpositionOutsideBottom Mesh3dColorbarTicklabelposition = "outside bottom"
 	Mesh3dColorbarTicklabelpositionInsideBottom  Mesh3dColorbarTicklabelposition = "inside bottom"
 )
@@ -988,7 +1121,7 @@ const (
 	Mesh3dColorbarTicksEmpty   Mesh3dColorbarTicks = ""
 )
 
-// Mesh3dColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// Mesh3dColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
 type Mesh3dColorbarTitleSide string
 
 const (
@@ -997,7 +1130,7 @@ const (
 	Mesh3dColorbarTitleSideBottom Mesh3dColorbarTitleSide = "bottom"
 )
 
-// Mesh3dColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar.
+// Mesh3dColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
 type Mesh3dColorbarXanchor string
 
 const (
@@ -1006,13 +1139,29 @@ const (
 	Mesh3dColorbarXanchorRight  Mesh3dColorbarXanchor = "right"
 )
 
-// Mesh3dColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar.
+// Mesh3dColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+type Mesh3dColorbarXref string
+
+const (
+	Mesh3dColorbarXrefContainer Mesh3dColorbarXref = "container"
+	Mesh3dColorbarXrefPaper     Mesh3dColorbarXref = "paper"
+)
+
+// Mesh3dColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
 type Mesh3dColorbarYanchor string
 
 const (
 	Mesh3dColorbarYanchorTop    Mesh3dColorbarYanchor = "top"
 	Mesh3dColorbarYanchorMiddle Mesh3dColorbarYanchor = "middle"
 	Mesh3dColorbarYanchorBottom Mesh3dColorbarYanchor = "bottom"
+)
+
+// Mesh3dColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+type Mesh3dColorbarYref string
+
+const (
+	Mesh3dColorbarYrefContainer Mesh3dColorbarYref = "container"
+	Mesh3dColorbarYrefPaper     Mesh3dColorbarYref = "paper"
 )
 
 // Mesh3dDelaunayaxis Sets the Delaunay axis, which is the axis that is perpendicular to the surface of the Delaunay triangulation. It has an effect if `i`, `j`, `k` are not provided and `alphahull` is set to indicate Delaunay triangulation.
@@ -1054,19 +1203,19 @@ var (
 type Mesh3dXcalendar string
 
 const (
-	Mesh3dXcalendarGregorian  Mesh3dXcalendar = "gregorian"
 	Mesh3dXcalendarChinese    Mesh3dXcalendar = "chinese"
 	Mesh3dXcalendarCoptic     Mesh3dXcalendar = "coptic"
 	Mesh3dXcalendarDiscworld  Mesh3dXcalendar = "discworld"
 	Mesh3dXcalendarEthiopian  Mesh3dXcalendar = "ethiopian"
+	Mesh3dXcalendarGregorian  Mesh3dXcalendar = "gregorian"
 	Mesh3dXcalendarHebrew     Mesh3dXcalendar = "hebrew"
 	Mesh3dXcalendarIslamic    Mesh3dXcalendar = "islamic"
+	Mesh3dXcalendarJalali     Mesh3dXcalendar = "jalali"
 	Mesh3dXcalendarJulian     Mesh3dXcalendar = "julian"
 	Mesh3dXcalendarMayan      Mesh3dXcalendar = "mayan"
 	Mesh3dXcalendarNanakshahi Mesh3dXcalendar = "nanakshahi"
 	Mesh3dXcalendarNepali     Mesh3dXcalendar = "nepali"
 	Mesh3dXcalendarPersian    Mesh3dXcalendar = "persian"
-	Mesh3dXcalendarJalali     Mesh3dXcalendar = "jalali"
 	Mesh3dXcalendarTaiwan     Mesh3dXcalendar = "taiwan"
 	Mesh3dXcalendarThai       Mesh3dXcalendar = "thai"
 	Mesh3dXcalendarUmmalqura  Mesh3dXcalendar = "ummalqura"
@@ -1076,19 +1225,19 @@ const (
 type Mesh3dYcalendar string
 
 const (
-	Mesh3dYcalendarGregorian  Mesh3dYcalendar = "gregorian"
 	Mesh3dYcalendarChinese    Mesh3dYcalendar = "chinese"
 	Mesh3dYcalendarCoptic     Mesh3dYcalendar = "coptic"
 	Mesh3dYcalendarDiscworld  Mesh3dYcalendar = "discworld"
 	Mesh3dYcalendarEthiopian  Mesh3dYcalendar = "ethiopian"
+	Mesh3dYcalendarGregorian  Mesh3dYcalendar = "gregorian"
 	Mesh3dYcalendarHebrew     Mesh3dYcalendar = "hebrew"
 	Mesh3dYcalendarIslamic    Mesh3dYcalendar = "islamic"
+	Mesh3dYcalendarJalali     Mesh3dYcalendar = "jalali"
 	Mesh3dYcalendarJulian     Mesh3dYcalendar = "julian"
 	Mesh3dYcalendarMayan      Mesh3dYcalendar = "mayan"
 	Mesh3dYcalendarNanakshahi Mesh3dYcalendar = "nanakshahi"
 	Mesh3dYcalendarNepali     Mesh3dYcalendar = "nepali"
 	Mesh3dYcalendarPersian    Mesh3dYcalendar = "persian"
-	Mesh3dYcalendarJalali     Mesh3dYcalendar = "jalali"
 	Mesh3dYcalendarTaiwan     Mesh3dYcalendar = "taiwan"
 	Mesh3dYcalendarThai       Mesh3dYcalendar = "thai"
 	Mesh3dYcalendarUmmalqura  Mesh3dYcalendar = "ummalqura"
@@ -1098,19 +1247,19 @@ const (
 type Mesh3dZcalendar string
 
 const (
-	Mesh3dZcalendarGregorian  Mesh3dZcalendar = "gregorian"
 	Mesh3dZcalendarChinese    Mesh3dZcalendar = "chinese"
 	Mesh3dZcalendarCoptic     Mesh3dZcalendar = "coptic"
 	Mesh3dZcalendarDiscworld  Mesh3dZcalendar = "discworld"
 	Mesh3dZcalendarEthiopian  Mesh3dZcalendar = "ethiopian"
+	Mesh3dZcalendarGregorian  Mesh3dZcalendar = "gregorian"
 	Mesh3dZcalendarHebrew     Mesh3dZcalendar = "hebrew"
 	Mesh3dZcalendarIslamic    Mesh3dZcalendar = "islamic"
+	Mesh3dZcalendarJalali     Mesh3dZcalendar = "jalali"
 	Mesh3dZcalendarJulian     Mesh3dZcalendar = "julian"
 	Mesh3dZcalendarMayan      Mesh3dZcalendar = "mayan"
 	Mesh3dZcalendarNanakshahi Mesh3dZcalendar = "nanakshahi"
 	Mesh3dZcalendarNepali     Mesh3dZcalendar = "nepali"
 	Mesh3dZcalendarPersian    Mesh3dZcalendar = "persian"
-	Mesh3dZcalendarJalali     Mesh3dZcalendar = "jalali"
 	Mesh3dZcalendarTaiwan     Mesh3dZcalendar = "taiwan"
 	Mesh3dZcalendarThai       Mesh3dZcalendar = "thai"
 	Mesh3dZcalendarUmmalqura  Mesh3dZcalendar = "ummalqura"
