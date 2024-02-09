@@ -16,7 +16,7 @@ import (
 	"github.com/huandu/xstrings"
 )
 
-// Creator provices the functionality to create a file
+// Creator provides the functionality to create a file
 type Creator interface {
 	Create(name string) (io.WriteCloser, error)
 }

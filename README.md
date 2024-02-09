@@ -110,7 +110,7 @@ For strings... This is a little bit more complicated, In AWS package they are us
 
 For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`. I would like to avoid using interface{} or defining types again to keep the package interface as simple as possible.
 
-### Go Ploly Update to plotly version v2.29.0
+### Go Plotly Update to plotly version v2.29.0
 
 The Schema has to be of the format as defined in:
 https://api.plot.ly/v2/plot-schema?format=json&sha1=%27%27
