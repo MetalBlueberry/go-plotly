@@ -81,7 +81,6 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 	fields := make([]structField, 0, len(attr))
 
 	for _, name := range sortKeys(attr) {
-		//fmt.Println("parsing: ", namePrefix, typePrefix, name)
 		if name == "_deprecated" {
 			continue
 		}

@@ -1,3 +1,6 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/MetalBlueberry/go-plotly)](https://goreportcard.com/report/github.com/MetalBlueberry/go-plotly)
+[![godoc](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/mod/github.com/MetalBlueberry/go-plotly?tab=overview)
+
 # go-plotly
 
 Inspired by [Python Plotly](https://plotly.com/python/creating-and-updating-figures/)
@@ -120,17 +123,17 @@ However, the version in this file is often not updated.
 Download the latest plotly schema from the plotly repository:
 https://github.com/plotly/plotly.js/blob/master/dist/plot-schema.json
 ```json
-{
-   "sha1": "11b662302a42aa0698df091a9974ac8f6e1a2292",
-  "modified": true,
-  "schema": "<INSERT NEW SCHEMA HERE>"
-} 
+{"sha1": "11b662302a42aa0698df091a9974ac8f6e1a2292","modified": true,"schema": "<INSERT NEW SCHEMA HERE>"}
 ```
 Save this file as your new schema file and use it as input to regenerate your library.
 The library should be in graph_objects to overwrite the old types, and to be in the same folder as plotly.go.
 
-To solve multiple issues with generating invalid go files due to line-comments being too long, many descriptions
-are also shortened.
+When you paste the schema, please take care not to add any extra lines in long text fields such as "description".
+This can have a negative impact on the code generation, and the code generator may not
+recognize the following lines have to be commented out, thereby producing invalid golang code.
+This is also the reason why the placeholder above is kept in a single line, as this issue will not happen
+if you guarantee that you json is a compact single line json.
+
 ```shell
 go run generator/cmd/generator/main.go -schema=generator/schema.json -output-directory=graph_objects
 ```

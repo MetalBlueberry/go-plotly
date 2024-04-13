@@ -5,9 +5,7 @@ import (
 	"embed"
 	"fmt"
 	"go/format"
-	"go/scanner"
 	"io"
-	"os"
 	"path"
 	"sort"
 	"strings"
@@ -88,26 +86,7 @@ func (r *Renderer) CreateTrace(dir string, name string) error {
 
 	fmtsrc, err := format.Source(src.Bytes())
 	if err != nil {
-		switch err.(type) {
-		case scanner.ErrorList:
-			errorfile := "__tmp_error__.go"
-			fmt.Println("Bad Source:", dir, name)
-			fmt.Println(src.String())
-			fmt.Println("======")
-			for i, e := range err.(scanner.ErrorList) {
-				fmt.Printf("%d) cannot format source, %+v. %s\nadded error file in: %s", i, e, e.Error(), errorfile)
-			}
-			create, _ := os.Create(errorfile)
-			create.Write(src.Bytes())
-			create.Close()
-
-			if err != nil {
-				return err
-			}
-			return err
-		default:
-			return fmt.Errorf("cannot format source, %w", err)
-		}
+		return fmt.Errorf("cannot format source, %w", err)
 	}
 
 	file, err := r.fs.Create(path.Join(dir, name+"_gen.go"))
