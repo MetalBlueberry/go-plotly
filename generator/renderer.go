@@ -124,6 +124,7 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		Enums:     []enumFile{},
 		FlagLists: []flagList{},
 	}
+
 	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, trace.Attributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)

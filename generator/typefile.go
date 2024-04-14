@@ -176,7 +176,6 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			})
 		}
 	}
-
 	return fields, nil
 }
 

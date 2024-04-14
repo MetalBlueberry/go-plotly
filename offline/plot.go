@@ -9,9 +9,8 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/pkg/browser"
-
 	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
+	"github.com/pkg/browser"
 )
 
 type Options struct {
