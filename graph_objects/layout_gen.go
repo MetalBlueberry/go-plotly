@@ -7742,10 +7742,12 @@ const (
 	LayoutAutotypenumbersStrict       LayoutAutotypenumbers = "strict"
 )
 
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 type LayoutBarmode string
 
 const (
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 	BarBarmodeStack          LayoutBarmode = "stack"
 	BarBarmodeGroup          LayoutBarmode = "group"
 	BarBarmodeOverlay        LayoutBarmode = "overlay"
@@ -7754,8 +7756,6 @@ const (
 	HistogramBarmodeGroup    LayoutBarmode = "group"
 	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
 	HistogramBarmodeRelative LayoutBarmode = "relative"
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
@@ -7774,10 +7774,10 @@ const (
 type LayoutBoxmode string
 
 const (
-	BoxBoxmodeGroup           LayoutBoxmode = "group"
-	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
 	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
+	BoxBoxmodeGroup           LayoutBoxmode = "group"
+	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.

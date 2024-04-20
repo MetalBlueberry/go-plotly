@@ -113,30 +113,72 @@ For strings... This is a little bit more complicated, In AWS package they are us
 
 For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`. I would like to avoid using interface{} or defining types again to keep the package interface as simple as possible.
 
-### Go Plotly Update to plotly version v2.29.0
+### Go Plotly Update to any json schema version
 
+#### Method 1) Get schema files with script
+
+> [!TIP]
+> Use this script for easier download of plotly json schemas.
+> ```shell
+> go run generator/cmd/downloader/main.go -version=v2.29.0 -p
+> ```
+> And then clean up the generated files in **graph_objects** folder and regenerate the new graph objects. DO NOT REMOVE **graph_objects/plotly.go**:
+> ```shell
+> rm -f graph_objects/*_gen.go
+> go run generator/cmd/generator/main.go -schema=plotly-schema-v2.29.0_ready_for_gen.json -output-directory=graph_objects
+> ```
+
+This script will save a file, which then can be used by the generator. It downloads the schema file directly from the plotly.js repository and adjusts its content.
+When using the `-p` flag, the script also removes whitespace and new line characters.
+
+#### Method 2) Get schema files manually from the repository
 The Schema has to be of the format as defined in:
 https://api.plot.ly/v2/plot-schema?format=json&sha1=%27%27
 
 However, the version in this file is often not updated.
 
-Download the latest plotly schema from the plotly repository:
+Download the json file of the version you need from the original plotly.js repo under:
+https://github.com/plotly/plotly.js
+
+Example:
+The plot-schema.json file for the latest version can be found under:
 https://github.com/plotly/plotly.js/blob/master/dist/plot-schema.json
+
 ```json
 {"sha1": "11b662302a42aa0698df091a9974ac8f6e1a2292","modified": true,"schema": "<INSERT NEW SCHEMA HERE>"}
 ```
+> [!CAUTION]
+> Do not add extra lines in your schema json. This can break the golang code generation.
+
 Save this file as your new schema file and use it as input to regenerate your library.
 The library should be in graph_objects to overwrite the old types, and to be in the same folder as plotly.go.
 
 When you paste the schema, please take care not to add any extra lines in long text fields such as "description".
 This can have a negative impact on the code generation, and the code generator may not
 recognize the following lines have to be commented out, thereby producing invalid golang code.
+
 This is also the reason why the placeholder above is kept in a single line, as this issue will not happen
 if you guarantee that you json is a compact single line json.
+
+#### Command
 
 ```shell
 go run generator/cmd/generator/main.go -schema=generator/schema.json -output-directory=graph_objects
 ```
+
+#### Missing Files?
+
+if in doubt whether all types and traces have been generated, you can use the jsonviewer tool to introspect the json: 
+https://jsonviewer.stack.hu/
+
+Or use `jq` tool for quick introspection into the json files.
+Example:
+Display all traces in the schema.json file.
+```shell
+jq '.schema.traces | keys' schema.json --sort-keys | less
+```
+
+More on the `jq` tool on: https://jqlang.github.io/jq/manual/
 
 ### plotly online editor sandbox
 http://plotly-json-editor.getforge.io/
@@ -145,3 +187,11 @@ http://plotly-json-editor.getforge.io/
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Metalblueberry/go-plotly&type=Date)](https://star-history.com/#Metalblueberry/go-plotly&Date)
 
+## Update Notes:
+
+### Update to Version 2.29.0
+#### Removed and new generated objects
+- REMOVED: area
+- ADDED: icicle, scattersmith
+#### Release Notes
+For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
