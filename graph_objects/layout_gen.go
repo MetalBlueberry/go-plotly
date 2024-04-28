@@ -32,7 +32,7 @@ type Layout struct {
 	// Bargap
 	// arrayOK: false
 	// type: number
-	// Sets the gap between bars of adjacent location coordinates. Values are unitless, they represent fractions of the minimum difference in bar positions in the data.
+	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
 	Bargap float64 `json:"bargap,omitempty"`
 
 	// Bargroupgap
@@ -42,9 +42,9 @@ type Layout struct {
 	Bargroupgap float64 `json:"bargroupgap,omitempty"`
 
 	// Barmode
-	// default: stack
+	// default: group
 	// type: enumerated
-	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
+	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to an *opacity* to see multiple bars.
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
@@ -6328,10 +6328,10 @@ const (
 type LayoutBoxmode string
 
 const (
-	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
-	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 	BoxBoxmodeGroup           LayoutBoxmode = "group"
 	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
+	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
+	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
