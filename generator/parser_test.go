@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/MetalBlueberry/go-plotly/generator"
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
 

@@ -7,8 +7,10 @@ import (
 	_ "embed"
 
 	"github.com/golang/mock/gomock"
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
+
+	// . "github.com/onsi/gomega/format"
 
 	"github.com/MetalBlueberry/go-plotly/generator"
 	"github.com/MetalBlueberry/go-plotly/generator/mocks"
@@ -19,41 +21,89 @@ var schema []byte
 
 var _ = Describe("Renderer", func() {
 
-	var (
-		ctrl        *gomock.Controller
-		mockCreator *mocks.MockCreator
-	)
-	BeforeEach(func() {
-		ctrl = gomock.NewController(GinkgoT())
-		mockCreator = mocks.NewMockCreator(ctrl)
+	Describe("A single trace", func() {
+		var (
+			ctrl        *gomock.Controller
+			mockCreator *mocks.MockCreator
+		)
+		BeforeEach(func() {
+			ctrl = gomock.NewController(GinkgoT())
+			mockCreator = mocks.NewMockCreator(ctrl)
+		})
+		AfterEach(func() {
+			ctrl.Finish()
+		})
+
+		It("Should create package", func() {
+			buf := NopWriterCloser{&bytes.Buffer{}}
+
+			mockCreator.EXPECT().Create(gomock.Eq("scatter_gen.go")).Return(buf, nil).Times(1)
+
+			root, err := generator.LoadSchema(bytes.NewReader(schema))
+			Expect(err).To(BeNil())
+
+			r, err := generator.NewRenderer(mockCreator, root)
+			Expect(err).To(BeNil())
+
+			err = r.CreateTrace(".", "scatter")
+			Expect(err).To(BeNil())
+
+			formatted, err := format.Source(buf.Bytes())
+			Expect(err).To(BeNil())
+
+			Expect(string(formatted)).To(ContainSubstring(`package grob`))
+			// Type is defined
+			Expect(string(formatted)).To(ContainSubstring(`type Scatter struct`))
+			// Implements interface GetType()
+			Expect(string(formatted)).To(ContainSubstring(`func (trace *Scatter) GetType() TraceType`))
+
+		})
 	})
-	AfterEach(func() {
-		ctrl.Finish()
-	})
+	Describe("When writing", func() {
+		var r *generator.Renderer
 
-	It("Should create package", func() {
-		buf := NopWriterCloser{&bytes.Buffer{}}
+		BeforeEach(func() {
+			root, err := generator.LoadSchema(bytes.NewReader(schema))
+			Expect(err).To(BeNil())
 
-		mockCreator.EXPECT().Create(gomock.Eq("scatter_gen.go")).Return(buf, nil).Times(1)
+			r, err = generator.NewRenderer(nil, root)
+			Expect(err).To(BeNil())
+		})
 
-		root, err := generator.LoadSchema(bytes.NewReader(schema))
-		Expect(err).To(BeNil())
+		Describe("The config", func() {
+			It("Should be consistent", func() {
 
-		r, err := generator.NewRenderer(mockCreator, root)
-		Expect(err).To(BeNil())
+				original := &bytes.Buffer{}
+				err := r.WriteConfig(original)
+				Expect(err).To(BeNil())
 
-		err = r.CreateTrace(".", "scatter")
-		Expect(err).To(BeNil())
+				for i := 0; i < 10; i++ {
+					attempt := &bytes.Buffer{}
+					err = r.WriteConfig(attempt)
+					Expect(err).To(BeNil())
+					Expect(attempt).To(Equal(original))
+				}
 
-		formatted, err := format.Source(buf.Bytes())
-		Expect(err).To(BeNil())
+			})
+		})
+		Describe("The Layout", func() {
+			// TruncatedDiff = false
+			// MaxLength = 0
+			It("Should be consistent", func() {
 
-		Expect(string(formatted)).To(ContainSubstring(`package grob`))
-		// Type is defined
-		Expect(string(formatted)).To(ContainSubstring(`type Scatter struct`))
-		// Implements interface GetType()
-		Expect(string(formatted)).To(ContainSubstring(`func (trace *Scatter) GetType() TraceType`))
+				original := &bytes.Buffer{}
+				err := r.WriteLayout(original)
+				Expect(err).To(BeNil())
 
+				for i := 0; i < 10; i++ {
+					attempt := &bytes.Buffer{}
+					err = r.WriteLayout(attempt)
+					Expect(err).To(BeNil())
+					Expect(attempt.String()).To(Equal(original.String()))
+				}
+
+			})
+		})
 	})
 })
 
