@@ -466,6 +466,7 @@ var symbolMap = []string{
 	"+", "Plus",
 	"?", "Question",
 	"$", "Dollar",
+	".", "Dot",
 }
 
 func cleanName(name string) string {
