@@ -360,7 +360,7 @@ func (file *typeFile) parseFlaglist(name string, attr *Attribute) error {
 	return nil
 }
 
-func sortKeys(attr map[string]*Attribute) []string {
+func sortKeys[T any](attr map[string]*T) []string {
 	keys := make([]string, 0, len(attr))
 	for k := range attr {
 		keys = append(keys, k)

@@ -204,7 +204,8 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	}
 	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 
-	for name, trace := range r.root.Schema.Traces {
+	for _, name := range sortKeys(r.root.Schema.Traces) {
+		trace := r.root.Schema.Traces[name]
 		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
 		if err != nil {
 			return fmt.Errorf("cannot parse attributes, %w", err)
