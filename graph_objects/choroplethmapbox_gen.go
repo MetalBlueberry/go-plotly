@@ -888,7 +888,7 @@ const (
 	ChoroplethmapboxColorbarExponentformatE1    ChoroplethmapboxColorbarExponentformat = "e"
 	ChoroplethmapboxColorbarExponentformatE2    ChoroplethmapboxColorbarExponentformat = "E"
 	ChoroplethmapboxColorbarExponentformatPower ChoroplethmapboxColorbarExponentformat = "power"
-	ChoroplethmapboxColorbarExponentformatSI    ChoroplethmapboxColorbarExponentformat = "SI"
+	ChoroplethmapboxColorbarExponentformatSi    ChoroplethmapboxColorbarExponentformat = "SI"
 	ChoroplethmapboxColorbarExponentformatB     ChoroplethmapboxColorbarExponentformat = "B"
 )
 

@@ -1160,7 +1160,7 @@ const (
 	IsosurfaceColorbarExponentformatE1    IsosurfaceColorbarExponentformat = "e"
 	IsosurfaceColorbarExponentformatE2    IsosurfaceColorbarExponentformat = "E"
 	IsosurfaceColorbarExponentformatPower IsosurfaceColorbarExponentformat = "power"
-	IsosurfaceColorbarExponentformatSI    IsosurfaceColorbarExponentformat = "SI"
+	IsosurfaceColorbarExponentformatSi    IsosurfaceColorbarExponentformat = "SI"
 	IsosurfaceColorbarExponentformatB     IsosurfaceColorbarExponentformat = "B"
 )
 

@@ -1166,7 +1166,7 @@ const (
 	VolumeColorbarExponentformatE1    VolumeColorbarExponentformat = "e"
 	VolumeColorbarExponentformatE2    VolumeColorbarExponentformat = "E"
 	VolumeColorbarExponentformatPower VolumeColorbarExponentformat = "power"
-	VolumeColorbarExponentformatSI    VolumeColorbarExponentformat = "SI"
+	VolumeColorbarExponentformatSi    VolumeColorbarExponentformat = "SI"
 	VolumeColorbarExponentformatB     VolumeColorbarExponentformat = "B"
 )
 

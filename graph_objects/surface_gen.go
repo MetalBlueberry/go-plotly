@@ -1200,7 +1200,7 @@ const (
 	SurfaceColorbarExponentformatE1    SurfaceColorbarExponentformat = "e"
 	SurfaceColorbarExponentformatE2    SurfaceColorbarExponentformat = "E"
 	SurfaceColorbarExponentformatPower SurfaceColorbarExponentformat = "power"
-	SurfaceColorbarExponentformatSI    SurfaceColorbarExponentformat = "SI"
+	SurfaceColorbarExponentformatSi    SurfaceColorbarExponentformat = "SI"
 	SurfaceColorbarExponentformatB     SurfaceColorbarExponentformat = "B"
 )
 

@@ -765,7 +765,7 @@ const (
 	IndicatorGaugeAxisExponentformatE1    IndicatorGaugeAxisExponentformat = "e"
 	IndicatorGaugeAxisExponentformatE2    IndicatorGaugeAxisExponentformat = "E"
 	IndicatorGaugeAxisExponentformatPower IndicatorGaugeAxisExponentformat = "power"
-	IndicatorGaugeAxisExponentformatSI    IndicatorGaugeAxisExponentformat = "SI"
+	IndicatorGaugeAxisExponentformatSi    IndicatorGaugeAxisExponentformat = "SI"
 	IndicatorGaugeAxisExponentformatB     IndicatorGaugeAxisExponentformat = "B"
 )
 

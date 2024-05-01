@@ -1905,7 +1905,7 @@ const (
 	Scatter3dLineColorbarExponentformatE1    Scatter3dLineColorbarExponentformat = "e"
 	Scatter3dLineColorbarExponentformatE2    Scatter3dLineColorbarExponentformat = "E"
 	Scatter3dLineColorbarExponentformatPower Scatter3dLineColorbarExponentformat = "power"
-	Scatter3dLineColorbarExponentformatSI    Scatter3dLineColorbarExponentformat = "SI"
+	Scatter3dLineColorbarExponentformatSi    Scatter3dLineColorbarExponentformat = "SI"
 	Scatter3dLineColorbarExponentformatB     Scatter3dLineColorbarExponentformat = "B"
 )
 
@@ -2069,7 +2069,7 @@ const (
 	Scatter3dMarkerColorbarExponentformatE1    Scatter3dMarkerColorbarExponentformat = "e"
 	Scatter3dMarkerColorbarExponentformatE2    Scatter3dMarkerColorbarExponentformat = "E"
 	Scatter3dMarkerColorbarExponentformatPower Scatter3dMarkerColorbarExponentformat = "power"
-	Scatter3dMarkerColorbarExponentformatSI    Scatter3dMarkerColorbarExponentformat = "SI"
+	Scatter3dMarkerColorbarExponentformatSi    Scatter3dMarkerColorbarExponentformat = "SI"
 	Scatter3dMarkerColorbarExponentformatB     Scatter3dMarkerColorbarExponentformat = "B"
 )
 

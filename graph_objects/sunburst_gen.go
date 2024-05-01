@@ -1179,7 +1179,7 @@ const (
 	SunburstMarkerColorbarExponentformatE1    SunburstMarkerColorbarExponentformat = "e"
 	SunburstMarkerColorbarExponentformatE2    SunburstMarkerColorbarExponentformat = "E"
 	SunburstMarkerColorbarExponentformatPower SunburstMarkerColorbarExponentformat = "power"
-	SunburstMarkerColorbarExponentformatSI    SunburstMarkerColorbarExponentformat = "SI"
+	SunburstMarkerColorbarExponentformatSi    SunburstMarkerColorbarExponentformat = "SI"
 	SunburstMarkerColorbarExponentformatB     SunburstMarkerColorbarExponentformat = "B"
 )
 

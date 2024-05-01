@@ -1131,7 +1131,7 @@ const (
 	BarpolarMarkerColorbarExponentformatE1    BarpolarMarkerColorbarExponentformat = "e"
 	BarpolarMarkerColorbarExponentformatE2    BarpolarMarkerColorbarExponentformat = "E"
 	BarpolarMarkerColorbarExponentformatPower BarpolarMarkerColorbarExponentformat = "power"
-	BarpolarMarkerColorbarExponentformatSI    BarpolarMarkerColorbarExponentformat = "SI"
+	BarpolarMarkerColorbarExponentformatSi    BarpolarMarkerColorbarExponentformat = "SI"
 	BarpolarMarkerColorbarExponentformatB     BarpolarMarkerColorbarExponentformat = "B"
 )
 

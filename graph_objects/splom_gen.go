@@ -1049,7 +1049,7 @@ const (
 	SplomMarkerColorbarExponentformatE1    SplomMarkerColorbarExponentformat = "e"
 	SplomMarkerColorbarExponentformatE2    SplomMarkerColorbarExponentformat = "E"
 	SplomMarkerColorbarExponentformatPower SplomMarkerColorbarExponentformat = "power"
-	SplomMarkerColorbarExponentformatSI    SplomMarkerColorbarExponentformat = "SI"
+	SplomMarkerColorbarExponentformatSi    SplomMarkerColorbarExponentformat = "SI"
 	SplomMarkerColorbarExponentformatB     SplomMarkerColorbarExponentformat = "B"
 )
 

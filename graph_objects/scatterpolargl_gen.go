@@ -1224,7 +1224,7 @@ const (
 	ScatterpolarglMarkerColorbarExponentformatE1    ScatterpolarglMarkerColorbarExponentformat = "e"
 	ScatterpolarglMarkerColorbarExponentformatE2    ScatterpolarglMarkerColorbarExponentformat = "E"
 	ScatterpolarglMarkerColorbarExponentformatPower ScatterpolarglMarkerColorbarExponentformat = "power"
-	ScatterpolarglMarkerColorbarExponentformatSI    ScatterpolarglMarkerColorbarExponentformat = "SI"
+	ScatterpolarglMarkerColorbarExponentformatSi    ScatterpolarglMarkerColorbarExponentformat = "SI"
 	ScatterpolarglMarkerColorbarExponentformatB     ScatterpolarglMarkerColorbarExponentformat = "B"
 )
 

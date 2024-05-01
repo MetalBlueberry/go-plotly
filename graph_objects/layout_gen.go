@@ -7742,20 +7742,20 @@ const (
 	LayoutAutotypenumbersStrict       LayoutAutotypenumbers = "strict"
 )
 
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 type LayoutBarmode string
 
 const (
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
-	BarBarmodeStack          LayoutBarmode = "stack"
-	BarBarmodeGroup          LayoutBarmode = "group"
-	BarBarmodeOverlay        LayoutBarmode = "overlay"
-	BarBarmodeRelative       LayoutBarmode = "relative"
 	HistogramBarmodeStack    LayoutBarmode = "stack"
 	HistogramBarmodeGroup    LayoutBarmode = "group"
 	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
 	HistogramBarmodeRelative LayoutBarmode = "relative"
+	BarBarmodeStack          LayoutBarmode = "stack"
+	BarBarmodeGroup          LayoutBarmode = "group"
+	BarBarmodeOverlay        LayoutBarmode = "overlay"
+	BarBarmodeRelative       LayoutBarmode = "relative"
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
@@ -7810,7 +7810,7 @@ const (
 	LayoutColoraxisColorbarExponentformatE1    LayoutColoraxisColorbarExponentformat = "e"
 	LayoutColoraxisColorbarExponentformatE2    LayoutColoraxisColorbarExponentformat = "E"
 	LayoutColoraxisColorbarExponentformatPower LayoutColoraxisColorbarExponentformat = "power"
-	LayoutColoraxisColorbarExponentformatSI    LayoutColoraxisColorbarExponentformat = "SI"
+	LayoutColoraxisColorbarExponentformatSi    LayoutColoraxisColorbarExponentformat = "SI"
 	LayoutColoraxisColorbarExponentformatB     LayoutColoraxisColorbarExponentformat = "B"
 )
 
@@ -8398,7 +8398,7 @@ const (
 	LayoutPolarAngularaxisExponentformatE1    LayoutPolarAngularaxisExponentformat = "e"
 	LayoutPolarAngularaxisExponentformatE2    LayoutPolarAngularaxisExponentformat = "E"
 	LayoutPolarAngularaxisExponentformatPower LayoutPolarAngularaxisExponentformat = "power"
-	LayoutPolarAngularaxisExponentformatSI    LayoutPolarAngularaxisExponentformat = "SI"
+	LayoutPolarAngularaxisExponentformatSi    LayoutPolarAngularaxisExponentformat = "SI"
 	LayoutPolarAngularaxisExponentformatB     LayoutPolarAngularaxisExponentformat = "B"
 )
 
@@ -8556,7 +8556,7 @@ const (
 	LayoutPolarRadialaxisExponentformatE1    LayoutPolarRadialaxisExponentformat = "e"
 	LayoutPolarRadialaxisExponentformatE2    LayoutPolarRadialaxisExponentformat = "E"
 	LayoutPolarRadialaxisExponentformatPower LayoutPolarRadialaxisExponentformat = "power"
-	LayoutPolarRadialaxisExponentformatSI    LayoutPolarRadialaxisExponentformat = "SI"
+	LayoutPolarRadialaxisExponentformatSi    LayoutPolarRadialaxisExponentformat = "SI"
 	LayoutPolarRadialaxisExponentformatB     LayoutPolarRadialaxisExponentformat = "B"
 )
 
@@ -8762,7 +8762,7 @@ const (
 	LayoutSceneXaxisExponentformatE1    LayoutSceneXaxisExponentformat = "e"
 	LayoutSceneXaxisExponentformatE2    LayoutSceneXaxisExponentformat = "E"
 	LayoutSceneXaxisExponentformatPower LayoutSceneXaxisExponentformat = "power"
-	LayoutSceneXaxisExponentformatSI    LayoutSceneXaxisExponentformat = "SI"
+	LayoutSceneXaxisExponentformatSi    LayoutSceneXaxisExponentformat = "SI"
 	LayoutSceneXaxisExponentformatB     LayoutSceneXaxisExponentformat = "B"
 )
 
@@ -8918,7 +8918,7 @@ const (
 	LayoutSceneYaxisExponentformatE1    LayoutSceneYaxisExponentformat = "e"
 	LayoutSceneYaxisExponentformatE2    LayoutSceneYaxisExponentformat = "E"
 	LayoutSceneYaxisExponentformatPower LayoutSceneYaxisExponentformat = "power"
-	LayoutSceneYaxisExponentformatSI    LayoutSceneYaxisExponentformat = "SI"
+	LayoutSceneYaxisExponentformatSi    LayoutSceneYaxisExponentformat = "SI"
 	LayoutSceneYaxisExponentformatB     LayoutSceneYaxisExponentformat = "B"
 )
 
@@ -9074,7 +9074,7 @@ const (
 	LayoutSceneZaxisExponentformatE1    LayoutSceneZaxisExponentformat = "e"
 	LayoutSceneZaxisExponentformatE2    LayoutSceneZaxisExponentformat = "E"
 	LayoutSceneZaxisExponentformatPower LayoutSceneZaxisExponentformat = "power"
-	LayoutSceneZaxisExponentformatSI    LayoutSceneZaxisExponentformat = "SI"
+	LayoutSceneZaxisExponentformatSi    LayoutSceneZaxisExponentformat = "SI"
 	LayoutSceneZaxisExponentformatB     LayoutSceneZaxisExponentformat = "B"
 )
 
@@ -9257,7 +9257,7 @@ const (
 	LayoutTernaryAaxisExponentformatE1    LayoutTernaryAaxisExponentformat = "e"
 	LayoutTernaryAaxisExponentformatE2    LayoutTernaryAaxisExponentformat = "E"
 	LayoutTernaryAaxisExponentformatPower LayoutTernaryAaxisExponentformat = "power"
-	LayoutTernaryAaxisExponentformatSI    LayoutTernaryAaxisExponentformat = "SI"
+	LayoutTernaryAaxisExponentformatSi    LayoutTernaryAaxisExponentformat = "SI"
 	LayoutTernaryAaxisExponentformatB     LayoutTernaryAaxisExponentformat = "B"
 )
 
@@ -9325,7 +9325,7 @@ const (
 	LayoutTernaryBaxisExponentformatE1    LayoutTernaryBaxisExponentformat = "e"
 	LayoutTernaryBaxisExponentformatE2    LayoutTernaryBaxisExponentformat = "E"
 	LayoutTernaryBaxisExponentformatPower LayoutTernaryBaxisExponentformat = "power"
-	LayoutTernaryBaxisExponentformatSI    LayoutTernaryBaxisExponentformat = "SI"
+	LayoutTernaryBaxisExponentformatSi    LayoutTernaryBaxisExponentformat = "SI"
 	LayoutTernaryBaxisExponentformatB     LayoutTernaryBaxisExponentformat = "B"
 )
 
@@ -9393,7 +9393,7 @@ const (
 	LayoutTernaryCaxisExponentformatE1    LayoutTernaryCaxisExponentformat = "e"
 	LayoutTernaryCaxisExponentformatE2    LayoutTernaryCaxisExponentformat = "E"
 	LayoutTernaryCaxisExponentformatPower LayoutTernaryCaxisExponentformat = "power"
-	LayoutTernaryCaxisExponentformatSI    LayoutTernaryCaxisExponentformat = "SI"
+	LayoutTernaryCaxisExponentformatSi    LayoutTernaryCaxisExponentformat = "SI"
 	LayoutTernaryCaxisExponentformatB     LayoutTernaryCaxisExponentformat = "B"
 )
 
@@ -9666,7 +9666,7 @@ const (
 	LayoutXaxisExponentformatE1    LayoutXaxisExponentformat = "e"
 	LayoutXaxisExponentformatE2    LayoutXaxisExponentformat = "E"
 	LayoutXaxisExponentformatPower LayoutXaxisExponentformat = "power"
-	LayoutXaxisExponentformatSI    LayoutXaxisExponentformat = "SI"
+	LayoutXaxisExponentformatSi    LayoutXaxisExponentformat = "SI"
 	LayoutXaxisExponentformatB     LayoutXaxisExponentformat = "B"
 )
 
@@ -9994,7 +9994,7 @@ const (
 	LayoutYaxisExponentformatE1    LayoutYaxisExponentformat = "e"
 	LayoutYaxisExponentformatE2    LayoutYaxisExponentformat = "E"
 	LayoutYaxisExponentformatPower LayoutYaxisExponentformat = "power"
-	LayoutYaxisExponentformatSI    LayoutYaxisExponentformat = "SI"
+	LayoutYaxisExponentformatSi    LayoutYaxisExponentformat = "SI"
 	LayoutYaxisExponentformatB     LayoutYaxisExponentformat = "B"
 )
 

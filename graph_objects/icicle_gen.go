@@ -1265,7 +1265,7 @@ const (
 	IcicleMarkerColorbarExponentformatE1    IcicleMarkerColorbarExponentformat = "e"
 	IcicleMarkerColorbarExponentformatE2    IcicleMarkerColorbarExponentformat = "E"
 	IcicleMarkerColorbarExponentformatPower IcicleMarkerColorbarExponentformat = "power"
-	IcicleMarkerColorbarExponentformatSI    IcicleMarkerColorbarExponentformat = "SI"
+	IcicleMarkerColorbarExponentformatSi    IcicleMarkerColorbarExponentformat = "SI"
 	IcicleMarkerColorbarExponentformatB     IcicleMarkerColorbarExponentformat = "B"
 )
 

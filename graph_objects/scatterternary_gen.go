@@ -1304,7 +1304,7 @@ const (
 	ScatterternaryMarkerColorbarExponentformatE1    ScatterternaryMarkerColorbarExponentformat = "e"
 	ScatterternaryMarkerColorbarExponentformatE2    ScatterternaryMarkerColorbarExponentformat = "E"
 	ScatterternaryMarkerColorbarExponentformatPower ScatterternaryMarkerColorbarExponentformat = "power"
-	ScatterternaryMarkerColorbarExponentformatSI    ScatterternaryMarkerColorbarExponentformat = "SI"
+	ScatterternaryMarkerColorbarExponentformatSi    ScatterternaryMarkerColorbarExponentformat = "SI"
 	ScatterternaryMarkerColorbarExponentformatB     ScatterternaryMarkerColorbarExponentformat = "B"
 )
 

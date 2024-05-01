@@ -1260,7 +1260,7 @@ const (
 	FunnelMarkerColorbarExponentformatE1    FunnelMarkerColorbarExponentformat = "e"
 	FunnelMarkerColorbarExponentformatE2    FunnelMarkerColorbarExponentformat = "E"
 	FunnelMarkerColorbarExponentformatPower FunnelMarkerColorbarExponentformat = "power"
-	FunnelMarkerColorbarExponentformatSI    FunnelMarkerColorbarExponentformat = "SI"
+	FunnelMarkerColorbarExponentformatSi    FunnelMarkerColorbarExponentformat = "SI"
 	FunnelMarkerColorbarExponentformatB     FunnelMarkerColorbarExponentformat = "B"
 )
 

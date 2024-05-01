@@ -1511,7 +1511,7 @@ const (
 	ScatterglMarkerColorbarExponentformatE1    ScatterglMarkerColorbarExponentformat = "e"
 	ScatterglMarkerColorbarExponentformatE2    ScatterglMarkerColorbarExponentformat = "E"
 	ScatterglMarkerColorbarExponentformatPower ScatterglMarkerColorbarExponentformat = "power"
-	ScatterglMarkerColorbarExponentformatSI    ScatterglMarkerColorbarExponentformat = "SI"
+	ScatterglMarkerColorbarExponentformatSi    ScatterglMarkerColorbarExponentformat = "SI"
 	ScatterglMarkerColorbarExponentformatB     ScatterglMarkerColorbarExponentformat = "B"
 )
 
