@@ -3,14 +3,14 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"text/template"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/pkg/browser"
+
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 )
 
 type Options struct {
@@ -20,7 +20,7 @@ type Options struct {
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
 func ToHtml(fig *grob.Fig, path string) {
 	buf := figToBuffer(fig)
-	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
+	os.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.

@@ -1,0 +1,16 @@
+versions:
+  -  Name: Plotly 2.31.1
+     Tag: v2.31.1
+     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
+     Path: schemas/v2.31.1/plot-schema.json
+     Generated: generated/v2.31/graph_objects
+  -  Name: Plotly 2.29.1
+     Tag: v2.29.1
+     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.29.1/test/plot-schema.json
+     Path: schemas/v2.29.1/plot-schema.json
+     Generated: generated/v2.29/graph_objects
+  -  Name: Plotly 2.19.0
+     Tag: v2.19.0
+     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.19.0/test/plot-schema.json
+     Path: schemas/v2.19.0/plot-schema.json
+     Generated: generated/v2.19/graph_objects

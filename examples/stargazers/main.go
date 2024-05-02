@@ -10,8 +10,9 @@ import (
 	"text/template"
 	"time"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/pkg/browser"
+
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 )
 
 type User struct {

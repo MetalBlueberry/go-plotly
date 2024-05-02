@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 )
 
 func main() {
