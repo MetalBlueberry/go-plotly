@@ -54,7 +54,7 @@ func main() {
 		}
 	}
 
-	err = os.MkdirAll(output, os.ModePerm)
+	err = os.MkdirAll(output, 0755)
 	if err != nil {
 		log.Fatalf("Failed to create output dir %s, %s", *outputDirectory, err)
 
