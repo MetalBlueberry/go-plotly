@@ -1203,7 +1203,7 @@ const (
 	TreemapMarkerColorbarExponentformatE1    TreemapMarkerColorbarExponentformat = "e"
 	TreemapMarkerColorbarExponentformatE2    TreemapMarkerColorbarExponentformat = "E"
 	TreemapMarkerColorbarExponentformatPower TreemapMarkerColorbarExponentformat = "power"
-	TreemapMarkerColorbarExponentformatSi    TreemapMarkerColorbarExponentformat = "SI"
+	TreemapMarkerColorbarExponentformatSI    TreemapMarkerColorbarExponentformat = "SI"
 	TreemapMarkerColorbarExponentformatB     TreemapMarkerColorbarExponentformat = "B"
 )
 

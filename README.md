@@ -43,7 +43,7 @@ func main() {
         },
     }
 
-    offline.Show(fig)
+    grob.Show(fig)
 }
 ```
 
@@ -115,56 +115,44 @@ For numbers... It's similar to strings, Right now you cannot create plots with i
 
 ### Go Plotly Update to any json schema version
 
-#### Method 1) Get schema files with script
+#### Update the config to add a new version
+
+To add a new version, add a new entry in: [schemas.yaml](schemas.yaml)
+
+The documentation for each field can be found in [schema.go](generator%2Fschema.go)
+
+Example entry:
+```yaml
+  -  Name: Plotly 2.31.1
+     Tag: v2.31.1
+     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
+     Path: schemas/v2.31.1/plot-schema.json
+     Generated: generated/v2.31.1/graph_objects
+```
+
+The local paths are relative to the project root.
+
+#### run download and regeneration
 
 > [!TIP]
 > Use this script for easier download of plotly json schemas.
 > ```shell
-> go run generator/cmd/downloader/main.go -version=v2.29.0 -p
+> go run generator/cmd/downloader/main.go --config="schemas.yaml"
 > ```
-> And then clean up the generated files in **graph_objects** folder and regenerate the new graph objects. DO NOT REMOVE **graph_objects/plotly.go**:
+> Then run the generator, which will clean up the generated files in **graph_objects** folder of each version and regenerate the new graph objects. DO NOT REMOVE **graph_objects/plotly.go**
 > ```shell
-> rm -f graph_objects/*_gen.go
-> go run generator/cmd/generator/main.go -schema=plotly-schema-v2.29.0_ready_for_gen.json -output-directory=graph_objects
+> go run generator/cmd/generator/main.go --config="schemas.yaml"
+> ```
+> Alternatively, you can also generate the go package using following command from the project root:
+> ```shell
+> go generate ./...
 > ```
 
-This script will save a file, which then can be used by the generator. It downloads the schema file directly from the plotly.js repository and adjusts its content.
-When using the `-p` flag, the script also removes whitespace and new line characters.
+#### changing schemas.yaml locations
 
-#### Method 2) Get schema files manually from the repository
-The Schema has to be of the format as defined in:
-https://api.plot.ly/v2/plot-schema?format=json&sha1=%27%27
+Be aware, that the template file [plotly.tmpl](generator%2Ftemplates%2Fplotly.tmpl) also has a go generate directive.
+This directive has relative paths, based on the assumed final path within the project
 
-However, the version in this file is often not updated.
-
-Download the json file of the version you need from the original plotly.js repo under:
-https://github.com/plotly/plotly.js
-
-Example:
-The plot-schema.json file for the latest version can be found under:
-https://github.com/plotly/plotly.js/blob/master/dist/plot-schema.json
-
-```json
-{"sha1": "11b662302a42aa0698df091a9974ac8f6e1a2292","modified": true,"schema": "<INSERT NEW SCHEMA HERE>"}
-```
-> [!CAUTION]
-> Do not add extra lines in your schema json. This can break the golang code generation.
-
-Save this file as your new schema file and use it as input to regenerate your library.
-The library should be in graph_objects to overwrite the old types, and to be in the same folder as plotly.go.
-
-When you paste the schema, please take care not to add any extra lines in long text fields such as "description".
-This can have a negative impact on the code generation, and the code generator may not
-recognize the following lines have to be commented out, thereby producing invalid golang code.
-
-This is also the reason why the placeholder above is kept in a single line, as this issue will not happen
-if you guarantee that you json is a compact single line json.
-
-#### Command
-
-```shell
-go run generator/cmd/generator/main.go -schema=generator/schema.json -output-directory=graph_objects
-```
 
 #### Missing Files?
 
@@ -189,9 +177,11 @@ http://plotly-json-editor.getforge.io/
 
 ## Update Notes:
 
-### Update to Version 2.29.0
-#### Removed and new generated objects
-- REMOVED: area
-- ADDED: icicle, scattersmith
-#### Release Notes
+### Add version v2.29.1 and v2.31.1
+- Added Downloader for schema file
+- added generator for different packages based on plotly version in subfolders for each version
+- enable easier use for different plotly version by new import paths which include the version genered. Example: `grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"`
+- removed go generate direct from the templates which are no longer necessary
+
+## Official Plotly Release Notes
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases

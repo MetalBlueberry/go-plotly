@@ -7774,10 +7774,10 @@ const (
 type LayoutBoxmode string
 
 const (
-	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
-	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 	BoxBoxmodeGroup           LayoutBoxmode = "group"
 	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
+	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
+	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
@@ -7810,7 +7810,7 @@ const (
 	LayoutColoraxisColorbarExponentformatE1    LayoutColoraxisColorbarExponentformat = "e"
 	LayoutColoraxisColorbarExponentformatE2    LayoutColoraxisColorbarExponentformat = "E"
 	LayoutColoraxisColorbarExponentformatPower LayoutColoraxisColorbarExponentformat = "power"
-	LayoutColoraxisColorbarExponentformatSi    LayoutColoraxisColorbarExponentformat = "SI"
+	LayoutColoraxisColorbarExponentformatSI    LayoutColoraxisColorbarExponentformat = "SI"
 	LayoutColoraxisColorbarExponentformatB     LayoutColoraxisColorbarExponentformat = "B"
 )
 
@@ -8398,7 +8398,7 @@ const (
 	LayoutPolarAngularaxisExponentformatE1    LayoutPolarAngularaxisExponentformat = "e"
 	LayoutPolarAngularaxisExponentformatE2    LayoutPolarAngularaxisExponentformat = "E"
 	LayoutPolarAngularaxisExponentformatPower LayoutPolarAngularaxisExponentformat = "power"
-	LayoutPolarAngularaxisExponentformatSi    LayoutPolarAngularaxisExponentformat = "SI"
+	LayoutPolarAngularaxisExponentformatSI    LayoutPolarAngularaxisExponentformat = "SI"
 	LayoutPolarAngularaxisExponentformatB     LayoutPolarAngularaxisExponentformat = "B"
 )
 
@@ -8556,7 +8556,7 @@ const (
 	LayoutPolarRadialaxisExponentformatE1    LayoutPolarRadialaxisExponentformat = "e"
 	LayoutPolarRadialaxisExponentformatE2    LayoutPolarRadialaxisExponentformat = "E"
 	LayoutPolarRadialaxisExponentformatPower LayoutPolarRadialaxisExponentformat = "power"
-	LayoutPolarRadialaxisExponentformatSi    LayoutPolarRadialaxisExponentformat = "SI"
+	LayoutPolarRadialaxisExponentformatSI    LayoutPolarRadialaxisExponentformat = "SI"
 	LayoutPolarRadialaxisExponentformatB     LayoutPolarRadialaxisExponentformat = "B"
 )
 
@@ -8762,7 +8762,7 @@ const (
 	LayoutSceneXaxisExponentformatE1    LayoutSceneXaxisExponentformat = "e"
 	LayoutSceneXaxisExponentformatE2    LayoutSceneXaxisExponentformat = "E"
 	LayoutSceneXaxisExponentformatPower LayoutSceneXaxisExponentformat = "power"
-	LayoutSceneXaxisExponentformatSi    LayoutSceneXaxisExponentformat = "SI"
+	LayoutSceneXaxisExponentformatSI    LayoutSceneXaxisExponentformat = "SI"
 	LayoutSceneXaxisExponentformatB     LayoutSceneXaxisExponentformat = "B"
 )
 
@@ -8918,7 +8918,7 @@ const (
 	LayoutSceneYaxisExponentformatE1    LayoutSceneYaxisExponentformat = "e"
 	LayoutSceneYaxisExponentformatE2    LayoutSceneYaxisExponentformat = "E"
 	LayoutSceneYaxisExponentformatPower LayoutSceneYaxisExponentformat = "power"
-	LayoutSceneYaxisExponentformatSi    LayoutSceneYaxisExponentformat = "SI"
+	LayoutSceneYaxisExponentformatSI    LayoutSceneYaxisExponentformat = "SI"
 	LayoutSceneYaxisExponentformatB     LayoutSceneYaxisExponentformat = "B"
 )
 
@@ -9074,7 +9074,7 @@ const (
 	LayoutSceneZaxisExponentformatE1    LayoutSceneZaxisExponentformat = "e"
 	LayoutSceneZaxisExponentformatE2    LayoutSceneZaxisExponentformat = "E"
 	LayoutSceneZaxisExponentformatPower LayoutSceneZaxisExponentformat = "power"
-	LayoutSceneZaxisExponentformatSi    LayoutSceneZaxisExponentformat = "SI"
+	LayoutSceneZaxisExponentformatSI    LayoutSceneZaxisExponentformat = "SI"
 	LayoutSceneZaxisExponentformatB     LayoutSceneZaxisExponentformat = "B"
 )
 
@@ -9257,7 +9257,7 @@ const (
 	LayoutTernaryAaxisExponentformatE1    LayoutTernaryAaxisExponentformat = "e"
 	LayoutTernaryAaxisExponentformatE2    LayoutTernaryAaxisExponentformat = "E"
 	LayoutTernaryAaxisExponentformatPower LayoutTernaryAaxisExponentformat = "power"
-	LayoutTernaryAaxisExponentformatSi    LayoutTernaryAaxisExponentformat = "SI"
+	LayoutTernaryAaxisExponentformatSI    LayoutTernaryAaxisExponentformat = "SI"
 	LayoutTernaryAaxisExponentformatB     LayoutTernaryAaxisExponentformat = "B"
 )
 
@@ -9325,7 +9325,7 @@ const (
 	LayoutTernaryBaxisExponentformatE1    LayoutTernaryBaxisExponentformat = "e"
 	LayoutTernaryBaxisExponentformatE2    LayoutTernaryBaxisExponentformat = "E"
 	LayoutTernaryBaxisExponentformatPower LayoutTernaryBaxisExponentformat = "power"
-	LayoutTernaryBaxisExponentformatSi    LayoutTernaryBaxisExponentformat = "SI"
+	LayoutTernaryBaxisExponentformatSI    LayoutTernaryBaxisExponentformat = "SI"
 	LayoutTernaryBaxisExponentformatB     LayoutTernaryBaxisExponentformat = "B"
 )
 
@@ -9393,7 +9393,7 @@ const (
 	LayoutTernaryCaxisExponentformatE1    LayoutTernaryCaxisExponentformat = "e"
 	LayoutTernaryCaxisExponentformatE2    LayoutTernaryCaxisExponentformat = "E"
 	LayoutTernaryCaxisExponentformatPower LayoutTernaryCaxisExponentformat = "power"
-	LayoutTernaryCaxisExponentformatSi    LayoutTernaryCaxisExponentformat = "SI"
+	LayoutTernaryCaxisExponentformatSI    LayoutTernaryCaxisExponentformat = "SI"
 	LayoutTernaryCaxisExponentformatB     LayoutTernaryCaxisExponentformat = "B"
 )
 
@@ -9666,7 +9666,7 @@ const (
 	LayoutXaxisExponentformatE1    LayoutXaxisExponentformat = "e"
 	LayoutXaxisExponentformatE2    LayoutXaxisExponentformat = "E"
 	LayoutXaxisExponentformatPower LayoutXaxisExponentformat = "power"
-	LayoutXaxisExponentformatSi    LayoutXaxisExponentformat = "SI"
+	LayoutXaxisExponentformatSI    LayoutXaxisExponentformat = "SI"
 	LayoutXaxisExponentformatB     LayoutXaxisExponentformat = "B"
 )
 
@@ -9994,7 +9994,7 @@ const (
 	LayoutYaxisExponentformatE1    LayoutYaxisExponentformat = "e"
 	LayoutYaxisExponentformatE2    LayoutYaxisExponentformat = "E"
 	LayoutYaxisExponentformatPower LayoutYaxisExponentformat = "power"
-	LayoutYaxisExponentformatSi    LayoutYaxisExponentformat = "SI"
+	LayoutYaxisExponentformatSI    LayoutYaxisExponentformat = "SI"
 	LayoutYaxisExponentformatB     LayoutYaxisExponentformat = "B"
 )
 

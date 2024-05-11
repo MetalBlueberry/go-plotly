@@ -1,0 +1,12 @@
+
+	<head>
+		<script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
+	</head>
+	</body>
+		<div id="plot"></div>
+	<script>
+		data = JSON.parse('{"data":[{"type":"bar","x":[1,2,3],"y":[1,2,3]}],"layout":{"title":{"text":"A Figure Specified By Go Struct"}}}')
+		Plotly.newPlot('plot', data);
+	</script>
+	<body>
+	

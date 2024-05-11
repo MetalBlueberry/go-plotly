@@ -804,7 +804,7 @@ const (
 	DensitymapboxColorbarExponentformatE1    DensitymapboxColorbarExponentformat = "e"
 	DensitymapboxColorbarExponentformatE2    DensitymapboxColorbarExponentformat = "E"
 	DensitymapboxColorbarExponentformatPower DensitymapboxColorbarExponentformat = "power"
-	DensitymapboxColorbarExponentformatSi    DensitymapboxColorbarExponentformat = "SI"
+	DensitymapboxColorbarExponentformatSI    DensitymapboxColorbarExponentformat = "SI"
 	DensitymapboxColorbarExponentformatB     DensitymapboxColorbarExponentformat = "B"
 )
 

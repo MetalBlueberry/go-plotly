@@ -744,7 +744,7 @@ const (
 	ParcoordsLineColorbarExponentformatE1    ParcoordsLineColorbarExponentformat = "e"
 	ParcoordsLineColorbarExponentformatE2    ParcoordsLineColorbarExponentformat = "E"
 	ParcoordsLineColorbarExponentformatPower ParcoordsLineColorbarExponentformat = "power"
-	ParcoordsLineColorbarExponentformatSi    ParcoordsLineColorbarExponentformat = "SI"
+	ParcoordsLineColorbarExponentformatSI    ParcoordsLineColorbarExponentformat = "SI"
 	ParcoordsLineColorbarExponentformatB     ParcoordsLineColorbarExponentformat = "B"
 )
 

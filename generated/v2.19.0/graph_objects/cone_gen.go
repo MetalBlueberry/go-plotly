@@ -938,7 +938,7 @@ const (
 	ConeColorbarExponentformatE1    ConeColorbarExponentformat = "e"
 	ConeColorbarExponentformatE2    ConeColorbarExponentformat = "E"
 	ConeColorbarExponentformatPower ConeColorbarExponentformat = "power"
-	ConeColorbarExponentformatSi    ConeColorbarExponentformat = "SI"
+	ConeColorbarExponentformatSI    ConeColorbarExponentformat = "SI"
 	ConeColorbarExponentformatB     ConeColorbarExponentformat = "B"
 )
 

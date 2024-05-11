@@ -888,7 +888,7 @@ const (
 	ChoroplethColorbarExponentformatE1    ChoroplethColorbarExponentformat = "e"
 	ChoroplethColorbarExponentformatE2    ChoroplethColorbarExponentformat = "E"
 	ChoroplethColorbarExponentformatPower ChoroplethColorbarExponentformat = "power"
-	ChoroplethColorbarExponentformatSi    ChoroplethColorbarExponentformat = "SI"
+	ChoroplethColorbarExponentformatSI    ChoroplethColorbarExponentformat = "SI"
 	ChoroplethColorbarExponentformatB     ChoroplethColorbarExponentformat = "B"
 )
 
@@ -1045,8 +1045,8 @@ const (
 type ChoroplethLocationmode string
 
 const (
-	ChoroplethLocationmodeIso3         ChoroplethLocationmode = "ISO-3"
-	ChoroplethLocationmodeUsaStates    ChoroplethLocationmode = "USA-states"
+	ChoroplethLocationmodeISO3         ChoroplethLocationmode = "ISO-3"
+	ChoroplethLocationmodeUSAStates    ChoroplethLocationmode = "USA-states"
 	ChoroplethLocationmodeCountryNames ChoroplethLocationmode = "country names"
 	ChoroplethLocationmodeGeojsonId    ChoroplethLocationmode = "geojson-id"
 )

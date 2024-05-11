@@ -17,11 +17,12 @@ type Schemas struct {
 }
 
 type Version struct {
-	Name      string `yaml:"Name"`
-	Tag       string `yaml:"Tag"`
-	URL       string `yaml:"URL"`
-	Path      string `yaml:"Path"`
-	Generated string `yaml:"Generated"`
+	Name      string `yaml:"Name"`      // name of the version
+	Tag       string `yaml:"Tag"`       // git tag of the plotly version
+	URL       string `yaml:"URL"`       // url under which the plotly schema json file can be downloaded directly
+	Path      string `yaml:"Path"`      // path under which the schema file will be saved locally for future use
+	Generated string `yaml:"Generated"` // path for the generated package
+	Cdn       string `yaml:"CDN"`       // url for the cdn which should be included in the head of the generated html
 }
 
 // cleanJson makes sure that whitespaces and new line characters are removed from the downloaded json

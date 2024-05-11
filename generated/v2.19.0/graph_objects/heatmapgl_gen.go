@@ -786,7 +786,7 @@ const (
 	HeatmapglColorbarExponentformatE1    HeatmapglColorbarExponentformat = "e"
 	HeatmapglColorbarExponentformatE2    HeatmapglColorbarExponentformat = "E"
 	HeatmapglColorbarExponentformatPower HeatmapglColorbarExponentformat = "power"
-	HeatmapglColorbarExponentformatSi    HeatmapglColorbarExponentformat = "SI"
+	HeatmapglColorbarExponentformatSI    HeatmapglColorbarExponentformat = "SI"
 	HeatmapglColorbarExponentformatB     HeatmapglColorbarExponentformat = "B"
 )
 

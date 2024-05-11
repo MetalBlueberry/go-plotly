@@ -1002,7 +1002,7 @@ const (
 	Mesh3dColorbarExponentformatE1    Mesh3dColorbarExponentformat = "e"
 	Mesh3dColorbarExponentformatE2    Mesh3dColorbarExponentformat = "E"
 	Mesh3dColorbarExponentformatPower Mesh3dColorbarExponentformat = "power"
-	Mesh3dColorbarExponentformatSi    Mesh3dColorbarExponentformat = "SI"
+	Mesh3dColorbarExponentformatSI    Mesh3dColorbarExponentformat = "SI"
 	Mesh3dColorbarExponentformatB     Mesh3dColorbarExponentformat = "B"
 )
 

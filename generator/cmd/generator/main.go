@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -9,6 +10,29 @@ import (
 
 	"github.com/MetalBlueberry/go-plotly/generator"
 )
+
+// The generate command always executes with the working directory set to the path with the file with the directive
+
+//go:generate go run main.go --config=../../../schemas.yaml
+
+const configPath = "schemas.yaml"
+
+func main() {
+	var schemapath string
+	flag.StringVar(&schemapath, "config", configPath, "yaml file defining versions to be generated")
+	flag.Parse()
+
+	// Define a flag for the version
+	schemas := generator.ReadSchemas(schemapath)
+	if schemas == nil {
+		fmt.Printf("could not find versions\n")
+		return
+	}
+	for _, schema := range schemas {
+		generatePackage(schema.Path, schema.Generated, schema.Cdn)
+	}
+
+}
 
 type Creator struct{}
 
@@ -21,16 +45,27 @@ func (c Creator) Create(name string) (io.WriteCloser, error) {
 	return os.Create(abs)
 }
 
-//go:generate go run main.go --clean --schema ../../schema.json --output-directory ../../../graph_objects
+// FindDir goes back in the project directory to find the correct location of the schema and output folders
+// this allows the script to run smoothlessly with go generate in the cmd files,
+// and also when it is run from the project root as working directory
+func FindDir(schema, output string) (string, string) {
+	for i := 0; i < 4; i++ {
+		if _, err := os.Stat(schema); err == nil {
+			break
+		}
+		schema = filepath.Join("../", schema)
+		output = filepath.Join("../", output)
+	}
+	return schema, output
+}
 
-func main() {
-	clean := flag.Bool("clean", false, "clean the output directory first. Mandatory on CI")
-	schema := flag.String("schema", "schema.json", "plotly schema")
-	outputDirectory := flag.String("output-directory", "gen/", "output directory, must exist before generation")
+// create the packages and write them into the specified folders
+func generatePackage(schema, output, cdnUrl string) {
+	// look for the correct schema and output paths
+	schema, output = FindDir(schema, output)
+	log.Println("schema:", schema, "output", output)
 
-	flag.Parse()
-
-	file, err := os.Open(*schema)
+	file, err := os.Open(schema)
 	if err != nil {
 		log.Fatalf("unable to open schema, %s", err)
 	}
@@ -45,17 +80,21 @@ func main() {
 		log.Fatalf("unable to create a new renderer, %s", err)
 	}
 
-	output := *outputDirectory
-
-	if *clean {
-		err = os.RemoveAll(output)
-		if err != nil {
-			log.Fatalf("Failed to clean output directory, %s", err)
-		}
+	err = os.RemoveAll(output)
+	if err != nil {
+		log.Fatalf("Failed to clean output directory, %s", err)
 	}
 
 	if err = os.MkdirAll(output, 0755); err != nil {
 		log.Fatalf("Failed to create output dir %s, %s", output, err)
+	}
+
+	err = r.CreatePlotGo(output, cdnUrl)
+	if err != nil {
+		log.Fatalf("unable to write plot.go, %s", err)
+	}
+	if err = os.MkdirAll(output, 0755); err != nil {
+		log.Fatalf("Error creating directory, %s", err)
 	}
 
 	err = r.CreatePlotly(output)

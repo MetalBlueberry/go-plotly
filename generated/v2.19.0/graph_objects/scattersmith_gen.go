@@ -1268,7 +1268,7 @@ const (
 	ScattersmithMarkerColorbarExponentformatE1    ScattersmithMarkerColorbarExponentformat = "e"
 	ScattersmithMarkerColorbarExponentformatE2    ScattersmithMarkerColorbarExponentformat = "E"
 	ScattersmithMarkerColorbarExponentformatPower ScattersmithMarkerColorbarExponentformat = "power"
-	ScattersmithMarkerColorbarExponentformatSi    ScattersmithMarkerColorbarExponentformat = "SI"
+	ScattersmithMarkerColorbarExponentformatSI    ScattersmithMarkerColorbarExponentformat = "SI"
 	ScattersmithMarkerColorbarExponentformatB     ScattersmithMarkerColorbarExponentformat = "B"
 )
 

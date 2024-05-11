@@ -1298,7 +1298,7 @@ const (
 	ScattercarpetMarkerColorbarExponentformatE1    ScattercarpetMarkerColorbarExponentformat = "e"
 	ScattercarpetMarkerColorbarExponentformatE2    ScattercarpetMarkerColorbarExponentformat = "E"
 	ScattercarpetMarkerColorbarExponentformatPower ScattercarpetMarkerColorbarExponentformat = "power"
-	ScattercarpetMarkerColorbarExponentformatSi    ScattercarpetMarkerColorbarExponentformat = "SI"
+	ScattercarpetMarkerColorbarExponentformatSI    ScattercarpetMarkerColorbarExponentformat = "SI"
 	ScattercarpetMarkerColorbarExponentformatB     ScattercarpetMarkerColorbarExponentformat = "B"
 )
 

@@ -1031,7 +1031,7 @@ const (
 	SplomMarkerColorbarExponentformatE1    SplomMarkerColorbarExponentformat = "e"
 	SplomMarkerColorbarExponentformatE2    SplomMarkerColorbarExponentformat = "E"
 	SplomMarkerColorbarExponentformatPower SplomMarkerColorbarExponentformat = "power"
-	SplomMarkerColorbarExponentformatSi    SplomMarkerColorbarExponentformat = "SI"
+	SplomMarkerColorbarExponentformatSI    SplomMarkerColorbarExponentformat = "SI"
 	SplomMarkerColorbarExponentformatB     SplomMarkerColorbarExponentformat = "B"
 )
 

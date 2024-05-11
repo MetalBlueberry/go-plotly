@@ -870,7 +870,7 @@ const (
 	ContourcarpetColorbarExponentformatE1    ContourcarpetColorbarExponentformat = "e"
 	ContourcarpetColorbarExponentformatE2    ContourcarpetColorbarExponentformat = "E"
 	ContourcarpetColorbarExponentformatPower ContourcarpetColorbarExponentformat = "power"
-	ContourcarpetColorbarExponentformatSi    ContourcarpetColorbarExponentformat = "SI"
+	ContourcarpetColorbarExponentformatSI    ContourcarpetColorbarExponentformat = "SI"
 	ContourcarpetColorbarExponentformatB     ContourcarpetColorbarExponentformat = "B"
 )
 

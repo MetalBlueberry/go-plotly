@@ -7,7 +7,6 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/offline"
 )
 
 func main() {
@@ -78,8 +77,8 @@ func main() {
 		Layout: layout,
 	}
 
-	offline.ToHtml(fig, "bar_custom.html")
-	offline.Show(fig)
+	grob.ToHtml(fig, "bar_custom.html")
+	grob.Show(fig)
 }
 
 func toString(in []int) []string {

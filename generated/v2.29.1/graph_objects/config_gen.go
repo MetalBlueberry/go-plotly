@@ -9,11 +9,11 @@ type Config struct {
 	// Determines whether the graphs are plotted with respect to layout.autosize:true and infer its container size.
 	Autosizable Bool `json:"autosizable,omitempty"`
 
-	// Displaymodebar
+	// DisplayModeBar
 	// default: hover
 	// type: enumerated
 	// Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.
-	Displaymodebar ConfigDisplaymodebar `json:"displayModeBar,omitempty"`
+	DisplayModeBar ConfigDisplayModeBar `json:"displayModeBar,omitempty"`
 
 	// Displaylogo
 	// arrayOK: false
@@ -21,23 +21,23 @@ type Config struct {
 	// Determines whether or not the plotly logo is displayed on the end of the mode bar.
 	Displaylogo Bool `json:"displaylogo,omitempty"`
 
-	// Doubleclick
+	// DoubleClick
 	// default: reset+autosize
 	// type: enumerated
 	// Sets the double click interaction mode. Has an effect only in cartesian plots. If *false*, double click is disable. If *reset*, double click resets the axis ranges to their initial values. If *autosize*, double click set the axis ranges to their autorange values. If *reset+autosize*, the odd double clicks resets the axis ranges to their initial values and even double clicks set the axis ranges to their autorange values.
-	Doubleclick ConfigDoubleclick `json:"doubleClick,omitempty"`
+	DoubleClick ConfigDoubleClick `json:"doubleClick,omitempty"`
 
-	// Doubleclickdelay
+	// DoubleClickDelay
 	// arrayOK: false
 	// type: number
 	// Sets the delay for registering a double-click in ms. This is the time interval (in ms) between first mousedown and 2nd mouseup to constitute a double-click. This setting propagates to all on-subplot double clicks (except for geo and mapbox) and on-legend double clicks.
-	Doubleclickdelay float64 `json:"doubleClickDelay,omitempty"`
+	DoubleClickDelay float64 `json:"doubleClickDelay,omitempty"`
 
-	// Editselection
+	// EditSelection
 	// arrayOK: false
 	// type: boolean
 	// Enables moving selections.
-	Editselection Bool `json:"editSelection,omitempty"`
+	EditSelection Bool `json:"editSelection,omitempty"`
 
 	// Editable
 	// arrayOK: false
@@ -49,29 +49,29 @@ type Config struct {
 	// role: Object
 	Edits *ConfigEdits `json:"edits,omitempty"`
 
-	// Fillframe
+	// FillFrame
 	// arrayOK: false
 	// type: boolean
 	// When `layout.autosize` is turned on, determines whether the graph fills the container (the default) or the screen (if set to *true*).
-	Fillframe Bool `json:"fillFrame,omitempty"`
+	FillFrame Bool `json:"fillFrame,omitempty"`
 
-	// Framemargins
+	// FrameMargins
 	// arrayOK: false
 	// type: number
 	// When `layout.autosize` is turned on, set the frame margins in fraction of the graph size.
-	Framemargins float64 `json:"frameMargins,omitempty"`
+	FrameMargins float64 `json:"frameMargins,omitempty"`
 
-	// Globaltransforms
+	// GlobalTransforms
 	// arrayOK: false
 	// type: any
 	// Set global transform to be applied to all traces with no specification needed
-	Globaltransforms interface{} `json:"globalTransforms,omitempty"`
+	GlobalTransforms interface{} `json:"globalTransforms,omitempty"`
 
-	// Linktext
+	// LinkText
 	// arrayOK: false
 	// type: string
 	// Sets the text appearing in the `showLink` link.
-	Linktext String `json:"linkText,omitempty"`
+	LinkText String `json:"linkText,omitempty"`
 
 	// Locale
 	// arrayOK: false
@@ -91,53 +91,53 @@ type Config struct {
 	// Turn all console logging on or off (errors will be thrown) This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no logs 1: warnings and errors, but not informational messages 2: verbose logs
 	Logging int64 `json:"logging,omitempty"`
 
-	// Mapboxaccesstoken
+	// MapboxAccessToken
 	// arrayOK: false
 	// type: string
 	// Mapbox access token (required to plot mapbox trace types) If using an Mapbox Atlas server, set this option to '' so that plotly.js won't attempt to authenticate to the public Mapbox server.
-	Mapboxaccesstoken String `json:"mapboxAccessToken,omitempty"`
+	MapboxAccessToken String `json:"mapboxAccessToken,omitempty"`
 
-	// Modebarbuttons
+	// ModeBarButtons
 	// arrayOK: false
 	// type: any
 	// Define fully custom mode bar buttons as nested array, where the outer arrays represents button groups, and the inner arrays have buttons config objects or names of default buttons See ./components/modebar/buttons.js for more info.
-	Modebarbuttons interface{} `json:"modeBarButtons,omitempty"`
+	ModeBarButtons interface{} `json:"modeBarButtons,omitempty"`
 
-	// Modebarbuttonstoadd
+	// ModeBarButtonsToAdd
 	// arrayOK: false
 	// type: any
 	// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
-	Modebarbuttonstoadd interface{} `json:"modeBarButtonsToAdd,omitempty"`
+	ModeBarButtonsToAdd interface{} `json:"modeBarButtonsToAdd,omitempty"`
 
-	// Modebarbuttonstoremove
+	// ModeBarButtonsToRemove
 	// arrayOK: false
 	// type: any
 	// Remove mode bar buttons by name. See ./components/modebar/buttons.js for the list of names.
-	Modebarbuttonstoremove interface{} `json:"modeBarButtonsToRemove,omitempty"`
+	ModeBarButtonsToRemove interface{} `json:"modeBarButtonsToRemove,omitempty"`
 
-	// Notifyonlogging
+	// NotifyOnLogging
 	// arrayOK: false
 	// type: integer
 	// Set on-graph logging (notifier) level This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no on-graph logs 1: warnings and errors, but not informational messages 2: verbose logs
-	Notifyonlogging int64 `json:"notifyOnLogging,omitempty"`
+	NotifyOnLogging int64 `json:"notifyOnLogging,omitempty"`
 
-	// Plotglpixelratio
+	// PlotGlPixelRatio
 	// arrayOK: false
 	// type: number
 	// Set the pixel ratio during WebGL image export. This config option was formerly named `plot3dPixelRatio` which is now deprecated.
-	Plotglpixelratio float64 `json:"plotGlPixelRatio,omitempty"`
+	PlotGlPixelRatio float64 `json:"plotGlPixelRatio,omitempty"`
 
-	// Plotlyserverurl
+	// PlotlyServerURL
 	// arrayOK: false
 	// type: string
 	// When set it determines base URL for the 'Edit in Chart Studio' `showEditInChartStudio`/`showSendToCloud` mode bar button and the showLink/sendData on-graph link. To enable sending your data to Chart Studio Cloud, you need to set both `plotlyServerURL` to 'https://chart-studio.plotly.com' and also set `showSendToCloud` to true.
-	Plotlyserverurl String `json:"plotlyServerURL,omitempty"`
+	PlotlyServerURL String `json:"plotlyServerURL,omitempty"`
 
-	// Queuelength
+	// QueueLength
 	// arrayOK: false
 	// type: integer
 	// Sets the length of the undo/redo queue.
-	Queuelength int64 `json:"queueLength,omitempty"`
+	QueueLength int64 `json:"queueLength,omitempty"`
 
 	// Responsive
 	// arrayOK: false
@@ -145,89 +145,89 @@ type Config struct {
 	// Determines whether to change the layout size when window is resized. In v3, this option will be removed and will always be true.
 	Responsive Bool `json:"responsive,omitempty"`
 
-	// Scrollzoom
+	// ScrollZoom
 	// default: gl3d+geo+mapbox
 	// type: flaglist
 	// Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.
-	Scrollzoom ConfigScrollzoom `json:"scrollZoom,omitempty"`
+	ScrollZoom ConfigScrollZoom `json:"scrollZoom,omitempty"`
 
-	// Senddata
+	// SendData
 	// arrayOK: false
 	// type: boolean
 	// If *showLink* is true, does it contain data just link to a Chart Studio Cloud file?
-	Senddata Bool `json:"sendData,omitempty"`
+	SendData Bool `json:"sendData,omitempty"`
 
-	// Setbackground
+	// SetBackground
 	// arrayOK: false
 	// type: any
 	// Set function to add the background color (i.e. `layout.paper_color`) to a different container. This function take the graph div as first argument and the current background color as second argument. Alternatively, set to string *opaque* to ensure there is white behind it.
-	Setbackground interface{} `json:"setBackground,omitempty"`
+	SetBackground interface{} `json:"setBackground,omitempty"`
 
-	// Showaxisdraghandles
+	// ShowAxisDragHandles
 	// arrayOK: false
 	// type: boolean
 	// Set to *false* to omit cartesian axis pan/zoom drag handles.
-	Showaxisdraghandles Bool `json:"showAxisDragHandles,omitempty"`
+	ShowAxisDragHandles Bool `json:"showAxisDragHandles,omitempty"`
 
-	// Showaxisrangeentryboxes
+	// ShowAxisRangeEntryBoxes
 	// arrayOK: false
 	// type: boolean
 	// Set to *false* to omit direct range entry at the pan/zoom drag points, note that `showAxisDragHandles` must be enabled to have an effect.
-	Showaxisrangeentryboxes Bool `json:"showAxisRangeEntryBoxes,omitempty"`
+	ShowAxisRangeEntryBoxes Bool `json:"showAxisRangeEntryBoxes,omitempty"`
 
-	// Showeditinchartstudio
+	// ShowEditInChartStudio
 	// arrayOK: false
 	// type: boolean
 	// Same as `showSendToCloud`, but use a pencil icon instead of a floppy-disk. Note that if both `showSendToCloud` and `showEditInChartStudio` are turned, only `showEditInChartStudio` will be honored.
-	Showeditinchartstudio Bool `json:"showEditInChartStudio,omitempty"`
+	ShowEditInChartStudio Bool `json:"showEditInChartStudio,omitempty"`
 
-	// Showlink
+	// ShowLink
 	// arrayOK: false
 	// type: boolean
 	// Determines whether a link to Chart Studio Cloud is displayed at the bottom right corner of resulting graphs. Use with `sendData` and `linkText`.
-	Showlink Bool `json:"showLink,omitempty"`
+	ShowLink Bool `json:"showLink,omitempty"`
 
-	// Showsendtocloud
+	// ShowSendToCloud
 	// arrayOK: false
 	// type: boolean
 	// Should we include a ModeBar button, labeled "Edit in Chart Studio", that sends this chart to chart-studio.plotly.com (formerly plot.ly) or another plotly server as specified by `plotlyServerURL` for editing, export, etc? Prior to version 1.43.0 this button was included by default, now it is opt-in using this flag. Note that this button can (depending on `plotlyServerURL` being set) send your data to an external server. However that server does not persist your data until you arrive at the Chart Studio and explicitly click "Save".
-	Showsendtocloud Bool `json:"showSendToCloud,omitempty"`
+	ShowSendToCloud Bool `json:"showSendToCloud,omitempty"`
 
-	// Showsources
+	// ShowSources
 	// arrayOK: false
 	// type: any
 	// Adds a source-displaying function to show sources on the resulting graphs.
-	Showsources interface{} `json:"showSources,omitempty"`
+	ShowSources interface{} `json:"showSources,omitempty"`
 
-	// Showtips
+	// ShowTips
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not tips are shown while interacting with the resulting graphs.
-	Showtips Bool `json:"showTips,omitempty"`
+	ShowTips Bool `json:"showTips,omitempty"`
 
-	// Staticplot
+	// StaticPlot
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the graphs are interactive or not. If *false*, no interactivity, for export or image generation.
-	Staticplot Bool `json:"staticPlot,omitempty"`
+	StaticPlot Bool `json:"staticPlot,omitempty"`
 
-	// Toimagebuttonoptions
+	// ToImageButtonOptions
 	// arrayOK: false
 	// type: any
 	// Statically override options for toImage modebar button allowed keys are format, filename, width, height, scale see ../components/modebar/buttons.js
-	Toimagebuttonoptions interface{} `json:"toImageButtonOptions,omitempty"`
+	ToImageButtonOptions interface{} `json:"toImageButtonOptions,omitempty"`
 
-	// Topojsonurl
+	// TopojsonURL
 	// arrayOK: false
 	// type: string
 	// Set the URL to topojson used in geo charts. By default, the topojson files are fetched from cdn.plot.ly. For example, set this option to: <path-to-plotly.js>/dist/topojson/ to render geographical feature using the topojson files that ship with the plotly.js module.
-	Topojsonurl String `json:"topojsonURL,omitempty"`
+	TopojsonURL String `json:"topojsonURL,omitempty"`
 
-	// Typesetmath
+	// TypesetMath
 	// arrayOK: false
 	// type: boolean
 	// Determines whether math should be typeset or not, when MathJax (either v2 or v3) is present on the page.
-	Typesetmath Bool `json:"typesetMath,omitempty"`
+	TypesetMath Bool `json:"typesetMath,omitempty"`
 
 	// Watermark
 	// arrayOK: false
@@ -239,97 +239,97 @@ type Config struct {
 // ConfigEdits
 type ConfigEdits struct {
 
-	// Annotationposition
+	// AnnotationPosition
 	// arrayOK: false
 	// type: boolean
 	// Determines if the main anchor of the annotation is editable. The main anchor corresponds to the text (if no arrow) or the arrow (which drags the whole thing leaving the arrow length & direction unchanged).
-	Annotationposition Bool `json:"annotationPosition,omitempty"`
+	AnnotationPosition Bool `json:"annotationPosition,omitempty"`
 
-	// Annotationtail
+	// AnnotationTail
 	// arrayOK: false
 	// type: boolean
 	// Has only an effect for annotations with arrows. Enables changing the length and direction of the arrow.
-	Annotationtail Bool `json:"annotationTail,omitempty"`
+	AnnotationTail Bool `json:"annotationTail,omitempty"`
 
-	// Annotationtext
+	// AnnotationText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing annotation text.
-	Annotationtext Bool `json:"annotationText,omitempty"`
+	AnnotationText Bool `json:"annotationText,omitempty"`
 
-	// Axistitletext
+	// AxisTitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing axis title text.
-	Axistitletext Bool `json:"axisTitleText,omitempty"`
+	AxisTitleText Bool `json:"axisTitleText,omitempty"`
 
-	// Colorbarposition
+	// ColorbarPosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving colorbars.
-	Colorbarposition Bool `json:"colorbarPosition,omitempty"`
+	ColorbarPosition Bool `json:"colorbarPosition,omitempty"`
 
-	// Colorbartitletext
+	// ColorbarTitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing colorbar title text.
-	Colorbartitletext Bool `json:"colorbarTitleText,omitempty"`
+	ColorbarTitleText Bool `json:"colorbarTitleText,omitempty"`
 
-	// Legendposition
+	// LegendPosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving the legend.
-	Legendposition Bool `json:"legendPosition,omitempty"`
+	LegendPosition Bool `json:"legendPosition,omitempty"`
 
-	// Legendtext
+	// LegendText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing the trace name fields from the legend
-	Legendtext Bool `json:"legendText,omitempty"`
+	LegendText Bool `json:"legendText,omitempty"`
 
-	// Shapeposition
+	// ShapePosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving shapes.
-	Shapeposition Bool `json:"shapePosition,omitempty"`
+	ShapePosition Bool `json:"shapePosition,omitempty"`
 
-	// Titletext
+	// TitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing the global layout title.
-	Titletext Bool `json:"titleText,omitempty"`
+	TitleText Bool `json:"titleText,omitempty"`
 }
 
-// ConfigDisplaymodebar Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.
-type ConfigDisplaymodebar interface{}
+// ConfigDisplayModeBar Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.
+type ConfigDisplayModeBar interface{}
 
 var (
-	ConfigDisplaymodebarHover ConfigDisplaymodebar = "hover"
-	ConfigDisplaymodebarTrue  ConfigDisplaymodebar = true
-	ConfigDisplaymodebarFalse ConfigDisplaymodebar = false
+	ConfigDisplayModeBarHover ConfigDisplayModeBar = "hover"
+	ConfigDisplayModeBarTrue  ConfigDisplayModeBar = true
+	ConfigDisplayModeBarFalse ConfigDisplayModeBar = false
 )
 
-// ConfigDoubleclick Sets the double click interaction mode. Has an effect only in cartesian plots. If *false*, double click is disable. If *reset*, double click resets the axis ranges to their initial values. If *autosize*, double click set the axis ranges to their autorange values. If *reset+autosize*, the odd double clicks resets the axis ranges to their initial values and even double clicks set the axis ranges to their autorange values.
-type ConfigDoubleclick interface{}
+// ConfigDoubleClick Sets the double click interaction mode. Has an effect only in cartesian plots. If *false*, double click is disable. If *reset*, double click resets the axis ranges to their initial values. If *autosize*, double click set the axis ranges to their autorange values. If *reset+autosize*, the odd double clicks resets the axis ranges to their initial values and even double clicks set the axis ranges to their autorange values.
+type ConfigDoubleClick interface{}
 
 var (
-	ConfigDoubleclickFalse             ConfigDoubleclick = false
-	ConfigDoubleclickReset             ConfigDoubleclick = "reset"
-	ConfigDoubleclickAutosize          ConfigDoubleclick = "autosize"
-	ConfigDoubleclickResetPlusautosize ConfigDoubleclick = "reset+autosize"
+	ConfigDoubleClickFalse             ConfigDoubleClick = false
+	ConfigDoubleClickReset             ConfigDoubleClick = "reset"
+	ConfigDoubleClickAutosize          ConfigDoubleClick = "autosize"
+	ConfigDoubleClickResetPlusautosize ConfigDoubleClick = "reset+autosize"
 )
 
-// ConfigScrollzoom Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.
-type ConfigScrollzoom interface{}
+// ConfigScrollZoom Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.
+type ConfigScrollZoom interface{}
 
 var (
 	// Flags
-	ConfigScrollzoomCartesian ConfigScrollzoom = "cartesian"
-	ConfigScrollzoomGl3d      ConfigScrollzoom = "gl3d"
-	ConfigScrollzoomGeo       ConfigScrollzoom = "geo"
-	ConfigScrollzoomMapbox    ConfigScrollzoom = "mapbox"
+	ConfigScrollZoomCartesian ConfigScrollZoom = "cartesian"
+	ConfigScrollZoomGl3d      ConfigScrollZoom = "gl3d"
+	ConfigScrollZoomGeo       ConfigScrollZoom = "geo"
+	ConfigScrollZoomMapbox    ConfigScrollZoom = "mapbox"
 
 	// Extra
-	ConfigScrollzoomTrue  ConfigScrollzoom = true
-	ConfigScrollzoomFalse ConfigScrollzoom = false
+	ConfigScrollZoomTrue  ConfigScrollZoom = true
+	ConfigScrollZoomFalse ConfigScrollZoom = false
 )

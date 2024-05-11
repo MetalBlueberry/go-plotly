@@ -954,7 +954,7 @@ const (
 	StreamtubeColorbarExponentformatE1    StreamtubeColorbarExponentformat = "e"
 	StreamtubeColorbarExponentformatE2    StreamtubeColorbarExponentformat = "E"
 	StreamtubeColorbarExponentformatPower StreamtubeColorbarExponentformat = "power"
-	StreamtubeColorbarExponentformatSi    StreamtubeColorbarExponentformat = "SI"
+	StreamtubeColorbarExponentformatSI    StreamtubeColorbarExponentformat = "SI"
 	StreamtubeColorbarExponentformatB     StreamtubeColorbarExponentformat = "B"
 )
 

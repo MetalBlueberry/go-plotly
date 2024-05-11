@@ -2,7 +2,6 @@ package main
 
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/offline"
 )
 
 func main() {
@@ -209,8 +208,8 @@ func main() {
 		Layout: layout,
 	}
 
-	offline.ToHtml(fig, "waterfall.html")
-	offline.Show(fig)
+	grob.ToHtml(fig, "waterfall.html")
+	grob.Show(fig)
 }
 
 type Annotation struct {

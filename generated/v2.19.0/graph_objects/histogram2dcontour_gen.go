@@ -1076,7 +1076,7 @@ const (
 	Histogram2dcontourColorbarExponentformatE1    Histogram2dcontourColorbarExponentformat = "e"
 	Histogram2dcontourColorbarExponentformatE2    Histogram2dcontourColorbarExponentformat = "E"
 	Histogram2dcontourColorbarExponentformatPower Histogram2dcontourColorbarExponentformat = "power"
-	Histogram2dcontourColorbarExponentformatSi    Histogram2dcontourColorbarExponentformat = "SI"
+	Histogram2dcontourColorbarExponentformatSI    Histogram2dcontourColorbarExponentformat = "SI"
 	Histogram2dcontourColorbarExponentformatB     Histogram2dcontourColorbarExponentformat = "B"
 )
 

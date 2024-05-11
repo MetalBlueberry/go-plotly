@@ -1253,8 +1253,8 @@ const (
 type ScattergeoLocationmode string
 
 const (
-	ScattergeoLocationmodeIso3         ScattergeoLocationmode = "ISO-3"
-	ScattergeoLocationmodeUsaStates    ScattergeoLocationmode = "USA-states"
+	ScattergeoLocationmodeISO3         ScattergeoLocationmode = "ISO-3"
+	ScattergeoLocationmodeUSAStates    ScattergeoLocationmode = "USA-states"
 	ScattergeoLocationmodeCountryNames ScattergeoLocationmode = "country names"
 	ScattergeoLocationmodeGeojsonId    ScattergeoLocationmode = "geojson-id"
 )
@@ -1276,7 +1276,7 @@ const (
 	ScattergeoMarkerColorbarExponentformatE1    ScattergeoMarkerColorbarExponentformat = "e"
 	ScattergeoMarkerColorbarExponentformatE2    ScattergeoMarkerColorbarExponentformat = "E"
 	ScattergeoMarkerColorbarExponentformatPower ScattergeoMarkerColorbarExponentformat = "power"
-	ScattergeoMarkerColorbarExponentformatSi    ScattergeoMarkerColorbarExponentformat = "SI"
+	ScattergeoMarkerColorbarExponentformatSI    ScattergeoMarkerColorbarExponentformat = "SI"
 	ScattergeoMarkerColorbarExponentformatB     ScattergeoMarkerColorbarExponentformat = "B"
 )
 

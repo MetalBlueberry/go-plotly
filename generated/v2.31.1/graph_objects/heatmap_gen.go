@@ -968,7 +968,7 @@ const (
 	HeatmapColorbarExponentformatE1    HeatmapColorbarExponentformat = "e"
 	HeatmapColorbarExponentformatE2    HeatmapColorbarExponentformat = "E"
 	HeatmapColorbarExponentformatPower HeatmapColorbarExponentformat = "power"
-	HeatmapColorbarExponentformatSi    HeatmapColorbarExponentformat = "SI"
+	HeatmapColorbarExponentformatSI    HeatmapColorbarExponentformat = "SI"
 	HeatmapColorbarExponentformatB     HeatmapColorbarExponentformat = "B"
 )
 

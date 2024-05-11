@@ -1157,7 +1157,7 @@ const (
 	CarpetAaxisExponentformatE1    CarpetAaxisExponentformat = "e"
 	CarpetAaxisExponentformatE2    CarpetAaxisExponentformat = "E"
 	CarpetAaxisExponentformatPower CarpetAaxisExponentformat = "power"
-	CarpetAaxisExponentformatSi    CarpetAaxisExponentformat = "SI"
+	CarpetAaxisExponentformatSI    CarpetAaxisExponentformat = "SI"
 	CarpetAaxisExponentformatB     CarpetAaxisExponentformat = "B"
 )
 
@@ -1271,7 +1271,7 @@ const (
 	CarpetBaxisExponentformatE1    CarpetBaxisExponentformat = "e"
 	CarpetBaxisExponentformatE2    CarpetBaxisExponentformat = "E"
 	CarpetBaxisExponentformatPower CarpetBaxisExponentformat = "power"
-	CarpetBaxisExponentformatSi    CarpetBaxisExponentformat = "SI"
+	CarpetBaxisExponentformatSI    CarpetBaxisExponentformat = "SI"
 	CarpetBaxisExponentformatB     CarpetBaxisExponentformat = "B"
 )
 

@@ -718,7 +718,7 @@ const (
 	ParcatsLineColorbarExponentformatE1    ParcatsLineColorbarExponentformat = "e"
 	ParcatsLineColorbarExponentformatE2    ParcatsLineColorbarExponentformat = "E"
 	ParcatsLineColorbarExponentformatPower ParcatsLineColorbarExponentformat = "power"
-	ParcatsLineColorbarExponentformatSi    ParcatsLineColorbarExponentformat = "SI"
+	ParcatsLineColorbarExponentformatSI    ParcatsLineColorbarExponentformat = "SI"
 	ParcatsLineColorbarExponentformatB     ParcatsLineColorbarExponentformat = "B"
 )
 

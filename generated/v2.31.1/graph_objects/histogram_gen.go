@@ -1627,7 +1627,7 @@ const (
 	HistogramMarkerColorbarExponentformatE1    HistogramMarkerColorbarExponentformat = "e"
 	HistogramMarkerColorbarExponentformatE2    HistogramMarkerColorbarExponentformat = "E"
 	HistogramMarkerColorbarExponentformatPower HistogramMarkerColorbarExponentformat = "power"
-	HistogramMarkerColorbarExponentformatSi    HistogramMarkerColorbarExponentformat = "SI"
+	HistogramMarkerColorbarExponentformatSI    HistogramMarkerColorbarExponentformat = "SI"
 	HistogramMarkerColorbarExponentformatB     HistogramMarkerColorbarExponentformat = "B"
 )
 

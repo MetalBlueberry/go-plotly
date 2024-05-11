@@ -5,7 +5,6 @@ import (
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/offline"
 )
 
 func main() {
@@ -31,7 +30,7 @@ func main() {
 	// Demonstrates that a json representation can be loaded
 	recoveredFig := &grob.Fig{}
 	json.Unmarshal(bytes, recoveredFig)
-	offline.Show(recoveredFig)
+	grob.Show(recoveredFig)
 }
 
 func linspace(start, stop float64, points int) []float64 {

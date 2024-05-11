@@ -1094,7 +1094,7 @@ const (
 	ContourColorbarExponentformatE1    ContourColorbarExponentformat = "e"
 	ContourColorbarExponentformatE2    ContourColorbarExponentformat = "E"
 	ContourColorbarExponentformatPower ContourColorbarExponentformat = "power"
-	ContourColorbarExponentformatSi    ContourColorbarExponentformat = "SI"
+	ContourColorbarExponentformatSI    ContourColorbarExponentformat = "SI"
 	ContourColorbarExponentformatB     ContourColorbarExponentformat = "B"
 )
 

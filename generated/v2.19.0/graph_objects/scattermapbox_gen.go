@@ -1101,7 +1101,7 @@ const (
 	ScattermapboxMarkerColorbarExponentformatE1    ScattermapboxMarkerColorbarExponentformat = "e"
 	ScattermapboxMarkerColorbarExponentformatE2    ScattermapboxMarkerColorbarExponentformat = "E"
 	ScattermapboxMarkerColorbarExponentformatPower ScattermapboxMarkerColorbarExponentformat = "power"
-	ScattermapboxMarkerColorbarExponentformatSi    ScattermapboxMarkerColorbarExponentformat = "SI"
+	ScattermapboxMarkerColorbarExponentformatSI    ScattermapboxMarkerColorbarExponentformat = "SI"
 	ScattermapboxMarkerColorbarExponentformatB     ScattermapboxMarkerColorbarExponentformat = "B"
 )
 

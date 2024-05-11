@@ -1630,7 +1630,7 @@ const (
 	BarMarkerColorbarExponentformatE1    BarMarkerColorbarExponentformat = "e"
 	BarMarkerColorbarExponentformatE2    BarMarkerColorbarExponentformat = "E"
 	BarMarkerColorbarExponentformatPower BarMarkerColorbarExponentformat = "power"
-	BarMarkerColorbarExponentformatSi    BarMarkerColorbarExponentformat = "SI"
+	BarMarkerColorbarExponentformatSI    BarMarkerColorbarExponentformat = "SI"
 	BarMarkerColorbarExponentformatB     BarMarkerColorbarExponentformat = "B"
 )
 

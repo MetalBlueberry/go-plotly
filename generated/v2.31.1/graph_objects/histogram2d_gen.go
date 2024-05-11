@@ -974,7 +974,7 @@ const (
 	Histogram2dColorbarExponentformatE1    Histogram2dColorbarExponentformat = "e"
 	Histogram2dColorbarExponentformatE2    Histogram2dColorbarExponentformat = "E"
 	Histogram2dColorbarExponentformatPower Histogram2dColorbarExponentformat = "power"
-	Histogram2dColorbarExponentformatSi    Histogram2dColorbarExponentformat = "SI"
+	Histogram2dColorbarExponentformatSI    Histogram2dColorbarExponentformat = "SI"
 	Histogram2dColorbarExponentformatB     Histogram2dColorbarExponentformat = "B"
 )
 

@@ -4,7 +4,6 @@ import (
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/offline"
 )
 
 func main() {
@@ -38,8 +37,8 @@ func main() {
 		},
 	}
 
-	offline.ToHtml(fig, "scatter3d.html")
-	offline.Show(fig)
+	grob.ToHtml(fig, "scatter3d.html")
+	grob.Show(fig)
 }
 
 func linspace(start, stop float64, points int) []float64 {
