@@ -128,6 +128,7 @@ Example entry:
      URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
      Path: schemas/v2.31.1/plot-schema.json
      Generated: generated/v2.31.1/graph_objects
+     CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
 ```
 
 The local paths are relative to the project root.
@@ -180,8 +181,11 @@ http://plotly-json-editor.getforge.io/
 ### Add version v2.29.1 and v2.31.1
 - Added Downloader for schema file
 - added generator for different packages based on plotly version in subfolders for each version
-- enable easier use for different plotly version by new import paths which include the version genered. Example: `grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"`
-- removed go generate direct from the templates which are no longer necessary
+- enable easier use for different plotly version by new import paths which include the version generated. Example: `grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"`
+- removed go generate directive from the templates which are no longer necessary
+- removed offline package, as each version package needs its own **plot.go**.
+- Replaced all `offline` imports in the examples packages by just calling the `grob` package of the specified version
+- all html's will now refer to the correct plotly version's cdn in the html's head
 
 ## Official Plotly Release Notes
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
