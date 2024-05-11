@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"syscall/js"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 )
