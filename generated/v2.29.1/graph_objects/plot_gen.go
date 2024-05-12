@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -21,6 +22,14 @@ type FigOptions struct {
 type Options struct {
 	FigOptions
 	Addr string
+}
+
+// ToWriter saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
+func ToWriter(fig *Fig, w io.Writer, options ...FigOptions) {
+	_, err := w.Write(figToBuffer(fig, options...).Bytes())
+	if err != nil {
+		panic(errors.New(fmt.Sprintf("failed to write figure to passed writer: %v", err)))
+	}
 }
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
