@@ -3,37 +3,61 @@ package grob
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"text/template"
 
 	"github.com/pkg/browser"
+	"github.com/pkg/errors"
 )
 
+// FigOptions enables users to pass their custom cdn or local plotly file reference to allow building offline solutions
+type FigOptions struct {
+	HeadContent string
+}
+
 type Options struct {
+	FigOptions
 	Addr string
 }
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToHtml(fig *Fig, path string) {
-	buf := figToBuffer(fig)
+func ToHtml(fig *Fig, path string, options ...FigOptions) {
+	buf := figToBuffer(fig, options...)
 	os.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
-func Show(fig *Fig) {
-	buf := figToBuffer(fig)
+func Show(fig *Fig, options ...FigOptions) {
+	buf := figToBuffer(fig, options...)
 	browser.OpenReader(buf)
 }
 
-func figToBuffer(fig *Fig) *bytes.Buffer {
+const cdnUrl = `<script src="{{ .CDN }}"></script>`
+
+// computeFigOptions allows to default to the common cdn reference
+func computeFigOptions(options ...FigOptions) string {
+	if len(options) > 1 {
+		panic(errors.New(fmt.Sprintf("only use 1 option at a time. Passed: %d. options: %+v", len(options), options)))
+	}
+	if len(options) == 0 {
+		return cdnUrl
+	}
+	return options[0].HeadContent
+}
+
+// figToBuffer with optional parameter options, only the first argument is evaluated
+func figToBuffer(fig *Fig, options ...FigOptions) *bytes.Buffer {
+	var headContent string = computeFigOptions(options...)
+
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
 	}
-	tmpl, err := template.New("plotly").Parse(baseHtml)
+	tmpl, err := template.New("plotly").Parse(getBaseHtml(headContent))
 	if err != nil {
 		panic(err)
 	}
@@ -44,10 +68,10 @@ func figToBuffer(fig *Fig) *bytes.Buffer {
 
 // Serve creates a local web server that displays the image using plotly.js
 // Is a good alternative to Show to avoid creating tmp files.
-// plotlyversion refers to the version of plotly to be used, such that the CDN can be correctly referenced in the head
 func Serve(fig *Fig, opt ...Options) {
 	opts := computeOptions(Options{
-		Addr: "localhost:8080",
+		FigOptions: FigOptions{HeadContent: cdnUrl},
+		Addr:       "localhost:8080",
 	}, opt...)
 
 	mux := &http.ServeMux{}
@@ -56,7 +80,7 @@ func Serve(fig *Fig, opt ...Options) {
 		Addr:    opts.Addr,
 	}
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		buf := figToBuffer(fig)
+		buf := figToBuffer(fig, opts.FigOptions)
 		buf.WriteTo(w)
 	})
 
@@ -72,9 +96,12 @@ func computeOptions(def Options, opt ...Options) Options {
 		opts := opt[0]
 		if opts.Addr != "" {
 			def.Addr = opts.Addr
+			def.HeadContent = opts.HeadContent
 		}
 	}
 	return def
 }
 
-var baseHtml = `{{ .Template }}`
+func getBaseHtml(head string) string {
+	return {{ .Template }}
+}

@@ -97,23 +97,26 @@ func (r *Renderer) CreatePlotly(dir string) error {
 	return nil
 }
 
-// WritePlotly writes the base plotly file
-func (r *Renderer) WritePlotGo(w io.Writer, cdnUrl string) error {
-	// inject the basehtml with the correct plotly cdn reference
-	data := struct {
-		Template string
-	}{Template: fmt.Sprintf(`
-	<head>
-		<script src="%s"></script>
-	</head>
-	</body>
-		<div id="plot"></div>
+const generationTemplate = `
+<head>
+	%s
+</head>
+<body>
+	<div id="plot"></div>
 	<script>
 		data = JSON.parse('{{ . }}')
 		Plotly.newPlot('plot', data);
 	</script>
-	<body>
-	`, cdnUrl)}
+</body>
+`
+
+// WritePlotly writes the base plotly file
+func (r *Renderer) WritePlotGo(w io.Writer, cdnUrl string) error {
+	// inject the basehtml with the correct plotly cdn reference
+	data := struct {
+		CDN      string
+		Template string
+	}{CDN: cdnUrl, Template: fmt.Sprintf("fmt.Sprintf(`%s`, head)", generationTemplate)}
 
 	finished := r.tmpl.ExecuteTemplate(w, "plot.tmpl", data)
 	return finished

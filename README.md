@@ -154,6 +154,17 @@ The local paths are relative to the project root.
 Be aware, that the template file [plotly.tmpl](generator%2Ftemplates%2Fplotly.tmpl) also has a go generate directive.
 This directive has relative paths, based on the assumed final path within the project
 
+#### embedding a downloaded plotly js source
+
+In the example: [main.go](examples%2Fbar%2Fmain.go) you find an example to reuse a static plotly js file and pass that reference to the generated html, instead of using a hardcoded CDN reference which would require internet connection.
+```go
+	abs, err := filepath.Abs("asset/plotly-2.29.1.min.js")
+    if err != nil {
+        return
+    }
+	grob.ToHtml(fig, "bar.html", grob.FigOptions{HeadContent: fmt.Sprintf(`<title>Offline Bars</title><script src="%s"></script>`, abs)})
+	grob.Show(fig, grob.FigOptions{HeadContent: fmt.Sprintf(`<title>Offline Bars</title><script src="%s"></script>`, abs)})
+```
 
 #### Missing Files?
 
@@ -186,6 +197,7 @@ http://plotly-json-editor.getforge.io/
 - removed offline package, as each version package needs its own **plot.go**.
 - Replaced all `offline` imports in the examples packages by just calling the `grob` package of the specified version
 - all html's will now refer to the correct plotly version's cdn in the html's head
+- allow defining your own head for the plot, which allows embedding the plotly.js source instead of referencing the CDN. This enables generation of offline plots
 
 ## Official Plotly Release Notes
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
