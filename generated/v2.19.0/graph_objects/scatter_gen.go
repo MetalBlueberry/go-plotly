@@ -91,7 +91,7 @@ type Scatter struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo ScatterHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo interface{} `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -113,7 +113,7 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate interface{} `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
@@ -125,7 +125,7 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext String `json:"hovertext,omitempty"`
+	Hovertext interface{} `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
@@ -253,7 +253,7 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text String `json:"text,omitempty"`
+	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
 	// role: Object
@@ -263,7 +263,7 @@ type Scatter struct {
 	// default: middle center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
-	Textposition ScatterTextposition `json:"textposition,omitempty"`
+	Textposition interface{} `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -281,7 +281,7 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
-	Texttemplate String `json:"texttemplate,omitempty"`
+	Texttemplate interface{} `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
@@ -615,7 +615,7 @@ type ScatterFillpattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor interface{} `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -627,7 +627,7 @@ type ScatterFillpattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
-	Fgcolor Color `json:"fgcolor,omitempty"`
+	Fgcolor interface{} `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
@@ -651,7 +651,7 @@ type ScatterFillpattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
-	Shape ScatterFillpatternShape `json:"shape,omitempty"`
+	Shape interface{} `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
@@ -663,7 +663,7 @@ type ScatterFillpattern struct {
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -675,7 +675,7 @@ type ScatterFillpattern struct {
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
-	Solidity float64 `json:"solidity,omitempty"`
+	Solidity interface{} `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
@@ -691,7 +691,7 @@ type ScatterHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -703,7 +703,7 @@ type ScatterHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family interface{} `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -715,7 +715,7 @@ type ScatterHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -731,7 +731,7 @@ type ScatterHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align ScatterHoverlabelAlign `json:"align,omitempty"`
+	Align interface{} `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -743,7 +743,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor interface{} `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -755,7 +755,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor interface{} `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -771,7 +771,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength interface{} `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
@@ -823,7 +823,7 @@ type ScatterLine struct {
 	// arrayOK: true
 	// type: number
 	// Sets the line back off from the end point of the nth line segment (in px). This option is useful e.g. to avoid overlap with arrowhead markers. With *auto* the lines would trim before markers if `marker.angleref` is set to *previous*.
-	Backoff float64 `json:"backoff,omitempty"`
+	Backoff interface{} `json:"backoff,omitempty"`
 
 	// Backoffsrc
 	// arrayOK: false
@@ -1215,7 +1215,7 @@ type ScatterMarkerGradient struct {
 	// arrayOK: true
 	// type: color
 	// Sets the final color of the gradient fill: the center color for radial, the right for horizontal, or the bottom for vertical.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1227,7 +1227,7 @@ type ScatterMarkerGradient struct {
 	// default: none
 	// type: enumerated
 	// Sets the type of gradient used to fill the markers
-	Type ScatterMarkerGradientType `json:"type,omitempty"`
+	Type interface{} `json:"type,omitempty"`
 
 	// Typesrc
 	// arrayOK: false
@@ -1273,7 +1273,7 @@ type ScatterMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1303,7 +1303,7 @@ type ScatterMarkerLine struct {
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
-	Width float64 `json:"width,omitempty"`
+	Width interface{} `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
@@ -1319,7 +1319,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
-	Angle float64 `json:"angle,omitempty"`
+	Angle interface{} `json:"angle,omitempty"`
 
 	// Angleref
 	// default: up
@@ -1367,7 +1367,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1409,7 +1409,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity interface{} `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
@@ -1433,7 +1433,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
@@ -1463,7 +1463,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: number
 	// Moves the marker away from the data point in the direction of `angle` (in px). This can be useful for example if you have another marker at this location and you want to point an arrowhead marker at it.
-	Standoff float64 `json:"standoff,omitempty"`
+	Standoff interface{} `json:"standoff,omitempty"`
 
 	// Standoffsrc
 	// arrayOK: false
@@ -1475,7 +1475,7 @@ type ScatterMarker struct {
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
-	Symbol ScatterMarkerSymbol `json:"symbol,omitempty"`
+	Symbol interface{} `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false
@@ -1551,7 +1551,7 @@ type ScatterTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1563,7 +1563,7 @@ type ScatterTextfont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family interface{} `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -1575,7 +1575,7 @@ type ScatterTextfont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false

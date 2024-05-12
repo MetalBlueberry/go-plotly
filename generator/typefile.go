@@ -86,13 +86,23 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 		}
 
 		attr := attr[name]
+		// if arrays are allowed, example marker sizes, then javascript allows multiple different inputs hard to map in golang:
+		// [100,50,25,25,50,100] -> use different sizes for the markers
+		// [100] -> only the first marker will have size 100, all others have 0 size
+		// 100 -> all markers have size 100
+		// this can only be captures by using interface and allowing the user to define the used type themselves.
+		// this sadly means that there is no more type checking on those entries
+		var ajust = func(typename string) string { return typename }
+		if attr.ArrayOK {
+			ajust = func(typename string) string { return "interface{}" }
+		}
 
 		switch {
 		case attr.Role == RoleObject && len(attr.Items) > 0:
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "interface{}",
+				Type:     ajust("interface{}"),
 				Description: []string{
 					"It's an items array and what goes inside it's... messy... check the docs",
 					"I will be happy if you want to contribute by implementing this",
@@ -109,7 +119,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "*" + name,
+				Type:     ajust("*" + name),
 				Description: []string{
 					"role: Object",
 				},
@@ -124,7 +134,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     typePrefix + xstrings.ToCamelCase(attr.Name),
+				Type:     ajust(typePrefix + xstrings.ToCamelCase(attr.Name)),
 				Description: []string{
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
@@ -142,7 +152,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     typeName,
+				Type:     ajust(typeName),
 				Description: []string{
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
@@ -154,7 +164,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "ColorScale",
+				Type:     ajust("ColorScale"),
 				Description: []string{
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
@@ -167,7 +177,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     ty,
+				Type:     ajust(ty),
 				Description: []string{
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),

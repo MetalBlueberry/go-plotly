@@ -21,6 +21,8 @@ func main() {
 	*/
 	t := linspace(0, 10, 100)
 	y := sin(t)
+	t2 := linspace(1.7, 11.7, 100)
+	y2 := sin(t2)
 
 	fig := &grob.Fig{
 		Data: grob.Traces{
@@ -29,6 +31,18 @@ func main() {
 				X:    t,
 				Y:    y,
 				Mode: grob.ScatterModeMarkers,
+				Marker: &grob.ScatterMarker{
+					Size: 25, // use a single value to size every marker
+				},
+			},
+			&grob.Scatter{
+				Type: grob.TraceTypeScatter,
+				X:    t,
+				Y:    y2,
+				Mode: grob.ScatterModeMarkers,
+				Marker: &grob.ScatterMarker{
+					Size: y2, // use an array to size each marker differently
+				},
 			},
 		},
 	}
@@ -50,7 +64,7 @@ func linspace(start, stop float64, points int) []float64 {
 func sin(x []float64) []float64 {
 	y := make([]float64, len(x))
 	for i := 1; i < len(x); i++ {
-		y[i] = math.Sin(x[i])
+		y[i] = math.Sin(x[i]) * 50
 	}
 	return y
 }
