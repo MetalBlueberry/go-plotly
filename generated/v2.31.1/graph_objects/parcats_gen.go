@@ -31,7 +31,7 @@ type Parcats struct {
 	// arrayOK: true
 	// type: number
 	// The number of observations represented by each state. Defaults to 1 so that each state represents one observation
-	Counts interface{} `json:"counts,omitempty"`
+	Counts float64 `json:"counts,omitempty"`
 
 	// Countssrc
 	// arrayOK: false
@@ -617,7 +617,7 @@ type ParcatsLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
-	Color interface{} `json:"color,omitempty"`
+	Color Color `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false

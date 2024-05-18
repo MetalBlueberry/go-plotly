@@ -198,7 +198,6 @@ http://plotly-json-editor.getforge.io/
 - Replaced all `offline` imports in the examples packages by just calling the `grob` package of the specified version
 - all html's will now refer to the correct plotly version's cdn in the html's head
 - allow defining your own head for the plot, which allows embedding the plotly.js source instead of referencing the CDN. This enables generation of offline plots
-- all types with "`arrayOk: true`" should be defined as `interface{}` to allow the flexibility of javascript and let the user decide whether a single value or a slice is used.
 
 ## Official Plotly Release Notes
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
