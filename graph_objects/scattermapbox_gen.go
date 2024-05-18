@@ -55,7 +55,7 @@ type Scattermapbox struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo ScattermapboxHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo interface{} `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -71,7 +71,7 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate interface{} `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
@@ -83,7 +83,7 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext String `json:"hovertext,omitempty"`
+	Hovertext interface{} `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
@@ -201,7 +201,7 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text String `json:"text,omitempty"`
+	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
 	// role: Object
@@ -223,7 +223,7 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
-	Texttemplate String `json:"texttemplate,omitempty"`
+	Texttemplate interface{} `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
@@ -267,7 +267,7 @@ type ScattermapboxHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -279,7 +279,7 @@ type ScattermapboxHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family interface{} `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -291,7 +291,7 @@ type ScattermapboxHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -307,7 +307,7 @@ type ScattermapboxHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align ScattermapboxHoverlabelAlign `json:"align,omitempty"`
+	Align interface{} `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -319,7 +319,7 @@ type ScattermapboxHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor interface{} `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -331,7 +331,7 @@ type ScattermapboxHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor interface{} `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -347,7 +347,7 @@ type ScattermapboxHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength interface{} `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
@@ -701,7 +701,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
-	Angle float64 `json:"angle,omitempty"`
+	Angle interface{} `json:"angle,omitempty"`
 
 	// Anglesrc
 	// arrayOK: false
@@ -743,7 +743,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -771,7 +771,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity interface{} `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
@@ -795,7 +795,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
@@ -825,7 +825,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: string
 	// Sets the marker symbol. Full list: https://www.mapbox.com/maki-icons/ Note that the array `marker.color` and `marker.size` are only available for *circle* symbols.
-	Symbol String `json:"symbol,omitempty"`
+	Symbol interface{} `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false

@@ -93,7 +93,7 @@ type Surface struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo SurfaceHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo interface{} `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -109,7 +109,7 @@ type Surface struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate interface{} `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
@@ -121,7 +121,7 @@ type Surface struct {
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
-	Hovertext String `json:"hovertext,omitempty"`
+	Hovertext interface{} `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
@@ -229,7 +229,7 @@ type Surface struct {
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with each z value. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text String `json:"text,omitempty"`
+	Text interface{} `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
@@ -919,7 +919,7 @@ type SurfaceHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -931,7 +931,7 @@ type SurfaceHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family interface{} `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -943,7 +943,7 @@ type SurfaceHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -959,7 +959,7 @@ type SurfaceHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align SurfaceHoverlabelAlign `json:"align,omitempty"`
+	Align interface{} `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -971,7 +971,7 @@ type SurfaceHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor interface{} `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -983,7 +983,7 @@ type SurfaceHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor interface{} `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -999,7 +999,7 @@ type SurfaceHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength interface{} `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
