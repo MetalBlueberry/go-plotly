@@ -29,7 +29,7 @@ func main() {
 		return
 	}
 	for _, schema := range schemas {
-		generatePackage(schema.Path, schema.Generated, schema.Cdn)
+		generatePackage(schema.Path, schema.Generated, schema.Cdn, schema.Tag)
 	}
 
 }
@@ -60,15 +60,18 @@ func FindDir(schema, output string) (string, string) {
 }
 
 // create the packages and write them into the specified folders
-func generatePackage(schema, output, cdnUrl string) {
+func generatePackage(schema, versionOutput, cdnUrl, tag string) {
 	// look for the correct schema and output paths
-	schema, output = FindDir(schema, output)
-	log.Println("schema:", schema, "output", output)
+	schema, versionOutput = FindDir(schema, versionOutput)
+	log.Println("schema:", schema, "versionoutput", versionOutput)
 
 	file, err := os.Open(schema)
 	if err != nil {
 		log.Fatalf("unable to open schema, %s", err)
 	}
+
+	graphObjectsOuput := filepath.Join(versionOutput, "graph_objects")
+	offlineOuput := filepath.Join(versionOutput, "offline")
 
 	root, err := generator.LoadSchema(file)
 	if err != nil {
@@ -80,47 +83,45 @@ func generatePackage(schema, output, cdnUrl string) {
 		log.Fatalf("unable to create a new renderer, %s", err)
 	}
 
-	err = os.RemoveAll(output)
-	if err != nil {
-		log.Fatalf("Failed to clean output directory, %s", err)
+	for _, path := range []string{graphObjectsOuput, offlineOuput} {
+		err = os.RemoveAll(path)
+		if err != nil {
+			log.Fatalf("Failed to clean output directory, %s", err)
+		}
+
+		if err = os.MkdirAll(path, 0755); err != nil {
+			log.Fatalf("Failed to create output dir %s, %s", path, err)
+		}
 	}
 
-	if err = os.MkdirAll(output, 0755); err != nil {
-		log.Fatalf("Failed to create output dir %s, %s", output, err)
-	}
-
-	err = r.CreatePlotGo(output, cdnUrl)
+	// plot_gen.go must be separate in an offline package
+	err = r.CreatePlotGo(offlineOuput, cdnUrl, tag)
 	if err != nil {
 		log.Fatalf("unable to write plot.go, %s", err)
 	}
-	if err = os.MkdirAll(output, 0755); err != nil {
-		log.Fatalf("Error creating directory, %s", err)
-	}
 
-	err = r.CreatePlotly(output)
+	// graphobjects
+	err = r.CreatePlotly(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write plotly, %s", err)
 	}
-	if err = os.MkdirAll(output, 0755); err != nil {
-		log.Fatalf("Error creating directory, %s", err)
-	}
 
-	err = r.CreateTraces(output)
+	err = r.CreateTraces(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write traces, %s", err)
 	}
 
-	err = r.CreateLayout(output)
+	err = r.CreateLayout(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write layout, %s", err)
 	}
 
-	err = r.CreateConfig(output)
+	err = r.CreateConfig(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write config, %s", err)
 	}
 
-	err = r.CreateUnmarshal(output)
+	err = r.CreateUnmarshal(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write unmarshal, %s", err)
 	}

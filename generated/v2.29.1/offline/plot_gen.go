@@ -1,4 +1,4 @@
-package grob
+package offline
 
 import (
 	"bytes"
@@ -12,6 +12,8 @@ import (
 
 	"github.com/pkg/browser"
 	"github.com/pkg/errors"
+
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.29.1/graph_objects"
 )
 
 // FigOptions enables users to pass their custom cdn or local plotly file reference to allow building offline solutions
@@ -25,7 +27,7 @@ type Options struct {
 }
 
 // ToWriter saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToWriter(fig *Fig, w io.Writer, options ...FigOptions) {
+func ToWriter(fig *grob.Fig, w io.Writer, options ...FigOptions) {
 	_, err := w.Write(figToBuffer(fig, options...).Bytes())
 	if err != nil {
 		panic(errors.New(fmt.Sprintf("failed to write figure to passed writer: %v", err)))
@@ -33,19 +35,19 @@ func ToWriter(fig *Fig, w io.Writer, options ...FigOptions) {
 }
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToHtml(fig *Fig, path string, options ...FigOptions) {
+func ToHtml(fig *grob.Fig, path string, options ...FigOptions) {
 	buf := figToBuffer(fig, options...)
 	os.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
-func Show(fig *Fig, options ...FigOptions) {
+func Show(fig *grob.Fig, options ...FigOptions) {
 	buf := figToBuffer(fig, options...)
 	browser.OpenReader(buf)
 }
 
-const cdnUrl = `<script src="https://cdn.plot.ly/plotly-2.31.1.min.js"></script>`
+const cdnUrl = `<script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>`
 
 // computeFigOptions allows to default to the common cdn reference
 func computeFigOptions(options ...FigOptions) string {
@@ -59,7 +61,7 @@ func computeFigOptions(options ...FigOptions) string {
 }
 
 // figToBuffer with optional parameter options, only the first argument is evaluated
-func figToBuffer(fig *Fig, options ...FigOptions) *bytes.Buffer {
+func figToBuffer(fig *grob.Fig, options ...FigOptions) *bytes.Buffer {
 	var headContent string = computeFigOptions(options...)
 
 	figBytes, err := json.Marshal(fig)
@@ -77,7 +79,7 @@ func figToBuffer(fig *Fig, options ...FigOptions) *bytes.Buffer {
 
 // Serve creates a local web server that displays the image using plotly.js
 // Is a good alternative to Show to avoid creating tmp files.
-func Serve(fig *Fig, opt ...Options) {
+func Serve(fig *grob.Fig, opt ...Options) {
 	opts := computeOptions(Options{
 		FigOptions: FigOptions{HeadContent: cdnUrl},
 		Addr:       "localhost:8080",

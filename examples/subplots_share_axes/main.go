@@ -2,6 +2,7 @@ package main
 
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 )
 
 func main() {
@@ -93,6 +94,6 @@ func main() {
 		},
 	}
 
-	grob.ToHtml(fig, "subplots_share_axes.html")
-	grob.Show(fig)
+	offline.ToHtml(fig, "subplots_share_axes.html")
+	offline.Show(fig)
 }

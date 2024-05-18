@@ -127,7 +127,7 @@ Example entry:
      Tag: v2.31.1
      URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
      Path: schemas/v2.31.1/plot-schema.json
-     Generated: generated/v2.31.1/graph_objects
+     Generated: generated/v2.31.1
      CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
 ```
 
