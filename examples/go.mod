@@ -6,7 +6,7 @@ require (
 	github.com/MetalBlueberry/go-plotly v0.4.0
 	github.com/go-gota/gota v0.12.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
-	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
+  github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
 )
 
 require (
