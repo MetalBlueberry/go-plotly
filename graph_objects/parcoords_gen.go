@@ -527,7 +527,7 @@ type ParcoordsLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets thelinecolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false

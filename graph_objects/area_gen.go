@@ -31,7 +31,7 @@ type Area struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo AreaHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo interface{} `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -155,7 +155,7 @@ type AreaHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -167,7 +167,7 @@ type AreaHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family interface{} `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -179,7 +179,7 @@ type AreaHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -195,7 +195,7 @@ type AreaHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align AreaHoverlabelAlign `json:"align,omitempty"`
+	Align interface{} `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -207,7 +207,7 @@ type AreaHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor interface{} `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -219,7 +219,7 @@ type AreaHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor interface{} `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -235,7 +235,7 @@ type AreaHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength interface{} `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
@@ -251,7 +251,7 @@ type AreaMarker struct {
 	// arrayOK: true
 	// type: color
 	// Area traces are deprecated! Please switch to the *barpolar* trace type. Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color interface{} `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -263,7 +263,7 @@ type AreaMarker struct {
 	// arrayOK: true
 	// type: number
 	// Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity interface{} `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
@@ -275,7 +275,7 @@ type AreaMarker struct {
 	// arrayOK: true
 	// type: number
 	// Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker size (in px).
-	Size float64 `json:"size,omitempty"`
+	Size interface{} `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -287,7 +287,7 @@ type AreaMarker struct {
 	// default: circle
 	// type: enumerated
 	// Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
-	Symbol AreaMarkerSymbol `json:"symbol,omitempty"`
+	Symbol interface{} `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false
