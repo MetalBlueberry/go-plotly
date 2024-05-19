@@ -15,18 +15,23 @@ func (arrayOK *ArrayOKfloat64) MarshalJSON() ([]byte, error) {
 }
 
 func (arrayOK *ArrayOKfloat64) UnmarshalJSON(data []byte) error {
+	arrayOK.Array = nil
+	arrayOK.Value = 0
+
 	var array []float64
 	err := json.Unmarshal(data, &array)
-	if err != nil {
-		var value float64
-		err := json.Unmarshal(data, &value)
-		if err != nil {
-			return err
-		}
-		arrayOK.Value = value
+	if err == nil {
+		arrayOK.Array = array
 		return nil
 	}
-	arrayOK.Array = array
+
+	var value float64
+	err = json.Unmarshal(data, &value)
+	if err != nil {
+		return err
+	}
+	arrayOK.Value = value
+	return nil
 	return nil
 
 }

@@ -14,9 +14,6 @@ type TestMarshallScenario struct {
 	Expected string
 }
 
-func TestTypes(t *testing.T) {
-}
-
 func TestFloat64Marshal(t *testing.T) {
 	RegisterTestingT(t)
 
@@ -45,7 +42,7 @@ func TestFloat64Marshal(t *testing.T) {
 	}
 	for _, tt := range table {
 		t.Run(tt.Name, func(t *testing.T) {
-			result, err := json.Marshal(tt.Input)
+			result, err := json.Marshal(&tt.Input)
 			Expect(err).To(BeNil())
 			Expect(string(result)).To(Equal(tt.Expected))
 
