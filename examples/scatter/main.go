@@ -5,6 +5,7 @@ import (
 
 	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/offline"
+	"github.com/MetalBlueberry/go-plotly/types"
 )
 
 func main() {
@@ -30,6 +31,11 @@ func main() {
 				X:    t,
 				Y:    y,
 				Mode: grob.ScatterModeMarkers,
+				Marker: &grob.ScatterMarker{
+					Size: types.ArrayOKfloat64{
+						Value: 12,
+					},
+				},
 			},
 		},
 	}
