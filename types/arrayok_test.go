@@ -8,16 +8,16 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-type TestMarshallScenario struct {
+type TestMarshallScenario[T any] struct {
 	Name     string
-	Input    types.ArrayOK[float64]
+	Input    types.ArrayOK[T]
 	Expected string
 }
 
 func TestFloat64Marshal(t *testing.T) {
 	RegisterTestingT(t)
 
-	table := []TestMarshallScenario{
+	scenarios := []TestMarshallScenario[float64]{
 		{
 			Name: "A single number",
 			Input: types.ArrayOK[float64]{
@@ -40,28 +40,62 @@ func TestFloat64Marshal(t *testing.T) {
 			Expected: "[1,2,3,4.5]",
 		},
 	}
-	for _, tt := range table {
+
+	for _, tt := range scenarios {
 		t.Run(tt.Name, func(t *testing.T) {
 			result, err := json.Marshal(&tt.Input)
 			Expect(err).To(BeNil())
 			Expect(string(result)).To(Equal(tt.Expected))
-
 		})
-
 	}
-
 }
 
-type TestUnmarshallScenario struct {
+func TestStringMarshal(t *testing.T) {
+	RegisterTestingT(t)
+
+	scenarios := []TestMarshallScenario[string]{
+		{
+			Name: "A single string",
+			Input: types.ArrayOK[string]{
+				Value: "hello",
+			},
+			Expected: `"hello"`,
+		},
+		{
+			Name: "A single string in a list",
+			Input: types.ArrayOK[string]{
+				Array: []string{"hello"},
+			},
+			Expected: `["hello"]`,
+		},
+		{
+			Name: "Multiple strings",
+			Input: types.ArrayOK[string]{
+				Array: []string{"hello", "world", "foo", "bar"},
+			},
+			Expected: `["hello","world","foo","bar"]`,
+		},
+	}
+
+	for _, tt := range scenarios {
+		t.Run(tt.Name, func(t *testing.T) {
+			result, err := json.Marshal(&tt.Input)
+			Expect(err).To(BeNil())
+			Expect(string(result)).To(Equal(tt.Expected))
+		})
+	}
+}
+
+type TestUnmarshallScenario[T any] struct {
 	Name     string
 	Input    string
-	Expected types.ArrayOK[float64]
+	Expected types.ArrayOK[T]
 }
 
 func TestFloat64Unmarshal(t *testing.T) {
 	RegisterTestingT(t)
 
-	table := []TestUnmarshallScenario{
+	scenarios := []TestUnmarshallScenario[float64]{
 		{
 			Name:  "A single number",
 			Input: "12.3",
@@ -84,15 +118,50 @@ func TestFloat64Unmarshal(t *testing.T) {
 			},
 		},
 	}
-	for _, tt := range table {
+
+	for _, tt := range scenarios {
 		t.Run(tt.Name, func(t *testing.T) {
 			result := types.ArrayOK[float64]{}
 			err := json.Unmarshal([]byte(tt.Input), &result)
 			Expect(err).To(BeNil())
 			Expect(result).To(Equal(tt.Expected))
-
 		})
+	}
+}
 
+func TestStringUnmarshal(t *testing.T) {
+	RegisterTestingT(t)
+
+	scenarios := []TestUnmarshallScenario[string]{
+		{
+			Name:  "A single string",
+			Input: `"hello"`,
+			Expected: types.ArrayOK[string]{
+				Value: "hello",
+			},
+		},
+		{
+			Name:  "A single string in a list",
+			Input: `["hello"]`,
+			Expected: types.ArrayOK[string]{
+				Array: []string{"hello"},
+			},
+		},
+		{
+			Name:  "Multiple strings",
+			Input: `["hello","world","foo","bar"]`,
+			Expected: types.ArrayOK[string]{
+				Array: []string{"hello", "world", "foo", "bar"},
+			},
+		},
 	}
 
+	for _, tt := range scenarios {
+		t.Run(tt.Name, func(t *testing.T) {
+			result := types.ArrayOK[string]{}
+			err := json.Unmarshal([]byte(tt.Input), &result)
+			Expect(err).To(BeNil())
+			Expect(result).To(Equal(tt.Expected))
+		})
+	}
 }
