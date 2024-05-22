@@ -43,7 +43,7 @@ func main() {
         },
     }
 
-    grob.Show(fig)
+    offline.Show(fig)
 }
 ```
 
