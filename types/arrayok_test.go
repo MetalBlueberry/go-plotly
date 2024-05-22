@@ -86,7 +86,7 @@ func TestStringMarshal(t *testing.T) {
 	}
 }
 
-type TestUnmarshallScenario[T any] struct {
+type TestUnmarshalScenario[T any] struct {
 	Name     string
 	Input    string
 	Expected types.ArrayOK[T]
@@ -95,7 +95,7 @@ type TestUnmarshallScenario[T any] struct {
 func TestFloat64Unmarshal(t *testing.T) {
 	RegisterTestingT(t)
 
-	scenarios := []TestUnmarshallScenario[float64]{
+	scenarios := []TestUnmarshalScenario[float64]{
 		{
 			Name:  "A single number",
 			Input: "12.3",
@@ -132,7 +132,7 @@ func TestFloat64Unmarshal(t *testing.T) {
 func TestStringUnmarshal(t *testing.T) {
 	RegisterTestingT(t)
 
-	scenarios := []TestUnmarshallScenario[string]{
+	scenarios := []TestUnmarshalScenario[string]{
 		{
 			Name:  "A single string",
 			Input: `"hello"`,
@@ -175,7 +175,7 @@ type Color struct {
 func TestColorUnmarshal(t *testing.T) {
 	RegisterTestingT(t)
 
-	scenarios := []TestUnmarshallScenario[Color]{
+	scenarios := []TestUnmarshalScenario[Color]{
 		{
 			Name:  "A single color",
 			Input: `{"red": 255, "green": 255, "blue": 255}`,
@@ -249,6 +249,111 @@ func TestColorMarshal(t *testing.T) {
 			result, err := json.Marshal(&tt.Input)
 			Expect(err).To(BeNil())
 			Expect(string(result)).To(Equal(tt.Expected))
+		})
+	}
+}
+
+func TestNestedArrayOKUnmarshal(t *testing.T) {
+	type Color struct {
+		Red   int `json:"red"`
+		Green int `json:"green"`
+		Blue  int `json:"blue"`
+	}
+
+	tests := []struct {
+		Name     string
+		Input    interface{}
+		Expected string
+	}{
+		{
+			Name: "Nested ArrayOK within another struct",
+			Input: struct {
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
+			}{
+				Name: "Test",
+				Colors: &types.ArrayOK[Color]{
+					Array: []Color{
+						{Red: 255, Green: 255, Blue: 255},
+						{Red: 0, Green: 0, Blue: 0},
+						{Red: 0, Green: 255, Blue: 0},
+					},
+				},
+			},
+			Expected: `{"name":"Test","colors":[{"red":255,"green":255,"blue":255},{"red":0,"green":0,"blue":0},{"red":0,"green":255,"blue":0}]}`,
+		},
+		{
+			Name: "Nested ArrayOK within another struct with nil Colors",
+			Input: struct {
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
+			}{
+				Name:   "Test",
+				Colors: nil,
+			},
+			Expected: `{"name":"Test","colors":null}`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.Name, func(t *testing.T) {
+			bytes, err := json.Marshal(tt.Input)
+			if err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+
+			if string(bytes) != tt.Expected {
+				t.Errorf("expected %s, but got %s", tt.Expected, string(bytes))
+			}
+		})
+	}
+}
+func TestNestedArrayOKMarshal(t *testing.T) {
+	tests := []struct {
+		Name     string
+		Input    interface{}
+		Expected string
+	}{
+		{
+			Name: "Marshal ArrayOK nested within another struct with actual value",
+			Input: struct {
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
+			}{
+				Name: "Test",
+				Colors: &types.ArrayOK[Color]{
+					Array: []Color{
+						{Red: 255, Green: 255, Blue: 255},
+						{Red: 0, Green: 0, Blue: 0},
+						{Red: 0, Green: 255, Blue: 0},
+					},
+				},
+			},
+			Expected: `{"name":"Test","colors":[{"red":255,"green":255,"blue":255},{"red":0,"green":0,"blue":0},{"red":0,"green":255,"blue":0}]}`,
+		},
+		{
+			Name: "Marshal ArrayOK nested within another struct with nil value",
+			Input: struct {
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
+			}{
+				Name:   "Test",
+				Colors: nil,
+			},
+			Expected: `{"name":"Test","colors":null}`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.Name, func(t *testing.T) {
+			bytes, err := json.Marshal(tt.Input)
+			if err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+
+			if string(bytes) != tt.Expected {
+				t.Errorf("expected %s, but got %s", tt.Expected, string(bytes))
+			}
 		})
 	}
 }
