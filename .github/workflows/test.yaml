@@ -25,3 +25,6 @@ jobs:
         run: |
           go generate ./...
           git diff --exit-code
+
+      - name: Build all packages
+        run: go build -v ./...
