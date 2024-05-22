@@ -165,3 +165,90 @@ func TestStringUnmarshal(t *testing.T) {
 		})
 	}
 }
+
+type Color struct {
+	Red   int `json:"red"`
+	Green int `json:"green"`
+	Blue  int `json:"blue"`
+}
+
+func TestColorUnmarshal(t *testing.T) {
+	RegisterTestingT(t)
+
+	scenarios := []TestUnmarshallScenario[Color]{
+		{
+			Name:  "A single color",
+			Input: `{"red": 255, "green": 255, "blue": 255}`,
+			Expected: types.ArrayOK[Color]{
+				Value: Color{Red: 255, Green: 255, Blue: 255},
+			},
+		},
+		{
+			Name:  "A single color in a list",
+			Input: `[{"red": 255, "green": 255, "blue": 255}]`,
+			Expected: types.ArrayOK[Color]{
+				Array: []Color{{Red: 255, Green: 255, Blue: 255}},
+			},
+		},
+		{
+			Name:  "Multiple colors",
+			Input: `[{"red": 255, "green": 255, "blue": 255}, {"red": 0, "green": 0, "blue": 0}, {"red": 0, "green": 255, "blue": 0}]`,
+			Expected: types.ArrayOK[Color]{
+				Array: []Color{
+					{Red: 255, Green: 255, Blue: 255},
+					{Red: 0, Green: 0, Blue: 0},
+					{Red: 0, Green: 255, Blue: 0},
+				},
+			},
+		},
+	}
+
+	for _, tt := range scenarios {
+		t.Run(tt.Name, func(t *testing.T) {
+			result := types.ArrayOK[Color]{}
+			err := json.Unmarshal([]byte(tt.Input), &result)
+			Expect(err).To(BeNil())
+			Expect(result).To(Equal(tt.Expected))
+		})
+	}
+}
+
+func TestColorMarshal(t *testing.T) {
+	RegisterTestingT(t)
+
+	scenarios := []TestMarshallScenario[Color]{
+		{
+			Name: "A single color",
+			Input: types.ArrayOK[Color]{
+				Value: Color{Red: 255, Green: 255, Blue: 255},
+			},
+			Expected: `{"red":255,"green":255,"blue":255}`,
+		},
+		{
+			Name: "A single color in a list",
+			Input: types.ArrayOK[Color]{
+				Array: []Color{{Red: 255, Green: 255, Blue: 255}},
+			},
+			Expected: `[{"red":255,"green":255,"blue":255}]`,
+		},
+		{
+			Name: "Multiple colors",
+			Input: types.ArrayOK[Color]{
+				Array: []Color{
+					{Red: 255, Green: 255, Blue: 255},
+					{Red: 0, Green: 0, Blue: 0},
+					{Red: 0, Green: 255, Blue: 0},
+				},
+			},
+			Expected: `[{"red":255,"green":255,"blue":255},{"red":0,"green":0,"blue":0},{"red":0,"green":255,"blue":0}]`,
+		},
+	}
+
+	for _, tt := range scenarios {
+		t.Run(tt.Name, func(t *testing.T) {
+			result, err := json.Marshal(&tt.Input)
+			Expect(err).To(BeNil())
+			Expect(string(result)).To(Equal(tt.Expected))
+		})
+	}
+}
