@@ -11,29 +11,6 @@ import (
 	"github.com/MetalBlueberry/go-plotly/generator"
 )
 
-// The generate command always executes with the working directory set to the path with the file with the directive
-
-//go:generate go run main.go --config=../../../schemas.yaml
-
-const configPath = "schemas.yaml"
-
-func main() {
-	var schemapath string
-	flag.StringVar(&schemapath, "config", configPath, "yaml file defining versions to be generated")
-	flag.Parse()
-
-	// Define a flag for the version
-	schemas := generator.ReadSchemas(schemapath)
-	if schemas == nil {
-		fmt.Printf("could not find versions\n")
-		return
-	}
-	for _, schema := range schemas {
-		generatePackage(schema.Path, schema.Generated, schema.Cdn, schema.Tag)
-	}
-
-}
-
 type Creator struct{}
 
 func (c Creator) Create(name string) (io.WriteCloser, error) {
@@ -45,24 +22,46 @@ func (c Creator) Create(name string) (io.WriteCloser, error) {
 	return os.Create(abs)
 }
 
-// FindDir goes back in the project directory to find the correct location of the schema and output folders
-// this allows the script to run smoothlessly with go generate in the cmd files,
-// and also when it is run from the project root as working directory
-func FindDir(schema, output string) (string, string) {
-	for i := 0; i < 4; i++ {
-		if _, err := os.Stat(schema); err == nil {
-			break
-		}
-		schema = filepath.Join("../", schema)
-		output = filepath.Join("../", output)
+// The generate command always executes with the working directory set to the path with the file with the directive
+//go:generate go run main.go --config=../../../schemas.yaml
+
+const configPath = "schemas.yaml"
+
+func main() {
+	var schemapath string
+	var clean bool
+
+	flag.StringVar(&schemapath, "config", configPath, "yaml file defining versions to be generated")
+	flag.BoolVar(&clean, "clean", false, "clean the output directory first. Mandatory on CI")
+
+	flag.Parse()
+
+	// Define a flag for the version
+	schemas := generator.ReadSchemas(schemapath)
+	if schemas == nil {
+		fmt.Printf("could not find versions\n")
+		return
 	}
+
+	root := filepath.Dir(schemapath)
+
+	for _, schema := range schemas {
+		generatePackage(root, schema.Path, schema.Generated, schema.Cdn, schema.Tag, clean)
+	}
+
+}
+
+func rootDirectories(root, schema, output string) (string, string) {
+	schema = filepath.Join(root, schema)
+	output = filepath.Join(root, output)
+
 	return schema, output
 }
 
 // create the packages and write them into the specified folders
-func generatePackage(schema, versionOutput, cdnUrl, tag string) {
+func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, clean bool) {
 	// look for the correct schema and output paths
-	schema, versionOutput = FindDir(schema, versionOutput)
+	schema, versionOutput = rootDirectories(projectRoot, schema, versionOutput)
 	log.Println("schema:", schema, "versionoutput", versionOutput)
 
 	file, err := os.Open(schema)
@@ -73,24 +72,26 @@ func generatePackage(schema, versionOutput, cdnUrl, tag string) {
 	graphObjectsOuput := filepath.Join(versionOutput, "graph_objects")
 	offlineOuput := filepath.Join(versionOutput, "offline")
 
-	root, err := generator.LoadSchema(file)
+	schemaRoot, err := generator.LoadSchema(file)
 	if err != nil {
 		log.Fatalf("unable to load schema, %s", err)
 	}
 
-	r, err := generator.NewRenderer(Creator{}, root)
+	r, err := generator.NewRenderer(Creator{}, schemaRoot)
 	if err != nil {
 		log.Fatalf("unable to create a new renderer, %s", err)
 	}
 
-	for _, path := range []string{graphObjectsOuput, offlineOuput} {
-		err = os.RemoveAll(path)
-		if err != nil {
-			log.Fatalf("Failed to clean output directory, %s", err)
-		}
+	if clean {
+		for _, path := range []string{graphObjectsOuput, offlineOuput} {
+			err = os.RemoveAll(path)
+			if err != nil {
+				log.Fatalf("Failed to clean output directory, %s", err)
+			}
 
-		if err = os.MkdirAll(path, 0755); err != nil {
-			log.Fatalf("Failed to create output dir %s, %s", path, err)
+			if err = os.MkdirAll(path, 0755); err != nil {
+				log.Fatalf("Failed to create output dir %s, %s", path, err)
+			}
 		}
 	}
 
