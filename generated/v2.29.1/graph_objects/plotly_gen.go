@@ -17,12 +17,6 @@ type Trace interface {
 // Traces is a slice of Traces
 type Traces []Trace
 
-type Frame struct {
-	Name   string      `json:"name"`
-	Data   []Trace     `json:"data"`
-	Layout interface{} `json:"layout"` //'Layout properties which this frame modifies. The format is identical to the normal layout definition.'
-}
-
 // Fig is the base type for figures.
 type Fig struct {
 	// Data The data to be plotted is described in an array usually called data, whose elements are trace objects of various types (e.g. scatter, bar etc) as documented in the Full Reference.
@@ -39,9 +33,6 @@ type Fig struct {
 
 	// Animation is not yet implemented, feel free to insert custom a struct
 	Animation interface{} `json:"animation,omitempty"`
-
-	// Frames is not yet implemented, feel free to insert custom a struct
-	Frames []Frame `json:"frames,omitempty"`
 }
 
 // AddTraces Is a shorthand  to add figures to a given figure. It handles the case where the Traces value is nil.
@@ -53,7 +44,6 @@ func (fig *Fig) AddTraces(traces ...Trace) {
 }
 
 // UnmarshalJSON is a custom unmarshal function to properly handle special cases.
-// unmarshal skips frames and animations
 func (fig *Fig) UnmarshalJSON(data []byte) error {
 	var err error
 	tmp := unmarshalFig{}
@@ -76,11 +66,9 @@ func (fig *Fig) UnmarshalJSON(data []byte) error {
 }
 
 type unmarshalFig struct {
-	Data      []json.RawMessage `json:"data,omitempty"`
-	Layout    *Layout           `json:"layout,omitempty"`
-	Config    *Config           `json:"config,omitempty"`
-	Animation interface{}       `json:"animation,omitempty"`
-	Frames    []Frame           `json:"frames,omitempty"`
+	Data   []json.RawMessage `json:"data,omitempty"`
+	Layout *Layout           `json:"layout,omitempty"`
+	Config *Config           `json:"config,omitempty"`
 }
 
 // Bool represents a *bool value. Needed to tell the differenc between false and nil.
