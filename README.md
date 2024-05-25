@@ -23,7 +23,7 @@ The good thing about this package is that it's **automatically generated** based
 package main
 
 import (
-    grob "github.com/MetalBlueberry/go-plotly/graph_objects"
+    grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
     "github.com/MetalBlueberry/go-plotly/offline"
 )
 
@@ -56,6 +56,10 @@ And that's it.
 See the examples dir for more examples.
 
 ## Structure
+
+To keep the plotly.js independent of the version of this package, the generated directory contains a directory per plotly version supported. The plan is to support all minor releases and update as patches are released. But because I can not do it myself, I will accept PRs if anyone wants any specific version.
+
+Updates to the package will affect all schemas. This will be done as we improve the generator.
 
 Each trace type has its own file on **graph_objecs (grob)** package. The file contains the main structure and all the needed nested objects. Files ending with **_gen** are automatically generated files running `go generate`. This is executing the code in **generator** package to generate the structures from the plotly schema. The types are documented, but you can find more examples and extended documentation at [Plotly's documentation](https://plotly.com/python/).
 
