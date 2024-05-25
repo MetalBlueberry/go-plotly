@@ -61,16 +61,16 @@ func rootDirectories(root, schema, output string) (string, string) {
 // create the packages and write them into the specified folders
 func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, clean bool) {
 	// look for the correct schema and output paths
-	schema, versionOutput = rootDirectories(projectRoot, schema, versionOutput)
-	log.Println("schema:", schema, "versionoutput", versionOutput)
+	schema, relativeVersionOutput := rootDirectories(projectRoot, schema, versionOutput)
+	log.Println("schema:", schema, "versionoutput", relativeVersionOutput)
 
 	file, err := os.Open(schema)
 	if err != nil {
 		log.Fatalf("unable to open schema, %s", err)
 	}
 
-	graphObjectsOuput := filepath.Join(versionOutput, "graph_objects")
-	offlineOuput := filepath.Join(versionOutput, "offline")
+	graphObjectsOuput := filepath.Join(relativeVersionOutput, "graph_objects")
+	offlineOuput := filepath.Join(relativeVersionOutput, "offline")
 
 	schemaRoot, err := generator.LoadSchema(file)
 	if err != nil {
@@ -96,7 +96,7 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 	}
 
 	// plot_gen.go must be separate in an offline package
-	err = r.CreatePlotGo(offlineOuput, cdnUrl, tag)
+	err = r.CreatePlotGo(offlineOuput, versionOutput, cdnUrl, tag)
 	if err != nil {
 		log.Fatalf("unable to write plot.go, %s", err)
 	}

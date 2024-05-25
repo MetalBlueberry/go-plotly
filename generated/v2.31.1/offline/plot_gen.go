@@ -9,7 +9,8 @@ import (
 	"os"
 	"text/template"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+
 	"github.com/pkg/browser"
 )
 
