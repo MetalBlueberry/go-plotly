@@ -96,7 +96,7 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 	}
 
 	// plot_gen.go must be separate in an offline package
-	err = r.CreatePlotGo(offlineOuput, versionOutput, cdnUrl, tag)
+	err = r.CreatePlotGo(offlineOuput, versionOutput, cdnUrl)
 	if err != nil {
 		log.Fatalf("unable to write plot.go, %s", err)
 	}
