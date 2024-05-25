@@ -24,7 +24,7 @@ package main
 
 import (
     grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-    "github.com/MetalBlueberry/go-plotly/offline"
+    "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 )
 
 func main() {
