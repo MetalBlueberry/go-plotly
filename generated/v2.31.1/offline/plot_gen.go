@@ -3,7 +3,6 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -21,7 +20,7 @@ type Options struct {
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
 func ToHtml(fig *grob.Fig, path string) {
 	buf := figToBuffer(fig)
-	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
+	os.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
@@ -81,7 +80,7 @@ func computeOptions(def Options, opt ...Options) Options {
 
 var baseHtml = `
 	<head>
-		<script src="https://cdn.plot.ly/plotly-1.58.4.min.js"></script>
+		<script src="{{ .CDN }}"></script>
 	</head>
 	</body>
 		<div id="plot"></div>
