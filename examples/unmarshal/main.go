@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"math"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/offline"
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 )
 
 func main() {

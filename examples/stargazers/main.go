@@ -10,8 +10,9 @@ import (
 	"text/template"
 	"time"
 
-	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/pkg/browser"
+
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 )
 
 type User struct {
@@ -97,7 +98,7 @@ func main() {
 
 var page = `
 	<head>
-	    <script src="https://cdn.plot.ly/plotly-2.18.1.min.js"></script>
+	    <script src="https://cdn.plot.ly/plotly-2.29.0.min.js"></script>
 	</head>
 	</body>
 		<div id="plot"></div>

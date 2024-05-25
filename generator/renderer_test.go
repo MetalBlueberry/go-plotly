@@ -16,7 +16,10 @@ import (
 	"github.com/MetalBlueberry/go-plotly/generator/mocks"
 )
 
-//go:embed schema.json
+// This test schema is used to make sure the generator works as expected
+// It may be worth extending this to test with all schemas.
+//
+//go:embed test_schema.json
 var schema []byte
 
 var _ = Describe("Renderer", func() {

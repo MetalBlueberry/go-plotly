@@ -1,12 +1,12 @@
 
 	<head>
-		<script src="https://cdn.plot.ly/plotly-1.58.4.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-2.31.1.min.js"></script>
 	</head>
-	</body>
+	<body>
 		<div id="plot"></div>
 	<script>
 		data = JSON.parse('{"data":[{"type":"scatter","x":[1,2,3],"y":[2,3,4]},{"type":"scatter","x":[20,30,40],"xaxis":"x2","y":[5,5,5],"yaxis":"y"},{"type":"scatter","x":[2,3,4],"xaxis":"x","y":[600,700,800],"yaxis":"y3"},{"type":"scatter","x":[4000,5000,6000],"xaxis":"x4","y":[7000,8000,9000],"yaxis":"y4"}],"layout":{"grid":{"columns":2,"roworder":"bottom to top","rows":2,"subplots":[["xy","x2y"],["xy3","x4y4"]]}}}')
 		Plotly.newPlot('plot', data);
 	</script>
-	<body>
+	</body>
 	
