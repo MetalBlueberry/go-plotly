@@ -3,72 +3,39 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"text/template"
 
+	grob "github.com/MetalBlueberry/go-plotly/graph_objects"
 	"github.com/pkg/browser"
-	"github.com/pkg/errors"
-
-	grob "github.com/MetalBlueberry/go-plotly/generated/{{.Tag}}/graph_objects"
 )
 
-// FigOptions enables users to pass their custom cdn or local plotly file reference to allow building offline solutions
-type FigOptions struct {
-	HeadContent string
-}
-
 type Options struct {
-	FigOptions
 	Addr string
 }
 
-// ToWriter saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToWriter(fig *grob.Fig, w io.Writer, options ...FigOptions) {
-	_, err := w.Write(figToBuffer(fig, options...).Bytes())
-	if err != nil {
-		panic(errors.New(fmt.Sprintf("failed to write figure to passed writer: %v", err)))
-	}
-}
-
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToHtml(fig *grob.Fig, path string, options ...FigOptions) {
-	buf := figToBuffer(fig, options...)
-	os.WriteFile(path, buf.Bytes(), os.ModePerm)
+func ToHtml(fig *grob.Fig, path string) {
+	buf := figToBuffer(fig)
+	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
-func Show(fig *grob.Fig, options ...FigOptions) {
-	buf := figToBuffer(fig, options...)
+func Show(fig *grob.Fig) {
+	buf := figToBuffer(fig)
 	browser.OpenReader(buf)
 }
 
-const cdnUrl = `<script src="{{ .CDN }}"></script>`
-
-// computeFigOptions allows to default to the common cdn reference
-func computeFigOptions(options ...FigOptions) string {
-	if len(options) > 1 {
-		panic(errors.New(fmt.Sprintf("only use 1 option at a time. Passed: %d. options: %+v", len(options), options)))
-	}
-	if len(options) == 0 {
-		return cdnUrl
-	}
-	return options[0].HeadContent
-}
-
-// figToBuffer with optional parameter options, only the first argument is evaluated
-func figToBuffer(fig *grob.Fig, options ...FigOptions) *bytes.Buffer {
-	var headContent string = computeFigOptions(options...)
-
+func figToBuffer(fig *grob.Fig) *bytes.Buffer {
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
 	}
-	tmpl, err := template.New("plotly").Parse(getBaseHtml(headContent))
+	tmpl, err := template.New("plotly").Parse(baseHtml)
 	if err != nil {
 		panic(err)
 	}
@@ -81,8 +48,7 @@ func figToBuffer(fig *grob.Fig, options ...FigOptions) *bytes.Buffer {
 // Is a good alternative to Show to avoid creating tmp files.
 func Serve(fig *grob.Fig, opt ...Options) {
 	opts := computeOptions(Options{
-		FigOptions: FigOptions{HeadContent: cdnUrl},
-		Addr:       "localhost:8080",
+		Addr: "localhost:8080",
 	}, opt...)
 
 	mux := &http.ServeMux{}
@@ -91,7 +57,7 @@ func Serve(fig *grob.Fig, opt ...Options) {
 		Addr:    opts.Addr,
 	}
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		buf := figToBuffer(fig, opts.FigOptions)
+		buf := figToBuffer(fig)
 		buf.WriteTo(w)
 	})
 
@@ -107,12 +73,20 @@ func computeOptions(def Options, opt ...Options) Options {
 		opts := opt[0]
 		if opts.Addr != "" {
 			def.Addr = opts.Addr
-			def.HeadContent = opts.HeadContent
 		}
 	}
 	return def
 }
 
-func getBaseHtml(head string) string {
-	return {{ .Template }}
-}
+var baseHtml = `
+	<head>
+		<script src="https://cdn.plot.ly/plotly-1.58.4.min.js"></script>
+	</head>
+	</body>
+		<div id="plot"></div>
+	<script>
+		data = JSON.parse('{{ . }}')
+		Plotly.newPlot('plot', data);
+	</script>
+	<body>
+	`
