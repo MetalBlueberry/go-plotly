@@ -149,23 +149,6 @@ The local paths are relative to the project root.
 > go generate ./...
 > ```
 
-#### changing schemas.yaml locations
-
-Be aware, that the template file [plotly.tmpl](generator%2Ftemplates%2Fplotly.tmpl) also has a go generate directive.
-This directive has relative paths, based on the assumed final path within the project
-
-#### embedding a downloaded plotly js source
-
-In the example: [main.go](examples%2Fbar%2Fmain.go) you find an example to reuse a static plotly js file and pass that reference to the generated html, instead of using a hardcoded CDN reference which would require internet connection.
-```go
-	abs, err := filepath.Abs("asset/plotly-2.29.1.min.js")
-    if err != nil {
-        return
-    }
-	grob.ToHtml(fig, "bar.html", grob.FigOptions{HeadContent: fmt.Sprintf(`<title>Offline Bars</title><script src="%s"></script>`, abs)})
-	grob.Show(fig, grob.FigOptions{HeadContent: fmt.Sprintf(`<title>Offline Bars</title><script src="%s"></script>`, abs)})
-```
-
 #### Missing Files?
 
 if in doubt whether all types and traces have been generated, you can use the jsonviewer tool to introspect the json: 
@@ -187,17 +170,6 @@ http://plotly-json-editor.getforge.io/
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Metalblueberry/go-plotly&type=Date)](https://star-history.com/#Metalblueberry/go-plotly&Date)
 
-## Update Notes:
-
-### Add version v2.29.1 and v2.31.1
-- Added Downloader for schema file
-- added generator for different packages based on plotly version in subfolders for each version
-- enable easier use for different plotly version by new import paths which include the version generated. Example: `grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"`
-- removed go generate directive from the templates which are no longer necessary
-- removed offline package, as each version package needs its own **plot.go**.
-- Replaced all `offline` imports in the examples packages by just calling the `grob` package of the specified version
-- all html's will now refer to the correct plotly version's cdn in the html's head
-- allow defining your own head for the plot, which allows embedding the plotly.js source instead of referencing the CDN. This enables generation of offline plots
 
 ## Official Plotly Release Notes
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
