@@ -3,6 +3,7 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -67,6 +68,13 @@ func Serve(fig *grob.Fig, opt ...Options) {
 		log.Print(err)
 	}
 	log.Print("Stop server")
+}
+
+// Write writes the HTML page for the figure to the provided writer.
+func Write(fig *grob.Fig, w io.Writer) error {
+	buf := figToBuffer(fig)
+	_, err := w.Write(buf.Bytes())
+	return err
 }
 
 func computeOptions(def Options, opt ...Options) Options {
