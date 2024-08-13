@@ -18,10 +18,13 @@ jobs:
         with:
           go-version: "1.22"
 
-      - name: Test
-        run: go test -v ./...
-
       - name: Check Generated Schema
         run: |
           go generate ./...
           git diff --exit-code
+
+      - name: Test
+        run: go test -v ./...
+
+      - name: Build all packages
+        run: go build -v ./...

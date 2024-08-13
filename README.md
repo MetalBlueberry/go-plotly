@@ -23,8 +23,8 @@ The good thing about this package is that it's **automatically generated** based
 package main
 
 import (
-    grob "github.com/MetalBlueberry/go-plotly/graph_objects"
-    "github.com/MetalBlueberry/go-plotly/offline"
+    grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+    "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 )
 
 func main() {
@@ -56,6 +56,10 @@ And that's it.
 See the examples dir for more examples.
 
 ## Structure
+
+To keep the plotly.js independent of the version of this package, the generated directory contains a directory per plotly version supported. The plan is to support all minor releases and update as patches are released. But because I can not do it myself, I will accept PRs if anyone wants any specific version.
+
+Updates to the package will affect all schemas. This will be done as we improve the generator.
 
 Each trace type has its own file on **graph_objecs (grob)** package. The file contains the main structure and all the needed nested objects. Files ending with **_gen** are automatically generated files running `go generate`. This is executing the code in **generator** package to generate the structures from the plotly schema. The types are documented, but you can find more examples and extended documentation at [Plotly's documentation](https://plotly.com/python/).
 
@@ -113,6 +117,63 @@ For strings... This is a little bit more complicated, In AWS package they are us
 
 For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`. I would like to avoid using interface{} or defining types again to keep the package interface as simple as possible.
 
+### Go Plotly Update to any json schema version
+
+#### Update the config to add a new version
+
+To add a new version, add a new entry in: [schemas.yaml](schemas.yaml)
+
+The documentation for each field can be found in [schema.go](generator%2Fschema.go)
+
+Example entry:
+```yaml
+  -  Name: Plotly 2.31.1
+     Tag: v2.31.1
+     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
+     Path: schemas/v2.31.1/plot-schema.json
+     Generated: generated/v2.31.1
+     CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
+```
+
+The local paths are relative to the project root.
+
+#### run download and regeneration
+
+> [!TIP]
+> Use this script for easier download of plotly json schemas.
+> ```shell
+> go run generator/cmd/downloader/main.go --config="schemas.yaml"
+> ```
+> Then run the generator, which will clean up the generated files in **graph_objects** folder of each version and regenerate the new graph objects. DO NOT REMOVE **graph_objects/plotly.go**
+> ```shell
+> go run generator/cmd/generator/main.go --config="schemas.yaml"
+> ```
+> Alternatively, you can also generate the go package using following command from the project root:
+> ```shell
+> go generate ./...
+> ```
+
+#### Missing Files?
+
+if in doubt whether all types and traces have been generated, you can use the jsonviewer tool to introspect the json: 
+https://jsonviewer.stack.hu/
+
+Or use `jq` tool for quick introspection into the json files.
+Example:
+Display all traces in the schema.json file.
+```shell
+jq '.schema.traces | keys' schema.json --sort-keys | less
+```
+
+More on the `jq` tool on: https://jqlang.github.io/jq/manual/
+
+### plotly online editor sandbox
+http://plotly-json-editor.getforge.io/
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Metalblueberry/go-plotly&type=Date)](https://star-history.com/#Metalblueberry/go-plotly&Date)
+
+
+## Official Plotly Release Notes
+For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases

@@ -1,12 +1,12 @@
 
 	<head>
-		<script src="https://cdn.plot.ly/plotly-1.58.4.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-2.31.1.min.js"></script>
 	</head>
-	</body>
+	<body>
 		<div id="plot"></div>
 	<script>
 		data = JSON.parse('{"data":[{"type":"bar","hoverinfo":"none","marker":{"color":"#9ec9e0","line":{"color":"rgb(8,48,107)","width":1.5},"opacity":0.6},"text":["20","14","23"],"textposition":"auto","x":["Product A","Product B","Product C"],"y":[20,14,23]}],"layout":{"title":{"text":"A Figure Specified By Go Struct"}}}')
 		Plotly.newPlot('plot', data);
 	</script>
-	<body>
+	</body>
 	

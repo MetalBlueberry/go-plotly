@@ -1,8 +1,8 @@
 package generator_test
 
 import (
+	"bytes"
 	"log"
-	"os"
 
 	"github.com/MetalBlueberry/go-plotly/generator"
 	. "github.com/onsi/ginkgo/v2"
@@ -11,11 +11,9 @@ import (
 
 var _ = Describe("Parser", func() {
 	It("Should parse traces", func() {
-		schema, err := os.Open("schema.json")
-		Expect(err).To(BeNil())
-		defer schema.Close()
+		reader := bytes.NewReader(schema)
 
-		root, err := generator.LoadSchema(schema)
+		root, err := generator.LoadSchema(reader)
 		Expect(err).To(BeNil())
 
 		log.Println(root)
