@@ -174,6 +174,7 @@ type Carpet struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -296,12 +297,14 @@ type CarpetAaxis struct {
 	Arraytick0 int64 `json:"arraytick0,omitempty"`
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange CarpetAaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -320,12 +323,14 @@ type CarpetAaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
 	Categoryorder CarpetAaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Cheatertype
+	// arrayOK: false
 	// default: value
 	// type: enumerated
 	//
@@ -362,6 +367,7 @@ type CarpetAaxis struct {
 	Endlinewidth float64 `json:"endlinewidth,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -470,6 +476,7 @@ type CarpetAaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
@@ -482,6 +489,7 @@ type CarpetAaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -500,18 +508,21 @@ type CarpetAaxis struct {
 	Showline Bool `json:"showline,omitempty"`
 
 	// Showticklabels
+	// arrayOK: false
 	// default: start
 	// type: enumerated
 	// Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
 	Showticklabels CarpetAaxisShowticklabels `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix CarpetAaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -570,6 +581,7 @@ type CarpetAaxis struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: array
 	// type: enumerated
 	//
@@ -616,6 +628,7 @@ type CarpetAaxis struct {
 	Title *CarpetAaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -702,12 +715,14 @@ type CarpetBaxis struct {
 	Arraytick0 int64 `json:"arraytick0,omitempty"`
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
 	Autorange CarpetBaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -726,12 +741,14 @@ type CarpetBaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
 	Categoryorder CarpetBaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Cheatertype
+	// arrayOK: false
 	// default: value
 	// type: enumerated
 	//
@@ -768,6 +785,7 @@ type CarpetBaxis struct {
 	Endlinewidth float64 `json:"endlinewidth,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -876,6 +894,7 @@ type CarpetBaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
@@ -888,6 +907,7 @@ type CarpetBaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -906,18 +926,21 @@ type CarpetBaxis struct {
 	Showline Bool `json:"showline,omitempty"`
 
 	// Showticklabels
+	// arrayOK: false
 	// default: start
 	// type: enumerated
 	// Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
 	Showticklabels CarpetBaxisShowticklabels `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix CarpetBaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -976,6 +999,7 @@ type CarpetBaxis struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: array
 	// type: enumerated
 	//
@@ -1022,6 +1046,7 @@ type CarpetBaxis struct {
 	Title *CarpetBaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.

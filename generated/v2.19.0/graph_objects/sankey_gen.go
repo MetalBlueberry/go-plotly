@@ -16,6 +16,7 @@ type Sankey struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// Arrangement
+	// arrayOK: false
 	// default: snap
 	// type: enumerated
 	// If value is `snap` (the default), the node arrangement is assisted by automatic snapping of elements to preserve space between nodes specified via `nodepad`. If value is `perpendicular`, the nodes can only move along a line perpendicular to the flow. If value is `freeform`, the nodes can freely move on the plane. If value is `fixed`, the nodes are stationary.
@@ -102,6 +103,7 @@ type Sankey struct {
 	Node *SankeyNode `json:"node,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: h
 	// type: enumerated
 	// Sets the orientation of the Sankey diagram.
@@ -146,6 +148,7 @@ type Sankey struct {
 	Valuesuffix string `json:"valuesuffix,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -224,10 +227,11 @@ type SankeyHoverlabelFont struct {
 type SankeyHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align SankeyHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*SankeyHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -356,10 +360,11 @@ type SankeyLinkHoverlabelFont struct {
 type SankeyLinkHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align SankeyLinkHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*SankeyLinkHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -476,6 +481,7 @@ type SankeyLink struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Determines which trace information appear when hovering links. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -594,10 +600,11 @@ type SankeyNodeHoverlabelFont struct {
 type SankeyNodeHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align SankeyNodeHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*SankeyNodeHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -708,6 +715,7 @@ type SankeyNode struct {
 	Groups interface{} `json:"groups,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Determines which trace information appear when hovering nodes. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.

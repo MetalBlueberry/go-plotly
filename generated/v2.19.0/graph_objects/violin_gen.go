@@ -53,7 +53,7 @@ type Violin struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo ViolinHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*ViolinHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -178,6 +178,7 @@ type Violin struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the violin(s). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
@@ -190,12 +191,14 @@ type Violin struct {
 	Pointpos float64 `json:"pointpos,omitempty"`
 
 	// Points
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the violins are shown with no sample points. Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set, otherwise defaults to *outliers*.
 	Points ViolinPoints `json:"points,omitempty"`
 
 	// Quartilemethod
+	// arrayOK: false
 	// default: linear
 	// type: enumerated
 	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
@@ -208,6 +211,7 @@ type Violin struct {
 	Scalegroup string `json:"scalegroup,omitempty"`
 
 	// Scalemode
+	// arrayOK: false
 	// default: width
 	// type: enumerated
 	// Sets the metric by which the width of each violin is determined. *width* means each violin has the same (max) width *count* means the violins are scaled by the number of sample points making up each violin.
@@ -230,6 +234,7 @@ type Violin struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: both
 	// type: enumerated
 	// Determines on which side of the position value the density function making up one half of a violin is plotted. Useful when comparing two violin traces under *overlay* mode, where one trace has `side` set to *positive* and the other to *negative*.
@@ -242,6 +247,7 @@ type Violin struct {
 	Span interface{} `json:"span,omitempty"`
 
 	// Spanmode
+	// arrayOK: false
 	// default: soft
 	// type: enumerated
 	// Sets the method by which the span in data space where the density function will be computed. *soft* means the span goes from the sample's minimum value minus two bandwidths to the sample's maximum value plus two bandwidths. *hard* means the span goes from the sample's minimum to its maximum value. For custom span settings, use mode *manual* and fill in the `span` attribute.
@@ -286,6 +292,7 @@ type Violin struct {
 	Unselected *ViolinUnselected `json:"unselected,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -444,10 +451,11 @@ type ViolinHoverlabelFont struct {
 type ViolinHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align ViolinHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*ViolinHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -614,6 +622,7 @@ type ViolinMarker struct {
 	Size float64 `json:"size,omitempty"`
 
 	// Symbol
+	// arrayOK: false
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.

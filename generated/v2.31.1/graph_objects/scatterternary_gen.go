@@ -76,6 +76,7 @@ type Scatterternary struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Fill
+	// arrayOK: false
 	// default: none
 	// type: enumerated
 	// Sets the area to fill with a solid color. Use with `fillcolor` if not *none*. scatterternary has a subset of the options available to scatter. *toself* connects the endpoints of the trace (or each segment of the trace if it has gaps) into a closed shape. *tonext* fills the space between two traces if one completely encloses the other (eg consecutive contour lines), and behaves like *toself* if there is no trace before it. *tonext* should not be used if one trace does not enclose the other.
@@ -91,7 +92,7 @@ type Scatterternary struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo ScatterternaryHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*ScatterternaryHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -254,10 +255,11 @@ type Scatterternary struct {
 	Textfont *ScatterternaryTextfont `json:"textfont,omitempty"`
 
 	// Textposition
+	// arrayOK: true
 	// default: middle center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
-	Textposition ScatterternaryTextposition `json:"textposition,omitempty"`
+	Textposition ArrayOK[*ScatterternaryTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -306,6 +308,7 @@ type Scatterternary struct {
 	Unselected *ScatterternaryUnselected `json:"unselected,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -356,10 +359,11 @@ type ScatterternaryHoverlabelFont struct {
 type ScatterternaryHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align ScatterternaryHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*ScatterternaryHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -472,6 +476,7 @@ type ScatterternaryLine struct {
 	Dash string `json:"dash,omitempty"`
 
 	// Shape
+	// arrayOK: false
 	// default: linear
 	// type: enumerated
 	// Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes.
@@ -542,6 +547,7 @@ type ScatterternaryMarkerColorbarTitle struct {
 	Font *ScatterternaryMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -582,6 +588,7 @@ type ScatterternaryMarkerColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -600,6 +607,7 @@ type ScatterternaryMarkerColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -618,6 +626,7 @@ type ScatterternaryMarkerColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -642,6 +651,7 @@ type ScatterternaryMarkerColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -654,12 +664,14 @@ type ScatterternaryMarkerColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix ScatterternaryMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -672,6 +684,7 @@ type ScatterternaryMarkerColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -712,12 +725,14 @@ type ScatterternaryMarkerColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow ScatterternaryMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -736,6 +751,7 @@ type ScatterternaryMarkerColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -748,6 +764,7 @@ type ScatterternaryMarkerColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -800,6 +817,7 @@ type ScatterternaryMarkerColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -812,6 +830,7 @@ type ScatterternaryMarkerColorbar struct {
 	Xpad float64 `json:"xpad,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -824,6 +843,7 @@ type ScatterternaryMarkerColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -836,6 +856,7 @@ type ScatterternaryMarkerColorbar struct {
 	Ypad float64 `json:"ypad,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -858,10 +879,11 @@ type ScatterternaryMarkerGradient struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Type
+	// arrayOK: true
 	// default: none
 	// type: enumerated
 	// Sets the type of gradient used to fill the markers
-	Type ScatterternaryMarkerGradientType `json:"type,omitempty"`
+	Type ArrayOK[*ScatterternaryMarkerGradientType] `json:"type,omitempty"`
 
 	// Typesrc
 	// arrayOK: false
@@ -956,6 +978,7 @@ type ScatterternaryMarker struct {
 	Angle ArrayOK[*float64] `json:"angle,omitempty"`
 
 	// Angleref
+	// arrayOK: false
 	// default: up
 	// type: enumerated
 	// Sets the reference for marker angle. With *previous*, angle 0 points along the line from the previous point to this one. With *up*, angle 0 points toward the top of the screen.
@@ -1076,6 +1099,7 @@ type ScatterternaryMarker struct {
 	Sizemin float64 `json:"sizemin,omitempty"`
 
 	// Sizemode
+	// arrayOK: false
 	// default: diameter
 	// type: enumerated
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.
@@ -1106,10 +1130,11 @@ type ScatterternaryMarker struct {
 	Standoffsrc string `json:"standoffsrc,omitempty"`
 
 	// Symbol
+	// arrayOK: true
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
-	Symbol ScatterternaryMarkerSymbol `json:"symbol,omitempty"`
+	Symbol ArrayOK[*ScatterternaryMarkerSymbol] `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false

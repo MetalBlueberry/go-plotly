@@ -31,7 +31,7 @@ type Pointcloud struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo PointcloudHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*PointcloudHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -152,6 +152,7 @@ type Pointcloud struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -274,10 +275,11 @@ type PointcloudHoverlabelFont struct {
 type PointcloudHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align PointcloudHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*PointcloudHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

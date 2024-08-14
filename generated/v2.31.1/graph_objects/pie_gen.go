@@ -34,6 +34,7 @@ type Pie struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Direction
+	// arrayOK: false
 	// default: counterclockwise
 	// type: enumerated
 	// Specifies the direction at which succeeding sectors follow one another.
@@ -59,7 +60,7 @@ type Pie struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo PieHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*PieHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -112,6 +113,7 @@ type Pie struct {
 	Insidetextfont *PieInsidetextfont `json:"insidetextfont,omitempty"`
 
 	// Insidetextorientation
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Controls the orientation of the text inside chart sectors. When set to *auto*, text may be oriented in any direction in order to be as big as possible in the middle of a sector. The *horizontal* option orients text to be parallel with the bottom of the chart, and may make text smaller in order to achieve that goal. The *radial* option orients text along the radius of the sector. The *tangential* option orients text perpendicular to the radius of the sector.
@@ -252,10 +254,11 @@ type Pie struct {
 	Textinfo PieTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `textinfo`.
-	Textposition PieTextposition `json:"textposition,omitempty"`
+	Textposition ArrayOK[*PieTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -316,6 +319,7 @@ type Pie struct {
 	Valuessrc string `json:"valuessrc,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -394,10 +398,11 @@ type PieHoverlabelFont struct {
 type PieHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align PieHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*PieHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -584,16 +589,18 @@ type PieMarkerPattern struct {
 	Fgopacity float64 `json:"fgopacity,omitempty"`
 
 	// Fillmode
+	// arrayOK: false
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
 	Fillmode PieMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
+	// arrayOK: true
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
-	Shape PieMarkerPatternShape `json:"shape,omitempty"`
+	Shape ArrayOK[*PieMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
@@ -794,6 +801,7 @@ type PieTitle struct {
 	Font *PieTitleFont `json:"font,omitempty"`
 
 	// Position
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Specifies the location of the `title`. Note that the title's position used to be set by the now deprecated `titleposition` attribute.

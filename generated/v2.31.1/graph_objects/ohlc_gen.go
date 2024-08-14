@@ -59,7 +59,7 @@ type Ohlc struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo OhlcHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*OhlcHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -232,6 +232,7 @@ type Ohlc struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -250,6 +251,7 @@ type Ohlc struct {
 	Xaxis String `json:"xaxis,omitempty"`
 
 	// Xcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
@@ -274,6 +276,7 @@ type Ohlc struct {
 	Xperiod0 interface{} `json:"xperiod0,omitempty"`
 
 	// Xperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
@@ -378,10 +381,11 @@ type OhlcHoverlabelFont struct {
 type OhlcHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align OhlcHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*OhlcHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

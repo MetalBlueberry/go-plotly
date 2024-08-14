@@ -121,11 +121,16 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
 			}
+			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     typePrefix + xstrings.ToCamelCase(attr.Name),
+				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
@@ -139,11 +144,15 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
 				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,

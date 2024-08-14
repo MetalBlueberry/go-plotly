@@ -53,7 +53,7 @@ type Funnelarea struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo FunnelareaHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*FunnelareaHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -212,10 +212,11 @@ type Funnelarea struct {
 	Textinfo FunnelareaTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
+	// arrayOK: true
 	// default: inside
 	// type: enumerated
 	// Specifies the location of the `textinfo`.
-	Textposition FunnelareaTextposition `json:"textposition,omitempty"`
+	Textposition ArrayOK[*FunnelareaTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -276,6 +277,7 @@ type Funnelarea struct {
 	Valuessrc string `json:"valuessrc,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -354,10 +356,11 @@ type FunnelareaHoverlabelFont struct {
 type FunnelareaHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align FunnelareaHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*FunnelareaHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -544,16 +547,18 @@ type FunnelareaMarkerPattern struct {
 	Fgopacity float64 `json:"fgopacity,omitempty"`
 
 	// Fillmode
+	// arrayOK: false
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
 	Fillmode FunnelareaMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
+	// arrayOK: true
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
-	Shape FunnelareaMarkerPatternShape `json:"shape,omitempty"`
+	Shape ArrayOK[*FunnelareaMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
@@ -714,6 +719,7 @@ type FunnelareaTitle struct {
 	Font *FunnelareaTitleFont `json:"font,omitempty"`
 
 	// Position
+	// arrayOK: false
 	// default: top center
 	// type: enumerated
 	// Specifies the location of the `title`. Note that the title's position used to be set by the now deprecated `titleposition` attribute.

@@ -38,6 +38,7 @@ type Waterfall struct {
 	Connector *WaterfallConnector `json:"connector,omitempty"`
 
 	// Constraintext
+	// arrayOK: false
 	// default: both
 	// type: enumerated
 	// Constrain the size of text inside or outside a bar to be no larger than the bar itself.
@@ -75,7 +76,7 @@ type Waterfall struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo WaterfallHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*WaterfallHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -128,6 +129,7 @@ type Waterfall struct {
 	Increasing *WaterfallIncreasing `json:"increasing,omitempty"`
 
 	// Insidetextanchor
+	// arrayOK: false
 	// default: end
 	// type: enumerated
 	// Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
@@ -214,6 +216,7 @@ type Waterfall struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the bars. With *v* (*h*), the value of the each bar spans along the vertical (horizontal).
@@ -262,10 +265,11 @@ type Waterfall struct {
 	Textinfo WaterfallTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
-	Textposition WaterfallTextposition `json:"textposition,omitempty"`
+	Textposition ArrayOK[*WaterfallTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -314,6 +318,7 @@ type Waterfall struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -368,6 +373,7 @@ type Waterfall struct {
 	Xperiod0 interface{} `json:"xperiod0,omitempty"`
 
 	// Xperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
@@ -416,6 +422,7 @@ type Waterfall struct {
 	Yperiod0 interface{} `json:"yperiod0,omitempty"`
 
 	// Yperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
@@ -458,6 +465,7 @@ type WaterfallConnector struct {
 	Line *WaterfallConnectorLine `json:"line,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: between
 	// type: enumerated
 	// Sets the shape of connector lines.
@@ -552,10 +560,11 @@ type WaterfallHoverlabelFont struct {
 type WaterfallHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align WaterfallHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*WaterfallHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

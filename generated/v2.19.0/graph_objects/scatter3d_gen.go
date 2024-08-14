@@ -49,7 +49,7 @@ type Scatter3d struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo Scatter3dHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*Scatter3dHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -178,6 +178,7 @@ type Scatter3d struct {
 	Stream *Scatter3dStream `json:"stream,omitempty"`
 
 	// Surfaceaxis
+	// arrayOK: false
 	// default: %!s(float64=-1)
 	// type: enumerated
 	// If *-1*, the scatter points are not fill with a surface If *0*, *1*, *2*, the scatter points are filled with a Delaunay surface about the x, y, z respectively.
@@ -200,10 +201,11 @@ type Scatter3d struct {
 	Textfont *Scatter3dTextfont `json:"textfont,omitempty"`
 
 	// Textposition
+	// arrayOK: true
 	// default: top center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
-	Textposition Scatter3dTextposition `json:"textposition,omitempty"`
+	Textposition ArrayOK[*Scatter3dTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -248,6 +250,7 @@ type Scatter3d struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -260,6 +263,7 @@ type Scatter3d struct {
 	X interface{} `json:"x,omitempty"`
 
 	// Xcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
@@ -284,6 +288,7 @@ type Scatter3d struct {
 	Y interface{} `json:"y,omitempty"`
 
 	// Ycalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
@@ -308,6 +313,7 @@ type Scatter3d struct {
 	Z interface{} `json:"z,omitempty"`
 
 	// Zcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `z` date data.
@@ -390,6 +396,7 @@ type Scatter3dErrorX struct {
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
@@ -484,6 +491,7 @@ type Scatter3dErrorY struct {
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
@@ -572,6 +580,7 @@ type Scatter3dErrorZ struct {
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
@@ -646,10 +655,11 @@ type Scatter3dHoverlabelFont struct {
 type Scatter3dHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align Scatter3dHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*Scatter3dHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -786,6 +796,7 @@ type Scatter3dLineColorbarTitle struct {
 	Font *Scatter3dLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -826,6 +837,7 @@ type Scatter3dLineColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -844,6 +856,7 @@ type Scatter3dLineColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -862,6 +875,7 @@ type Scatter3dLineColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -886,6 +900,7 @@ type Scatter3dLineColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -898,12 +913,14 @@ type Scatter3dLineColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix Scatter3dLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -916,6 +933,7 @@ type Scatter3dLineColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -956,12 +974,14 @@ type Scatter3dLineColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow Scatter3dLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -980,6 +1000,7 @@ type Scatter3dLineColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -992,6 +1013,7 @@ type Scatter3dLineColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -1044,6 +1066,7 @@ type Scatter3dLineColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -1062,6 +1085,7 @@ type Scatter3dLineColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -1136,6 +1160,7 @@ type Scatter3dLine struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Dash
+	// arrayOK: false
 	// default: solid
 	// type: enumerated
 	// Sets the dash style of the lines.
@@ -1212,6 +1237,7 @@ type Scatter3dMarkerColorbarTitle struct {
 	Font *Scatter3dMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -1252,6 +1278,7 @@ type Scatter3dMarkerColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -1270,6 +1297,7 @@ type Scatter3dMarkerColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -1288,6 +1316,7 @@ type Scatter3dMarkerColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -1312,6 +1341,7 @@ type Scatter3dMarkerColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -1324,12 +1354,14 @@ type Scatter3dMarkerColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix Scatter3dMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -1342,6 +1374,7 @@ type Scatter3dMarkerColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -1382,12 +1415,14 @@ type Scatter3dMarkerColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow Scatter3dMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -1406,6 +1441,7 @@ type Scatter3dMarkerColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -1418,6 +1454,7 @@ type Scatter3dMarkerColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -1470,6 +1507,7 @@ type Scatter3dMarkerColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -1488,6 +1526,7 @@ type Scatter3dMarkerColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -1666,6 +1705,7 @@ type Scatter3dMarker struct {
 	Sizemin float64 `json:"sizemin,omitempty"`
 
 	// Sizemode
+	// arrayOK: false
 	// default: diameter
 	// type: enumerated
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.
@@ -1684,10 +1724,11 @@ type Scatter3dMarker struct {
 	Sizesrc string `json:"sizesrc,omitempty"`
 
 	// Symbol
+	// arrayOK: true
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type.
-	Symbol Scatter3dMarkerSymbol `json:"symbol,omitempty"`
+	Symbol ArrayOK[*Scatter3dMarkerSymbol] `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false

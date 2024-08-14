@@ -16,6 +16,7 @@ type Parcats struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// Arrangement
+	// arrayOK: false
 	// default: perpendicular
 	// type: enumerated
 	// Sets the drag interaction mode for categories and dimensions. If `perpendicular`, the categories can only move along a line perpendicular to the paths. If `freeform`, the categories can freely move on the plane. If `fixed`, the categories and dimensions are stationary.
@@ -56,6 +57,7 @@ type Parcats struct {
 	Hoverinfo ParcatsHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoveron
+	// arrayOK: false
 	// default: category
 	// type: enumerated
 	// Sets the hover interaction mode for the parcats diagram. If `category`, hover interaction take place per category. If `color`, hover interactions take place per color per category. If `dimension`, hover interactions take place across all categories per dimension.
@@ -104,6 +106,7 @@ type Parcats struct {
 	Name string `json:"name,omitempty"`
 
 	// Sortpaths
+	// arrayOK: false
 	// default: forward
 	// type: enumerated
 	// Sets the path sorting algorithm. If `forward`, sort paths based on dimension categories from left to right. If `backward`, sort paths based on dimensions categories from right to left.
@@ -136,6 +139,7 @@ type Parcats struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -280,6 +284,7 @@ type ParcatsLineColorbarTitle struct {
 	Font *ParcatsLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -320,6 +325,7 @@ type ParcatsLineColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -338,6 +344,7 @@ type ParcatsLineColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -356,6 +363,7 @@ type ParcatsLineColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -380,6 +388,7 @@ type ParcatsLineColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -392,12 +401,14 @@ type ParcatsLineColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix ParcatsLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -410,6 +421,7 @@ type ParcatsLineColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -450,12 +462,14 @@ type ParcatsLineColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow ParcatsLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -474,6 +488,7 @@ type ParcatsLineColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -486,6 +501,7 @@ type ParcatsLineColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -538,6 +554,7 @@ type ParcatsLineColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -550,6 +567,7 @@ type ParcatsLineColorbar struct {
 	Xpad float64 `json:"xpad,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -562,6 +580,7 @@ type ParcatsLineColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -574,6 +593,7 @@ type ParcatsLineColorbar struct {
 	Ypad float64 `json:"ypad,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -654,6 +674,7 @@ type ParcatsLine struct {
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Shape
+	// arrayOK: false
 	// default: linear
 	// type: enumerated
 	// Sets the shape of the paths. If `linear`, paths are composed of straight lines. If `hspline`, paths are composed of horizontal curved splines

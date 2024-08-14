@@ -24,6 +24,7 @@ type Layout struct {
 	Autosize Bool `json:"autosize,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
@@ -48,12 +49,14 @@ type Layout struct {
 	Bargroupgap float64 `json:"bargroupgap,omitempty"`
 
 	// Barmode
+	// arrayOK: false
 	// default: group
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
@@ -72,12 +75,14 @@ type Layout struct {
 	Boxgroupgap float64 `json:"boxgroupgap,omitempty"`
 
 	// Boxmode
+	// arrayOK: false
 	// default: overlay
 	// type: enumerated
 	// Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
 	Boxmode LayoutBoxmode `json:"boxmode,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
@@ -116,6 +121,7 @@ type Layout struct {
 	Datarevision interface{} `json:"datarevision,omitempty"`
 
 	// Dragmode
+	// arrayOK: false
 	// default: zoom
 	// type: enumerated
 	// Determines the mode of drag interactions. *select* and *lasso* apply only to scatter traces with markers or text. *orbit* and *turntable* apply only to 3D scenes.
@@ -180,6 +186,7 @@ type Layout struct {
 	Funnelgroupgap float64 `json:"funnelgroupgap,omitempty"`
 
 	// Funnelmode
+	// arrayOK: false
 	// default: stack
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
@@ -228,12 +235,14 @@ type Layout struct {
 	Hoverlabel *LayoutHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovermode
+	// arrayOK: false
 	// default: closest
 	// type: enumerated
 	// Determines the mode of hover interactions. If *closest*, a single hoverlabel will appear for the *closest* point within the `hoverdistance`. If *x* (or *y*), multiple hoverlabels will appear for multiple points at the *closest* x- (or y-) coordinate within the `hoverdistance`, with the caveat that no more than one hoverlabel will appear per trace. If *x unified* (or *y unified*), a single hoverlabel will appear multiple points at the closest x- (or y-) coordinate within the `hoverdistance` with the caveat that no more than one hoverlabel will appear per trace. In this mode, spikelines are enabled by default perpendicular to the specified axis. If false, hover interactions are disabled.
 	Hovermode LayoutHovermode `json:"hovermode,omitempty"`
 
 	// Hoversubplots
+	// arrayOK: false
 	// default: overlaying
 	// type: enumerated
 	// Determines expansion of hover effects to other subplots If *single* just the axis pair of the primary point is included without overlaying subplots. If *overlaying* all subplots using the main axis and occupying the same space are included. If *axis*, also include stacked subplots using the same axis when `hovermode` is set to *x*, *x unified*, *y* or *y unified*.
@@ -328,6 +337,7 @@ type Layout struct {
 	Scattergap float64 `json:"scattergap,omitempty"`
 
 	// Scattermode
+	// arrayOK: false
 	// default: overlay
 	// type: enumerated
 	// Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
@@ -338,6 +348,7 @@ type Layout struct {
 	Scene *LayoutScene `json:"scene,omitempty"`
 
 	// Selectdirection
+	// arrayOK: false
 	// default: any
 	// type: enumerated
 	// When `dragmode` is set to *select*, this limits the selection of the drag to horizontal, vertical or diagonal. *h* only allows horizontal selection, *v* only vertical, *d* only diagonal and *any* sets no limit.
@@ -448,6 +459,7 @@ type Layout struct {
 	Violingroupgap float64 `json:"violingroupgap,omitempty"`
 
 	// Violinmode
+	// arrayOK: false
 	// default: overlay
 	// type: enumerated
 	// Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
@@ -466,6 +478,7 @@ type Layout struct {
 	Waterfallgroupgap float64 `json:"waterfallgroupgap,omitempty"`
 
 	// Waterfallmode
+	// arrayOK: false
 	// default: group
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
@@ -610,6 +623,7 @@ type LayoutColoraxisColorbarTitle struct {
 	Font *LayoutColoraxisColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -650,6 +664,7 @@ type LayoutColoraxisColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -668,6 +683,7 @@ type LayoutColoraxisColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -686,6 +702,7 @@ type LayoutColoraxisColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -710,6 +727,7 @@ type LayoutColoraxisColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -722,12 +740,14 @@ type LayoutColoraxisColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutColoraxisColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -740,6 +760,7 @@ type LayoutColoraxisColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -780,12 +801,14 @@ type LayoutColoraxisColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow LayoutColoraxisColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -804,6 +827,7 @@ type LayoutColoraxisColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -816,6 +840,7 @@ type LayoutColoraxisColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -868,6 +893,7 @@ type LayoutColoraxisColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -880,6 +906,7 @@ type LayoutColoraxisColorbar struct {
 	Xpad float64 `json:"xpad,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -892,6 +919,7 @@ type LayoutColoraxisColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -904,6 +932,7 @@ type LayoutColoraxisColorbar struct {
 	Ypad float64 `json:"ypad,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -1200,6 +1229,7 @@ type LayoutGeoProjection struct {
 	Tilt float64 `json:"tilt,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the projection type.
@@ -1248,6 +1278,7 @@ type LayoutGeo struct {
 	Domain *LayoutGeoDomain `json:"domain,omitempty"`
 
 	// Fitbounds
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if this subplot's view settings are auto-computed to fit trace data. On scoped maps, setting `fitbounds` leads to `center.lon` and `center.lat` getting auto-filled. On maps with a non-clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, and `projection.rotation.lon` getting auto-filled. On maps with a clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, `projection.rotation.lon`, `projection.rotation.lat`, `lonaxis.range` and `lonaxis.range` getting auto-filled. If *locations*, only the trace's visible locations are considered in the `fitbounds` computations. If *geojson*, the entire trace input `geojson` (if provided) is considered in the `fitbounds` computations, Defaults to *false*.
@@ -1296,6 +1327,7 @@ type LayoutGeo struct {
 	Projection *LayoutGeoProjection `json:"projection,omitempty"`
 
 	// Resolution
+	// arrayOK: false
 	// default: %!s(float64=110)
 	// type: enumerated
 	// Sets the resolution of the base layers. The values have units of km/mm e.g. 110 corresponds to a scale ratio of 1:110,000,000.
@@ -1314,6 +1346,7 @@ type LayoutGeo struct {
 	Riverwidth float64 `json:"riverwidth,omitempty"`
 
 	// Scope
+	// arrayOK: false
 	// default: world
 	// type: enumerated
 	// Set the scope of the map.
@@ -1422,12 +1455,14 @@ type LayoutGrid struct {
 	Domain *LayoutGridDomain `json:"domain,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// default: coupled
 	// type: enumerated
 	// If no `subplots`, `xaxes`, or `yaxes` are given but we do have `rows` and `columns`, we can generate defaults using consecutive axis IDs, in two ways: *coupled* gives one x axis per column and one y axis per row. *independent* uses a new xy pair for each cell, left-to-right across each row then iterating rows according to `roworder`.
 	Pattern LayoutGridPattern `json:"pattern,omitempty"`
 
 	// Roworder
+	// arrayOK: false
 	// default: top to bottom
 	// type: enumerated
 	// Is the first row the top or the bottom? Note that columns are always enumerated from left to right.
@@ -1458,6 +1493,7 @@ type LayoutGrid struct {
 	Xgap float64 `json:"xgap,omitempty"`
 
 	// Xside
+	// arrayOK: false
 	// default: bottom plot
 	// type: enumerated
 	// Sets where the x axis labels and titles go. *bottom* means the very bottom of the grid. *bottom plot* is the lowest plot that each x axis is used in. *top* and *top plot* are similar.
@@ -1476,6 +1512,7 @@ type LayoutGrid struct {
 	Ygap float64 `json:"ygap,omitempty"`
 
 	// Yside
+	// arrayOK: false
 	// default: left plot
 	// type: enumerated
 	// Sets where the y axis labels and titles go. *left* means the very left edge of the grid. *left plot* is the leftmost plot that each y axis is used in. *right* and *right plot* are similar.
@@ -1530,6 +1567,7 @@ type LayoutHoverlabelGrouptitlefont struct {
 type LayoutHoverlabel struct {
 
 	// Align
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
@@ -1636,6 +1674,7 @@ type LayoutLegendTitle struct {
 	Font *LayoutLegendTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of legend's title with respect to the legend items. Defaulted to *top* with `orientation` is *h*. Defaulted to *left* with `orientation` is *v*. The *top left* options could be used to expand top center and top right are for horizontal alignment legend area in both x and y sides.
@@ -1676,6 +1715,7 @@ type LayoutLegend struct {
 	Entrywidth float64 `json:"entrywidth,omitempty"`
 
 	// Entrywidthmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines what entrywidth means.
@@ -1686,6 +1726,7 @@ type LayoutLegend struct {
 	Font *LayoutLegendFont `json:"font,omitempty"`
 
 	// Groupclick
+	// arrayOK: false
 	// default: togglegroup
 	// type: enumerated
 	// Determines the behavior on legend group item click. *toggleitem* toggles the visibility of the individual item clicked on the graph. *togglegroup* toggles the visibility of all items in the same legendgroup as the item clicked on the graph.
@@ -1702,18 +1743,21 @@ type LayoutLegend struct {
 	Indentation float64 `json:"indentation,omitempty"`
 
 	// Itemclick
+	// arrayOK: false
 	// default: toggle
 	// type: enumerated
 	// Determines the behavior on legend item click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item click interactions.
 	Itemclick LayoutLegendItemclick `json:"itemclick,omitempty"`
 
 	// Itemdoubleclick
+	// arrayOK: false
 	// default: toggleothers
 	// type: enumerated
 	// Determines the behavior on legend item double-click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item double-click interactions.
 	Itemdoubleclick LayoutLegendItemdoubleclick `json:"itemdoubleclick,omitempty"`
 
 	// Itemsizing
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Determines if the legend items symbols scale with their corresponding *trace* attributes or remain *constant* independent of the symbol size on the graph.
@@ -1726,6 +1770,7 @@ type LayoutLegend struct {
 	Itemwidth float64 `json:"itemwidth,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the legend.
@@ -1754,6 +1799,7 @@ type LayoutLegend struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Valign
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Sets the vertical alignment of the symbols with respect to their associated text.
@@ -1772,12 +1818,14 @@ type LayoutLegend struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: left
 	// type: enumerated
 	// Sets the legend's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the legend. Value *auto* anchors legends to the right for `x` values greater than or equal to 2/3, anchors legends to the left for `x` values less than or equal to 1/3 and anchors legends with respect to their center otherwise.
 	Xanchor LayoutLegendXanchor `json:"xanchor,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -1790,12 +1838,14 @@ type LayoutLegend struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the legend's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the legend. Value *auto* anchors legends at their bottom for `y` values less than or equal to 1/3, anchors legends to at their top for `y` values greater than or equal to 2/3 and anchors legends with respect to their middle otherwise.
 	Yanchor LayoutLegendYanchor `json:"yanchor,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -2006,6 +2056,7 @@ type LayoutModebar struct {
 	Color Color `json:"color,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: h
 	// type: enumerated
 	// Sets the orientation of the modebar.
@@ -2060,6 +2111,7 @@ type LayoutNewselection struct {
 	Line *LayoutNewselectionLine `json:"line,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: immediate
 	// type: enumerated
 	// Describes how a new selection is created. If `immediate`, a new selection is created after first mouse up. If `gradual`, a new selection is not created after first mouse. By adding to and subtracting from the initial selection, this option allows declaring extra outlines of the selection.
@@ -2114,6 +2166,7 @@ type LayoutNewshapeLabel struct {
 	Textangle float64 `json:"textangle,omitempty"`
 
 	// Textposition
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the position of the label text relative to the new shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
@@ -2126,12 +2179,14 @@ type LayoutNewshapeLabel struct {
 	Texttemplate string `json:"texttemplate,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the new shape.
 	Xanchor LayoutNewshapeLabelXanchor `json:"xanchor,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the new shape.
@@ -2200,6 +2255,7 @@ type LayoutNewshapeLine struct {
 type LayoutNewshape struct {
 
 	// Drawdirection
+	// arrayOK: false
 	// default: diagonal
 	// type: enumerated
 	// When `dragmode` is set to *drawrect*, *drawline* or *drawcircle* this limits the drag to be horizontal, vertical or diagonal. Using *diagonal* there is no limit e.g. in drawing lines in any direction. *ortho* limits the draw to be either horizontal or vertical. *horizontal* allows horizontal extend. *vertical* allows vertical extend.
@@ -2212,6 +2268,7 @@ type LayoutNewshape struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Fillrule
+	// arrayOK: false
 	// default: evenodd
 	// type: enumerated
 	// Determines the path's interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
@@ -2222,6 +2279,7 @@ type LayoutNewshape struct {
 	Label *LayoutNewshapeLabel `json:"label,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above
 	// type: enumerated
 	// Specifies whether new shapes are drawn below gridlines (*below*), between gridlines and traces (*between*) or above traces (*above*).
@@ -2278,6 +2336,7 @@ type LayoutNewshape struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not new shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -2310,6 +2369,7 @@ type LayoutPolarAngularaxisTickfont struct {
 type LayoutPolarAngularaxis struct {
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -2328,6 +2388,7 @@ type LayoutPolarAngularaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -2340,6 +2401,7 @@ type LayoutPolarAngularaxis struct {
 	Color Color `json:"color,omitempty"`
 
 	// Direction
+	// arrayOK: false
 	// default: counterclockwise
 	// type: enumerated
 	// Sets the direction corresponding to positive angles.
@@ -2352,6 +2414,7 @@ type LayoutPolarAngularaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -2388,6 +2451,7 @@ type LayoutPolarAngularaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -2436,6 +2500,7 @@ type LayoutPolarAngularaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -2460,18 +2525,21 @@ type LayoutPolarAngularaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutPolarAngularaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
 	Showticksuffix LayoutPolarAngularaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thetaunit
+	// arrayOK: false
 	// default: degrees
 	// type: enumerated
 	// Sets the format unit of the formatted *theta* values. Has an effect only when `angularaxis.type` is *linear*.
@@ -2524,6 +2592,7 @@ type LayoutPolarAngularaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -2536,6 +2605,7 @@ type LayoutPolarAngularaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -2578,6 +2648,7 @@ type LayoutPolarAngularaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the angular axis type. If *linear*, set `thetaunit` to determine the unit in which axis value are shown. If *category, use `period` to set the number of integer coordinates around polar axis.
@@ -2732,6 +2803,7 @@ type LayoutPolarRadialaxis struct {
 	Angle float64 `json:"angle,omitempty"`
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -2748,12 +2820,14 @@ type LayoutPolarRadialaxis struct {
 	Autotickangles interface{} `json:"autotickangles,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
 	Autotypenumbers LayoutPolarRadialaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -2772,6 +2846,7 @@ type LayoutPolarRadialaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -2790,6 +2865,7 @@ type LayoutPolarRadialaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -2826,6 +2902,7 @@ type LayoutPolarRadialaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -2874,6 +2951,7 @@ type LayoutPolarRadialaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: tozero
 	// type: enumerated
 	// If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. If *normal*, the range is computed in relation to the extrema of the input data (same behavior as for cartesian axes).
@@ -2886,6 +2964,7 @@ type LayoutPolarRadialaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -2910,18 +2989,21 @@ type LayoutPolarRadialaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutPolarRadialaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
 	Showticksuffix LayoutPolarRadialaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: clockwise
 	// type: enumerated
 	// Determines on which side of radial axis line the tick and tick labels appear.
@@ -2974,6 +3056,7 @@ type LayoutPolarRadialaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -2986,6 +3069,7 @@ type LayoutPolarRadialaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -3032,6 +3116,7 @@ type LayoutPolarRadialaxis struct {
 	Title *LayoutPolarRadialaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -3068,6 +3153,7 @@ type LayoutPolar struct {
 	Domain *LayoutPolarDomain `json:"domain,omitempty"`
 
 	// Gridshape
+	// arrayOK: false
 	// default: circular
 	// type: enumerated
 	// Determines if the radial axis grid lines and angular axis line are drawn as *circular* sectors or as *linear* (polygon) sectors. Has an effect only when the angular axis has `type` *category*. Note that `radialaxis.angle` is snapped to the angle of the closest vertex when `gridshape` is *circular* (so that radial axis scale is the same as the data scale).
@@ -3166,6 +3252,7 @@ type LayoutSceneCameraEye struct {
 type LayoutSceneCameraProjection struct {
 
 	// Type
+	// arrayOK: false
 	// default: perspective
 	// type: enumerated
 	// Sets the projection type. The projection type could be either *perspective* or *orthographic*. The default is *perspective*.
@@ -3344,6 +3431,7 @@ type LayoutSceneXaxisTitle struct {
 type LayoutSceneXaxis struct {
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -3354,6 +3442,7 @@ type LayoutSceneXaxis struct {
 	Autorangeoptions *LayoutSceneXaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -3366,6 +3455,7 @@ type LayoutSceneXaxis struct {
 	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -3384,6 +3474,7 @@ type LayoutSceneXaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -3402,6 +3493,7 @@ type LayoutSceneXaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -3462,6 +3554,7 @@ type LayoutSceneXaxis struct {
 	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
@@ -3480,6 +3573,7 @@ type LayoutSceneXaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
@@ -3504,6 +3598,7 @@ type LayoutSceneXaxis struct {
 	Showbackground Bool `json:"showbackground,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -3534,12 +3629,14 @@ type LayoutSceneXaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutSceneXaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -3604,6 +3701,7 @@ type LayoutSceneXaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -3616,6 +3714,7 @@ type LayoutSceneXaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -3662,6 +3761,7 @@ type LayoutSceneXaxis struct {
 	Title *LayoutSceneXaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -3794,6 +3894,7 @@ type LayoutSceneYaxisTitle struct {
 type LayoutSceneYaxis struct {
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -3804,6 +3905,7 @@ type LayoutSceneYaxis struct {
 	Autorangeoptions *LayoutSceneYaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -3816,6 +3918,7 @@ type LayoutSceneYaxis struct {
 	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -3834,6 +3937,7 @@ type LayoutSceneYaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -3852,6 +3956,7 @@ type LayoutSceneYaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -3912,6 +4017,7 @@ type LayoutSceneYaxis struct {
 	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
@@ -3930,6 +4036,7 @@ type LayoutSceneYaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
@@ -3954,6 +4061,7 @@ type LayoutSceneYaxis struct {
 	Showbackground Bool `json:"showbackground,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -3984,12 +4092,14 @@ type LayoutSceneYaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutSceneYaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -4054,6 +4164,7 @@ type LayoutSceneYaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -4066,6 +4177,7 @@ type LayoutSceneYaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -4112,6 +4224,7 @@ type LayoutSceneYaxis struct {
 	Title *LayoutSceneYaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -4244,6 +4357,7 @@ type LayoutSceneZaxisTitle struct {
 type LayoutSceneZaxis struct {
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -4254,6 +4368,7 @@ type LayoutSceneZaxis struct {
 	Autorangeoptions *LayoutSceneZaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
@@ -4266,6 +4381,7 @@ type LayoutSceneZaxis struct {
 	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -4284,6 +4400,7 @@ type LayoutSceneZaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -4302,6 +4419,7 @@ type LayoutSceneZaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -4362,6 +4480,7 @@ type LayoutSceneZaxis struct {
 	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Mirror
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
@@ -4380,6 +4499,7 @@ type LayoutSceneZaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
@@ -4404,6 +4524,7 @@ type LayoutSceneZaxis struct {
 	Showbackground Bool `json:"showbackground,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -4434,12 +4555,14 @@ type LayoutSceneZaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutSceneZaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -4504,6 +4627,7 @@ type LayoutSceneZaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -4516,6 +4640,7 @@ type LayoutSceneZaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -4562,6 +4687,7 @@ type LayoutSceneZaxis struct {
 	Title *LayoutSceneZaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -4602,6 +4728,7 @@ type LayoutScene struct {
 	Annotations interface{} `json:"annotations,omitempty"`
 
 	// Aspectmode
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// If *cube*, this scene's axes are drawn as a cube, regardless of the axes' ranges. If *data*, this scene's axes are drawn in proportion with the axes' ranges. If *manual*, this scene's axes are drawn in proportion with the input of *aspectratio* (the default behavior if *aspectratio* is provided). If *auto*, this scene's axes are drawn using the results of *data* except when one axis is more than four times the size of the two others, where in that case the results of *cube* are used.
@@ -4626,12 +4753,14 @@ type LayoutScene struct {
 	Domain *LayoutSceneDomain `json:"domain,omitempty"`
 
 	// Dragmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the mode of drag interactions for this scene.
 	Dragmode LayoutSceneDragmode `json:"dragmode,omitempty"`
 
 	// Hovermode
+	// arrayOK: false
 	// default: closest
 	// type: enumerated
 	// Determines the mode of hover interactions for this scene.
@@ -4746,6 +4875,7 @@ type LayoutSmithImaginaryaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -4782,12 +4912,14 @@ type LayoutSmithImaginaryaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutSmithImaginaryaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -4822,6 +4954,7 @@ type LayoutSmithImaginaryaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -4920,6 +5053,7 @@ type LayoutSmithRealaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -4956,18 +5090,21 @@ type LayoutSmithRealaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutSmithRealaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
 	Showticksuffix LayoutSmithRealaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: top
 	// type: enumerated
 	// Determines on which side of real axis line the tick and tick labels appear.
@@ -5008,6 +5145,7 @@ type LayoutSmithRealaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *top* (*bottom*), this axis' are drawn above (below) the axis line.
@@ -5140,6 +5278,7 @@ type LayoutTernaryAaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -5176,6 +5315,7 @@ type LayoutTernaryAaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -5218,6 +5358,7 @@ type LayoutTernaryAaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -5242,12 +5383,14 @@ type LayoutTernaryAaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutTernaryAaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -5300,6 +5443,7 @@ type LayoutTernaryAaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -5312,6 +5456,7 @@ type LayoutTernaryAaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -5438,6 +5583,7 @@ type LayoutTernaryBaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -5474,6 +5620,7 @@ type LayoutTernaryBaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -5516,6 +5663,7 @@ type LayoutTernaryBaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -5540,12 +5688,14 @@ type LayoutTernaryBaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutTernaryBaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -5598,6 +5748,7 @@ type LayoutTernaryBaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -5610,6 +5761,7 @@ type LayoutTernaryBaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -5736,6 +5888,7 @@ type LayoutTernaryCaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -5772,6 +5925,7 @@ type LayoutTernaryCaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -5814,6 +5968,7 @@ type LayoutTernaryCaxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -5838,12 +5993,14 @@ type LayoutTernaryCaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutTernaryCaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -5896,6 +6053,7 @@ type LayoutTernaryCaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -5908,6 +6066,7 @@ type LayoutTernaryCaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -6106,12 +6265,14 @@ type LayoutTitle struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Sets the title's horizontal alignment with respect to its x position. *left* means that the title starts at x, *right* means that the title ends at x and *center* means that the title's center is at x. *auto* divides `xref` by three and calculates the `xanchor` value automatically based on the value of `x`.
 	Xanchor LayoutTitleXanchor `json:"xanchor,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: container
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -6124,12 +6285,14 @@ type LayoutTitle struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Sets the title's vertical alignment with respect to its y position. *top* means that the title's cap line is at y, *bottom* means that the title's baseline is at y and *middle* means that the title's midline is at y. *auto* divides `yref` by three and calculates the `yanchor` value automatically based on the value of `y`.
 	Yanchor LayoutTitleYanchor `json:"yanchor,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: container
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -6146,12 +6309,14 @@ type LayoutTransition struct {
 	Duration float64 `json:"duration,omitempty"`
 
 	// Easing
+	// arrayOK: false
 	// default: cubic-in-out
 	// type: enumerated
 	// The easing function used for the transition
 	Easing LayoutTransitionEasing `json:"easing,omitempty"`
 
 	// Ordering
+	// arrayOK: false
 	// default: layout first
 	// type: enumerated
 	// Determines whether the figure's layout or traces smoothly transitions during updates that make both traces and layout change.
@@ -6168,6 +6333,7 @@ type LayoutUniformtext struct {
 	Minsize float64 `json:"minsize,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines how the font size for various text elements are uniformed between each trace type. If the computed text sizes were smaller than the minimum size defined by `uniformtext.minsize` using *hide* option hides the text; and using *show* option shows the text without further downscaling. Please note that if the size defined by `minsize` is greater than the font size defined by trace, then the `minsize` is used.
@@ -6272,12 +6438,14 @@ type LayoutXaxisMinor struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
 	Tickmode LayoutXaxisMinorTickmode `json:"tickmode,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -6374,6 +6542,7 @@ type LayoutXaxisRangeselector struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: left
 	// type: enumerated
 	// Sets the range selector's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
@@ -6386,6 +6555,7 @@ type LayoutXaxisRangeselector struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: bottom
 	// type: enumerated
 	// Sets the range selector's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
@@ -6402,6 +6572,7 @@ type LayoutXaxisRangesliderYaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: match
 	// type: enumerated
 	// Determines whether or not the range of this axis in the rangeslider use the same value than in the main plot when zooming in/out. If *auto*, the autorange will be used. If *fixed*, the `range` is used. If *match*, the current range of the corresponding y-axis on the main subplot is used.
@@ -6526,6 +6697,7 @@ type LayoutXaxisTitle struct {
 type LayoutXaxis struct {
 
 	// Anchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
@@ -6538,6 +6710,7 @@ type LayoutXaxis struct {
 	Automargin LayoutXaxisAutomargin `json:"automargin,omitempty"`
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -6554,12 +6727,14 @@ type LayoutXaxis struct {
 	Autotickangles interface{} `json:"autotickangles,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
 	Autotypenumbers LayoutXaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -6578,6 +6753,7 @@ type LayoutXaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -6590,12 +6766,14 @@ type LayoutXaxis struct {
 	Color Color `json:"color,omitempty"`
 
 	// Constrain
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
 	Constrain LayoutXaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
@@ -6626,6 +6804,7 @@ type LayoutXaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -6674,6 +6853,7 @@ type LayoutXaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -6692,6 +6872,7 @@ type LayoutXaxis struct {
 	Linewidth float64 `json:"linewidth,omitempty"`
 
 	// Matches
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
@@ -6720,6 +6901,7 @@ type LayoutXaxis struct {
 	Minor *LayoutXaxisMinor `json:"minor,omitempty"`
 
 	// Mirror
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
@@ -6732,6 +6914,7 @@ type LayoutXaxis struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Overlaying
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
@@ -6756,6 +6939,7 @@ type LayoutXaxis struct {
 	Rangebreaks interface{} `json:"rangebreaks,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
@@ -6770,6 +6954,7 @@ type LayoutXaxis struct {
 	Rangeslider *LayoutXaxisRangeslider `json:"rangeslider,omitempty"`
 
 	// Scaleanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Setting `false` allows to remove a default constraint (occasionally, you may need to prevent a default `scaleanchor` constraint from being applied, eg. when having an image trace `yaxis: {scaleanchor: "x"}` is set automatically in order for pixels to be rendered as squares, setting `yaxis: {scaleanchor: false}` allows to remove the constraint).
@@ -6794,6 +6979,7 @@ type LayoutXaxis struct {
 	Showdividers Bool `json:"showdividers,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -6824,18 +7010,21 @@ type LayoutXaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutXaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
 	Showticksuffix LayoutXaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
@@ -6860,6 +7049,7 @@ type LayoutXaxis struct {
 	Spikemode LayoutXaxisSpikemode `json:"spikemode,omitempty"`
 
 	// Spikesnap
+	// arrayOK: false
 	// default: hovered data
 	// type: enumerated
 	// Determines whether spikelines are stuck to the cursor or to the closest datapoints.
@@ -6906,18 +7096,21 @@ type LayoutXaxis struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
+	// arrayOK: false
 	// default: instant
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
 	Ticklabelmode LayoutXaxisTicklabelmode `json:"ticklabelmode,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
 	Ticklabeloverflow LayoutXaxisTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
@@ -6936,6 +7129,7 @@ type LayoutXaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
@@ -6948,12 +7142,14 @@ type LayoutXaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
 	Ticks LayoutXaxisTicks `json:"ticks,omitempty"`
 
 	// Tickson
+	// arrayOK: false
 	// default: labels
 	// type: enumerated
 	// Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
@@ -7000,6 +7196,7 @@ type LayoutXaxis struct {
 	Title *LayoutXaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
@@ -7134,12 +7331,14 @@ type LayoutYaxisMinor struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
 	Tickmode LayoutYaxisMinorTickmode `json:"tickmode,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -7232,6 +7431,7 @@ type LayoutYaxisTitle struct {
 type LayoutYaxis struct {
 
 	// Anchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
@@ -7244,6 +7444,7 @@ type LayoutYaxis struct {
 	Automargin LayoutYaxisAutomargin `json:"automargin,omitempty"`
 
 	// Autorange
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided and it has a value for both the lower and upper bound, `autorange` is set to *false*. Using *min* applies autorange only to set the minimum. Using *max* applies autorange only to set the maximum. Using *min reversed* applies autorange only to set the minimum on a reversed axis. Using *max reversed* applies autorange only to set the maximum on a reversed axis. Using *reversed* applies autorange on both ends and reverses the axis direction.
@@ -7266,12 +7467,14 @@ type LayoutYaxis struct {
 	Autotickangles interface{} `json:"autotickangles,omitempty"`
 
 	// Autotypenumbers
+	// arrayOK: false
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
 	Autotypenumbers LayoutYaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
@@ -7290,6 +7493,7 @@ type LayoutYaxis struct {
 	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
+	// arrayOK: false
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
@@ -7302,12 +7506,14 @@ type LayoutYaxis struct {
 	Color Color `json:"color,omitempty"`
 
 	// Constrain
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
 	Constrain LayoutYaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
@@ -7338,6 +7544,7 @@ type LayoutYaxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -7386,6 +7593,7 @@ type LayoutYaxis struct {
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
+	// arrayOK: false
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
@@ -7404,6 +7612,7 @@ type LayoutYaxis struct {
 	Linewidth float64 `json:"linewidth,omitempty"`
 
 	// Matches
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
@@ -7432,6 +7641,7 @@ type LayoutYaxis struct {
 	Minor *LayoutYaxisMinor `json:"minor,omitempty"`
 
 	// Mirror
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
@@ -7444,6 +7654,7 @@ type LayoutYaxis struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Overlaying
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
@@ -7468,12 +7679,14 @@ type LayoutYaxis struct {
 	Rangebreaks interface{} `json:"rangebreaks,omitempty"`
 
 	// Rangemode
+	// arrayOK: false
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
 	Rangemode LayoutYaxisRangemode `json:"rangemode,omitempty"`
 
 	// Scaleanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Setting `false` allows to remove a default constraint (occasionally, you may need to prevent a default `scaleanchor` constraint from being applied, eg. when having an image trace `yaxis: {scaleanchor: "x"}` is set automatically in order for pixels to be rendered as squares, setting `yaxis: {scaleanchor: false}` allows to remove the constraint).
@@ -7504,6 +7717,7 @@ type LayoutYaxis struct {
 	Showdividers Bool `json:"showdividers,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -7534,18 +7748,21 @@ type LayoutYaxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix LayoutYaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
 	Showticksuffix LayoutYaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
@@ -7570,6 +7787,7 @@ type LayoutYaxis struct {
 	Spikemode LayoutYaxisSpikemode `json:"spikemode,omitempty"`
 
 	// Spikesnap
+	// arrayOK: false
 	// default: hovered data
 	// type: enumerated
 	// Determines whether spikelines are stuck to the cursor or to the closest datapoints.
@@ -7616,18 +7834,21 @@ type LayoutYaxis struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
+	// arrayOK: false
 	// default: instant
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
 	Ticklabelmode LayoutYaxisTicklabelmode `json:"ticklabelmode,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
 	Ticklabeloverflow LayoutYaxisTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
@@ -7646,6 +7867,7 @@ type LayoutYaxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
@@ -7658,12 +7880,14 @@ type LayoutYaxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
 	Ticks LayoutYaxisTicks `json:"ticks,omitempty"`
 
 	// Tickson
+	// arrayOK: false
 	// default: labels
 	// type: enumerated
 	// Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
@@ -7710,6 +7934,7 @@ type LayoutYaxis struct {
 	Title *LayoutYaxisTitle `json:"title,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.

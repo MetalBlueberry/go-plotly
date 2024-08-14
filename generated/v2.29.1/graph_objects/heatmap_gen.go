@@ -71,7 +71,7 @@ type Heatmap struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo HeatmapHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*HeatmapHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -246,6 +246,7 @@ type Heatmap struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -270,6 +271,7 @@ type Heatmap struct {
 	Xaxis String `json:"xaxis,omitempty"`
 
 	// Xcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
@@ -300,6 +302,7 @@ type Heatmap struct {
 	Xperiod0 interface{} `json:"xperiod0,omitempty"`
 
 	// Xperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
@@ -312,6 +315,7 @@ type Heatmap struct {
 	Xsrc string `json:"xsrc,omitempty"`
 
 	// Xtype
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).
@@ -336,6 +340,7 @@ type Heatmap struct {
 	Yaxis String `json:"yaxis,omitempty"`
 
 	// Ycalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
@@ -366,6 +371,7 @@ type Heatmap struct {
 	Yperiod0 interface{} `json:"yperiod0,omitempty"`
 
 	// Yperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
@@ -378,6 +384,7 @@ type Heatmap struct {
 	Ysrc string `json:"ysrc,omitempty"`
 
 	// Ytype
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *array*, the heatmap's y coordinates are given by *y* (the default behavior when `y` is provided) If *scaled*, the heatmap's y coordinates are given by *y0* and *dy* (the default behavior when `y` is not provided)
@@ -420,6 +427,7 @@ type Heatmap struct {
 	Zmin float64 `json:"zmin,omitempty"`
 
 	// Zsmooth
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Picks a smoothing algorithm use to smooth `z` data.
@@ -484,6 +492,7 @@ type HeatmapColorbarTitle struct {
 	Font *HeatmapColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -524,6 +533,7 @@ type HeatmapColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -542,6 +552,7 @@ type HeatmapColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -560,6 +571,7 @@ type HeatmapColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -584,6 +596,7 @@ type HeatmapColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -596,12 +609,14 @@ type HeatmapColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix HeatmapColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -614,6 +629,7 @@ type HeatmapColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -654,12 +670,14 @@ type HeatmapColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow HeatmapColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -678,6 +696,7 @@ type HeatmapColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -690,6 +709,7 @@ type HeatmapColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -742,6 +762,7 @@ type HeatmapColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -754,6 +775,7 @@ type HeatmapColorbar struct {
 	Xpad float64 `json:"xpad,omitempty"`
 
 	// Xref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
@@ -766,6 +788,7 @@ type HeatmapColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -778,6 +801,7 @@ type HeatmapColorbar struct {
 	Ypad float64 `json:"ypad,omitempty"`
 
 	// Yref
+	// arrayOK: false
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
@@ -828,10 +852,11 @@ type HeatmapHoverlabelFont struct {
 type HeatmapHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align HeatmapHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*HeatmapHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

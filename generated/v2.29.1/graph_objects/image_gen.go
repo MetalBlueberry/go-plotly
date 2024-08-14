@@ -16,6 +16,7 @@ type Image struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// Colormodel
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Color model used to map the numerical color components described in `z` into colors. If `source` is specified, this attribute will be set to `rgba256` otherwise it defaults to `rgb`.
@@ -49,7 +50,7 @@ type Image struct {
 	// default: x+y+z+text+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo ImageHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*ImageHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -178,6 +179,7 @@ type Image struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -226,6 +228,7 @@ type Image struct {
 	Zmin interface{} `json:"zmin,omitempty"`
 
 	// Zsmooth
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Picks a smoothing algorithm used to smooth `z` data. This only applies for image traces that use the `source` attribute.
@@ -282,10 +285,11 @@ type ImageHoverlabelFont struct {
 type ImageHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align ImageHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*ImageHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

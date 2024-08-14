@@ -22,12 +22,14 @@ type Box struct {
 	Alignmentgroup string `json:"alignmentgroup,omitempty"`
 
 	// Boxmean
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *true*, the mean of the box(es)' underlying distribution is drawn as a dashed line inside the box(es). If *sd* the standard deviation is also drawn. Defaults to *true* when `mean` is set. Defaults to *sd* when `sd` is set Otherwise defaults to *false*.
 	Boxmean BoxBoxmean `json:"boxmean,omitempty"`
 
 	// Boxpoints
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the box(es) are shown with no sample points Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set. Defaults to *all* under the q1/median/q3 signature. Otherwise defaults to *outliers*.
@@ -67,7 +69,7 @@ type Box struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo BoxHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*BoxHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -254,6 +256,7 @@ type Box struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the box(es). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
@@ -290,6 +293,7 @@ type Box struct {
 	Q3src string `json:"q3src,omitempty"`
 
 	// Quartilemethod
+	// arrayOK: false
 	// default: linear
 	// type: enumerated
 	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
@@ -336,6 +340,7 @@ type Box struct {
 	Showwhiskers Bool `json:"showwhiskers,omitempty"`
 
 	// Sizemode
+	// arrayOK: false
 	// default: quartiles
 	// type: enumerated
 	// Sets the upper and lower bound for the boxes quartiles means box is drawn between Q1 and Q3 SD means the box is drawn between Mean +- Standard Deviation Argument sdmultiple (default 1) to scale the box size So it could be drawn 1-stddev, 3-stddev etc
@@ -392,6 +397,7 @@ type Box struct {
 	Upperfencesrc string `json:"upperfencesrc,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -428,6 +434,7 @@ type Box struct {
 	Xaxis String `json:"xaxis,omitempty"`
 
 	// Xcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
@@ -452,6 +459,7 @@ type Box struct {
 	Xperiod0 interface{} `json:"xperiod0,omitempty"`
 
 	// Xperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
@@ -482,6 +490,7 @@ type Box struct {
 	Yaxis String `json:"yaxis,omitempty"`
 
 	// Ycalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
@@ -506,6 +515,7 @@ type Box struct {
 	Yperiod0 interface{} `json:"yperiod0,omitempty"`
 
 	// Yperiodalignment
+	// arrayOK: false
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
@@ -568,10 +578,11 @@ type BoxHoverlabelFont struct {
 type BoxHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align BoxHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*BoxHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -738,6 +749,7 @@ type BoxMarker struct {
 	Size float64 `json:"size,omitempty"`
 
 	// Symbol
+	// arrayOK: false
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.

@@ -67,7 +67,7 @@ type Table struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo TableHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*TableHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -142,6 +142,7 @@ type Table struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -236,10 +237,11 @@ type TableCellsLine struct {
 type TableCells struct {
 
 	// Align
+	// arrayOK: true
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align TableCellsAlign `json:"align,omitempty"`
+	Align ArrayOK[*TableCellsAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -430,10 +432,11 @@ type TableHeaderLine struct {
 type TableHeader struct {
 
 	// Align
+	// arrayOK: true
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align TableHeaderAlign `json:"align,omitempty"`
+	Align ArrayOK[*TableHeaderAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -552,10 +555,11 @@ type TableHoverlabelFont struct {
 type TableHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align TableHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*TableHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false

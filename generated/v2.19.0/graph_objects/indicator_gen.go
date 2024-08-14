@@ -16,6 +16,7 @@ type Indicator struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// Align
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered
@@ -134,6 +135,7 @@ type Indicator struct {
 	Value float64 `json:"value,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -210,6 +212,7 @@ type IndicatorDelta struct {
 	Increasing *IndicatorDeltaIncreasing `json:"increasing,omitempty"`
 
 	// Position
+	// arrayOK: false
 	// default: bottom
 	// type: enumerated
 	// Sets the position of delta with respect to the number.
@@ -306,6 +309,7 @@ type IndicatorGaugeAxis struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -342,6 +346,7 @@ type IndicatorGaugeAxis struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -354,12 +359,14 @@ type IndicatorGaugeAxis struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix IndicatorGaugeAxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -412,6 +419,7 @@ type IndicatorGaugeAxis struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -424,6 +432,7 @@ type IndicatorGaugeAxis struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -574,6 +583,7 @@ type IndicatorGauge struct {
 	Borderwidth float64 `json:"borderwidth,omitempty"`
 
 	// Shape
+	// arrayOK: false
 	// default: angular
 	// type: enumerated
 	// Set the shape of the gauge
@@ -716,6 +726,7 @@ type IndicatorTitleFont struct {
 type IndicatorTitle struct {
 
 	// Align
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the horizontal alignment of the title. It defaults to `center` except for bullet charts for which it defaults to right.

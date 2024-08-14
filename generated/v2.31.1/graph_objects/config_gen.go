@@ -10,6 +10,7 @@ type Config struct {
 	Autosizable Bool `json:"autosizable,omitempty"`
 
 	// DisplayModeBar
+	// arrayOK: false
 	// default: hover
 	// type: enumerated
 	// Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.
@@ -22,6 +23,7 @@ type Config struct {
 	Displaylogo Bool `json:"displaylogo,omitempty"`
 
 	// DoubleClick
+	// arrayOK: false
 	// default: reset+autosize
 	// type: enumerated
 	// Sets the double click interaction mode. Has an effect only in cartesian plots. If *false*, double click is disable. If *reset*, double click resets the axis ranges to their initial values. If *autosize*, double click set the axis ranges to their autorange values. If *reset+autosize*, the odd double clicks resets the axis ranges to their initial values and even double clicks set the axis ranges to their autorange values.

@@ -46,6 +46,7 @@ type Histogram struct {
 	Cliponaxis Bool `json:"cliponaxis,omitempty"`
 
 	// Constraintext
+	// arrayOK: false
 	// default: both
 	// type: enumerated
 	// Constrain the size of text inside or outside a bar to be no larger than the bar itself.
@@ -76,12 +77,14 @@ type Histogram struct {
 	ErrorY *HistogramErrorY `json:"error_y,omitempty"`
 
 	// Histfunc
+	// arrayOK: false
 	// default: count
 	// type: enumerated
 	// Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
 	Histfunc HistogramHistfunc `json:"histfunc,omitempty"`
 
 	// Histnorm
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Specifies the type of normalization used for this histogram trace. If **, the span of each bar corresponds to the number of occurrences (i.e. the number of data points lying inside the bins). If *percent* / *probability*, the span of each bar corresponds to the percentage / fraction of occurrences with respect to the total number of sample points (here, the sum of all bin HEIGHTS equals 100% / 1). If *density*, the span of each bar corresponds to the number of occurrences in a bin divided by the size of the bin interval (here, the sum of all bin AREAS equals the total number of sample points). If *probability density*, the area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1).
@@ -91,7 +94,7 @@ type Histogram struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo HistogramHoverinfo `json:"hoverinfo,omitempty"`
+	Hoverinfo ArrayOK[*HistogramHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -140,6 +143,7 @@ type Histogram struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextanchor
+	// arrayOK: false
 	// default: end
 	// type: enumerated
 	// Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
@@ -218,6 +222,7 @@ type Histogram struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the bars. With *v* (*h*), the value of the each bar spans along the vertical (horizontal).
@@ -264,6 +269,7 @@ type Histogram struct {
 	Textfont *HistogramTextfont `json:"textfont,omitempty"`
 
 	// Textposition
+	// arrayOK: false
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
@@ -304,6 +310,7 @@ type Histogram struct {
 	Unselected *HistogramUnselected `json:"unselected,omitempty"`
 
 	// Visible
+	// arrayOK: false
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
@@ -326,6 +333,7 @@ type Histogram struct {
 	Xbins *HistogramXbins `json:"xbins,omitempty"`
 
 	// Xcalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
@@ -360,6 +368,7 @@ type Histogram struct {
 	Ybins *HistogramYbins `json:"ybins,omitempty"`
 
 	// Ycalendar
+	// arrayOK: false
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
@@ -382,12 +391,14 @@ type Histogram struct {
 type HistogramCumulative struct {
 
 	// Currentbin
+	// arrayOK: false
 	// default: include
 	// type: enumerated
 	// Only applies if cumulative is enabled. Sets whether the current bin is included, excluded, or has half of its value included in the current cumulative value. *include* is the default for compatibility with various other tools, however it introduces a half-bin bias to the results. *exclude* makes the opposite half-bin bias, and *half* removes it.
 	Currentbin HistogramCumulativeCurrentbin `json:"currentbin,omitempty"`
 
 	// Direction
+	// arrayOK: false
 	// default: increasing
 	// type: enumerated
 	// Only applies if cumulative is enabled. If *increasing* (default) we sum all prior bins, so the result increases from left to right. If *decreasing* we sum later bins so the result decreases from left to right.
@@ -464,6 +475,7 @@ type HistogramErrorX struct {
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
@@ -552,6 +564,7 @@ type HistogramErrorY struct {
 	Tracerefminus int64 `json:"tracerefminus,omitempty"`
 
 	// Type
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
@@ -626,10 +639,11 @@ type HistogramHoverlabelFont struct {
 type HistogramHoverlabel struct {
 
 	// Align
+	// arrayOK: true
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align HistogramHoverlabelAlign `json:"align,omitempty"`
+	Align ArrayOK[*HistogramHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -788,6 +802,7 @@ type HistogramMarkerColorbarTitle struct {
 	Font *HistogramMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
@@ -828,6 +843,7 @@ type HistogramMarkerColorbar struct {
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
+	// arrayOK: false
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
@@ -846,6 +862,7 @@ type HistogramMarkerColorbar struct {
 	Len float64 `json:"len,omitempty"`
 
 	// Lenmode
+	// arrayOK: false
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
@@ -864,6 +881,7 @@ type HistogramMarkerColorbar struct {
 	Nticks int64 `json:"nticks,omitempty"`
 
 	// Orientation
+	// arrayOK: false
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
@@ -888,6 +906,7 @@ type HistogramMarkerColorbar struct {
 	Separatethousands Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
@@ -900,12 +919,14 @@ type HistogramMarkerColorbar struct {
 	Showticklabels Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
 	Showtickprefix HistogramMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
+	// arrayOK: false
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
@@ -918,6 +939,7 @@ type HistogramMarkerColorbar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 
 	// Thicknessmode
+	// arrayOK: false
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
@@ -958,12 +980,14 @@ type HistogramMarkerColorbar struct {
 	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
 	Ticklabeloverflow HistogramMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
+	// arrayOK: false
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
@@ -982,6 +1006,7 @@ type HistogramMarkerColorbar struct {
 	Ticklen float64 `json:"ticklen,omitempty"`
 
 	// Tickmode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
@@ -994,6 +1019,7 @@ type HistogramMarkerColorbar struct {
 	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
+	// arrayOK: false
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
@@ -1046,6 +1072,7 @@ type HistogramMarkerColorbar struct {
 	X float64 `json:"x,omitempty"`
 
 	// Xanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
@@ -1064,6 +1091,7 @@ type HistogramMarkerColorbar struct {
 	Y float64 `json:"y,omitempty"`
 
 	// Yanchor
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
@@ -1186,16 +1214,18 @@ type HistogramMarkerPattern struct {
 	Fgopacity float64 `json:"fgopacity,omitempty"`
 
 	// Fillmode
+	// arrayOK: false
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
 	Fillmode HistogramMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
+	// arrayOK: true
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
-	Shape HistogramMarkerPatternShape `json:"shape,omitempty"`
+	Shape ArrayOK[*HistogramMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
