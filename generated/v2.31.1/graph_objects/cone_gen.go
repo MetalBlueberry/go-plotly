@@ -59,6 +59,7 @@ type Cone struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ConeColorbar `json:"colorbar,omitempty"`
 
@@ -81,6 +82,7 @@ type Cone struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: x+y+z+norm+text+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -93,6 +95,7 @@ type Cone struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ConeHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -145,6 +148,7 @@ type Cone struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ConeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -161,10 +165,12 @@ type Cone struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *ConeLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *ConeLightposition `json:"lightposition,omitempty"`
 
@@ -230,6 +236,7 @@ type Cone struct {
 	Sizeref float64 `json:"sizeref,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ConeStream `json:"stream,omitempty"`
 
@@ -421,6 +428,7 @@ type ConeColorbarTitleFont struct {
 type ConeColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ConeColorbarTitleFont `json:"font,omitempty"`
 
@@ -587,6 +595,7 @@ type ConeColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ConeColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -685,6 +694,7 @@ type ConeColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ConeColorbarTitle `json:"title,omitempty"`
 
@@ -822,6 +832,7 @@ type ConeHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ConeHoverlabelFont `json:"font,omitempty"`
 
@@ -864,6 +875,7 @@ type ConeLegendgrouptitleFont struct {
 type ConeLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ConeLegendgrouptitleFont `json:"font,omitempty"`
 

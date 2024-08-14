@@ -23,6 +23,7 @@ type Sunburst struct {
 	Branchvalues SunburstBranchvalues `json:"branchvalues,omitempty"`
 
 	// Count
+	// arrayOK: false
 	// default: leaves
 	// type: flaglist
 	// Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
@@ -41,10 +42,12 @@ type Sunburst struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *SunburstDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: label+text+value+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -57,6 +60,7 @@ type Sunburst struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SunburstHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -97,6 +101,7 @@ type Sunburst struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *SunburstInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -120,6 +125,7 @@ type Sunburst struct {
 	Labelssrc string `json:"labelssrc,omitempty"`
 
 	// Leaf
+	// arrayOK: false
 	// role: Object
 	Leaf *SunburstLeaf `json:"leaf,omitempty"`
 
@@ -130,6 +136,7 @@ type Sunburst struct {
 	Legend String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *SunburstLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -152,6 +159,7 @@ type Sunburst struct {
 	Level interface{} `json:"level,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *SunburstMarker `json:"marker,omitempty"`
 
@@ -186,6 +194,7 @@ type Sunburst struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *SunburstOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -202,6 +211,7 @@ type Sunburst struct {
 	Parentssrc string `json:"parentssrc,omitempty"`
 
 	// Root
+	// arrayOK: false
 	// role: Object
 	Root *SunburstRoot `json:"root,omitempty"`
 
@@ -218,6 +228,7 @@ type Sunburst struct {
 	Sort Bool `json:"sort,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *SunburstStream `json:"stream,omitempty"`
 
@@ -228,10 +239,12 @@ type Sunburst struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *SunburstTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
@@ -402,6 +415,7 @@ type SunburstHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SunburstHoverlabelFont `json:"font,omitempty"`
 
@@ -494,6 +508,7 @@ type SunburstLegendgrouptitleFont struct {
 type SunburstLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SunburstLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -552,6 +567,7 @@ type SunburstMarkerColorbarTitleFont struct {
 type SunburstMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SunburstMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -718,6 +734,7 @@ type SunburstMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *SunburstMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -816,6 +833,7 @@ type SunburstMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *SunburstMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1018,6 +1036,7 @@ type SunburstMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *SunburstMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1040,10 +1059,12 @@ type SunburstMarker struct {
 	Colorssrc string `json:"colorssrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *SunburstMarkerLine `json:"line,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// role: Object
 	Pattern *SunburstMarkerPattern `json:"pattern,omitempty"`
 

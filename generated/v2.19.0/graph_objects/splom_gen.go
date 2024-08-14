@@ -28,6 +28,7 @@ type Splom struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Diagonal
+	// arrayOK: false
 	// role: Object
 	Diagonal *SplomDiagonal `json:"diagonal,omitempty"`
 
@@ -38,6 +39,7 @@ type Splom struct {
 	Dimensions interface{} `json:"dimensions,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -50,6 +52,7 @@ type Splom struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SplomHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -96,6 +99,7 @@ type Splom struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *SplomLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -112,6 +116,7 @@ type Splom struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *SplomMarker `json:"marker,omitempty"`
 
@@ -140,6 +145,7 @@ type Splom struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *SplomSelected `json:"selected,omitempty"`
 
@@ -168,6 +174,7 @@ type Splom struct {
 	Showupperhalf Bool `json:"showupperhalf,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *SplomStream `json:"stream,omitempty"`
 
@@ -202,6 +209,7 @@ type Splom struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *SplomUnselected `json:"unselected,omitempty"`
 
@@ -328,6 +336,7 @@ type SplomHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SplomHoverlabelFont `json:"font,omitempty"`
 
@@ -370,6 +379,7 @@ type SplomLegendgrouptitleFont struct {
 type SplomLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SplomLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -428,6 +438,7 @@ type SplomMarkerColorbarTitleFont struct {
 type SplomMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SplomMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -594,6 +605,7 @@ type SplomMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *SplomMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -692,6 +704,7 @@ type SplomMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *SplomMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -868,6 +881,7 @@ type SplomMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *SplomMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -884,6 +898,7 @@ type SplomMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *SplomMarkerLine `json:"line,omitempty"`
 
@@ -982,6 +997,7 @@ type SplomSelectedMarker struct {
 type SplomSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *SplomSelectedMarker `json:"marker,omitempty"`
 }
@@ -1028,6 +1044,7 @@ type SplomUnselectedMarker struct {
 type SplomUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *SplomUnselectedMarker `json:"marker,omitempty"`
 }

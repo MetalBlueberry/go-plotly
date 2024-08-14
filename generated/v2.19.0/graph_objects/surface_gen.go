@@ -52,6 +52,7 @@ type Surface struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *SurfaceColorbar `json:"colorbar,omitempty"`
 
@@ -68,6 +69,7 @@ type Surface struct {
 	Connectgaps Bool `json:"connectgaps,omitempty"`
 
 	// Contours
+	// arrayOK: false
 	// role: Object
 	Contours *SurfaceContours `json:"contours,omitempty"`
 
@@ -90,6 +92,7 @@ type Surface struct {
 	Hidesurface Bool `json:"hidesurface,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -102,6 +105,7 @@ type Surface struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SurfaceHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -148,6 +152,7 @@ type Surface struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *SurfaceLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -164,10 +169,12 @@ type Surface struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *SurfaceLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *SurfaceLightposition `json:"lightposition,omitempty"`
 
@@ -226,6 +233,7 @@ type Surface struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *SurfaceStream `json:"stream,omitempty"`
 
@@ -396,6 +404,7 @@ type SurfaceColorbarTitleFont struct {
 type SurfaceColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SurfaceColorbarTitleFont `json:"font,omitempty"`
 
@@ -562,6 +571,7 @@ type SurfaceColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *SurfaceColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -660,6 +670,7 @@ type SurfaceColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *SurfaceColorbarTitle `json:"title,omitempty"`
 
@@ -758,6 +769,7 @@ type SurfaceContoursX struct {
 	Highlightwidth float64 `json:"highlightwidth,omitempty"`
 
 	// Project
+	// arrayOK: false
 	// role: Object
 	Project *SurfaceContoursXProject `json:"project,omitempty"`
 
@@ -848,6 +860,7 @@ type SurfaceContoursY struct {
 	Highlightwidth float64 `json:"highlightwidth,omitempty"`
 
 	// Project
+	// arrayOK: false
 	// role: Object
 	Project *SurfaceContoursYProject `json:"project,omitempty"`
 
@@ -938,6 +951,7 @@ type SurfaceContoursZ struct {
 	Highlightwidth float64 `json:"highlightwidth,omitempty"`
 
 	// Project
+	// arrayOK: false
 	// role: Object
 	Project *SurfaceContoursZProject `json:"project,omitempty"`
 
@@ -976,14 +990,17 @@ type SurfaceContoursZ struct {
 type SurfaceContours struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *SurfaceContoursX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *SurfaceContoursY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *SurfaceContoursZ `json:"z,omitempty"`
 }
@@ -1069,6 +1086,7 @@ type SurfaceHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SurfaceHoverlabelFont `json:"font,omitempty"`
 
@@ -1111,6 +1129,7 @@ type SurfaceLegendgrouptitleFont struct {
 type SurfaceLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SurfaceLegendgrouptitleFont `json:"font,omitempty"`
 

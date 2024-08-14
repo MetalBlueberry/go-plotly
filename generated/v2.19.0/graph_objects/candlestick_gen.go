@@ -40,6 +40,7 @@ type Candlestick struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Decreasing
+	// arrayOK: false
 	// role: Object
 	Decreasing *CandlestickDecreasing `json:"decreasing,omitempty"`
 
@@ -56,6 +57,7 @@ type Candlestick struct {
 	Highsrc string `json:"highsrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -68,6 +70,7 @@ type Candlestick struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *CandlestickHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -96,6 +99,7 @@ type Candlestick struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Increasing
+	// arrayOK: false
 	// role: Object
 	Increasing *CandlestickIncreasing `json:"increasing,omitempty"`
 
@@ -106,6 +110,7 @@ type Candlestick struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *CandlestickLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -122,6 +127,7 @@ type Candlestick struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *CandlestickLine `json:"line,omitempty"`
 
@@ -186,6 +192,7 @@ type Candlestick struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *CandlestickStream `json:"stream,omitempty"`
 
@@ -321,6 +328,7 @@ type CandlestickDecreasing struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *CandlestickDecreasingLine `json:"line,omitempty"`
 }
@@ -406,6 +414,7 @@ type CandlestickHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CandlestickHoverlabelFont `json:"font,omitempty"`
 
@@ -454,6 +463,7 @@ type CandlestickIncreasing struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *CandlestickIncreasingLine `json:"line,omitempty"`
 }
@@ -484,6 +494,7 @@ type CandlestickLegendgrouptitleFont struct {
 type CandlestickLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CandlestickLegendgrouptitleFont `json:"font,omitempty"`
 

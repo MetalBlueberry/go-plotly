@@ -34,6 +34,7 @@ type Waterfall struct {
 	Cliponaxis Bool `json:"cliponaxis,omitempty"`
 
 	// Connector
+	// arrayOK: false
 	// role: Object
 	Connector *WaterfallConnector `json:"connector,omitempty"`
 
@@ -57,6 +58,7 @@ type Waterfall struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Decreasing
+	// arrayOK: false
 	// role: Object
 	Decreasing *WaterfallDecreasing `json:"decreasing,omitempty"`
 
@@ -73,6 +75,7 @@ type Waterfall struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -85,6 +88,7 @@ type Waterfall struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *WaterfallHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -125,6 +129,7 @@ type Waterfall struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Increasing
+	// arrayOK: false
 	// role: Object
 	Increasing *WaterfallIncreasing `json:"increasing,omitempty"`
 
@@ -136,6 +141,7 @@ type Waterfall struct {
 	Insidetextanchor WaterfallInsidetextanchor `json:"insidetextanchor,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *WaterfallInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -152,6 +158,7 @@ type Waterfall struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *WaterfallLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -229,6 +236,7 @@ type Waterfall struct {
 	Orientation WaterfallOrientation `json:"orientation,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *WaterfallOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -245,6 +253,7 @@ type Waterfall struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *WaterfallStream `json:"stream,omitempty"`
 
@@ -261,10 +270,12 @@ type Waterfall struct {
 	Textangle float64 `json:"textangle,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *WaterfallTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph. In the case of having multiple waterfalls, totals are computed separately (per trace).
@@ -302,6 +313,7 @@ type Waterfall struct {
 	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Totals
+	// arrayOK: false
 	// role: Object
 	Totals *WaterfallTotals `json:"totals,omitempty"`
 
@@ -467,6 +479,7 @@ type WaterfallConnectorLine struct {
 type WaterfallConnector struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *WaterfallConnectorLine `json:"line,omitempty"`
 
@@ -510,6 +523,7 @@ type WaterfallDecreasingMarker struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *WaterfallDecreasingMarkerLine `json:"line,omitempty"`
 }
@@ -518,6 +532,7 @@ type WaterfallDecreasingMarker struct {
 type WaterfallDecreasing struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *WaterfallDecreasingMarker `json:"marker,omitempty"`
 }
@@ -603,6 +618,7 @@ type WaterfallHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *WaterfallHoverlabelFont `json:"font,omitempty"`
 
@@ -645,6 +661,7 @@ type WaterfallIncreasingMarker struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *WaterfallIncreasingMarkerLine `json:"line,omitempty"`
 }
@@ -653,6 +670,7 @@ type WaterfallIncreasingMarker struct {
 type WaterfallIncreasing struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *WaterfallIncreasingMarker `json:"marker,omitempty"`
 }
@@ -723,6 +741,7 @@ type WaterfallLegendgrouptitleFont struct {
 type WaterfallLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *WaterfallLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -855,6 +874,7 @@ type WaterfallTotalsMarker struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *WaterfallTotalsMarkerLine `json:"line,omitempty"`
 }
@@ -863,6 +883,7 @@ type WaterfallTotalsMarker struct {
 type WaterfallTotals struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *WaterfallTotalsMarker `json:"marker,omitempty"`
 }

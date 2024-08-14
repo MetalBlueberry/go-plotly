@@ -53,6 +53,7 @@ type Histogram struct {
 	Constraintext HistogramConstraintext `json:"constraintext,omitempty"`
 
 	// Cumulative
+	// arrayOK: false
 	// role: Object
 	Cumulative *HistogramCumulative `json:"cumulative,omitempty"`
 
@@ -69,10 +70,12 @@ type Histogram struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// ErrorX
+	// arrayOK: false
 	// role: Object
 	ErrorX *HistogramErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
+	// arrayOK: false
 	// role: Object
 	ErrorY *HistogramErrorY `json:"error_y,omitempty"`
 
@@ -91,6 +94,7 @@ type Histogram struct {
 	Histnorm HistogramHistnorm `json:"histnorm,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -103,6 +107,7 @@ type Histogram struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *HistogramHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -150,6 +155,7 @@ type Histogram struct {
 	Insidetextanchor HistogramInsidetextanchor `json:"insidetextanchor,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *HistogramInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -166,6 +172,7 @@ type Histogram struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *HistogramLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -182,6 +189,7 @@ type Histogram struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *HistogramMarker `json:"marker,omitempty"`
 
@@ -235,10 +243,12 @@ type Histogram struct {
 	Orientation HistogramOrientation `json:"orientation,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *HistogramOutsidetextfont `json:"outsidetextfont,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *HistogramSelected `json:"selected,omitempty"`
 
@@ -255,6 +265,7 @@ type Histogram struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *HistogramStream `json:"stream,omitempty"`
 
@@ -271,6 +282,7 @@ type Histogram struct {
 	Textangle float64 `json:"textangle,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *HistogramTextfont `json:"textfont,omitempty"`
 
@@ -312,6 +324,7 @@ type Histogram struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *HistogramUnselected `json:"unselected,omitempty"`
 
@@ -335,6 +348,7 @@ type Histogram struct {
 	Xaxis String `json:"xaxis,omitempty"`
 
 	// Xbins
+	// arrayOK: false
 	// role: Object
 	Xbins *HistogramXbins `json:"xbins,omitempty"`
 
@@ -370,6 +384,7 @@ type Histogram struct {
 	Yaxis String `json:"yaxis,omitempty"`
 
 	// Ybins
+	// arrayOK: false
 	// role: Object
 	Ybins *HistogramYbins `json:"ybins,omitempty"`
 
@@ -682,6 +697,7 @@ type HistogramHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HistogramHoverlabelFont `json:"font,omitempty"`
 
@@ -746,6 +762,7 @@ type HistogramLegendgrouptitleFont struct {
 type HistogramLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HistogramLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -804,6 +821,7 @@ type HistogramMarkerColorbarTitleFont struct {
 type HistogramMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HistogramMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -970,6 +988,7 @@ type HistogramMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *HistogramMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1068,6 +1087,7 @@ type HistogramMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *HistogramMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1324,6 +1344,7 @@ type HistogramMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *HistogramMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1346,6 +1367,7 @@ type HistogramMarker struct {
 	Cornerradius interface{} `json:"cornerradius,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *HistogramMarkerLine `json:"line,omitempty"`
 
@@ -1362,6 +1384,7 @@ type HistogramMarker struct {
 	Opacitysrc string `json:"opacitysrc,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// role: Object
 	Pattern *HistogramMarkerPattern `json:"pattern,omitempty"`
 
@@ -1430,10 +1453,12 @@ type HistogramSelectedTextfont struct {
 type HistogramSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *HistogramSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *HistogramSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1506,10 +1531,12 @@ type HistogramUnselectedTextfont struct {
 type HistogramUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *HistogramUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *HistogramUnselectedTextfont `json:"textfont,omitempty"`
 }

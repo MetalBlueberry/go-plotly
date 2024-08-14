@@ -22,6 +22,7 @@ type Volume struct {
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Caps
+	// arrayOK: false
 	// role: Object
 	Caps *VolumeCaps `json:"caps,omitempty"`
 
@@ -56,6 +57,7 @@ type Volume struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *VolumeColorbar `json:"colorbar,omitempty"`
 
@@ -66,6 +68,7 @@ type Volume struct {
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
+	// arrayOK: false
 	// role: Object
 	Contour *VolumeContour `json:"contour,omitempty"`
 
@@ -88,6 +91,7 @@ type Volume struct {
 	Flatshading Bool `json:"flatshading,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -100,6 +104,7 @@ type Volume struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *VolumeHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -158,6 +163,7 @@ type Volume struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *VolumeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -174,10 +180,12 @@ type Volume struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *VolumeLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *VolumeLightposition `json:"lightposition,omitempty"`
 
@@ -236,18 +244,22 @@ type Volume struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Slices
+	// arrayOK: false
 	// role: Object
 	Slices *VolumeSlices `json:"slices,omitempty"`
 
 	// Spaceframe
+	// arrayOK: false
 	// role: Object
 	Spaceframe *VolumeSpaceframe `json:"spaceframe,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *VolumeStream `json:"stream,omitempty"`
 
 	// Surface
+	// arrayOK: false
 	// role: Object
 	Surface *VolumeSurface `json:"surface,omitempty"`
 
@@ -407,14 +419,17 @@ type VolumeCapsZ struct {
 type VolumeCaps struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *VolumeCapsX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *VolumeCapsY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *VolumeCapsZ `json:"z,omitempty"`
 }
@@ -467,6 +482,7 @@ type VolumeColorbarTitleFont struct {
 type VolumeColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *VolumeColorbarTitleFont `json:"font,omitempty"`
 
@@ -633,6 +649,7 @@ type VolumeColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *VolumeColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -731,6 +748,7 @@ type VolumeColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *VolumeColorbarTitle `json:"title,omitempty"`
 
@@ -876,6 +894,7 @@ type VolumeHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *VolumeHoverlabelFont `json:"font,omitempty"`
 
@@ -918,6 +937,7 @@ type VolumeLegendgrouptitleFont struct {
 type VolumeLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *VolumeLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -1084,14 +1104,17 @@ type VolumeSlicesZ struct {
 type VolumeSlices struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *VolumeSlicesX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *VolumeSlicesY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *VolumeSlicesZ `json:"z,omitempty"`
 }
@@ -1144,6 +1167,7 @@ type VolumeSurface struct {
 	Fill float64 `json:"fill,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// default: all
 	// type: flaglist
 	// Sets the surface pattern of the iso-surface 3-D sections. The default pattern of the surface is `all` meaning that the rest of surface elements would be shaded. The check options (either 1 or 2) could be used to draw half of the squares on the surface. Using various combinations of capital `A`, `B`, `C`, `D` and `E` may also be used to reduce the number of triangles on the iso-surfaces and creating other patterns of interest.

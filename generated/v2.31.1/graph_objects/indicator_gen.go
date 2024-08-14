@@ -35,14 +35,17 @@ type Indicator struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Delta
+	// arrayOK: false
 	// role: Object
 	Delta *IndicatorDelta `json:"delta,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *IndicatorDomain `json:"domain,omitempty"`
 
 	// Gauge
+	// arrayOK: false
 	// role: Object
 	Gauge *IndicatorGauge `json:"gauge,omitempty"`
 
@@ -65,6 +68,7 @@ type Indicator struct {
 	Legend String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *IndicatorLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -93,6 +97,7 @@ type Indicator struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: number
 	// type: flaglist
 	// Determines how the value is displayed on the graph. `number` displays the value numerically in text. `delta` displays the difference to a reference value in text. Finally, `gauge` displays the value graphically on an axis.
@@ -105,14 +110,17 @@ type Indicator struct {
 	Name string `json:"name,omitempty"`
 
 	// Number
+	// arrayOK: false
 	// role: Object
 	Number *IndicatorNumber `json:"number,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *IndicatorStream `json:"stream,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *IndicatorTitle `json:"title,omitempty"`
 
@@ -206,14 +214,17 @@ type IndicatorDeltaIncreasing struct {
 type IndicatorDelta struct {
 
 	// Decreasing
+	// arrayOK: false
 	// role: Object
 	Decreasing *IndicatorDeltaDecreasing `json:"decreasing,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IndicatorDeltaFont `json:"font,omitempty"`
 
 	// Increasing
+	// arrayOK: false
 	// role: Object
 	Increasing *IndicatorDeltaIncreasing `json:"increasing,omitempty"`
 
@@ -397,6 +408,7 @@ type IndicatorGaugeAxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *IndicatorGaugeAxisTickfont `json:"tickfont,omitempty"`
 
@@ -513,6 +525,7 @@ type IndicatorGaugeBar struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *IndicatorGaugeBarLine `json:"line,omitempty"`
 
@@ -543,6 +556,7 @@ type IndicatorGaugeThresholdLine struct {
 type IndicatorGaugeThreshold struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *IndicatorGaugeThresholdLine `json:"line,omitempty"`
 
@@ -563,10 +577,12 @@ type IndicatorGaugeThreshold struct {
 type IndicatorGauge struct {
 
 	// Axis
+	// arrayOK: false
 	// role: Object
 	Axis *IndicatorGaugeAxis `json:"axis,omitempty"`
 
 	// Bar
+	// arrayOK: false
 	// role: Object
 	Bar *IndicatorGaugeBar `json:"bar,omitempty"`
 
@@ -602,6 +618,7 @@ type IndicatorGauge struct {
 	Steps interface{} `json:"steps,omitempty"`
 
 	// Threshold
+	// arrayOK: false
 	// role: Object
 	Threshold *IndicatorGaugeThreshold `json:"threshold,omitempty"`
 }
@@ -632,6 +649,7 @@ type IndicatorLegendgrouptitleFont struct {
 type IndicatorLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IndicatorLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -668,6 +686,7 @@ type IndicatorNumberFont struct {
 type IndicatorNumber struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IndicatorNumberFont `json:"font,omitempty"`
 
@@ -739,6 +758,7 @@ type IndicatorTitle struct {
 	Align IndicatorTitleAlign `json:"align,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IndicatorTitleFont `json:"font,omitempty"`
 

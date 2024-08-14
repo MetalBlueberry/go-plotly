@@ -34,6 +34,7 @@ type Choroplethmapbox struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ChoroplethmapboxColorbar `json:"colorbar,omitempty"`
 
@@ -68,6 +69,7 @@ type Choroplethmapbox struct {
 	Geojson interface{} `json:"geojson,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -80,6 +82,7 @@ type Choroplethmapbox struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ChoroplethmapboxHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -132,6 +135,7 @@ type Choroplethmapbox struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ChoroplethmapboxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -160,6 +164,7 @@ type Choroplethmapbox struct {
 	Locationssrc string `json:"locationssrc,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ChoroplethmapboxMarker `json:"marker,omitempty"`
 
@@ -188,6 +193,7 @@ type Choroplethmapbox struct {
 	Reversescale Bool `json:"reversescale,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ChoroplethmapboxSelected `json:"selected,omitempty"`
 
@@ -210,6 +216,7 @@ type Choroplethmapbox struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ChoroplethmapboxStream `json:"stream,omitempty"`
 
@@ -250,6 +257,7 @@ type Choroplethmapbox struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ChoroplethmapboxUnselected `json:"unselected,omitempty"`
 
@@ -345,6 +353,7 @@ type ChoroplethmapboxColorbarTitleFont struct {
 type ChoroplethmapboxColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ChoroplethmapboxColorbarTitleFont `json:"font,omitempty"`
 
@@ -511,6 +520,7 @@ type ChoroplethmapboxColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ChoroplethmapboxColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -609,6 +619,7 @@ type ChoroplethmapboxColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ChoroplethmapboxColorbarTitle `json:"title,omitempty"`
 
@@ -746,6 +757,7 @@ type ChoroplethmapboxHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ChoroplethmapboxHoverlabelFont `json:"font,omitempty"`
 
@@ -788,6 +800,7 @@ type ChoroplethmapboxLegendgrouptitleFont struct {
 type ChoroplethmapboxLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ChoroplethmapboxLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -830,6 +843,7 @@ type ChoroplethmapboxMarkerLine struct {
 type ChoroplethmapboxMarker struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ChoroplethmapboxMarkerLine `json:"line,omitempty"`
 
@@ -860,6 +874,7 @@ type ChoroplethmapboxSelectedMarker struct {
 type ChoroplethmapboxSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ChoroplethmapboxSelectedMarker `json:"marker,omitempty"`
 }
@@ -894,6 +909,7 @@ type ChoroplethmapboxUnselectedMarker struct {
 type ChoroplethmapboxUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ChoroplethmapboxUnselectedMarker `json:"marker,omitempty"`
 }

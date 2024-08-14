@@ -66,6 +66,7 @@ type Box struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -78,10 +79,12 @@ type Box struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *BoxHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
+	// arrayOK: false
 	// default: boxes+points
 	// type: flaglist
 	// Do the hover effects highlight individual boxes  or sample points or both?
@@ -136,6 +139,7 @@ type Box struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *BoxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -152,6 +156,7 @@ type Box struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *BoxLine `json:"line,omitempty"`
 
@@ -168,6 +173,7 @@ type Box struct {
 	Lowerfencesrc string `json:"lowerfencesrc,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BoxMarker `json:"marker,omitempty"`
 
@@ -306,6 +312,7 @@ type Box struct {
 	Sdsrc string `json:"sdsrc,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *BoxSelected `json:"selected,omitempty"`
 
@@ -322,6 +329,7 @@ type Box struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *BoxStream `json:"stream,omitempty"`
 
@@ -356,6 +364,7 @@ type Box struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *BoxUnselected `json:"unselected,omitempty"`
 
@@ -584,6 +593,7 @@ type BoxHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BoxHoverlabelFont `json:"font,omitempty"`
 
@@ -626,6 +636,7 @@ type BoxLegendgrouptitleFont struct {
 type BoxLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BoxLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -696,6 +707,7 @@ type BoxMarker struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *BoxMarkerLine `json:"line,omitempty"`
 
@@ -751,6 +763,7 @@ type BoxSelectedMarker struct {
 type BoxSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BoxSelectedMarker `json:"marker,omitempty"`
 }
@@ -797,6 +810,7 @@ type BoxUnselectedMarker struct {
 type BoxUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BoxUnselectedMarker `json:"marker,omitempty"`
 }

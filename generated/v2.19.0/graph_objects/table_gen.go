@@ -16,6 +16,7 @@ type Table struct {
 	Type TraceType `json:"type,omitempty"`
 
 	// Cells
+	// arrayOK: false
 	// role: Object
 	Cells *TableCells `json:"cells,omitempty"`
 
@@ -56,14 +57,17 @@ type Table struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *TableDomain `json:"domain,omitempty"`
 
 	// Header
+	// arrayOK: false
 	// role: Object
 	Header *TableHeader `json:"header,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -76,6 +80,7 @@ type Table struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *TableHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -92,6 +97,7 @@ type Table struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *TableLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -126,6 +132,7 @@ type Table struct {
 	Name string `json:"name,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *TableStream `json:"stream,omitempty"`
 
@@ -250,10 +257,12 @@ type TableCells struct {
 	Alignsrc string `json:"alignsrc,omitempty"`
 
 	// Fill
+	// arrayOK: false
 	// role: Object
 	Fill *TableCellsFill `json:"fill,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TableCellsFont `json:"font,omitempty"`
 
@@ -276,6 +285,7 @@ type TableCells struct {
 	Height float64 `json:"height,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *TableCellsLine `json:"line,omitempty"`
 
@@ -445,10 +455,12 @@ type TableHeader struct {
 	Alignsrc string `json:"alignsrc,omitempty"`
 
 	// Fill
+	// arrayOK: false
 	// role: Object
 	Fill *TableHeaderFill `json:"fill,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TableHeaderFont `json:"font,omitempty"`
 
@@ -471,6 +483,7 @@ type TableHeader struct {
 	Height float64 `json:"height,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *TableHeaderLine `json:"line,omitempty"`
 
@@ -592,6 +605,7 @@ type TableHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TableHoverlabelFont `json:"font,omitempty"`
 
@@ -634,6 +648,7 @@ type TableLegendgrouptitleFont struct {
 type TableLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TableLegendgrouptitleFont `json:"font,omitempty"`
 

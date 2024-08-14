@@ -23,6 +23,7 @@ type Icicle struct {
 	Branchvalues IcicleBranchvalues `json:"branchvalues,omitempty"`
 
 	// Count
+	// arrayOK: false
 	// default: leaves
 	// type: flaglist
 	// Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
@@ -41,10 +42,12 @@ type Icicle struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *IcicleDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: label+text+value+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -57,6 +60,7 @@ type Icicle struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *IcicleHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -97,6 +101,7 @@ type Icicle struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *IcicleInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -113,10 +118,12 @@ type Icicle struct {
 	Labelssrc string `json:"labelssrc,omitempty"`
 
 	// Leaf
+	// arrayOK: false
 	// role: Object
 	Leaf *IcicleLeaf `json:"leaf,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *IcicleLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -139,6 +146,7 @@ type Icicle struct {
 	Level interface{} `json:"level,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *IcicleMarker `json:"marker,omitempty"`
 
@@ -173,6 +181,7 @@ type Icicle struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *IcicleOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -189,10 +198,12 @@ type Icicle struct {
 	Parentssrc string `json:"parentssrc,omitempty"`
 
 	// Pathbar
+	// arrayOK: false
 	// role: Object
 	Pathbar *IciclePathbar `json:"pathbar,omitempty"`
 
 	// Root
+	// arrayOK: false
 	// role: Object
 	Root *IcicleRoot `json:"root,omitempty"`
 
@@ -203,6 +214,7 @@ type Icicle struct {
 	Sort Bool `json:"sort,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *IcicleStream `json:"stream,omitempty"`
 
@@ -213,10 +225,12 @@ type Icicle struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *IcicleTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
@@ -248,6 +262,7 @@ type Icicle struct {
 	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Tiling
+	// arrayOK: false
 	// role: Object
 	Tiling *IcicleTiling `json:"tiling,omitempty"`
 
@@ -398,6 +413,7 @@ type IcicleHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IcicleHoverlabelFont `json:"font,omitempty"`
 
@@ -490,6 +506,7 @@ type IcicleLegendgrouptitleFont struct {
 type IcicleLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IcicleLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -548,6 +565,7 @@ type IcicleMarkerColorbarTitleFont struct {
 type IcicleMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IcicleMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -714,6 +732,7 @@ type IcicleMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *IcicleMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -812,6 +831,7 @@ type IcicleMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *IcicleMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -922,6 +942,7 @@ type IcicleMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *IcicleMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -944,6 +965,7 @@ type IcicleMarker struct {
 	Colorssrc string `json:"colorssrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *IcicleMarkerLine `json:"line,omitempty"`
 
@@ -1058,6 +1080,7 @@ type IciclePathbar struct {
 	Side IciclePathbarSide `json:"side,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *IciclePathbarTextfont `json:"textfont,omitempty"`
 
@@ -1144,6 +1167,7 @@ type IcicleTextfont struct {
 type IcicleTiling struct {
 
 	// Flip
+	// arrayOK: false
 	// default:
 	// type: flaglist
 	// Determines if the positions obtained from solver are flipped on each axis.

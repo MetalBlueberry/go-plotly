@@ -34,18 +34,22 @@ type Scatter3d struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// ErrorX
+	// arrayOK: false
 	// role: Object
 	ErrorX *Scatter3dErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
+	// arrayOK: false
 	// role: Object
 	ErrorY *Scatter3dErrorY `json:"error_y,omitempty"`
 
 	// ErrorZ
+	// arrayOK: false
 	// role: Object
 	ErrorZ *Scatter3dErrorZ `json:"error_z,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -58,6 +62,7 @@ type Scatter3d struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *Scatter3dHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -110,6 +115,7 @@ type Scatter3d struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *Scatter3dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -126,10 +132,12 @@ type Scatter3d struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *Scatter3dLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *Scatter3dMarker `json:"marker,omitempty"`
 
@@ -146,6 +154,7 @@ type Scatter3d struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: lines+markers
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
@@ -164,6 +173,7 @@ type Scatter3d struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Projection
+	// arrayOK: false
 	// role: Object
 	Projection *Scatter3dProjection `json:"projection,omitempty"`
 
@@ -180,6 +190,7 @@ type Scatter3d struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *Scatter3dStream `json:"stream,omitempty"`
 
@@ -203,6 +214,7 @@ type Scatter3d struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *Scatter3dTextfont `json:"textfont,omitempty"`
 
@@ -698,6 +710,7 @@ type Scatter3dHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Scatter3dHoverlabelFont `json:"font,omitempty"`
 
@@ -740,6 +753,7 @@ type Scatter3dLegendgrouptitleFont struct {
 type Scatter3dLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Scatter3dLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -798,6 +812,7 @@ type Scatter3dLineColorbarTitleFont struct {
 type Scatter3dLineColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Scatter3dLineColorbarTitleFont `json:"font,omitempty"`
 
@@ -964,6 +979,7 @@ type Scatter3dLineColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *Scatter3dLineColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1062,6 +1078,7 @@ type Scatter3dLineColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *Scatter3dLineColorbarTitle `json:"title,omitempty"`
 
@@ -1164,6 +1181,7 @@ type Scatter3dLine struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *Scatter3dLineColorbar `json:"colorbar,omitempty"`
 
@@ -1253,6 +1271,7 @@ type Scatter3dMarkerColorbarTitleFont struct {
 type Scatter3dMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Scatter3dMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -1419,6 +1438,7 @@ type Scatter3dMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *Scatter3dMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1517,6 +1537,7 @@ type Scatter3dMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *Scatter3dMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1689,6 +1710,7 @@ type Scatter3dMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *Scatter3dMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1705,6 +1727,7 @@ type Scatter3dMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *Scatter3dMarkerLine `json:"line,omitempty"`
 
@@ -1841,14 +1864,17 @@ type Scatter3dProjectionZ struct {
 type Scatter3dProjection struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *Scatter3dProjectionX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *Scatter3dProjectionY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *Scatter3dProjectionZ `json:"z,omitempty"`
 }

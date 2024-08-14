@@ -28,6 +28,7 @@ type Heatmap struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *HeatmapColorbar `json:"colorbar,omitempty"`
 
@@ -68,6 +69,7 @@ type Heatmap struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -80,6 +82,7 @@ type Heatmap struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *HeatmapHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -138,6 +141,7 @@ type Heatmap struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *HeatmapLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -196,6 +200,7 @@ type Heatmap struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *HeatmapStream `json:"stream,omitempty"`
 
@@ -206,6 +211,7 @@ type Heatmap struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *HeatmapTextfont `json:"textfont,omitempty"`
 
@@ -488,6 +494,7 @@ type HeatmapColorbarTitleFont struct {
 type HeatmapColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapColorbarTitleFont `json:"font,omitempty"`
 
@@ -654,6 +661,7 @@ type HeatmapColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *HeatmapColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -752,6 +760,7 @@ type HeatmapColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *HeatmapColorbarTitle `json:"title,omitempty"`
 
@@ -889,6 +898,7 @@ type HeatmapHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapHoverlabelFont `json:"font,omitempty"`
 
@@ -931,6 +941,7 @@ type HeatmapLegendgrouptitleFont struct {
 type HeatmapLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapLegendgrouptitleFont `json:"font,omitempty"`
 

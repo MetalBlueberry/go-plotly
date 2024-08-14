@@ -28,6 +28,7 @@ type Funnel struct {
 	Cliponaxis Bool `json:"cliponaxis,omitempty"`
 
 	// Connector
+	// arrayOK: false
 	// role: Object
 	Connector *FunnelConnector `json:"connector,omitempty"`
 
@@ -63,6 +64,7 @@ type Funnel struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -75,6 +77,7 @@ type Funnel struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *FunnelHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -122,6 +125,7 @@ type Funnel struct {
 	Insidetextanchor FunnelInsidetextanchor `json:"insidetextanchor,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *FunnelInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -138,6 +142,7 @@ type Funnel struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *FunnelLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -154,6 +159,7 @@ type Funnel struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *FunnelMarker `json:"marker,omitempty"`
 
@@ -201,6 +207,7 @@ type Funnel struct {
 	Orientation FunnelOrientation `json:"orientation,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *FunnelOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -217,6 +224,7 @@ type Funnel struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *FunnelStream `json:"stream,omitempty"`
 
@@ -233,10 +241,12 @@ type Funnel struct {
 	Textangle float64 `json:"textangle,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *FunnelTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph. In the case of having multiple funnels, percentages & totals are computed separately (per trace).
@@ -435,6 +445,7 @@ type FunnelConnector struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *FunnelConnectorLine `json:"line,omitempty"`
 
@@ -526,6 +537,7 @@ type FunnelHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelHoverlabelFont `json:"font,omitempty"`
 
@@ -608,6 +620,7 @@ type FunnelLegendgrouptitleFont struct {
 type FunnelLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -666,6 +679,7 @@ type FunnelMarkerColorbarTitleFont struct {
 type FunnelMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -832,6 +846,7 @@ type FunnelMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *FunnelMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -930,6 +945,7 @@ type FunnelMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *FunnelMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1108,6 +1124,7 @@ type FunnelMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *FunnelMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1124,6 +1141,7 @@ type FunnelMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *FunnelMarkerLine `json:"line,omitempty"`
 

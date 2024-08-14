@@ -28,6 +28,7 @@ type Carpet struct {
 	A0 float64 `json:"a0,omitempty"`
 
 	// Aaxis
+	// arrayOK: false
 	// role: Object
 	Aaxis *CarpetAaxis `json:"aaxis,omitempty"`
 
@@ -50,6 +51,7 @@ type Carpet struct {
 	B0 float64 `json:"b0,omitempty"`
 
 	// Baxis
+	// arrayOK: false
 	// role: Object
 	Baxis *CarpetBaxis `json:"baxis,omitempty"`
 
@@ -102,6 +104,7 @@ type Carpet struct {
 	Db float64 `json:"db,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CarpetFont `json:"font,omitempty"`
 
@@ -124,6 +127,7 @@ type Carpet struct {
 	Legend String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *CarpetLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -164,6 +168,7 @@ type Carpet struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *CarpetStream `json:"stream,omitempty"`
 
@@ -277,6 +282,7 @@ type CarpetAaxisTitleFont struct {
 type CarpetAaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CarpetAaxisTitleFont `json:"font,omitempty"`
 
@@ -577,6 +583,7 @@ type CarpetAaxis struct {
 	Tickangle float64 `json:"tickangle,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *CarpetAaxisTickfont `json:"tickfont,omitempty"`
 
@@ -636,6 +643,7 @@ type CarpetAaxis struct {
 	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *CarpetAaxisTitle `json:"title,omitempty"`
 
@@ -695,6 +703,7 @@ type CarpetBaxisTitleFont struct {
 type CarpetBaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CarpetBaxisTitleFont `json:"font,omitempty"`
 
@@ -995,6 +1004,7 @@ type CarpetBaxis struct {
 	Tickangle float64 `json:"tickangle,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *CarpetBaxisTickfont `json:"tickfont,omitempty"`
 
@@ -1054,6 +1064,7 @@ type CarpetBaxis struct {
 	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *CarpetBaxisTitle `json:"title,omitempty"`
 
@@ -1113,6 +1124,7 @@ type CarpetLegendgrouptitleFont struct {
 type CarpetLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *CarpetLegendgrouptitleFont `json:"font,omitempty"`
 

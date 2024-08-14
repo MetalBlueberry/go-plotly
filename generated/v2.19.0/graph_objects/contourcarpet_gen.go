@@ -90,6 +90,7 @@ type Contourcarpet struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ContourcarpetColorbar `json:"colorbar,omitempty"`
 
@@ -100,6 +101,7 @@ type Contourcarpet struct {
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contours
+	// arrayOK: false
 	// role: Object
 	Contours *ContourcarpetContours `json:"contours,omitempty"`
 
@@ -164,6 +166,7 @@ type Contourcarpet struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ContourcarpetLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -180,6 +183,7 @@ type Contourcarpet struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ContourcarpetLine `json:"line,omitempty"`
 
@@ -232,6 +236,7 @@ type Contourcarpet struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ContourcarpetStream `json:"stream,omitempty"`
 
@@ -369,6 +374,7 @@ type ContourcarpetColorbarTitleFont struct {
 type ContourcarpetColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ContourcarpetColorbarTitleFont `json:"font,omitempty"`
 
@@ -535,6 +541,7 @@ type ContourcarpetColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ContourcarpetColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -633,6 +640,7 @@ type ContourcarpetColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ContourcarpetColorbarTitle `json:"title,omitempty"`
 
@@ -714,6 +722,7 @@ type ContourcarpetContours struct {
 	End float64 `json:"end,omitempty"`
 
 	// Labelfont
+	// arrayOK: false
 	// role: Object
 	Labelfont *ContourcarpetContoursLabelfont `json:"labelfont,omitempty"`
 
@@ -794,6 +803,7 @@ type ContourcarpetLegendgrouptitleFont struct {
 type ContourcarpetLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ContourcarpetLegendgrouptitleFont `json:"font,omitempty"`
 

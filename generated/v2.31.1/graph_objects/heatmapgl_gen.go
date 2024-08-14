@@ -28,6 +28,7 @@ type Heatmapgl struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *HeatmapglColorbar `json:"colorbar,omitempty"`
 
@@ -62,6 +63,7 @@ type Heatmapgl struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -74,6 +76,7 @@ type Heatmapgl struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *HeatmapglHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -96,6 +99,7 @@ type Heatmapgl struct {
 	Legend String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *HeatmapglLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -148,6 +152,7 @@ type Heatmapgl struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *HeatmapglStream `json:"stream,omitempty"`
 
@@ -348,6 +353,7 @@ type HeatmapglColorbarTitleFont struct {
 type HeatmapglColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapglColorbarTitleFont `json:"font,omitempty"`
 
@@ -514,6 +520,7 @@ type HeatmapglColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *HeatmapglColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -612,6 +619,7 @@ type HeatmapglColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *HeatmapglColorbarTitle `json:"title,omitempty"`
 
@@ -749,6 +757,7 @@ type HeatmapglHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapglHoverlabelFont `json:"font,omitempty"`
 
@@ -791,6 +800,7 @@ type HeatmapglLegendgrouptitleFont struct {
 type HeatmapglLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *HeatmapglLegendgrouptitleFont `json:"font,omitempty"`
 

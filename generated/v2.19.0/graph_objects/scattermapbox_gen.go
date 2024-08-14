@@ -22,6 +22,7 @@ type Scattermapbox struct {
 	Below string `json:"below,omitempty"`
 
 	// Cluster
+	// arrayOK: false
 	// role: Object
 	Cluster *ScattermapboxCluster `json:"cluster,omitempty"`
 
@@ -57,6 +58,7 @@ type Scattermapbox struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -69,6 +71,7 @@ type Scattermapbox struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ScattermapboxHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -127,6 +130,7 @@ type Scattermapbox struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ScattermapboxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -143,6 +147,7 @@ type Scattermapbox struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScattermapboxLine `json:"line,omitempty"`
 
@@ -159,6 +164,7 @@ type Scattermapbox struct {
 	Lonsrc string `json:"lonsrc,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattermapboxMarker `json:"marker,omitempty"`
 
@@ -175,6 +181,7 @@ type Scattermapbox struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: markers
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover.
@@ -193,6 +200,7 @@ type Scattermapbox struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ScattermapboxSelected `json:"selected,omitempty"`
 
@@ -209,6 +217,7 @@ type Scattermapbox struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ScattermapboxStream `json:"stream,omitempty"`
 
@@ -225,6 +234,7 @@ type Scattermapbox struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattermapboxTextfont `json:"textfont,omitempty"`
 
@@ -272,6 +282,7 @@ type Scattermapbox struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ScattermapboxUnselected `json:"unselected,omitempty"`
 
@@ -428,6 +439,7 @@ type ScattermapboxHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattermapboxHoverlabelFont `json:"font,omitempty"`
 
@@ -470,6 +482,7 @@ type ScattermapboxLegendgrouptitleFont struct {
 type ScattermapboxLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattermapboxLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -544,6 +557,7 @@ type ScattermapboxMarkerColorbarTitleFont struct {
 type ScattermapboxMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattermapboxMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -710,6 +724,7 @@ type ScattermapboxMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ScattermapboxMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -808,6 +823,7 @@ type ScattermapboxMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ScattermapboxMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -914,6 +930,7 @@ type ScattermapboxMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ScattermapboxMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1023,6 +1040,7 @@ type ScattermapboxSelectedMarker struct {
 type ScattermapboxSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattermapboxSelectedMarker `json:"marker,omitempty"`
 }
@@ -1091,6 +1109,7 @@ type ScattermapboxUnselectedMarker struct {
 type ScattermapboxUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattermapboxUnselectedMarker `json:"marker,omitempty"`
 }

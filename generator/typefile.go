@@ -106,11 +106,16 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)
 			}
+			typeName := "*" + name
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "*" + name,
+				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					"role: Object",
 				},
 			})

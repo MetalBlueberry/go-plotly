@@ -65,6 +65,7 @@ type Scattergeo struct {
 	Geojson interface{} `json:"geojson,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -77,6 +78,7 @@ type Scattergeo struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ScattergeoHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -141,6 +143,7 @@ type Scattergeo struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ScattergeoLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -157,6 +160,7 @@ type Scattergeo struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScattergeoLine `json:"line,omitempty"`
 
@@ -192,6 +196,7 @@ type Scattergeo struct {
 	Lonsrc string `json:"lonsrc,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattergeoMarker `json:"marker,omitempty"`
 
@@ -208,6 +213,7 @@ type Scattergeo struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: markers
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
@@ -226,6 +232,7 @@ type Scattergeo struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ScattergeoSelected `json:"selected,omitempty"`
 
@@ -242,6 +249,7 @@ type Scattergeo struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ScattergeoStream `json:"stream,omitempty"`
 
@@ -252,6 +260,7 @@ type Scattergeo struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattergeoTextfont `json:"textfont,omitempty"`
 
@@ -305,6 +314,7 @@ type Scattergeo struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ScattergeoUnselected `json:"unselected,omitempty"`
 
@@ -397,6 +407,7 @@ type ScattergeoHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattergeoHoverlabelFont `json:"font,omitempty"`
 
@@ -439,6 +450,7 @@ type ScattergeoLegendgrouptitleFont struct {
 type ScattergeoLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattergeoLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -519,6 +531,7 @@ type ScattergeoMarkerColorbarTitleFont struct {
 type ScattergeoMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattergeoMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -685,6 +698,7 @@ type ScattergeoMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ScattergeoMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -783,6 +797,7 @@ type ScattergeoMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ScattergeoMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1009,6 +1024,7 @@ type ScattergeoMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ScattergeoMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1025,10 +1041,12 @@ type ScattergeoMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Gradient
+	// arrayOK: false
 	// role: Object
 	Gradient *ScattergeoMarkerGradient `json:"gradient,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScattergeoMarkerLine `json:"line,omitempty"`
 
@@ -1149,10 +1167,12 @@ type ScattergeoSelectedTextfont struct {
 type ScattergeoSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattergeoSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattergeoSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1249,10 +1269,12 @@ type ScattergeoUnselectedTextfont struct {
 type ScattergeoUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattergeoUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattergeoUnselectedTextfont `json:"textfont,omitempty"`
 }

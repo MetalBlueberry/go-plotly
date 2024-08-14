@@ -77,6 +77,7 @@ type Scattercarpet struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -89,10 +90,12 @@ type Scattercarpet struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ScattercarpetHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Do the hover effects highlight individual points (markers or line points) or do they highlight filled regions? If the fill is *toself* or *tonext* and there are no markers or text, then the default is *fills*, otherwise it is *points*.
@@ -141,6 +144,7 @@ type Scattercarpet struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ScattercarpetLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -157,10 +161,12 @@ type Scattercarpet struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScattercarpetLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattercarpetMarker `json:"marker,omitempty"`
 
@@ -177,6 +183,7 @@ type Scattercarpet struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: markers
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
@@ -195,6 +202,7 @@ type Scattercarpet struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ScattercarpetSelected `json:"selected,omitempty"`
 
@@ -211,6 +219,7 @@ type Scattercarpet struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ScattercarpetStream `json:"stream,omitempty"`
 
@@ -221,6 +230,7 @@ type Scattercarpet struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattercarpetTextfont `json:"textfont,omitempty"`
 
@@ -274,6 +284,7 @@ type Scattercarpet struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ScattercarpetUnselected `json:"unselected,omitempty"`
 
@@ -378,6 +389,7 @@ type ScattercarpetHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattercarpetHoverlabelFont `json:"font,omitempty"`
 
@@ -420,6 +432,7 @@ type ScattercarpetLegendgrouptitleFont struct {
 type ScattercarpetLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattercarpetLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -525,6 +538,7 @@ type ScattercarpetMarkerColorbarTitleFont struct {
 type ScattercarpetMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScattercarpetMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -691,6 +705,7 @@ type ScattercarpetMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ScattercarpetMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -789,6 +804,7 @@ type ScattercarpetMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ScattercarpetMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1001,6 +1017,7 @@ type ScattercarpetMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ScattercarpetMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1017,10 +1034,12 @@ type ScattercarpetMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Gradient
+	// arrayOK: false
 	// role: Object
 	Gradient *ScattercarpetMarkerGradient `json:"gradient,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScattercarpetMarkerLine `json:"line,omitempty"`
 
@@ -1147,10 +1166,12 @@ type ScattercarpetSelectedTextfont struct {
 type ScattercarpetSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattercarpetSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattercarpetSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1247,10 +1268,12 @@ type ScattercarpetUnselectedTextfont struct {
 type ScattercarpetUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScattercarpetUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScattercarpetUnselectedTextfont `json:"textfont,omitempty"`
 }

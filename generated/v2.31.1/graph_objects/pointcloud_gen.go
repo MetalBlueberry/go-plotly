@@ -28,6 +28,7 @@ type Pointcloud struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -40,6 +41,7 @@ type Pointcloud struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *PointcloudHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -80,6 +82,7 @@ type Pointcloud struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *PointcloudLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -96,6 +99,7 @@ type Pointcloud struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *PointcloudMarker `json:"marker,omitempty"`
 
@@ -130,6 +134,7 @@ type Pointcloud struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *PointcloudStream `json:"stream,omitempty"`
 
@@ -318,6 +323,7 @@ type PointcloudHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *PointcloudHoverlabelFont `json:"font,omitempty"`
 
@@ -360,6 +366,7 @@ type PointcloudLegendgrouptitleFont struct {
 type PointcloudLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *PointcloudLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -396,6 +403,7 @@ type PointcloudMarker struct {
 	Blend Bool `json:"blend,omitempty"`
 
 	// Border
+	// arrayOK: false
 	// role: Object
 	Border *PointcloudMarkerBorder `json:"border,omitempty"`
 

@@ -28,6 +28,7 @@ type Violin struct {
 	Bandwidth float64 `json:"bandwidth,omitempty"`
 
 	// Box
+	// arrayOK: false
 	// role: Object
 	Box *ViolinBox `json:"box,omitempty"`
 
@@ -50,6 +51,7 @@ type Violin struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -62,10 +64,12 @@ type Violin struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ViolinHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
+	// arrayOK: false
 	// default: violins+points+kde
 	// type: flaglist
 	// Do the hover effects highlight individual violins or sample points or the kernel density estimate or any combination of them?
@@ -120,6 +124,7 @@ type Violin struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ViolinLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -136,14 +141,17 @@ type Violin struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ViolinLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ViolinMarker `json:"marker,omitempty"`
 
 	// Meanline
+	// arrayOK: false
 	// role: Object
 	Meanline *ViolinMeanline `json:"meanline,omitempty"`
 
@@ -218,6 +226,7 @@ type Violin struct {
 	Scalemode ViolinScalemode `json:"scalemode,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ViolinSelected `json:"selected,omitempty"`
 
@@ -254,6 +263,7 @@ type Violin struct {
 	Spanmode ViolinSpanmode `json:"spanmode,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ViolinStream `json:"stream,omitempty"`
 
@@ -288,6 +298,7 @@ type Violin struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ViolinUnselected `json:"unselected,omitempty"`
 
@@ -391,6 +402,7 @@ type ViolinBox struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ViolinBoxLine `json:"line,omitempty"`
 
@@ -488,6 +500,7 @@ type ViolinHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ViolinHoverlabelFont `json:"font,omitempty"`
 
@@ -530,6 +543,7 @@ type ViolinLegendgrouptitleFont struct {
 type ViolinLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ViolinLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -600,6 +614,7 @@ type ViolinMarker struct {
 	Color Color `json:"color,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ViolinMarkerLine `json:"line,omitempty"`
 
@@ -677,6 +692,7 @@ type ViolinSelectedMarker struct {
 type ViolinSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ViolinSelectedMarker `json:"marker,omitempty"`
 }
@@ -723,6 +739,7 @@ type ViolinUnselectedMarker struct {
 type ViolinUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ViolinUnselectedMarker `json:"marker,omitempty"`
 }

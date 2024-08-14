@@ -71,14 +71,17 @@ type Bar struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// ErrorX
+	// arrayOK: false
 	// role: Object
 	ErrorX *BarErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
+	// arrayOK: false
 	// role: Object
 	ErrorY *BarErrorY `json:"error_y,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -91,6 +94,7 @@ type Bar struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *BarHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -138,6 +142,7 @@ type Bar struct {
 	Insidetextanchor BarInsidetextanchor `json:"insidetextanchor,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *BarInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -148,6 +153,7 @@ type Bar struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *BarLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -164,6 +170,7 @@ type Bar struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarMarker `json:"marker,omitempty"`
 
@@ -217,10 +224,12 @@ type Bar struct {
 	Orientation BarOrientation `json:"orientation,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *BarOutsidetextfont `json:"outsidetextfont,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *BarSelected `json:"selected,omitempty"`
 
@@ -237,6 +246,7 @@ type Bar struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *BarStream `json:"stream,omitempty"`
 
@@ -253,6 +263,7 @@ type Bar struct {
 	Textangle float64 `json:"textangle,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *BarTextfont `json:"textfont,omitempty"`
 
@@ -306,6 +317,7 @@ type Bar struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *BarUnselected `json:"unselected,omitempty"`
 
@@ -706,6 +718,7 @@ type BarHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarHoverlabelFont `json:"font,omitempty"`
 
@@ -788,6 +801,7 @@ type BarLegendgrouptitleFont struct {
 type BarLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -846,6 +860,7 @@ type BarMarkerColorbarTitleFont struct {
 type BarMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -1012,6 +1027,7 @@ type BarMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *BarMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1110,6 +1126,7 @@ type BarMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *BarMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1352,6 +1369,7 @@ type BarMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *BarMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1368,6 +1386,7 @@ type BarMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *BarMarkerLine `json:"line,omitempty"`
 
@@ -1384,6 +1403,7 @@ type BarMarker struct {
 	Opacitysrc string `json:"opacitysrc,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// role: Object
 	Pattern *BarMarkerPattern `json:"pattern,omitempty"`
 
@@ -1470,10 +1490,12 @@ type BarSelectedTextfont struct {
 type BarSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *BarSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1564,10 +1586,12 @@ type BarUnselectedTextfont struct {
 type BarUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *BarUnselectedTextfont `json:"textfont,omitempty"`
 }

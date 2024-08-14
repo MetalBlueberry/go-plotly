@@ -4,10 +4,12 @@ package grob
 type Layout struct {
 
 	// Activeselection
+	// arrayOK: false
 	// role: Object
 	Activeselection *LayoutActiveselection `json:"activeselection,omitempty"`
 
 	// Activeshape
+	// arrayOK: false
 	// role: Object
 	Activeshape *LayoutActiveshape `json:"activeshape,omitempty"`
 
@@ -89,16 +91,19 @@ type Layout struct {
 	Calendar LayoutCalendar `json:"calendar,omitempty"`
 
 	// Clickmode
+	// arrayOK: false
 	// default: event
 	// type: flaglist
 	// Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
 	Clickmode LayoutClickmode `json:"clickmode,omitempty"`
 
 	// Coloraxis
+	// arrayOK: false
 	// role: Object
 	Coloraxis *LayoutColoraxis `json:"coloraxis,omitempty"`
 
 	// Colorscale
+	// arrayOK: false
 	// role: Object
 	Colorscale *LayoutColorscale `json:"colorscale,omitempty"`
 
@@ -164,6 +169,7 @@ type Layout struct {
 	Extendtreemapcolors Bool `json:"extendtreemapcolors,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutFont `json:"font,omitempty"`
 
@@ -193,10 +199,12 @@ type Layout struct {
 	Funnelmode LayoutFunnelmode `json:"funnelmode,omitempty"`
 
 	// Geo
+	// arrayOK: false
 	// role: Object
 	Geo *LayoutGeo `json:"geo,omitempty"`
 
 	// Grid
+	// arrayOK: false
 	// role: Object
 	Grid *LayoutGrid `json:"grid,omitempty"`
 
@@ -231,6 +239,7 @@ type Layout struct {
 	Hoverdistance int64 `json:"hoverdistance,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *LayoutHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -261,14 +270,17 @@ type Layout struct {
 	Images interface{} `json:"images,omitempty"`
 
 	// Legend
+	// arrayOK: false
 	// role: Object
 	Legend *LayoutLegend `json:"legend,omitempty"`
 
 	// Mapbox
+	// arrayOK: false
 	// role: Object
 	Mapbox *LayoutMapbox `json:"mapbox,omitempty"`
 
 	// Margin
+	// arrayOK: false
 	// role: Object
 	Margin *LayoutMargin `json:"margin,omitempty"`
 
@@ -297,14 +309,17 @@ type Layout struct {
 	Minreducedwidth float64 `json:"minreducedwidth,omitempty"`
 
 	// Modebar
+	// arrayOK: false
 	// role: Object
 	Modebar *LayoutModebar `json:"modebar,omitempty"`
 
 	// Newselection
+	// arrayOK: false
 	// role: Object
 	Newselection *LayoutNewselection `json:"newselection,omitempty"`
 
 	// Newshape
+	// arrayOK: false
 	// role: Object
 	Newshape *LayoutNewshape `json:"newshape,omitempty"`
 
@@ -327,6 +342,7 @@ type Layout struct {
 	PlotBgcolor ColorWithColorScale `json:"plot_bgcolor,omitempty"`
 
 	// Polar
+	// arrayOK: false
 	// role: Object
 	Polar *LayoutPolar `json:"polar,omitempty"`
 
@@ -344,6 +360,7 @@ type Layout struct {
 	Scattermode LayoutScattermode `json:"scattermode,omitempty"`
 
 	// Scene
+	// arrayOK: false
 	// role: Object
 	Scene *LayoutScene `json:"scene,omitempty"`
 
@@ -391,6 +408,7 @@ type Layout struct {
 	Sliders interface{} `json:"sliders,omitempty"`
 
 	// Smith
+	// arrayOK: false
 	// role: Object
 	Smith *LayoutSmith `json:"smith,omitempty"`
 
@@ -413,14 +431,17 @@ type Layout struct {
 	Template interface{} `json:"template,omitempty"`
 
 	// Ternary
+	// arrayOK: false
 	// role: Object
 	Ternary *LayoutTernary `json:"ternary,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutTitle `json:"title,omitempty"`
 
 	// Transition
+	// arrayOK: false
 	// role: Object
 	Transition *LayoutTransition `json:"transition,omitempty"`
 
@@ -437,6 +458,7 @@ type Layout struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Uniformtext
+	// arrayOK: false
 	// role: Object
 	Uniformtext *LayoutUniformtext `json:"uniformtext,omitempty"`
 
@@ -491,10 +513,12 @@ type Layout struct {
 	Width float64 `json:"width,omitempty"`
 
 	// Xaxis
+	// arrayOK: false
 	// role: Object
 	Xaxis *LayoutXaxis `json:"xaxis,omitempty"`
 
 	// Yaxis
+	// arrayOK: false
 	// role: Object
 	Yaxis *LayoutYaxis `json:"yaxis,omitempty"`
 
@@ -619,6 +643,7 @@ type LayoutColoraxisColorbarTitleFont struct {
 type LayoutColoraxisColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutColoraxisColorbarTitleFont `json:"font,omitempty"`
 
@@ -785,6 +810,7 @@ type LayoutColoraxisColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutColoraxisColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -883,6 +909,7 @@ type LayoutColoraxisColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutColoraxisColorbarTitle `json:"title,omitempty"`
 
@@ -973,6 +1000,7 @@ type LayoutColoraxis struct {
 	Cmin float64 `json:"cmin,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *LayoutColoraxisColorbar `json:"colorbar,omitempty"`
 
@@ -1213,6 +1241,7 @@ type LayoutGeoProjection struct {
 	Parallels interface{} `json:"parallels,omitempty"`
 
 	// Rotation
+	// arrayOK: false
 	// role: Object
 	Rotation *LayoutGeoProjectionRotation `json:"rotation,omitempty"`
 
@@ -1246,6 +1275,7 @@ type LayoutGeo struct {
 	Bgcolor Color `json:"bgcolor,omitempty"`
 
 	// Center
+	// arrayOK: false
 	// role: Object
 	Center *LayoutGeoCenter `json:"center,omitempty"`
 
@@ -1274,6 +1304,7 @@ type LayoutGeo struct {
 	Countrywidth float64 `json:"countrywidth,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutGeoDomain `json:"domain,omitempty"`
 
@@ -1309,10 +1340,12 @@ type LayoutGeo struct {
 	Landcolor Color `json:"landcolor,omitempty"`
 
 	// Lataxis
+	// arrayOK: false
 	// role: Object
 	Lataxis *LayoutGeoLataxis `json:"lataxis,omitempty"`
 
 	// Lonaxis
+	// arrayOK: false
 	// role: Object
 	Lonaxis *LayoutGeoLonaxis `json:"lonaxis,omitempty"`
 
@@ -1323,6 +1356,7 @@ type LayoutGeo struct {
 	Oceancolor Color `json:"oceancolor,omitempty"`
 
 	// Projection
+	// arrayOK: false
 	// role: Object
 	Projection *LayoutGeoProjection `json:"projection,omitempty"`
 
@@ -1451,6 +1485,7 @@ type LayoutGrid struct {
 	Columns int64 `json:"columns,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutGridDomain `json:"domain,omitempty"`
 
@@ -1586,10 +1621,12 @@ type LayoutHoverlabel struct {
 	Bordercolor Color `json:"bordercolor,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutHoverlabelFont `json:"font,omitempty"`
 
 	// Grouptitlefont
+	// arrayOK: false
 	// role: Object
 	Grouptitlefont *LayoutHoverlabelGrouptitlefont `json:"grouptitlefont,omitempty"`
 
@@ -1670,6 +1707,7 @@ type LayoutLegendTitleFont struct {
 type LayoutLegendTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutLegendTitleFont `json:"font,omitempty"`
 
@@ -1722,6 +1760,7 @@ type LayoutLegend struct {
 	Entrywidthmode LayoutLegendEntrywidthmode `json:"entrywidthmode,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutLegendFont `json:"font,omitempty"`
 
@@ -1733,6 +1772,7 @@ type LayoutLegend struct {
 	Groupclick LayoutLegendGroupclick `json:"groupclick,omitempty"`
 
 	// Grouptitlefont
+	// arrayOK: false
 	// role: Object
 	Grouptitlefont *LayoutLegendGrouptitlefont `json:"grouptitlefont,omitempty"`
 
@@ -1777,6 +1817,7 @@ type LayoutLegend struct {
 	Orientation LayoutLegendOrientation `json:"orientation,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutLegendTitle `json:"title,omitempty"`
 
@@ -1787,6 +1828,7 @@ type LayoutLegend struct {
 	Tracegroupgap float64 `json:"tracegroupgap,omitempty"`
 
 	// Traceorder
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines the order at which the legend items are displayed. If *normal*, the items are displayed top-to-bottom in the same order as the input data. If *reversed*, the items are displayed in the opposite order as *normal*. If *grouped*, the items are displayed in groups (when a trace `legendgroup` is provided). if *grouped+reversed*, the items are displayed in the opposite order as *grouped*.
@@ -1940,14 +1982,17 @@ type LayoutMapbox struct {
 	Bearing float64 `json:"bearing,omitempty"`
 
 	// Bounds
+	// arrayOK: false
 	// role: Object
 	Bounds *LayoutMapboxBounds `json:"bounds,omitempty"`
 
 	// Center
+	// arrayOK: false
 	// role: Object
 	Center *LayoutMapboxCenter `json:"center,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutMapboxDomain `json:"domain,omitempty"`
 
@@ -2107,6 +2152,7 @@ type LayoutNewselectionLine struct {
 type LayoutNewselection struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *LayoutNewselectionLine `json:"line,omitempty"`
 
@@ -2144,6 +2190,7 @@ type LayoutNewshapeLabelFont struct {
 type LayoutNewshapeLabel struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutNewshapeLabelFont `json:"font,omitempty"`
 
@@ -2219,6 +2266,7 @@ type LayoutNewshapeLegendgrouptitleFont struct {
 type LayoutNewshapeLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutNewshapeLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -2275,6 +2323,7 @@ type LayoutNewshape struct {
 	Fillrule LayoutNewshapeFillrule `json:"fillrule,omitempty"`
 
 	// Label
+	// arrayOK: false
 	// role: Object
 	Label *LayoutNewshapeLabel `json:"label,omitempty"`
 
@@ -2298,6 +2347,7 @@ type LayoutNewshape struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *LayoutNewshapeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -2314,6 +2364,7 @@ type LayoutNewshape struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *LayoutNewshapeLine `json:"line,omitempty"`
 
@@ -2564,6 +2615,7 @@ type LayoutPolarAngularaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutPolarAngularaxisTickfont `json:"tickfont,omitempty"`
 
@@ -2783,6 +2835,7 @@ type LayoutPolarRadialaxisTitleFont struct {
 type LayoutPolarRadialaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutPolarRadialaxisTitleFont `json:"font,omitempty"`
 
@@ -2810,6 +2863,7 @@ type LayoutPolarRadialaxis struct {
 	Autorange LayoutPolarRadialaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutPolarRadialaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -3028,6 +3082,7 @@ type LayoutPolarRadialaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutPolarRadialaxisTickfont `json:"tickfont,omitempty"`
 
@@ -3112,6 +3167,7 @@ type LayoutPolarRadialaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutPolarRadialaxisTitle `json:"title,omitempty"`
 
@@ -3139,6 +3195,7 @@ type LayoutPolarRadialaxis struct {
 type LayoutPolar struct {
 
 	// Angularaxis
+	// arrayOK: false
 	// role: Object
 	Angularaxis *LayoutPolarAngularaxis `json:"angularaxis,omitempty"`
 
@@ -3149,6 +3206,7 @@ type LayoutPolar struct {
 	Bgcolor Color `json:"bgcolor,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutPolarDomain `json:"domain,omitempty"`
 
@@ -3166,6 +3224,7 @@ type LayoutPolar struct {
 	Hole float64 `json:"hole,omitempty"`
 
 	// Radialaxis
+	// arrayOK: false
 	// role: Object
 	Radialaxis *LayoutPolarRadialaxis `json:"radialaxis,omitempty"`
 
@@ -3285,18 +3344,22 @@ type LayoutSceneCameraUp struct {
 type LayoutSceneCamera struct {
 
 	// Center
+	// arrayOK: false
 	// role: Object
 	Center *LayoutSceneCameraCenter `json:"center,omitempty"`
 
 	// Eye
+	// arrayOK: false
 	// role: Object
 	Eye *LayoutSceneCameraEye `json:"eye,omitempty"`
 
 	// Projection
+	// arrayOK: false
 	// role: Object
 	Projection *LayoutSceneCameraProjection `json:"projection,omitempty"`
 
 	// Up
+	// arrayOK: false
 	// role: Object
 	Up *LayoutSceneCameraUp `json:"up,omitempty"`
 }
@@ -3417,6 +3480,7 @@ type LayoutSceneXaxisTitleFont struct {
 type LayoutSceneXaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutSceneXaxisTitleFont `json:"font,omitempty"`
 
@@ -3438,6 +3502,7 @@ type LayoutSceneXaxis struct {
 	Autorange LayoutSceneXaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutSceneXaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -3679,6 +3744,7 @@ type LayoutSceneXaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutSceneXaxisTickfont `json:"tickfont,omitempty"`
 
@@ -3757,6 +3823,7 @@ type LayoutSceneXaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutSceneXaxisTitle `json:"title,omitempty"`
 
@@ -3880,6 +3947,7 @@ type LayoutSceneYaxisTitleFont struct {
 type LayoutSceneYaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutSceneYaxisTitleFont `json:"font,omitempty"`
 
@@ -3901,6 +3969,7 @@ type LayoutSceneYaxis struct {
 	Autorange LayoutSceneYaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutSceneYaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -4142,6 +4211,7 @@ type LayoutSceneYaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutSceneYaxisTickfont `json:"tickfont,omitempty"`
 
@@ -4220,6 +4290,7 @@ type LayoutSceneYaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutSceneYaxisTitle `json:"title,omitempty"`
 
@@ -4343,6 +4414,7 @@ type LayoutSceneZaxisTitleFont struct {
 type LayoutSceneZaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutSceneZaxisTitleFont `json:"font,omitempty"`
 
@@ -4364,6 +4436,7 @@ type LayoutSceneZaxis struct {
 	Autorange LayoutSceneZaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutSceneZaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -4605,6 +4678,7 @@ type LayoutSceneZaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutSceneZaxisTickfont `json:"tickfont,omitempty"`
 
@@ -4683,6 +4757,7 @@ type LayoutSceneZaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutSceneZaxisTitle `json:"title,omitempty"`
 
@@ -4735,6 +4810,7 @@ type LayoutScene struct {
 	Aspectmode LayoutSceneAspectmode `json:"aspectmode,omitempty"`
 
 	// Aspectratio
+	// arrayOK: false
 	// role: Object
 	Aspectratio *LayoutSceneAspectratio `json:"aspectratio,omitempty"`
 
@@ -4745,10 +4821,12 @@ type LayoutScene struct {
 	Bgcolor Color `json:"bgcolor,omitempty"`
 
 	// Camera
+	// arrayOK: false
 	// role: Object
 	Camera *LayoutSceneCamera `json:"camera,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutSceneDomain `json:"domain,omitempty"`
 
@@ -4773,14 +4851,17 @@ type LayoutScene struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Xaxis
+	// arrayOK: false
 	// role: Object
 	Xaxis *LayoutSceneXaxis `json:"xaxis,omitempty"`
 
 	// Yaxis
+	// arrayOK: false
 	// role: Object
 	Yaxis *LayoutSceneYaxis `json:"yaxis,omitempty"`
 
 	// Zaxis
+	// arrayOK: false
 	// role: Object
 	Zaxis *LayoutSceneZaxis `json:"zaxis,omitempty"`
 }
@@ -4932,6 +5013,7 @@ type LayoutSmithImaginaryaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutSmithImaginaryaxisTickfont `json:"tickfont,omitempty"`
 
@@ -5123,6 +5205,7 @@ type LayoutSmithRealaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutSmithRealaxisTickfont `json:"tickfont,omitempty"`
 
@@ -5192,14 +5275,17 @@ type LayoutSmith struct {
 	Bgcolor Color `json:"bgcolor,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutSmithDomain `json:"domain,omitempty"`
 
 	// Imaginaryaxis
+	// arrayOK: false
 	// role: Object
 	Imaginaryaxis *LayoutSmithImaginaryaxis `json:"imaginaryaxis,omitempty"`
 
 	// Realaxis
+	// arrayOK: false
 	// role: Object
 	Realaxis *LayoutSmithRealaxis `json:"realaxis,omitempty"`
 }
@@ -5252,6 +5338,7 @@ type LayoutTernaryAaxisTitleFont struct {
 type LayoutTernaryAaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutTernaryAaxisTitleFont `json:"font,omitempty"`
 
@@ -5415,6 +5502,7 @@ type LayoutTernaryAaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutTernaryAaxisTickfont `json:"tickfont,omitempty"`
 
@@ -5499,6 +5587,7 @@ type LayoutTernaryAaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutTernaryAaxisTitle `json:"title,omitempty"`
 
@@ -5557,6 +5646,7 @@ type LayoutTernaryBaxisTitleFont struct {
 type LayoutTernaryBaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutTernaryBaxisTitleFont `json:"font,omitempty"`
 
@@ -5720,6 +5810,7 @@ type LayoutTernaryBaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutTernaryBaxisTickfont `json:"tickfont,omitempty"`
 
@@ -5804,6 +5895,7 @@ type LayoutTernaryBaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutTernaryBaxisTitle `json:"title,omitempty"`
 
@@ -5862,6 +5954,7 @@ type LayoutTernaryCaxisTitleFont struct {
 type LayoutTernaryCaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutTernaryCaxisTitleFont `json:"font,omitempty"`
 
@@ -6025,6 +6118,7 @@ type LayoutTernaryCaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutTernaryCaxisTickfont `json:"tickfont,omitempty"`
 
@@ -6109,6 +6203,7 @@ type LayoutTernaryCaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutTernaryCaxisTitle `json:"title,omitempty"`
 
@@ -6151,10 +6246,12 @@ type LayoutTernaryDomain struct {
 type LayoutTernary struct {
 
 	// Aaxis
+	// arrayOK: false
 	// role: Object
 	Aaxis *LayoutTernaryAaxis `json:"aaxis,omitempty"`
 
 	// Baxis
+	// arrayOK: false
 	// role: Object
 	Baxis *LayoutTernaryBaxis `json:"baxis,omitempty"`
 
@@ -6165,10 +6262,12 @@ type LayoutTernary struct {
 	Bgcolor Color `json:"bgcolor,omitempty"`
 
 	// Caxis
+	// arrayOK: false
 	// role: Object
 	Caxis *LayoutTernaryCaxis `json:"caxis,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *LayoutTernaryDomain `json:"domain,omitempty"`
 
@@ -6245,10 +6344,12 @@ type LayoutTitle struct {
 	Automargin Bool `json:"automargin,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutTitleFont `json:"font,omitempty"`
 
 	// Pad
+	// arrayOK: false
 	// role: Object
 	Pad *LayoutTitlePad `json:"pad,omitempty"`
 
@@ -6526,6 +6627,7 @@ type LayoutXaxisRangeselector struct {
 	Buttons interface{} `json:"buttons,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutXaxisRangeselectorFont `json:"font,omitempty"`
 
@@ -6625,6 +6727,7 @@ type LayoutXaxisRangeslider struct {
 	Visible Bool `json:"visible,omitempty"`
 
 	// Yaxis
+	// arrayOK: false
 	// role: Object
 	Yaxis *LayoutXaxisRangesliderYaxis `json:"yaxis,omitempty"`
 }
@@ -6677,6 +6780,7 @@ type LayoutXaxisTitleFont struct {
 type LayoutXaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutXaxisTitleFont `json:"font,omitempty"`
 
@@ -6704,6 +6808,7 @@ type LayoutXaxis struct {
 	Anchor LayoutXaxisAnchor `json:"anchor,omitempty"`
 
 	// Automargin
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: flaglist
 	// Determines whether long tick labels automatically grow the figure margins.
@@ -6717,6 +6822,7 @@ type LayoutXaxis struct {
 	Autorange LayoutXaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutXaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -6897,6 +7003,7 @@ type LayoutXaxis struct {
 	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Minor
+	// arrayOK: false
 	// role: Object
 	Minor *LayoutXaxisMinor `json:"minor,omitempty"`
 
@@ -6946,10 +7053,12 @@ type LayoutXaxis struct {
 	Rangemode LayoutXaxisRangemode `json:"rangemode,omitempty"`
 
 	// Rangeselector
+	// arrayOK: false
 	// role: Object
 	Rangeselector *LayoutXaxisRangeselector `json:"rangeselector,omitempty"`
 
 	// Rangeslider
+	// arrayOK: false
 	// role: Object
 	Rangeslider *LayoutXaxisRangeslider `json:"rangeslider,omitempty"`
 
@@ -7043,6 +7152,7 @@ type LayoutXaxis struct {
 	Spikedash string `json:"spikedash,omitempty"`
 
 	// Spikemode
+	// arrayOK: false
 	// default: toaxis
 	// type: flaglist
 	// Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
@@ -7080,6 +7190,7 @@ type LayoutXaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutXaxisTickfont `json:"tickfont,omitempty"`
 
@@ -7192,6 +7303,7 @@ type LayoutXaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutXaxisTitle `json:"title,omitempty"`
 
@@ -7411,6 +7523,7 @@ type LayoutYaxisTitleFont struct {
 type LayoutYaxisTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *LayoutYaxisTitleFont `json:"font,omitempty"`
 
@@ -7438,6 +7551,7 @@ type LayoutYaxis struct {
 	Anchor LayoutYaxisAnchor `json:"anchor,omitempty"`
 
 	// Automargin
+	// arrayOK: false
 	// default: %!s(bool=false)
 	// type: flaglist
 	// Determines whether long tick labels automatically grow the figure margins.
@@ -7451,6 +7565,7 @@ type LayoutYaxis struct {
 	Autorange LayoutYaxisAutorange `json:"autorange,omitempty"`
 
 	// Autorangeoptions
+	// arrayOK: false
 	// role: Object
 	Autorangeoptions *LayoutYaxisAutorangeoptions `json:"autorangeoptions,omitempty"`
 
@@ -7637,6 +7752,7 @@ type LayoutYaxis struct {
 	Minexponent float64 `json:"minexponent,omitempty"`
 
 	// Minor
+	// arrayOK: false
 	// role: Object
 	Minor *LayoutYaxisMinor `json:"minor,omitempty"`
 
@@ -7781,6 +7897,7 @@ type LayoutYaxis struct {
 	Spikedash string `json:"spikedash,omitempty"`
 
 	// Spikemode
+	// arrayOK: false
 	// default: toaxis
 	// type: flaglist
 	// Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
@@ -7818,6 +7935,7 @@ type LayoutYaxis struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *LayoutYaxisTickfont `json:"tickfont,omitempty"`
 
@@ -7930,6 +8048,7 @@ type LayoutYaxis struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *LayoutYaxisTitle `json:"title,omitempty"`
 

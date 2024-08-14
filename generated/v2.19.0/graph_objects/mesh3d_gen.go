@@ -64,6 +64,7 @@ type Mesh3d struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *Mesh3dColorbar `json:"colorbar,omitempty"`
 
@@ -74,6 +75,7 @@ type Mesh3d struct {
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
+	// arrayOK: false
 	// role: Object
 	Contour *Mesh3dContour `json:"contour,omitempty"`
 
@@ -115,6 +117,7 @@ type Mesh3d struct {
 	Flatshading Bool `json:"flatshading,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -127,6 +130,7 @@ type Mesh3d struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *Mesh3dHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -228,6 +232,7 @@ type Mesh3d struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *Mesh3dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -244,10 +249,12 @@ type Mesh3d struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *Mesh3dLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *Mesh3dLightposition `json:"lightposition,omitempty"`
 
@@ -300,6 +307,7 @@ type Mesh3d struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *Mesh3dStream `json:"stream,omitempty"`
 
@@ -470,6 +478,7 @@ type Mesh3dColorbarTitleFont struct {
 type Mesh3dColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Mesh3dColorbarTitleFont `json:"font,omitempty"`
 
@@ -636,6 +645,7 @@ type Mesh3dColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *Mesh3dColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -734,6 +744,7 @@ type Mesh3dColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *Mesh3dColorbarTitle `json:"title,omitempty"`
 
@@ -879,6 +890,7 @@ type Mesh3dHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Mesh3dHoverlabelFont `json:"font,omitempty"`
 
@@ -921,6 +933,7 @@ type Mesh3dLegendgrouptitleFont struct {
 type Mesh3dLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Mesh3dLegendgrouptitleFont `json:"font,omitempty"`
 

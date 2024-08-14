@@ -47,6 +47,7 @@ type Image struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: x+y+z+text+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -59,6 +60,7 @@ type Image struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ImageHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -99,6 +101,7 @@ type Image struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ImageLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -145,6 +148,7 @@ type Image struct {
 	Source string `json:"source,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ImageStream `json:"stream,omitempty"`
 
@@ -316,6 +320,7 @@ type ImageHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ImageHoverlabelFont `json:"font,omitempty"`
 
@@ -358,6 +363,7 @@ type ImageLegendgrouptitleFont struct {
 type ImageLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ImageLegendgrouptitleFont `json:"font,omitempty"`
 

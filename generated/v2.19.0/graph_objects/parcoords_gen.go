@@ -34,6 +34,7 @@ type Parcoords struct {
 	Dimensions interface{} `json:"dimensions,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *ParcoordsDomain `json:"domain,omitempty"`
 
@@ -56,6 +57,7 @@ type Parcoords struct {
 	Labelangle float64 `json:"labelangle,omitempty"`
 
 	// Labelfont
+	// arrayOK: false
 	// role: Object
 	Labelfont *ParcoordsLabelfont `json:"labelfont,omitempty"`
 
@@ -67,6 +69,7 @@ type Parcoords struct {
 	Labelside ParcoordsLabelside `json:"labelside,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ParcoordsLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -83,6 +86,7 @@ type Parcoords struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ParcoordsLine `json:"line,omitempty"`
 
@@ -105,14 +109,17 @@ type Parcoords struct {
 	Name string `json:"name,omitempty"`
 
 	// Rangefont
+	// arrayOK: false
 	// role: Object
 	Rangefont *ParcoordsRangefont `json:"rangefont,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ParcoordsStream `json:"stream,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ParcoordsTickfont `json:"tickfont,omitempty"`
 
@@ -135,6 +142,7 @@ type Parcoords struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ParcoordsUnselected `json:"unselected,omitempty"`
 
@@ -222,6 +230,7 @@ type ParcoordsLegendgrouptitleFont struct {
 type ParcoordsLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ParcoordsLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -280,6 +289,7 @@ type ParcoordsLineColorbarTitleFont struct {
 type ParcoordsLineColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ParcoordsLineColorbarTitleFont `json:"font,omitempty"`
 
@@ -446,6 +456,7 @@ type ParcoordsLineColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ParcoordsLineColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -544,6 +555,7 @@ type ParcoordsLineColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ParcoordsLineColorbarTitle `json:"title,omitempty"`
 
@@ -632,6 +644,7 @@ type ParcoordsLine struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ParcoordsLineColorbar `json:"colorbar,omitempty"`
 
@@ -740,6 +753,7 @@ type ParcoordsUnselectedLine struct {
 type ParcoordsUnselected struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ParcoordsUnselectedLine `json:"line,omitempty"`
 }

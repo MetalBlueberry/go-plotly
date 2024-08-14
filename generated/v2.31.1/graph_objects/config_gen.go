@@ -48,6 +48,7 @@ type Config struct {
 	Editable Bool `json:"editable,omitempty"`
 
 	// Edits
+	// arrayOK: false
 	// role: Object
 	Edits *ConfigEdits `json:"edits,omitempty"`
 
@@ -148,6 +149,7 @@ type Config struct {
 	Responsive Bool `json:"responsive,omitempty"`
 
 	// ScrollZoom
+	// arrayOK: false
 	// default: gl3d+geo+mapbox
 	// type: flaglist
 	// Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.

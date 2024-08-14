@@ -52,6 +52,7 @@ type Streamtube struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *StreamtubeColorbar `json:"colorbar,omitempty"`
 
@@ -74,6 +75,7 @@ type Streamtube struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: x+y+z+norm+text+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -86,6 +88,7 @@ type Streamtube struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *StreamtubeHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -132,6 +135,7 @@ type Streamtube struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *StreamtubeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -148,10 +152,12 @@ type Streamtube struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *StreamtubeLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *StreamtubeLightposition `json:"lightposition,omitempty"`
 
@@ -216,10 +222,12 @@ type Streamtube struct {
 	Sizeref float64 `json:"sizeref,omitempty"`
 
 	// Starts
+	// arrayOK: false
 	// role: Object
 	Starts *StreamtubeStarts `json:"starts,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *StreamtubeStream `json:"stream,omitempty"`
 
@@ -405,6 +413,7 @@ type StreamtubeColorbarTitleFont struct {
 type StreamtubeColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *StreamtubeColorbarTitleFont `json:"font,omitempty"`
 
@@ -571,6 +580,7 @@ type StreamtubeColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *StreamtubeColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -669,6 +679,7 @@ type StreamtubeColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *StreamtubeColorbarTitle `json:"title,omitempty"`
 
@@ -806,6 +817,7 @@ type StreamtubeHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *StreamtubeHoverlabelFont `json:"font,omitempty"`
 
@@ -848,6 +860,7 @@ type StreamtubeLegendgrouptitleFont struct {
 type StreamtubeLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *StreamtubeLegendgrouptitleFont `json:"font,omitempty"`
 

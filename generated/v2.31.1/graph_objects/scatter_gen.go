@@ -58,10 +58,12 @@ type Scatter struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// ErrorX
+	// arrayOK: false
 	// role: Object
 	ErrorX *ScatterErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
+	// arrayOK: false
 	// role: Object
 	ErrorY *ScatterErrorY `json:"error_y,omitempty"`
 
@@ -79,10 +81,12 @@ type Scatter struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Fillgradient
+	// arrayOK: false
 	// role: Object
 	Fillgradient *ScatterFillgradient `json:"fillgradient,omitempty"`
 
 	// Fillpattern
+	// arrayOK: false
 	// role: Object
 	Fillpattern *ScatterFillpattern `json:"fillpattern,omitempty"`
 
@@ -94,6 +98,7 @@ type Scatter struct {
 	Groupnorm ScatterGroupnorm `json:"groupnorm,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -106,10 +111,12 @@ type Scatter struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ScatterHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Do the hover effects highlight individual points (markers or line points) or do they highlight filled regions? If the fill is *toself* or *tonext* and there are no markers or text, then the default is *fills*, otherwise it is *points*.
@@ -164,6 +171,7 @@ type Scatter struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ScatterLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -180,10 +188,12 @@ type Scatter struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScatterLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterMarker `json:"marker,omitempty"`
 
@@ -200,6 +210,7 @@ type Scatter struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
@@ -231,6 +242,7 @@ type Scatter struct {
 	Orientation ScatterOrientation `json:"orientation,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ScatterSelected `json:"selected,omitempty"`
 
@@ -260,6 +272,7 @@ type Scatter struct {
 	Stackgroup string `json:"stackgroup,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ScatterStream `json:"stream,omitempty"`
 
@@ -270,6 +283,7 @@ type Scatter struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterTextfont `json:"textfont,omitempty"`
 
@@ -323,6 +337,7 @@ type Scatter struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ScatterUnselected `json:"unselected,omitempty"`
 
@@ -824,6 +839,7 @@ type ScatterHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterHoverlabelFont `json:"font,omitempty"`
 
@@ -866,6 +882,7 @@ type ScatterLegendgrouptitleFont struct {
 type ScatterLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -977,6 +994,7 @@ type ScatterMarkerColorbarTitleFont struct {
 type ScatterMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -1143,6 +1161,7 @@ type ScatterMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ScatterMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1241,6 +1260,7 @@ type ScatterMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ScatterMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1467,6 +1487,7 @@ type ScatterMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ScatterMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1483,10 +1504,12 @@ type ScatterMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Gradient
+	// arrayOK: false
 	// role: Object
 	Gradient *ScatterMarkerGradient `json:"gradient,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScatterMarkerLine `json:"line,omitempty"`
 
@@ -1613,10 +1636,12 @@ type ScatterSelectedTextfont struct {
 type ScatterSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1713,10 +1738,12 @@ type ScatterUnselectedTextfont struct {
 type ScatterUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterUnselectedTextfont `json:"textfont,omitempty"`
 }

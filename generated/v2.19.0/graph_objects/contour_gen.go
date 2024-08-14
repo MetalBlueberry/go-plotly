@@ -34,6 +34,7 @@ type Contour struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ContourColorbar `json:"colorbar,omitempty"`
 
@@ -50,6 +51,7 @@ type Contour struct {
 	Connectgaps Bool `json:"connectgaps,omitempty"`
 
 	// Contours
+	// arrayOK: false
 	// role: Object
 	Contours *ContourContours `json:"contours,omitempty"`
 
@@ -84,6 +86,7 @@ type Contour struct {
 	Fillcolor ColorWithColorScale `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -96,6 +99,7 @@ type Contour struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ContourHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -148,6 +152,7 @@ type Contour struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ContourLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -164,6 +169,7 @@ type Contour struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ContourLine `json:"line,omitempty"`
 
@@ -216,6 +222,7 @@ type Contour struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ContourStream `json:"stream,omitempty"`
 
@@ -226,6 +233,7 @@ type Contour struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ContourTextfont `json:"textfont,omitempty"`
 
@@ -489,6 +497,7 @@ type ContourColorbarTitleFont struct {
 type ContourColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ContourColorbarTitleFont `json:"font,omitempty"`
 
@@ -655,6 +664,7 @@ type ContourColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ContourColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -753,6 +763,7 @@ type ContourColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ContourColorbarTitle `json:"title,omitempty"`
 
@@ -834,6 +845,7 @@ type ContourContours struct {
 	End float64 `json:"end,omitempty"`
 
 	// Labelfont
+	// arrayOK: false
 	// role: Object
 	Labelfont *ContourContoursLabelfont `json:"labelfont,omitempty"`
 
@@ -969,6 +981,7 @@ type ContourHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ContourHoverlabelFont `json:"font,omitempty"`
 
@@ -1011,6 +1024,7 @@ type ContourLegendgrouptitleFont struct {
 type ContourLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ContourLegendgrouptitleFont `json:"font,omitempty"`
 

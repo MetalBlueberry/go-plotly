@@ -22,6 +22,7 @@ type Isosurface struct {
 	Autocolorscale Bool `json:"autocolorscale,omitempty"`
 
 	// Caps
+	// arrayOK: false
 	// role: Object
 	Caps *IsosurfaceCaps `json:"caps,omitempty"`
 
@@ -56,6 +57,7 @@ type Isosurface struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *IsosurfaceColorbar `json:"colorbar,omitempty"`
 
@@ -66,6 +68,7 @@ type Isosurface struct {
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
+	// arrayOK: false
 	// role: Object
 	Contour *IsosurfaceContour `json:"contour,omitempty"`
 
@@ -88,6 +91,7 @@ type Isosurface struct {
 	Flatshading Bool `json:"flatshading,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -100,6 +104,7 @@ type Isosurface struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *IsosurfaceHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -164,6 +169,7 @@ type Isosurface struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *IsosurfaceLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -180,10 +186,12 @@ type Isosurface struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Lighting
+	// arrayOK: false
 	// role: Object
 	Lighting *IsosurfaceLighting `json:"lighting,omitempty"`
 
 	// Lightposition
+	// arrayOK: false
 	// role: Object
 	Lightposition *IsosurfaceLightposition `json:"lightposition,omitempty"`
 
@@ -236,18 +244,22 @@ type Isosurface struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Slices
+	// arrayOK: false
 	// role: Object
 	Slices *IsosurfaceSlices `json:"slices,omitempty"`
 
 	// Spaceframe
+	// arrayOK: false
 	// role: Object
 	Spaceframe *IsosurfaceSpaceframe `json:"spaceframe,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *IsosurfaceStream `json:"stream,omitempty"`
 
 	// Surface
+	// arrayOK: false
 	// role: Object
 	Surface *IsosurfaceSurface `json:"surface,omitempty"`
 
@@ -407,14 +419,17 @@ type IsosurfaceCapsZ struct {
 type IsosurfaceCaps struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *IsosurfaceCapsX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *IsosurfaceCapsY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *IsosurfaceCapsZ `json:"z,omitempty"`
 }
@@ -467,6 +482,7 @@ type IsosurfaceColorbarTitleFont struct {
 type IsosurfaceColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IsosurfaceColorbarTitleFont `json:"font,omitempty"`
 
@@ -633,6 +649,7 @@ type IsosurfaceColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *IsosurfaceColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -731,6 +748,7 @@ type IsosurfaceColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *IsosurfaceColorbarTitle `json:"title,omitempty"`
 
@@ -890,6 +908,7 @@ type IsosurfaceHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IsosurfaceHoverlabelFont `json:"font,omitempty"`
 
@@ -932,6 +951,7 @@ type IsosurfaceLegendgrouptitleFont struct {
 type IsosurfaceLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *IsosurfaceLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -1098,14 +1118,17 @@ type IsosurfaceSlicesZ struct {
 type IsosurfaceSlices struct {
 
 	// X
+	// arrayOK: false
 	// role: Object
 	X *IsosurfaceSlicesX `json:"x,omitempty"`
 
 	// Y
+	// arrayOK: false
 	// role: Object
 	Y *IsosurfaceSlicesY `json:"y,omitempty"`
 
 	// Z
+	// arrayOK: false
 	// role: Object
 	Z *IsosurfaceSlicesZ `json:"z,omitempty"`
 }
@@ -1158,6 +1181,7 @@ type IsosurfaceSurface struct {
 	Fill float64 `json:"fill,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// default: all
 	// type: flaglist
 	// Sets the surface pattern of the iso-surface 3-D sections. The default pattern of the surface is `all` meaning that the rest of surface elements would be shaded. The check options (either 1 or 2) could be used to draw half of the squares on the surface. Using various combinations of capital `A`, `B`, `C`, `D` and `E` may also be used to reduce the number of triangles on the iso-surfaces and creating other patterns of interest.

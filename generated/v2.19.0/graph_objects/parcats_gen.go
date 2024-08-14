@@ -47,10 +47,12 @@ type Parcats struct {
 	Dimensions interface{} `json:"dimensions,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *ParcatsDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: false
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -70,10 +72,12 @@ type Parcats struct {
 	Hovertemplate string `json:"hovertemplate,omitempty"`
 
 	// Labelfont
+	// arrayOK: false
 	// role: Object
 	Labelfont *ParcatsLabelfont `json:"labelfont,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ParcatsLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -84,6 +88,7 @@ type Parcats struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ParcatsLine `json:"line,omitempty"`
 
@@ -113,10 +118,12 @@ type Parcats struct {
 	Sortpaths ParcatsSortpaths `json:"sortpaths,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ParcatsStream `json:"stream,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ParcatsTickfont `json:"tickfont,omitempty"`
 
@@ -222,6 +229,7 @@ type ParcatsLegendgrouptitleFont struct {
 type ParcatsLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ParcatsLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -280,6 +288,7 @@ type ParcatsLineColorbarTitleFont struct {
 type ParcatsLineColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ParcatsLineColorbarTitleFont `json:"font,omitempty"`
 
@@ -446,6 +455,7 @@ type ParcatsLineColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ParcatsLineColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -544,6 +554,7 @@ type ParcatsLineColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ParcatsLineColorbarTitle `json:"title,omitempty"`
 
@@ -632,6 +643,7 @@ type ParcatsLine struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ParcatsLineColorbar `json:"colorbar,omitempty"`
 

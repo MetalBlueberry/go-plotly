@@ -23,6 +23,7 @@ type Treemap struct {
 	Branchvalues TreemapBranchvalues `json:"branchvalues,omitempty"`
 
 	// Count
+	// arrayOK: false
 	// default: leaves
 	// type: flaglist
 	// Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
@@ -41,10 +42,12 @@ type Treemap struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *TreemapDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: label+text+value+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -57,6 +60,7 @@ type Treemap struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *TreemapHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -97,6 +101,7 @@ type Treemap struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *TreemapInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -113,6 +118,7 @@ type Treemap struct {
 	Labelssrc string `json:"labelssrc,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *TreemapLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -135,6 +141,7 @@ type Treemap struct {
 	Level interface{} `json:"level,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *TreemapMarker `json:"marker,omitempty"`
 
@@ -169,6 +176,7 @@ type Treemap struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *TreemapOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -185,10 +193,12 @@ type Treemap struct {
 	Parentssrc string `json:"parentssrc,omitempty"`
 
 	// Pathbar
+	// arrayOK: false
 	// role: Object
 	Pathbar *TreemapPathbar `json:"pathbar,omitempty"`
 
 	// Root
+	// arrayOK: false
 	// role: Object
 	Root *TreemapRoot `json:"root,omitempty"`
 
@@ -199,6 +209,7 @@ type Treemap struct {
 	Sort Bool `json:"sort,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *TreemapStream `json:"stream,omitempty"`
 
@@ -209,10 +220,12 @@ type Treemap struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *TreemapTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
@@ -244,6 +257,7 @@ type Treemap struct {
 	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Tiling
+	// arrayOK: false
 	// role: Object
 	Tiling *TreemapTiling `json:"tiling,omitempty"`
 
@@ -394,6 +408,7 @@ type TreemapHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TreemapHoverlabelFont `json:"font,omitempty"`
 
@@ -476,6 +491,7 @@ type TreemapLegendgrouptitleFont struct {
 type TreemapLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TreemapLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -534,6 +550,7 @@ type TreemapMarkerColorbarTitleFont struct {
 type TreemapMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *TreemapMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -700,6 +717,7 @@ type TreemapMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *TreemapMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -798,6 +816,7 @@ type TreemapMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *TreemapMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -936,6 +955,7 @@ type TreemapMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *TreemapMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -971,10 +991,12 @@ type TreemapMarker struct {
 	Depthfade TreemapMarkerDepthfade `json:"depthfade,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *TreemapMarkerLine `json:"line,omitempty"`
 
 	// Pad
+	// arrayOK: false
 	// role: Object
 	Pad *TreemapMarkerPad `json:"pad,omitempty"`
 
@@ -1089,6 +1111,7 @@ type TreemapPathbar struct {
 	Side TreemapPathbarSide `json:"side,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *TreemapPathbarTextfont `json:"textfont,omitempty"`
 
@@ -1175,6 +1198,7 @@ type TreemapTextfont struct {
 type TreemapTiling struct {
 
 	// Flip
+	// arrayOK: false
 	// default:
 	// type: flaglist
 	// Determines if the positions obtained from solver are flipped on each axis.

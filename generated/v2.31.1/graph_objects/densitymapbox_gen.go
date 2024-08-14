@@ -34,6 +34,7 @@ type Densitymapbox struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *DensitymapboxColorbar `json:"colorbar,omitempty"`
 
@@ -56,6 +57,7 @@ type Densitymapbox struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -68,6 +70,7 @@ type Densitymapbox struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *DensitymapboxHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -132,6 +135,7 @@ type Densitymapbox struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *DensitymapboxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -214,6 +218,7 @@ type Densitymapbox struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *DensitymapboxStream `json:"stream,omitempty"`
 
@@ -345,6 +350,7 @@ type DensitymapboxColorbarTitleFont struct {
 type DensitymapboxColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *DensitymapboxColorbarTitleFont `json:"font,omitempty"`
 
@@ -511,6 +517,7 @@ type DensitymapboxColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *DensitymapboxColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -609,6 +616,7 @@ type DensitymapboxColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *DensitymapboxColorbarTitle `json:"title,omitempty"`
 
@@ -746,6 +754,7 @@ type DensitymapboxHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *DensitymapboxHoverlabelFont `json:"font,omitempty"`
 
@@ -788,6 +797,7 @@ type DensitymapboxLegendgrouptitleFont struct {
 type DensitymapboxLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *DensitymapboxLegendgrouptitleFont `json:"font,omitempty"`
 

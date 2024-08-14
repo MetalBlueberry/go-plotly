@@ -46,10 +46,12 @@ type Scattergl struct {
 	Dy float64 `json:"dy,omitempty"`
 
 	// ErrorX
+	// arrayOK: false
 	// role: Object
 	ErrorX *ScatterglErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
+	// arrayOK: false
 	// role: Object
 	ErrorY *ScatterglErrorY `json:"error_y,omitempty"`
 
@@ -67,6 +69,7 @@ type Scattergl struct {
 	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -79,6 +82,7 @@ type Scattergl struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *ScatterglHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -131,6 +135,7 @@ type Scattergl struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *ScatterglLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -147,10 +152,12 @@ type Scattergl struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScatterglLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterglMarker `json:"marker,omitempty"`
 
@@ -167,6 +174,7 @@ type Scattergl struct {
 	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace.
@@ -185,6 +193,7 @@ type Scattergl struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *ScatterglSelected `json:"selected,omitempty"`
 
@@ -201,6 +210,7 @@ type Scattergl struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *ScatterglStream `json:"stream,omitempty"`
 
@@ -211,6 +221,7 @@ type Scattergl struct {
 	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterglTextfont `json:"textfont,omitempty"`
 
@@ -264,6 +275,7 @@ type Scattergl struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *ScatterglUnselected `json:"unselected,omitempty"`
 
@@ -652,6 +664,7 @@ type ScatterglHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterglHoverlabelFont `json:"font,omitempty"`
 
@@ -694,6 +707,7 @@ type ScatterglLegendgrouptitleFont struct {
 type ScatterglLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterglLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -782,6 +796,7 @@ type ScatterglMarkerColorbarTitleFont struct {
 type ScatterglMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *ScatterglMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -948,6 +963,7 @@ type ScatterglMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *ScatterglMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -1046,6 +1062,7 @@ type ScatterglMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *ScatterglMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -1236,6 +1253,7 @@ type ScatterglMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *ScatterglMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -1252,6 +1270,7 @@ type ScatterglMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *ScatterglMarkerLine `json:"line,omitempty"`
 
@@ -1360,10 +1379,12 @@ type ScatterglSelectedTextfont struct {
 type ScatterglSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterglSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterglSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1460,10 +1481,12 @@ type ScatterglUnselectedTextfont struct {
 type ScatterglUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *ScatterglUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *ScatterglUnselectedTextfont `json:"textfont,omitempty"`
 }

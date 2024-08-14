@@ -47,6 +47,7 @@ type Pie struct {
 	Dlabel float64 `json:"dlabel,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *PieDomain `json:"domain,omitempty"`
 
@@ -57,6 +58,7 @@ type Pie struct {
 	Hole float64 `json:"hole,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -69,6 +71,7 @@ type Pie struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *PieHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -109,6 +112,7 @@ type Pie struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *PieInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -144,6 +148,7 @@ type Pie struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *PieLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -160,6 +165,7 @@ type Pie struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *PieMarker `json:"marker,omitempty"`
 
@@ -188,6 +194,7 @@ type Pie struct {
 	Opacity float64 `json:"opacity,omitempty"`
 
 	// Outsidetextfont
+	// arrayOK: false
 	// role: Object
 	Outsidetextfont *PieOutsidetextfont `json:"outsidetextfont,omitempty"`
 
@@ -228,6 +235,7 @@ type Pie struct {
 	Sort Bool `json:"sort,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *PieStream `json:"stream,omitempty"`
 
@@ -238,10 +246,12 @@ type Pie struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *PieTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
@@ -279,6 +289,7 @@ type Pie struct {
 	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *PieTitle `json:"title,omitempty"`
 
@@ -429,6 +440,7 @@ type PieHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *PieHoverlabelFont `json:"font,omitempty"`
 
@@ -511,6 +523,7 @@ type PieLegendgrouptitleFont struct {
 type PieLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *PieLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -565,6 +578,7 @@ type PieMarker struct {
 	Colorssrc string `json:"colorssrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *PieMarkerLine `json:"line,omitempty"`
 }
@@ -709,6 +723,7 @@ type PieTitleFont struct {
 type PieTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *PieTitleFont `json:"font,omitempty"`
 

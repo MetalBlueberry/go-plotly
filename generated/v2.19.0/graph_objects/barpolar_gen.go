@@ -52,6 +52,7 @@ type Barpolar struct {
 	Dtheta float64 `json:"dtheta,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -64,6 +65,7 @@ type Barpolar struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *BarpolarHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -110,6 +112,7 @@ type Barpolar struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *BarpolarLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -126,6 +129,7 @@ type Barpolar struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarpolarMarker `json:"marker,omitempty"`
 
@@ -184,6 +188,7 @@ type Barpolar struct {
 	Rsrc string `json:"rsrc,omitempty"`
 
 	// Selected
+	// arrayOK: false
 	// role: Object
 	Selected *BarpolarSelected `json:"selected,omitempty"`
 
@@ -200,6 +205,7 @@ type Barpolar struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *BarpolarStream `json:"stream,omitempty"`
 
@@ -265,6 +271,7 @@ type Barpolar struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
+	// arrayOK: false
 	// role: Object
 	Unselected *BarpolarUnselected `json:"unselected,omitempty"`
 
@@ -369,6 +376,7 @@ type BarpolarHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarpolarHoverlabelFont `json:"font,omitempty"`
 
@@ -411,6 +419,7 @@ type BarpolarLegendgrouptitleFont struct {
 type BarpolarLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarpolarLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -469,6 +478,7 @@ type BarpolarMarkerColorbarTitleFont struct {
 type BarpolarMarkerColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *BarpolarMarkerColorbarTitleFont `json:"font,omitempty"`
 
@@ -635,6 +645,7 @@ type BarpolarMarkerColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *BarpolarMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -733,6 +744,7 @@ type BarpolarMarkerColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *BarpolarMarkerColorbarTitle `json:"title,omitempty"`
 
@@ -975,6 +987,7 @@ type BarpolarMarker struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *BarpolarMarkerColorbar `json:"colorbar,omitempty"`
 
@@ -991,6 +1004,7 @@ type BarpolarMarker struct {
 	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *BarpolarMarkerLine `json:"line,omitempty"`
 
@@ -1007,6 +1021,7 @@ type BarpolarMarker struct {
 	Opacitysrc string `json:"opacitysrc,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// role: Object
 	Pattern *BarpolarMarkerPattern `json:"pattern,omitempty"`
 
@@ -1053,10 +1068,12 @@ type BarpolarSelectedTextfont struct {
 type BarpolarSelected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarpolarSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *BarpolarSelectedTextfont `json:"textfont,omitempty"`
 }
@@ -1107,10 +1124,12 @@ type BarpolarUnselectedTextfont struct {
 type BarpolarUnselected struct {
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *BarpolarUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *BarpolarUnselectedTextfont `json:"textfont,omitempty"`
 }

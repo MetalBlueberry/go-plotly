@@ -46,6 +46,7 @@ type Histogram2d struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *Histogram2dColorbar `json:"colorbar,omitempty"`
 
@@ -82,6 +83,7 @@ type Histogram2d struct {
 	Histnorm Histogram2dHistnorm `json:"histnorm,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -94,6 +96,7 @@ type Histogram2d struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *Histogram2dHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -128,6 +131,7 @@ type Histogram2d struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *Histogram2dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -144,6 +148,7 @@ type Histogram2d struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *Histogram2dMarker `json:"marker,omitempty"`
 
@@ -202,10 +207,12 @@ type Histogram2d struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *Histogram2dStream `json:"stream,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *Histogram2dTextfont `json:"textfont,omitempty"`
 
@@ -259,6 +266,7 @@ type Histogram2d struct {
 	Xbingroup string `json:"xbingroup,omitempty"`
 
 	// Xbins
+	// arrayOK: false
 	// role: Object
 	Xbins *Histogram2dXbins `json:"xbins,omitempty"`
 
@@ -306,6 +314,7 @@ type Histogram2d struct {
 	Ybingroup string `json:"ybingroup,omitempty"`
 
 	// Ybins
+	// arrayOK: false
 	// role: Object
 	Ybins *Histogram2dYbins `json:"ybins,omitempty"`
 
@@ -432,6 +441,7 @@ type Histogram2dColorbarTitleFont struct {
 type Histogram2dColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dColorbarTitleFont `json:"font,omitempty"`
 
@@ -598,6 +608,7 @@ type Histogram2dColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *Histogram2dColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -696,6 +707,7 @@ type Histogram2dColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *Histogram2dColorbarTitle `json:"title,omitempty"`
 
@@ -819,6 +831,7 @@ type Histogram2dHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dHoverlabelFont `json:"font,omitempty"`
 
@@ -861,6 +874,7 @@ type Histogram2dLegendgrouptitleFont struct {
 type Histogram2dLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dLegendgrouptitleFont `json:"font,omitempty"`
 

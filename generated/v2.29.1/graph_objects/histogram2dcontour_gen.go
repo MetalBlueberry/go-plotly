@@ -52,6 +52,7 @@ type Histogram2dcontour struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorbar
+	// arrayOK: false
 	// role: Object
 	Colorbar *Histogram2dcontourColorbar `json:"colorbar,omitempty"`
 
@@ -62,6 +63,7 @@ type Histogram2dcontour struct {
 	Colorscale ColorScale `json:"colorscale,omitempty"`
 
 	// Contours
+	// arrayOK: false
 	// role: Object
 	Contours *Histogram2dcontourContours `json:"contours,omitempty"`
 
@@ -92,6 +94,7 @@ type Histogram2dcontour struct {
 	Histnorm Histogram2dcontourHistnorm `json:"histnorm,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -104,6 +107,7 @@ type Histogram2dcontour struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *Histogram2dcontourHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -144,6 +148,7 @@ type Histogram2dcontour struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *Histogram2dcontourLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -160,10 +165,12 @@ type Histogram2dcontour struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *Histogram2dcontourLine `json:"line,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *Histogram2dcontourMarker `json:"marker,omitempty"`
 
@@ -228,10 +235,12 @@ type Histogram2dcontour struct {
 	Showscale Bool `json:"showscale,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *Histogram2dcontourStream `json:"stream,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *Histogram2dcontourTextfont `json:"textfont,omitempty"`
 
@@ -285,6 +294,7 @@ type Histogram2dcontour struct {
 	Xbingroup string `json:"xbingroup,omitempty"`
 
 	// Xbins
+	// arrayOK: false
 	// role: Object
 	Xbins *Histogram2dcontourXbins `json:"xbins,omitempty"`
 
@@ -326,6 +336,7 @@ type Histogram2dcontour struct {
 	Ybingroup string `json:"ybingroup,omitempty"`
 
 	// Ybins
+	// arrayOK: false
 	// role: Object
 	Ybins *Histogram2dcontourYbins `json:"ybins,omitempty"`
 
@@ -439,6 +450,7 @@ type Histogram2dcontourColorbarTitleFont struct {
 type Histogram2dcontourColorbarTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dcontourColorbarTitleFont `json:"font,omitempty"`
 
@@ -605,6 +617,7 @@ type Histogram2dcontourColorbar struct {
 	Tickcolor Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
+	// arrayOK: false
 	// role: Object
 	Tickfont *Histogram2dcontourColorbarTickfont `json:"tickfont,omitempty"`
 
@@ -703,6 +716,7 @@ type Histogram2dcontourColorbar struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *Histogram2dcontourColorbarTitle `json:"title,omitempty"`
 
@@ -798,6 +812,7 @@ type Histogram2dcontourContours struct {
 	End float64 `json:"end,omitempty"`
 
 	// Labelfont
+	// arrayOK: false
 	// role: Object
 	Labelfont *Histogram2dcontourContoursLabelfont `json:"labelfont,omitempty"`
 
@@ -933,6 +948,7 @@ type Histogram2dcontourHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dcontourHoverlabelFont `json:"font,omitempty"`
 
@@ -975,6 +991,7 @@ type Histogram2dcontourLegendgrouptitleFont struct {
 type Histogram2dcontourLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *Histogram2dcontourLegendgrouptitleFont `json:"font,omitempty"`
 

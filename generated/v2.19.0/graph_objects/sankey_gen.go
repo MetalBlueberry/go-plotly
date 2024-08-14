@@ -35,16 +35,19 @@ type Sankey struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *SankeyDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: false
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired. Note that this attribute is superseded by `node.hoverinfo` and `node.hoverinfo` for nodes and links respectively.
 	Hoverinfo SankeyHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SankeyHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -61,6 +64,7 @@ type Sankey struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *SankeyLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -77,6 +81,7 @@ type Sankey struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Link
+	// arrayOK: false
 	// role: Object
 	Link *SankeyLink `json:"link,omitempty"`
 
@@ -99,6 +104,7 @@ type Sankey struct {
 	Name string `json:"name,omitempty"`
 
 	// Node
+	// arrayOK: false
 	// role: Object
 	Node *SankeyNode `json:"node,omitempty"`
 
@@ -116,10 +122,12 @@ type Sankey struct {
 	Selectedpoints interface{} `json:"selectedpoints,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *SankeyStream `json:"stream,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *SankeyTextfont `json:"textfont,omitempty"`
 
@@ -264,6 +272,7 @@ type SankeyHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SankeyHoverlabelFont `json:"font,omitempty"`
 
@@ -306,6 +315,7 @@ type SankeyLegendgrouptitleFont struct {
 type SankeyLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SankeyLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -397,6 +407,7 @@ type SankeyLinkHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SankeyLinkHoverlabelFont `json:"font,omitempty"`
 
@@ -488,6 +499,7 @@ type SankeyLink struct {
 	Hoverinfo SankeyLinkHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SankeyLinkHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -516,6 +528,7 @@ type SankeyLink struct {
 	Labelsrc string `json:"labelsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *SankeyLinkLine `json:"line,omitempty"`
 
@@ -637,6 +650,7 @@ type SankeyNodeHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *SankeyNodeHoverlabelFont `json:"font,omitempty"`
 
@@ -722,6 +736,7 @@ type SankeyNode struct {
 	Hoverinfo SankeyNodeHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *SankeyNodeHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -750,6 +765,7 @@ type SankeyNode struct {
 	Labelsrc string `json:"labelsrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *SankeyNodeLine `json:"line,omitempty"`
 

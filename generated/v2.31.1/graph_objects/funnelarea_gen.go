@@ -46,10 +46,12 @@ type Funnelarea struct {
 	Dlabel float64 `json:"dlabel,omitempty"`
 
 	// Domain
+	// arrayOK: false
 	// role: Object
 	Domain *FunnelareaDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -62,6 +64,7 @@ type Funnelarea struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *FunnelareaHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -102,6 +105,7 @@ type Funnelarea struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Insidetextfont
+	// arrayOK: false
 	// role: Object
 	Insidetextfont *FunnelareaInsidetextfont `json:"insidetextfont,omitempty"`
 
@@ -136,6 +140,7 @@ type Funnelarea struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *FunnelareaLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -152,6 +157,7 @@ type Funnelarea struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Marker
+	// arrayOK: false
 	// role: Object
 	Marker *FunnelareaMarker `json:"marker,omitempty"`
 
@@ -192,6 +198,7 @@ type Funnelarea struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *FunnelareaStream `json:"stream,omitempty"`
 
@@ -202,10 +209,12 @@ type Funnelarea struct {
 	Text interface{} `json:"text,omitempty"`
 
 	// Textfont
+	// arrayOK: false
 	// role: Object
 	Textfont *FunnelareaTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
+	// arrayOK: false
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
@@ -243,6 +252,7 @@ type Funnelarea struct {
 	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Title
+	// arrayOK: false
 	// role: Object
 	Title *FunnelareaTitle `json:"title,omitempty"`
 
@@ -393,6 +403,7 @@ type FunnelareaHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelareaHoverlabelFont `json:"font,omitempty"`
 
@@ -475,6 +486,7 @@ type FunnelareaLegendgrouptitleFont struct {
 type FunnelareaLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelareaLegendgrouptitleFont `json:"font,omitempty"`
 
@@ -607,10 +619,12 @@ type FunnelareaMarker struct {
 	Colorssrc string `json:"colorssrc,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *FunnelareaMarkerLine `json:"line,omitempty"`
 
 	// Pattern
+	// arrayOK: false
 	// role: Object
 	Pattern *FunnelareaMarkerPattern `json:"pattern,omitempty"`
 }
@@ -715,6 +729,7 @@ type FunnelareaTitleFont struct {
 type FunnelareaTitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *FunnelareaTitleFont `json:"font,omitempty"`
 

@@ -40,6 +40,7 @@ type Ohlc struct {
 	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Decreasing
+	// arrayOK: false
 	// role: Object
 	Decreasing *OhlcDecreasing `json:"decreasing,omitempty"`
 
@@ -56,6 +57,7 @@ type Ohlc struct {
 	Highsrc string `json:"highsrc,omitempty"`
 
 	// Hoverinfo
+	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -68,6 +70,7 @@ type Ohlc struct {
 	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
+	// arrayOK: false
 	// role: Object
 	Hoverlabel *OhlcHoverlabel `json:"hoverlabel,omitempty"`
 
@@ -96,6 +99,7 @@ type Ohlc struct {
 	Idssrc string `json:"idssrc,omitempty"`
 
 	// Increasing
+	// arrayOK: false
 	// role: Object
 	Increasing *OhlcIncreasing `json:"increasing,omitempty"`
 
@@ -106,6 +110,7 @@ type Ohlc struct {
 	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
+	// arrayOK: false
 	// role: Object
 	Legendgrouptitle *OhlcLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
@@ -122,6 +127,7 @@ type Ohlc struct {
 	Legendwidth float64 `json:"legendwidth,omitempty"`
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *OhlcLine `json:"line,omitempty"`
 
@@ -186,6 +192,7 @@ type Ohlc struct {
 	Showlegend Bool `json:"showlegend,omitempty"`
 
 	// Stream
+	// arrayOK: false
 	// role: Object
 	Stream *OhlcStream `json:"stream,omitempty"`
 
@@ -321,6 +328,7 @@ type OhlcDecreasingLine struct {
 type OhlcDecreasing struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *OhlcDecreasingLine `json:"line,omitempty"`
 }
@@ -406,6 +414,7 @@ type OhlcHoverlabel struct {
 	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *OhlcHoverlabelFont `json:"font,omitempty"`
 
@@ -454,6 +463,7 @@ type OhlcIncreasingLine struct {
 type OhlcIncreasing struct {
 
 	// Line
+	// arrayOK: false
 	// role: Object
 	Line *OhlcIncreasingLine `json:"line,omitempty"`
 }
@@ -484,6 +494,7 @@ type OhlcLegendgrouptitleFont struct {
 type OhlcLegendgrouptitle struct {
 
 	// Font
+	// arrayOK: false
 	// role: Object
 	Font *OhlcLegendgrouptitleFont `json:"font,omitempty"`
 
