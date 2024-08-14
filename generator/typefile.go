@@ -77,15 +77,15 @@ const (
 
 // parseAttributes returns a []StructField containing all the fields for the attributes parsed.
 // Nested structures found such as enums, flags u other objects are stored in the TypeFile caller.
-func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr map[string]*Attribute) ([]structField, error) {
-	fields := make([]structField, 0, len(attr))
+func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
+	fields := make([]structField, 0, len(attrs))
 
-	for _, name := range sortKeys(attr) {
+	for _, name := range sortKeys(attrs) {
 		if name == "_deprecated" {
 			continue
 		}
 
-		attr := attr[name]
+		attr := attrs[name]
 
 		switch {
 		case attr.Role == RoleObject && len(attr.Items) > 0:
@@ -164,6 +164,13 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 
 		default:
 			ty := valTypeMap[attr.ValType]
+			if attr.ValType == ValTypeColor && attrs["colorscale"] != nil {
+				ty = "ColorWithColorScale"
+			}
+			if attr.ArrayOK {
+				ty = fmt.Sprintf("ArrayOK[*%s]", ty)
+			}
+
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,

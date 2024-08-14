@@ -27,7 +27,7 @@ type Renderer struct {
 	fs Creator
 }
 
-//go:embed templates/*.tmpl
+//go:embed templates
 var templates embed.FS
 
 // NewRenderer initializes a renderer
@@ -36,7 +36,7 @@ func NewRenderer(fs Creator, root *Root) (*Renderer, error) {
 		root: root,
 		fs:   fs,
 	}
-	tmpl, err := template.New("base").ParseFS(templates, "templates/*.tmpl")
+	tmpl, err := template.New("base").ParseFS(templates, "templates/*")
 	if err != nil {
 		return nil, err
 	}
@@ -127,7 +127,7 @@ func (r *Renderer) WritePlotGo(w io.Writer, graphObjectsImportPath string, cdnUr
 
 // WritePlotly writes the base plotly file
 func (r *Renderer) WritePlotly(w io.Writer) error {
-	return r.tmpl.ExecuteTemplate(w, "plotly.tmpl", w)
+	return r.tmpl.ExecuteTemplate(w, "plotly.go", w)
 }
 
 // CreateTrace creates a file with the content of a trace by name
@@ -492,7 +492,7 @@ var valTypeMap = map[ValType]string{
 	ValTypeBoolean:    "Bool",
 	ValTypeNumber:     "float64",
 	ValTypeInteger:    "int64",
-	ValTypeString:     "String",
+	ValTypeString:     "string",
 	ValTypeColor:      "Color",
 	ValTypeColorlist:  "ColorList",
 	ValTypeColorscale: "ColorScale",

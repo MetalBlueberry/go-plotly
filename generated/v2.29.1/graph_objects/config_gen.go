@@ -71,13 +71,13 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Sets the text appearing in the `showLink` link.
-	LinkText String `json:"linkText,omitempty"`
+	LinkText string `json:"linkText,omitempty"`
 
 	// Locale
 	// arrayOK: false
 	// type: string
 	// Which localization should we use? Should be a string like 'en' or 'en-US'.
-	Locale String `json:"locale,omitempty"`
+	Locale string `json:"locale,omitempty"`
 
 	// Locales
 	// arrayOK: false
@@ -95,7 +95,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Mapbox access token (required to plot mapbox trace types) If using an Mapbox Atlas server, set this option to '' so that plotly.js won't attempt to authenticate to the public Mapbox server.
-	MapboxAccessToken String `json:"mapboxAccessToken,omitempty"`
+	MapboxAccessToken string `json:"mapboxAccessToken,omitempty"`
 
 	// ModeBarButtons
 	// arrayOK: false
@@ -131,7 +131,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// When set it determines base URL for the 'Edit in Chart Studio' `showEditInChartStudio`/`showSendToCloud` mode bar button and the showLink/sendData on-graph link. To enable sending your data to Chart Studio Cloud, you need to set both `plotlyServerURL` to 'https://chart-studio.plotly.com' and also set `showSendToCloud` to true.
-	PlotlyServerURL String `json:"plotlyServerURL,omitempty"`
+	PlotlyServerURL string `json:"plotlyServerURL,omitempty"`
 
 	// QueueLength
 	// arrayOK: false
@@ -221,7 +221,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Set the URL to topojson used in geo charts. By default, the topojson files are fetched from cdn.plot.ly. For example, set this option to: <path-to-plotly.js>/dist/topojson/ to render geographical feature using the topojson files that ship with the plotly.js module.
-	TopojsonURL String `json:"topojsonURL,omitempty"`
+	TopojsonURL string `json:"topojsonURL,omitempty"`
 
 	// TypesetMath
 	// arrayOK: false

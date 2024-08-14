@@ -31,13 +31,13 @@ type Parcats struct {
 	// arrayOK: true
 	// type: number
 	// The number of observations represented by each state. Defaults to 1 so that each state represents one observation
-	Counts float64 `json:"counts,omitempty"`
+	Counts ArrayOK[*float64] `json:"counts,omitempty"`
 
 	// Countssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `counts`.
-	Countssrc String `json:"countssrc,omitempty"`
+	Countssrc string `json:"countssrc,omitempty"`
 
 	// Dimensions
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -65,7 +65,7 @@ type Parcats struct {
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count`, `probability`, `category`, `categorycount`, `colorcount` and `bandcolorcount`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate string `json:"hovertemplate,omitempty"`
 
 	// Labelfont
 	// role: Object
@@ -89,19 +89,19 @@ type Parcats struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta interface{} `json:"meta,omitempty"`
+	Meta ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc String `json:"metasrc,omitempty"`
+	Metasrc string `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name String `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
 	// Sortpaths
 	// default: forward
@@ -127,7 +127,7 @@ type Parcats struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid String `json:"uid,omitempty"`
+	Uid string `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -183,7 +183,7 @@ type ParcatsLabelfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -205,7 +205,7 @@ type ParcatsLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -225,7 +225,7 @@ type ParcatsLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ParcatsLineColorbarTickfont Sets the color bar's tick label font
@@ -241,7 +241,7 @@ type ParcatsLineColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -263,7 +263,7 @@ type ParcatsLineColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -289,7 +289,7 @@ type ParcatsLineColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ParcatsLineColorbar
@@ -441,7 +441,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -483,7 +483,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default:
@@ -495,7 +495,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -507,7 +507,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -519,7 +519,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -605,7 +605,7 @@ type ParcatsLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color ArrayOK[*ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -627,13 +627,13 @@ type ParcatsLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc String `json:"colorsrc,omitempty"`
+	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count` and `probability`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate string `json:"hovertemplate,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
@@ -667,7 +667,7 @@ type ParcatsStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token String `json:"token,omitempty"`
+	Token string `json:"token,omitempty"`
 }
 
 // ParcatsTickfont Sets the font for the `category` labels.
@@ -683,7 +683,7 @@ type ParcatsTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false

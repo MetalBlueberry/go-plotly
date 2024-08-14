@@ -54,15 +54,17 @@ func main() {
 		Type:         grob.TraceTypeBar,
 		X:            xValue,
 		Y:            yValue,
-		Text:         toString(yValue),
+		Text:         grob.ArrayOKArray(toString(yValue)...),
 		Textposition: grob.BarTextpositionAuto,
 		Hoverinfo:    grob.BarHoverinfoNone,
 		Marker: &grob.BarMarker{
-			Color:   markerColor.Hex(), // Use colorfull
-			Opacity: 0.6,
+			Color: grob.ArrayOKValue(grob.UseColor(grob.Color(
+				markerColor.Hex(), // Use colorfull
+			))),
+			Opacity: grob.ArrayOKValue(0.6),
 			Line: &grob.BarMarkerLine{
-				Color: "rgb(8,48,107)", // Or just write the string
-				Width: 1.5,
+				Color: grob.ArrayOKValue(grob.UseColor("rgb(8,48,107)")), // Or just write the string
+				Width: grob.ArrayOKValue(1.5),
 			},
 		},
 	}

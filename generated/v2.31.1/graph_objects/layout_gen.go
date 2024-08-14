@@ -209,7 +209,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hiddenlabels`.
-	Hiddenlabelssrc String `json:"hiddenlabelssrc,omitempty"`
+	Hiddenlabelssrc string `json:"hiddenlabelssrc,omitempty"`
 
 	// Hidesources
 	// arrayOK: false
@@ -267,13 +267,13 @@ type Layout struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information that can be used in various `text` attributes. Attributes such as the graph, axis and colorbar `title.text`, annotation `text` `trace.name` in legend items, `rangeselector`, `updatemenus` and `sliders` `label` text all support `meta`. One can access `meta` fields using template strings: `%{meta[i]}` where `i` is the index of the `meta` item in question. `meta` can also be an object for example `{key: value}` which can be accessed %{meta[key]}.
-	Meta interface{} `json:"meta,omitempty"`
+	Meta ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc String `json:"metasrc,omitempty"`
+	Metasrc string `json:"metasrc,omitempty"`
 
 	// Minreducedheight
 	// arrayOK: false
@@ -303,7 +303,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the paper where the graph is drawn.
-	PaperBgcolor Color `json:"paper_bgcolor,omitempty"`
+	PaperBgcolor ColorWithColorScale `json:"paper_bgcolor,omitempty"`
 
 	// Piecolorway
 	// arrayOK: false
@@ -315,7 +315,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the plotting area in-between x and y axes.
-	PlotBgcolor Color `json:"plot_bgcolor,omitempty"`
+	PlotBgcolor ColorWithColorScale `json:"plot_bgcolor,omitempty"`
 
 	// Polar
 	// role: Object
@@ -359,7 +359,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: string
 	// Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
-	Separators String `json:"separators,omitempty"`
+	Separators string `json:"separators,omitempty"`
 
 	// Shapes
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -571,7 +571,7 @@ type LayoutColoraxisColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -593,7 +593,7 @@ type LayoutColoraxisColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -619,7 +619,7 @@ type LayoutColoraxisColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutColoraxisColorbar
@@ -771,7 +771,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -813,7 +813,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default:
@@ -825,7 +825,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -837,7 +837,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -849,7 +849,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -1001,7 +1001,7 @@ type LayoutFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1073,7 +1073,7 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -1119,7 +1119,7 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -1495,7 +1495,7 @@ type LayoutHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1517,7 +1517,7 @@ type LayoutHoverlabelGrouptitlefont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1575,7 +1575,7 @@ type LayoutLegendFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1597,7 +1597,7 @@ type LayoutLegendGrouptitlefont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1619,7 +1619,7 @@ type LayoutLegendTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1645,7 +1645,7 @@ type LayoutLegendTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutLegend
@@ -1881,7 +1881,7 @@ type LayoutMapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the mapbox access token to be used for this mapbox map. Alternatively, the mapbox access token can be set in the configuration options under `mapboxAccessToken`. Note that accessToken are only required when `style` (e.g with values : basic, streets, outdoors, light, dark, satellite, satellite-streets ) and/or a layout layer references the Mapbox server.
-	Accesstoken String `json:"accesstoken,omitempty"`
+	Accesstoken string `json:"accesstoken,omitempty"`
 
 	// Bearing
 	// arrayOK: false
@@ -1985,13 +1985,13 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to add. Please note that these buttons will only be shown if they are compatible with all trace types used in a graph. Similar to `config.modeBarButtonsToAdd` option. This may include *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect*, *eraseshape*.
-	Add String `json:"add,omitempty"`
+	Add ArrayOK[*string] `json:"add,omitempty"`
 
 	// Addsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `add`.
-	Addsrc String `json:"addsrc,omitempty"`
+	Addsrc string `json:"addsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -2015,13 +2015,13 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to remove. Similar to `config.modeBarButtonsToRemove` option. This may include *autoScale2d*, *autoscale*, *editInChartStudio*, *editinchartstudio*, *hoverCompareCartesian*, *hovercompare*, *lasso*, *lasso2d*, *orbitRotation*, *orbitrotation*, *pan*, *pan2d*, *pan3d*, *reset*, *resetCameraDefault3d*, *resetCameraLastSave3d*, *resetGeo*, *resetSankeyGroup*, *resetScale2d*, *resetViewMapbox*, *resetViews*, *resetcameradefault*, *resetcameralastsave*, *resetsankeygroup*, *resetscale*, *resetview*, *resetviews*, *select*, *select2d*, *sendDataToCloud*, *senddatatocloud*, *tableRotation*, *tablerotation*, *toImage*, *toggleHover*, *toggleSpikelines*, *togglehover*, *togglespikelines*, *toimage*, *zoom*, *zoom2d*, *zoom3d*, *zoomIn2d*, *zoomInGeo*, *zoomInMapbox*, *zoomOut2d*, *zoomOutGeo*, *zoomOutMapbox*, *zoomin*, *zoomout*.
-	Remove String `json:"remove,omitempty"`
+	Remove ArrayOK[*string] `json:"remove,omitempty"`
 
 	// Removesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `remove`.
-	Removesrc String `json:"removesrc,omitempty"`
+	Removesrc string `json:"removesrc,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -2043,7 +2043,7 @@ type LayoutNewselectionLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash String `json:"dash,omitempty"`
+	Dash string `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -2079,7 +2079,7 @@ type LayoutNewshapeLabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -2105,7 +2105,7 @@ type LayoutNewshapeLabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the text to display with the new shape. It is also used for legend item if `name` is not provided.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
@@ -2123,7 +2123,7 @@ type LayoutNewshapeLabel struct {
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the new shape's label. Note that this will override `text`. Variables are inserted using %{variable}, for example "x0: %{x0}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{x0:$.2f}". See https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{x0|%m %b %Y}". See https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. A single multiplication or division operation may be applied to numeric variables, and combined with d3 number formatting, for example "Length in cm: %{x0*2.54}", "%{slope*60:.1f} meters per second." For log axes, variable values are given in log units. For date axes, x/y coordinate variables and center variables use datetimes, while all other variable values use values in ms. Finally, the template string has access to variables `x0`, `x1`, `y0`, `y1`, `slope`, `dx`, `dy`, `width`, `height`, `length`, `xcenter` and `ycenter`.
-	Texttemplate String `json:"texttemplate,omitempty"`
+	Texttemplate string `json:"texttemplate,omitempty"`
 
 	// Xanchor
 	// default: auto
@@ -2151,7 +2151,7 @@ type LayoutNewshapeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -2171,7 +2171,7 @@ type LayoutNewshapeLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutNewshapeLine
@@ -2187,7 +2187,7 @@ type LayoutNewshapeLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash String `json:"dash,omitempty"`
+	Dash string `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -2237,7 +2237,7 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for new shape. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup String `json:"legendgroup,omitempty"`
+	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// role: Object
@@ -2263,7 +2263,7 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: string
 	// Sets new shape name. The name appears as the legend item.
-	Name String `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -2297,7 +2297,7 @@ type LayoutPolarAngularaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -2325,7 +2325,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -2367,7 +2367,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -2379,7 +2379,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -2503,7 +2503,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -2533,7 +2533,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -2545,7 +2545,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -2557,7 +2557,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -2569,7 +2569,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -2643,13 +2643,13 @@ type LayoutPolarRadialaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -2677,7 +2677,7 @@ type LayoutPolarRadialaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -2699,7 +2699,7 @@ type LayoutPolarRadialaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -2719,7 +2719,7 @@ type LayoutPolarRadialaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutPolarRadialaxis
@@ -2769,7 +2769,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -2805,7 +2805,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -2817,7 +2817,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -2953,7 +2953,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -2983,7 +2983,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -2995,7 +2995,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -3007,7 +3007,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -3019,7 +3019,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -3261,13 +3261,13 @@ type LayoutSceneXaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -3295,7 +3295,7 @@ type LayoutSceneXaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -3317,7 +3317,7 @@ type LayoutSceneXaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -3337,7 +3337,7 @@ type LayoutSceneXaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutSceneXaxis
@@ -3381,7 +3381,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -3423,7 +3423,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -3589,7 +3589,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -3613,7 +3613,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -3625,7 +3625,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -3637,7 +3637,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -3649,7 +3649,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -3711,13 +3711,13 @@ type LayoutSceneYaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -3745,7 +3745,7 @@ type LayoutSceneYaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -3767,7 +3767,7 @@ type LayoutSceneYaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -3787,7 +3787,7 @@ type LayoutSceneYaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutSceneYaxis
@@ -3831,7 +3831,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -3873,7 +3873,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -4039,7 +4039,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -4063,7 +4063,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -4075,7 +4075,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -4087,7 +4087,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -4099,7 +4099,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -4161,13 +4161,13 @@ type LayoutSceneZaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -4195,7 +4195,7 @@ type LayoutSceneZaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -4217,7 +4217,7 @@ type LayoutSceneZaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -4237,7 +4237,7 @@ type LayoutSceneZaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutSceneZaxis
@@ -4281,7 +4281,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -4323,7 +4323,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -4489,7 +4489,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -4513,7 +4513,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -4525,7 +4525,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -4537,7 +4537,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -4549,7 +4549,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -4697,7 +4697,7 @@ type LayoutSmithImaginaryaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -4725,7 +4725,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -4737,7 +4737,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -4807,7 +4807,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -4819,7 +4819,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -4831,7 +4831,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -4843,7 +4843,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -4871,7 +4871,7 @@ type LayoutSmithRealaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -4899,7 +4899,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -4911,7 +4911,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -4993,7 +4993,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -5005,7 +5005,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -5017,7 +5017,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5029,7 +5029,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -5079,7 +5079,7 @@ type LayoutTernaryAaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5101,7 +5101,7 @@ type LayoutTernaryAaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5121,7 +5121,7 @@ type LayoutTernaryAaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutTernaryAaxis
@@ -5155,7 +5155,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -5167,7 +5167,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -5279,7 +5279,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -5309,7 +5309,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -5321,7 +5321,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -5333,7 +5333,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5345,7 +5345,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -5377,7 +5377,7 @@ type LayoutTernaryBaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5399,7 +5399,7 @@ type LayoutTernaryBaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5419,7 +5419,7 @@ type LayoutTernaryBaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutTernaryBaxis
@@ -5453,7 +5453,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -5465,7 +5465,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -5577,7 +5577,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -5607,7 +5607,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -5619,7 +5619,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -5631,7 +5631,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5643,7 +5643,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -5675,7 +5675,7 @@ type LayoutTernaryCaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5697,7 +5697,7 @@ type LayoutTernaryCaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -5717,7 +5717,7 @@ type LayoutTernaryCaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutTernaryCaxis
@@ -5751,7 +5751,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -5763,7 +5763,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -5875,7 +5875,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -5905,7 +5905,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -5917,7 +5917,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -5929,7 +5929,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5941,7 +5941,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -6039,7 +6039,7 @@ type LayoutTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -6097,7 +6097,7 @@ type LayoutTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the plot's title. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -6193,13 +6193,13 @@ type LayoutXaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -6233,7 +6233,7 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -6293,7 +6293,7 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -6315,7 +6315,7 @@ type LayoutXaxisRangeselectorFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -6471,7 +6471,7 @@ type LayoutXaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -6493,7 +6493,7 @@ type LayoutXaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -6519,7 +6519,7 @@ type LayoutXaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutXaxis
@@ -6575,7 +6575,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -6647,7 +6647,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -6659,7 +6659,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Insiderange
 	// arrayOK: false
@@ -6851,7 +6851,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Spikedash String `json:"spikedash,omitempty"`
+	Spikedash string `json:"spikedash,omitempty"`
 
 	// Spikemode
 	// default: toaxis
@@ -6897,7 +6897,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -6945,7 +6945,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -6963,7 +6963,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -6975,7 +6975,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -6987,7 +6987,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -7055,13 +7055,13 @@ type LayoutYaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include interface{} `json:"include,omitempty"`
+	Include ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc String `json:"includesrc,omitempty"`
+	Includesrc string `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -7095,7 +7095,7 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -7155,7 +7155,7 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -7177,7 +7177,7 @@ type LayoutYaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -7199,7 +7199,7 @@ type LayoutYaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -7225,7 +7225,7 @@ type LayoutYaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // LayoutYaxis
@@ -7287,7 +7287,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// default: trace
@@ -7359,7 +7359,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash String `json:"griddash,omitempty"`
+	Griddash string `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -7371,7 +7371,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat String `json:"hoverformat,omitempty"`
+	Hoverformat string `json:"hoverformat,omitempty"`
 
 	// Insiderange
 	// arrayOK: false
@@ -7561,7 +7561,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Spikedash String `json:"spikedash,omitempty"`
+	Spikedash string `json:"spikedash,omitempty"`
 
 	// Spikemode
 	// default: toaxis
@@ -7607,7 +7607,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -7655,7 +7655,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: %!s(<nil>)
@@ -7673,7 +7673,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -7685,7 +7685,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -7697,7 +7697,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false

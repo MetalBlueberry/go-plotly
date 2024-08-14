@@ -31,7 +31,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc String `json:"customdatasrc,omitempty"`
+	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Delta
 	// role: Object
@@ -55,7 +55,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc String `json:"idssrc,omitempty"`
+	Idssrc string `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
 	// role: Object
@@ -77,13 +77,13 @@ type Indicator struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta interface{} `json:"meta,omitempty"`
+	Meta ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc String `json:"metasrc,omitempty"`
+	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
 	// default: number
@@ -95,7 +95,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name String `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
 	// Number
 	// role: Object
@@ -119,7 +119,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid String `json:"uid,omitempty"`
+	Uid string `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -153,7 +153,7 @@ type IndicatorDeltaDecreasing struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol String `json:"symbol,omitempty"`
+	Symbol string `json:"symbol,omitempty"`
 }
 
 // IndicatorDeltaFont Set the font used to display the delta
@@ -169,7 +169,7 @@ type IndicatorDeltaFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -191,7 +191,7 @@ type IndicatorDeltaIncreasing struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol String `json:"symbol,omitempty"`
+	Symbol string `json:"symbol,omitempty"`
 }
 
 // IndicatorDelta
@@ -219,7 +219,7 @@ type IndicatorDelta struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the delta.
-	Prefix String `json:"prefix,omitempty"`
+	Prefix string `json:"prefix,omitempty"`
 
 	// Reference
 	// arrayOK: false
@@ -237,13 +237,13 @@ type IndicatorDelta struct {
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the delta.
-	Suffix String `json:"suffix,omitempty"`
+	Suffix string `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat String `json:"valueformat,omitempty"`
+	Valueformat string `json:"valueformat,omitempty"`
 }
 
 // IndicatorDomain
@@ -287,7 +287,7 @@ type IndicatorGaugeAxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -391,7 +391,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -421,7 +421,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default: outside
@@ -433,7 +433,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -445,7 +445,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -457,7 +457,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -603,7 +603,7 @@ type IndicatorLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -623,7 +623,7 @@ type IndicatorLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // IndicatorNumberFont Set the font used to display main number
@@ -639,7 +639,7 @@ type IndicatorNumberFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -659,19 +659,19 @@ type IndicatorNumber struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the number.
-	Prefix String `json:"prefix,omitempty"`
+	Prefix string `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the number.
-	Suffix String `json:"suffix,omitempty"`
+	Suffix string `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat String `json:"valueformat,omitempty"`
+	Valueformat string `json:"valueformat,omitempty"`
 }
 
 // IndicatorStream
@@ -687,7 +687,7 @@ type IndicatorStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token String `json:"token,omitempty"`
+	Token string `json:"token,omitempty"`
 }
 
 // IndicatorTitleFont Set the font used to display the title
@@ -703,7 +703,7 @@ type IndicatorTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -729,7 +729,7 @@ type IndicatorTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this indicator.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // IndicatorAlign Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered

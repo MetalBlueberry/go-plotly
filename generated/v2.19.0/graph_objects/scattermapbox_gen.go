@@ -19,7 +19,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Determines if this scattermapbox trace's layers are to be inserted before the layer with the specified ID. By default, scattermapbox layers are inserted above all the base layers. To place the scattermapbox layers above every other layer, set `below` to *''*.
-	Below String `json:"below,omitempty"`
+	Below string `json:"below,omitempty"`
 
 	// Cluster
 	// role: Object
@@ -41,7 +41,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc String `json:"customdatasrc,omitempty"`
+	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Fill
 	// default: none
@@ -65,7 +65,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// role: Object
@@ -75,25 +75,25 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate String `json:"hovertemplate,omitempty"`
+	Hovertemplate ArrayOK[*string] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc String `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext String `json:"hovertext,omitempty"`
+	Hovertext ArrayOK[*string] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc string `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -105,7 +105,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc String `json:"idssrc,omitempty"`
+	Idssrc string `json:"idssrc,omitempty"`
 
 	// Lat
 	// arrayOK: false
@@ -117,13 +117,13 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lat`.
-	Latsrc String `json:"latsrc,omitempty"`
+	Latsrc string `json:"latsrc,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup String `json:"legendgroup,omitempty"`
+	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// role: Object
@@ -155,7 +155,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lon`.
-	Lonsrc String `json:"lonsrc,omitempty"`
+	Lonsrc string `json:"lonsrc,omitempty"`
 
 	// Marker
 	// role: Object
@@ -165,13 +165,13 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta interface{} `json:"meta,omitempty"`
+	Meta ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc String `json:"metasrc,omitempty"`
+	Metasrc string `json:"metasrc,omitempty"`
 
 	// Mode
 	// default: markers
@@ -183,7 +183,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name String `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -221,7 +221,7 @@ type Scattermapbox struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text String `json:"text,omitempty"`
+	Text ArrayOK[*string] `json:"text,omitempty"`
 
 	// Textfont
 	// role: Object
@@ -237,19 +237,19 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc String `json:"textsrc,omitempty"`
+	Textsrc string `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
-	Texttemplate String `json:"texttemplate,omitempty"`
+	Texttemplate ArrayOK[*string] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
-	Texttemplatesrc String `json:"texttemplatesrc,omitempty"`
+	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -261,7 +261,7 @@ type Scattermapbox struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid String `json:"uid,omitempty"`
+	Uid string `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -287,13 +287,13 @@ type ScattermapboxCluster struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color for each cluster step.
-	Color Color `json:"color,omitempty"`
+	Color ArrayOK[*Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc String `json:"colorsrc,omitempty"`
+	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Enabled
 	// arrayOK: false
@@ -311,37 +311,37 @@ type ScattermapboxCluster struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity ArrayOK[*float64] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `opacity`.
-	Opacitysrc String `json:"opacitysrc,omitempty"`
+	Opacitysrc string `json:"opacitysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size for each cluster step.
-	Size float64 `json:"size,omitempty"`
+	Size ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc String `json:"sizesrc,omitempty"`
+	Sizesrc string `json:"sizesrc,omitempty"`
 
 	// Step
 	// arrayOK: true
 	// type: number
 	// Sets how many points it takes to create a cluster or advance to the next cluster step. Use this in conjunction with arrays for `size` and / or `color`. If an integer, steps start at multiples of this number. If an array, each step extends from the given value until one less than the next value.
-	Step float64 `json:"step,omitempty"`
+	Step ArrayOK[*float64] `json:"step,omitempty"`
 
 	// Stepsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `step`.
-	Stepsrc String `json:"stepsrc,omitempty"`
+	Stepsrc string `json:"stepsrc,omitempty"`
 }
 
 // ScattermapboxHoverlabelFont Sets the font used in hover labels.
@@ -351,37 +351,37 @@ type ScattermapboxHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color ArrayOK[*Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc String `json:"colorsrc,omitempty"`
+	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family ArrayOK[*string] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc String `json:"familysrc,omitempty"`
+	Familysrc string `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc String `json:"sizesrc,omitempty"`
+	Sizesrc string `json:"sizesrc,omitempty"`
 }
 
 // ScattermapboxHoverlabel
@@ -397,31 +397,31 @@ type ScattermapboxHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc String `json:"alignsrc,omitempty"`
+	Alignsrc string `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor ArrayOK[*Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor ArrayOK[*Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// role: Object
@@ -431,13 +431,13 @@ type ScattermapboxHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc string `json:"namelengthsrc,omitempty"`
 }
 
 // ScattermapboxLegendgrouptitleFont Sets this legend group's title font.
@@ -453,7 +453,7 @@ type ScattermapboxLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -473,7 +473,7 @@ type ScattermapboxLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ScattermapboxLine
@@ -505,7 +505,7 @@ type ScattermapboxMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -527,7 +527,7 @@ type ScattermapboxMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -553,7 +553,7 @@ type ScattermapboxMarkerColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ScattermapboxMarkerColorbar
@@ -705,7 +705,7 @@ type ScattermapboxMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -747,7 +747,7 @@ type ScattermapboxMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default:
@@ -759,7 +759,7 @@ type ScattermapboxMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -771,7 +771,7 @@ type ScattermapboxMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -783,7 +783,7 @@ type ScattermapboxMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -845,13 +845,13 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
-	Angle float64 `json:"angle,omitempty"`
+	Angle ArrayOK[*float64] `json:"angle,omitempty"`
 
 	// Anglesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `angle`.
-	Anglesrc String `json:"anglesrc,omitempty"`
+	Anglesrc string `json:"anglesrc,omitempty"`
 
 	// Autocolorscale
 	// arrayOK: false
@@ -887,7 +887,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color ArrayOK[*ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -909,19 +909,19 @@ type ScattermapboxMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc String `json:"colorsrc,omitempty"`
+	Colorsrc string `json:"colorsrc,omitempty"`
 
 	// Opacity
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity ArrayOK[*float64] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `opacity`.
-	Opacitysrc String `json:"opacitysrc,omitempty"`
+	Opacitysrc string `json:"opacitysrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
@@ -939,7 +939,7 @@ type ScattermapboxMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
-	Size float64 `json:"size,omitempty"`
+	Size ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
@@ -963,19 +963,19 @@ type ScattermapboxMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc String `json:"sizesrc,omitempty"`
+	Sizesrc string `json:"sizesrc,omitempty"`
 
 	// Symbol
 	// arrayOK: true
 	// type: string
 	// Sets the marker symbol. Full list: https://www.mapbox.com/maki-icons/ Note that the array `marker.color` and `marker.size` are only available for *circle* symbols.
-	Symbol String `json:"symbol,omitempty"`
+	Symbol ArrayOK[*string] `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `symbol`.
-	Symbolsrc String `json:"symbolsrc,omitempty"`
+	Symbolsrc string `json:"symbolsrc,omitempty"`
 }
 
 // ScattermapboxSelectedMarker
@@ -1021,7 +1021,7 @@ type ScattermapboxStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token String `json:"token,omitempty"`
+	Token string `json:"token,omitempty"`
 }
 
 // ScattermapboxTextfont Sets the icon text font (color=mapbox.layer.paint.text-color, size=mapbox.layer.layout.text-size). Has an effect only when `type` is set to *symbol*.
@@ -1037,7 +1037,7 @@ type ScattermapboxTextfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false

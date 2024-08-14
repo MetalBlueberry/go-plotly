@@ -55,7 +55,7 @@ func main() {
 	x := []string{}
 	y := []int{}
 	text := []string{}
-	link := []string{}
+	link := []interface{}{}
 
 	for i := 0; i < len(starredAt); i++ {
 		x = append(x, starredAt[i].StarredAt.Format(time.RFC3339))
@@ -71,8 +71,8 @@ func main() {
 				Type: grob.TraceTypeScatter,
 				X:    x,
 				Y:    y,
-				Text: text,
-				Meta: link,
+				Text: grob.ArrayOKArray(text...),
+				Meta: grob.ArrayOKArray(link...),
 				Mode: grob.ScatterModeLines + "+" + grob.ScatterModeMarkers,
 				Name: "Stars",
 				Line: &grob.ScatterLine{

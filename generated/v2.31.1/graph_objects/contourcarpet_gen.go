@@ -31,7 +31,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `a`.
-	Asrc String `json:"asrc,omitempty"`
+	Asrc string `json:"asrc,omitempty"`
 
 	// Atype
 	// default: %!s(<nil>)
@@ -67,7 +67,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `b`.
-	Bsrc String `json:"bsrc,omitempty"`
+	Bsrc string `json:"bsrc,omitempty"`
 
 	// Btype
 	// default: %!s(<nil>)
@@ -79,7 +79,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// The `carpet` of the carpet axes on which this contour trace lies
-	Carpet String `json:"carpet,omitempty"`
+	Carpet string `json:"carpet,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -111,7 +111,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc String `json:"customdatasrc,omitempty"`
+	Customdatasrc string `json:"customdatasrc,omitempty"`
 
 	// Da
 	// arrayOK: false
@@ -129,7 +129,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color if `contours.type` is *constraint*. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor ColorWithColorScale `json:"fillcolor,omitempty"`
 
 	// Hovertext
 	// arrayOK: false
@@ -141,7 +141,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc string `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -153,7 +153,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc String `json:"idssrc,omitempty"`
+	Idssrc string `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
@@ -165,7 +165,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup String `json:"legendgroup,omitempty"`
+	Legendgroup string `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// role: Object
@@ -191,19 +191,19 @@ type Contourcarpet struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta interface{} `json:"meta,omitempty"`
+	Meta ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc String `json:"metasrc,omitempty"`
+	Metasrc string `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name String `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
 	// Ncontours
 	// arrayOK: false
@@ -249,7 +249,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc String `json:"textsrc,omitempty"`
+	Textsrc string `json:"textsrc,omitempty"`
 
 	// Transpose
 	// arrayOK: false
@@ -261,7 +261,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid String `json:"uid,omitempty"`
+	Uid string `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -327,7 +327,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `z`.
-	Zsrc String `json:"zsrc,omitempty"`
+	Zsrc string `json:"zsrc,omitempty"`
 }
 
 // ContourcarpetColorbarTickfont Sets the color bar's tick label font
@@ -343,7 +343,7 @@ type ContourcarpetColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -365,7 +365,7 @@ type ContourcarpetColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -391,7 +391,7 @@ type ContourcarpetColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ContourcarpetColorbar
@@ -543,7 +543,7 @@ type ContourcarpetColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat String `json:"tickformat,omitempty"`
+	Tickformat string `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -585,7 +585,7 @@ type ContourcarpetColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix String `json:"tickprefix,omitempty"`
+	Tickprefix string `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// default:
@@ -597,7 +597,7 @@ type ContourcarpetColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix String `json:"ticksuffix,omitempty"`
+	Ticksuffix string `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -609,7 +609,7 @@ type ContourcarpetColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc string `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -621,7 +621,7 @@ type ContourcarpetColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc string `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -695,7 +695,7 @@ type ContourcarpetContoursLabelfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -727,7 +727,7 @@ type ContourcarpetContours struct {
 	// arrayOK: false
 	// type: string
 	// Sets the contour label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Labelformat String `json:"labelformat,omitempty"`
+	Labelformat string `json:"labelformat,omitempty"`
 
 	// Operation
 	// default: =
@@ -785,7 +785,7 @@ type ContourcarpetLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family String `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -805,7 +805,7 @@ type ContourcarpetLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text String `json:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 // ContourcarpetLine
@@ -821,7 +821,7 @@ type ContourcarpetLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash String `json:"dash,omitempty"`
+	Dash string `json:"dash,omitempty"`
 
 	// Smoothing
 	// arrayOK: false
@@ -849,7 +849,7 @@ type ContourcarpetStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token String `json:"token,omitempty"`
+	Token string `json:"token,omitempty"`
 }
 
 // ContourcarpetAtype If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).

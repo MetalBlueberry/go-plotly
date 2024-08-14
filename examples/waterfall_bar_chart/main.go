@@ -124,7 +124,7 @@ func main() {
 		X: xData,
 		Y: []int{0, 430, 0, 570, 370, 370, 0},
 		Marker: &grob.BarMarker{
-			Color: "rgba(1,1,1,0.0)",
+			Color: grob.ArrayOKValue(grob.UseColor("rgba(1,1,1,0.0)")),
 		},
 		Type: grob.TraceTypeBar,
 	}
@@ -135,10 +135,10 @@ func main() {
 		X: xData,
 		Y: []int{430, 260, 690, 0, 0, 0, 0},
 		Marker: &grob.BarMarker{
-			Color: "rgba(55,128,191,0.7)",
+			Color: grob.ArrayOKValue(grob.UseColor("rgba(55,128,191,0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: "rgba(55,128,191,1.0)",
-				Width: 2,
+				Color: grob.ArrayOKValue(grob.UseColor("rgba(55,128,191,1.0)")),
+				Width: grob.ArrayOKValue(2.0),
 			},
 		},
 		Type: grob.TraceTypeBar,
@@ -150,10 +150,10 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 120, 200, 320, 0},
 		Marker: &grob.BarMarker{
-			Color: "rgba(219, 64, 82, 0.7)",
+			Color: grob.ArrayOKValue(grob.UseColor("rgba(219, 64, 82, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: "rgba(219, 64, 82, 1.0)",
-				Width: 2,
+				Color: grob.ArrayOKValue(grob.UseColor("rgba(219, 64, 82, 1.0)")),
+				Width: grob.ArrayOKValue(2.0),
 			},
 		},
 		Type: grob.TraceTypeBar,
@@ -165,10 +165,10 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 0, 0, 0, 370},
 		Marker: &grob.BarMarker{
-			Color: "rgba(50,171, 96, 0.7)",
+			Color: grob.ArrayOKValue(grob.UseColor("rgba(50,171, 96, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: "rgba(50,171,96,1.0)",
-				Width: 2,
+				Color: grob.ArrayOKValue(grob.UseColor("rgba(50,171,96,1.0)")),
+				Width: grob.ArrayOKValue(2.0),
 			},
 		},
 		Type: grob.TraceTypeBar,
