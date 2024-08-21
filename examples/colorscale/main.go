@@ -6,6 +6,7 @@ import (
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	"github.com/MetalBlueberry/go-plotly/types/arrayok"
 )
 
 type ColorScale struct {
@@ -51,10 +52,10 @@ func main() {
 					Cmin:           0,
 					Cmid:           5,
 					Cmax:           10,
-					Color:          grob.ArrayOKArray(grob.UseColorScaleValues(z)...),
+					Color:          arrayok.Array(grob.UseColorScaleValues(z)...),
 					Colorscale:     colorScale,
 					Showscale:      grob.True,
-					Size:           grob.ArrayOKValue(4.0),
+					Size:           arrayok.Value(4.0),
 				},
 			},
 		},
