@@ -327,7 +327,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the paper where the graph is drawn.
-	PaperBgcolor ColorWithColorScale `json:"paper_bgcolor,omitempty"`
+	PaperBgcolor Color `json:"paper_bgcolor,omitempty"`
 
 	// Piecolorway
 	// arrayOK: false
@@ -339,7 +339,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the plotting area in-between x and y axes.
-	PlotBgcolor ColorWithColorScale `json:"plot_bgcolor,omitempty"`
+	PlotBgcolor Color `json:"plot_bgcolor,omitempty"`
 
 	// Polar
 	// arrayOK: false

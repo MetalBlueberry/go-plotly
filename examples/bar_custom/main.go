@@ -55,8 +55,8 @@ func main() {
 		X:            xValue,
 		Y:            yValue,
 		Text:         grob.ArrayOKArray(toString(yValue)...),
-		Textposition: grob.BarTextpositionAuto,
-		Hoverinfo:    grob.BarHoverinfoNone,
+		Textposition: grob.ArrayOKValue(grob.BarTextpositionAuto),
+		Hoverinfo:    grob.ArrayOKValue(grob.BarHoverinfoNone),
 		Marker: &grob.BarMarker{
 			Color: grob.ArrayOKValue(grob.UseColor(grob.Color(
 				markerColor.Hex(), // Use colorfull

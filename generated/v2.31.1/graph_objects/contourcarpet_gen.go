@@ -133,7 +133,7 @@ type Contourcarpet struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color if `contours.type` is *constraint*. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor ColorWithColorScale `json:"fillcolor,omitempty"`
+	Fillcolor Color `json:"fillcolor,omitempty"`
 
 	// Hovertext
 	// arrayOK: false

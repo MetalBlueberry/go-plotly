@@ -178,7 +178,9 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 
 		default:
 			ty := valTypeMap[attr.ValType]
-			if attr.ValType == ValTypeColor && attrs["colorscale"] != nil {
+
+			// Special case, the attribute color may also be a ColorScale
+			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {
 				ty = "ColorWithColorScale"
 			}
 			if attr.ArrayOK {
