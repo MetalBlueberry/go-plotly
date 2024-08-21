@@ -5,7 +5,7 @@
 	<body>
 		<div id="plot"></div>
 	<script>
-		data = JSON.parse('{"data":[{"type":"bar","base":null,"hoverinfo":null,"hovertemplate":null,"hovertext":null,"meta":null,"offset":null,"text":null,"textposition":null,"texttemplate":null,"width":null,"x":[1,2,3],"y":[1,2,3]}],"layout":{"meta":null,"title":{"text":"A Figure Specified By Go Struct"}}}')
+		data = JSON.parse(atob('eyJkYXRhIjpbeyJ0eXBlIjoiYmFyIiwiYmFzZSI6bnVsbCwiaG92ZXJpbmZvIjpudWxsLCJob3ZlcnRlbXBsYXRlIjpudWxsLCJob3ZlcnRleHQiOm51bGwsIm1ldGEiOm51bGwsIm9mZnNldCI6bnVsbCwidGV4dCI6bnVsbCwidGV4dHBvc2l0aW9uIjpudWxsLCJ0ZXh0dGVtcGxhdGUiOm51bGwsIndpZHRoIjpudWxsLCJ4IjpbMSwyLDNdLCJ5IjpbMSwyLDNdfV0sImxheW91dCI6eyJtZXRhIjpudWxsLCJ0aXRsZSI6eyJ0ZXh0IjoiQSBGaWd1cmUgJ1NwZWNpZmllZCcgQnkgR28gU3RydWN0In19fQ=='))
 		Plotly.newPlot('plot', data);
 	</script>
 	</body>

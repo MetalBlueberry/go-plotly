@@ -2,6 +2,7 @@ package offline
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -34,17 +35,18 @@ func figToBuffer(fig types.Fig) *bytes.Buffer {
 	if err != nil {
 		panic(err)
 	}
-	tmpl, err := template.New("plotly").Parse(baseHtml)
+	tmpl, err := template.New("plotly").Parse(singleFileHTML)
 	if err != nil {
 		panic(err)
 	}
 	buf := &bytes.Buffer{}
 	data := struct {
-		Version types.Version
-		Content string
+		Version    types.Version
+		B64Content string
 	}{
 		Version: fig.Info(),
-		Content: string(figBytes),
+		// Encode to avoid problems with special characters
+		B64Content: base64.StdEncoding.EncodeToString(figBytes),
 	}
 
 	err = tmpl.Execute(buf, data)
@@ -66,12 +68,18 @@ func Serve(fig types.Fig, opt ...Options) {
 		Handler: mux,
 		Addr:    opts.Addr,
 	}
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		buf := figToBuffer(fig)
-		buf.WriteTo(w)
+
+	mux.HandleFunc("/content", func(w http.ResponseWriter, r *http.Request) {
+		err := json.NewEncoder(w).Encode(fig)
+		if err != nil {
+			log.Printf("Error rendering template, %s", err)
+			w.WriteHeader(http.StatusInternalServerError)
+		}
 	})
 
-	log.Print("Starting server")
+	mux.HandleFunc("/", webPage(fig, "/content"))
+
+	log.Printf("Starting server at %s", srv.Addr)
 	if err := srv.ListenAndServe(); err != nil {
 		log.Print(err)
 	}
@@ -88,15 +96,55 @@ func computeOptions(def Options, opt ...Options) Options {
 	return def
 }
 
-var baseHtml = `
+var singleFileHTML = `
 	<head>
 		<script src="{{ .Version.Cdn }}"></script>
 	</head>
 	<body>
 		<div id="plot"></div>
 	<script>
-		data = JSON.parse('{{ .Content }}')
+		data = JSON.parse(atob('{{ .B64Content }}'))
 		Plotly.newPlot('plot', data);
+	</script>
+	</body>
+	`
+
+type serverHTMLdata struct {
+	Version    types.Version
+	ContentURL string
+}
+
+func webPage(fig types.Fig, contentURL string) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		tmpl := template.Must(template.New("server").Parse(serverHTML))
+		data := serverHTMLdata{
+			Version:    fig.Info(),
+			ContentURL: contentURL,
+		}
+		err := tmpl.Execute(w, data)
+		if err != nil {
+			log.Printf("Error rendering template, %s", err)
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+	}
+}
+
+var serverHTML = `
+	<head>
+		<script src="{{ .Version.Cdn }}"></script>
+	</head>
+	<body>
+		<div id="plot"></div>
+	<script>
+		const url = '{{ .ContentURL }}'
+		fetch(url)
+        	.then(response => response.json())  // Parse the JSON data from the response
+        	.then(data => {
+            	// Use the fetched data to create the Plotly plot
+            	Plotly.newPlot('plot', data);
+        	})
+        	.catch(error => console.error('Error fetching data:', error));
 	</script>
 	</body>
 	`
