@@ -16,7 +16,7 @@ func main() {
 	   })
 	*/
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Bar{
 				X: []float64{1, 2, 3},
 				Y: []float64{1, 2, 3},

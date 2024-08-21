@@ -67,7 +67,7 @@ func main() {
 	}
 
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Scatter{
 				X:    x,
 				Y:    y,

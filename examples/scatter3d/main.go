@@ -5,6 +5,7 @@ import (
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	z := t
 
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Scatter3d{
 				X:    x,
 				Y:    y,

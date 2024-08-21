@@ -76,7 +76,7 @@ func main() {
 	}
 
 	fig := &grob.Fig{
-		Data:   grob.Traces{trace1},
+		Data:   []types.Trace{trace1},
 		Layout: layout,
 	}
 

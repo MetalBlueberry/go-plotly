@@ -7,13 +7,14 @@ import (
 	"syscall/js"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 // to run this, wasm need to be set: GOOS=js GOARCH=wasm go build -o main.wasm
 
 func plot(this js.Value, inputs []js.Value) interface{} {
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Choropleth{
 				Autocolorscale: types.True,
 				Locationmode:   grob.ChoroplethLocationmodeUSAStates,

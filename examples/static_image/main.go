@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -21,10 +22,10 @@ func main() {
 	   })
 	*/
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Bar{
-				X:    []float64{1, 2, 3},
-				Y:    []float64{1, 2, 3},
+				X: []float64{1, 2, 3},
+				Y: []float64{1, 2, 3},
 			},
 		},
 		Layout: &grob.Layout{

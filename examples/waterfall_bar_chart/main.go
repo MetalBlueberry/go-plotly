@@ -171,7 +171,7 @@ func main() {
 		},
 	}
 
-	data := grob.Traces{trace1, trace2, trace3, trace4}
+	data := []types.Trace{trace1, trace2, trace3, trace4}
 
 	annotations := make([]Annotation, 7)
 	for i := 0; i < len(annotations); i++ {

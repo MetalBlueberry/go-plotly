@@ -14,7 +14,7 @@ func main() {
 	y := sin(t)
 	z := t
 	fig := &grob.Fig{
-		Data: grob.Traces{
+		Data: []types.Trace{
 			&grob.Scatter3d{
 				X:    x,
 				Y:    y,
