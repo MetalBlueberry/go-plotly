@@ -29,5 +29,5 @@ jobs:
       - name: Build all packages
         run: go build -v ./...
 
-      - name: Build all tests
+      - name: Build all examples
         run: cd examples && go build -v ./...
