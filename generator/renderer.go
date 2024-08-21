@@ -519,7 +519,7 @@ var valTypeMap = map[ValType]string{
 	ValTypeString:     "string",
 	ValTypeColor:      "Color",
 	ValTypeColorlist:  "ColorList",
-	ValTypeColorscale: "ColorScale",
+	ValTypeColorscale: "NO-TYPE",
 	ValTypeAngle:      "float64",
 	ValTypeSubplotID:  "String",
 	ValTypeFlagList:   "NO-TYPE",

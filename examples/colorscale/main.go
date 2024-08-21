@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
@@ -9,31 +8,7 @@ import (
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
 )
 
-type ColorScale struct {
-	Position   float64
-	ColorScale string
-}
-
-func (cs ColorScale) MarshalJSON() ([]byte, error) {
-	data := []interface{}{cs.Position, cs.ColorScale}
-	return json.Marshal(data)
-}
-
 func main() {
-	colorScale := []ColorScale{
-		{0.0, "#6e40aa"},
-		{0.1, "#963db3"},
-		{0.2, "#bf3caf"},
-		{0.3, "#e4419d"},
-		{0.4, "#fe4b83"},
-		{0.5, "#ff5e63"},
-		{0.6, "#ff7847"},
-		{0.7, "#fb9633"},
-		{0.8, "#e2b72f"},
-		{0.9, "#c6d63c"},
-		{1.0, "#aff05b"},
-	}
-
 	t := linspace(0, 10, 50)
 	x := cos(t)
 	y := sin(t)
@@ -52,9 +27,23 @@ func main() {
 					Cmid:           5,
 					Cmax:           10,
 					Color:          arrayok.Array(grob.UseColorScaleValues(z)...),
-					Colorscale:     colorScale,
-					Showscale:      grob.True,
-					Size:           arrayok.Value(4.0),
+					Colorscale: grob.ColorScale{
+						Values: []grob.ColorScaleReference{
+							{NormalizedValue: 0.0, Color: "#6e40aa"},
+							{NormalizedValue: 0.1, Color: `#963db3`},
+							{NormalizedValue: 0.2, Color: "#bf3caf"},
+							{NormalizedValue: 0.3, Color: "#e4419d"},
+							{NormalizedValue: 0.4, Color: "#fe4b83"},
+							{NormalizedValue: 0.5, Color: "#ff5e63"},
+							{NormalizedValue: 0.6, Color: "#ff7847"},
+							{NormalizedValue: 0.7, Color: "#fb9633"},
+							{NormalizedValue: 0.8, Color: "#e2b72f"},
+							{NormalizedValue: 0.9, Color: "#c6d63c"},
+							{NormalizedValue: 1.0, Color: "#aff05b"},
+						},
+					},
+					Showscale: grob.True,
+					Size:      arrayok.Value(4.0),
 				},
 			},
 		},

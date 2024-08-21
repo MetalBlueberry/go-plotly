@@ -2,6 +2,7 @@ package grob
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // TraceType is the type for the TraceType field on every trace
@@ -152,4 +153,41 @@ func (c *ColorWithColorScale) UnmarshalJSON(data []byte) error {
 type ColorList []Color
 
 // ColorScale A Plotly colorscale either picked by a name: (any of Greys, YlGnBu, Greens, YlOrRd, Bluered, RdBu, Reds, Blues, Picnic, Rainbow, Portland, Jet, Hot, Blackbody, Earth, Electric, Viridis, Cividis ) customized as an {array} of 2-element {arrays} where the first element is the normalized color level value (starting at *0* and ending at *1*), and the second item is a valid color string.
-type ColorScale interface{}
+type ColorScale struct {
+	Name   string
+	Values []ColorScaleReference
+}
+
+type ColorScaleReference struct {
+	NormalizedValue float64
+	Color           Color
+}
+
+func (cs *ColorScaleReference) MarshalJSON() ([]byte, error) {
+	data := []interface{}{cs.NormalizedValue, cs.Color}
+	return json.Marshal(data)
+}
+
+func (cs *ColorScale) MarshalJSON() ([]byte, error) {
+	if cs.Values != nil {
+		return json.Marshal(cs.Values)
+	}
+	return json.Marshal(cs.Name)
+}
+
+func (cs *ColorScale) UnmarshalJSON(data []byte) error {
+	var values []ColorScaleReference
+
+	err := json.Unmarshal(data, &values)
+	if err == nil {
+		cs.Values = values
+		return nil
+	}
+	var name string
+	err = json.Unmarshal(data, &name)
+	if err == nil {
+		cs.Name = name
+		return nil
+	}
+	return fmt.Errorf("Unable to Unmarshal ColorScale, %w", err)
+}
