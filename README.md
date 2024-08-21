@@ -23,27 +23,35 @@ The good thing about this package is that it's **automatically generated** based
 package main
 
 import (
-    grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-    "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
-    fig := &grob.Fig{
-        Data: grob.Traces{
-            &grob.Bar{
-                Type: grob.TraceTypeBar,
-                X:    []float64{1, 2, 3},
-                Y:    []float64{1, 2, 3},
-            },
-        },
-        Layout: &grob.Layout{
-            Title: &grob.LayoutTitle{
-                Text: "A Figure Specified By Go Struct",
-            },
-        },
-    }
+	/*
+	   fig = dict({
+	       "data": [{"type": "bar",
+	                 "x": [1, 2, 3],
+	                 "y": [1, 3, 2]}],
+	       "layout": {"title": {"text": "A Figure Specified By Python Dictionary"}}
+	   })
+	*/
+	fig := &grob.Fig{
+		Data: []types.Trace{
+			&grob.Bar{
+				X: []float64{1, 2, 3},
+				Y: []float64{1, 2, 3},
+			},
+		},
+		Layout: &grob.Layout{
+			Title: &grob.LayoutTitle{
+				Text: "A Figure Specified By Go Struct",
+			},
+		},
+	}
 
-    offline.Show(fig)
+	offline.Show(fig)
 }
 ```
 
