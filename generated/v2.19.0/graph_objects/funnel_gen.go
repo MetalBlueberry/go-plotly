@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeFunnel TraceType = "funnel"
@@ -427,7 +428,7 @@ type FunnelConnectorLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -449,7 +450,7 @@ type FunnelConnector struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -470,7 +471,7 @@ type FunnelHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -523,7 +524,7 @@ type FunnelHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -535,7 +536,7 @@ type FunnelHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -568,7 +569,7 @@ type FunnelInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -608,7 +609,7 @@ type FunnelLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -645,7 +646,7 @@ type FunnelMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -667,7 +668,7 @@ type FunnelMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -711,13 +712,13 @@ type FunnelMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -780,7 +781,7 @@ type FunnelMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor Color `json:"outlinecolor,omitempty"`
+	Outlinecolor color.String `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -850,7 +851,7 @@ type FunnelMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -1032,7 +1033,7 @@ type FunnelMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1041,10 +1042,10 @@ type FunnelMarkerLine struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1108,7 +1109,7 @@ type FunnelMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1122,10 +1123,10 @@ type FunnelMarker struct {
 	Colorbar *FunnelMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1170,7 +1171,7 @@ type FunnelOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1226,7 +1227,7 @@ type FunnelTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false

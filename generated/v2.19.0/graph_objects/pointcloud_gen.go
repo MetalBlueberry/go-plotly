@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypePointcloud TraceType = "pointcloud"
@@ -256,7 +257,7 @@ type PointcloudHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -309,7 +310,7 @@ type PointcloudHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -321,7 +322,7 @@ type PointcloudHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -354,7 +355,7 @@ type PointcloudLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -397,7 +398,7 @@ type PointcloudMarkerBorder struct {
 	// arrayOK: false
 	// type: color
 	// Sets the stroke color. It accepts a specific color. If the color is not fully opaque and there are hundreds of thousands of points, it may cause slower zooming and panning.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 }
 
 // PointcloudMarker
@@ -418,7 +419,7 @@ type PointcloudMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker fill color. It accepts a specific color. If the color is not fully opaque and there are hundreds of thousands of points, it may cause slower zooming and panning.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false

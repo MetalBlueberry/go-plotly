@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeCandlestick TraceType = "candlestick"
@@ -328,7 +329,7 @@ type CandlestickDecreasingLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the box(es).
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -344,7 +345,7 @@ type CandlestickDecreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -359,7 +360,7 @@ type CandlestickHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -412,7 +413,7 @@ type CandlestickHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -424,7 +425,7 @@ type CandlestickHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -463,7 +464,7 @@ type CandlestickIncreasingLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the box(es).
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -479,7 +480,7 @@ type CandlestickIncreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -494,7 +495,7 @@ type CandlestickLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false

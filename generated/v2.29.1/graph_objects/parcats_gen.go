@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeParcats TraceType = "parcats"
@@ -201,7 +202,7 @@ type ParcatsLabelfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -223,7 +224,7 @@ type ParcatsLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -260,7 +261,7 @@ type ParcatsLineColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -282,7 +283,7 @@ type ParcatsLineColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -326,13 +327,13 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -395,7 +396,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor Color `json:"outlinecolor,omitempty"`
+	Outlinecolor color.String `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -465,7 +466,7 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -661,7 +662,7 @@ type ParcatsLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -675,10 +676,10 @@ type ParcatsLine struct {
 	Colorbar *ParcatsLineColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -735,7 +736,7 @@ type ParcatsTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false

@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeWaterfall TraceType = "waterfall"
@@ -473,7 +474,7 @@ type WaterfallConnectorLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -517,7 +518,7 @@ type WaterfallDecreasingMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all decreasing values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -533,7 +534,7 @@ type WaterfallDecreasingMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all decreasing values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -557,7 +558,7 @@ type WaterfallHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -610,7 +611,7 @@ type WaterfallHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -622,7 +623,7 @@ type WaterfallHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -655,7 +656,7 @@ type WaterfallIncreasingMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all increasing values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -671,7 +672,7 @@ type WaterfallIncreasingMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all increasing values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -695,7 +696,7 @@ type WaterfallInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -735,7 +736,7 @@ type WaterfallLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -772,7 +773,7 @@ type WaterfallOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -828,7 +829,7 @@ type WaterfallTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -868,7 +869,7 @@ type WaterfallTotalsMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all intermediate sums and total values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -884,7 +885,7 @@ type WaterfallTotalsMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all intermediate sums and total values.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false

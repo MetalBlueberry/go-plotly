@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypePie TraceType = "pie"
@@ -385,7 +386,7 @@ type PieHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -438,7 +439,7 @@ type PieHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -450,7 +451,7 @@ type PieHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -483,7 +484,7 @@ type PieInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -523,7 +524,7 @@ type PieLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -560,7 +561,7 @@ type PieMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the line enclosing each sector.
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -588,7 +589,7 @@ type PieMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -600,7 +601,7 @@ type PieMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
-	Fgcolor arrayok.Type[*Color] `json:"fgcolor,omitempty"`
+	Fgcolor arrayok.Type[*color.String] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
@@ -692,7 +693,7 @@ type PieOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -748,7 +749,7 @@ type PieTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -788,7 +789,7 @@ type PieTitleFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false

@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeCarpet TraceType = "carpet"
@@ -90,7 +91,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -248,7 +249,7 @@ type CarpetAaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -270,7 +271,7 @@ type CarpetAaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -365,7 +366,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -383,7 +384,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
-	Endlinecolor Color `json:"endlinecolor,omitempty"`
+	Endlinecolor color.String `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
@@ -408,7 +409,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -450,7 +451,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -468,7 +469,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Minorgridcolor Color `json:"minorgridcolor,omitempty"`
+	Minorgridcolor color.String `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
@@ -569,7 +570,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
-	Startlinecolor Color `json:"startlinecolor,omitempty"`
+	Startlinecolor color.String `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
@@ -669,7 +670,7 @@ type CarpetBaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -691,7 +692,7 @@ type CarpetBaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -786,7 +787,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -804,7 +805,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
-	Endlinecolor Color `json:"endlinecolor,omitempty"`
+	Endlinecolor color.String `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
@@ -829,7 +830,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -871,7 +872,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -889,7 +890,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Minorgridcolor Color `json:"minorgridcolor,omitempty"`
+	Minorgridcolor color.String `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
@@ -990,7 +991,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
-	Startlinecolor Color `json:"startlinecolor,omitempty"`
+	Startlinecolor color.String `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
@@ -1090,7 +1091,7 @@ type CarpetFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1112,7 +1113,7 @@ type CarpetLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false

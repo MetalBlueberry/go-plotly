@@ -4,6 +4,7 @@ package grob
 
 import (
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 // Layout Plot layout options
@@ -117,7 +118,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default trace colors.
-	Colorway ColorList `json:"colorway,omitempty"`
+	Colorway color.List `json:"colorway,omitempty"`
 
 	// Computed
 	// arrayOK: false
@@ -183,7 +184,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
-	Funnelareacolorway ColorList `json:"funnelareacolorway,omitempty"`
+	Funnelareacolorway color.List `json:"funnelareacolorway,omitempty"`
 
 	// Funnelgap
 	// arrayOK: false
@@ -260,7 +261,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
-	Iciclecolorway ColorList `json:"iciclecolorway,omitempty"`
+	Iciclecolorway color.List `json:"iciclecolorway,omitempty"`
 
 	// Images
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -326,19 +327,19 @@ type Layout struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the paper where the graph is drawn.
-	PaperBgcolor Color `json:"paper_bgcolor,omitempty"`
+	PaperBgcolor color.String `json:"paper_bgcolor,omitempty"`
 
 	// Piecolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
-	Piecolorway ColorList `json:"piecolorway,omitempty"`
+	Piecolorway color.List `json:"piecolorway,omitempty"`
 
 	// PlotBgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the plotting area in-between x and y axes.
-	PlotBgcolor Color `json:"plot_bgcolor,omitempty"`
+	PlotBgcolor color.String `json:"plot_bgcolor,omitempty"`
 
 	// Polar
 	// arrayOK: false
@@ -421,7 +422,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
-	Sunburstcolorway ColorList `json:"sunburstcolorway,omitempty"`
+	Sunburstcolorway color.List `json:"sunburstcolorway,omitempty"`
 
 	// Template
 	// arrayOK: false
@@ -448,7 +449,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
-	Treemapcolorway ColorList `json:"treemapcolorway,omitempty"`
+	Treemapcolorway color.List `json:"treemapcolorway,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -569,7 +570,7 @@ type LayoutActiveselection struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color filling the active selection' interior.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -585,7 +586,7 @@ type LayoutActiveshape struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color filling the active shape' interior.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -601,7 +602,7 @@ type LayoutColoraxisColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -623,7 +624,7 @@ type LayoutColoraxisColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -667,13 +668,13 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -736,7 +737,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor Color `json:"outlinecolor,omitempty"`
+	Outlinecolor color.String `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -806,7 +807,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -1004,10 +1005,10 @@ type LayoutColoraxis struct {
 	Colorbar *LayoutColoraxisColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
@@ -1026,22 +1027,22 @@ type LayoutColoraxis struct {
 type LayoutColorscale struct {
 
 	// Diverging
-	// default: [[%!s(float64=0) rgb(5,10,172)] [%!s(float64=0.35) rgb(106,137,247)] [%!s(float64=0.5) rgb(190,190,190)] [%!s(float64=0.6) rgb(220,170,132)] [%!s(float64=0.7) rgb(230,145,90)] [%!s(float64=1) rgb(178,10,28)]]
+	// arrayOK: false
 	// type: colorscale
 	// Sets the default diverging colorscale. Note that `autocolorscale` must be true for this attribute to work.
-	Diverging ColorScale `json:"diverging,omitempty"`
+	Diverging color.Scale `json:"diverging,omitempty"`
 
 	// Sequential
-	// default: [[%!s(float64=0) rgb(220,220,220)] [%!s(float64=0.2) rgb(245,195,157)] [%!s(float64=0.4) rgb(245,160,105)] [%!s(float64=1) rgb(178,10,28)]]
+	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for positive values. Note that `autocolorscale` must be true for this attribute to work.
-	Sequential ColorScale `json:"sequential,omitempty"`
+	Sequential color.Scale `json:"sequential,omitempty"`
 
 	// Sequentialminus
-	// default: [[%!s(float64=0) rgb(5,10,172)] [%!s(float64=0.35) rgb(40,60,190)] [%!s(float64=0.5) rgb(70,100,245)] [%!s(float64=0.6) rgb(90,120,245)] [%!s(float64=0.7) rgb(106,137,247)] [%!s(float64=1) rgb(220,220,220)]]
+	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for negative values. Note that `autocolorscale` must be true for this attribute to work.
-	Sequentialminus ColorScale `json:"sequentialminus,omitempty"`
+	Sequentialminus color.Scale `json:"sequentialminus,omitempty"`
 }
 
 // LayoutFont Sets the global font. Note that fonts used in traces and other layout components inherit from the global font.
@@ -1051,7 +1052,7 @@ type LayoutFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1123,7 +1124,7 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the graticule's stroke color.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -1169,7 +1170,7 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the graticule's stroke color.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -1271,7 +1272,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the map
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Center
 	// arrayOK: false
@@ -1282,7 +1283,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets the coastline color.
-	Coastlinecolor Color `json:"coastlinecolor,omitempty"`
+	Coastlinecolor color.String `json:"coastlinecolor,omitempty"`
 
 	// Coastlinewidth
 	// arrayOK: false
@@ -1294,7 +1295,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets line color of the country boundaries.
-	Countrycolor Color `json:"countrycolor,omitempty"`
+	Countrycolor color.String `json:"countrycolor,omitempty"`
 
 	// Countrywidth
 	// arrayOK: false
@@ -1318,7 +1319,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color the frame.
-	Framecolor Color `json:"framecolor,omitempty"`
+	Framecolor color.String `json:"framecolor,omitempty"`
 
 	// Framewidth
 	// arrayOK: false
@@ -1330,13 +1331,13 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the lakes.
-	Lakecolor Color `json:"lakecolor,omitempty"`
+	Lakecolor color.String `json:"lakecolor,omitempty"`
 
 	// Landcolor
 	// arrayOK: false
 	// type: color
 	// Sets the land mass color.
-	Landcolor Color `json:"landcolor,omitempty"`
+	Landcolor color.String `json:"landcolor,omitempty"`
 
 	// Lataxis
 	// arrayOK: false
@@ -1352,7 +1353,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets the ocean color
-	Oceancolor Color `json:"oceancolor,omitempty"`
+	Oceancolor color.String `json:"oceancolor,omitempty"`
 
 	// Projection
 	// arrayOK: false
@@ -1370,7 +1371,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets color of the rivers.
-	Rivercolor Color `json:"rivercolor,omitempty"`
+	Rivercolor color.String `json:"rivercolor,omitempty"`
 
 	// Riverwidth
 	// arrayOK: false
@@ -1437,7 +1438,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the subunits boundaries.
-	Subunitcolor Color `json:"subunitcolor,omitempty"`
+	Subunitcolor color.String `json:"subunitcolor,omitempty"`
 
 	// Subunitwidth
 	// arrayOK: false
@@ -1560,7 +1561,7 @@ type LayoutHoverlabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1582,7 +1583,7 @@ type LayoutHoverlabelGrouptitlefont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1611,13 +1612,13 @@ type LayoutHoverlabel struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of all hover labels on graph
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border color of all hover labels on graph.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -1643,7 +1644,7 @@ type LayoutLegendFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1665,7 +1666,7 @@ type LayoutLegendGrouptitlefont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1687,7 +1688,7 @@ type LayoutLegendTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -1731,13 +1732,13 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: color
 	// Sets the legend background color. Defaults to `layout.paper_bgcolor`.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the legend.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -2067,7 +2068,7 @@ type LayoutModebar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the active or hovered on icons in the modebar.
-	Activecolor Color `json:"activecolor,omitempty"`
+	Activecolor color.String `json:"activecolor,omitempty"`
 
 	// Add
 	// arrayOK: true
@@ -2085,13 +2086,13 @@ type LayoutModebar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the modebar.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the color of the icons in the modebar.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -2126,7 +2127,7 @@ type LayoutNewselectionLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color. By default uses either dark grey or white to increase contrast with background color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -2164,7 +2165,7 @@ type LayoutNewshapeLabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -2240,7 +2241,7 @@ type LayoutNewshapeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -2277,7 +2278,7 @@ type LayoutNewshapeLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color. By default uses either dark grey or white to increase contrast with background color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -2306,7 +2307,7 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color filling new shapes' interior. Please note that if using a fillcolor with alpha greater than half, drag inside the active shape starts moving the shape underneath, otherwise a new shape could be started over.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Fillrule
 	// arrayOK: false
@@ -2394,7 +2395,7 @@ type LayoutPolarAngularaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -2442,7 +2443,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Direction
 	// arrayOK: false
@@ -2468,7 +2469,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -2505,7 +2506,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -2605,7 +2606,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -2787,7 +2788,7 @@ type LayoutPolarRadialaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -2809,7 +2810,7 @@ type LayoutPolarRadialaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -2903,7 +2904,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -2922,7 +2923,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -2959,7 +2960,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -3072,7 +3073,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -3196,7 +3197,7 @@ type LayoutPolar struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -3432,7 +3433,7 @@ type LayoutSceneXaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -3454,7 +3455,7 @@ type LayoutSceneXaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -3510,7 +3511,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
-	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
+	Backgroundcolor color.String `json:"backgroundcolor,omitempty"`
 
 	// Calendar
 	// arrayOK: false
@@ -3542,7 +3543,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -3561,7 +3562,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -3585,7 +3586,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -3704,7 +3705,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
-	Spikecolor Color `json:"spikecolor,omitempty"`
+	Spikecolor color.String `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
@@ -3734,7 +3735,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -3843,7 +3844,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
-	Zerolinecolor Color `json:"zerolinecolor,omitempty"`
+	Zerolinecolor color.String `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
@@ -3899,7 +3900,7 @@ type LayoutSceneYaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -3921,7 +3922,7 @@ type LayoutSceneYaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -3977,7 +3978,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
-	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
+	Backgroundcolor color.String `json:"backgroundcolor,omitempty"`
 
 	// Calendar
 	// arrayOK: false
@@ -4009,7 +4010,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -4028,7 +4029,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -4052,7 +4053,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -4171,7 +4172,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
-	Spikecolor Color `json:"spikecolor,omitempty"`
+	Spikecolor color.String `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
@@ -4201,7 +4202,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -4310,7 +4311,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
-	Zerolinecolor Color `json:"zerolinecolor,omitempty"`
+	Zerolinecolor color.String `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
@@ -4366,7 +4367,7 @@ type LayoutSceneZaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -4388,7 +4389,7 @@ type LayoutSceneZaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -4444,7 +4445,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
-	Backgroundcolor Color `json:"backgroundcolor,omitempty"`
+	Backgroundcolor color.String `json:"backgroundcolor,omitempty"`
 
 	// Calendar
 	// arrayOK: false
@@ -4476,7 +4477,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -4495,7 +4496,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -4519,7 +4520,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -4638,7 +4639,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
-	Spikecolor Color `json:"spikecolor,omitempty"`
+	Spikecolor color.String `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
@@ -4668,7 +4669,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -4777,7 +4778,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
-	Zerolinecolor Color `json:"zerolinecolor,omitempty"`
+	Zerolinecolor color.String `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
@@ -4811,7 +4812,7 @@ type LayoutScene struct {
 	// arrayOK: false
 	// type: color
 	//
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Camera
 	// arrayOK: false
@@ -4894,7 +4895,7 @@ type LayoutSmithImaginaryaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -4916,13 +4917,13 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -4959,7 +4960,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -5003,7 +5004,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -5073,7 +5074,7 @@ type LayoutSmithRealaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5095,13 +5096,13 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -5138,7 +5139,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -5195,7 +5196,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -5265,7 +5266,7 @@ type LayoutSmith struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -5290,7 +5291,7 @@ type LayoutTernaryAaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5312,7 +5313,7 @@ type LayoutTernaryAaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5349,7 +5350,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -5368,7 +5369,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -5405,7 +5406,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -5492,7 +5493,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -5598,7 +5599,7 @@ type LayoutTernaryBaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5620,7 +5621,7 @@ type LayoutTernaryBaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5657,7 +5658,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -5676,7 +5677,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -5713,7 +5714,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -5800,7 +5801,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -5906,7 +5907,7 @@ type LayoutTernaryCaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5928,7 +5929,7 @@ type LayoutTernaryCaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -5965,7 +5966,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -5984,7 +5985,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -6021,7 +6022,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -6108,7 +6109,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -6252,7 +6253,7 @@ type LayoutTernary struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Caxis
 	// arrayOK: false
@@ -6284,7 +6285,7 @@ type LayoutTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -6487,7 +6488,7 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -6523,7 +6524,7 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -6571,7 +6572,7 @@ type LayoutXaxisRangeselectorFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -6593,19 +6594,19 @@ type LayoutXaxisRangeselector struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the active range selector button.
-	Activecolor Color `json:"activecolor,omitempty"`
+	Activecolor color.String `json:"activecolor,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the range selector buttons.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the range selector.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -6687,13 +6688,13 @@ type LayoutXaxisRangeslider struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the range slider.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border color of the range slider.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -6732,7 +6733,7 @@ type LayoutXaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -6754,7 +6755,7 @@ type LayoutXaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -6862,7 +6863,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Constrain
 	// arrayOK: false
@@ -6882,7 +6883,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the dividers Only has an effect on *multicategory* axes.
-	Dividercolor Color `json:"dividercolor,omitempty"`
+	Dividercolor color.String `json:"dividercolor,omitempty"`
 
 	// Dividerwidth
 	// arrayOK: false
@@ -6919,7 +6920,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -6962,7 +6963,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -7136,7 +7137,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the spike color. If undefined, will use the series color
-	Spikecolor Color `json:"spikecolor,omitempty"`
+	Spikecolor color.String `json:"spikecolor,omitempty"`
 
 	// Spikedash
 	// arrayOK: false
@@ -7180,7 +7181,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -7329,7 +7330,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
-	Zerolinecolor Color `json:"zerolinecolor,omitempty"`
+	Zerolinecolor color.String `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
@@ -7391,7 +7392,7 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -7427,7 +7428,7 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -7475,7 +7476,7 @@ type LayoutYaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -7497,7 +7498,7 @@ type LayoutYaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -7611,7 +7612,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Constrain
 	// arrayOK: false
@@ -7631,7 +7632,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the dividers Only has an effect on *multicategory* axes.
-	Dividercolor Color `json:"dividercolor,omitempty"`
+	Dividercolor color.String `json:"dividercolor,omitempty"`
 
 	// Dividerwidth
 	// arrayOK: false
@@ -7668,7 +7669,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Gridcolor Color `json:"gridcolor,omitempty"`
+	Gridcolor color.String `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
@@ -7711,7 +7712,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor Color `json:"linecolor,omitempty"`
+	Linecolor color.String `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -7881,7 +7882,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the spike color. If undefined, will use the series color
-	Spikecolor Color `json:"spikecolor,omitempty"`
+	Spikecolor color.String `json:"spikecolor,omitempty"`
 
 	// Spikedash
 	// arrayOK: false
@@ -7925,7 +7926,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -8074,7 +8075,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
-	Zerolinecolor Color `json:"zerolinecolor,omitempty"`
+	Zerolinecolor color.String `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false

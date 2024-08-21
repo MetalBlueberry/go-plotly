@@ -6,6 +6,7 @@ import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 func main() {
@@ -26,9 +27,9 @@ func main() {
 					Cmin:           0,
 					Cmid:           5,
 					Cmax:           10,
-					Color:          arrayok.Array(grob.UseColorScaleValues(z)...),
-					Colorscale: grob.ColorScale{
-						Values: []grob.ColorScaleReference{
+					Color:          arrayok.Array(color.UseColorScaleValues(z)...),
+					Colorscale: color.Scale{
+						Values: []color.ScaleReference{
 							{NormalizedValue: 0.0, Color: "#6e40aa"},
 							{NormalizedValue: 0.1, Color: `#963db3`},
 							{NormalizedValue: 0.2, Color: "#bf3caf"},

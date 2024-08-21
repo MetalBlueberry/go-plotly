@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeScattersmith TraceType = "scattersmith"
@@ -63,7 +64,7 @@ type Scattersmith struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -322,7 +323,7 @@ type ScattersmithHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -375,7 +376,7 @@ type ScattersmithHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -387,7 +388,7 @@ type ScattersmithHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -420,7 +421,7 @@ type ScattersmithLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -469,7 +470,7 @@ type ScattersmithLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -504,7 +505,7 @@ type ScattersmithMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -526,7 +527,7 @@ type ScattersmithMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -570,13 +571,13 @@ type ScattersmithMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -639,7 +640,7 @@ type ScattersmithMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor Color `json:"outlinecolor,omitempty"`
+	Outlinecolor color.String `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -709,7 +710,7 @@ type ScattersmithMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -861,7 +862,7 @@ type ScattersmithMarkerGradient struct {
 	// arrayOK: true
 	// type: color
 	// Sets the final color of the gradient fill: the center color for radial, the right for horizontal, or the bottom for vertical.
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -920,7 +921,7 @@ type ScattersmithMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -929,10 +930,10 @@ type ScattersmithMarkerLine struct {
 	Coloraxis String `json:"coloraxis,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1015,7 +1016,7 @@ type ScattersmithMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1029,10 +1030,10 @@ type ScattersmithMarker struct {
 	Colorbar *ScattersmithMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
-	// default: %!s(<nil>)
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1144,7 +1145,7 @@ type ScattersmithSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -1166,7 +1167,7 @@ type ScattersmithSelectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of selected points.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 }
 
 // ScattersmithSelected
@@ -1206,7 +1207,7 @@ type ScattersmithTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1246,7 +1247,7 @@ type ScattersmithUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -1268,7 +1269,7 @@ type ScattersmithUnselectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of unselected points, applied only when a selection exists.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 }
 
 // ScattersmithUnselected
