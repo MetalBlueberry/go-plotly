@@ -108,7 +108,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			}
 			typeName := "*" + name
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -128,7 +128,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			}
 			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -150,7 +150,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("ArrayOK[*%s]", typeName)
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -177,20 +177,20 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			})
 
 		default:
-			ty := valTypeMap[attr.ValType]
+			typeName := valTypeMap[attr.ValType]
 
 			// Special case, the attribute color may also be a ColorScale
 			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {
-				ty = "ColorWithColorScale"
+				typeName = "ColorWithColorScale"
 			}
 			if attr.ArrayOK {
-				ty = fmt.Sprintf("ArrayOK[*%s]", ty)
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
 			}
 
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     ty,
+				Type:     typeName,
 				Description: []string{
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),

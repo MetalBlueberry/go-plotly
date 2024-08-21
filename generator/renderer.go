@@ -185,22 +185,19 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 	}
 	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
 
-	fmt.Fprintf(w, `package grob
-
-%s
-
-var TraceType%s TraceType = "%s"
-
-func (trace *%s) GetType() TraceType {
-	return TraceType%s
-}
-`,
-		doNotEdit,
-		traceFile.MainType.Name,
-		traceName,
-		traceFile.MainType.Name,
-		traceFile.MainType.Name,
-	)
+	tmplData := struct {
+		DoNotEdit     string
+		TraceTypeName string
+		TraceName     string
+	}{
+		DoNotEdit:     doNotEdit,
+		TraceTypeName: traceFile.MainType.Name,
+		TraceName:     traceName,
+	}
+	err = r.tmpl.ExecuteTemplate(w, "trace_base.tmpl", tmplData)
+	if err != nil {
+		return fmt.Errorf("Failed to render trace_base.tmpl, %w", err)
+	}
 
 	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
@@ -339,7 +336,10 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 		}
 	}
 
-	fmt.Fprint(w, "package grob\n\n", doNotEdit)
+	err = r.tmpl.ExecuteTemplate(w, "layout_base.tmpl", doNotEdit)
+	if err != nil {
+		return fmt.Errorf("Failed to render layout_base.tmpl, %w", err)
+	}
 
 	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
 	if err != nil {
