@@ -4,8 +4,8 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
 )
 
 var TraceTypeScatter3d TraceType = "scatter3d"

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
 	. "github.com/onsi/gomega"
 )
 

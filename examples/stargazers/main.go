@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/browser"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
 )
 
 type User struct {

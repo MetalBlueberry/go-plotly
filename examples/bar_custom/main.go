@@ -8,8 +8,8 @@ import (
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
-	"github.com/MetalBlueberry/go-plotly/types/arrayok"
-	gcolor "github.com/MetalBlueberry/go-plotly/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
+	gcolor "github.com/MetalBlueberry/go-plotly/pkg/types/color"
 )
 
 func main() {
