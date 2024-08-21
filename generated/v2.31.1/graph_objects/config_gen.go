@@ -10,6 +10,7 @@ type Config struct {
 	Autosizable Bool `json:"autosizable,omitempty"`
 
 	// DisplayModeBar
+	// arrayOK: false
 	// default: hover
 	// type: enumerated
 	// Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.
@@ -22,6 +23,7 @@ type Config struct {
 	Displaylogo Bool `json:"displaylogo,omitempty"`
 
 	// DoubleClick
+	// arrayOK: false
 	// default: reset+autosize
 	// type: enumerated
 	// Sets the double click interaction mode. Has an effect only in cartesian plots. If *false*, double click is disable. If *reset*, double click resets the axis ranges to their initial values. If *autosize*, double click set the axis ranges to their autorange values. If *reset+autosize*, the odd double clicks resets the axis ranges to their initial values and even double clicks set the axis ranges to their autorange values.
@@ -46,6 +48,7 @@ type Config struct {
 	Editable Bool `json:"editable,omitempty"`
 
 	// Edits
+	// arrayOK: false
 	// role: Object
 	Edits *ConfigEdits `json:"edits,omitempty"`
 
@@ -71,13 +74,13 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Sets the text appearing in the `showLink` link.
-	LinkText String `json:"linkText,omitempty"`
+	LinkText string `json:"linkText,omitempty"`
 
 	// Locale
 	// arrayOK: false
 	// type: string
 	// Which localization should we use? Should be a string like 'en' or 'en-US'.
-	Locale String `json:"locale,omitempty"`
+	Locale string `json:"locale,omitempty"`
 
 	// Locales
 	// arrayOK: false
@@ -95,7 +98,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Mapbox access token (required to plot mapbox trace types) If using an Mapbox Atlas server, set this option to '' so that plotly.js won't attempt to authenticate to the public Mapbox server.
-	MapboxAccessToken String `json:"mapboxAccessToken,omitempty"`
+	MapboxAccessToken string `json:"mapboxAccessToken,omitempty"`
 
 	// ModeBarButtons
 	// arrayOK: false
@@ -131,7 +134,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// When set it determines base URL for the 'Edit in Chart Studio' `showEditInChartStudio`/`showSendToCloud` mode bar button and the showLink/sendData on-graph link. To enable sending your data to Chart Studio Cloud, you need to set both `plotlyServerURL` to 'https://chart-studio.plotly.com' and also set `showSendToCloud` to true.
-	PlotlyServerURL String `json:"plotlyServerURL,omitempty"`
+	PlotlyServerURL string `json:"plotlyServerURL,omitempty"`
 
 	// QueueLength
 	// arrayOK: false
@@ -146,6 +149,7 @@ type Config struct {
 	Responsive Bool `json:"responsive,omitempty"`
 
 	// ScrollZoom
+	// arrayOK: false
 	// default: gl3d+geo+mapbox
 	// type: flaglist
 	// Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.
@@ -221,7 +225,7 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Set the URL to topojson used in geo charts. By default, the topojson files are fetched from cdn.plot.ly. For example, set this option to: <path-to-plotly.js>/dist/topojson/ to render geographical feature using the topojson files that ship with the plotly.js module.
-	TopojsonURL String `json:"topojsonURL,omitempty"`
+	TopojsonURL string `json:"topojsonURL,omitempty"`
 
 	// TypesetMath
 	// arrayOK: false

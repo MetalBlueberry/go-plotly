@@ -1,0 +1,14 @@
+package grob
+
+{{ .DoNotEdit }}
+
+import (
+	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+)
+
+var TraceType{{ .TraceTypeName }} TraceType = "{{ .TraceName }}"
+
+func (trace *{{ .TraceTypeName }}) GetType() TraceType {
+	return TraceType{{ .TraceTypeName }}
+}
+

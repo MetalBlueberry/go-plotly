@@ -77,15 +77,15 @@ const (
 
 // parseAttributes returns a []StructField containing all the fields for the attributes parsed.
 // Nested structures found such as enums, flags u other objects are stored in the TypeFile caller.
-func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr map[string]*Attribute) ([]structField, error) {
-	fields := make([]structField, 0, len(attr))
+func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
+	fields := make([]structField, 0, len(attrs))
 
-	for _, name := range sortKeys(attr) {
+	for _, name := range sortKeys(attrs) {
 		if name == "_deprecated" {
 			continue
 		}
 
-		attr := attr[name]
+		attr := attrs[name]
 
 		switch {
 		case attr.Role == RoleObject && len(attr.Items) > 0:
@@ -106,11 +106,16 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)
 			}
+			typeName := "*" + name
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "*" + name,
+				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					"role: Object",
 				},
 			})
@@ -121,11 +126,16 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
 			}
+			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     typePrefix + xstrings.ToCamelCase(attr.Name),
+				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
@@ -139,11 +149,15 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
 				Type:     typeName,
 				Description: []string{
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
@@ -163,11 +177,20 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			})
 
 		default:
-			ty := valTypeMap[attr.ValType]
+			typeName := valTypeMap[attr.ValType]
+
+			// Special case, the attribute color may also be a ColorScale
+			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {
+				typeName = "ColorWithColorScale"
+			}
+			if attr.ArrayOK {
+				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+			}
+
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     ty,
+				Type:     typeName,
 				Description: []string{
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),
