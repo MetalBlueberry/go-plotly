@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeSankey TraceType = "sankey"
+var TraceTypeSankey types.TraceType = "sankey"
 
-func (trace *Sankey) GetType() TraceType {
+func (t *Sankey) GetType() types.TraceType {
 	return TraceTypeSankey
 }
 
-func (trace *Sankey) MarshalJSON() ([]byte, error) {
+func (t *Sankey) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Sankey
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -46,7 +45,7 @@ type Sankey struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -75,13 +74,13 @@ type Sankey struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend String `json:"legend,omitempty"`
+	Legend types.String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -109,19 +108,19 @@ type Sankey struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Node
 	// arrayOK: false
@@ -155,7 +154,7 @@ type Sankey struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -167,13 +166,13 @@ type Sankey struct {
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat string `json:"valueformat,omitempty"`
+	Valueformat types.String `json:"valueformat,omitempty"`
 
 	// Valuesuffix
 	// arrayOK: false
 	// type: string
 	// Adds a unit to follow the value in the hover tooltip. Add a space if a separation is necessary from the value.
-	Valuesuffix string `json:"valuesuffix,omitempty"`
+	Valuesuffix types.String `json:"valuesuffix,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -218,37 +217,37 @@ type SankeyHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // SankeyHoverlabel
@@ -259,37 +258,37 @@ type SankeyHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*SankeyHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*SankeyHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -300,13 +299,13 @@ type SankeyHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // SankeyLegendgrouptitleFont Sets this legend group's title font.
@@ -316,13 +315,13 @@ type SankeyLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -343,7 +342,7 @@ type SankeyLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // SankeyLinkHoverlabelFont Sets the font used in hover labels.
@@ -353,37 +352,37 @@ type SankeyLinkHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // SankeyLinkHoverlabel
@@ -394,37 +393,37 @@ type SankeyLinkHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*SankeyLinkHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*SankeyLinkHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -435,13 +434,13 @@ type SankeyLinkHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // SankeyLinkLine
@@ -451,25 +450,25 @@ type SankeyLinkLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the `line` around each `link`.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the `line` around each `link`.
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 }
 
 // SankeyLink The links of the Sankey plot.
@@ -485,7 +484,7 @@ type SankeyLink struct {
 	// arrayOK: true
 	// type: color
 	// Sets the `link` color. It can be a single value, or an array for specifying color for each `link`. If `link.color` is omitted, then by default, a translucent grey link will be used.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorscales
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -497,7 +496,7 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -509,19 +508,19 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Hovercolor
 	// arrayOK: true
 	// type: color
 	// Sets the `link` hover color. It can be a single value, or an array for specifying hover colors for each `link`. If `link.hovercolor` is omitted, then by default, links will become slightly more opaque when hovered over.
-	Hovercolor arrayok.Type[*color.String] `json:"hovercolor,omitempty"`
+	Hovercolor types.ArrayOK[*types.Color] `json:"hovercolor,omitempty"`
 
 	// Hovercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovercolor`.
-	Hovercolorsrc string `json:"hovercolorsrc,omitempty"`
+	Hovercolorsrc types.String `json:"hovercolorsrc,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: false
@@ -539,13 +538,13 @@ type SankeyLink struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Variables `source` and `target` are node objects.Finally, the template string has access to variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate arrayok.Type[*string] `json:"hovertemplate,omitempty"`
+	Hovertemplate types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
 
 	// Label
 	// arrayOK: false
@@ -557,7 +556,7 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `label`.
-	Labelsrc string `json:"labelsrc,omitempty"`
+	Labelsrc types.String `json:"labelsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -574,7 +573,7 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `source`.
-	Sourcesrc string `json:"sourcesrc,omitempty"`
+	Sourcesrc types.String `json:"sourcesrc,omitempty"`
 
 	// Target
 	// arrayOK: false
@@ -586,7 +585,7 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `target`.
-	Targetsrc string `json:"targetsrc,omitempty"`
+	Targetsrc types.String `json:"targetsrc,omitempty"`
 
 	// Value
 	// arrayOK: false
@@ -598,7 +597,7 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `value`.
-	Valuesrc string `json:"valuesrc,omitempty"`
+	Valuesrc types.String `json:"valuesrc,omitempty"`
 }
 
 // SankeyNodeHoverlabelFont Sets the font used in hover labels.
@@ -608,37 +607,37 @@ type SankeyNodeHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // SankeyNodeHoverlabel
@@ -649,37 +648,37 @@ type SankeyNodeHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*SankeyNodeHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*SankeyNodeHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -690,13 +689,13 @@ type SankeyNodeHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // SankeyNodeLine
@@ -706,25 +705,25 @@ type SankeyNodeLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the `line` around each `node`.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the `line` around each `node`.
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 }
 
 // SankeyNode The nodes of the Sankey plot.
@@ -741,13 +740,13 @@ type SankeyNode struct {
 	// arrayOK: true
 	// type: color
 	// Sets the `node` color. It can be a single value, or an array for specifying color for each `node`. If `node.color` is omitted, then the default `Plotly` color palette will be cycled through to have a variety of colors. These defaults are not fully opaque, to allow some visibility of what is beneath the node.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -759,7 +758,7 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Groups
 	// arrayOK: false
@@ -783,13 +782,13 @@ type SankeyNode struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Variables `sourceLinks` and `targetLinks` are arrays of link objects.Finally, the template string has access to variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate arrayok.Type[*string] `json:"hovertemplate,omitempty"`
+	Hovertemplate types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
 
 	// Label
 	// arrayOK: false
@@ -801,7 +800,7 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `label`.
-	Labelsrc string `json:"labelsrc,omitempty"`
+	Labelsrc types.String `json:"labelsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -830,7 +829,7 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc string `json:"xsrc,omitempty"`
+	Xsrc types.String `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -842,7 +841,7 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc string `json:"ysrc,omitempty"`
+	Ysrc types.String `json:"ysrc,omitempty"`
 }
 
 // SankeyStream
@@ -858,7 +857,7 @@ type SankeyStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // SankeyTextfont Sets the font for node labels
@@ -868,13 +867,13 @@ type SankeyTextfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false

@@ -3,26 +3,25 @@ package grob
 {{ .DoNotEdit }}
 
 import (
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 	"encoding/json"
 )
 
-var TraceType{{ .TraceTypeName }} TraceType = "{{ .TraceName }}"
+var TraceType{{ .TraceTypeName }} types.TraceType = "{{ .TraceName }}"
 
-func (trace *{{ .TraceTypeName }}) GetType() TraceType {
+func (t *{{ .TraceTypeName }}) GetType() types.TraceType {
 	return TraceType{{ .TraceTypeName }}
 }
 
-func (trace *{{ .TraceTypeName }}) MarshalJSON() ([]byte, error) {
+func (t *{{ .TraceTypeName }}) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias {{ .TraceTypeName }}
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace),   // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t),   // Embed the original struct fields
 	})
 }
 

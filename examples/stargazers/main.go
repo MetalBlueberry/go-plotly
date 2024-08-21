@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/browser"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 type User struct {
@@ -55,7 +55,7 @@ func main() {
 
 	x := []string{}
 	y := []int{}
-	text := []string{}
+	text := []types.String{}
 	link := []interface{}{}
 
 	for i := 0; i < len(starredAt); i++ {
@@ -71,8 +71,8 @@ func main() {
 			&grob.Scatter{
 				X:    x,
 				Y:    y,
-				Text: arrayok.Array(text...),
-				Meta: arrayok.Array(link...),
+				Text: types.ArrayOKArray(text...),
+				Meta: types.ArrayOKArray(link...),
 				Mode: grob.ScatterModeLines + "+" + grob.ScatterModeMarkers,
 				Name: "Stars",
 				Line: &grob.ScatterLine{

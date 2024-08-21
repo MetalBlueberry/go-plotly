@@ -4,7 +4,7 @@ import (
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
 )
 
 func main() {

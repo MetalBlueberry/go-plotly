@@ -2,7 +2,7 @@ package main
 
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
 )
 
 func main() {
@@ -55,8 +55,8 @@ func main() {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Scatter{
-				X:    []float64{1, 2, 3},
-				Y:    []float64{2, 3, 4},
+				X: []float64{1, 2, 3},
+				Y: []float64{2, 3, 4},
 			},
 			&grob.Scatter{
 				X:     []float64{20, 30, 40},

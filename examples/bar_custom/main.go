@@ -7,9 +7,8 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	gcolor "github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -55,17 +54,17 @@ func main() {
 	trace1 := &grob.Bar{
 		X:            xValue,
 		Y:            yValue,
-		Text:         arrayok.Array(toString(yValue)...),
-		Textposition: arrayok.Value(grob.BarTextpositionAuto),
-		Hoverinfo:    arrayok.Value(grob.BarHoverinfoNone),
+		Text:         types.ArrayOKArray(toString(yValue)...),
+		Textposition: types.ArrayOKValue(grob.BarTextpositionAuto),
+		Hoverinfo:    types.ArrayOKValue(grob.BarHoverinfoNone),
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(gcolor.UseColor(gcolor.String(
+			Color: types.ArrayOKValue(types.UseColor(types.Color(
 				markerColor.Hex(), // Use colorfull
 			))),
-			Opacity: arrayok.Value(0.6),
+			Opacity: types.ArrayOKValue(0.6),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(gcolor.UseColor("rgb(8,48,107)")), // Or just write the string
-				Width: arrayok.Value(1.5),
+				Color: types.ArrayOKValue(types.UseColor("rgb(8,48,107)")), // Or just write the string
+				Width: types.ArrayOKValue(1.5),
 			},
 		},
 	}
@@ -85,8 +84,8 @@ func main() {
 	offline.Show(fig)
 }
 
-func toString(in []int) []string {
-	out := make([]string, len(in))
+func toString(in []int) []types.String {
+	out := make([]types.String, len(in))
 	for i := range in {
 		out[i] = strconv.Itoa(in[i])
 	}

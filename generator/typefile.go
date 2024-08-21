@@ -108,7 +108,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			}
 			typeName := "*" + name
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+				typeName = fmt.Sprintf("types.ArrayOK[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -128,7 +128,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			}
 			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+				typeName = fmt.Sprintf("types.ArrayOK[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -150,7 +150,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+				typeName = fmt.Sprintf("types.ArrayOK[*%s]", typeName)
 			}
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -164,27 +164,15 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				},
 			})
 
-		// case attr.ValType == ValTypeColorscale:
-		// 	fields = append(fields, structField{
-		// 		Name:     xstrings.ToCamelCase(attr.Name),
-		// 		JSONName: attr.Name,
-		// 		Type:     "color.Scale",
-		// 		Description: []string{
-		// 			fmt.Sprintf("default: %s", attr.Dflt),
-		// 			fmt.Sprintf("type: %s", attr.ValType),
-		// 			attr.Description,
-		// 		},
-		// 	})
-
 		default:
 			typeName := valTypeMap[attr.ValType]
 
 			// Special case, the attribute color may also be a ColorScale
 			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {
-				typeName = "color.ColorWithColorScale"
+				typeName = "types.ColorWithColorScale"
 			}
 			if attr.ArrayOK {
-				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
+				typeName = fmt.Sprintf("types.ArrayOK[*%s]", typeName)
 			}
 
 			fields = append(fields, structField{

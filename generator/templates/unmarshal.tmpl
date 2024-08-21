@@ -5,14 +5,15 @@ package grob
 import (
 	"encoding/json"
 	"errors"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 type unmarshalType struct {
-	Type TraceType `json:"type,omitempty"`
+	Type types.TraceType `json:"type,omitempty"`
 }
 
 // UnmarshalTrace decodes an array of bytes into a Trace interface.
-func UnmarshalTrace(data []byte) (Trace,error) {
+func UnmarshalTrace(data []byte) (types.Trace,error) {
 	traceType := unmarshalType{}
 	err := json.Unmarshal(data, &traceType)
 	if err != nil {

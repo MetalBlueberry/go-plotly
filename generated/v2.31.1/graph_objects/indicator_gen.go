@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeIndicator TraceType = "indicator"
+var TraceTypeIndicator types.TraceType = "indicator"
 
-func (trace *Indicator) GetType() TraceType {
+func (t *Indicator) GetType() types.TraceType {
 	return TraceTypeIndicator
 }
 
-func (trace *Indicator) MarshalJSON() ([]byte, error) {
+func (t *Indicator) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Indicator
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -46,7 +45,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Delta
 	// arrayOK: false
@@ -73,13 +72,13 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend String `json:"legend,omitempty"`
+	Legend types.String `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -102,13 +101,13 @@ type Indicator struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -121,7 +120,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Number
 	// arrayOK: false
@@ -148,7 +147,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -177,13 +176,13 @@ type IndicatorDeltaDecreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol string `json:"symbol,omitempty"`
+	Symbol types.String `json:"symbol,omitempty"`
 }
 
 // IndicatorDeltaFont Set the font used to display the delta
@@ -193,13 +192,13 @@ type IndicatorDeltaFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -215,13 +214,13 @@ type IndicatorDeltaIncreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol string `json:"symbol,omitempty"`
+	Symbol types.String `json:"symbol,omitempty"`
 }
 
 // IndicatorDelta
@@ -253,7 +252,7 @@ type IndicatorDelta struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the delta.
-	Prefix string `json:"prefix,omitempty"`
+	Prefix types.String `json:"prefix,omitempty"`
 
 	// Reference
 	// arrayOK: false
@@ -265,19 +264,19 @@ type IndicatorDelta struct {
 	// arrayOK: false
 	// type: boolean
 	// Show relative change
-	Relative Bool `json:"relative,omitempty"`
+	Relative types.Bool `json:"relative,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the delta.
-	Suffix string `json:"suffix,omitempty"`
+	Suffix types.String `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat string `json:"valueformat,omitempty"`
+	Valueformat types.String `json:"valueformat,omitempty"`
 }
 
 // IndicatorDomain
@@ -315,13 +314,13 @@ type IndicatorGaugeAxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -374,7 +373,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -387,7 +386,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -419,7 +418,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor color.String `json:"tickcolor,omitempty"`
+	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -430,7 +429,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat string `json:"tickformat,omitempty"`
+	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -461,7 +460,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix string `json:"tickprefix,omitempty"`
+	Tickprefix types.String `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -474,7 +473,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix string `json:"ticksuffix,omitempty"`
+	Ticksuffix types.String `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -486,7 +485,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc string `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -498,7 +497,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc string `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -510,7 +509,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible Bool `json:"visible,omitempty"`
+	Visible types.Bool `json:"visible,omitempty"`
 }
 
 // IndicatorGaugeBarLine
@@ -520,7 +519,7 @@ type IndicatorGaugeBarLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the line enclosing each sector.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -536,7 +535,7 @@ type IndicatorGaugeBar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the arc.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -557,7 +556,7 @@ type IndicatorGaugeThresholdLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the threshold line.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -604,13 +603,13 @@ type IndicatorGauge struct {
 	// arrayOK: false
 	// type: color
 	// Sets the gauge background color.
-	Bgcolor color.String `json:"bgcolor,omitempty"`
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the gauge.
-	Bordercolor color.String `json:"bordercolor,omitempty"`
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -644,13 +643,13 @@ type IndicatorLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -671,7 +670,7 @@ type IndicatorLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // IndicatorNumberFont Set the font used to display main number
@@ -681,13 +680,13 @@ type IndicatorNumberFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -708,19 +707,19 @@ type IndicatorNumber struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the number.
-	Prefix string `json:"prefix,omitempty"`
+	Prefix types.String `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the number.
-	Suffix string `json:"suffix,omitempty"`
+	Suffix types.String `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat string `json:"valueformat,omitempty"`
+	Valueformat types.String `json:"valueformat,omitempty"`
 }
 
 // IndicatorStream
@@ -736,7 +735,7 @@ type IndicatorStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // IndicatorTitleFont Set the font used to display the title
@@ -746,13 +745,13 @@ type IndicatorTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -780,7 +779,7 @@ type IndicatorTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this indicator.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // IndicatorAlign Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered

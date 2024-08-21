@@ -2,26 +2,15 @@ package grob
 
 import (
 	"encoding/json"
+
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
-
-// TraceType is the type for the TraceType field on every trace
-type TraceType string
-
-// Trace Every trace implements this interface
-// It is useful for autocompletion, it is a better idea to use
-// type assertions/switches to identify trace types
-type Trace interface {
-	GetType() TraceType
-}
-
-// Traces is a slice of Traces
-type Traces []Trace
 
 // Fig is the base type for figures.
 type Fig struct {
 	// Data The data to be plotted is described in an array usually called data, whose elements are trace objects of various types (e.g. scatter, bar etc) as documented in the Full Reference.
 	// https://plotly.com/javascript/reference
-	Data Traces `json:"data,omitempty"`
+	Data []types.Trace `json:"data,omitempty"`
 
 	// Layout The layout of the plot – non-data-related visual attributes such as the title, annotations etc – is described in an object usually called layout, as documented in/ the Full Reference.
 	// https://plotly.com/javascript/reference/layout
@@ -36,11 +25,28 @@ type Fig struct {
 }
 
 // AddTraces Is a shorthand  to add figures to a given figure. It handles the case where the Traces value is nil.
-func (fig *Fig) AddTraces(traces ...Trace) {
+func (fig *Fig) AddTraces(traces ...types.Trace) {
 	if fig.Data == nil {
-		fig.Data = make(Traces, 0)
+		fig.Data = make([]types.Trace, 0)
 	}
 	fig.Data = append(fig.Data, traces...)
+}
+
+func (fig *Fig) Info() types.Version {
+	return types.Version{
+		//
+		Name: "Plotly 2.19.0",
+		//
+		Tag: "v2.19.0",
+		//
+		URL: "https://raw.githubusercontent.com/plotly/plotly.js/v2.19.0/test/plot-schema.json",
+		//
+		Path: "schemas/v2.19.0/plot-schema.json",
+		//
+		Generated: "generated/v2.19.0",
+		//
+		Cdn: "https://cdn.plot.ly/plotly-2.19.0.min.js",
+	}
 }
 
 // UnmarshalJSON is a custom unmarshal function to properly handle special cases.
@@ -70,20 +76,3 @@ type unmarshalFig struct {
 	Layout *Layout           `json:"layout,omitempty"`
 	Config *Config           `json:"config,omitempty"`
 }
-
-// Bool represents a *bool value. Needed to tell the different between false and nil.
-type Bool *bool
-
-var (
-	trueValue  bool = true
-	falseValue bool = false
-
-	// True is a *bool with true value
-	True Bool = &trueValue
-	// False is a *bool with false value
-	False Bool = &falseValue
-)
-
-// String is a string value, can be a []string if arrayOK is true.
-// numeric values are converted to string by plotly, so []<number> can work
-type String interface{}

@@ -2,7 +2,8 @@ package main
 
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -17,8 +18,8 @@ func main() {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Bar{
-				X:    []float64{1, 2, 3},
-				Y:    []float64{1, 2, 3},
+				X: []float64{1, 2, 3},
+				Y: []float64{1, 2, 3},
 			},
 		},
 		Layout: &grob.Layout{
@@ -27,7 +28,7 @@ func main() {
 			},
 		},
 		Config: &grob.Config{
-			Responsive: grob.True,
+			Responsive: types.True,
 		},
 	}
 

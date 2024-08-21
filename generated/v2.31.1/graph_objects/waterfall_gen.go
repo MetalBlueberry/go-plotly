@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeWaterfall TraceType = "waterfall"
+var TraceTypeWaterfall types.TraceType = "waterfall"
 
-func (trace *Waterfall) GetType() TraceType {
+func (t *Waterfall) GetType() types.TraceType {
 	return TraceTypeWaterfall
 }
 
-func (trace *Waterfall) MarshalJSON() ([]byte, error) {
+func (t *Waterfall) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Waterfall
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -33,7 +32,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-	Alignmentgroup string `json:"alignmentgroup,omitempty"`
+	Alignmentgroup types.String `json:"alignmentgroup,omitempty"`
 
 	// Base
 	// arrayOK: false
@@ -45,7 +44,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the text nodes are clipped about the subplot axes. To show the text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-	Cliponaxis Bool `json:"cliponaxis,omitempty"`
+	Cliponaxis types.Bool `json:"cliponaxis,omitempty"`
 
 	// Connector
 	// arrayOK: false
@@ -69,7 +68,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Decreasing
 	// arrayOK: false
@@ -93,13 +92,13 @@ type Waterfall struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo arrayok.Type[*WaterfallHoverinfo] `json:"hoverinfo,omitempty"`
+	Hoverinfo types.ArrayOK[*WaterfallHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -110,25 +109,25 @@ type Waterfall struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `initial`, `delta` and `final`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate arrayok.Type[*string] `json:"hovertemplate,omitempty"`
+	Hovertemplate types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext arrayok.Type[*string] `json:"hovertext,omitempty"`
+	Hovertext types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc string `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -140,7 +139,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Increasing
 	// arrayOK: false
@@ -163,13 +162,13 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend String `json:"legend,omitempty"`
+	Legend types.String `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup string `json:"legendgroup,omitempty"`
+	Legendgroup types.String `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -198,43 +197,43 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `measure`.
-	Measuresrc string `json:"measuresrc,omitempty"`
+	Measuresrc types.String `json:"measuresrc,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Offset
 	// arrayOK: true
 	// type: number
 	// Shifts the position where the bar is drawn (in position axis units). In *group* barmode, traces that set *offset* will be excluded and drawn in *overlay* mode instead.
-	Offset arrayok.Type[*float64] `json:"offset,omitempty"`
+	Offset types.ArrayOK[*float64] `json:"offset,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-	Offsetgroup string `json:"offsetgroup,omitempty"`
+	Offsetgroup types.String `json:"offsetgroup,omitempty"`
 
 	// Offsetsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `offset`.
-	Offsetsrc string `json:"offsetsrc,omitempty"`
+	Offsetsrc types.String `json:"offsetsrc,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -264,7 +263,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend Bool `json:"showlegend,omitempty"`
+	Showlegend types.Bool `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -275,7 +274,7 @@ type Waterfall struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text arrayok.Type[*string] `json:"text,omitempty"`
+	Text types.ArrayOK[*types.String] `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
@@ -300,31 +299,31 @@ type Waterfall struct {
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
-	Textposition arrayok.Type[*WaterfallTextposition] `json:"textposition,omitempty"`
+	Textposition types.ArrayOK[*WaterfallTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
-	Textpositionsrc string `json:"textpositionsrc,omitempty"`
+	Textpositionsrc types.String `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc string `json:"textsrc,omitempty"`
+	Textsrc types.String `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `initial`, `delta`, `final` and `label`.
-	Texttemplate arrayok.Type[*string] `json:"texttemplate,omitempty"`
+	Texttemplate types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
-	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+	Texttemplatesrc types.String `json:"texttemplatesrc,omitempty"`
 
 	// Totals
 	// arrayOK: false
@@ -341,7 +340,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -360,13 +359,13 @@ type Waterfall struct {
 	// arrayOK: true
 	// type: number
 	// Sets the bar width (in position axis units).
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -384,13 +383,13 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis String `json:"xaxis,omitempty"`
+	Xaxis types.String `json:"xaxis,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat string `json:"xhoverformat,omitempty"`
+	Xhoverformat types.String `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
@@ -415,7 +414,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc string `json:"xsrc,omitempty"`
+	Xsrc types.String `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -433,13 +432,13 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis String `json:"yaxis,omitempty"`
+	Yaxis types.String `json:"yaxis,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat string `json:"yhoverformat,omitempty"`
+	Yhoverformat types.String `json:"yhoverformat,omitempty"`
 
 	// Yperiod
 	// arrayOK: false
@@ -464,7 +463,7 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc string `json:"ysrc,omitempty"`
+	Ysrc types.String `json:"ysrc,omitempty"`
 
 	// Zorder
 	// arrayOK: false
@@ -480,13 +479,13 @@ type WaterfallConnectorLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash string `json:"dash,omitempty"`
+	Dash types.String `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -514,7 +513,7 @@ type WaterfallConnector struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines if connector lines are drawn.
-	Visible Bool `json:"visible,omitempty"`
+	Visible types.Bool `json:"visible,omitempty"`
 }
 
 // WaterfallDecreasingMarkerLine
@@ -524,7 +523,7 @@ type WaterfallDecreasingMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all decreasing values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -540,7 +539,7 @@ type WaterfallDecreasingMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all decreasing values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -564,37 +563,37 @@ type WaterfallHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // WaterfallHoverlabel
@@ -605,37 +604,37 @@ type WaterfallHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*WaterfallHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*WaterfallHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -646,13 +645,13 @@ type WaterfallHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // WaterfallIncreasingMarkerLine
@@ -662,7 +661,7 @@ type WaterfallIncreasingMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all increasing values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -678,7 +677,7 @@ type WaterfallIncreasingMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all increasing values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -702,37 +701,37 @@ type WaterfallInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // WaterfallLegendgrouptitleFont Sets this legend group's title font.
@@ -742,13 +741,13 @@ type WaterfallLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -769,7 +768,7 @@ type WaterfallLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // WaterfallOutsidetextfont Sets the font used for `text` lying outside the bar.
@@ -779,37 +778,37 @@ type WaterfallOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // WaterfallStream
@@ -825,7 +824,7 @@ type WaterfallStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // WaterfallTextfont Sets the font used for `text`.
@@ -835,37 +834,37 @@ type WaterfallTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // WaterfallTotalsMarkerLine
@@ -875,7 +874,7 @@ type WaterfallTotalsMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color of all intermediate sums and total values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -891,7 +890,7 @@ type WaterfallTotalsMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of all intermediate sums and total values.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false

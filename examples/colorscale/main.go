@@ -4,9 +4,8 @@ import (
 	"math"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -22,14 +21,14 @@ func main() {
 				Z:    z,
 				Mode: grob.Scatter3dModeMarkers,
 				Marker: &grob.Scatter3dMarker{
-					Autocolorscale: grob.False,
-					Cauto:          grob.False,
+					Autocolorscale: types.False,
+					Cauto:          types.False,
 					Cmin:           0,
 					Cmid:           5,
 					Cmax:           10,
-					Color:          arrayok.Array(color.UseColorScaleValues(z)...),
-					Colorscale: color.Scale{
-						Values: []color.ScaleReference{
+					Color:          types.ArrayOKArray(types.UseColorScaleValues(z)...),
+					Colorscale: types.ColorScale{
+						Values: []types.ColorScaleReference{
 							{NormalizedValue: 0.0, Color: "#6e40aa"},
 							{NormalizedValue: 0.1, Color: `#963db3`},
 							{NormalizedValue: 0.2, Color: "#bf3caf"},
@@ -43,8 +42,8 @@ func main() {
 							{NormalizedValue: 1.0, Color: "#aff05b"},
 						},
 					},
-					Showscale: grob.True,
-					Size:      arrayok.Value(4.0),
+					Showscale: types.True,
+					Size:      types.ArrayOKValue(4.0),
 				},
 			},
 		},

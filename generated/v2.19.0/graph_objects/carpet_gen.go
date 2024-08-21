@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeCarpet TraceType = "carpet"
+var TraceTypeCarpet types.TraceType = "carpet"
 
-func (trace *Carpet) GetType() TraceType {
+func (t *Carpet) GetType() types.TraceType {
 	return TraceTypeCarpet
 }
 
-func (trace *Carpet) MarshalJSON() ([]byte, error) {
+func (t *Carpet) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Carpet
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -50,7 +49,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `a`.
-	Asrc string `json:"asrc,omitempty"`
+	Asrc types.String `json:"asrc,omitempty"`
 
 	// B
 	// arrayOK: false
@@ -73,13 +72,13 @@ type Carpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `b`.
-	Bsrc string `json:"bsrc,omitempty"`
+	Bsrc types.String `json:"bsrc,omitempty"`
 
 	// Carpet
 	// arrayOK: false
 	// type: string
 	// An identifier for this carpet, so that `scattercarpet` and `contourcarpet` traces can specify a carpet plot on which they lie
-	Carpet string `json:"carpet,omitempty"`
+	Carpet types.String `json:"carpet,omitempty"`
 
 	// Cheaterslope
 	// arrayOK: false
@@ -91,7 +90,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -103,7 +102,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Da
 	// arrayOK: false
@@ -132,7 +131,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -155,19 +154,19 @@ type Carpet struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -184,7 +183,7 @@ type Carpet struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -209,13 +208,13 @@ type Carpet struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis String `json:"xaxis,omitempty"`
+	Xaxis types.String `json:"xaxis,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc string `json:"xsrc,omitempty"`
+	Xsrc types.String `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -227,13 +226,13 @@ type Carpet struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis String `json:"yaxis,omitempty"`
+	Yaxis types.String `json:"yaxis,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc string `json:"ysrc,omitempty"`
+	Ysrc types.String `json:"ysrc,omitempty"`
 }
 
 // CarpetAaxisTickfont Sets the tick font.
@@ -243,13 +242,13 @@ type CarpetAaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -265,13 +264,13 @@ type CarpetAaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -298,7 +297,7 @@ type CarpetAaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // CarpetAaxis
@@ -340,7 +339,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -360,7 +359,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -372,13 +371,13 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
-	Endline Bool `json:"endline,omitempty"`
+	Endline types.Bool `json:"endline,omitempty"`
 
 	// Endlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
-	Endlinecolor color.String `json:"endlinecolor,omitempty"`
+	Endlinecolor types.Color `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
@@ -397,19 +396,19 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-	Fixedrange Bool `json:"fixedrange,omitempty"`
+	Fixedrange types.Bool `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Gridcolor color.String `json:"gridcolor,omitempty"`
+	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash string `json:"griddash,omitempty"`
+	Griddash types.String `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -433,19 +432,19 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a axis label prefix.
-	Labelprefix string `json:"labelprefix,omitempty"`
+	Labelprefix types.String `json:"labelprefix,omitempty"`
 
 	// Labelsuffix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label suffix.
-	Labelsuffix string `json:"labelsuffix,omitempty"`
+	Labelsuffix types.String `json:"labelsuffix,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor color.String `json:"linecolor,omitempty"`
+	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -463,7 +462,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Minorgridcolor color.String `json:"minorgridcolor,omitempty"`
+	Minorgridcolor types.Color `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
@@ -475,7 +474,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Minorgriddash string `json:"minorgriddash,omitempty"`
+	Minorgriddash types.String `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
@@ -506,7 +505,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -519,13 +518,13 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid Bool `json:"showgrid,omitempty"`
+	Showgrid types.Bool `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline Bool `json:"showline,omitempty"`
+	Showline types.Bool `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
@@ -558,13 +557,13 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
-	Startline Bool `json:"startline,omitempty"`
+	Startline types.Bool `json:"startline,omitempty"`
 
 	// Startlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
-	Startlinecolor color.String `json:"startlinecolor,omitempty"`
+	Startlinecolor types.Color `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
@@ -593,7 +592,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat string `json:"tickformat,omitempty"`
+	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -612,13 +611,13 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix string `json:"tickprefix,omitempty"`
+	Tickprefix types.String `json:"tickprefix,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix string `json:"ticksuffix,omitempty"`
+	Ticksuffix types.String `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -630,7 +629,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc string `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -642,7 +641,7 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc string `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -664,13 +663,13 @@ type CarpetBaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -686,13 +685,13 @@ type CarpetBaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -719,7 +718,7 @@ type CarpetBaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // CarpetBaxis
@@ -761,7 +760,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc string `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -781,7 +780,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -793,13 +792,13 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
-	Endline Bool `json:"endline,omitempty"`
+	Endline types.Bool `json:"endline,omitempty"`
 
 	// Endlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
-	Endlinecolor color.String `json:"endlinecolor,omitempty"`
+	Endlinecolor types.Color `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
@@ -818,19 +817,19 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-	Fixedrange Bool `json:"fixedrange,omitempty"`
+	Fixedrange types.Bool `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Gridcolor color.String `json:"gridcolor,omitempty"`
+	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash string `json:"griddash,omitempty"`
+	Griddash types.String `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
@@ -854,19 +853,19 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a axis label prefix.
-	Labelprefix string `json:"labelprefix,omitempty"`
+	Labelprefix types.String `json:"labelprefix,omitempty"`
 
 	// Labelsuffix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label suffix.
-	Labelsuffix string `json:"labelsuffix,omitempty"`
+	Labelsuffix types.String `json:"labelsuffix,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Linecolor color.String `json:"linecolor,omitempty"`
+	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
@@ -884,7 +883,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
-	Minorgridcolor color.String `json:"minorgridcolor,omitempty"`
+	Minorgridcolor types.Color `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
@@ -896,7 +895,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Minorgriddash string `json:"minorgriddash,omitempty"`
+	Minorgriddash types.String `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
@@ -927,7 +926,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -940,13 +939,13 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid Bool `json:"showgrid,omitempty"`
+	Showgrid types.Bool `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline Bool `json:"showline,omitempty"`
+	Showline types.Bool `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
@@ -979,13 +978,13 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
-	Startline Bool `json:"startline,omitempty"`
+	Startline types.Bool `json:"startline,omitempty"`
 
 	// Startlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
-	Startlinecolor color.String `json:"startlinecolor,omitempty"`
+	Startlinecolor types.Color `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
@@ -1014,7 +1013,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat string `json:"tickformat,omitempty"`
+	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -1033,13 +1032,13 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix string `json:"tickprefix,omitempty"`
+	Tickprefix types.String `json:"tickprefix,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix string `json:"ticksuffix,omitempty"`
+	Ticksuffix types.String `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -1051,7 +1050,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc string `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -1063,7 +1062,7 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc string `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -1085,13 +1084,13 @@ type CarpetFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1107,13 +1106,13 @@ type CarpetLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -1134,7 +1133,7 @@ type CarpetLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // CarpetStream
@@ -1150,7 +1149,7 @@ type CarpetStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // CarpetAaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.

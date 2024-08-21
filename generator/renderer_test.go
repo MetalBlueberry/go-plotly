@@ -58,7 +58,7 @@ var _ = Describe("Renderer", func() {
 			// Type is defined
 			Expect(string(formatted)).To(ContainSubstring(`type Scatter struct`))
 			// Implements interface GetType()
-			Expect(string(formatted)).To(ContainSubstring(`func (trace *Scatter) GetType() TraceType`))
+			Expect(string(formatted)).To(ContainSubstring(`func (t *Scatter) GetType() types.TraceType`))
 
 		})
 	})

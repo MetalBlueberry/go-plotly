@@ -7,7 +7,8 @@ import (
 	"github.com/go-gota/gota/dataframe"
 
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -120,7 +121,7 @@ func main() {
 				},
 			},
 			Rangeslider: &grob.LayoutXaxisRangeslider{
-				Visible: grob.True,
+				Visible: types.True,
 			},
 			Type: grob.LayoutXaxisTypeDate,
 		},

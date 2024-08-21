@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeScattergl TraceType = "scattergl"
+var TraceTypeScattergl types.TraceType = "scattergl"
 
-func (trace *Scattergl) GetType() TraceType {
+func (t *Scattergl) GetType() types.TraceType {
 	return TraceTypeScattergl
 }
 
-func (trace *Scattergl) MarshalJSON() ([]byte, error) {
+func (t *Scattergl) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Scattergl
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -33,7 +32,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-	Connectgaps Bool `json:"connectgaps,omitempty"`
+	Connectgaps types.Bool `json:"connectgaps,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -45,7 +44,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Dx
 	// arrayOK: false
@@ -80,20 +79,20 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor color.String `json:"fillcolor,omitempty"`
+	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo arrayok.Type[*ScatterglHoverinfo] `json:"hoverinfo,omitempty"`
+	Hoverinfo types.ArrayOK[*ScatterglHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -104,25 +103,25 @@ type Scattergl struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate arrayok.Type[*string] `json:"hovertemplate,omitempty"`
+	Hovertemplate types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc string `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext arrayok.Type[*string] `json:"hovertext,omitempty"`
+	Hovertext types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc string `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -134,13 +133,13 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup string `json:"legendgroup,omitempty"`
+	Legendgroup types.String `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -173,13 +172,13 @@ type Scattergl struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -192,7 +191,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -215,7 +214,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend Bool `json:"showlegend,omitempty"`
+	Showlegend types.Bool `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -226,7 +225,7 @@ type Scattergl struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text arrayok.Type[*string] `json:"text,omitempty"`
+	Text types.ArrayOK[*types.String] `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
@@ -238,31 +237,31 @@ type Scattergl struct {
 	// default: middle center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
-	Textposition arrayok.Type[*ScatterglTextposition] `json:"textposition,omitempty"`
+	Textposition types.ArrayOK[*ScatterglTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
-	Textpositionsrc string `json:"textpositionsrc,omitempty"`
+	Textpositionsrc types.String `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc string `json:"textsrc,omitempty"`
+	Textsrc types.String `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
-	Texttemplate arrayok.Type[*string] `json:"texttemplate,omitempty"`
+	Texttemplate types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
-	Texttemplatesrc string `json:"texttemplatesrc,omitempty"`
+	Texttemplatesrc types.String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -274,7 +273,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -310,7 +309,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis String `json:"xaxis,omitempty"`
+	Xaxis types.String `json:"xaxis,omitempty"`
 
 	// Xcalendar
 	// arrayOK: false
@@ -323,7 +322,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat string `json:"xhoverformat,omitempty"`
+	Xhoverformat types.String `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
@@ -348,7 +347,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc string `json:"xsrc,omitempty"`
+	Xsrc types.String `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -366,7 +365,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis String `json:"yaxis,omitempty"`
+	Yaxis types.String `json:"yaxis,omitempty"`
 
 	// Ycalendar
 	// arrayOK: false
@@ -379,7 +378,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat string `json:"yhoverformat,omitempty"`
+	Yhoverformat types.String `json:"yhoverformat,omitempty"`
 
 	// Yperiod
 	// arrayOK: false
@@ -404,7 +403,7 @@ type Scattergl struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc string `json:"ysrc,omitempty"`
+	Ysrc types.String `json:"ysrc,omitempty"`
 }
 
 // ScatterglErrorX
@@ -426,31 +425,31 @@ type ScatterglErrorX struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
-	Arrayminussrc string `json:"arrayminussrc,omitempty"`
+	Arrayminussrc types.String `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
-	Arraysrc string `json:"arraysrc,omitempty"`
+	Arraysrc types.String `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// CopyYstyle
 	// arrayOK: false
 	// type: boolean
 	//
-	CopyYstyle Bool `json:"copy_ystyle,omitempty"`
+	CopyYstyle types.Bool `json:"copy_ystyle,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-	Symmetric Bool `json:"symmetric,omitempty"`
+	Symmetric types.Bool `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
@@ -493,7 +492,7 @@ type ScatterglErrorX struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
-	Visible Bool `json:"visible,omitempty"`
+	Visible types.Bool `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -521,25 +520,25 @@ type ScatterglErrorY struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
-	Arrayminussrc string `json:"arrayminussrc,omitempty"`
+	Arrayminussrc types.String `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
-	Arraysrc string `json:"arraysrc,omitempty"`
+	Arraysrc types.String `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-	Symmetric Bool `json:"symmetric,omitempty"`
+	Symmetric types.Bool `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
@@ -582,7 +581,7 @@ type ScatterglErrorY struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
-	Visible Bool `json:"visible,omitempty"`
+	Visible types.Bool `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -598,37 +597,37 @@ type ScatterglHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // ScatterglHoverlabel
@@ -639,37 +638,37 @@ type ScatterglHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*ScatterglHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*ScatterglHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -680,13 +679,13 @@ type ScatterglHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // ScatterglLegendgrouptitleFont Sets this legend group's title font.
@@ -696,13 +695,13 @@ type ScatterglLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -723,7 +722,7 @@ type ScatterglLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // ScatterglLine
@@ -733,7 +732,7 @@ type ScatterglLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
@@ -763,13 +762,13 @@ type ScatterglMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -785,13 +784,13 @@ type ScatterglMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -819,7 +818,7 @@ type ScatterglMarkerColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // ScatterglMarkerColorbar
@@ -829,13 +828,13 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor color.String `json:"bgcolor,omitempty"`
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor color.String `json:"bordercolor,omitempty"`
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -898,7 +897,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor color.String `json:"outlinecolor,omitempty"`
+	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -910,7 +909,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.Bool `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -923,7 +922,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.Bool `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -968,7 +967,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor color.String `json:"tickcolor,omitempty"`
+	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -979,7 +978,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat string `json:"tickformat,omitempty"`
+	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// It's an items array and what goes inside it's... messy... check the docs
@@ -1024,7 +1023,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix string `json:"tickprefix,omitempty"`
+	Tickprefix types.String `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -1037,7 +1036,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix string `json:"ticksuffix,omitempty"`
+	Ticksuffix types.String `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -1049,7 +1048,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc string `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -1061,7 +1060,7 @@ type ScatterglMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc string `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
@@ -1120,13 +1119,13 @@ type ScatterglMarkerLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-	Cauto Bool `json:"cauto,omitempty"`
+	Cauto types.Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
@@ -1150,43 +1149,43 @@ type ScatterglMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-	Coloraxis String `json:"coloraxis,omitempty"`
+	Coloraxis types.String `json:"coloraxis,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale color.Scale `json:"colorscale,omitempty"`
+	Colorscale types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-	Reversescale Bool `json:"reversescale,omitempty"`
+	Reversescale types.Bool `json:"reversescale,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 }
 
 // ScatterglMarker
@@ -1196,25 +1195,25 @@ type ScatterglMarker struct {
 	// arrayOK: true
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
-	Angle arrayok.Type[*float64] `json:"angle,omitempty"`
+	Angle types.ArrayOK[*float64] `json:"angle,omitempty"`
 
 	// Anglesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `angle`.
-	Anglesrc string `json:"anglesrc,omitempty"`
+	Anglesrc types.String `json:"anglesrc,omitempty"`
 
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-	Cauto Bool `json:"cauto,omitempty"`
+	Cauto types.Bool `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
@@ -1238,13 +1237,13 @@ type ScatterglMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-	Coloraxis String `json:"coloraxis,omitempty"`
+	Coloraxis types.String `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
@@ -1255,13 +1254,13 @@ type ScatterglMarker struct {
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale color.Scale `json:"colorscale,omitempty"`
+	Colorscale types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -1272,31 +1271,31 @@ type ScatterglMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity arrayok.Type[*float64] `json:"opacity,omitempty"`
+	Opacity types.ArrayOK[*float64] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `opacity`.
-	Opacitysrc string `json:"opacitysrc,omitempty"`
+	Opacitysrc types.String `json:"opacitysrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-	Reversescale Bool `json:"reversescale,omitempty"`
+	Reversescale types.Bool `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
-	Showscale Bool `json:"showscale,omitempty"`
+	Showscale types.Bool `json:"showscale,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
@@ -1321,20 +1320,20 @@ type ScatterglMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 
 	// Symbol
 	// arrayOK: true
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
-	Symbol arrayok.Type[*ScatterglMarkerSymbol] `json:"symbol,omitempty"`
+	Symbol types.ArrayOK[*ScatterglMarkerSymbol] `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `symbol`.
-	Symbolsrc string `json:"symbolsrc,omitempty"`
+	Symbolsrc types.String `json:"symbolsrc,omitempty"`
 }
 
 // ScatterglSelectedMarker
@@ -1344,7 +1343,7 @@ type ScatterglSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -1366,7 +1365,7 @@ type ScatterglSelectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of selected points.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 }
 
 // ScatterglSelected
@@ -1396,7 +1395,7 @@ type ScatterglStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // ScatterglTextfont Sets the text font.
@@ -1406,37 +1405,37 @@ type ScatterglTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // ScatterglUnselectedMarker
@@ -1446,7 +1445,7 @@ type ScatterglUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -1468,7 +1467,7 @@ type ScatterglUnselectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of unselected points, applied only when a selection exists.
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 }
 
 // ScatterglUnselected

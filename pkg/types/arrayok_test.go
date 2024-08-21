@@ -1,16 +1,16 @@
-package arrayok_test
+package types_test
 
 import (
 	"encoding/json"
 	"testing"
 
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 	. "github.com/onsi/gomega"
 )
 
 type TestMarshallScenario[T any] struct {
 	Name     string
-	Input    arrayok.Type[T]
+	Input    types.ArrayOK[T]
 	Expected string
 }
 
@@ -20,28 +20,28 @@ func TestFloat64Marshal(t *testing.T) {
 	scenarios := []TestMarshallScenario[*float64]{
 		{
 			Name:     "A single number",
-			Input:    arrayok.Value(12.3),
+			Input:    types.ArrayOKValue(12.3),
 			Expected: "12.3",
 		},
 		{
 			Name:     "A single number in a list",
-			Input:    arrayok.Array(12.3),
+			Input:    types.ArrayOKArray(12.3),
 			Expected: "[12.3]",
 		},
 		{
 			Name:     "Multiple values",
-			Input:    arrayok.Array(1, 2, 3, 4.5),
+			Input:    types.ArrayOKArray(1, 2, 3, 4.5),
 			Expected: "[1,2,3,4.5]",
 		},
 		{
 			Name:     "Nil Value",
-			Input:    arrayok.Type[*float64]{},
+			Input:    types.ArrayOK[*float64]{},
 			Expected: "null",
 		},
 		{
 			Name: "Nil Array",
-			Input: func() arrayok.Type[*float64] {
-				original := arrayok.Array(1.2, 0, 3.4)
+			Input: func() types.ArrayOK[*float64] {
+				original := types.ArrayOKArray(1.2, 0, 3.4)
 				original.Array[1] = nil
 				return original
 			}(),
@@ -64,28 +64,28 @@ func TestStringMarshal(t *testing.T) {
 	scenarios := []TestMarshallScenario[*string]{
 		{
 			Name:     "A single string",
-			Input:    arrayok.Value("hello"),
+			Input:    types.ArrayOKValue("hello"),
 			Expected: `"hello"`,
 		},
 		{
 			Name:     "A single string in a list",
-			Input:    arrayok.Array("hello"),
+			Input:    types.ArrayOKArray("hello"),
 			Expected: `["hello"]`,
 		},
 		{
 			Name:     "Multiple strings",
-			Input:    arrayok.Array("hello", "world", "foo", "bar"),
+			Input:    types.ArrayOKArray("hello", "world", "foo", "bar"),
 			Expected: `["hello","world","foo","bar"]`,
 		},
 		{
 			Name:     "Nil Value",
-			Input:    arrayok.Type[*string]{},
+			Input:    types.ArrayOK[*string]{},
 			Expected: "null",
 		},
 		{
 			Name: "Nil Array",
-			Input: func() arrayok.Type[*string] {
-				original := arrayok.Array("hello", "", "world")
+			Input: func() types.ArrayOK[*string] {
+				original := types.ArrayOKArray("hello", "", "world")
 				original.Array[1] = nil
 				return original
 			}(),
@@ -105,7 +105,7 @@ func TestStringMarshal(t *testing.T) {
 type TestUnmarshalScenario[T any] struct {
 	Name     string
 	Input    string
-	Expected arrayok.Type[T]
+	Expected types.ArrayOK[T]
 }
 
 func TestFloat64Unmarshal(t *testing.T) {
@@ -115,28 +115,28 @@ func TestFloat64Unmarshal(t *testing.T) {
 		{
 			Name:     "A single number",
 			Input:    "12.3",
-			Expected: arrayok.Value(12.3),
+			Expected: types.ArrayOKValue(12.3),
 		},
 		{
 			Name:     "A single number in a list",
 			Input:    "[12.3]",
-			Expected: arrayok.Array(12.3),
+			Expected: types.ArrayOKArray(12.3),
 		},
 		{
 			Name:     "Multiple values",
 			Input:    "[1,2,3,4.5]",
-			Expected: arrayok.Array(1, 2, 3, 4.5),
+			Expected: types.ArrayOKArray(1, 2, 3, 4.5),
 		},
 		{
 			Name:     "Nil Value",
 			Input:    "null",
-			Expected: arrayok.Type[*float64]{},
+			Expected: types.ArrayOK[*float64]{},
 		},
 		{
 			Name:  "Nil Array",
 			Input: "[1.2,null,3.4]",
-			Expected: func() arrayok.Type[*float64] {
-				original := arrayok.Array(1.2, 0, 3.4)
+			Expected: func() types.ArrayOK[*float64] {
+				original := types.ArrayOKArray(1.2, 0, 3.4)
 				original.Array[1] = nil
 				return original
 			}(),
@@ -145,7 +145,7 @@ func TestFloat64Unmarshal(t *testing.T) {
 
 	for _, tt := range scenarios {
 		t.Run(tt.Name, func(t *testing.T) {
-			result := arrayok.Type[*float64]{}
+			result := types.ArrayOK[*float64]{}
 			err := json.Unmarshal([]byte(tt.Input), &result)
 			Expect(err).To(BeNil())
 			Expect(result).To(Equal(tt.Expected))
@@ -160,28 +160,28 @@ func TestStringUnmarshal(t *testing.T) {
 		{
 			Name:     "A single string",
 			Input:    `"hello"`,
-			Expected: arrayok.Value("hello"),
+			Expected: types.ArrayOKValue("hello"),
 		},
 		{
 			Name:     "A single string in a list",
 			Input:    `["hello"]`,
-			Expected: arrayok.Array("hello"),
+			Expected: types.ArrayOKArray("hello"),
 		},
 		{
 			Name:     "Multiple strings",
 			Input:    `["hello","world","foo","bar"]`,
-			Expected: arrayok.Array("hello", "world", "foo", "bar"),
+			Expected: types.ArrayOKArray("hello", "world", "foo", "bar"),
 		},
 		{
 			Name:     "Nil Value",
 			Input:    "null",
-			Expected: arrayok.Type[*string]{},
+			Expected: types.ArrayOK[*string]{},
 		},
 		{
 			Name:  "Nil Array",
 			Input: `["hello",null,"world"]`,
-			Expected: func() arrayok.Type[*string] {
-				original := arrayok.Array("hello", "", "world")
+			Expected: func() types.ArrayOK[*string] {
+				original := types.ArrayOKArray("hello", "", "world")
 				original.Array[1] = nil
 				return original
 			}(),
@@ -190,7 +190,7 @@ func TestStringUnmarshal(t *testing.T) {
 
 	for _, tt := range scenarios {
 		t.Run(tt.Name, func(t *testing.T) {
-			result := arrayok.Type[*string]{}
+			result := types.ArrayOK[*string]{}
 			err := json.Unmarshal([]byte(tt.Input), &result)
 			Expect(err).To(BeNil())
 			Expect(result).To(Equal(tt.Expected))
@@ -211,19 +211,19 @@ func TestColorUnmarshal(t *testing.T) {
 		{
 			Name:     "A single color",
 			Input:    `{"red": 255, "green": 255, "blue": 255}`,
-			Expected: arrayok.Value(Color{Red: 255, Green: 255, Blue: 255}),
+			Expected: types.ArrayOKValue(Color{Red: 255, Green: 255, Blue: 255}),
 		},
 		{
 			Name:  "A single color in a list",
 			Input: `[{"red": 255, "green": 255, "blue": 255}]`,
-			Expected: arrayok.Type[*Color]{
+			Expected: types.ArrayOK[*Color]{
 				Array: []*Color{{Red: 255, Green: 255, Blue: 255}},
 			},
 		},
 		{
 			Name:  "Multiple colors",
 			Input: `[{"red": 255, "green": 255, "blue": 255}, {"red": 0, "green": 0, "blue": 0}, {"red": 0, "green": 255, "blue": 0}]`,
-			Expected: arrayok.Type[*Color]{
+			Expected: types.ArrayOK[*Color]{
 				Array: []*Color{
 					{Red: 255, Green: 255, Blue: 255},
 					{Red: 0, Green: 0, Blue: 0},
@@ -234,12 +234,12 @@ func TestColorUnmarshal(t *testing.T) {
 		{
 			Name:     "Nil Value",
 			Input:    "null",
-			Expected: arrayok.Type[*Color]{},
+			Expected: types.ArrayOK[*Color]{},
 		},
 		{
 			Name:  "Nil Array",
 			Input: `[{"red": 255, "green": 255, "blue": 255}, null, {"red": 0, "green": 0, "blue": 0}]`,
-			Expected: arrayok.Type[*Color]{
+			Expected: types.ArrayOK[*Color]{
 				Array: []*Color{
 					{Red: 255, Green: 255, Blue: 255},
 					nil,
@@ -251,7 +251,7 @@ func TestColorUnmarshal(t *testing.T) {
 
 	for _, tt := range scenarios {
 		t.Run(tt.Name, func(t *testing.T) {
-			result := arrayok.Type[*Color]{}
+			result := types.ArrayOK[*Color]{}
 			err := json.Unmarshal([]byte(tt.Input), &result)
 			Expect(err).To(BeNil())
 			Expect(result).To(Equal(tt.Expected))
@@ -265,19 +265,19 @@ func TestColorMarshal(t *testing.T) {
 	scenarios := []TestMarshallScenario[*Color]{
 		{
 			Name:     "A single color",
-			Input:    arrayok.Value(Color{Red: 255, Green: 255, Blue: 255}),
+			Input:    types.ArrayOKValue(Color{Red: 255, Green: 255, Blue: 255}),
 			Expected: `{"red":255,"green":255,"blue":255}`,
 		},
 		{
 			Name: "A single color in a list",
-			Input: arrayok.Type[*Color]{
+			Input: types.ArrayOK[*Color]{
 				Array: []*Color{{Red: 255, Green: 255, Blue: 255}},
 			},
 			Expected: `[{"red":255,"green":255,"blue":255}]`,
 		},
 		{
 			Name: "Multiple colors",
-			Input: arrayok.Type[*Color]{
+			Input: types.ArrayOK[*Color]{
 				Array: []*Color{
 					{Red: 255, Green: 255, Blue: 255},
 					{Red: 0, Green: 0, Blue: 0},
@@ -288,12 +288,12 @@ func TestColorMarshal(t *testing.T) {
 		},
 		{
 			Name:     "Nil Value",
-			Input:    arrayok.Type[*Color]{},
+			Input:    types.ArrayOK[*Color]{},
 			Expected: "null",
 		},
 		{
 			Name: "Nil Array",
-			Input: arrayok.Type[*Color]{
+			Input: types.ArrayOK[*Color]{
 				Array: []*Color{
 					{Red: 255, Green: 255, Blue: 255},
 					nil,
@@ -328,11 +328,11 @@ func TestNestedArrayOKUnmarshal(t *testing.T) {
 		{
 			Name: "Nested ArrayOK within another struct",
 			Input: struct {
-				Name   string               `json:"name"`
-				Colors *arrayok.Type[Color] `json:"colors"`
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
 			}{
 				Name: "Test",
-				Colors: &arrayok.Type[Color]{
+				Colors: &types.ArrayOK[Color]{
 					Array: []Color{
 						{Red: 255, Green: 255, Blue: 255},
 						{Red: 0, Green: 0, Blue: 0},
@@ -345,8 +345,8 @@ func TestNestedArrayOKUnmarshal(t *testing.T) {
 		{
 			Name: "Nested ArrayOK within another struct with nil Colors",
 			Input: struct {
-				Name   string               `json:"name"`
-				Colors *arrayok.Type[Color] `json:"colors"`
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
 			}{
 				Name:   "Test",
 				Colors: nil,
@@ -377,11 +377,11 @@ func TestNestedArrayOKMarshal(t *testing.T) {
 		{
 			Name: "Marshal ArrayOK nested within another struct with actual value",
 			Input: struct {
-				Name   string               `json:"name"`
-				Colors *arrayok.Type[Color] `json:"colors"`
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
 			}{
 				Name: "Test",
-				Colors: &arrayok.Type[Color]{
+				Colors: &types.ArrayOK[Color]{
 					Array: []Color{
 						{Red: 255, Green: 255, Blue: 255},
 						{Red: 0, Green: 0, Blue: 0},
@@ -394,8 +394,8 @@ func TestNestedArrayOKMarshal(t *testing.T) {
 		{
 			Name: "Marshal ArrayOK nested within another struct with nil value",
 			Input: struct {
-				Name   string               `json:"name"`
-				Colors *arrayok.Type[Color] `json:"colors"`
+				Name   string                `json:"name"`
+				Colors *types.ArrayOK[Color] `json:"colors"`
 			}{
 				Name:   "Test",
 				Colors: nil,

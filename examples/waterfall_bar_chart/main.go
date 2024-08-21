@@ -2,9 +2,8 @@ package main
 
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
-	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -126,7 +125,7 @@ func main() {
 		X: xData,
 		Y: []int{0, 430, 0, 570, 370, 370, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(color.UseColor("rgba(1,1,1,0.0)")),
+			Color: types.ArrayOKValue(types.UseColor("rgba(1,1,1,0.0)")),
 		},
 	}
 
@@ -136,10 +135,10 @@ func main() {
 		X: xData,
 		Y: []int{430, 260, 690, 0, 0, 0, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(color.UseColor("rgba(55,128,191,0.7)")),
+			Color: types.ArrayOKValue(types.UseColor("rgba(55,128,191,0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(color.UseColor("rgba(55,128,191,1.0)")),
-				Width: arrayok.Value(2.0),
+				Color: types.ArrayOKValue(types.UseColor("rgba(55,128,191,1.0)")),
+				Width: types.ArrayOKValue(2.0),
 			},
 		},
 	}
@@ -150,10 +149,10 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 120, 200, 320, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(color.UseColor("rgba(219, 64, 82, 0.7)")),
+			Color: types.ArrayOKValue(types.UseColor("rgba(219, 64, 82, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(color.UseColor("rgba(219, 64, 82, 1.0)")),
-				Width: arrayok.Value(2.0),
+				Color: types.ArrayOKValue(types.UseColor("rgba(219, 64, 82, 1.0)")),
+				Width: types.ArrayOKValue(2.0),
 			},
 		},
 	}
@@ -164,10 +163,10 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 0, 0, 0, 370},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(color.UseColor("rgba(50,171, 96, 0.7)")),
+			Color: types.ArrayOKValue(types.UseColor("rgba(50,171, 96, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(color.UseColor("rgba(50,171,96,1.0)")),
-				Width: arrayok.Value(2.0),
+				Color: types.ArrayOKValue(types.UseColor("rgba(50,171,96,1.0)")),
+				Width: types.ArrayOKValue(2.0),
 			},
 		},
 	}
@@ -198,7 +197,7 @@ func main() {
 		PlotBgcolor:  "rgba(245,246,249,1)",
 		Width:        600,
 		Height:       600,
-		Showlegend:   grob.False,
+		Showlegend:   types.False,
 		Annotations:  annotations, // Not implemented yet
 	}
 

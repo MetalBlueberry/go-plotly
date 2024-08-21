@@ -4,25 +4,24 @@ package grob
 
 import (
 	"encoding/json"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/arrayok"
-	"github.com/MetalBlueberry/go-plotly/pkg/types/color"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
-var TraceTypeTable TraceType = "table"
+var TraceTypeTable types.TraceType = "table"
 
-func (trace *Table) GetType() TraceType {
+func (t *Table) GetType() types.TraceType {
 	return TraceTypeTable
 }
 
-func (trace *Table) MarshalJSON() ([]byte, error) {
+func (t *Table) MarshalJSON() ([]byte, error) {
 	// Define the custom JSON structure including the "type" field
 	type Alias Table
 	return json.Marshal(&struct {
-		Type TraceType `json:"type"`
+		Type types.TraceType `json:"type"`
 		*Alias
 	}{
-		Type:  trace.GetType(), // Add your desired default value here
-		Alias: (*Alias)(trace), // Embed the original struct fields
+		Type:  t.GetType(), // Add your desired default value here
+		Alias: (*Alias)(t), // Embed the original struct fields
 	})
 }
 
@@ -44,19 +43,19 @@ type Table struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `columnorder`.
-	Columnordersrc string `json:"columnordersrc,omitempty"`
+	Columnordersrc types.String `json:"columnordersrc,omitempty"`
 
 	// Columnwidth
 	// arrayOK: true
 	// type: number
 	// The width of columns expressed as a ratio. Columns fill the available width in proportion of their specified column widths.
-	Columnwidth arrayok.Type[*float64] `json:"columnwidth,omitempty"`
+	Columnwidth types.ArrayOK[*float64] `json:"columnwidth,omitempty"`
 
 	// Columnwidthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `columnwidth`.
-	Columnwidthsrc string `json:"columnwidthsrc,omitempty"`
+	Columnwidthsrc types.String `json:"columnwidthsrc,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -68,7 +67,7 @@ type Table struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc string `json:"customdatasrc,omitempty"`
+	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -85,13 +84,13 @@ type Table struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo arrayok.Type[*TableHoverinfo] `json:"hoverinfo,omitempty"`
+	Hoverinfo types.ArrayOK[*TableHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc string `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -108,7 +107,7 @@ type Table struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc string `json:"idssrc,omitempty"`
+	Idssrc types.String `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -131,19 +130,19 @@ type Table struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta arrayok.Type[*interface{}] `json:"meta,omitempty"`
+	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc string `json:"metasrc,omitempty"`
+	Metasrc types.String `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name string `json:"name,omitempty"`
+	Name types.String `json:"name,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -154,7 +153,7 @@ type Table struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid string `json:"uid,omitempty"`
+	Uid types.String `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -177,13 +176,13 @@ type TableCellsFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 }
 
 // TableCellsFont
@@ -193,37 +192,37 @@ type TableCellsFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // TableCellsLine
@@ -233,25 +232,25 @@ type TableCellsLine struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	//
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 }
 
 // TableCells
@@ -262,13 +261,13 @@ type TableCells struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align arrayok.Type[*TableCellsAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*TableCellsAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Fill
 	// arrayOK: false
@@ -290,7 +289,7 @@ type TableCells struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `format`.
-	Formatsrc string `json:"formatsrc,omitempty"`
+	Formatsrc types.String `json:"formatsrc,omitempty"`
 
 	// Height
 	// arrayOK: false
@@ -307,25 +306,25 @@ type TableCells struct {
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
-	Prefix arrayok.Type[*string] `json:"prefix,omitempty"`
+	Prefix types.ArrayOK[*types.String] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `prefix`.
-	Prefixsrc string `json:"prefixsrc,omitempty"`
+	Prefixsrc types.String `json:"prefixsrc,omitempty"`
 
 	// Suffix
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
-	Suffix arrayok.Type[*string] `json:"suffix,omitempty"`
+	Suffix types.ArrayOK[*types.String] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `suffix`.
-	Suffixsrc string `json:"suffixsrc,omitempty"`
+	Suffixsrc types.String `json:"suffixsrc,omitempty"`
 
 	// Values
 	// arrayOK: false
@@ -337,7 +336,7 @@ type TableCells struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
-	Valuessrc string `json:"valuessrc,omitempty"`
+	Valuessrc types.String `json:"valuessrc,omitempty"`
 }
 
 // TableDomain
@@ -375,13 +374,13 @@ type TableHeaderFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 }
 
 // TableHeaderFont
@@ -391,37 +390,37 @@ type TableHeaderFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // TableHeaderLine
@@ -431,25 +430,25 @@ type TableHeaderLine struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	//
-	Width arrayok.Type[*float64] `json:"width,omitempty"`
+	Width types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc string `json:"widthsrc,omitempty"`
+	Widthsrc types.String `json:"widthsrc,omitempty"`
 }
 
 // TableHeader
@@ -460,13 +459,13 @@ type TableHeader struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align arrayok.Type[*TableHeaderAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*TableHeaderAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Fill
 	// arrayOK: false
@@ -488,7 +487,7 @@ type TableHeader struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `format`.
-	Formatsrc string `json:"formatsrc,omitempty"`
+	Formatsrc types.String `json:"formatsrc,omitempty"`
 
 	// Height
 	// arrayOK: false
@@ -505,25 +504,25 @@ type TableHeader struct {
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
-	Prefix arrayok.Type[*string] `json:"prefix,omitempty"`
+	Prefix types.ArrayOK[*types.String] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `prefix`.
-	Prefixsrc string `json:"prefixsrc,omitempty"`
+	Prefixsrc types.String `json:"prefixsrc,omitempty"`
 
 	// Suffix
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
-	Suffix arrayok.Type[*string] `json:"suffix,omitempty"`
+	Suffix types.ArrayOK[*types.String] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `suffix`.
-	Suffixsrc string `json:"suffixsrc,omitempty"`
+	Suffixsrc types.String `json:"suffixsrc,omitempty"`
 
 	// Values
 	// arrayOK: false
@@ -535,7 +534,7 @@ type TableHeader struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
-	Valuessrc string `json:"valuessrc,omitempty"`
+	Valuessrc types.String `json:"valuessrc,omitempty"`
 }
 
 // TableHoverlabelFont Sets the font used in hover labels.
@@ -545,37 +544,37 @@ type TableHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*color.String] `json:"color,omitempty"`
+	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc string `json:"colorsrc,omitempty"`
+	Colorsrc types.String `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family arrayok.Type[*string] `json:"family,omitempty"`
+	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc string `json:"familysrc,omitempty"`
+	Familysrc types.String `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size arrayok.Type[*float64] `json:"size,omitempty"`
+	Size types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc string `json:"sizesrc,omitempty"`
+	Sizesrc types.String `json:"sizesrc,omitempty"`
 }
 
 // TableHoverlabel
@@ -586,37 +585,37 @@ type TableHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align arrayok.Type[*TableHoverlabelAlign] `json:"align,omitempty"`
+	Align types.ArrayOK[*TableHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc string `json:"alignsrc,omitempty"`
+	Alignsrc types.String `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
+	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc string `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
+	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc string `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -627,13 +626,13 @@ type TableHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength arrayok.Type[*int64] `json:"namelength,omitempty"`
+	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc string `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
 }
 
 // TableLegendgrouptitleFont Sets this legend group's title font.
@@ -643,13 +642,13 @@ type TableLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color color.String `json:"color,omitempty"`
+	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family string `json:"family,omitempty"`
+	Family types.String `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -670,7 +669,7 @@ type TableLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text string `json:"text,omitempty"`
+	Text types.String `json:"text,omitempty"`
 }
 
 // TableStream
@@ -686,7 +685,7 @@ type TableStream struct {
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token string `json:"token,omitempty"`
+	Token types.String `json:"token,omitempty"`
 }
 
 // TableCellsAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.

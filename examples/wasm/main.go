@@ -15,7 +15,7 @@ func plot(this js.Value, inputs []js.Value) interface{} {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Choropleth{
-				Autocolorscale: grob.True,
+				Autocolorscale: types.True,
 				Locationmode:   grob.ChoroplethLocationmodeUSAStates,
 			},
 		},

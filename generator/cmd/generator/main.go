@@ -23,7 +23,7 @@ func (c Creator) Create(name string) (io.WriteCloser, error) {
 }
 
 // The generate command always executes with the working directory set to the path with the file with the directive
-//go:generate go run main.go --config=../../../schemas.yaml
+//go:generate go run main.go --config=../../../schemas.yaml -clean
 
 const configPath = "schemas.yaml"
 
@@ -46,7 +46,7 @@ func main() {
 	root := filepath.Dir(schemapath)
 
 	for _, schema := range schemas {
-		generatePackage(root, schema.Path, schema.Generated, schema.Cdn, schema.Tag, clean)
+		generatePackage(root, schema, clean)
 	}
 
 }
@@ -59,9 +59,10 @@ func rootDirectories(root, schema, output string) (string, string) {
 }
 
 // create the packages and write them into the specified folders
-func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, clean bool) {
+
+func generatePackage(projectRoot string, version generator.Version, clean bool) {
 	// look for the correct schema and output paths
-	schema, relativeVersionOutput := rootDirectories(projectRoot, schema, versionOutput)
+	schema, relativeVersionOutput := rootDirectories(projectRoot, version.Path, version.Generated)
 	log.Println("schema:", schema, "versionoutput", relativeVersionOutput)
 
 	file, err := os.Open(schema)
@@ -70,7 +71,6 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 	}
 
 	graphObjectsOuput := filepath.Join(relativeVersionOutput, "graph_objects")
-	offlineOuput := filepath.Join(relativeVersionOutput, "offline")
 
 	schemaRoot, err := generator.LoadSchema(file)
 	if err != nil {
@@ -83,7 +83,7 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 	}
 
 	if clean {
-		for _, path := range []string{graphObjectsOuput, offlineOuput} {
+		for _, path := range []string{graphObjectsOuput} {
 			err = os.RemoveAll(path)
 			if err != nil {
 				log.Fatalf("Failed to clean output directory, %s", err)
@@ -95,14 +95,8 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 		}
 	}
 
-	// plot_gen.go must be separate in an offline package
-	err = r.CreatePlotGo(offlineOuput, versionOutput, cdnUrl)
-	if err != nil {
-		log.Fatalf("unable to write plot.go, %s", err)
-	}
-
 	// graphobjects
-	err = r.CreatePlotly(graphObjectsOuput)
+	err = r.CreatePlotly(graphObjectsOuput, version)
 	if err != nil {
 		log.Fatalf("unable to write plotly, %s", err)
 	}

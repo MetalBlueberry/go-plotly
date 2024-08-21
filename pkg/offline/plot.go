@@ -3,14 +3,12 @@ package offline
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"text/template"
 
-	grob "github.com/MetalBlueberry/go-plotly/generated/v2.29.1/graph_objects"
-
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 	"github.com/pkg/browser"
 )
 
@@ -19,19 +17,19 @@ type Options struct {
 }
 
 // ToHtml saves the figure as standalone HTML. It still requires internet to load plotly.js from CDN.
-func ToHtml(fig *grob.Fig, path string) {
+func ToHtml(fig types.Fig, path string) {
 	buf := figToBuffer(fig)
-	ioutil.WriteFile(path, buf.Bytes(), os.ModePerm)
+	os.WriteFile(path, buf.Bytes(), os.ModePerm)
 }
 
 // Show displays the figure in your browser.
 // Use serve if you want a persistent view
-func Show(fig *grob.Fig) {
+func Show(fig types.Fig) {
 	buf := figToBuffer(fig)
 	browser.OpenReader(buf)
 }
 
-func figToBuffer(fig *grob.Fig) *bytes.Buffer {
+func figToBuffer(fig types.Fig) *bytes.Buffer {
 	figBytes, err := json.Marshal(fig)
 	if err != nil {
 		panic(err)
@@ -41,13 +39,24 @@ func figToBuffer(fig *grob.Fig) *bytes.Buffer {
 		panic(err)
 	}
 	buf := &bytes.Buffer{}
-	tmpl.Execute(buf, string(figBytes))
+	data := struct {
+		Version types.Version
+		Content string
+	}{
+		Version: fig.Info(),
+		Content: string(figBytes),
+	}
+
+	err = tmpl.Execute(buf, data)
+	if err != nil {
+		panic(err)
+	}
 	return buf
 }
 
 // Serve creates a local web server that displays the image using plotly.js
 // Is a good alternative to Show to avoid creating tmp files.
-func Serve(fig *grob.Fig, opt ...Options) {
+func Serve(fig types.Fig, opt ...Options) {
 	opts := computeOptions(Options{
 		Addr: "localhost:8080",
 	}, opt...)
@@ -81,12 +90,12 @@ func computeOptions(def Options, opt ...Options) Options {
 
 var baseHtml = `
 	<head>
-		<script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
+		<script src="{{ .Version.Cdn }}"></script>
 	</head>
 	<body>
 		<div id="plot"></div>
 	<script>
-		data = JSON.parse('{{ . }}')
+		data = JSON.parse('{{ .Content }}')
 		Plotly.newPlot('plot', data);
 	</script>
 	</body>
