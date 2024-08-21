@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeViolin TraceType = "violin"
@@ -61,7 +62,7 @@ type Violin struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -408,7 +409,7 @@ type ViolinBoxLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the inner box plot bounding line color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -424,7 +425,7 @@ type ViolinBox struct {
 	// arrayOK: false
 	// type: color
 	// Sets the inner box plot fill color.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -451,7 +452,7 @@ type ViolinHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -504,7 +505,7 @@ type ViolinHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -516,7 +517,7 @@ type ViolinHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -549,7 +550,7 @@ type ViolinLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -586,7 +587,7 @@ type ViolinLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the violin(s).
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -602,13 +603,13 @@ type ViolinMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border line color of the outlier sample points. Defaults to marker.color
-	Outliercolor Color `json:"outliercolor,omitempty"`
+	Outliercolor color.String `json:"outliercolor,omitempty"`
 
 	// Outlierwidth
 	// arrayOK: false
@@ -636,7 +637,7 @@ type ViolinMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -653,7 +654,7 @@ type ViolinMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the outlier sample points.
-	Outliercolor Color `json:"outliercolor,omitempty"`
+	Outliercolor color.String `json:"outliercolor,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -676,7 +677,7 @@ type ViolinMeanline struct {
 	// arrayOK: false
 	// type: color
 	// Sets the mean line color.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -698,7 +699,7 @@ type ViolinSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -745,7 +746,7 @@ type ViolinUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false

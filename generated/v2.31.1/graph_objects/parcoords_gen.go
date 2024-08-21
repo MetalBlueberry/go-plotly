@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeParcoords TraceType = "parcoords"
@@ -208,7 +209,7 @@ type ParcoordsLabelfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -230,7 +231,7 @@ type ParcoordsLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -267,7 +268,7 @@ type ParcoordsLineColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -289,7 +290,7 @@ type ParcoordsLineColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -333,13 +334,13 @@ type ParcoordsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -402,7 +403,7 @@ type ParcoordsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
-	Outlinecolor Color `json:"outlinecolor,omitempty"`
+	Outlinecolor color.String `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
@@ -472,7 +473,7 @@ type ParcoordsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -668,7 +669,7 @@ type ParcoordsLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
-	Color arrayok.Type[*ColorWithColorScale] `json:"color,omitempty"`
+	Color arrayok.Type[*color.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -682,10 +683,10 @@ type ParcoordsLine struct {
 	Colorbar *ParcoordsLineColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
-	// default: [[%!s(float64=0) #440154] [%!s(float64=0.06274509803921569) #48186a] [%!s(float64=0.12549019607843137) #472d7b] [%!s(float64=0.18823529411764706) #424086] [%!s(float64=0.25098039215686274) #3b528b] [%!s(float64=0.3137254901960784) #33638d] [%!s(float64=0.3764705882352941) #2c728e] [%!s(float64=0.4392156862745098) #26828e] [%!s(float64=0.5019607843137255) #21918c] [%!s(float64=0.5647058823529412) #1fa088] [%!s(float64=0.6274509803921569) #28ae80] [%!s(float64=0.6901960784313725) #3fbc73] [%!s(float64=0.7529411764705882) #5ec962] [%!s(float64=0.8156862745098039) #84d44b] [%!s(float64=0.8784313725490196) #addc30] [%!s(float64=0.9411764705882353) #d8e219] [%!s(float64=1) #fde725]]
+	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale ColorScale `json:"colorscale,omitempty"`
+	Colorscale color.Scale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -713,7 +714,7 @@ type ParcoordsRangefont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -751,7 +752,7 @@ type ParcoordsTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -773,7 +774,7 @@ type ParcoordsUnselectedLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the base color of unselected lines. in connection with `unselected.line.opacity`.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false

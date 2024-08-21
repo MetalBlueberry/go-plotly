@@ -9,6 +9,7 @@ import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	gcolor "github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 func main() {
@@ -58,12 +59,12 @@ func main() {
 		Textposition: arrayok.Value(grob.BarTextpositionAuto),
 		Hoverinfo:    arrayok.Value(grob.BarHoverinfoNone),
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(grob.UseColor(grob.Color(
+			Color: arrayok.Value(gcolor.UseColor(gcolor.String(
 				markerColor.Hex(), // Use colorfull
 			))),
 			Opacity: arrayok.Value(0.6),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(grob.UseColor("rgb(8,48,107)")), // Or just write the string
+				Color: arrayok.Value(gcolor.UseColor("rgb(8,48,107)")), // Or just write the string
 				Width: arrayok.Value(1.5),
 			},
 		},

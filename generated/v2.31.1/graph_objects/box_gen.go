@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeBox TraceType = "box"
@@ -76,7 +77,7 @@ type Box struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
-	Fillcolor Color `json:"fillcolor,omitempty"`
+	Fillcolor color.String `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -563,7 +564,7 @@ type BoxHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color arrayok.Type[*Color] `json:"color,omitempty"`
+	Color arrayok.Type[*color.String] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -616,7 +617,7 @@ type BoxHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor arrayok.Type[*Color] `json:"bgcolor,omitempty"`
+	Bgcolor arrayok.Type[*color.String] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -628,7 +629,7 @@ type BoxHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor arrayok.Type[*Color] `json:"bordercolor,omitempty"`
+	Bordercolor arrayok.Type[*color.String] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -661,7 +662,7 @@ type BoxLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -698,7 +699,7 @@ type BoxLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the box(es).
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -714,13 +715,13 @@ type BoxMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border line color of the outlier sample points. Defaults to marker.color
-	Outliercolor Color `json:"outliercolor,omitempty"`
+	Outliercolor color.String `json:"outliercolor,omitempty"`
 
 	// Outlierwidth
 	// arrayOK: false
@@ -748,7 +749,7 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -765,7 +766,7 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the outlier sample points.
-	Outliercolor Color `json:"outliercolor,omitempty"`
+	Outliercolor color.String `json:"outliercolor,omitempty"`
 
 	// Size
 	// arrayOK: false
@@ -788,7 +789,7 @@ type BoxSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
@@ -835,7 +836,7 @@ type BoxUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false

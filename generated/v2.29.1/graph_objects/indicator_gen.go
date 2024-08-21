@@ -5,6 +5,7 @@ package grob
 import (
 	"encoding/json"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 var TraceTypeIndicator TraceType = "indicator"
@@ -176,7 +177,7 @@ type IndicatorDeltaDecreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
@@ -192,7 +193,7 @@ type IndicatorDeltaFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -214,7 +215,7 @@ type IndicatorDeltaIncreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
@@ -314,7 +315,7 @@ type IndicatorGaugeAxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -418,7 +419,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
-	Tickcolor Color `json:"tickcolor,omitempty"`
+	Tickcolor color.String `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
@@ -519,7 +520,7 @@ type IndicatorGaugeBarLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the line enclosing each sector.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -535,7 +536,7 @@ type IndicatorGaugeBar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the arc.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -556,7 +557,7 @@ type IndicatorGaugeThresholdLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the threshold line.
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -603,13 +604,13 @@ type IndicatorGauge struct {
 	// arrayOK: false
 	// type: color
 	// Sets the gauge background color.
-	Bgcolor Color `json:"bgcolor,omitempty"`
+	Bgcolor color.String `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the gauge.
-	Bordercolor Color `json:"bordercolor,omitempty"`
+	Bordercolor color.String `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
@@ -643,7 +644,7 @@ type IndicatorLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -680,7 +681,7 @@ type IndicatorNumberFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
@@ -745,7 +746,7 @@ type IndicatorTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
-	Color Color `json:"color,omitempty"`
+	Color color.String `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false

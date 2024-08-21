@@ -164,24 +164,24 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				},
 			})
 
-		case attr.ValType == ValTypeColorscale:
-			fields = append(fields, structField{
-				Name:     xstrings.ToCamelCase(attr.Name),
-				JSONName: attr.Name,
-				Type:     "ColorScale",
-				Description: []string{
-					fmt.Sprintf("default: %s", attr.Dflt),
-					fmt.Sprintf("type: %s", attr.ValType),
-					attr.Description,
-				},
-			})
+		// case attr.ValType == ValTypeColorscale:
+		// 	fields = append(fields, structField{
+		// 		Name:     xstrings.ToCamelCase(attr.Name),
+		// 		JSONName: attr.Name,
+		// 		Type:     "color.Scale",
+		// 		Description: []string{
+		// 			fmt.Sprintf("default: %s", attr.Dflt),
+		// 			fmt.Sprintf("type: %s", attr.ValType),
+		// 			attr.Description,
+		// 		},
+		// 	})
 
 		default:
 			typeName := valTypeMap[attr.ValType]
 
 			// Special case, the attribute color may also be a ColorScale
 			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {
-				typeName = "ColorWithColorScale"
+				typeName = "color.ColorWithColorScale"
 			}
 			if attr.ArrayOK {
 				typeName = fmt.Sprintf("arrayok.Type[*%s]", typeName)
@@ -192,6 +192,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				JSONName: attr.Name,
 				Type:     typeName,
 				Description: []string{
+					// fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,

@@ -4,6 +4,7 @@ import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.31.1/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/generated/v2.31.1/offline"
 	"github.com/MetalBlueberry/go-plotly/types/arrayok"
+	"github.com/MetalBlueberry/go-plotly/types/color"
 )
 
 func main() {
@@ -125,7 +126,7 @@ func main() {
 		X: xData,
 		Y: []int{0, 430, 0, 570, 370, 370, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(grob.UseColor("rgba(1,1,1,0.0)")),
+			Color: arrayok.Value(color.UseColor("rgba(1,1,1,0.0)")),
 		},
 	}
 
@@ -135,9 +136,9 @@ func main() {
 		X: xData,
 		Y: []int{430, 260, 690, 0, 0, 0, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(grob.UseColor("rgba(55,128,191,0.7)")),
+			Color: arrayok.Value(color.UseColor("rgba(55,128,191,0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(grob.UseColor("rgba(55,128,191,1.0)")),
+				Color: arrayok.Value(color.UseColor("rgba(55,128,191,1.0)")),
 				Width: arrayok.Value(2.0),
 			},
 		},
@@ -149,9 +150,9 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 120, 200, 320, 0},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(grob.UseColor("rgba(219, 64, 82, 0.7)")),
+			Color: arrayok.Value(color.UseColor("rgba(219, 64, 82, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(grob.UseColor("rgba(219, 64, 82, 1.0)")),
+				Color: arrayok.Value(color.UseColor("rgba(219, 64, 82, 1.0)")),
 				Width: arrayok.Value(2.0),
 			},
 		},
@@ -163,9 +164,9 @@ func main() {
 		X: xData,
 		Y: []int{0, 0, 0, 0, 0, 0, 370},
 		Marker: &grob.BarMarker{
-			Color: arrayok.Value(grob.UseColor("rgba(50,171, 96, 0.7)")),
+			Color: arrayok.Value(color.UseColor("rgba(50,171, 96, 0.7)")),
 			Line: &grob.BarMarkerLine{
-				Color: arrayok.Value(grob.UseColor("rgba(50,171,96,1.0)")),
+				Color: arrayok.Value(color.UseColor("rgba(50,171,96,1.0)")),
 				Width: arrayok.Value(2.0),
 			},
 		},
