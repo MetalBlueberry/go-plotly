@@ -165,14 +165,7 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		MainType: sstruct{
 			Name:        xstrings.ToCamelCase(trace.Type),
 			Description: trace.Meta.Description,
-			Fields: []structField{
-				{
-					Name:        "Type",
-					JSONName:    "type",
-					Type:        "TraceType",
-					Description: []string{"is the type of the plot"},
-				},
-			},
+			Fields:      []structField{},
 		},
 		Objects:   []sstruct{},
 		Enums:     []enumFile{},
@@ -483,6 +476,37 @@ func (r *Renderer) WriteUnmarshal(w io.Writer) error {
 // unmarshalFile is a structure used to render unmarshal.tmpl
 type unmarshalFile struct {
 	Types []string
+}
+
+// CreateUnmarshalTests creates the unmarshal file on the given directory
+func (r *Renderer) CreateUnmarshalTests(dir string) error {
+	src := &bytes.Buffer{}
+	err := r.WriteUnmarshalTests(src)
+	if err != nil {
+		return err
+	}
+
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "unmarshal_gen_test.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteUnmarshal writes unmarshal to the given writer
+func (r *Renderer) WriteUnmarshalTests(w io.Writer) error {
+	return r.tmpl.ExecuteTemplate(w, "unmarshal_test.go", nil)
 }
 
 // valTypeMap maps between ValTypes and go types

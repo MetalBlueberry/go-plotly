@@ -26,7 +26,6 @@ func main() {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Scatter{
-				Type: grob.TraceTypeScatter,
 				X:    t,
 				Y:    y,
 				Mode: grob.ScatterModeMarkers,

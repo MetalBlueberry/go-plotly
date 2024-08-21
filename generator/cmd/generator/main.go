@@ -126,4 +126,10 @@ func generatePackage(projectRoot, schema, versionOutput, cdnUrl, tag string, cle
 	if err != nil {
 		log.Fatalf("unable to write unmarshal, %s", err)
 	}
+
+	err = r.CreateUnmarshalTests(graphObjectsOuput)
+	if err != nil {
+		log.Fatalf("unable to write unmarshal, %s", err)
+	}
+
 }

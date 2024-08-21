@@ -126,7 +126,6 @@ func main() {
 		Marker: &grob.BarMarker{
 			Color: grob.ArrayOKValue(grob.UseColor("rgba(1,1,1,0.0)")),
 		},
-		Type: grob.TraceTypeBar,
 	}
 
 	// Revenue
@@ -141,7 +140,6 @@ func main() {
 				Width: grob.ArrayOKValue(2.0),
 			},
 		},
-		Type: grob.TraceTypeBar,
 	}
 
 	// Cost
@@ -156,7 +154,6 @@ func main() {
 				Width: grob.ArrayOKValue(2.0),
 			},
 		},
-		Type: grob.TraceTypeBar,
 	}
 
 	// Profit
@@ -171,7 +168,6 @@ func main() {
 				Width: grob.ArrayOKValue(2.0),
 			},
 		},
-		Type: grob.TraceTypeBar,
 	}
 
 	data := grob.Traces{trace1, trace2, trace3, trace4}

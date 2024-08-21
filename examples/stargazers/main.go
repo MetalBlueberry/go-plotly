@@ -68,7 +68,6 @@ func main() {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Scatter{
-				Type: grob.TraceTypeScatter,
 				X:    x,
 				Y:    y,
 				Text: grob.ArrayOKArray(text...),

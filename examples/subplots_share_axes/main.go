@@ -55,26 +55,22 @@ func main() {
 	fig := &grob.Fig{
 		Data: grob.Traces{
 			&grob.Scatter{
-				Type: grob.TraceTypeScatter,
 				X:    []float64{1, 2, 3},
 				Y:    []float64{2, 3, 4},
 			},
 			&grob.Scatter{
-				Type:  grob.TraceTypeScatter,
 				X:     []float64{20, 30, 40},
 				Y:     []float64{5, 5, 5},
 				Xaxis: "x2",
 				Yaxis: "y",
 			},
 			&grob.Scatter{
-				Type:  grob.TraceTypeScatter,
 				X:     []float64{2, 3, 4},
 				Y:     []float64{600, 700, 800},
 				Xaxis: "x",
 				Yaxis: "y3",
 			},
 			&grob.Scatter{
-				Type:  grob.TraceTypeScatter,
 				X:     []float64{4000, 5000, 6000},
 				Y:     []float64{7000, 8000, 9000},
 				Xaxis: "x4",

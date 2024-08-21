@@ -51,7 +51,6 @@ func main() {
 	}
 
 	trace1 := &grob.Bar{
-		Type:         grob.TraceTypeBar,
 		X:            xValue,
 		Y:            yValue,
 		Text:         grob.ArrayOKArray(toString(yValue)...),

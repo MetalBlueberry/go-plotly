@@ -79,7 +79,6 @@ func main() {
 
 	fig := &grob.Fig{}
 	fig.Data = append(fig.Data, &grob.Scatter{
-		Type: grob.TraceTypeScatter,
 		X:    df.Col("Date").Records(),
 		Y:    df.Col("High").Float(),
 	})
