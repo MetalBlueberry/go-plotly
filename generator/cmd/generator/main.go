@@ -95,7 +95,6 @@ func generatePackage(projectRoot string, version generator.Version, clean bool) 
 		}
 	}
 
-	// graphobjects
 	err = r.CreatePlotly(graphObjectsOuput, version)
 	if err != nil {
 		log.Fatalf("unable to write plotly, %s", err)
@@ -114,6 +113,16 @@ func generatePackage(projectRoot string, version generator.Version, clean bool) 
 	err = r.CreateConfig(graphObjectsOuput)
 	if err != nil {
 		log.Fatalf("unable to write config, %s", err)
+	}
+
+	err = r.CreateAnimation(graphObjectsOuput)
+	if err != nil {
+		log.Fatalf("unable to write layout, %s", err)
+	}
+
+	err = r.CreateFrames(graphObjectsOuput)
+	if err != nil {
+		log.Fatalf("unable to write layout, %s", err)
 	}
 
 	err = r.CreateUnmarshal(graphObjectsOuput)

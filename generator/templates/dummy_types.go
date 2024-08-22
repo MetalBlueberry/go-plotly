@@ -11,6 +11,7 @@ import (
 
 type Layout struct{}
 type Config struct{}
+type Animation struct{}
 
 func UnmarshalTrace(json.RawMessage) (types.Trace, error) { return &Bar{}, nil }
 
