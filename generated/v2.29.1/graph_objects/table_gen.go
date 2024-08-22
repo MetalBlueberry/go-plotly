@@ -49,7 +49,7 @@ type Table struct {
 	// arrayOK: true
 	// type: number
 	// The width of columns expressed as a ratio. Columns fill the available width in proportion of their specified column widths.
-	Columnwidth types.ArrayOK[*float64] `json:"columnwidth,omitempty"`
+	Columnwidth *types.ArrayOK[*float64] `json:"columnwidth,omitempty"`
 
 	// Columnwidthsrc
 	// arrayOK: false
@@ -84,7 +84,7 @@ type Table struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo types.ArrayOK[*TableHoverinfo] `json:"hoverinfo,omitempty"`
+	Hoverinfo *types.ArrayOK[*TableHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -136,7 +136,7 @@ type Table struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
+	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
@@ -182,7 +182,7 @@ type TableCellsFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -198,7 +198,7 @@ type TableCellsFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -210,7 +210,7 @@ type TableCellsFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -222,7 +222,7 @@ type TableCellsFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -238,7 +238,7 @@ type TableCellsLine struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -250,7 +250,7 @@ type TableCellsLine struct {
 	// arrayOK: true
 	// type: number
 	//
-	Width types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
@@ -267,7 +267,7 @@ type TableCells struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align types.ArrayOK[*TableCellsAlign] `json:"align,omitempty"`
+	Align *types.ArrayOK[*TableCellsAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -312,7 +312,7 @@ type TableCells struct {
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
-	Prefix types.ArrayOK[*types.String] `json:"prefix,omitempty"`
+	Prefix *types.ArrayOK[*types.String] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
@@ -324,7 +324,7 @@ type TableCells struct {
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
-	Suffix types.ArrayOK[*types.String] `json:"suffix,omitempty"`
+	Suffix *types.ArrayOK[*types.String] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
@@ -380,7 +380,7 @@ type TableHeaderFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -396,7 +396,7 @@ type TableHeaderFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -408,7 +408,7 @@ type TableHeaderFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -420,7 +420,7 @@ type TableHeaderFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -436,7 +436,7 @@ type TableHeaderLine struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -448,7 +448,7 @@ type TableHeaderLine struct {
 	// arrayOK: true
 	// type: number
 	//
-	Width types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
@@ -465,7 +465,7 @@ type TableHeader struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-	Align types.ArrayOK[*TableHeaderAlign] `json:"align,omitempty"`
+	Align *types.ArrayOK[*TableHeaderAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -510,7 +510,7 @@ type TableHeader struct {
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
-	Prefix types.ArrayOK[*types.String] `json:"prefix,omitempty"`
+	Prefix *types.ArrayOK[*types.String] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
@@ -522,7 +522,7 @@ type TableHeader struct {
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
-	Suffix types.ArrayOK[*types.String] `json:"suffix,omitempty"`
+	Suffix *types.ArrayOK[*types.String] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
@@ -550,7 +550,7 @@ type TableHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -562,7 +562,7 @@ type TableHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -574,7 +574,7 @@ type TableHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -591,7 +591,7 @@ type TableHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align types.ArrayOK[*TableHoverlabelAlign] `json:"align,omitempty"`
+	Align *types.ArrayOK[*TableHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -603,7 +603,7 @@ type TableHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
+	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -615,7 +615,7 @@ type TableHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
+	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -632,7 +632,7 @@ type TableHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false

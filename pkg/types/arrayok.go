@@ -4,18 +4,18 @@ import (
 	"encoding/json"
 )
 
-func ArrayOKValue[T any](value T) ArrayOK[*T] {
+func ArrayOKValue[T any](value T) *ArrayOK[*T] {
 	v := &value
-	return ArrayOK[*T]{Value: v}
+	return &ArrayOK[*T]{Value: v}
 }
 
-func ArrayOKArray[T any](array ...T) ArrayOK[*T] {
+func ArrayOKArray[T any](array ...T) *ArrayOK[*T] {
 	out := make([]*T, len(array))
 	for i, v := range array {
 		value := v
 		out[i] = &value
 	}
-	return ArrayOK[*T]{
+	return &ArrayOK[*T]{
 		Array: out,
 	}
 }

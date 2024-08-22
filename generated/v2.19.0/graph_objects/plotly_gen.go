@@ -22,6 +22,9 @@ type Fig struct {
 
 	// Animation is not yet implemented, feel free to insert custom a struct
 	Animation interface{} `json:"animation,omitempty"`
+
+	// Frames are the animation frames
+	Frames interface{} `json:"frames,omitempty"`
 }
 
 // AddTraces Is a shorthand  to add figures to a given figure. It handles the case where the Traces value is nil.

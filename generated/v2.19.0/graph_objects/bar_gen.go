@@ -38,7 +38,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: any
 	// Sets where the bar base is drawn (in position axis units). In *stack* or *relative* barmode, traces that set *base* will be excluded and drawn in *overlay* mode instead.
-	Base types.ArrayOK[*interface{}] `json:"base,omitempty"`
+	Base *types.ArrayOK[*interface{}] `json:"base,omitempty"`
 
 	// Basesrc
 	// arrayOK: false
@@ -98,7 +98,7 @@ type Bar struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-	Hoverinfo types.ArrayOK[*BarHoverinfo] `json:"hoverinfo,omitempty"`
+	Hoverinfo *types.ArrayOK[*BarHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
@@ -115,7 +115,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
+	Hovertemplate *types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
@@ -127,7 +127,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
@@ -191,7 +191,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
-	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
+	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
@@ -209,7 +209,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: number
 	// Shifts the position where the bar is drawn (in position axis units). In *group* barmode, traces that set *offset* will be excluded and drawn in *overlay* mode instead.
-	Offset types.ArrayOK[*float64] `json:"offset,omitempty"`
+	Offset *types.ArrayOK[*float64] `json:"offset,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
@@ -267,7 +267,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
@@ -285,7 +285,7 @@ type Bar struct {
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
-	Textposition types.ArrayOK[*BarTextposition] `json:"textposition,omitempty"`
+	Textposition *types.ArrayOK[*BarTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
@@ -303,7 +303,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
-	Texttemplate types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
+	Texttemplate *types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
@@ -345,7 +345,7 @@ type Bar struct {
 	// arrayOK: true
 	// type: number
 	// Sets the bar width (in position axis units).
-	Width types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
@@ -657,7 +657,7 @@ type BarHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -669,7 +669,7 @@ type BarHoverlabelFont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -681,7 +681,7 @@ type BarHoverlabelFont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -698,7 +698,7 @@ type BarHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
-	Align types.ArrayOK[*BarHoverlabelAlign] `json:"align,omitempty"`
+	Align *types.ArrayOK[*BarHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
@@ -710,7 +710,7 @@ type BarHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
-	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
+	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -722,7 +722,7 @@ type BarHoverlabel struct {
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
-	Bordercolor types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
+	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
@@ -739,7 +739,7 @@ type BarHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
@@ -755,7 +755,7 @@ type BarInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -767,7 +767,7 @@ type BarInsidetextfont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -779,7 +779,7 @@ type BarInsidetextfont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -1219,7 +1219,7 @@ type BarMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
-	Color types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1249,7 +1249,7 @@ type BarMarkerLine struct {
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
-	Width types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
@@ -1265,7 +1265,7 @@ type BarMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
-	Bgcolor types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
+	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
@@ -1277,7 +1277,7 @@ type BarMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
-	Fgcolor types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
+	Fgcolor *types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
@@ -1303,7 +1303,7 @@ type BarMarkerPattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
-	Shape types.ArrayOK[*BarMarkerPatternShape] `json:"shape,omitempty"`
+	Shape *types.ArrayOK[*BarMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
@@ -1315,7 +1315,7 @@ type BarMarkerPattern struct {
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -1327,7 +1327,7 @@ type BarMarkerPattern struct {
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
-	Solidity types.ArrayOK[*float64] `json:"solidity,omitempty"`
+	Solidity *types.ArrayOK[*float64] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
@@ -1373,7 +1373,7 @@ type BarMarker struct {
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-	Color types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
@@ -1407,7 +1407,7 @@ type BarMarker struct {
 	// arrayOK: true
 	// type: number
 	// Sets the opacity of the bars.
-	Opacity types.ArrayOK[*float64] `json:"opacity,omitempty"`
+	Opacity *types.ArrayOK[*float64] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
@@ -1440,7 +1440,7 @@ type BarOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1452,7 +1452,7 @@ type BarOutsidetextfont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -1464,7 +1464,7 @@ type BarOutsidetextfont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
@@ -1536,7 +1536,7 @@ type BarTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
-	Color types.ArrayOK[*types.Color] `json:"color,omitempty"`
+	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
@@ -1548,7 +1548,7 @@ type BarTextfont struct {
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
@@ -1560,7 +1560,7 @@ type BarTextfont struct {
 	// arrayOK: true
 	// type: number
 	//
-	Size types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false

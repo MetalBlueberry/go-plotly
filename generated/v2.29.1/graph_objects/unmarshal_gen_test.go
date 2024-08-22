@@ -30,4 +30,8 @@ func TestMarshalTrace(t *testing.T) {
 		t.Logf("Output doesn't contain the type field, Expected to contain \"type\", got: %s", v)
 		t.FailNow()
 	}
+	if strings.Contains(string(v), "null") {
+		t.Logf("Output contains null fields, Expected to not contain any, got: %s", v)
+		t.FailNow()
+	}
 }

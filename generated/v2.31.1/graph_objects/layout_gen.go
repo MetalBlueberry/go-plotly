@@ -294,7 +294,7 @@ type Layout struct {
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information that can be used in various `text` attributes. Attributes such as the graph, axis and colorbar `title.text`, annotation `text` `trace.name` in legend items, `rangeselector`, `updatemenus` and `sliders` `label` text all support `meta`. One can access `meta` fields using template strings: `%{meta[i]}` where `i` is the index of the `meta` item in question. `meta` can also be an object for example `{key: value}` which can be accessed %{meta[key]}.
-	Meta types.ArrayOK[*interface{}] `json:"meta,omitempty"`
+	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
@@ -2086,7 +2086,7 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to add. Please note that these buttons will only be shown if they are compatible with all trace types used in a graph. Similar to `config.modeBarButtonsToAdd` option. This may include *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect*, *eraseshape*.
-	Add types.ArrayOK[*types.String] `json:"add,omitempty"`
+	Add *types.ArrayOK[*types.String] `json:"add,omitempty"`
 
 	// Addsrc
 	// arrayOK: false
@@ -2117,7 +2117,7 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to remove. Similar to `config.modeBarButtonsToRemove` option. This may include *autoScale2d*, *autoscale*, *editInChartStudio*, *editinchartstudio*, *hoverCompareCartesian*, *hovercompare*, *lasso*, *lasso2d*, *orbitRotation*, *orbitrotation*, *pan*, *pan2d*, *pan3d*, *reset*, *resetCameraDefault3d*, *resetCameraLastSave3d*, *resetGeo*, *resetSankeyGroup*, *resetScale2d*, *resetViewMapbox*, *resetViews*, *resetcameradefault*, *resetcameralastsave*, *resetsankeygroup*, *resetscale*, *resetview*, *resetviews*, *select*, *select2d*, *sendDataToCloud*, *senddatatocloud*, *tableRotation*, *tablerotation*, *toImage*, *toggleHover*, *toggleSpikelines*, *togglehover*, *togglespikelines*, *toimage*, *zoom*, *zoom2d*, *zoom3d*, *zoomIn2d*, *zoomInGeo*, *zoomInMapbox*, *zoomOut2d*, *zoomOutGeo*, *zoomOutMapbox*, *zoomin*, *zoomout*.
-	Remove types.ArrayOK[*types.String] `json:"remove,omitempty"`
+	Remove *types.ArrayOK[*types.String] `json:"remove,omitempty"`
 
 	// Removesrc
 	// arrayOK: false
@@ -2772,7 +2772,7 @@ type LayoutPolarRadialaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
@@ -3417,7 +3417,7 @@ type LayoutSceneXaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
@@ -3884,7 +3884,7 @@ type LayoutSceneYaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
@@ -4351,7 +4351,7 @@ type LayoutSceneZaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
@@ -6466,7 +6466,7 @@ type LayoutXaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
@@ -7370,7 +7370,7 @@ type LayoutYaxisAutorangeoptions struct {
 	// arrayOK: true
 	// type: any
 	// Ensure this value is included in autorange.
-	Include types.ArrayOK[*interface{}] `json:"include,omitempty"`
+	Include *types.ArrayOK[*interface{}] `json:"include,omitempty"`
 
 	// Includesrc
 	// arrayOK: false
