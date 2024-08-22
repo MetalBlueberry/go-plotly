@@ -299,10 +299,9 @@ type Violin struct {
 	Textsrc types.String `json:"textsrc,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: ViolinTransform
+	Transforms []ViolinTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -736,6 +735,10 @@ type ViolinStream struct {
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
 	Token types.String `json:"token,omitempty"`
+}
+
+// ViolinTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type ViolinTransform struct {
 }
 
 // ViolinUnselectedMarker

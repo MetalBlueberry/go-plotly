@@ -20,10 +20,9 @@ type Layout struct {
 	Activeshape *LayoutActiveshape `json:"activeshape,omitempty"`
 
 	// Annotations
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Annotations interface{} `json:"annotations,omitempty"`
+	// role: Object
+	// items: LayoutAnnotation
+	Annotations []LayoutAnnotation `json:"annotations,omitempty"`
 
 	// Autosize
 	// arrayOK: false
@@ -270,10 +269,9 @@ type Layout struct {
 	Iciclecolorway types.ColorList `json:"iciclecolorway,omitempty"`
 
 	// Images
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Images interface{} `json:"images,omitempty"`
+	// role: Object
+	// items: LayoutImage
+	Images []LayoutImage `json:"images,omitempty"`
 
 	// Legend
 	// arrayOK: false
@@ -384,10 +382,9 @@ type Layout struct {
 	Selectionrevision interface{} `json:"selectionrevision,omitempty"`
 
 	// Selections
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Selections interface{} `json:"selections,omitempty"`
+	// role: Object
+	// items: LayoutSelection
+	Selections []LayoutSelection `json:"selections,omitempty"`
 
 	// Separators
 	// arrayOK: false
@@ -396,10 +393,9 @@ type Layout struct {
 	Separators types.String `json:"separators,omitempty"`
 
 	// Shapes
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Shapes interface{} `json:"shapes,omitempty"`
+	// role: Object
+	// items: LayoutShape
+	Shapes []LayoutShape `json:"shapes,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
@@ -408,10 +404,9 @@ type Layout struct {
 	Showlegend types.Bool `json:"showlegend,omitempty"`
 
 	// Sliders
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Sliders interface{} `json:"sliders,omitempty"`
+	// role: Object
+	// items: LayoutSlider
+	Sliders []LayoutSlider `json:"sliders,omitempty"`
 
 	// Smith
 	// arrayOK: false
@@ -469,10 +464,9 @@ type Layout struct {
 	Uniformtext *LayoutUniformtext `json:"uniformtext,omitempty"`
 
 	// Updatemenus
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Updatemenus interface{} `json:"updatemenus,omitempty"`
+	// role: Object
+	// items: LayoutUpdatemenu
+	Updatemenus []LayoutUpdatemenu `json:"updatemenus,omitempty"`
 
 	// Violingap
 	// arrayOK: false
@@ -601,6 +595,341 @@ type LayoutActiveshape struct {
 	Opacity float64 `json:"opacity,omitempty"`
 }
 
+// AnnotationFont Sets the annotation text font.
+type AnnotationFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// AnnotationHoverlabelFont Sets the hover label text font. By default uses the global hover font and size, with color from `hoverlabel.bordercolor`.
+type AnnotationHoverlabelFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// AnnotationHoverlabel
+type AnnotationHoverlabel struct {
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the hover label. By default uses the annotation's `bgcolor` made opaque, or white if it was transparent.
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the border color of the hover label. By default uses either dark grey or white, for maximum contrast with `hoverlabel.bgcolor`.
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *AnnotationHoverlabelFont `json:"font,omitempty"`
+}
+
+// LayoutAnnotation
+type LayoutAnnotation struct {
+
+	// Align
+	// arrayOK: false
+	// default: center
+	// type: enumerated
+	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	Align AnnotationAlign `json:"align,omitempty"`
+
+	// Arrowcolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the annotation arrow.
+	Arrowcolor types.Color `json:"arrowcolor,omitempty"`
+
+	// Arrowhead
+	// arrayOK: false
+	// type: integer
+	// Sets the end annotation arrow head style.
+	Arrowhead int64 `json:"arrowhead,omitempty"`
+
+	// Arrowside
+	// arrayOK: false
+	// default: end
+	// type: flaglist
+	// Sets the annotation arrow head position.
+	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
+
+	// Arrowsize
+	// arrayOK: false
+	// type: number
+	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	Arrowsize float64 `json:"arrowsize,omitempty"`
+
+	// Arrowwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of annotation arrow line.
+	Arrowwidth float64 `json:"arrowwidth,omitempty"`
+
+	// Ax
+	// arrayOK: false
+	// type: any
+	// Sets the x component of the arrow tail about the arrow head. If `axref` is `pixel`, a positive (negative) component corresponds to an arrow pointing from right to left (left to right). If `axref` is not `pixel` and is exactly the same as `xref`, this is an absolute value on that axis, like `x`, specified in the same coordinates as `xref`.
+	Ax interface{} `json:"ax,omitempty"`
+
+	// Axref
+	// arrayOK: false
+	// default: pixel
+	// type: enumerated
+	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+	Axref AnnotationAxref `json:"axref,omitempty"`
+
+	// Ay
+	// arrayOK: false
+	// type: any
+	// Sets the y component of the arrow tail about the arrow head. If `ayref` is `pixel`, a positive (negative) component corresponds to an arrow pointing from bottom to top (top to bottom). If `ayref` is not `pixel` and is exactly the same as `yref`, this is an absolute value on that axis, like `y`, specified in the same coordinates as `yref`.
+	Ay interface{} `json:"ay,omitempty"`
+
+	// Ayref
+	// arrayOK: false
+	// default: pixel
+	// type: enumerated
+	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+	Ayref AnnotationAyref `json:"ayref,omitempty"`
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the annotation.
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the border enclosing the annotation `text`.
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Borderpad
+	// arrayOK: false
+	// type: number
+	// Sets the padding (in px) between the `text` and the enclosing border.
+	Borderpad float64 `json:"borderpad,omitempty"`
+
+	// Borderwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of the border enclosing the annotation `text`.
+	Borderwidth float64 `json:"borderwidth,omitempty"`
+
+	// Captureevents
+	// arrayOK: false
+	// type: boolean
+	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
+	Captureevents types.Bool `json:"captureevents,omitempty"`
+
+	// Clicktoshow
+	// arrayOK: false
+	// default: %!s(bool=false)
+	// type: enumerated
+	// Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
+	Clicktoshow AnnotationClicktoshow `json:"clicktoshow,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *AnnotationFont `json:"font,omitempty"`
+
+	// Height
+	// arrayOK: false
+	// type: number
+	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
+	Height float64 `json:"height,omitempty"`
+
+	// Hoverlabel
+	// arrayOK: false
+	// role: Object
+	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
+
+	// Hovertext
+	// arrayOK: false
+	// type: string
+	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
+	Hovertext types.String `json:"hovertext,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the annotation (text + arrow).
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Showarrow
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
+	Showarrow types.Bool `json:"showarrow,omitempty"`
+
+	// Standoff
+	// arrayOK: false
+	// type: number
+	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	Standoff float64 `json:"standoff,omitempty"`
+
+	// Startarrowhead
+	// arrayOK: false
+	// type: integer
+	// Sets the start annotation arrow head style.
+	Startarrowhead int64 `json:"startarrowhead,omitempty"`
+
+	// Startarrowsize
+	// arrayOK: false
+	// type: number
+	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	Startarrowsize float64 `json:"startarrowsize,omitempty"`
+
+	// Startstandoff
+	// arrayOK: false
+	// type: number
+	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	Startstandoff float64 `json:"startstandoff,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
+	Text types.String `json:"text,omitempty"`
+
+	// Textangle
+	// arrayOK: false
+	// type: angle
+	// Sets the angle at which the `text` is drawn with respect to the horizontal.
+	Textangle float64 `json:"textangle,omitempty"`
+
+	// Valign
+	// arrayOK: false
+	// default: middle
+	// type: enumerated
+	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+	Valign AnnotationValign `json:"valign,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this annotation is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
+	Width float64 `json:"width,omitempty"`
+
+	// X
+	// arrayOK: false
+	// type: any
+	// Sets the annotation's x position. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	X interface{} `json:"x,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: auto
+	// type: enumerated
+	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
+
+	// Xclick
+	// arrayOK: false
+	// type: any
+	// Toggle this annotation when clicking a data point whose `x` value is `xclick` rather than the annotation's `x` value.
+	Xclick interface{} `json:"xclick,omitempty"`
+
+	// Xref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	Xref AnnotationXref `json:"xref,omitempty"`
+
+	// Xshift
+	// arrayOK: false
+	// type: number
+	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
+	Xshift float64 `json:"xshift,omitempty"`
+
+	// Y
+	// arrayOK: false
+	// type: any
+	// Sets the annotation's y position. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	Y interface{} `json:"y,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: auto
+	// type: enumerated
+	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
+
+	// Yclick
+	// arrayOK: false
+	// type: any
+	// Toggle this annotation when clicking a data point whose `y` value is `yclick` rather than the annotation's `y` value.
+	Yclick interface{} `json:"yclick,omitempty"`
+
+	// Yref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	Yref AnnotationYref `json:"yref,omitempty"`
+
+	// Yshift
+	// arrayOK: false
+	// type: number
+	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
+	Yshift float64 `json:"yshift,omitempty"`
+}
+
 // LayoutColoraxisColorbarTickfont Sets the color bar's tick label font
 type LayoutColoraxisColorbarTickfont struct {
 
@@ -621,6 +950,40 @@ type LayoutColoraxisColorbarTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutColoraxisColorbarTickformatstop
+type LayoutColoraxisColorbarTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutColoraxisColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -827,10 +1190,9 @@ type LayoutColoraxisColorbar struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutColoraxisColorbarTickformatstop
+	Tickformatstops []LayoutColoraxisColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
 	// arrayOK: false
@@ -1643,6 +2005,106 @@ type LayoutHoverlabel struct {
 	Namelength int64 `json:"namelength,omitempty"`
 }
 
+// LayoutImage
+type LayoutImage struct {
+
+	// Layer
+	// arrayOK: false
+	// default: above
+	// type: enumerated
+	// Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
+	Layer ImageLayer `json:"layer,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the image.
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Sizex
+	// arrayOK: false
+	// type: number
+	// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width. When `xref` ends with ` domain`, units are sized relative to the axis width.
+	Sizex float64 `json:"sizex,omitempty"`
+
+	// Sizey
+	// arrayOK: false
+	// type: number
+	// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height. When `yref` ends with ` domain`, units are sized relative to the axis height.
+	Sizey float64 `json:"sizey,omitempty"`
+
+	// Sizing
+	// arrayOK: false
+	// default: contain
+	// type: enumerated
+	// Specifies which dimension of the image to constrain.
+	Sizing ImageSizing `json:"sizing,omitempty"`
+
+	// Source
+	// arrayOK: false
+	// type: string
+	// Specifies the URL of the image to be used. The URL must be accessible from the domain where the plot code is run, and can be either relative or absolute.
+	Source types.String `json:"source,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this image is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// X
+	// arrayOK: false
+	// type: any
+	// Sets the image's x position. When `xref` is set to `paper`, units are sized relative to the plot height. See `xref` for more info
+	X interface{} `json:"x,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: left
+	// type: enumerated
+	// Sets the anchor for the x position
+	Xanchor ImageXanchor `json:"xanchor,omitempty"`
+
+	// Xref
+	// arrayOK: false
+	// default: paper
+	// type: enumerated
+	// Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	Xref ImageXref `json:"xref,omitempty"`
+
+	// Y
+	// arrayOK: false
+	// type: any
+	// Sets the image's y position. When `yref` is set to `paper`, units are sized relative to the plot height. See `yref` for more info
+	Y interface{} `json:"y,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: top
+	// type: enumerated
+	// Sets the anchor for the y position.
+	Yanchor ImageYanchor `json:"yanchor,omitempty"`
+
+	// Yref
+	// arrayOK: false
+	// default: paper
+	// type: enumerated
+	// Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	Yref ImageYref `json:"yref,omitempty"`
+}
+
 // LayoutLegendFont Sets the font used to text the legend items.
 type LayoutLegendFont struct {
 
@@ -1972,6 +2434,221 @@ type LayoutMapboxDomain struct {
 	Y interface{} `json:"y,omitempty"`
 }
 
+// LayerCircle
+type LayerCircle struct {
+
+	// Radius
+	// arrayOK: false
+	// type: number
+	// Sets the circle radius (mapbox.layer.paint.circle-radius). Has an effect only when `type` is set to *circle*.
+	Radius float64 `json:"radius,omitempty"`
+}
+
+// LayerFill
+type LayerFill struct {
+
+	// Outlinecolor
+	// arrayOK: false
+	// type: color
+	// Sets the fill outline color (mapbox.layer.paint.fill-outline-color). Has an effect only when `type` is set to *fill*.
+	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
+}
+
+// LayerLine
+type LayerLine struct {
+
+	// Dash
+	// arrayOK: false
+	// type: data_array
+	// Sets the length of dashes and gaps (mapbox.layer.paint.line-dasharray). Has an effect only when `type` is set to *line*.
+	Dash interface{} `json:"dash,omitempty"`
+
+	// Dashsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `dash`.
+	Dashsrc types.String `json:"dashsrc,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets the line width (mapbox.layer.paint.line-width). Has an effect only when `type` is set to *line*.
+	Width float64 `json:"width,omitempty"`
+}
+
+// LayerSymbolTextfont Sets the icon text font (color=mapbox.layer.paint.text-color, size=mapbox.layer.layout.text-size). Has an effect only when `type` is set to *symbol*.
+type LayerSymbolTextfont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// LayerSymbol
+type LayerSymbol struct {
+
+	// Icon
+	// arrayOK: false
+	// type: string
+	// Sets the symbol icon image (mapbox.layer.layout.icon-image). Full list: https://www.mapbox.com/maki-icons/
+	Icon types.String `json:"icon,omitempty"`
+
+	// Iconsize
+	// arrayOK: false
+	// type: number
+	// Sets the symbol icon size (mapbox.layer.layout.icon-size). Has an effect only when `type` is set to *symbol*.
+	Iconsize float64 `json:"iconsize,omitempty"`
+
+	// Placement
+	// arrayOK: false
+	// default: point
+	// type: enumerated
+	// Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
+	Placement LayerSymbolPlacement `json:"placement,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the symbol text (mapbox.layer.layout.text-field).
+	Text types.String `json:"text,omitempty"`
+
+	// Textfont
+	// arrayOK: false
+	// role: Object
+	Textfont *LayerSymbolTextfont `json:"textfont,omitempty"`
+
+	// Textposition
+	// arrayOK: false
+	// default: middle center
+	// type: enumerated
+	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+	Textposition LayerSymbolTextposition `json:"textposition,omitempty"`
+}
+
+// LayoutMapboxLayer
+type LayoutMapboxLayer struct {
+
+	// Below
+	// arrayOK: false
+	// type: string
+	// Determines if the layer will be inserted before the layer with the specified ID. If omitted or set to '', the layer will be inserted above every existing layer.
+	Below types.String `json:"below,omitempty"`
+
+	// Circle
+	// arrayOK: false
+	// role: Object
+	Circle *LayerCircle `json:"circle,omitempty"`
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the primary layer color. If `type` is *circle*, color corresponds to the circle color (mapbox.layer.paint.circle-color) If `type` is *line*, color corresponds to the line color (mapbox.layer.paint.line-color) If `type` is *fill*, color corresponds to the fill color (mapbox.layer.paint.fill-color) If `type` is *symbol*, color corresponds to the icon color (mapbox.layer.paint.icon-color)
+	Color types.Color `json:"color,omitempty"`
+
+	// Coordinates
+	// arrayOK: false
+	// type: any
+	// Sets the coordinates array contains [longitude, latitude] pairs for the image corners listed in clockwise order: top left, top right, bottom right, bottom left. Only has an effect for *image* `sourcetype`.
+	Coordinates interface{} `json:"coordinates,omitempty"`
+
+	// Fill
+	// arrayOK: false
+	// role: Object
+	Fill *LayerFill `json:"fill,omitempty"`
+
+	// Line
+	// arrayOK: false
+	// role: Object
+	Line *LayerLine `json:"line,omitempty"`
+
+	// Maxzoom
+	// arrayOK: false
+	// type: number
+	// Sets the maximum zoom level (mapbox.layer.maxzoom). At zoom levels equal to or greater than the maxzoom, the layer will be hidden.
+	Maxzoom float64 `json:"maxzoom,omitempty"`
+
+	// Minzoom
+	// arrayOK: false
+	// type: number
+	// Sets the minimum zoom level (mapbox.layer.minzoom). At zoom levels less than the minzoom, the layer will be hidden.
+	Minzoom float64 `json:"minzoom,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the layer. If `type` is *circle*, opacity corresponds to the circle opacity (mapbox.layer.paint.circle-opacity) If `type` is *line*, opacity corresponds to the line opacity (mapbox.layer.paint.line-opacity) If `type` is *fill*, opacity corresponds to the fill opacity (mapbox.layer.paint.fill-opacity) If `type` is *symbol*, opacity corresponds to the icon/text opacity (mapbox.layer.paint.text-opacity)
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Source
+	// arrayOK: false
+	// type: any
+	// Sets the source data for this layer (mapbox.layer.source). When `sourcetype` is set to *geojson*, `source` can be a URL to a GeoJSON or a GeoJSON object. When `sourcetype` is set to *vector* or *raster*, `source` can be a URL or an array of tile URLs. When `sourcetype` is set to *image*, `source` can be a URL to an image.
+	Source interface{} `json:"source,omitempty"`
+
+	// Sourceattribution
+	// arrayOK: false
+	// type: string
+	// Sets the attribution for this source.
+	Sourceattribution types.String `json:"sourceattribution,omitempty"`
+
+	// Sourcelayer
+	// arrayOK: false
+	// type: string
+	// Specifies the layer to use from a vector tile source (mapbox.layer.source-layer). Required for *vector* source type that supports multiple layers.
+	Sourcelayer types.String `json:"sourcelayer,omitempty"`
+
+	// Sourcetype
+	// arrayOK: false
+	// default: geojson
+	// type: enumerated
+	// Sets the source type for this layer, that is the type of the layer data.
+	Sourcetype LayerSourcetype `json:"sourcetype,omitempty"`
+
+	// Symbol
+	// arrayOK: false
+	// role: Object
+	Symbol *LayerSymbol `json:"symbol,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Type
+	// arrayOK: false
+	// default: circle
+	// type: enumerated
+	// Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
+	Type LayerType `json:"type,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether this layer is displayed
+	Visible types.Bool `json:"visible,omitempty"`
+}
+
 // LayoutMapbox
 type LayoutMapbox struct {
 
@@ -2003,10 +2680,9 @@ type LayoutMapbox struct {
 	Domain *LayoutMapboxDomain `json:"domain,omitempty"`
 
 	// Layers
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Layers interface{} `json:"layers,omitempty"`
+	// role: Object
+	// items: LayoutMapboxLayer
+	Layers []LayoutMapboxLayer `json:"layers,omitempty"`
 
 	// Pitch
 	// arrayOK: false
@@ -2422,6 +3098,40 @@ type LayoutPolarAngularaxisTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// LayoutPolarAngularaxisTickformatstop
+type LayoutPolarAngularaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
+}
+
 // LayoutPolarAngularaxis
 type LayoutPolarAngularaxis struct {
 
@@ -2632,10 +3342,9 @@ type LayoutPolarAngularaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutPolarAngularaxisTickformatstop
+	Tickformatstops []LayoutPolarAngularaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -2813,6 +3522,40 @@ type LayoutPolarRadialaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutPolarRadialaxisTickformatstop
+type LayoutPolarRadialaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutPolarRadialaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -3099,10 +3842,9 @@ type LayoutPolarRadialaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutPolarRadialaxisTickformatstop
+	Tickformatstops []LayoutPolarRadialaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -3245,6 +3987,235 @@ type LayoutPolar struct {
 	// type: any
 	// Controls persistence of user-driven changes in axis attributes, if not overridden in the individual axes. Defaults to `layout.uirevision`.
 	Uirevision interface{} `json:"uirevision,omitempty"`
+}
+
+// LayoutSceneAnnotation
+type LayoutSceneAnnotation struct {
+
+	// Align
+	// arrayOK: false
+	// default: center
+	// type: enumerated
+	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	Align AnnotationAlign `json:"align,omitempty"`
+
+	// Arrowcolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the annotation arrow.
+	Arrowcolor types.Color `json:"arrowcolor,omitempty"`
+
+	// Arrowhead
+	// arrayOK: false
+	// type: integer
+	// Sets the end annotation arrow head style.
+	Arrowhead int64 `json:"arrowhead,omitempty"`
+
+	// Arrowside
+	// arrayOK: false
+	// default: end
+	// type: flaglist
+	// Sets the annotation arrow head position.
+	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
+
+	// Arrowsize
+	// arrayOK: false
+	// type: number
+	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	Arrowsize float64 `json:"arrowsize,omitempty"`
+
+	// Arrowwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of annotation arrow line.
+	Arrowwidth float64 `json:"arrowwidth,omitempty"`
+
+	// Ax
+	// arrayOK: false
+	// type: number
+	// Sets the x component of the arrow tail about the arrow head (in pixels).
+	Ax float64 `json:"ax,omitempty"`
+
+	// Ay
+	// arrayOK: false
+	// type: number
+	// Sets the y component of the arrow tail about the arrow head (in pixels).
+	Ay float64 `json:"ay,omitempty"`
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the annotation.
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the border enclosing the annotation `text`.
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Borderpad
+	// arrayOK: false
+	// type: number
+	// Sets the padding (in px) between the `text` and the enclosing border.
+	Borderpad float64 `json:"borderpad,omitempty"`
+
+	// Borderwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of the border enclosing the annotation `text`.
+	Borderwidth float64 `json:"borderwidth,omitempty"`
+
+	// Captureevents
+	// arrayOK: false
+	// type: boolean
+	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
+	Captureevents types.Bool `json:"captureevents,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *AnnotationFont `json:"font,omitempty"`
+
+	// Height
+	// arrayOK: false
+	// type: number
+	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
+	Height float64 `json:"height,omitempty"`
+
+	// Hoverlabel
+	// arrayOK: false
+	// role: Object
+	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
+
+	// Hovertext
+	// arrayOK: false
+	// type: string
+	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
+	Hovertext types.String `json:"hovertext,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the annotation (text + arrow).
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Showarrow
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
+	Showarrow types.Bool `json:"showarrow,omitempty"`
+
+	// Standoff
+	// arrayOK: false
+	// type: number
+	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	Standoff float64 `json:"standoff,omitempty"`
+
+	// Startarrowhead
+	// arrayOK: false
+	// type: integer
+	// Sets the start annotation arrow head style.
+	Startarrowhead int64 `json:"startarrowhead,omitempty"`
+
+	// Startarrowsize
+	// arrayOK: false
+	// type: number
+	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	Startarrowsize float64 `json:"startarrowsize,omitempty"`
+
+	// Startstandoff
+	// arrayOK: false
+	// type: number
+	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	Startstandoff float64 `json:"startstandoff,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
+	Text types.String `json:"text,omitempty"`
+
+	// Textangle
+	// arrayOK: false
+	// type: angle
+	// Sets the angle at which the `text` is drawn with respect to the horizontal.
+	Textangle float64 `json:"textangle,omitempty"`
+
+	// Valign
+	// arrayOK: false
+	// default: middle
+	// type: enumerated
+	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+	Valign AnnotationValign `json:"valign,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this annotation is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
+	Width float64 `json:"width,omitempty"`
+
+	// X
+	// arrayOK: false
+	// type: any
+	// Sets the annotation's x position.
+	X interface{} `json:"x,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: auto
+	// type: enumerated
+	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
+
+	// Xshift
+	// arrayOK: false
+	// type: number
+	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
+	Xshift float64 `json:"xshift,omitempty"`
+
+	// Y
+	// arrayOK: false
+	// type: any
+	// Sets the annotation's y position.
+	Y interface{} `json:"y,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: auto
+	// type: enumerated
+	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
+
+	// Yshift
+	// arrayOK: false
+	// type: number
+	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
+	Yshift float64 `json:"yshift,omitempty"`
+
+	// Z
+	// arrayOK: false
+	// type: any
+	// Sets the annotation's z position.
+	Z interface{} `json:"z,omitempty"`
 }
 
 // LayoutSceneAspectratio Sets this scene's axis aspectratio.
@@ -3458,6 +4429,40 @@ type LayoutSceneXaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutSceneXaxisTickformatstop
+type LayoutSceneXaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutSceneXaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -3761,10 +4766,9 @@ type LayoutSceneXaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutSceneXaxisTickformatstop
+	Tickformatstops []LayoutSceneXaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -3925,6 +4929,40 @@ type LayoutSceneYaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutSceneYaxisTickformatstop
+type LayoutSceneYaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutSceneYaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -4228,10 +5266,9 @@ type LayoutSceneYaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutSceneYaxisTickformatstop
+	Tickformatstops []LayoutSceneYaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -4392,6 +5429,40 @@ type LayoutSceneZaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutSceneZaxisTickformatstop
+type LayoutSceneZaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutSceneZaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -4695,10 +5766,9 @@ type LayoutSceneZaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutSceneZaxisTickformatstop
+	Tickformatstops []LayoutSceneZaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
@@ -4803,10 +5873,9 @@ type LayoutSceneZaxis struct {
 type LayoutScene struct {
 
 	// Annotations
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Annotations interface{} `json:"annotations,omitempty"`
+	// role: Object
+	// items: LayoutSceneAnnotation
+	Annotations []LayoutSceneAnnotation `json:"annotations,omitempty"`
 
 	// Aspectmode
 	// arrayOK: false
@@ -4870,6 +5939,740 @@ type LayoutScene struct {
 	// arrayOK: false
 	// role: Object
 	Zaxis *LayoutSceneZaxis `json:"zaxis,omitempty"`
+}
+
+// SelectionLine
+type SelectionLine struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the line color.
+	Color types.Color `json:"color,omitempty"`
+
+	// Dash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Dash types.String `json:"dash,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets the line width (in px).
+	Width float64 `json:"width,omitempty"`
+}
+
+// LayoutSelection
+type LayoutSelection struct {
+
+	// Line
+	// arrayOK: false
+	// role: Object
+	Line *SelectionLine `json:"line,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the selection.
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Path
+	// arrayOK: false
+	// type: string
+	// For `type` *path* - a valid SVG path similar to `shapes.path` in data coordinates. Allowed segments are: M, L and Z.
+	Path types.String `json:"path,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Type
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
+	Type SelectionType `json:"type,omitempty"`
+
+	// X0
+	// arrayOK: false
+	// type: any
+	// Sets the selection's starting x position.
+	X0 interface{} `json:"x0,omitempty"`
+
+	// X1
+	// arrayOK: false
+	// type: any
+	// Sets the selection's end x position.
+	X1 interface{} `json:"x1,omitempty"`
+
+	// Xref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	Xref SelectionXref `json:"xref,omitempty"`
+
+	// Y0
+	// arrayOK: false
+	// type: any
+	// Sets the selection's starting y position.
+	Y0 interface{} `json:"y0,omitempty"`
+
+	// Y1
+	// arrayOK: false
+	// type: any
+	// Sets the selection's end y position.
+	Y1 interface{} `json:"y1,omitempty"`
+
+	// Yref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	Yref SelectionYref `json:"yref,omitempty"`
+}
+
+// ShapeLabelFont Sets the shape label text font.
+type ShapeLabelFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// ShapeLabel
+type ShapeLabel struct {
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *ShapeLabelFont `json:"font,omitempty"`
+
+	// Padding
+	// arrayOK: false
+	// type: number
+	// Sets padding (in px) between edge of label and edge of shape.
+	Padding float64 `json:"padding,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the text to display with shape. It is also used for legend item if `name` is not provided.
+	Text types.String `json:"text,omitempty"`
+
+	// Textangle
+	// arrayOK: false
+	// type: angle
+	// Sets the angle at which the label text is drawn with respect to the horizontal. For lines, angle *auto* is the same angle as the line. For all other shapes, angle *auto* is horizontal.
+	Textangle float64 `json:"textangle,omitempty"`
+
+	// Textposition
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+	Textposition ShapeLabelTextposition `json:"textposition,omitempty"`
+
+	// Texttemplate
+	// arrayOK: false
+	// type: string
+	// Template string used for rendering the shape's label. Note that this will override `text`. Variables are inserted using %{variable}, for example "x0: %{x0}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{x0:$.2f}". See https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{x0|%m %b %Y}". See https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. A single multiplication or division operation may be applied to numeric variables, and combined with d3 number formatting, for example "Length in cm: %{x0*2.54}", "%{slope*60:.1f} meters per second." For log axes, variable values are given in log units. For date axes, x/y coordinate variables and center variables use datetimes, while all other variable values use values in ms. Finally, the template string has access to variables `x0`, `x1`, `y0`, `y1`, `slope`, `dx`, `dy`, `width`, `height`, `length`, `xcenter` and `ycenter`.
+	Texttemplate types.String `json:"texttemplate,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: auto
+	// type: enumerated
+	// Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
+	Xanchor ShapeLabelXanchor `json:"xanchor,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
+	Yanchor ShapeLabelYanchor `json:"yanchor,omitempty"`
+}
+
+// ShapeLegendgrouptitleFont Sets this legend group's title font.
+type ShapeLegendgrouptitleFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// ShapeLegendgrouptitle
+type ShapeLegendgrouptitle struct {
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *ShapeLegendgrouptitleFont `json:"font,omitempty"`
+
+	// Text
+	// arrayOK: false
+	// type: string
+	// Sets the title of the legend group.
+	Text types.String `json:"text,omitempty"`
+}
+
+// ShapeLine
+type ShapeLine struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the line color.
+	Color types.Color `json:"color,omitempty"`
+
+	// Dash
+	// arrayOK: false
+	// type: string
+	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	Dash types.String `json:"dash,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets the line width (in px).
+	Width float64 `json:"width,omitempty"`
+}
+
+// LayoutShape
+type LayoutShape struct {
+
+	// Editable
+	// arrayOK: false
+	// type: boolean
+	// Determines whether the shape could be activated for edit or not. Has no effect when the older editable shapes mode is enabled via `config.editable` or `config.edits.shapePosition`.
+	Editable types.Bool `json:"editable,omitempty"`
+
+	// Fillcolor
+	// arrayOK: false
+	// type: color
+	// Sets the color filling the shape's interior. Only applies to closed shapes.
+	Fillcolor types.Color `json:"fillcolor,omitempty"`
+
+	// Fillrule
+	// arrayOK: false
+	// default: evenodd
+	// type: enumerated
+	// Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+	Fillrule ShapeFillrule `json:"fillrule,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// role: Object
+	Label *ShapeLabel `json:"label,omitempty"`
+
+	// Layer
+	// arrayOK: false
+	// default: above
+	// type: enumerated
+	// Specifies whether shapes are drawn below gridlines (*below*), between gridlines and traces (*between*) or above traces (*above*).
+	Layer ShapeLayer `json:"layer,omitempty"`
+
+	// Legend
+	// arrayOK: false
+	// type: subplotid
+	// Sets the reference to a legend to show this shape in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	Legend types.String `json:"legend,omitempty"`
+
+	// Legendgroup
+	// arrayOK: false
+	// type: string
+	// Sets the legend group for this shape. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	Legendgroup types.String `json:"legendgroup,omitempty"`
+
+	// Legendgrouptitle
+	// arrayOK: false
+	// role: Object
+	Legendgrouptitle *ShapeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+
+	// Legendrank
+	// arrayOK: false
+	// type: number
+	// Sets the legend rank for this shape. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	Legendrank float64 `json:"legendrank,omitempty"`
+
+	// Legendwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px or fraction) of the legend for this shape.
+	Legendwidth float64 `json:"legendwidth,omitempty"`
+
+	// Line
+	// arrayOK: false
+	// role: Object
+	Line *ShapeLine `json:"line,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Opacity
+	// arrayOK: false
+	// type: number
+	// Sets the opacity of the shape.
+	Opacity float64 `json:"opacity,omitempty"`
+
+	// Path
+	// arrayOK: false
+	// type: string
+	// For `type` *path* - a valid SVG path with the pixel values replaced by data values in `xsizemode`/`ysizemode` being *scaled* and taken unmodified as pixels relative to `xanchor` and `yanchor` in case of *pixel* size mode. There are a few restrictions / quirks only absolute instructions, not relative. So the allowed segments are: M, L, H, V, Q, C, T, S, and Z arcs (A) are not allowed because radius rx and ry are relative. In the future we could consider supporting relative commands, but we would have to decide on how to handle date and log axes. Note that even as is, Q and C Bezier paths that are smooth on linear axes may not be smooth on log, and vice versa. no chained "polybezier" commands - specify the segment type for each one. On category axes, values are numbers scaled to the serial numbers of categories because using the categories themselves there would be no way to describe fractional positions On data axes: because space and T are both normal components of path strings, we can't use either to separate date from time parts. Therefore we'll use underscore for this purpose: 2015-02-21_13:45:56.789
+	Path types.String `json:"path,omitempty"`
+
+	// Showlegend
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this shape is shown in the legend.
+	Showlegend types.Bool `json:"showlegend,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Type
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
+	Type ShapeType `json:"type,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// default: %!s(bool=true)
+	// type: enumerated
+	// Determines whether or not this shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	Visible ShapeVisible `json:"visible,omitempty"`
+
+	// X0
+	// arrayOK: false
+	// type: any
+	// Sets the shape's starting x position. See `type` and `xsizemode` for more info.
+	X0 interface{} `json:"x0,omitempty"`
+
+	// X1
+	// arrayOK: false
+	// type: any
+	// Sets the shape's end x position. See `type` and `xsizemode` for more info.
+	X1 interface{} `json:"x1,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// type: any
+	// Only relevant in conjunction with `xsizemode` set to *pixel*. Specifies the anchor point on the x axis to which `x0`, `x1` and x coordinates within `path` are relative to. E.g. useful to attach a pixel sized shape to a certain data value. No effect when `xsizemode` not set to *pixel*.
+	Xanchor interface{} `json:"xanchor,omitempty"`
+
+	// Xref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	Xref ShapeXref `json:"xref,omitempty"`
+
+	// Xsizemode
+	// arrayOK: false
+	// default: scaled
+	// type: enumerated
+	// Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
+	Xsizemode ShapeXsizemode `json:"xsizemode,omitempty"`
+
+	// Y0
+	// arrayOK: false
+	// type: any
+	// Sets the shape's starting y position. See `type` and `ysizemode` for more info.
+	Y0 interface{} `json:"y0,omitempty"`
+
+	// Y1
+	// arrayOK: false
+	// type: any
+	// Sets the shape's end y position. See `type` and `ysizemode` for more info.
+	Y1 interface{} `json:"y1,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// type: any
+	// Only relevant in conjunction with `ysizemode` set to *pixel*. Specifies the anchor point on the y axis to which `y0`, `y1` and y coordinates within `path` are relative to. E.g. useful to attach a pixel sized shape to a certain data value. No effect when `ysizemode` not set to *pixel*.
+	Yanchor interface{} `json:"yanchor,omitempty"`
+
+	// Yref
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	Yref ShapeYref `json:"yref,omitempty"`
+
+	// Ysizemode
+	// arrayOK: false
+	// default: scaled
+	// type: enumerated
+	// Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
+	Ysizemode ShapeYsizemode `json:"ysizemode,omitempty"`
+}
+
+// SliderCurrentvalueFont Sets the font of the current value label text.
+type SliderCurrentvalueFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// SliderCurrentvalue
+type SliderCurrentvalue struct {
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *SliderCurrentvalueFont `json:"font,omitempty"`
+
+	// Offset
+	// arrayOK: false
+	// type: number
+	// The amount of space, in pixels, between the current value label and the slider.
+	Offset float64 `json:"offset,omitempty"`
+
+	// Prefix
+	// arrayOK: false
+	// type: string
+	// When currentvalue.visible is true, this sets the prefix of the label.
+	Prefix types.String `json:"prefix,omitempty"`
+
+	// Suffix
+	// arrayOK: false
+	// type: string
+	// When currentvalue.visible is true, this sets the suffix of the label.
+	Suffix types.String `json:"suffix,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Shows the currently-selected value above the slider.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: left
+	// type: enumerated
+	// The alignment of the value readout relative to the length of the slider.
+	Xanchor SliderCurrentvalueXanchor `json:"xanchor,omitempty"`
+}
+
+// SliderFont Sets the font of the slider step labels.
+type SliderFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// SliderPad Set the padding of the slider component along each side.
+type SliderPad struct {
+
+	// B
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) along the bottom of the component.
+	B float64 `json:"b,omitempty"`
+
+	// L
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) on the left side of the component.
+	L float64 `json:"l,omitempty"`
+
+	// R
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) on the right side of the component.
+	R float64 `json:"r,omitempty"`
+
+	// T
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) along the top of the component.
+	T float64 `json:"t,omitempty"`
+}
+
+// SliderStep
+type SliderStep struct {
+
+	// Args
+	// arrayOK: false
+	// type: info_array
+	// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
+	Args interface{} `json:"args,omitempty"`
+
+	// Execute
+	// arrayOK: false
+	// type: boolean
+	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_sliderchange` method and executing the API command manually without losing the benefit of the slider automatically binding to the state of the plot through the specification of `method` and `args`.
+	Execute types.Bool `json:"execute,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// Sets the text label to appear on the slider
+	Label types.String `json:"label,omitempty"`
+
+	// Method
+	// arrayOK: false
+	// default: restyle
+	// type: enumerated
+	// Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
+	Method StepMethod `json:"method,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// Sets the value of the slider step, used to refer to the step programatically. Defaults to the slider label if not provided.
+	Value types.String `json:"value,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this step is included in the slider.
+	Visible types.Bool `json:"visible,omitempty"`
+}
+
+// SliderTransition
+type SliderTransition struct {
+
+	// Duration
+	// arrayOK: false
+	// type: number
+	// Sets the duration of the slider transition
+	Duration float64 `json:"duration,omitempty"`
+
+	// Easing
+	// arrayOK: false
+	// default: cubic-in-out
+	// type: enumerated
+	// Sets the easing function of the slider transition
+	Easing SliderTransitionEasing `json:"easing,omitempty"`
+}
+
+// LayoutSlider
+type LayoutSlider struct {
+
+	// Active
+	// arrayOK: false
+	// type: number
+	// Determines which button (by index starting from 0) is considered active.
+	Active float64 `json:"active,omitempty"`
+
+	// Activebgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the slider grip while dragging.
+	Activebgcolor types.Color `json:"activebgcolor,omitempty"`
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the slider.
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the border enclosing the slider.
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Borderwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of the border enclosing the slider.
+	Borderwidth float64 `json:"borderwidth,omitempty"`
+
+	// Currentvalue
+	// arrayOK: false
+	// role: Object
+	Currentvalue *SliderCurrentvalue `json:"currentvalue,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *SliderFont `json:"font,omitempty"`
+
+	// Len
+	// arrayOK: false
+	// type: number
+	// Sets the length of the slider This measure excludes the padding of both ends. That is, the slider's length is this length minus the padding on both ends.
+	Len float64 `json:"len,omitempty"`
+
+	// Lenmode
+	// arrayOK: false
+	// default: fraction
+	// type: enumerated
+	// Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	Lenmode SliderLenmode `json:"lenmode,omitempty"`
+
+	// Minorticklen
+	// arrayOK: false
+	// type: number
+	// Sets the length in pixels of minor step tick marks
+	Minorticklen float64 `json:"minorticklen,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Pad
+	// arrayOK: false
+	// role: Object
+	Pad *SliderPad `json:"pad,omitempty"`
+
+	// Steps
+	// role: Object
+	// items: SliderStep
+	Steps []SliderStep `json:"steps,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Tickcolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the border enclosing the slider.
+	Tickcolor types.Color `json:"tickcolor,omitempty"`
+
+	// Ticklen
+	// arrayOK: false
+	// type: number
+	// Sets the length in pixels of step tick marks
+	Ticklen float64 `json:"ticklen,omitempty"`
+
+	// Tickwidth
+	// arrayOK: false
+	// type: number
+	// Sets the tick width (in px).
+	Tickwidth float64 `json:"tickwidth,omitempty"`
+
+	// Transition
+	// arrayOK: false
+	// role: Object
+	Transition *SliderTransition `json:"transition,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not the slider is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// X
+	// arrayOK: false
+	// type: number
+	// Sets the x position (in normalized coordinates) of the slider.
+	X float64 `json:"x,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: left
+	// type: enumerated
+	// Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+	Xanchor SliderXanchor `json:"xanchor,omitempty"`
+
+	// Y
+	// arrayOK: false
+	// type: number
+	// Sets the y position (in normalized coordinates) of the slider.
+	Y float64 `json:"y,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: top
+	// type: enumerated
+	// Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+	Yanchor SliderYanchor `json:"yanchor,omitempty"`
 }
 
 // LayoutSmithDomain
@@ -5318,6 +7121,40 @@ type LayoutTernaryAaxisTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// LayoutTernaryAaxisTickformatstop
+type LayoutTernaryAaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
+}
+
 // LayoutTernaryAaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
 type LayoutTernaryAaxisTitleFont struct {
 
@@ -5519,10 +7356,9 @@ type LayoutTernaryAaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutTernaryAaxisTickformatstop
+	Tickformatstops []LayoutTernaryAaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -5624,6 +7460,40 @@ type LayoutTernaryBaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutTernaryBaxisTickformatstop
+type LayoutTernaryBaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutTernaryBaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -5827,10 +7697,9 @@ type LayoutTernaryBaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutTernaryBaxisTickformatstop
+	Tickformatstops []LayoutTernaryBaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -5932,6 +7801,40 @@ type LayoutTernaryCaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutTernaryCaxisTickformatstop
+type LayoutTernaryCaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutTernaryCaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -6135,10 +8038,9 @@ type LayoutTernaryCaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutTernaryCaxisTickformatstop
+	Tickformatstops []LayoutTernaryCaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -6447,6 +8349,216 @@ type LayoutUniformtext struct {
 	Mode LayoutUniformtextMode `json:"mode,omitempty"`
 }
 
+// UpdatemenuButton
+type UpdatemenuButton struct {
+
+	// Args
+	// arrayOK: false
+	// type: info_array
+	// Sets the arguments values to be passed to the Plotly method set in `method` on click.
+	Args interface{} `json:"args,omitempty"`
+
+	// Args2
+	// arrayOK: false
+	// type: info_array
+	// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
+	Args2 interface{} `json:"args2,omitempty"`
+
+	// Execute
+	// arrayOK: false
+	// type: boolean
+	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_buttonclicked` method and executing the API command manually without losing the benefit of the updatemenu automatically binding to the state of the plot through the specification of `method` and `args`.
+	Execute types.Bool `json:"execute,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// Sets the text label to appear on the button.
+	Label types.String `json:"label,omitempty"`
+
+	// Method
+	// arrayOK: false
+	// default: restyle
+	// type: enumerated
+	// Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
+	Method ButtonMethod `json:"method,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this button is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+}
+
+// UpdatemenuFont Sets the font of the update menu button text.
+type UpdatemenuFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	Family types.String `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	Size float64 `json:"size,omitempty"`
+}
+
+// UpdatemenuPad Sets the padding around the buttons or dropdown menu.
+type UpdatemenuPad struct {
+
+	// B
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) along the bottom of the component.
+	B float64 `json:"b,omitempty"`
+
+	// L
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) on the left side of the component.
+	L float64 `json:"l,omitempty"`
+
+	// R
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) on the right side of the component.
+	R float64 `json:"r,omitempty"`
+
+	// T
+	// arrayOK: false
+	// type: number
+	// The amount of padding (in px) along the top of the component.
+	T float64 `json:"t,omitempty"`
+}
+
+// LayoutUpdatemenu
+type LayoutUpdatemenu struct {
+
+	// Active
+	// arrayOK: false
+	// type: integer
+	// Determines which button (by index starting from 0) is considered active.
+	Active int64 `json:"active,omitempty"`
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the update menu buttons.
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the color of the border enclosing the update menu.
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Borderwidth
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of the border enclosing the update menu.
+	Borderwidth float64 `json:"borderwidth,omitempty"`
+
+	// Buttons
+	// role: Object
+	// items: UpdatemenuButton
+	Buttons []UpdatemenuButton `json:"buttons,omitempty"`
+
+	// Direction
+	// arrayOK: false
+	// default: down
+	// type: enumerated
+	// Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
+	Direction UpdatemenuDirection `json:"direction,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	Font *UpdatemenuFont `json:"font,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Pad
+	// arrayOK: false
+	// role: Object
+	Pad *UpdatemenuPad `json:"pad,omitempty"`
+
+	// Showactive
+	// arrayOK: false
+	// type: boolean
+	// Highlights active dropdown item or active button if true.
+	Showactive types.Bool `json:"showactive,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Type
+	// arrayOK: false
+	// default: dropdown
+	// type: enumerated
+	// Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
+	Type UpdatemenuType `json:"type,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not the update menu is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+
+	// X
+	// arrayOK: false
+	// type: number
+	// Sets the x position (in normalized coordinates) of the update menu.
+	X float64 `json:"x,omitempty"`
+
+	// Xanchor
+	// arrayOK: false
+	// default: right
+	// type: enumerated
+	// Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+	Xanchor UpdatemenuXanchor `json:"xanchor,omitempty"`
+
+	// Y
+	// arrayOK: false
+	// type: number
+	// Sets the y position (in normalized coordinates) of the update menu.
+	Y float64 `json:"y,omitempty"`
+
+	// Yanchor
+	// arrayOK: false
+	// default: top
+	// type: enumerated
+	// Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+	Yanchor UpdatemenuYanchor `json:"yanchor,omitempty"`
+}
+
 // LayoutXaxisAutorangeoptions
 type LayoutXaxisAutorangeoptions struct {
 
@@ -6577,6 +8689,101 @@ type LayoutXaxisMinor struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 }
 
+// LayoutXaxisRangebreak
+type LayoutXaxisRangebreak struct {
+
+	// Bounds
+	// arrayOK: false
+	// type: info_array
+	// Sets the lower and upper bounds of this axis rangebreak. Can be used with `pattern`.
+	Bounds interface{} `json:"bounds,omitempty"`
+
+	// Dvalue
+	// arrayOK: false
+	// type: number
+	// Sets the size of each `values` item. The default is one day in milliseconds.
+	Dvalue float64 `json:"dvalue,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Pattern
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+	Pattern RangebreakPattern `json:"pattern,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Values
+	// arrayOK: false
+	// type: info_array
+	// Sets the coordinate values corresponding to the rangebreaks. An alternative to `bounds`. Use `dvalue` to set the size of the values along the axis.
+	Values interface{} `json:"values,omitempty"`
+}
+
+// LayoutXaxisRangeselectorButton Sets the specifications for each buttons. By default, a range selector comes with no buttons.
+type LayoutXaxisRangeselectorButton struct {
+
+	// Count
+	// arrayOK: false
+	// type: number
+	// Sets the number of steps to take to update the range. Use with `step` to specify the update interval.
+	Count float64 `json:"count,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// Sets the text label to appear on the button.
+	Label types.String `json:"label,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Step
+	// arrayOK: false
+	// default: month
+	// type: enumerated
+	// The unit of measurement that the `count` value will set the range by.
+	Step ButtonStep `json:"step,omitempty"`
+
+	// Stepmode
+	// arrayOK: false
+	// default: backward
+	// type: enumerated
+	// Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
+	Stepmode ButtonStepmode `json:"stepmode,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this button is visible.
+	Visible types.Bool `json:"visible,omitempty"`
+}
+
 // LayoutXaxisRangeselectorFont Sets the font of the range selector button text.
 type LayoutXaxisRangeselectorFont struct {
 
@@ -6627,10 +8834,9 @@ type LayoutXaxisRangeselector struct {
 	Borderwidth float64 `json:"borderwidth,omitempty"`
 
 	// Buttons
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Buttons interface{} `json:"buttons,omitempty"`
+	// role: Object
+	// items: LayoutXaxisRangeselectorButton
+	Buttons []LayoutXaxisRangeselectorButton `json:"buttons,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -6758,6 +8964,40 @@ type LayoutXaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutXaxisTickformatstop
+type LayoutXaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutXaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -7046,10 +9286,9 @@ type LayoutXaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Rangebreaks interface{} `json:"rangebreaks,omitempty"`
+	// role: Object
+	// items: LayoutXaxisRangebreak
+	Rangebreaks []LayoutXaxisRangebreak `json:"rangebreaks,omitempty"`
 
 	// Rangemode
 	// arrayOK: false
@@ -7207,10 +9446,9 @@ type LayoutXaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutXaxisTickformatstop
+	Tickformatstops []LayoutXaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
 	// arrayOK: false
@@ -7481,6 +9719,53 @@ type LayoutYaxisMinor struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 }
 
+// LayoutYaxisRangebreak
+type LayoutYaxisRangebreak struct {
+
+	// Bounds
+	// arrayOK: false
+	// type: info_array
+	// Sets the lower and upper bounds of this axis rangebreak. Can be used with `pattern`.
+	Bounds interface{} `json:"bounds,omitempty"`
+
+	// Dvalue
+	// arrayOK: false
+	// type: number
+	// Sets the size of each `values` item. The default is one day in milliseconds.
+	Dvalue float64 `json:"dvalue,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Pattern
+	// arrayOK: false
+	// default: %!s(<nil>)
+	// type: enumerated
+	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+	Pattern RangebreakPattern `json:"pattern,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Values
+	// arrayOK: false
+	// type: info_array
+	// Sets the coordinate values corresponding to the rangebreaks. An alternative to `bounds`. Use `dvalue` to set the size of the values along the axis.
+	Values interface{} `json:"values,omitempty"`
+}
+
 // LayoutYaxisTickfont Sets the tick font.
 type LayoutYaxisTickfont struct {
 
@@ -7501,6 +9786,40 @@ type LayoutYaxisTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// LayoutYaxisTickformatstop
+type LayoutYaxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // LayoutYaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -7795,10 +10114,9 @@ type LayoutYaxis struct {
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Rangebreaks interface{} `json:"rangebreaks,omitempty"`
+	// role: Object
+	// items: LayoutYaxisRangebreak
+	Rangebreaks []LayoutYaxisRangebreak `json:"rangebreaks,omitempty"`
 
 	// Rangemode
 	// arrayOK: false
@@ -7952,10 +10270,9 @@ type LayoutYaxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: LayoutYaxisTickformatstop
+	Tickformatstops []LayoutYaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
 	// arrayOK: false
@@ -8096,6 +10413,213 @@ type LayoutYaxis struct {
 	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
 }
 
+// AnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+type AnnotationAlign string
+
+const (
+	AnnotationAlignLeft   AnnotationAlign = "left"
+	AnnotationAlignCenter AnnotationAlign = "center"
+	AnnotationAlignRight  AnnotationAlign = "right"
+)
+
+// AnnotationAxref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+type AnnotationAxref string
+
+const (
+	AnnotationAxrefPixel                                                                                                                   AnnotationAxref = "pixel"
+	AnnotationAxrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationAxref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// AnnotationAyref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+type AnnotationAyref string
+
+const (
+	AnnotationAyrefPixel                                                                                                                   AnnotationAyref = "pixel"
+	AnnotationAyrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationAyref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// AnnotationClicktoshow Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
+type AnnotationClicktoshow interface{}
+
+var (
+	AnnotationClicktoshowFalse AnnotationClicktoshow = false
+	AnnotationClicktoshowOnoff AnnotationClicktoshow = "onoff"
+	AnnotationClicktoshowOnout AnnotationClicktoshow = "onout"
+)
+
+// AnnotationValign Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+type AnnotationValign string
+
+const (
+	AnnotationValignTop    AnnotationValign = "top"
+	AnnotationValignMiddle AnnotationValign = "middle"
+	AnnotationValignBottom AnnotationValign = "bottom"
+)
+
+// AnnotationXanchor Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+type AnnotationXanchor string
+
+const (
+	AnnotationXanchorAuto   AnnotationXanchor = "auto"
+	AnnotationXanchorLeft   AnnotationXanchor = "left"
+	AnnotationXanchorCenter AnnotationXanchor = "center"
+	AnnotationXanchorRight  AnnotationXanchor = "right"
+)
+
+// AnnotationXref Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+type AnnotationXref string
+
+const (
+	AnnotationXrefPaper                                                                                                                   AnnotationXref = "paper"
+	AnnotationXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// AnnotationYanchor Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+type AnnotationYanchor string
+
+const (
+	AnnotationYanchorAuto   AnnotationYanchor = "auto"
+	AnnotationYanchorTop    AnnotationYanchor = "top"
+	AnnotationYanchorMiddle AnnotationYanchor = "middle"
+	AnnotationYanchorBottom AnnotationYanchor = "bottom"
+)
+
+// AnnotationYref Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+type AnnotationYref string
+
+const (
+	AnnotationYrefPaper                                                                                                                   AnnotationYref = "paper"
+	AnnotationYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// ButtonMethod Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
+type ButtonMethod string
+
+const (
+	ButtonMethodRestyle  ButtonMethod = "restyle"
+	ButtonMethodRelayout ButtonMethod = "relayout"
+	ButtonMethodAnimate  ButtonMethod = "animate"
+	ButtonMethodUpdate   ButtonMethod = "update"
+	ButtonMethodSkip     ButtonMethod = "skip"
+)
+
+// ButtonStep The unit of measurement that the `count` value will set the range by.
+type ButtonStep string
+
+const (
+	ButtonStepMonth  ButtonStep = "month"
+	ButtonStepYear   ButtonStep = "year"
+	ButtonStepDay    ButtonStep = "day"
+	ButtonStepHour   ButtonStep = "hour"
+	ButtonStepMinute ButtonStep = "minute"
+	ButtonStepSecond ButtonStep = "second"
+	ButtonStepAll    ButtonStep = "all"
+)
+
+// ButtonStepmode Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
+type ButtonStepmode string
+
+const (
+	ButtonStepmodeBackward ButtonStepmode = "backward"
+	ButtonStepmodeTodate   ButtonStepmode = "todate"
+)
+
+// ImageLayer Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
+type ImageLayer string
+
+const (
+	ImageLayerBelow ImageLayer = "below"
+	ImageLayerAbove ImageLayer = "above"
+)
+
+// ImageSizing Specifies which dimension of the image to constrain.
+type ImageSizing string
+
+const (
+	ImageSizingFill    ImageSizing = "fill"
+	ImageSizingContain ImageSizing = "contain"
+	ImageSizingStretch ImageSizing = "stretch"
+)
+
+// ImageXanchor Sets the anchor for the x position
+type ImageXanchor string
+
+const (
+	ImageXanchorLeft   ImageXanchor = "left"
+	ImageXanchorCenter ImageXanchor = "center"
+	ImageXanchorRight  ImageXanchor = "right"
+)
+
+// ImageXref Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+type ImageXref string
+
+const (
+	ImageXrefPaper                                                                                                                   ImageXref = "paper"
+	ImageXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ImageXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// ImageYanchor Sets the anchor for the y position.
+type ImageYanchor string
+
+const (
+	ImageYanchorTop    ImageYanchor = "top"
+	ImageYanchorMiddle ImageYanchor = "middle"
+	ImageYanchorBottom ImageYanchor = "bottom"
+)
+
+// ImageYref Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+type ImageYref string
+
+const (
+	ImageYrefPaper                                                                                                                   ImageYref = "paper"
+	ImageYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ImageYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayerSourcetype Sets the source type for this layer, that is the type of the layer data.
+type LayerSourcetype string
+
+const (
+	LayerSourcetypeGeojson LayerSourcetype = "geojson"
+	LayerSourcetypeVector  LayerSourcetype = "vector"
+	LayerSourcetypeRaster  LayerSourcetype = "raster"
+	LayerSourcetypeImage   LayerSourcetype = "image"
+)
+
+// LayerSymbolPlacement Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
+type LayerSymbolPlacement string
+
+const (
+	LayerSymbolPlacementPoint      LayerSymbolPlacement = "point"
+	LayerSymbolPlacementLine       LayerSymbolPlacement = "line"
+	LayerSymbolPlacementLineCenter LayerSymbolPlacement = "line-center"
+)
+
+// LayerSymbolTextposition Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+type LayerSymbolTextposition string
+
+const (
+	LayerSymbolTextpositionTopLeft      LayerSymbolTextposition = "top left"
+	LayerSymbolTextpositionTopCenter    LayerSymbolTextposition = "top center"
+	LayerSymbolTextpositionTopRight     LayerSymbolTextposition = "top right"
+	LayerSymbolTextpositionMiddleLeft   LayerSymbolTextposition = "middle left"
+	LayerSymbolTextpositionMiddleCenter LayerSymbolTextposition = "middle center"
+	LayerSymbolTextpositionMiddleRight  LayerSymbolTextposition = "middle right"
+	LayerSymbolTextpositionBottomLeft   LayerSymbolTextposition = "bottom left"
+	LayerSymbolTextpositionBottomCenter LayerSymbolTextposition = "bottom center"
+	LayerSymbolTextpositionBottomRight  LayerSymbolTextposition = "bottom right"
+)
+
+// LayerType Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
+type LayerType string
+
+const (
+	LayerTypeCircle LayerType = "circle"
+	LayerTypeLine   LayerType = "line"
+	LayerTypeFill   LayerType = "fill"
+	LayerTypeSymbol LayerType = "symbol"
+	LayerTypeRaster LayerType = "raster"
+)
+
 // LayoutAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
 type LayoutAutotypenumbers string
 
@@ -8112,34 +10636,34 @@ const (
 	HistogramBarmodeGroup    LayoutBarmode = "group"
 	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
 	HistogramBarmodeRelative LayoutBarmode = "relative"
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 	BarBarmodeStack          LayoutBarmode = "stack"
 	BarBarmodeGroup          LayoutBarmode = "group"
 	BarBarmodeOverlay        LayoutBarmode = "overlay"
 	BarBarmodeRelative       LayoutBarmode = "relative"
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
 type LayoutBarnorm string
 
 const (
-	BarBarnormEmpty          LayoutBarnorm = ""
-	BarBarnormFraction       LayoutBarnorm = "fraction"
-	BarBarnormPercent        LayoutBarnorm = "percent"
 	HistogramBarnormEmpty    LayoutBarnorm = ""
 	HistogramBarnormFraction LayoutBarnorm = "fraction"
 	HistogramBarnormPercent  LayoutBarnorm = "percent"
+	BarBarnormEmpty          LayoutBarnorm = ""
+	BarBarnormFraction       LayoutBarnorm = "fraction"
+	BarBarnormPercent        LayoutBarnorm = "percent"
 )
 
 // LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
 type LayoutBoxmode string
 
 const (
-	BoxBoxmodeGroup           LayoutBoxmode = "group"
-	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
 	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
+	BoxBoxmodeGroup           LayoutBoxmode = "group"
+	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
@@ -10561,6 +13085,284 @@ const (
 	LayoutYaxisTypeDate          LayoutYaxisType = "date"
 	LayoutYaxisTypeCategory      LayoutYaxisType = "category"
 	LayoutYaxisTypeMulticategory LayoutYaxisType = "multicategory"
+)
+
+// RangebreakPattern Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+type RangebreakPattern string
+
+const (
+	RangebreakPatternDayOfWeek RangebreakPattern = "day of week"
+	RangebreakPatternHour      RangebreakPattern = "hour"
+	RangebreakPatternEmpty     RangebreakPattern = ""
+)
+
+// SelectionType Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
+type SelectionType string
+
+const (
+	SelectionTypeRect SelectionType = "rect"
+	SelectionTypePath SelectionType = "path"
+)
+
+// SelectionXref Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+type SelectionXref string
+
+const (
+	SelectionXrefPaper                                                                                                                   SelectionXref = "paper"
+	SelectionXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash SelectionXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// SelectionYref Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+type SelectionYref string
+
+const (
+	SelectionYrefPaper                                                                                                                   SelectionYref = "paper"
+	SelectionYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash SelectionYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// ShapeFillrule Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+type ShapeFillrule string
+
+const (
+	ShapeFillruleEvenodd ShapeFillrule = "evenodd"
+	ShapeFillruleNonzero ShapeFillrule = "nonzero"
+)
+
+// ShapeLabelTextposition Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+type ShapeLabelTextposition string
+
+const (
+	ShapeLabelTextpositionTopLeft      ShapeLabelTextposition = "top left"
+	ShapeLabelTextpositionTopCenter    ShapeLabelTextposition = "top center"
+	ShapeLabelTextpositionTopRight     ShapeLabelTextposition = "top right"
+	ShapeLabelTextpositionMiddleLeft   ShapeLabelTextposition = "middle left"
+	ShapeLabelTextpositionMiddleCenter ShapeLabelTextposition = "middle center"
+	ShapeLabelTextpositionMiddleRight  ShapeLabelTextposition = "middle right"
+	ShapeLabelTextpositionBottomLeft   ShapeLabelTextposition = "bottom left"
+	ShapeLabelTextpositionBottomCenter ShapeLabelTextposition = "bottom center"
+	ShapeLabelTextpositionBottomRight  ShapeLabelTextposition = "bottom right"
+	ShapeLabelTextpositionStart        ShapeLabelTextposition = "start"
+	ShapeLabelTextpositionMiddle       ShapeLabelTextposition = "middle"
+	ShapeLabelTextpositionEnd          ShapeLabelTextposition = "end"
+)
+
+// ShapeLabelXanchor Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
+type ShapeLabelXanchor string
+
+const (
+	ShapeLabelXanchorAuto   ShapeLabelXanchor = "auto"
+	ShapeLabelXanchorLeft   ShapeLabelXanchor = "left"
+	ShapeLabelXanchorCenter ShapeLabelXanchor = "center"
+	ShapeLabelXanchorRight  ShapeLabelXanchor = "right"
+)
+
+// ShapeLabelYanchor Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
+type ShapeLabelYanchor string
+
+const (
+	ShapeLabelYanchorTop    ShapeLabelYanchor = "top"
+	ShapeLabelYanchorMiddle ShapeLabelYanchor = "middle"
+	ShapeLabelYanchorBottom ShapeLabelYanchor = "bottom"
+)
+
+// ShapeLayer Specifies whether shapes are drawn below gridlines (*below*), between gridlines and traces (*between*) or above traces (*above*).
+type ShapeLayer string
+
+const (
+	ShapeLayerBelow   ShapeLayer = "below"
+	ShapeLayerAbove   ShapeLayer = "above"
+	ShapeLayerBetween ShapeLayer = "between"
+)
+
+// ShapeType Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
+type ShapeType string
+
+const (
+	ShapeTypeCircle ShapeType = "circle"
+	ShapeTypeRect   ShapeType = "rect"
+	ShapeTypePath   ShapeType = "path"
+	ShapeTypeLine   ShapeType = "line"
+)
+
+// ShapeVisible Determines whether or not this shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+type ShapeVisible interface{}
+
+var (
+	ShapeVisibleTrue       ShapeVisible = true
+	ShapeVisibleFalse      ShapeVisible = false
+	ShapeVisibleLegendonly ShapeVisible = "legendonly"
+)
+
+// ShapeXref Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+type ShapeXref string
+
+const (
+	ShapeXrefPaper                                                                                                                   ShapeXref = "paper"
+	ShapeXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ShapeXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// ShapeXsizemode Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
+type ShapeXsizemode string
+
+const (
+	ShapeXsizemodeScaled ShapeXsizemode = "scaled"
+	ShapeXsizemodePixel  ShapeXsizemode = "pixel"
+)
+
+// ShapeYref Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+type ShapeYref string
+
+const (
+	ShapeYrefPaper                                                                                                                   ShapeYref = "paper"
+	ShapeYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ShapeYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// ShapeYsizemode Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
+type ShapeYsizemode string
+
+const (
+	ShapeYsizemodeScaled ShapeYsizemode = "scaled"
+	ShapeYsizemodePixel  ShapeYsizemode = "pixel"
+)
+
+// SliderCurrentvalueXanchor The alignment of the value readout relative to the length of the slider.
+type SliderCurrentvalueXanchor string
+
+const (
+	SliderCurrentvalueXanchorLeft   SliderCurrentvalueXanchor = "left"
+	SliderCurrentvalueXanchorCenter SliderCurrentvalueXanchor = "center"
+	SliderCurrentvalueXanchorRight  SliderCurrentvalueXanchor = "right"
+)
+
+// SliderLenmode Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+type SliderLenmode string
+
+const (
+	SliderLenmodeFraction SliderLenmode = "fraction"
+	SliderLenmodePixels   SliderLenmode = "pixels"
+)
+
+// SliderTransitionEasing Sets the easing function of the slider transition
+type SliderTransitionEasing string
+
+const (
+	SliderTransitionEasingLinear       SliderTransitionEasing = "linear"
+	SliderTransitionEasingQuad         SliderTransitionEasing = "quad"
+	SliderTransitionEasingCubic        SliderTransitionEasing = "cubic"
+	SliderTransitionEasingSin          SliderTransitionEasing = "sin"
+	SliderTransitionEasingExp          SliderTransitionEasing = "exp"
+	SliderTransitionEasingCircle       SliderTransitionEasing = "circle"
+	SliderTransitionEasingElastic      SliderTransitionEasing = "elastic"
+	SliderTransitionEasingBack         SliderTransitionEasing = "back"
+	SliderTransitionEasingBounce       SliderTransitionEasing = "bounce"
+	SliderTransitionEasingLinearIn     SliderTransitionEasing = "linear-in"
+	SliderTransitionEasingQuadIn       SliderTransitionEasing = "quad-in"
+	SliderTransitionEasingCubicIn      SliderTransitionEasing = "cubic-in"
+	SliderTransitionEasingSinIn        SliderTransitionEasing = "sin-in"
+	SliderTransitionEasingExpIn        SliderTransitionEasing = "exp-in"
+	SliderTransitionEasingCircleIn     SliderTransitionEasing = "circle-in"
+	SliderTransitionEasingElasticIn    SliderTransitionEasing = "elastic-in"
+	SliderTransitionEasingBackIn       SliderTransitionEasing = "back-in"
+	SliderTransitionEasingBounceIn     SliderTransitionEasing = "bounce-in"
+	SliderTransitionEasingLinearOut    SliderTransitionEasing = "linear-out"
+	SliderTransitionEasingQuadOut      SliderTransitionEasing = "quad-out"
+	SliderTransitionEasingCubicOut     SliderTransitionEasing = "cubic-out"
+	SliderTransitionEasingSinOut       SliderTransitionEasing = "sin-out"
+	SliderTransitionEasingExpOut       SliderTransitionEasing = "exp-out"
+	SliderTransitionEasingCircleOut    SliderTransitionEasing = "circle-out"
+	SliderTransitionEasingElasticOut   SliderTransitionEasing = "elastic-out"
+	SliderTransitionEasingBackOut      SliderTransitionEasing = "back-out"
+	SliderTransitionEasingBounceOut    SliderTransitionEasing = "bounce-out"
+	SliderTransitionEasingLinearInOut  SliderTransitionEasing = "linear-in-out"
+	SliderTransitionEasingQuadInOut    SliderTransitionEasing = "quad-in-out"
+	SliderTransitionEasingCubicInOut   SliderTransitionEasing = "cubic-in-out"
+	SliderTransitionEasingSinInOut     SliderTransitionEasing = "sin-in-out"
+	SliderTransitionEasingExpInOut     SliderTransitionEasing = "exp-in-out"
+	SliderTransitionEasingCircleInOut  SliderTransitionEasing = "circle-in-out"
+	SliderTransitionEasingElasticInOut SliderTransitionEasing = "elastic-in-out"
+	SliderTransitionEasingBackInOut    SliderTransitionEasing = "back-in-out"
+	SliderTransitionEasingBounceInOut  SliderTransitionEasing = "bounce-in-out"
+)
+
+// SliderXanchor Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+type SliderXanchor string
+
+const (
+	SliderXanchorAuto   SliderXanchor = "auto"
+	SliderXanchorLeft   SliderXanchor = "left"
+	SliderXanchorCenter SliderXanchor = "center"
+	SliderXanchorRight  SliderXanchor = "right"
+)
+
+// SliderYanchor Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+type SliderYanchor string
+
+const (
+	SliderYanchorAuto   SliderYanchor = "auto"
+	SliderYanchorTop    SliderYanchor = "top"
+	SliderYanchorMiddle SliderYanchor = "middle"
+	SliderYanchorBottom SliderYanchor = "bottom"
+)
+
+// StepMethod Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
+type StepMethod string
+
+const (
+	StepMethodRestyle  StepMethod = "restyle"
+	StepMethodRelayout StepMethod = "relayout"
+	StepMethodAnimate  StepMethod = "animate"
+	StepMethodUpdate   StepMethod = "update"
+	StepMethodSkip     StepMethod = "skip"
+)
+
+// UpdatemenuDirection Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
+type UpdatemenuDirection string
+
+const (
+	UpdatemenuDirectionLeft  UpdatemenuDirection = "left"
+	UpdatemenuDirectionRight UpdatemenuDirection = "right"
+	UpdatemenuDirectionUp    UpdatemenuDirection = "up"
+	UpdatemenuDirectionDown  UpdatemenuDirection = "down"
+)
+
+// UpdatemenuType Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
+type UpdatemenuType string
+
+const (
+	UpdatemenuTypeDropdown UpdatemenuType = "dropdown"
+	UpdatemenuTypeButtons  UpdatemenuType = "buttons"
+)
+
+// UpdatemenuXanchor Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+type UpdatemenuXanchor string
+
+const (
+	UpdatemenuXanchorAuto   UpdatemenuXanchor = "auto"
+	UpdatemenuXanchorLeft   UpdatemenuXanchor = "left"
+	UpdatemenuXanchorCenter UpdatemenuXanchor = "center"
+	UpdatemenuXanchorRight  UpdatemenuXanchor = "right"
+)
+
+// UpdatemenuYanchor Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+type UpdatemenuYanchor string
+
+const (
+	UpdatemenuYanchorAuto   UpdatemenuYanchor = "auto"
+	UpdatemenuYanchorTop    UpdatemenuYanchor = "top"
+	UpdatemenuYanchorMiddle UpdatemenuYanchor = "middle"
+	UpdatemenuYanchorBottom UpdatemenuYanchor = "bottom"
+)
+
+// AnnotationArrowside Sets the annotation arrow head position.
+type AnnotationArrowside string
+
+const (
+	// Flags
+	AnnotationArrowsideEnd   AnnotationArrowside = "end"
+	AnnotationArrowsideStart AnnotationArrowside = "start"
+
+	// Extra
+	AnnotationArrowsideNone AnnotationArrowside = "none"
 )
 
 // LayoutClickmode Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.

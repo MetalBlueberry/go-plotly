@@ -57,11 +57,11 @@ func main() {
 			Yaxis: &grob.LayoutYaxis{
 				Range: []int{0, 1},
 			},
-			Updatemenus: []interface{}{
-				Updatemenu{
+			Updatemenus: []grob.LayoutUpdatemenu{
+				{
 					Type:       "buttons",
-					Showactive: false,
-					Buttons: []Button{
+					Showactive: types.False,
+					Buttons: []grob.UpdatemenuButton{
 						{
 							Label:  "Play",
 							Method: "animate",
@@ -98,18 +98,4 @@ type ButtonArgs struct {
 	Transition  map[string]interface{} `json:"transition,omitempty"`
 	FromCurrent bool                   `json:"fromcurrent,omitempty"`
 	Mode        string                 `json:"mode,omitempty"`
-}
-
-// Define the Button type
-type Button struct {
-	Label  string        `json:"label"`
-	Method string        `json:"method"`
-	Args   []*ButtonArgs `json:"args"`
-}
-
-// Define the Updatemenu type
-type Updatemenu struct {
-	Type       string   `json:"type"`
-	Showactive bool     `json:"showactive"`
-	Buttons    []Button `json:"buttons"`
 }

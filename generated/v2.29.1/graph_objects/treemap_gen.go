@@ -281,10 +281,9 @@ type Treemap struct {
 	Tiling *TreemapTiling `json:"tiling,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: TreemapTransform
+	Transforms []TreemapTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -543,6 +542,40 @@ type TreemapMarkerColorbarTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// TreemapMarkerColorbarTickformatstop
+type TreemapMarkerColorbarTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
+}
+
 // TreemapMarkerColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
 type TreemapMarkerColorbarTitleFont struct {
 
@@ -747,10 +780,9 @@ type TreemapMarkerColorbar struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: TreemapMarkerColorbarTickformatstop
+	Tickformatstops []TreemapMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
 	// arrayOK: false
@@ -1338,6 +1370,10 @@ type TreemapTiling struct {
 	// type: number
 	// When using *squarify* `packing` algorithm, according to https://github.com/d3/d3-hierarchy/blob/v3.1.1/README.md#squarify_ratio this option specifies the desired aspect ratio of the generated rectangles. The ratio must be specified as a number greater than or equal to one. Note that the orientation of the generated rectangles (tall or wide) is not implied by the ratio; for example, a ratio of two will attempt to produce a mixture of rectangles whose width:height ratio is either 2:1 or 1:2. When using *squarify*, unlike d3 which uses the Golden Ratio i.e. 1.618034, Plotly applies 1 to increase squares in treemap layouts.
 	Squarifyratio float64 `json:"squarifyratio,omitempty"`
+}
+
+// TreemapTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type TreemapTransform struct {
 }
 
 // TreemapBranchvalues Determines how the items in `values` are summed. When set to *total*, items in `values` are taken to be value of all its descendants. When set to *remainder*, items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.

@@ -274,9 +274,40 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 			enumMap[enum.Name] = len(uniqueEnums) - 1
 			continue
 		}
-		uniqueEnums[previous].Values = append(uniqueEnums[previous].Values, enum.Values...)
+		// Review this merge operation
+		uniqueEnums[previous].appendValues(enum.Values...)
 	}
 	traceFile.Enums = uniqueEnums
+
+	// merge duplicate flagLists
+	uniqueFlaglist := make([]flagList, 0, len(traceFile.FlagLists))
+	flaglistMap := map[string]int{}
+	for _, flaglist := range traceFile.FlagLists {
+		_, ok := flaglistMap[flaglist.Name]
+		if !ok {
+			uniqueFlaglist = append(uniqueFlaglist, flaglist)
+			flaglistMap[flaglist.Name] = len(uniqueFlaglist) - 1
+			continue
+		}
+		// Review this merge operation
+		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
+	}
+	traceFile.FlagLists = uniqueFlaglist
+
+	// merge duplicate objects
+	uniqueObjects := make([]sstruct, 0, len(traceFile.Objects))
+	objectsMap := map[string]int{}
+	for _, object := range traceFile.Objects {
+		_, ok := objectsMap[object.Name]
+		if !ok {
+			uniqueObjects = append(uniqueObjects, object)
+			objectsMap[object.Name] = len(uniqueObjects) - 1
+			continue
+		}
+		// Review this merge operation
+		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
+	}
+	traceFile.Objects = uniqueObjects
 
 	// add multiple x and y axis
 	for _, label := range []string{"X", "Y"} {

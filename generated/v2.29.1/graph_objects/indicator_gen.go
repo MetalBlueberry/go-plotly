@@ -138,10 +138,9 @@ type Indicator struct {
 	Title *IndicatorTitle `json:"title,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: IndicatorTransform
+	Transforms []IndicatorTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -329,6 +328,40 @@ type IndicatorGaugeAxisTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// IndicatorGaugeAxisTickformatstop
+type IndicatorGaugeAxisTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
+}
+
 // IndicatorGaugeAxis
 type IndicatorGaugeAxis struct {
 
@@ -432,10 +465,9 @@ type IndicatorGaugeAxis struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: IndicatorGaugeAxisTickformatstop
+	Tickformatstops []IndicatorGaugeAxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
@@ -549,6 +581,61 @@ type IndicatorGaugeBar struct {
 	Thickness float64 `json:"thickness,omitempty"`
 }
 
+// StepLine
+type StepLine struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the color of the line enclosing each sector.
+	Color types.Color `json:"color,omitempty"`
+
+	// Width
+	// arrayOK: false
+	// type: number
+	// Sets the width (in px) of the line enclosing each sector.
+	Width float64 `json:"width,omitempty"`
+}
+
+// IndicatorGaugeStep
+type IndicatorGaugeStep struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the arc.
+	Color types.Color `json:"color,omitempty"`
+
+	// Line
+	// arrayOK: false
+	// role: Object
+	Line *StepLine `json:"line,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Range
+	// arrayOK: false
+	// type: info_array
+	// Sets the range of this axis.
+	Range interface{} `json:"range,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Thickness
+	// arrayOK: false
+	// type: number
+	// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
+	Thickness float64 `json:"thickness,omitempty"`
+}
+
 // IndicatorGaugeThresholdLine
 type IndicatorGaugeThresholdLine struct {
 
@@ -625,10 +712,9 @@ type IndicatorGauge struct {
 	Shape IndicatorGaugeShape `json:"shape,omitempty"`
 
 	// Steps
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Steps interface{} `json:"steps,omitempty"`
+	// role: Object
+	// items: IndicatorGaugeStep
+	Steps []IndicatorGaugeStep `json:"steps,omitempty"`
 
 	// Threshold
 	// arrayOK: false
@@ -780,6 +866,10 @@ type IndicatorTitle struct {
 	// type: string
 	// Sets the title of this indicator.
 	Text types.String `json:"text,omitempty"`
+}
+
+// IndicatorTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type IndicatorTransform struct {
 }
 
 // IndicatorAlign Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered

@@ -234,10 +234,9 @@ type Ohlc struct {
 	Tickwidth float64 `json:"tickwidth,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: OhlcTransform
+	Transforms []OhlcTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -554,6 +553,10 @@ type OhlcStream struct {
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
 	Token types.String `json:"token,omitempty"`
+}
+
+// OhlcTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type OhlcTransform struct {
 }
 
 // OhlcHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines

@@ -20,7 +20,7 @@ type Fig struct {
 	// https://plotly.com/javascript/configuration-options
 	Config *Config `json:"config,omitempty"`
 
-	// Animation holds information about how animations should execute
+	// Animation is not yet implemented, feel free to insert custom a struct
 	Animation *Animation `json:"animation,omitempty"`
 
 	// Frames are the animation frames

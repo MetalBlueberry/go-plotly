@@ -41,10 +41,9 @@ type Parcoords struct {
 	Customdatasrc types.String `json:"customdatasrc,omitempty"`
 
 	// Dimensions
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Dimensions interface{} `json:"dimensions,omitempty"`
+	// role: Object
+	// items: ParcoordsDimension
+	Dimensions []ParcoordsDimension `json:"dimensions,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -143,10 +142,9 @@ type Parcoords struct {
 	Tickfont *ParcoordsTickfont `json:"tickfont,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: ParcoordsTransform
+	Transforms []ParcoordsTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -171,6 +169,94 @@ type Parcoords struct {
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
 	Visible ParcoordsVisible `json:"visible,omitempty"`
+}
+
+// ParcoordsDimension The dimensions (variables) of the parallel coordinates chart. 2..60 dimensions are supported.
+type ParcoordsDimension struct {
+
+	// Constraintrange
+	// arrayOK: false
+	// type: info_array
+	// The domain range to which the filter on the dimension is constrained. Must be an array of `[fromValue, toValue]` with `fromValue <= toValue`, or if `multiselect` is not disabled, you may give an array of arrays, where each inner array is `[fromValue, toValue]`.
+	Constraintrange interface{} `json:"constraintrange,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// The shown name of the dimension.
+	Label types.String `json:"label,omitempty"`
+
+	// Multiselect
+	// arrayOK: false
+	// type: boolean
+	// Do we allow multiple selection ranges or just a single range?
+	Multiselect types.Bool `json:"multiselect,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Range
+	// arrayOK: false
+	// type: info_array
+	// The domain range that represents the full, shown axis extent. Defaults to the `values` extent. Must be an array of `[fromValue, toValue]` with finite numbers as elements.
+	Range interface{} `json:"range,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Tickformat
+	// arrayOK: false
+	// type: string
+	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	Tickformat types.String `json:"tickformat,omitempty"`
+
+	// Ticktext
+	// arrayOK: false
+	// type: data_array
+	// Sets the text displayed at the ticks position via `tickvals`.
+	Ticktext interface{} `json:"ticktext,omitempty"`
+
+	// Ticktextsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+
+	// Tickvals
+	// arrayOK: false
+	// type: data_array
+	// Sets the values at which ticks on this axis appear.
+	Tickvals interface{} `json:"tickvals,omitempty"`
+
+	// Tickvalssrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+
+	// Values
+	// arrayOK: false
+	// type: data_array
+	// Dimension values. `values[n]` represents the value of the `n`th point in the dataset, therefore the `values` vector for all dimensions must be the same (longer vectors will be truncated). Each value must be a finite number.
+	Values interface{} `json:"values,omitempty"`
+
+	// Valuessrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `values`.
+	Valuessrc types.String `json:"valuessrc,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Shows the dimension when set to `true` (the default). Hides the dimension for `false`.
+	Visible types.Bool `json:"visible,omitempty"`
 }
 
 // ParcoordsDomain
@@ -280,6 +366,40 @@ type ParcoordsLineColorbarTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// ParcoordsLineColorbarTickformatstop
+type ParcoordsLineColorbarTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // ParcoordsLineColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -486,10 +606,9 @@ type ParcoordsLineColorbar struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: ParcoordsLineColorbarTickformatstop
+	Tickformatstops []ParcoordsLineColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
 	// arrayOK: false
@@ -764,6 +883,10 @@ type ParcoordsTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// ParcoordsTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type ParcoordsTransform struct {
 }
 
 // ParcoordsUnselectedLine

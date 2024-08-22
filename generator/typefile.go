@@ -49,6 +49,20 @@ type enumFile struct {
 	Values      []enumValue
 }
 
+func (e *enumFile) appendValues(values ...enumValue) {
+	duplicates := map[string]bool{}
+	for _, v := range e.Values {
+		duplicates[v.Name] = true
+	}
+
+	for _, v := range values {
+		duplicated := duplicates[v.Name]
+		if !duplicated {
+			e.Values = append(e.Values, v)
+		}
+	}
+}
+
 type enumValue struct {
 	Name  string
 	Value interface{}
@@ -89,14 +103,34 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 
 		switch {
 		case attr.Role == RoleObject && len(attr.Items) > 0:
+
+			// Items always contains a single item that represents the items contained in the object
+			var itemName string
+			var itemAttr *Attribute
+			for n, a := range attr.Items {
+				itemName = n
+				itemAttr = a
+			}
+			prefix := xstrings.ToCamelCase(itemName)
+			itemFields, err := file.parseAttributes(prefix, xstrings.ToCamelCase(itemName), itemAttr.Attributes)
+			if err != nil {
+				return nil, fmt.Errorf("Failed to parse items inside object, %s", err)
+			}
+
+			object := sstruct{
+				Name:        typePrefix + xstrings.ToCamelCase(itemName),
+				Description: itemAttr.Description,
+				Fields:      itemFields,
+			}
+			file.Objects = append(file.Objects, object)
+
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "interface{}",
+				Type:     "[]" + typePrefix + xstrings.ToCamelCase(itemName),
 				Description: []string{
-					"It's an items array and what goes inside it's... messy... check the docs",
-					"I will be happy if you want to contribute by implementing this",
-					"just raise an issue before you start so we do not overlap",
+					"role: Object",
+					fmt.Sprintf("items: %s", object.Name),
 				},
 			})
 

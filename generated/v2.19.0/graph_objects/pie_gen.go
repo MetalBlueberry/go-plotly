@@ -307,10 +307,9 @@ type Pie struct {
 	Title *PieTitle `json:"title,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: PieTransform
+	Transforms []PieTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -752,6 +751,10 @@ type PieTitle struct {
 	// type: string
 	// Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
 	Text types.String `json:"text,omitempty"`
+}
+
+// PieTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type PieTransform struct {
 }
 
 // PieDirection Specifies the direction at which succeeding sectors follow one another.
