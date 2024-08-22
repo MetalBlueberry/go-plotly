@@ -1,19 +1,25 @@
 versions:
-  -  Name: Plotly 2.31.1
-     Tag: v2.31.1
-     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
-     Path: schemas/v2.31.1/plot-schema.json
-     Generated: generated/v2.31.1
-     CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
-  -  Name: Plotly 2.29.1
-     Tag: v2.29.1
-     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.29.1/test/plot-schema.json
-     Path: schemas/v2.29.1/plot-schema.json
-     Generated: generated/v2.29.1
-     CDN: https://cdn.plot.ly/plotly-2.29.1.min.js
-  -  Name: Plotly 2.19.0
-     Tag: v2.19.0
-     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.19.0/test/plot-schema.json
-     Path: schemas/v2.19.0/plot-schema.json
-     Generated: generated/v2.19.0
-     CDN: https://cdn.plot.ly/plotly-2.19.0.min.js
+  - Name: Plotly 2.34.0
+    Tag: v2.34.0
+    URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.34.0/test/plot-schema.json
+    Path: schemas/v2.34.0/plot-schema.json
+    Generated: generated/v2.34.0
+    CDN: https://cdn.plot.ly/plotly-2.34.0.min.js
+  - Name: Plotly 2.31.1
+    Tag: v2.31.1
+    URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
+    Path: schemas/v2.31.1/plot-schema.json
+    Generated: generated/v2.31.1
+    CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
+  - Name: Plotly 2.29.1
+    Tag: v2.29.1
+    URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.29.1/test/plot-schema.json
+    Path: schemas/v2.29.1/plot-schema.json
+    Generated: generated/v2.29.1
+    CDN: https://cdn.plot.ly/plotly-2.29.1.min.js
+  - Name: Plotly 2.19.0
+    Tag: v2.19.0
+    URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.19.0/test/plot-schema.json
+    Path: schemas/v2.19.0/plot-schema.json
+    Generated: generated/v2.19.0
+    CDN: https://cdn.plot.ly/plotly-2.19.0.min.js
