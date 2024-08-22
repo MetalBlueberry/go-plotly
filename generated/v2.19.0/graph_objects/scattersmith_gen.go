@@ -285,10 +285,9 @@ type Scattersmith struct {
 	Texttemplatesrc types.String `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: ScattersmithTransform
+	Transforms []ScattersmithTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -519,6 +518,40 @@ type ScattersmithMarkerColorbarTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// ScattersmithMarkerColorbarTickformatstop
+type ScattersmithMarkerColorbarTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
+}
+
 // ScattersmithMarkerColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
 type ScattersmithMarkerColorbarTitleFont struct {
 
@@ -723,10 +756,9 @@ type ScattersmithMarkerColorbar struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: ScattersmithMarkerColorbarTickformatstop
+	Tickformatstops []ScattersmithMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
 	// arrayOK: false
@@ -1237,6 +1269,10 @@ type ScattersmithTextfont struct {
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
 	Sizesrc types.String `json:"sizesrc,omitempty"`
+}
+
+// ScattersmithTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type ScattersmithTransform struct {
 }
 
 // ScattersmithUnselectedMarker

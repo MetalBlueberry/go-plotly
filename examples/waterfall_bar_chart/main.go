@@ -173,18 +173,18 @@ func main() {
 
 	data := []types.Trace{trace1, trace2, trace3, trace4}
 
-	annotations := make([]Annotation, 7)
+	annotations := make([]grob.LayoutAnnotation, 7)
 	for i := 0; i < len(annotations); i++ {
-		annotations[i] = Annotation{
+		annotations[i] = grob.LayoutAnnotation{
 			X:    xData[i],
 			Y:    yData[i],
 			Text: textList[i],
-			Font: AnnotationFont{
+			Font: &grob.AnnotationFont{
 				Family: "Arial",
 				Size:   14,
 				Color:  "rgba(245,246,249,1)",
 			},
-			Showarrow: false,
+			Showarrow: types.False,
 		}
 	}
 
@@ -198,7 +198,7 @@ func main() {
 		Width:        600,
 		Height:       600,
 		Showlegend:   types.False,
-		Annotations:  annotations, // Not implemented yet
+		Annotations:  annotations,
 	}
 
 	fig := &grob.Fig{
@@ -208,18 +208,4 @@ func main() {
 
 	offline.ToHtml(fig, "waterfall.html")
 	offline.Show(fig)
-}
-
-type Annotation struct {
-	X         string         `json:"x"`
-	Y         int            `json:"y"`
-	Text      string         `json:"text"`
-	Font      AnnotationFont `json:"font"`
-	Showarrow bool           `json:"showarrow"`
-}
-
-type AnnotationFont struct {
-	Family string `json:"family"`
-	Size   int64  `json:"size"`
-	Color  string `json:"color"`
 }

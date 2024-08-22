@@ -274,9 +274,40 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 			enumMap[enum.Name] = len(uniqueEnums) - 1
 			continue
 		}
-		uniqueEnums[previous].Values = append(uniqueEnums[previous].Values, enum.Values...)
+		// Review this merge operation
+		uniqueEnums[previous].appendValues(enum.Values...)
 	}
 	traceFile.Enums = uniqueEnums
+
+	// merge duplicate flagLists
+	uniqueFlaglist := make([]flagList, 0, len(traceFile.FlagLists))
+	flaglistMap := map[string]int{}
+	for _, flaglist := range traceFile.FlagLists {
+		_, ok := flaglistMap[flaglist.Name]
+		if !ok {
+			uniqueFlaglist = append(uniqueFlaglist, flaglist)
+			flaglistMap[flaglist.Name] = len(uniqueFlaglist) - 1
+			continue
+		}
+		// Review this merge operation
+		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
+	}
+	traceFile.FlagLists = uniqueFlaglist
+
+	// merge duplicate objects
+	uniqueObjects := make([]sstruct, 0, len(traceFile.Objects))
+	objectsMap := map[string]int{}
+	for _, object := range traceFile.Objects {
+		_, ok := objectsMap[object.Name]
+		if !ok {
+			uniqueObjects = append(uniqueObjects, object)
+			objectsMap[object.Name] = len(uniqueObjects) - 1
+			continue
+		}
+		// Review this merge operation
+		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
+	}
+	traceFile.Objects = uniqueObjects
 
 	// add multiple x and y axis
 	for _, label := range []string{"X", "Y"} {
@@ -319,6 +350,115 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	}
 	return nil
 
+}
+
+// CreateAnimation creates the config file in the given director
+func (r *Renderer) CreateAnimation(dir string) error {
+	src := &bytes.Buffer{}
+	err := r.WriteAnimation(src)
+	if err != nil {
+		return err
+	}
+
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "animation_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteAnimation writes config to the given writer
+func (r *Renderer) WriteAnimation(w io.Writer) error {
+	traceFile := typeFile{
+		MainType: sstruct{
+			Name:        "Animation",
+			Description: "Plot animation options",
+			Fields:      []structField{},
+		},
+		Objects:   []sstruct{},
+		Enums:     []enumFile{},
+		FlagLists: []flagList{},
+	}
+	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Animation.Names)
+	if err != nil {
+		return fmt.Errorf("cannot parse attributes, %w", err)
+	}
+	traceFile.MainType.Fields = append(traceFile.MainType.Fields, fields...)
+
+	err = r.tmpl.ExecuteTemplate(w, "animation_base.tmpl", doNotEdit)
+	if err != nil {
+		return fmt.Errorf("Failed to render config_base.tmpl, %w", err)
+	}
+
+	err = r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.MainType)
+	if err != nil {
+		return err
+	}
+	for i := range traceFile.Objects {
+		err := r.tmpl.ExecuteTemplate(w, "trace.tmpl", traceFile.Objects[i])
+		if err != nil {
+			return err
+		}
+	}
+	for i := range traceFile.Enums {
+		err := r.tmpl.ExecuteTemplate(w, "enum.tmpl", traceFile.Enums[i])
+		if err != nil {
+			return err
+		}
+	}
+	for i := range traceFile.FlagLists {
+		err := r.tmpl.ExecuteTemplate(w, "flaglist.tmpl", traceFile.FlagLists[i])
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// CreateFrames creates the config file in the given director
+func (r *Renderer) CreateFrames(dir string) error {
+	src := &bytes.Buffer{}
+	err := r.WriteFrames(src)
+	if err != nil {
+		return err
+	}
+
+	fmtsrc, err := format.Source(src.Bytes())
+	if err != nil {
+		return fmt.Errorf("cannot format source, %w", err)
+	}
+
+	file, err := r.fs.Create(path.Join(dir, "frames_gen.go"))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	_, err = file.Write(fmtsrc)
+	if err != nil {
+		return fmt.Errorf("cannot write source, %w", err)
+	}
+
+	return nil
+}
+
+// WriteFrames writes config to the given writer
+func (r *Renderer) WriteFrames(w io.Writer) error {
+	err := r.tmpl.ExecuteTemplate(w, "frames.go", doNotEdit)
+	if err != nil {
+		return fmt.Errorf("Failed to render config_base.tmpl, %w", err)
+	}
+	return nil
 }
 
 // CreateConfig creates the config file in the given director

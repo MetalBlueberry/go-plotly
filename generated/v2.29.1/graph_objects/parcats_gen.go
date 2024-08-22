@@ -54,10 +54,9 @@ type Parcats struct {
 	Countssrc types.String `json:"countssrc,omitempty"`
 
 	// Dimensions
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Dimensions interface{} `json:"dimensions,omitempty"`
+	// role: Object
+	// items: ParcatsDimension
+	Dimensions []ParcatsDimension `json:"dimensions,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -141,10 +140,9 @@ type Parcats struct {
 	Tickfont *ParcatsTickfont `json:"tickfont,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: ParcatsTransform
+	Transforms []ParcatsTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -164,6 +162,71 @@ type Parcats struct {
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
 	Visible ParcatsVisible `json:"visible,omitempty"`
+}
+
+// ParcatsDimension The dimensions (variables) of the parallel categories diagram.
+type ParcatsDimension struct {
+
+	// Categoryarray
+	// arrayOK: false
+	// type: data_array
+	// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
+	Categoryarray interface{} `json:"categoryarray,omitempty"`
+
+	// Categoryarraysrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+
+	// Categoryorder
+	// arrayOK: false
+	// default: trace
+	// type: enumerated
+	// Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+	Categoryorder DimensionCategoryorder `json:"categoryorder,omitempty"`
+
+	// Displayindex
+	// arrayOK: false
+	// type: integer
+	// The display index of dimension, from left to right, zero indexed, defaults to dimension index.
+	Displayindex int64 `json:"displayindex,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// The shown name of the dimension.
+	Label types.String `json:"label,omitempty"`
+
+	// Ticktext
+	// arrayOK: false
+	// type: data_array
+	// Sets alternative tick labels for the categories in this dimension. Only has an effect if `categoryorder` is set to *array*. Should be an array the same length as `categoryarray` Used with `categoryorder`.
+	Ticktext interface{} `json:"ticktext,omitempty"`
+
+	// Ticktextsrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+
+	// Values
+	// arrayOK: false
+	// type: data_array
+	// Dimension values. `values[n]` represents the category value of the `n`th point in the dataset, therefore the `values` vector for all dimensions must be the same (longer vectors will be truncated).
+	Values interface{} `json:"values,omitempty"`
+
+	// Valuessrc
+	// arrayOK: false
+	// type: string
+	// Sets the source reference on Chart Studio Cloud for `values`.
+	Valuessrc types.String `json:"valuessrc,omitempty"`
+
+	// Visible
+	// arrayOK: false
+	// type: boolean
+	// Shows the dimension when set to `true` (the default). Hides the dimension for `false`.
+	Visible types.Bool `json:"visible,omitempty"`
 }
 
 // ParcatsDomain
@@ -273,6 +336,40 @@ type ParcatsLineColorbarTickfont struct {
 	// type: number
 	//
 	Size float64 `json:"size,omitempty"`
+}
+
+// ParcatsLineColorbarTickformatstop
+type ParcatsLineColorbarTickformatstop struct {
+
+	// Dtickrange
+	// arrayOK: false
+	// type: info_array
+	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	Dtickrange interface{} `json:"dtickrange,omitempty"`
+
+	// Enabled
+	// arrayOK: false
+	// type: boolean
+	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	Enabled types.Bool `json:"enabled,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+
+	// Value
+	// arrayOK: false
+	// type: string
+	// string - dtickformat for described zoom level, the same as *tickformat*
+	Value types.String `json:"value,omitempty"`
 }
 
 // ParcatsLineColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -479,10 +576,9 @@ type ParcatsLineColorbar struct {
 	Tickformat types.String `json:"tickformat,omitempty"`
 
 	// Tickformatstops
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Tickformatstops interface{} `json:"tickformatstops,omitempty"`
+	// role: Object
+	// items: ParcatsLineColorbarTickformatstop
+	Tickformatstops []ParcatsLineColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
 	// arrayOK: false
@@ -750,6 +846,10 @@ type ParcatsTickfont struct {
 	Size float64 `json:"size,omitempty"`
 }
 
+// ParcatsTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type ParcatsTransform struct {
+}
+
 // ParcatsArrangement Sets the drag interaction mode for categories and dimensions. If `perpendicular`, the categories can only move along a line perpendicular to the paths. If `freeform`, the categories can freely move on the plane. If `fixed`, the categories and dimensions are stationary.
 type ParcatsArrangement string
 
@@ -757,6 +857,16 @@ const (
 	ParcatsArrangementPerpendicular ParcatsArrangement = "perpendicular"
 	ParcatsArrangementFreeform      ParcatsArrangement = "freeform"
 	ParcatsArrangementFixed         ParcatsArrangement = "fixed"
+)
+
+// DimensionCategoryorder Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+type DimensionCategoryorder string
+
+const (
+	DimensionCategoryorderTrace              DimensionCategoryorder = "trace"
+	DimensionCategoryorderCategoryAscending  DimensionCategoryorder = "category ascending"
+	DimensionCategoryorderCategoryDescending DimensionCategoryorder = "category descending"
+	DimensionCategoryorderArray              DimensionCategoryorder = "array"
 )
 
 // ParcatsHoveron Sets the hover interaction mode for the parcats diagram. If `category`, hover interaction take place per category. If `color`, hover interactions take place per color per category. If `dimension`, hover interactions take place across all categories per dimension.

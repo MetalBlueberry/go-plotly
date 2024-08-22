@@ -270,10 +270,9 @@ type Funnelarea struct {
 	Title *FunnelareaTitle `json:"title,omitempty"`
 
 	// Transforms
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Transforms interface{} `json:"transforms,omitempty"`
+	// role: Object
+	// items: FunnelareaTransform
+	Transforms []FunnelareaTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
@@ -758,6 +757,10 @@ type FunnelareaTitle struct {
 	// type: string
 	// Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
 	Text types.String `json:"text,omitempty"`
+}
+
+// FunnelareaTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
+type FunnelareaTransform struct {
 }
 
 // FunnelareaHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines

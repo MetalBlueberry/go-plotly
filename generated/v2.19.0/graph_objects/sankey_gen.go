@@ -339,6 +339,46 @@ type SankeyLegendgrouptitle struct {
 	Text types.String `json:"text,omitempty"`
 }
 
+// SankeyLinkConcentrationscales
+type SankeyLinkConcentrationscales struct {
+
+	// Cmax
+	// arrayOK: false
+	// type: number
+	// Sets the upper bound of the color domain.
+	Cmax float64 `json:"cmax,omitempty"`
+
+	// Cmin
+	// arrayOK: false
+	// type: number
+	// Sets the lower bound of the color domain.
+	Cmin float64 `json:"cmin,omitempty"`
+
+	// Colorscale
+	// arrayOK: false
+	// type: colorscale
+	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	Colorscale types.ColorScale `json:"colorscale,omitempty"`
+
+	// Label
+	// arrayOK: false
+	// type: string
+	// The label of the links to color based on their concentration within a flow.
+	Label types.String `json:"label,omitempty"`
+
+	// Name
+	// arrayOK: false
+	// type: string
+	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	Name types.String `json:"name,omitempty"`
+
+	// Templateitemname
+	// arrayOK: false
+	// type: string
+	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	Templateitemname types.String `json:"templateitemname,omitempty"`
+}
+
 // SankeyLinkHoverlabelFont Sets the font used in hover labels.
 type SankeyLinkHoverlabelFont struct {
 
@@ -481,10 +521,9 @@ type SankeyLink struct {
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorscales
-	// It's an items array and what goes inside it's... messy... check the docs
-	// I will be happy if you want to contribute by implementing this
-	// just raise an issue before you start so we do not overlap
-	Colorscales interface{} `json:"colorscales,omitempty"`
+	// role: Object
+	// items: SankeyLinkConcentrationscales
+	Colorscales []SankeyLinkConcentrationscales `json:"colorscales,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false

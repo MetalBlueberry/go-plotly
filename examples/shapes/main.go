@@ -19,14 +19,14 @@ func main() {
 			Title: &grob.LayoutTitle{
 				Text: "A Figure Specified By Go Struct",
 			},
-			Shapes: []LineShape{
+			Shapes: []grob.LayoutShape{
 				{
 					Type: "line",
 					X0:   1,
 					Y0:   0,
 					X1:   1,
 					Y1:   2,
-					Line: grob.ScatterLine{
+					Line: &grob.ShapeLine{
 						Color: "RoyalBlue",
 						Width: 3,
 					},
@@ -37,7 +37,7 @@ func main() {
 					Y0:   2,
 					X1:   5,
 					Y1:   2,
-					Line: grob.ScatterLine{
+					Line: &grob.ShapeLine{
 						Color: "LightSeaGreen",
 						Width: 4,
 						Dash:  string(grob.Scatter3dLineDashDashdot),
@@ -49,7 +49,7 @@ func main() {
 					Y0:   0,
 					X1:   6,
 					Y1:   2,
-					Line: grob.ScatterLine{
+					Line: &grob.ShapeLine{
 						Color: "MediumPurple",
 						Width: 4,
 						Dash:  string(grob.Scatter3dLineDashDot),
@@ -61,13 +61,4 @@ func main() {
 
 	offline.ToHtml(fig, "bar.html")
 	offline.Show(fig)
-}
-
-type LineShape struct {
-	Type string           `json:"type,omitempty"`
-	X0   float64          `json:"x0,omitempty"`
-	Y0   float64          `json:"y0,omitempty"`
-	X1   float64          `json:"x1,omitempty"`
-	Y1   float64          `json:"y1,omitempty"`
-	Line grob.ScatterLine `json:"line,omitempty"`
 }

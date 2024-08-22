@@ -33,9 +33,17 @@ type Schema struct {
 	Traces Traces `json:"traces,omitempty"`
 	Layout Layout `json:"layout,omitempty"`
 	// Transforms *Transforms `json:"transforms,omitempty"`
-	// Frames     *Frames     `json:"frames,omitempty"`
-	// Animation  *Animation  `json:"animation,omitempty"`
-	Config *ConfigAttributes `json:"config,omitempty"`
+	Frames    *Frames              `json:"frames,omitempty"`
+	Animation *AnimationAttributes `json:"animation,omitempty"`
+	Config    *ConfigAttributes    `json:"config,omitempty"`
+}
+
+type Frames struct {
+	Attribute *Attribute `json:"-"`
+}
+
+type AnimationAttributes struct {
+	Names map[string]*Attribute `json:"-"`
 }
 
 type ConfigAttributes struct {
@@ -132,6 +140,40 @@ func (attr *LayoutAttributes) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+func (attr *Frames) UnmarshalJSON(b []byte) error {
+	var err error
+
+	field := json.RawMessage{}
+	err = json.Unmarshal(b, &field)
+	if err != nil {
+		return err
+	}
+
+	items, err := parseField("items", field, nil)
+	if err != nil {
+		return err
+	}
+	attr.Attribute = items
+	return nil
+}
+
+func (attr *AnimationAttributes) UnmarshalJSON(b []byte) error {
+	var err error
+
+	fields := map[string]json.RawMessage{}
+	err = json.Unmarshal(b, &fields)
+	if err != nil {
+		return err
+	}
+
+	names, err := parseFields(fields, nil)
+	if err != nil {
+		return err
+	}
+	attr.Names = names
+	return nil
+}
+
 func (attr *ConfigAttributes) UnmarshalJSON(b []byte) error {
 	var err error
 
@@ -149,100 +191,107 @@ func (attr *ConfigAttributes) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+func parseField(name string, value json.RawMessage, parent *Attribute) (_ *Attribute, err error) {
+	role := &struct {
+		Role  Role            `json:"role,omitempty"`
+		Items json.RawMessage `json:"items,omitempty"`
+	}{}
+	err = json.Unmarshal(value, role)
+	if err != nil {
+		log.Printf("cannot detect role for attribute %s on %v, %s", name, parent, err)
+		return
+	}
+	switch {
+	case role.Role == RoleObject && len(role.Items) > 0:
+		subFields := map[string]json.RawMessage{}
+
+		err = json.Unmarshal(role.Items, &subFields)
+		if err != nil {
+			return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
+		}
+
+		attr := &Attribute{
+			Role:   role.Role,
+			Name:   name,
+			Parent: parent,
+		}
+		subAttr, err := parseFields(subFields, attr)
+		if err != nil {
+			return nil, fmt.Errorf("on %s, %w", name, err)
+		}
+		attr.Items = subAttr
+		return attr, nil
+
+	case role.Role == RoleObject:
+		subFields := map[string]json.RawMessage{}
+
+		err = json.Unmarshal(value, &subFields)
+		if err != nil {
+			return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
+		}
+
+		attr := &Attribute{
+			Name:   name,
+			Parent: parent,
+		}
+
+		err := UnmarshalRole(subFields["role"], &attr.Role)
+		if err != nil {
+			return nil, fmt.Errorf("cannot unmarshal role, %w", err)
+		}
+
+		if editType, ok := subFields["editType"]; ok {
+			err = json.Unmarshal(editType, &attr.EditType)
+			if err != nil {
+				return nil, fmt.Errorf("cannot unmarshal editType, %w", err)
+			}
+		}
+
+		if description, ok := subFields["description"]; ok {
+			err = json.Unmarshal(description, &attr.Description)
+			if err != nil {
+				return nil, fmt.Errorf("cannot unmarshal description, %w", err)
+			}
+		}
+
+		delete(subFields, "role")
+		delete(subFields, "editType")
+		delete(subFields, "description")
+
+		subAttr, err := parseFields(subFields, attr)
+		if err != nil {
+			return nil, fmt.Errorf("on %s, %w", name, err)
+		}
+
+		attr.Attributes = subAttr
+		return attr, nil
+	default:
+		attr := &Attribute{
+			Name:   name,
+			Parent: parent,
+		}
+		err = json.Unmarshal(value, attr)
+		if err != nil {
+			return nil, fmt.Errorf("cannot unmarshal attribute, %s, %w", name, err)
+		}
+		return attr, nil
+	}
+}
+
 func parseFields(fields map[string]json.RawMessage, parent *Attribute) (_ map[string]*Attribute, err error) {
 	attributes := make(map[string]*Attribute)
 	for name, value := range fields {
-
 		if isMetaKey(name) {
 			// is a metakey and it is not required to
 			// generate the schema
 			continue
 		}
 
-		role := &struct {
-			Role  Role            `json:"role,omitempty"`
-			Items json.RawMessage `json:"items,omitempty"`
-		}{}
-		err = json.Unmarshal(value, role)
+		attr, err := parseField(name, value, parent)
 		if err != nil {
-			log.Printf("cannot detect role for attribute %s on %v, %s", name, parent, err)
-			continue
+			return nil, fmt.Errorf("cannot parse field %s, %w", name, err)
 		}
-		switch {
-		case role.Role == RoleObject && len(role.Items) > 0:
-			subFields := map[string]json.RawMessage{}
-
-			err = json.Unmarshal(role.Items, &subFields)
-			if err != nil {
-				return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
-			}
-
-			attr := &Attribute{
-				Role:   role.Role,
-				Name:   name,
-				Parent: parent,
-			}
-			subAttr, err := parseFields(subFields, attr)
-			if err != nil {
-				return nil, fmt.Errorf("on %s, %w", name, err)
-			}
-			attr.Items = subAttr
-			attributes[name] = attr
-
-		case role.Role == RoleObject:
-			subFields := map[string]json.RawMessage{}
-
-			err = json.Unmarshal(value, &subFields)
-			if err != nil {
-				return nil, fmt.Errorf("cannot unmarshal attribute subfields, %s, %w", name, err)
-			}
-
-			attr := &Attribute{
-				Name:   name,
-				Parent: parent,
-			}
-
-			err := UnmarshalRole(subFields["role"], &attr.Role)
-			if err != nil {
-				return nil, fmt.Errorf("cannot unmarshal role, %w", err)
-			}
-
-			if editType, ok := subFields["editType"]; ok {
-				err = json.Unmarshal(editType, &attr.EditType)
-				if err != nil {
-					return nil, fmt.Errorf("cannot unmarshal editType, %w", err)
-				}
-			}
-
-			if description, ok := subFields["description"]; ok {
-				err = json.Unmarshal(description, &attr.Description)
-				if err != nil {
-					return nil, fmt.Errorf("cannot unmarshal description, %w", err)
-				}
-			}
-
-			delete(subFields, "role")
-			delete(subFields, "editType")
-			delete(subFields, "description")
-
-			subAttr, err := parseFields(subFields, attr)
-			if err != nil {
-				return nil, fmt.Errorf("on %s, %w", name, err)
-			}
-
-			attr.Attributes = subAttr
-			attributes[name] = attr
-		default:
-			attr := &Attribute{
-				Name:   name,
-				Parent: parent,
-			}
-			err = json.Unmarshal(value, attr)
-			if err != nil {
-				return nil, fmt.Errorf("cannot unmarshal attribute, %s, %w", name, err)
-			}
-			attributes[name] = attr
-		}
+		attributes[name] = attr
 	}
 	return attributes, nil
 }
