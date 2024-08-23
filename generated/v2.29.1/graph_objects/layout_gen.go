@@ -116,7 +116,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default trace colors.
-	Colorway types.ColorList `json:"colorway,omitempty"`
+	Colorway *types.ColorList `json:"colorway,omitempty"`
 
 	// Computed
 	// arrayOK: false
@@ -182,7 +182,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
-	Funnelareacolorway types.ColorList `json:"funnelareacolorway,omitempty"`
+	Funnelareacolorway *types.ColorList `json:"funnelareacolorway,omitempty"`
 
 	// Funnelgap
 	// arrayOK: false
@@ -259,7 +259,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
-	Iciclecolorway types.ColorList `json:"iciclecolorway,omitempty"`
+	Iciclecolorway *types.ColorList `json:"iciclecolorway,omitempty"`
 
 	// Images
 	// role: Object
@@ -330,7 +330,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
-	Piecolorway types.ColorList `json:"piecolorway,omitempty"`
+	Piecolorway *types.ColorList `json:"piecolorway,omitempty"`
 
 	// PlotBgcolor
 	// arrayOK: false
@@ -416,7 +416,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
-	Sunburstcolorway types.ColorList `json:"sunburstcolorway,omitempty"`
+	Sunburstcolorway *types.ColorList `json:"sunburstcolorway,omitempty"`
 
 	// Template
 	// arrayOK: false
@@ -443,7 +443,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
-	Treemapcolorway types.ColorList `json:"treemapcolorway,omitempty"`
+	Treemapcolorway *types.ColorList `json:"treemapcolorway,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -1369,7 +1369,7 @@ type LayoutColoraxis struct {
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-	Colorscale types.ColorScale `json:"colorscale,omitempty"`
+	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
@@ -1391,19 +1391,19 @@ type LayoutColorscale struct {
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default diverging colorscale. Note that `autocolorscale` must be true for this attribute to work.
-	Diverging types.ColorScale `json:"diverging,omitempty"`
+	Diverging *types.ColorScale `json:"diverging,omitempty"`
 
 	// Sequential
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for positive values. Note that `autocolorscale` must be true for this attribute to work.
-	Sequential types.ColorScale `json:"sequential,omitempty"`
+	Sequential *types.ColorScale `json:"sequential,omitempty"`
 
 	// Sequentialminus
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for negative values. Note that `autocolorscale` must be true for this attribute to work.
-	Sequentialminus types.ColorScale `json:"sequentialminus,omitempty"`
+	Sequentialminus *types.ColorScale `json:"sequentialminus,omitempty"`
 }
 
 // LayoutFont Sets the global font. Note that fonts used in traces and other layout components inherit from the global font.
