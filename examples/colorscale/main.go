@@ -27,7 +27,7 @@ func main() {
 					Cmid:           5,
 					Cmax:           10,
 					Color:          types.ArrayOKArray(types.UseColorScaleValues(z)...),
-					Colorscale: types.ColorScale{
+					Colorscale: &types.ColorScale{
 						Values: []types.ColorScaleReference{
 							{NormalizedValue: 0.0, Color: "#6e40aa"},
 							{NormalizedValue: 0.1, Color: `#963db3`},
