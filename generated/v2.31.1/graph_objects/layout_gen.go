@@ -28,7 +28,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
-	Autosize types.Bool `json:"autosize,omitempty"`
+	Autosize types.BoolType `json:"autosize,omitempty"`
 
 	// Autotypenumbers
 	// arrayOK: false
@@ -47,13 +47,13 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap between bars of adjacent location coordinates. Values are unitless, they represent fractions of the minimum difference in bar positions in the data.
-	Bargap float64 `json:"bargap,omitempty"`
+	Bargap types.NumberType `json:"bargap,omitempty"`
 
 	// Bargroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
-	Bargroupgap float64 `json:"bargroupgap,omitempty"`
+	Bargroupgap types.NumberType `json:"bargroupgap,omitempty"`
 
 	// Barmode
 	// arrayOK: false
@@ -73,13 +73,13 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between boxes of adjacent location coordinates. Has no effect on traces that have *width* set.
-	Boxgap float64 `json:"boxgap,omitempty"`
+	Boxgap types.NumberType `json:"boxgap,omitempty"`
 
 	// Boxgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between boxes of the same location coordinate. Has no effect on traces that have *width* set.
-	Boxgroupgap float64 `json:"boxgroupgap,omitempty"`
+	Boxgroupgap types.NumberType `json:"boxgroupgap,omitempty"`
 
 	// Boxmode
 	// arrayOK: false
@@ -147,31 +147,31 @@ type Layout struct {
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the funnelarea slice colors (whether given by `funnelareacolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-	Extendfunnelareacolors types.Bool `json:"extendfunnelareacolors,omitempty"`
+	Extendfunnelareacolors types.BoolType `json:"extendfunnelareacolors,omitempty"`
 
 	// Extendiciclecolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the icicle slice colors (whether given by `iciclecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-	Extendiciclecolors types.Bool `json:"extendiciclecolors,omitempty"`
+	Extendiciclecolors types.BoolType `json:"extendiciclecolors,omitempty"`
 
 	// Extendpiecolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the pie slice colors (whether given by `piecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-	Extendpiecolors types.Bool `json:"extendpiecolors,omitempty"`
+	Extendpiecolors types.BoolType `json:"extendpiecolors,omitempty"`
 
 	// Extendsunburstcolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the sunburst slice colors (whether given by `sunburstcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-	Extendsunburstcolors types.Bool `json:"extendsunburstcolors,omitempty"`
+	Extendsunburstcolors types.BoolType `json:"extendsunburstcolors,omitempty"`
 
 	// Extendtreemapcolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
-	Extendtreemapcolors types.Bool `json:"extendtreemapcolors,omitempty"`
+	Extendtreemapcolors types.BoolType `json:"extendtreemapcolors,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -188,13 +188,13 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
-	Funnelgap float64 `json:"funnelgap,omitempty"`
+	Funnelgap types.NumberType `json:"funnelgap,omitempty"`
 
 	// Funnelgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
-	Funnelgroupgap float64 `json:"funnelgroupgap,omitempty"`
+	Funnelgroupgap types.NumberType `json:"funnelgroupgap,omitempty"`
 
 	// Funnelmode
 	// arrayOK: false
@@ -217,7 +217,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the plot's height (in px).
-	Height float64 `json:"height,omitempty"`
+	Height types.NumberType `json:"height,omitempty"`
 
 	// Hiddenlabels
 	// arrayOK: false
@@ -231,19 +231,19 @@ type Layout struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hiddenlabels`.
-	Hiddenlabelssrc types.String `json:"hiddenlabelssrc,omitempty"`
+	Hiddenlabelssrc types.StringType `json:"hiddenlabelssrc,omitempty"`
 
 	// Hidesources
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a text link citing the data source is placed at the bottom-right cored of the figure. Has only an effect only on graphs that have been generated via forked graphs from the Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise).
-	Hidesources types.Bool `json:"hidesources,omitempty"`
+	Hidesources types.BoolType `json:"hidesources,omitempty"`
 
 	// Hoverdistance
 	// arrayOK: false
 	// type: integer
 	// Sets the default distance (in pixels) to look for data to add hover labels (-1 means no cutoff, 0 means no looking for data). This is only a real distance for hovering on point-like objects, like scatter points. For area-like objects (bars, scatter fills, etc) hovering is on inside the area and off outside, but these objects will not supersede hover on point-like objects in case of conflict.
-	Hoverdistance int64 `json:"hoverdistance,omitempty"`
+	Hoverdistance types.IntegerType `json:"hoverdistance,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -300,19 +300,19 @@ type Layout struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Minreducedheight
 	// arrayOK: false
 	// type: number
 	// Minimum height of the plot with margin.automargin applied (in px)
-	Minreducedheight float64 `json:"minreducedheight,omitempty"`
+	Minreducedheight types.NumberType `json:"minreducedheight,omitempty"`
 
 	// Minreducedwidth
 	// arrayOK: false
 	// type: number
 	// Minimum width of the plot with margin.automargin applied (in px)
-	Minreducedwidth float64 `json:"minreducedwidth,omitempty"`
+	Minreducedwidth types.NumberType `json:"minreducedwidth,omitempty"`
 
 	// Modebar
 	// arrayOK: false
@@ -356,7 +356,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between scatter points of adjacent location coordinates. Defaults to `bargap`.
-	Scattergap float64 `json:"scattergap,omitempty"`
+	Scattergap types.NumberType `json:"scattergap,omitempty"`
 
 	// Scattermode
 	// arrayOK: false
@@ -392,7 +392,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: string
 	// Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
-	Separators types.String `json:"separators,omitempty"`
+	Separators types.StringType `json:"separators,omitempty"`
 
 	// Shapes
 	// role: Object
@@ -403,7 +403,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a legend is drawn. Default is `true` if there is a trace to show and any of these: a) Two or more traces would by default be shown in the legend. b) One pie trace is shown in the legend. c) One trace is explicitly given with `showlegend: true`.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Sliders
 	// role: Object
@@ -419,7 +419,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the default distance (in pixels) to look for data to draw spikelines to (-1 means no cutoff, 0 means no looking for data). As with hoverdistance, distance does not apply to area-like objects. In addition, some objects can be hovered on but will not generate spikelines, such as scatter fills.
-	Spikedistance int64 `json:"spikedistance,omitempty"`
+	Spikedistance types.IntegerType `json:"spikedistance,omitempty"`
 
 	// Sunburstcolorway
 	// arrayOK: false
@@ -474,13 +474,13 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between violins of adjacent location coordinates. Has no effect on traces that have *width* set.
-	Violingap float64 `json:"violingap,omitempty"`
+	Violingap types.NumberType `json:"violingap,omitempty"`
 
 	// Violingroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between violins of the same location coordinate. Has no effect on traces that have *width* set.
-	Violingroupgap float64 `json:"violingroupgap,omitempty"`
+	Violingroupgap types.NumberType `json:"violingroupgap,omitempty"`
 
 	// Violinmode
 	// arrayOK: false
@@ -493,13 +493,13 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
-	Waterfallgap float64 `json:"waterfallgap,omitempty"`
+	Waterfallgap types.NumberType `json:"waterfallgap,omitempty"`
 
 	// Waterfallgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
-	Waterfallgroupgap float64 `json:"waterfallgroupgap,omitempty"`
+	Waterfallgroupgap types.NumberType `json:"waterfallgroupgap,omitempty"`
 
 	// Waterfallmode
 	// arrayOK: false
@@ -512,7 +512,7 @@ type Layout struct {
 	// arrayOK: false
 	// type: number
 	// Sets the plot's width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
@@ -578,7 +578,7 @@ type LayoutActiveselection struct {
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the active selection.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
 // LayoutActiveshape
@@ -594,7 +594,7 @@ type LayoutActiveshape struct {
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the active shape.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
 // AnnotationFont Sets the annotation text font.
@@ -610,13 +610,13 @@ type AnnotationFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // AnnotationHoverlabelFont Sets the hover label text font. By default uses the global hover font and size, with color from `hoverlabel.bordercolor`.
@@ -632,13 +632,13 @@ type AnnotationHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // AnnotationHoverlabel
@@ -682,7 +682,7 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the end annotation arrow head style.
-	Arrowhead int64 `json:"arrowhead,omitempty"`
+	Arrowhead types.IntegerType `json:"arrowhead,omitempty"`
 
 	// Arrowside
 	// arrayOK: false
@@ -695,13 +695,13 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
-	Arrowsize float64 `json:"arrowsize,omitempty"`
+	Arrowsize types.NumberType `json:"arrowsize,omitempty"`
 
 	// Arrowwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of annotation arrow line.
-	Arrowwidth float64 `json:"arrowwidth,omitempty"`
+	Arrowwidth types.NumberType `json:"arrowwidth,omitempty"`
 
 	// Ax
 	// arrayOK: false
@@ -745,19 +745,19 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets the padding (in px) between the `text` and the enclosing border.
-	Borderpad float64 `json:"borderpad,omitempty"`
+	Borderpad types.NumberType `json:"borderpad,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the annotation `text`.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Captureevents
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
-	Captureevents types.Bool `json:"captureevents,omitempty"`
+	Captureevents types.BoolType `json:"captureevents,omitempty"`
 
 	// Clicktoshow
 	// arrayOK: false
@@ -775,7 +775,7 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
-	Height float64 `json:"height,omitempty"`
+	Height types.NumberType `json:"height,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -786,67 +786,67 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: string
 	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
-	Hovertext types.String `json:"hovertext,omitempty"`
+	Hovertext types.StringType `json:"hovertext,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the annotation (text + arrow).
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showarrow
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
-	Showarrow types.Bool `json:"showarrow,omitempty"`
+	Showarrow types.BoolType `json:"showarrow,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
-	Standoff float64 `json:"standoff,omitempty"`
+	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Startarrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the start annotation arrow head style.
-	Startarrowhead int64 `json:"startarrowhead,omitempty"`
+	Startarrowhead types.IntegerType `json:"startarrowhead,omitempty"`
 
 	// Startarrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
-	Startarrowsize float64 `json:"startarrowsize,omitempty"`
+	Startarrowsize types.NumberType `json:"startarrowsize,omitempty"`
 
 	// Startstandoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
-	Startstandoff float64 `json:"startstandoff,omitempty"`
+	Startstandoff types.NumberType `json:"startstandoff,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the `text` is drawn with respect to the horizontal.
-	Textangle float64 `json:"textangle,omitempty"`
+	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Valign
 	// arrayOK: false
@@ -859,13 +859,13 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this annotation is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -897,7 +897,7 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
-	Xshift float64 `json:"xshift,omitempty"`
+	Xshift types.NumberType `json:"xshift,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -929,7 +929,7 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
-	Yshift float64 `json:"yshift,omitempty"`
+	Yshift types.NumberType `json:"yshift,omitempty"`
 }
 
 // LayoutColoraxisColorbarTickfont Sets the color bar's tick label font
@@ -945,13 +945,13 @@ type LayoutColoraxisColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutColoraxisColorbarTickformatstop
@@ -967,25 +967,25 @@ type LayoutColoraxisColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutColoraxisColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -1001,13 +1001,13 @@ type LayoutColoraxisColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutColoraxisColorbarTitle
@@ -1029,7 +1029,7 @@ type LayoutColoraxisColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutColoraxisColorbar
@@ -1051,7 +1051,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -1076,7 +1076,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
-	Len float64 `json:"len,omitempty"`
+	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
 	// arrayOK: false
@@ -1089,13 +1089,13 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -1114,13 +1114,13 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Outlinewidth float64 `json:"outlinewidth,omitempty"`
+	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -1133,7 +1133,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -1153,7 +1153,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
 	// arrayOK: false
@@ -1172,7 +1172,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -1189,7 +1189,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -1214,13 +1214,13 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -1233,7 +1233,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -1246,7 +1246,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -1260,7 +1260,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -1274,13 +1274,13 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -1291,7 +1291,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -1304,7 +1304,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
-	Xpad float64 `json:"xpad,omitempty"`
+	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
 	// arrayOK: false
@@ -1317,7 +1317,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -1330,7 +1330,7 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
-	Ypad float64 `json:"ypad,omitempty"`
+	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
 	// arrayOK: false
@@ -1347,31 +1347,31 @@ type LayoutColoraxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here corresponding trace color array(s)) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
-	Cauto types.Bool `json:"cauto,omitempty"`
+	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Value should have the same units as corresponding trace color array(s) and if set, `cmin` must be set as well.
-	Cmax float64 `json:"cmax,omitempty"`
+	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `cmin` and/or `cmax` to be equidistant to this point. Value should have the same units as corresponding trace color array(s). Has no effect when `cauto` is `false`.
-	Cmid float64 `json:"cmid,omitempty"`
+	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Value should have the same units as corresponding trace color array(s) and if set, `cmax` must be set as well.
-	Cmin float64 `json:"cmin,omitempty"`
+	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
@@ -1388,13 +1388,13 @@ type LayoutColoraxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-	Reversescale types.Bool `json:"reversescale,omitempty"`
+	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace.
-	Showscale types.Bool `json:"showscale,omitempty"`
+	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
 // LayoutColorscale
@@ -1432,13 +1432,13 @@ type LayoutFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutGeoCenter
@@ -1448,13 +1448,13 @@ type LayoutGeoCenter struct {
 	// arrayOK: false
 	// type: number
 	// Sets the latitude of the map's center. For all projection types, the map's latitude center lies at the middle of the latitude range by default.
-	Lat float64 `json:"lat,omitempty"`
+	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Sets the longitude of the map's center. By default, the map's longitude center lies at the middle of the longitude range for scoped projection and above `projection.rotation.lon` otherwise.
-	Lon float64 `json:"lon,omitempty"`
+	Lon types.NumberType `json:"lon,omitempty"`
 }
 
 // LayoutGeoDomain
@@ -1464,13 +1464,13 @@ type LayoutGeoDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this geo subplot . Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this geo subplot . Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -1492,7 +1492,7 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's longitude/latitude tick step.
-	Dtick float64 `json:"dtick,omitempty"`
+	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
@@ -1504,13 +1504,13 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's stroke width (in px).
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -1522,13 +1522,13 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not graticule are shown on the map.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's starting tick longitude/latitude.
-	Tick0 float64 `json:"tick0,omitempty"`
+	Tick0 types.NumberType `json:"tick0,omitempty"`
 }
 
 // LayoutGeoLonaxis
@@ -1538,7 +1538,7 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's longitude/latitude tick step.
-	Dtick float64 `json:"dtick,omitempty"`
+	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
@@ -1550,13 +1550,13 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's stroke width (in px).
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -1568,13 +1568,13 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not graticule are shown on the map.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's starting tick longitude/latitude.
-	Tick0 float64 `json:"tick0,omitempty"`
+	Tick0 types.NumberType `json:"tick0,omitempty"`
 }
 
 // LayoutGeoProjectionRotation
@@ -1584,19 +1584,19 @@ type LayoutGeoProjectionRotation struct {
 	// arrayOK: false
 	// type: number
 	// Rotates the map along meridians (in degrees North).
-	Lat float64 `json:"lat,omitempty"`
+	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Rotates the map along parallels (in degrees East). Defaults to the center of the `lonaxis.range` values.
-	Lon float64 `json:"lon,omitempty"`
+	Lon types.NumberType `json:"lon,omitempty"`
 
 	// Roll
 	// arrayOK: false
 	// type: number
 	// Roll the map (in degrees) For example, a roll of *180* makes the map appear upside down.
-	Roll float64 `json:"roll,omitempty"`
+	Roll types.NumberType `json:"roll,omitempty"`
 }
 
 // LayoutGeoProjection
@@ -1606,7 +1606,7 @@ type LayoutGeoProjection struct {
 	// arrayOK: false
 	// type: number
 	// For satellite projection type only. Sets the distance from the center of the sphere to the point of view as a proportion of the sphere’s radius.
-	Distance float64 `json:"distance,omitempty"`
+	Distance types.NumberType `json:"distance,omitempty"`
 
 	// Parallels
 	// arrayOK: false
@@ -1623,13 +1623,13 @@ type LayoutGeoProjection struct {
 	// arrayOK: false
 	// type: number
 	// Zooms in or out on the map view. A scale of *1* corresponds to the largest zoom level that fits the map's lon and lat ranges.
-	Scale float64 `json:"scale,omitempty"`
+	Scale types.NumberType `json:"scale,omitempty"`
 
 	// Tilt
 	// arrayOK: false
 	// type: number
 	// For satellite projection type only. Sets the tilt angle of perspective projection.
-	Tilt float64 `json:"tilt,omitempty"`
+	Tilt types.NumberType `json:"tilt,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -1663,7 +1663,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: number
 	// Sets the coastline stroke width (in px).
-	Coastlinewidth float64 `json:"coastlinewidth,omitempty"`
+	Coastlinewidth types.NumberType `json:"coastlinewidth,omitempty"`
 
 	// Countrycolor
 	// arrayOK: false
@@ -1675,7 +1675,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: number
 	// Sets line width (in px) of the country boundaries.
-	Countrywidth float64 `json:"countrywidth,omitempty"`
+	Countrywidth types.NumberType `json:"countrywidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -1699,7 +1699,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the frame.
-	Framewidth float64 `json:"framewidth,omitempty"`
+	Framewidth types.NumberType `json:"framewidth,omitempty"`
 
 	// Lakecolor
 	// arrayOK: false
@@ -1751,7 +1751,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the rivers.
-	Riverwidth float64 `json:"riverwidth,omitempty"`
+	Riverwidth types.NumberType `json:"riverwidth,omitempty"`
 
 	// Scope
 	// arrayOK: false
@@ -1764,49 +1764,49 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not the coastlines are drawn.
-	Showcoastlines types.Bool `json:"showcoastlines,omitempty"`
+	Showcoastlines types.BoolType `json:"showcoastlines,omitempty"`
 
 	// Showcountries
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not country boundaries are drawn.
-	Showcountries types.Bool `json:"showcountries,omitempty"`
+	Showcountries types.BoolType `json:"showcountries,omitempty"`
 
 	// Showframe
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not a frame is drawn around the map.
-	Showframe types.Bool `json:"showframe,omitempty"`
+	Showframe types.BoolType `json:"showframe,omitempty"`
 
 	// Showlakes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not lakes are drawn.
-	Showlakes types.Bool `json:"showlakes,omitempty"`
+	Showlakes types.BoolType `json:"showlakes,omitempty"`
 
 	// Showland
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not land masses are filled in color.
-	Showland types.Bool `json:"showland,omitempty"`
+	Showland types.BoolType `json:"showland,omitempty"`
 
 	// Showocean
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not oceans are filled in color.
-	Showocean types.Bool `json:"showocean,omitempty"`
+	Showocean types.BoolType `json:"showocean,omitempty"`
 
 	// Showrivers
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not rivers are drawn.
-	Showrivers types.Bool `json:"showrivers,omitempty"`
+	Showrivers types.BoolType `json:"showrivers,omitempty"`
 
 	// Showsubunits
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not boundaries of subunits within countries (e.g. states, provinces) are drawn.
-	Showsubunits types.Bool `json:"showsubunits,omitempty"`
+	Showsubunits types.BoolType `json:"showsubunits,omitempty"`
 
 	// Subunitcolor
 	// arrayOK: false
@@ -1818,7 +1818,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the subunits boundaries.
-	Subunitwidth float64 `json:"subunitwidth,omitempty"`
+	Subunitwidth types.NumberType `json:"subunitwidth,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -1830,7 +1830,7 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets the default visibility of the base layers.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutGridDomain
@@ -1856,7 +1856,7 @@ type LayoutGrid struct {
 	// arrayOK: false
 	// type: integer
 	// The number of columns in the grid. If you provide a 2D `subplots` array, the length of its longest row is used as the default. If you give an `xaxes` array, its length is used as the default. But it's also possible to have a different length, if you want to leave a row at the end for non-cartesian subplots.
-	Columns int64 `json:"columns,omitempty"`
+	Columns types.IntegerType `json:"columns,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -1881,7 +1881,7 @@ type LayoutGrid struct {
 	// arrayOK: false
 	// type: integer
 	// The number of rows in the grid. If you provide a 2D `subplots` array or a `yaxes` array, its length is used as the default. But it's also possible to have a different length, if you want to leave a row at the end for non-cartesian subplots.
-	Rows int64 `json:"rows,omitempty"`
+	Rows types.IntegerType `json:"rows,omitempty"`
 
 	// Subplots
 	// arrayOK: false
@@ -1899,7 +1899,7 @@ type LayoutGrid struct {
 	// arrayOK: false
 	// type: number
 	// Horizontal space between grid cells, expressed as a fraction of the total width available to one cell. Defaults to 0.1 for coupled-axes grids and 0.2 for independent grids.
-	Xgap float64 `json:"xgap,omitempty"`
+	Xgap types.NumberType `json:"xgap,omitempty"`
 
 	// Xside
 	// arrayOK: false
@@ -1918,7 +1918,7 @@ type LayoutGrid struct {
 	// arrayOK: false
 	// type: number
 	// Vertical space between grid cells, expressed as a fraction of the total height available to one cell. Defaults to 0.1 for coupled-axes grids and 0.3 for independent grids.
-	Ygap float64 `json:"ygap,omitempty"`
+	Ygap types.NumberType `json:"ygap,omitempty"`
 
 	// Yside
 	// arrayOK: false
@@ -1941,13 +1941,13 @@ type LayoutHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutHoverlabelGrouptitlefont Sets the font for group titles in hover (unified modes). Defaults to `hoverlabel.font`.
@@ -1963,13 +1963,13 @@ type LayoutHoverlabelGrouptitlefont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutHoverlabel
@@ -2008,7 +2008,7 @@ type LayoutHoverlabel struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength int64 `json:"namelength,omitempty"`
+	Namelength types.IntegerType `json:"namelength,omitempty"`
 }
 
 // LayoutImage
@@ -2025,25 +2025,25 @@ type LayoutImage struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the image.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Sizex
 	// arrayOK: false
 	// type: number
 	// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width. When `xref` ends with ` domain`, units are sized relative to the axis width.
-	Sizex float64 `json:"sizex,omitempty"`
+	Sizex types.NumberType `json:"sizex,omitempty"`
 
 	// Sizey
 	// arrayOK: false
 	// type: number
 	// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height. When `yref` ends with ` domain`, units are sized relative to the axis height.
-	Sizey float64 `json:"sizey,omitempty"`
+	Sizey types.NumberType `json:"sizey,omitempty"`
 
 	// Sizing
 	// arrayOK: false
@@ -2056,19 +2056,19 @@ type LayoutImage struct {
 	// arrayOK: false
 	// type: string
 	// Specifies the URL of the image to be used. The URL must be accessible from the domain where the plot code is run, and can be either relative or absolute.
-	Source types.String `json:"source,omitempty"`
+	Source types.StringType `json:"source,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this image is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -2124,13 +2124,13 @@ type LayoutLegendFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutLegendGrouptitlefont Sets the font for group titles in legend. Defaults to `legend.font` with its size increased about 10%.
@@ -2146,13 +2146,13 @@ type LayoutLegendGrouptitlefont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutLegendTitleFont Sets this legend's title font. Defaults to `legend.font` with its size increased about 20%.
@@ -2168,13 +2168,13 @@ type LayoutLegendTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutLegendTitle
@@ -2196,7 +2196,7 @@ type LayoutLegendTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutLegend
@@ -2218,13 +2218,13 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the legend.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Entrywidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend. Use 0 to size the entry based on the text width, when `entrywidthmode` is set to *pixels*.
-	Entrywidth float64 `json:"entrywidth,omitempty"`
+	Entrywidth types.NumberType `json:"entrywidth,omitempty"`
 
 	// Entrywidthmode
 	// arrayOK: false
@@ -2254,7 +2254,7 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: number
 	// Sets the indentation (in px) of the legend entries.
-	Indentation float64 `json:"indentation,omitempty"`
+	Indentation types.NumberType `json:"indentation,omitempty"`
 
 	// Itemclick
 	// arrayOK: false
@@ -2281,7 +2281,7 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the legend item symbols (the part other than the title.text).
-	Itemwidth float64 `json:"itemwidth,omitempty"`
+	Itemwidth types.NumberType `json:"itemwidth,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -2299,7 +2299,7 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of vertical space (in px) between legend groups.
-	Tracegroupgap float64 `json:"tracegroupgap,omitempty"`
+	Tracegroupgap types.NumberType `json:"tracegroupgap,omitempty"`
 
 	// Traceorder
 	// arrayOK: false
@@ -2325,13 +2325,13 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this legend is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` (in normalized coordinates) of the legend. When `xref` is *paper*, defaults to *1.02* for vertical legends and defaults to *0* for horizontal legends. When `xref` is *container*, defaults to *1* for vertical legends and defaults to *0* for horizontal legends. Must be between *0* and *1* if `xref` is *container*. and between *-2* and *3* if `xref` is *paper*.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -2351,7 +2351,7 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` (in normalized coordinates) of the legend. When `yref` is *paper*, defaults to *1* for vertical legends, defaults to *-0.1* for horizontal legends on graphs w/o range sliders and defaults to *1.1* for horizontal legends on graph with one or multiple range sliders. When `yref` is *container*, defaults to *1*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -2375,25 +2375,25 @@ type LayoutMapboxBounds struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum longitude of the map (in degrees East) if `west`, `south` and `north` are declared.
-	East float64 `json:"east,omitempty"`
+	East types.NumberType `json:"east,omitempty"`
 
 	// North
 	// arrayOK: false
 	// type: number
 	// Sets the maximum latitude of the map (in degrees North) if `east`, `west` and `south` are declared.
-	North float64 `json:"north,omitempty"`
+	North types.NumberType `json:"north,omitempty"`
 
 	// South
 	// arrayOK: false
 	// type: number
 	// Sets the minimum latitude of the map (in degrees North) if `east`, `west` and `north` are declared.
-	South float64 `json:"south,omitempty"`
+	South types.NumberType `json:"south,omitempty"`
 
 	// West
 	// arrayOK: false
 	// type: number
 	// Sets the minimum longitude of the map (in degrees East) if `east`, `south` and `north` are declared.
-	West float64 `json:"west,omitempty"`
+	West types.NumberType `json:"west,omitempty"`
 }
 
 // LayoutMapboxCenter
@@ -2403,13 +2403,13 @@ type LayoutMapboxCenter struct {
 	// arrayOK: false
 	// type: number
 	// Sets the latitude of the center of the map (in degrees North).
-	Lat float64 `json:"lat,omitempty"`
+	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Sets the longitude of the center of the map (in degrees East).
-	Lon float64 `json:"lon,omitempty"`
+	Lon types.NumberType `json:"lon,omitempty"`
 }
 
 // LayoutMapboxDomain
@@ -2419,13 +2419,13 @@ type LayoutMapboxDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this mapbox subplot .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this mapbox subplot .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -2447,7 +2447,7 @@ type LayerCircle struct {
 	// arrayOK: false
 	// type: number
 	// Sets the circle radius (mapbox.layer.paint.circle-radius). Has an effect only when `type` is set to *circle*.
-	Radius float64 `json:"radius,omitempty"`
+	Radius types.NumberType `json:"radius,omitempty"`
 }
 
 // LayerFill
@@ -2475,13 +2475,13 @@ type LayerLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `dash`.
-	Dashsrc types.String `json:"dashsrc,omitempty"`
+	Dashsrc types.StringType `json:"dashsrc,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (mapbox.layer.paint.line-width). Has an effect only when `type` is set to *line*.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // LayerSymbolTextfont Sets the icon text font (color=mapbox.layer.paint.text-color, size=mapbox.layer.layout.text-size). Has an effect only when `type` is set to *symbol*.
@@ -2497,13 +2497,13 @@ type LayerSymbolTextfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayerSymbol
@@ -2513,13 +2513,13 @@ type LayerSymbol struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol icon image (mapbox.layer.layout.icon-image). Full list: https://www.mapbox.com/maki-icons/
-	Icon types.String `json:"icon,omitempty"`
+	Icon types.StringType `json:"icon,omitempty"`
 
 	// Iconsize
 	// arrayOK: false
 	// type: number
 	// Sets the symbol icon size (mapbox.layer.layout.icon-size). Has an effect only when `type` is set to *symbol*.
-	Iconsize float64 `json:"iconsize,omitempty"`
+	Iconsize types.NumberType `json:"iconsize,omitempty"`
 
 	// Placement
 	// arrayOK: false
@@ -2532,7 +2532,7 @@ type LayerSymbol struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol text (mapbox.layer.layout.text-field).
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
@@ -2554,7 +2554,7 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: string
 	// Determines if the layer will be inserted before the layer with the specified ID. If omitted or set to '', the layer will be inserted above every existing layer.
-	Below types.String `json:"below,omitempty"`
+	Below types.StringType `json:"below,omitempty"`
 
 	// Circle
 	// arrayOK: false
@@ -2587,25 +2587,25 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum zoom level (mapbox.layer.maxzoom). At zoom levels equal to or greater than the maxzoom, the layer will be hidden.
-	Maxzoom float64 `json:"maxzoom,omitempty"`
+	Maxzoom types.NumberType `json:"maxzoom,omitempty"`
 
 	// Minzoom
 	// arrayOK: false
 	// type: number
 	// Sets the minimum zoom level (mapbox.layer.minzoom). At zoom levels less than the minzoom, the layer will be hidden.
-	Minzoom float64 `json:"minzoom,omitempty"`
+	Minzoom types.NumberType `json:"minzoom,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the layer. If `type` is *circle*, opacity corresponds to the circle opacity (mapbox.layer.paint.circle-opacity) If `type` is *line*, opacity corresponds to the line opacity (mapbox.layer.paint.line-opacity) If `type` is *fill*, opacity corresponds to the fill opacity (mapbox.layer.paint.fill-opacity) If `type` is *symbol*, opacity corresponds to the icon/text opacity (mapbox.layer.paint.text-opacity)
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Source
 	// arrayOK: false
@@ -2617,13 +2617,13 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: string
 	// Sets the attribution for this source.
-	Sourceattribution types.String `json:"sourceattribution,omitempty"`
+	Sourceattribution types.StringType `json:"sourceattribution,omitempty"`
 
 	// Sourcelayer
 	// arrayOK: false
 	// type: string
 	// Specifies the layer to use from a vector tile source (mapbox.layer.source-layer). Required for *vector* source type that supports multiple layers.
-	Sourcelayer types.String `json:"sourcelayer,omitempty"`
+	Sourcelayer types.StringType `json:"sourcelayer,omitempty"`
 
 	// Sourcetype
 	// arrayOK: false
@@ -2641,7 +2641,7 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -2654,7 +2654,7 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this layer is displayed
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutMapbox
@@ -2664,13 +2664,13 @@ type LayoutMapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the mapbox access token to be used for this mapbox map. Alternatively, the mapbox access token can be set in the configuration options under `mapboxAccessToken`. Note that accessToken are only required when `style` (e.g with values : basic, streets, outdoors, light, dark, satellite, satellite-streets ) and/or a layout layer references the Mapbox server.
-	Accesstoken types.String `json:"accesstoken,omitempty"`
+	Accesstoken types.StringType `json:"accesstoken,omitempty"`
 
 	// Bearing
 	// arrayOK: false
 	// type: number
 	// Sets the bearing angle of the map in degrees counter-clockwise from North (mapbox.bearing).
-	Bearing float64 `json:"bearing,omitempty"`
+	Bearing types.NumberType `json:"bearing,omitempty"`
 
 	// Bounds
 	// arrayOK: false
@@ -2696,7 +2696,7 @@ type LayoutMapbox struct {
 	// arrayOK: false
 	// type: number
 	// Sets the pitch angle of the map (in degrees, where *0* means perpendicular to the surface of the map) (mapbox.pitch).
-	Pitch float64 `json:"pitch,omitempty"`
+	Pitch types.NumberType `json:"pitch,omitempty"`
 
 	// Style
 	// arrayOK: false
@@ -2714,7 +2714,7 @@ type LayoutMapbox struct {
 	// arrayOK: false
 	// type: number
 	// Sets the zoom level of the map (mapbox.zoom).
-	Zoom float64 `json:"zoom,omitempty"`
+	Zoom types.NumberType `json:"zoom,omitempty"`
 }
 
 // LayoutMargin
@@ -2724,37 +2724,37 @@ type LayoutMargin struct {
 	// arrayOK: false
 	// type: boolean
 	// Turns on/off margin expansion computations. Legends, colorbars, updatemenus, sliders, axis rangeselector and rangeslider are allowed to push the margins by defaults.
-	Autoexpand types.Bool `json:"autoexpand,omitempty"`
+	Autoexpand types.BoolType `json:"autoexpand,omitempty"`
 
 	// B
 	// arrayOK: false
 	// type: number
 	// Sets the bottom margin (in px).
-	B float64 `json:"b,omitempty"`
+	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// Sets the left margin (in px).
-	L float64 `json:"l,omitempty"`
+	L types.NumberType `json:"l,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) between the plotting area and the axis lines
-	Pad float64 `json:"pad,omitempty"`
+	Pad types.NumberType `json:"pad,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// Sets the right margin (in px).
-	R float64 `json:"r,omitempty"`
+	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// Sets the top margin (in px).
-	T float64 `json:"t,omitempty"`
+	T types.NumberType `json:"t,omitempty"`
 }
 
 // LayoutModebar
@@ -2770,13 +2770,13 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to add. Please note that these buttons will only be shown if they are compatible with all trace types used in a graph. Similar to `config.modeBarButtonsToAdd` option. This may include *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect*, *eraseshape*.
-	Add *types.ArrayOK[*types.String] `json:"add,omitempty"`
+	Add *types.ArrayOK[*types.StringType] `json:"add,omitempty"`
 
 	// Addsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `add`.
-	Addsrc types.String `json:"addsrc,omitempty"`
+	Addsrc types.StringType `json:"addsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -2801,13 +2801,13 @@ type LayoutModebar struct {
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to remove. Similar to `config.modeBarButtonsToRemove` option. This may include *autoScale2d*, *autoscale*, *editInChartStudio*, *editinchartstudio*, *hoverCompareCartesian*, *hovercompare*, *lasso*, *lasso2d*, *orbitRotation*, *orbitrotation*, *pan*, *pan2d*, *pan3d*, *reset*, *resetCameraDefault3d*, *resetCameraLastSave3d*, *resetGeo*, *resetSankeyGroup*, *resetScale2d*, *resetViewMapbox*, *resetViews*, *resetcameradefault*, *resetcameralastsave*, *resetsankeygroup*, *resetscale*, *resetview*, *resetviews*, *select*, *select2d*, *sendDataToCloud*, *senddatatocloud*, *tableRotation*, *tablerotation*, *toImage*, *toggleHover*, *toggleSpikelines*, *togglehover*, *togglespikelines*, *toimage*, *zoom*, *zoom2d*, *zoom3d*, *zoomIn2d*, *zoomInGeo*, *zoomInMapbox*, *zoomOut2d*, *zoomOutGeo*, *zoomOutMapbox*, *zoomin*, *zoomout*.
-	Remove *types.ArrayOK[*types.String] `json:"remove,omitempty"`
+	Remove *types.ArrayOK[*types.StringType] `json:"remove,omitempty"`
 
 	// Removesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `remove`.
-	Removesrc types.String `json:"removesrc,omitempty"`
+	Removesrc types.StringType `json:"removesrc,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -2829,13 +2829,13 @@ type LayoutNewselectionLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // LayoutNewselection
@@ -2867,13 +2867,13 @@ type LayoutNewshapeLabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutNewshapeLabel
@@ -2888,19 +2888,19 @@ type LayoutNewshapeLabel struct {
 	// arrayOK: false
 	// type: number
 	// Sets padding (in px) between edge of label and edge of new shape.
-	Padding float64 `json:"padding,omitempty"`
+	Padding types.NumberType `json:"padding,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text to display with the new shape. It is also used for legend item if `name` is not provided.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the label text is drawn with respect to the horizontal. For lines, angle *auto* is the same angle as the line. For all other shapes, angle *auto* is horizontal.
-	Textangle float64 `json:"textangle,omitempty"`
+	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Textposition
 	// arrayOK: false
@@ -2913,7 +2913,7 @@ type LayoutNewshapeLabel struct {
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the new shape's label. Note that this will override `text`. Variables are inserted using %{variable}, for example "x0: %{x0}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{x0:$.2f}". See https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{x0|%m %b %Y}". See https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. A single multiplication or division operation may be applied to numeric variables, and combined with d3 number formatting, for example "Length in cm: %{x0*2.54}", "%{slope*60:.1f} meters per second." For log axes, variable values are given in log units. For date axes, x/y coordinate variables and center variables use datetimes, while all other variable values use values in ms. Finally, the template string has access to variables `x0`, `x1`, `y0`, `y1`, `slope`, `dx`, `dy`, `width`, `height`, `length`, `xcenter` and `ycenter`.
-	Texttemplate types.String `json:"texttemplate,omitempty"`
+	Texttemplate types.StringType `json:"texttemplate,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -2943,13 +2943,13 @@ type LayoutNewshapeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutNewshapeLegendgrouptitle
@@ -2964,7 +2964,7 @@ type LayoutNewshapeLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutNewshapeLine
@@ -2980,13 +2980,13 @@ type LayoutNewshapeLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // LayoutNewshape
@@ -3028,13 +3028,13 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show new shape in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for new shape. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -3045,13 +3045,13 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for new shape. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for new shape.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -3062,19 +3062,19 @@ type LayoutNewshape struct {
 	// arrayOK: false
 	// type: string
 	// Sets new shape name. The name appears as the legend item.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of new shapes.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not new shape is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -3097,13 +3097,13 @@ type LayoutPolarAngularaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutPolarAngularaxisTickformatstop
@@ -3119,25 +3119,25 @@ type LayoutPolarAngularaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutPolarAngularaxis
@@ -3162,7 +3162,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -3207,19 +3207,19 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -3244,37 +3244,37 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Period
 	// arrayOK: false
 	// type: number
 	// Set the angular period. Has an effect only when `angularaxis.type` is *category*.
-	Period float64 `json:"period,omitempty"`
+	Period types.NumberType `json:"period,omitempty"`
 
 	// Rotation
 	// arrayOK: false
 	// type: angle
 	// Sets that start position (in degrees) of the angular axis By default, polar subplots with `direction` set to *counterclockwise* get a `rotation` of *0* which corresponds to due East (like what mathematicians prefer). In turn, polar with `direction` set to *clockwise* get a rotation of *90* which corresponds to due North (like on a compass),
-	Rotation float64 `json:"rotation,omitempty"`
+	Rotation types.NumberType `json:"rotation,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -3287,19 +3287,19 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -3332,7 +3332,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -3349,7 +3349,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -3360,13 +3360,13 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -3379,7 +3379,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -3392,7 +3392,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -3406,7 +3406,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -3420,13 +3420,13 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -3445,7 +3445,7 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutPolarDomain
@@ -3455,13 +3455,13 @@ type LayoutPolarDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this polar subplot .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this polar subplot .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -3501,7 +3501,7 @@ type LayoutPolarRadialaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -3529,13 +3529,13 @@ type LayoutPolarRadialaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutPolarRadialaxisTickformatstop
@@ -3551,25 +3551,25 @@ type LayoutPolarRadialaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutPolarRadialaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -3585,13 +3585,13 @@ type LayoutPolarRadialaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutPolarRadialaxisTitle
@@ -3606,7 +3606,7 @@ type LayoutPolarRadialaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutPolarRadialaxis
@@ -3616,7 +3616,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle (in degrees) from which the radial axis is drawn. Note that by default, radial axis line on the theta=0 line corresponds to a line pointing right (like what mathematicians prefer). Defaults to the first `polar.sector` angle.
-	Angle float64 `json:"angle,omitempty"`
+	Angle types.NumberType `json:"angle,omitempty"`
 
 	// Autorange
 	// arrayOK: false
@@ -3662,7 +3662,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -3700,19 +3700,19 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -3737,7 +3737,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -3755,13 +3755,13 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -3780,7 +3780,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -3793,19 +3793,19 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -3838,7 +3838,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -3855,7 +3855,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -3866,13 +3866,13 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -3885,7 +3885,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -3898,7 +3898,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -3912,7 +3912,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -3926,13 +3926,13 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -3956,7 +3956,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutPolar
@@ -3989,7 +3989,7 @@ type LayoutPolar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fraction of the radius to cut out of the polar subplot.
-	Hole float64 `json:"hole,omitempty"`
+	Hole types.NumberType `json:"hole,omitempty"`
 
 	// Radialaxis
 	// arrayOK: false
@@ -4029,7 +4029,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the end annotation arrow head style.
-	Arrowhead int64 `json:"arrowhead,omitempty"`
+	Arrowhead types.IntegerType `json:"arrowhead,omitempty"`
 
 	// Arrowside
 	// arrayOK: false
@@ -4042,25 +4042,25 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
-	Arrowsize float64 `json:"arrowsize,omitempty"`
+	Arrowsize types.NumberType `json:"arrowsize,omitempty"`
 
 	// Arrowwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of annotation arrow line.
-	Arrowwidth float64 `json:"arrowwidth,omitempty"`
+	Arrowwidth types.NumberType `json:"arrowwidth,omitempty"`
 
 	// Ax
 	// arrayOK: false
 	// type: number
 	// Sets the x component of the arrow tail about the arrow head (in pixels).
-	Ax float64 `json:"ax,omitempty"`
+	Ax types.NumberType `json:"ax,omitempty"`
 
 	// Ay
 	// arrayOK: false
 	// type: number
 	// Sets the y component of the arrow tail about the arrow head (in pixels).
-	Ay float64 `json:"ay,omitempty"`
+	Ay types.NumberType `json:"ay,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -4078,19 +4078,19 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets the padding (in px) between the `text` and the enclosing border.
-	Borderpad float64 `json:"borderpad,omitempty"`
+	Borderpad types.NumberType `json:"borderpad,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the annotation `text`.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Captureevents
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
-	Captureevents types.Bool `json:"captureevents,omitempty"`
+	Captureevents types.BoolType `json:"captureevents,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -4101,7 +4101,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
-	Height float64 `json:"height,omitempty"`
+	Height types.NumberType `json:"height,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -4112,67 +4112,67 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: string
 	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
-	Hovertext types.String `json:"hovertext,omitempty"`
+	Hovertext types.StringType `json:"hovertext,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the annotation (text + arrow).
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showarrow
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
-	Showarrow types.Bool `json:"showarrow,omitempty"`
+	Showarrow types.BoolType `json:"showarrow,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
-	Standoff float64 `json:"standoff,omitempty"`
+	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Startarrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the start annotation arrow head style.
-	Startarrowhead int64 `json:"startarrowhead,omitempty"`
+	Startarrowhead types.IntegerType `json:"startarrowhead,omitempty"`
 
 	// Startarrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
-	Startarrowsize float64 `json:"startarrowsize,omitempty"`
+	Startarrowsize types.NumberType `json:"startarrowsize,omitempty"`
 
 	// Startstandoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
-	Startstandoff float64 `json:"startstandoff,omitempty"`
+	Startstandoff types.NumberType `json:"startstandoff,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the `text` is drawn with respect to the horizontal.
-	Textangle float64 `json:"textangle,omitempty"`
+	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Valign
 	// arrayOK: false
@@ -4185,13 +4185,13 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this annotation is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -4210,7 +4210,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
-	Xshift float64 `json:"xshift,omitempty"`
+	Xshift types.NumberType `json:"xshift,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -4229,7 +4229,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
-	Yshift float64 `json:"yshift,omitempty"`
+	Yshift types.NumberType `json:"yshift,omitempty"`
 
 	// Z
 	// arrayOK: false
@@ -4245,19 +4245,19 @@ type LayoutSceneAspectratio struct {
 	// arrayOK: false
 	// type: number
 	//
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
-	Z float64 `json:"z,omitempty"`
+	Z types.NumberType `json:"z,omitempty"`
 }
 
 // LayoutSceneCameraCenter Sets the (x,y,z) components of the 'center' camera vector This vector determines the translation (x,y,z) space about the center of this scene. By default, there is no such translation.
@@ -4267,19 +4267,19 @@ type LayoutSceneCameraCenter struct {
 	// arrayOK: false
 	// type: number
 	//
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
-	Z float64 `json:"z,omitempty"`
+	Z types.NumberType `json:"z,omitempty"`
 }
 
 // LayoutSceneCameraEye Sets the (x,y,z) components of the 'eye' camera vector. This vector determines the view point about the origin of this scene.
@@ -4289,19 +4289,19 @@ type LayoutSceneCameraEye struct {
 	// arrayOK: false
 	// type: number
 	//
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
-	Z float64 `json:"z,omitempty"`
+	Z types.NumberType `json:"z,omitempty"`
 }
 
 // LayoutSceneCameraProjection
@@ -4322,19 +4322,19 @@ type LayoutSceneCameraUp struct {
 	// arrayOK: false
 	// type: number
 	//
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
-	Z float64 `json:"z,omitempty"`
+	Z types.NumberType `json:"z,omitempty"`
 }
 
 // LayoutSceneCamera
@@ -4368,13 +4368,13 @@ type LayoutSceneDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this scene subplot .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this scene subplot .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -4414,7 +4414,7 @@ type LayoutSceneXaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -4442,13 +4442,13 @@ type LayoutSceneXaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneXaxisTickformatstop
@@ -4464,25 +4464,25 @@ type LayoutSceneXaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutSceneXaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -4498,13 +4498,13 @@ type LayoutSceneXaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneXaxisTitle
@@ -4519,7 +4519,7 @@ type LayoutSceneXaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutSceneXaxis
@@ -4569,7 +4569,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -4607,13 +4607,13 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -4631,7 +4631,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -4649,7 +4649,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
 	// arrayOK: false
@@ -4662,7 +4662,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -4681,19 +4681,19 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
-	Showaxeslabels types.Bool `json:"showaxeslabels,omitempty"`
+	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
-	Showbackground types.Bool `json:"showbackground,omitempty"`
+	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -4706,25 +4706,25 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-	Showspikes types.Bool `json:"showspikes,omitempty"`
+	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -4750,13 +4750,13 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-	Spikesides types.Bool `json:"spikesides,omitempty"`
+	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
-	Spikethickness float64 `json:"spikethickness,omitempty"`
+	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -4768,7 +4768,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -4785,7 +4785,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -4796,7 +4796,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -4809,7 +4809,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -4822,7 +4822,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -4836,7 +4836,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -4850,13 +4850,13 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -4874,13 +4874,13 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-	Zeroline types.Bool `json:"zeroline,omitempty"`
+	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
@@ -4892,7 +4892,7 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
+	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // LayoutSceneYaxisAutorangeoptions
@@ -4920,7 +4920,7 @@ type LayoutSceneYaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -4948,13 +4948,13 @@ type LayoutSceneYaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneYaxisTickformatstop
@@ -4970,25 +4970,25 @@ type LayoutSceneYaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutSceneYaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -5004,13 +5004,13 @@ type LayoutSceneYaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneYaxisTitle
@@ -5025,7 +5025,7 @@ type LayoutSceneYaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutSceneYaxis
@@ -5075,7 +5075,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -5113,13 +5113,13 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -5137,7 +5137,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -5155,7 +5155,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
 	// arrayOK: false
@@ -5168,7 +5168,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -5187,19 +5187,19 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
-	Showaxeslabels types.Bool `json:"showaxeslabels,omitempty"`
+	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
-	Showbackground types.Bool `json:"showbackground,omitempty"`
+	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -5212,25 +5212,25 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-	Showspikes types.Bool `json:"showspikes,omitempty"`
+	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -5256,13 +5256,13 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-	Spikesides types.Bool `json:"spikesides,omitempty"`
+	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
-	Spikethickness float64 `json:"spikethickness,omitempty"`
+	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -5274,7 +5274,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -5291,7 +5291,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -5302,7 +5302,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -5315,7 +5315,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -5328,7 +5328,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -5342,7 +5342,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5356,13 +5356,13 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -5380,13 +5380,13 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-	Zeroline types.Bool `json:"zeroline,omitempty"`
+	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
@@ -5398,7 +5398,7 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
+	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // LayoutSceneZaxisAutorangeoptions
@@ -5426,7 +5426,7 @@ type LayoutSceneZaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -5454,13 +5454,13 @@ type LayoutSceneZaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneZaxisTickformatstop
@@ -5476,25 +5476,25 @@ type LayoutSceneZaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutSceneZaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -5510,13 +5510,13 @@ type LayoutSceneZaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSceneZaxisTitle
@@ -5531,7 +5531,7 @@ type LayoutSceneZaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutSceneZaxis
@@ -5581,7 +5581,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -5619,13 +5619,13 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -5643,7 +5643,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -5661,7 +5661,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
 	// arrayOK: false
@@ -5674,7 +5674,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -5693,19 +5693,19 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
-	Showaxeslabels types.Bool `json:"showaxeslabels,omitempty"`
+	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
-	Showbackground types.Bool `json:"showbackground,omitempty"`
+	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -5718,25 +5718,25 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
-	Showspikes types.Bool `json:"showspikes,omitempty"`
+	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -5762,13 +5762,13 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
-	Spikesides types.Bool `json:"spikesides,omitempty"`
+	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
-	Spikethickness float64 `json:"spikethickness,omitempty"`
+	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -5780,7 +5780,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -5797,7 +5797,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -5808,7 +5808,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -5821,7 +5821,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -5834,7 +5834,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -5848,7 +5848,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -5862,13 +5862,13 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -5886,13 +5886,13 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-	Zeroline types.Bool `json:"zeroline,omitempty"`
+	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
@@ -5904,7 +5904,7 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
+	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // LayoutScene
@@ -5992,13 +5992,13 @@ type SelectionLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // LayoutSelection
@@ -6013,25 +6013,25 @@ type LayoutSelection struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the selection.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Path
 	// arrayOK: false
 	// type: string
 	// For `type` *path* - a valid SVG path similar to `shapes.path` in data coordinates. Allowed segments are: M, L and Z.
-	Path types.String `json:"path,omitempty"`
+	Path types.StringType `json:"path,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -6092,13 +6092,13 @@ type ShapeLabelFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ShapeLabel
@@ -6113,19 +6113,19 @@ type ShapeLabel struct {
 	// arrayOK: false
 	// type: number
 	// Sets padding (in px) between edge of label and edge of shape.
-	Padding float64 `json:"padding,omitempty"`
+	Padding types.NumberType `json:"padding,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text to display with shape. It is also used for legend item if `name` is not provided.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the label text is drawn with respect to the horizontal. For lines, angle *auto* is the same angle as the line. For all other shapes, angle *auto* is horizontal.
-	Textangle float64 `json:"textangle,omitempty"`
+	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Textposition
 	// arrayOK: false
@@ -6138,7 +6138,7 @@ type ShapeLabel struct {
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the shape's label. Note that this will override `text`. Variables are inserted using %{variable}, for example "x0: %{x0}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{x0:$.2f}". See https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{x0|%m %b %Y}". See https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. A single multiplication or division operation may be applied to numeric variables, and combined with d3 number formatting, for example "Length in cm: %{x0*2.54}", "%{slope*60:.1f} meters per second." For log axes, variable values are given in log units. For date axes, x/y coordinate variables and center variables use datetimes, while all other variable values use values in ms. Finally, the template string has access to variables `x0`, `x1`, `y0`, `y1`, `slope`, `dx`, `dy`, `width`, `height`, `length`, `xcenter` and `ycenter`.
-	Texttemplate types.String `json:"texttemplate,omitempty"`
+	Texttemplate types.StringType `json:"texttemplate,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -6168,13 +6168,13 @@ type ShapeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ShapeLegendgrouptitle
@@ -6189,7 +6189,7 @@ type ShapeLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // ShapeLine
@@ -6205,13 +6205,13 @@ type ShapeLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // LayoutShape
@@ -6221,7 +6221,7 @@ type LayoutShape struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the shape could be activated for edit or not. Has no effect when the older editable shapes mode is enabled via `config.editable` or `config.edits.shapePosition`.
-	Editable types.Bool `json:"editable,omitempty"`
+	Editable types.BoolType `json:"editable,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
@@ -6252,13 +6252,13 @@ type LayoutShape struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this shape in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this shape. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -6269,13 +6269,13 @@ type LayoutShape struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this shape. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this shape.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -6286,31 +6286,31 @@ type LayoutShape struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the shape.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Path
 	// arrayOK: false
 	// type: string
 	// For `type` *path* - a valid SVG path with the pixel values replaced by data values in `xsizemode`/`ysizemode` being *scaled* and taken unmodified as pixels relative to `xanchor` and `yanchor` in case of *pixel* size mode. There are a few restrictions / quirks only absolute instructions, not relative. So the allowed segments are: M, L, H, V, Q, C, T, S, and Z arcs (A) are not allowed because radius rx and ry are relative. In the future we could consider supporting relative commands, but we would have to decide on how to handle date and log axes. Note that even as is, Q and C Bezier paths that are smooth on linear axes may not be smooth on log, and vice versa. no chained "polybezier" commands - specify the segment type for each one. On category axes, values are numbers scaled to the serial numbers of categories because using the categories themselves there would be no way to describe fractional positions On data axes: because space and T are both normal components of path strings, we can't use either to separate date from time parts. Therefore we'll use underscore for this purpose: 2015-02-21_13:45:56.789
-	Path types.String `json:"path,omitempty"`
+	Path types.StringType `json:"path,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this shape is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -6404,13 +6404,13 @@ type SliderCurrentvalueFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // SliderCurrentvalue
@@ -6425,25 +6425,25 @@ type SliderCurrentvalue struct {
 	// arrayOK: false
 	// type: number
 	// The amount of space, in pixels, between the current value label and the slider.
-	Offset float64 `json:"offset,omitempty"`
+	Offset types.NumberType `json:"offset,omitempty"`
 
 	// Prefix
 	// arrayOK: false
 	// type: string
 	// When currentvalue.visible is true, this sets the prefix of the label.
-	Prefix types.String `json:"prefix,omitempty"`
+	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// When currentvalue.visible is true, this sets the suffix of the label.
-	Suffix types.String `json:"suffix,omitempty"`
+	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Shows the currently-selected value above the slider.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -6466,13 +6466,13 @@ type SliderFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // SliderPad Set the padding of the slider component along each side.
@@ -6482,25 +6482,25 @@ type SliderPad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
-	B float64 `json:"b,omitempty"`
+	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
-	L float64 `json:"l,omitempty"`
+	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
-	R float64 `json:"r,omitempty"`
+	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
-	T float64 `json:"t,omitempty"`
+	T types.NumberType `json:"t,omitempty"`
 }
 
 // SliderStep
@@ -6516,13 +6516,13 @@ type SliderStep struct {
 	// arrayOK: false
 	// type: boolean
 	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_sliderchange` method and executing the API command manually without losing the benefit of the slider automatically binding to the state of the plot through the specification of `method` and `args`.
-	Execute types.Bool `json:"execute,omitempty"`
+	Execute types.BoolType `json:"execute,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the slider
-	Label types.String `json:"label,omitempty"`
+	Label types.StringType `json:"label,omitempty"`
 
 	// Method
 	// arrayOK: false
@@ -6535,25 +6535,25 @@ type SliderStep struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// Sets the value of the slider step, used to refer to the step programatically. Defaults to the slider label if not provided.
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this step is included in the slider.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // SliderTransition
@@ -6563,7 +6563,7 @@ type SliderTransition struct {
 	// arrayOK: false
 	// type: number
 	// Sets the duration of the slider transition
-	Duration float64 `json:"duration,omitempty"`
+	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
 	// arrayOK: false
@@ -6580,7 +6580,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Determines which button (by index starting from 0) is considered active.
-	Active float64 `json:"active,omitempty"`
+	Active types.NumberType `json:"active,omitempty"`
 
 	// Activebgcolor
 	// arrayOK: false
@@ -6604,7 +6604,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the slider.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Currentvalue
 	// arrayOK: false
@@ -6620,7 +6620,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length of the slider This measure excludes the padding of both ends. That is, the slider's length is this length minus the padding on both ends.
-	Len float64 `json:"len,omitempty"`
+	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
 	// arrayOK: false
@@ -6633,13 +6633,13 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length in pixels of minor step tick marks
-	Minorticklen float64 `json:"minorticklen,omitempty"`
+	Minorticklen types.NumberType `json:"minorticklen,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Pad
 	// arrayOK: false
@@ -6655,7 +6655,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -6667,13 +6667,13 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length in pixels of step tick marks
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Transition
 	// arrayOK: false
@@ -6684,13 +6684,13 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the slider is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the slider.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -6703,7 +6703,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the slider.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -6720,13 +6720,13 @@ type LayoutSmithDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this smith subplot .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this smith subplot .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -6754,13 +6754,13 @@ type LayoutSmithImaginaryaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSmithImaginaryaxis
@@ -6782,19 +6782,19 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -6819,25 +6819,25 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -6868,19 +6868,19 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -6893,7 +6893,7 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -6907,19 +6907,19 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutSmithRealaxisTickfont Sets the tick font.
@@ -6935,13 +6935,13 @@ type LayoutSmithRealaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutSmithRealaxis
@@ -6963,19 +6963,19 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -7000,25 +7000,25 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -7045,7 +7045,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -7062,19 +7062,19 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -7087,7 +7087,7 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -7101,19 +7101,19 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutSmith
@@ -7154,13 +7154,13 @@ type LayoutTernaryAaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryAaxisTickformatstop
@@ -7176,25 +7176,25 @@ type LayoutTernaryAaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutTernaryAaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -7210,13 +7210,13 @@ type LayoutTernaryAaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryAaxisTitle
@@ -7231,7 +7231,7 @@ type LayoutTernaryAaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutTernaryAaxis
@@ -7266,19 +7266,19 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -7303,31 +7303,31 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
-	Min float64 `json:"min,omitempty"`
+	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -7340,19 +7340,19 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -7378,7 +7378,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -7395,7 +7395,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -7406,13 +7406,13 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -7425,7 +7425,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -7438,7 +7438,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -7452,7 +7452,7 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -7466,13 +7466,13 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -7499,13 +7499,13 @@ type LayoutTernaryBaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryBaxisTickformatstop
@@ -7521,25 +7521,25 @@ type LayoutTernaryBaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutTernaryBaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -7555,13 +7555,13 @@ type LayoutTernaryBaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryBaxisTitle
@@ -7576,7 +7576,7 @@ type LayoutTernaryBaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutTernaryBaxis
@@ -7611,19 +7611,19 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -7648,31 +7648,31 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
-	Min float64 `json:"min,omitempty"`
+	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -7685,19 +7685,19 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -7723,7 +7723,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -7740,7 +7740,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -7751,13 +7751,13 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -7770,7 +7770,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -7783,7 +7783,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -7797,7 +7797,7 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -7811,13 +7811,13 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -7844,13 +7844,13 @@ type LayoutTernaryCaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryCaxisTickformatstop
@@ -7866,25 +7866,25 @@ type LayoutTernaryCaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutTernaryCaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -7900,13 +7900,13 @@ type LayoutTernaryCaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTernaryCaxisTitle
@@ -7921,7 +7921,7 @@ type LayoutTernaryCaxisTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutTernaryCaxis
@@ -7956,19 +7956,19 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
@@ -7993,31 +7993,31 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
-	Min float64 `json:"min,omitempty"`
+	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -8030,19 +8030,19 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -8068,7 +8068,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -8085,7 +8085,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -8096,13 +8096,13 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -8115,7 +8115,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -8128,7 +8128,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -8142,7 +8142,7 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -8156,13 +8156,13 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -8183,13 +8183,13 @@ type LayoutTernaryDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this ternary subplot .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this ternary subplot .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -8237,7 +8237,7 @@ type LayoutTernary struct {
 	// arrayOK: false
 	// type: number
 	// The number each triplet should sum to, and the maximum range of each axis
-	Sum float64 `json:"sum,omitempty"`
+	Sum types.NumberType `json:"sum,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -8259,13 +8259,13 @@ type LayoutTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutTitlePad Sets the padding of the title. Each padding value only applies when the corresponding `xanchor`/`yanchor` value is set accordingly. E.g. for left padding to take effect, `xanchor` must be set to *left*. The same rule applies if `xanchor`/`yanchor` is determined automatically. Padding is muted if the respective anchor value is *middle*/*center*.
@@ -8275,25 +8275,25 @@ type LayoutTitlePad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
-	B float64 `json:"b,omitempty"`
+	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
-	L float64 `json:"l,omitempty"`
+	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
-	R float64 `json:"r,omitempty"`
+	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
-	T float64 `json:"t,omitempty"`
+	T types.NumberType `json:"t,omitempty"`
 }
 
 // LayoutTitle
@@ -8303,7 +8303,7 @@ type LayoutTitle struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the title can automatically push the figure margins. If `yref='paper'` then the margin will expand to ensure that the title doesn’t overlap with the edges of the container. If `yref='container'` then the margins will ensure that the title doesn’t overlap with the plot area, tick labels, and axis titles. If `automargin=true` and the margins need to be expanded, then y will be set to a default 1 and yanchor will be set to an appropriate default to ensure that minimal margin space is needed. Note that when `yref='paper'`, only 1 or 0 are allowed y values. Invalid values will be reset to the default 1.
-	Automargin types.Bool `json:"automargin,omitempty"`
+	Automargin types.BoolType `json:"automargin,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -8319,13 +8319,13 @@ type LayoutTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the plot's title. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` in normalized coordinates from *0* (left) to *1* (right).
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -8345,7 +8345,7 @@ type LayoutTitle struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` in normalized coordinates from *0* (bottom) to *1* (top). *auto* places the baseline of the title onto the vertical center of the top margin.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -8369,7 +8369,7 @@ type LayoutTransition struct {
 	// arrayOK: false
 	// type: number
 	// The duration of the transition, in milliseconds. If equal to zero, updates are synchronous.
-	Duration float64 `json:"duration,omitempty"`
+	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
 	// arrayOK: false
@@ -8393,7 +8393,7 @@ type LayoutUniformtext struct {
 	// arrayOK: false
 	// type: number
 	// Sets the minimum text size between traces of the same type.
-	Minsize float64 `json:"minsize,omitempty"`
+	Minsize types.NumberType `json:"minsize,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -8422,13 +8422,13 @@ type UpdatemenuButton struct {
 	// arrayOK: false
 	// type: boolean
 	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_buttonclicked` method and executing the API command manually without losing the benefit of the updatemenu automatically binding to the state of the plot through the specification of `method` and `args`.
-	Execute types.Bool `json:"execute,omitempty"`
+	Execute types.BoolType `json:"execute,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the button.
-	Label types.String `json:"label,omitempty"`
+	Label types.StringType `json:"label,omitempty"`
 
 	// Method
 	// arrayOK: false
@@ -8441,19 +8441,19 @@ type UpdatemenuButton struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this button is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // UpdatemenuFont Sets the font of the update menu button text.
@@ -8469,13 +8469,13 @@ type UpdatemenuFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // UpdatemenuPad Sets the padding around the buttons or dropdown menu.
@@ -8485,25 +8485,25 @@ type UpdatemenuPad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
-	B float64 `json:"b,omitempty"`
+	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
-	L float64 `json:"l,omitempty"`
+	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
-	R float64 `json:"r,omitempty"`
+	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
-	T float64 `json:"t,omitempty"`
+	T types.NumberType `json:"t,omitempty"`
 }
 
 // LayoutUpdatemenu
@@ -8513,7 +8513,7 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: integer
 	// Determines which button (by index starting from 0) is considered active.
-	Active int64 `json:"active,omitempty"`
+	Active types.IntegerType `json:"active,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -8531,7 +8531,7 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the update menu.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Buttons
 	// role: Object
@@ -8554,7 +8554,7 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Pad
 	// arrayOK: false
@@ -8565,13 +8565,13 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: boolean
 	// Highlights active dropdown item or active button if true.
-	Showactive types.Bool `json:"showactive,omitempty"`
+	Showactive types.BoolType `json:"showactive,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -8584,13 +8584,13 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the update menu is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the update menu.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -8603,7 +8603,7 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the update menu.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -8638,7 +8638,7 @@ type LayoutXaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -8672,25 +8672,25 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -8708,7 +8708,7 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -8736,13 +8736,13 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 }
 
 // LayoutXaxisRangebreak
@@ -8758,19 +8758,19 @@ type LayoutXaxisRangebreak struct {
 	// arrayOK: false
 	// type: number
 	// Sets the size of each `values` item. The default is one day in milliseconds.
-	Dvalue float64 `json:"dvalue,omitempty"`
+	Dvalue types.NumberType `json:"dvalue,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Pattern
 	// arrayOK: false
@@ -8783,7 +8783,7 @@ type LayoutXaxisRangebreak struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Values
 	// arrayOK: false
@@ -8799,19 +8799,19 @@ type LayoutXaxisRangeselectorButton struct {
 	// arrayOK: false
 	// type: number
 	// Sets the number of steps to take to update the range. Use with `step` to specify the update interval.
-	Count float64 `json:"count,omitempty"`
+	Count types.NumberType `json:"count,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the button.
-	Label types.String `json:"label,omitempty"`
+	Label types.StringType `json:"label,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Step
 	// arrayOK: false
@@ -8831,13 +8831,13 @@ type LayoutXaxisRangeselectorButton struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this button is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // LayoutXaxisRangeselectorFont Sets the font of the range selector button text.
@@ -8853,13 +8853,13 @@ type LayoutXaxisRangeselectorFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutXaxisRangeselector
@@ -8887,7 +8887,7 @@ type LayoutXaxisRangeselector struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the range selector.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Buttons
 	// role: Object
@@ -8903,13 +8903,13 @@ type LayoutXaxisRangeselector struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this range selector is visible. Note that range selectors are only available for x axes of `type` set to or auto-typed to *date*.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the range selector.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -8922,7 +8922,7 @@ type LayoutXaxisRangeselector struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the range selector.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -8956,7 +8956,7 @@ type LayoutXaxisRangeslider struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the range slider range is computed in relation to the input data. If `range` is provided, then `autorange` is set to *false*.
-	Autorange types.Bool `json:"autorange,omitempty"`
+	Autorange types.BoolType `json:"autorange,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -8974,7 +8974,7 @@ type LayoutXaxisRangeslider struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the border width of the range slider.
-	Borderwidth int64 `json:"borderwidth,omitempty"`
+	Borderwidth types.IntegerType `json:"borderwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -8986,13 +8986,13 @@ type LayoutXaxisRangeslider struct {
 	// arrayOK: false
 	// type: number
 	// The height of the range slider as a fraction of the total plot area height.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the range slider will be visible. If visible, perpendicular axes will be set to `fixedrange`
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
@@ -9013,13 +9013,13 @@ type LayoutXaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutXaxisTickformatstop
@@ -9035,25 +9035,25 @@ type LayoutXaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutXaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -9069,13 +9069,13 @@ type LayoutXaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutXaxisTitle
@@ -9090,13 +9090,13 @@ type LayoutXaxisTitle struct {
 	// arrayOK: false
 	// type: number
 	// Sets the standoff distance (in px) between the axis labels and the title text The default value is a function of the axis tick labels, the title `font.size` and the axis `linewidth`. Note that the axis title position is always constrained within the margins, so the actual standoff distance is always less than the set or default value. By setting `standoff` and turning on `automargin`, plotly.js will push the margins to fit the axis title at given standoff distance.
-	Standoff float64 `json:"standoff,omitempty"`
+	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutXaxis
@@ -9160,7 +9160,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -9199,7 +9199,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
-	Dividerwidth float64 `json:"dividerwidth,omitempty"`
+	Dividerwidth types.NumberType `json:"dividerwidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -9224,7 +9224,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-	Fixedrange types.Bool `json:"fixedrange,omitempty"`
+	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
@@ -9236,19 +9236,19 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Insiderange
 	// arrayOK: false
@@ -9279,7 +9279,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Matches
 	// arrayOK: false
@@ -9304,7 +9304,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minor
 	// arrayOK: false
@@ -9322,7 +9322,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Overlaying
 	// arrayOK: false
@@ -9335,7 +9335,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
-	Position float64 `json:"position,omitempty"`
+	Position types.NumberType `json:"position,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -9376,19 +9376,19 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// If this axis is linked to another by `scaleanchor`, this determines the pixel to unit scale ratio. For example, if this value is 10, then every unit on this axis spans 10 times the number of pixels as a unit on the linked axis. Use this for example to create an elevation profile where the vertical scale is exaggerated a fixed amount with respect to the horizontal.
-	Scaleratio float64 `json:"scaleratio,omitempty"`
+	Scaleratio types.NumberType `json:"scaleratio,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showdividers
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
-	Showdividers types.Bool `json:"showdividers,omitempty"`
+	Showdividers types.BoolType `json:"showdividers,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -9401,25 +9401,25 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
-	Showspikes types.Bool `json:"showspikes,omitempty"`
+	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -9452,7 +9452,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Spikedash types.String `json:"spikedash,omitempty"`
+	Spikedash types.StringType `json:"spikedash,omitempty"`
 
 	// Spikemode
 	// arrayOK: false
@@ -9472,7 +9472,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Spikethickness float64 `json:"spikethickness,omitempty"`
+	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -9484,7 +9484,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -9501,7 +9501,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -9533,13 +9533,13 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -9552,7 +9552,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -9572,7 +9572,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -9586,7 +9586,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -9600,13 +9600,13 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -9630,13 +9630,13 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-	Zeroline types.Bool `json:"zeroline,omitempty"`
+	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
@@ -9648,7 +9648,7 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
+	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // LayoutYaxisAutorangeoptions
@@ -9676,7 +9676,7 @@ type LayoutYaxisAutorangeoptions struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `include`.
-	Includesrc types.String `json:"includesrc,omitempty"`
+	Includesrc types.StringType `json:"includesrc,omitempty"`
 
 	// Maxallowed
 	// arrayOK: false
@@ -9710,25 +9710,25 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -9746,7 +9746,7 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -9774,13 +9774,13 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 }
 
 // LayoutYaxisRangebreak
@@ -9796,19 +9796,19 @@ type LayoutYaxisRangebreak struct {
 	// arrayOK: false
 	// type: number
 	// Sets the size of each `values` item. The default is one day in milliseconds.
-	Dvalue float64 `json:"dvalue,omitempty"`
+	Dvalue types.NumberType `json:"dvalue,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Pattern
 	// arrayOK: false
@@ -9821,7 +9821,7 @@ type LayoutYaxisRangebreak struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Values
 	// arrayOK: false
@@ -9843,13 +9843,13 @@ type LayoutYaxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutYaxisTickformatstop
@@ -9865,25 +9865,25 @@ type LayoutYaxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // LayoutYaxisTitleFont Sets this axis' title font. Note that the title's font used to be customized by the now deprecated `titlefont` attribute.
@@ -9899,13 +9899,13 @@ type LayoutYaxisTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // LayoutYaxisTitle
@@ -9920,13 +9920,13 @@ type LayoutYaxisTitle struct {
 	// arrayOK: false
 	// type: number
 	// Sets the standoff distance (in px) between the axis labels and the title text The default value is a function of the axis tick labels, the title `font.size` and the axis `linewidth`. Note that the axis title position is always constrained within the margins, so the actual standoff distance is always less than the set or default value. By setting `standoff` and turning on `automargin`, plotly.js will push the margins to fit the axis title at given standoff distance.
-	Standoff float64 `json:"standoff,omitempty"`
+	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // LayoutYaxis
@@ -9962,7 +9962,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Automatically reposition the axis to avoid overlap with other axes with the same `overlaying` value. This repositioning will account for any `shift` amount applied to other axes on the same side with `autoshift` is set to true. Only has an effect if `anchor` is set to *free*.
-	Autoshift types.Bool `json:"autoshift,omitempty"`
+	Autoshift types.BoolType `json:"autoshift,omitempty"`
 
 	// Autotickangles
 	// arrayOK: false
@@ -9996,7 +9996,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
-	Categoryarraysrc types.String `json:"categoryarraysrc,omitempty"`
+	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
 	// arrayOK: false
@@ -10035,7 +10035,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
-	Dividerwidth float64 `json:"dividerwidth,omitempty"`
+	Dividerwidth types.NumberType `json:"dividerwidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -10060,7 +10060,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
-	Fixedrange types.Bool `json:"fixedrange,omitempty"`
+	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
@@ -10072,19 +10072,19 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Griddash types.String `json:"griddash,omitempty"`
+	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
-	Gridwidth float64 `json:"gridwidth,omitempty"`
+	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Hoverformat types.String `json:"hoverformat,omitempty"`
+	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Insiderange
 	// arrayOK: false
@@ -10115,7 +10115,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Linewidth float64 `json:"linewidth,omitempty"`
+	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Matches
 	// arrayOK: false
@@ -10140,7 +10140,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minor
 	// arrayOK: false
@@ -10158,7 +10158,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Overlaying
 	// arrayOK: false
@@ -10171,7 +10171,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
-	Position float64 `json:"position,omitempty"`
+	Position types.NumberType `json:"position,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -10202,25 +10202,25 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// If this axis is linked to another by `scaleanchor`, this determines the pixel to unit scale ratio. For example, if this value is 10, then every unit on this axis spans 10 times the number of pixels as a unit on the linked axis. Use this for example to create an elevation profile where the vertical scale is exaggerated a fixed amount with respect to the horizontal.
-	Scaleratio float64 `json:"scaleratio,omitempty"`
+	Scaleratio types.NumberType `json:"scaleratio,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Shift
 	// arrayOK: false
 	// type: number
 	// Moves the axis a given number of pixels from where it would have been otherwise. Accepts both positive and negative values, which will shift the axis either right or left, respectively. If `autoshift` is set to true, then this defaults to a padding of -3 if `side` is set to *left*. and defaults to +3 if `side` is set to *right*. Defaults to 0 if `autoshift` is set to false. Only has an effect if `anchor` is set to *free*.
-	Shift float64 `json:"shift,omitempty"`
+	Shift types.NumberType `json:"shift,omitempty"`
 
 	// Showdividers
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
-	Showdividers types.Bool `json:"showdividers,omitempty"`
+	Showdividers types.BoolType `json:"showdividers,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -10233,25 +10233,25 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
-	Showgrid types.Bool `json:"showgrid,omitempty"`
+	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
-	Showline types.Bool `json:"showline,omitempty"`
+	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
-	Showspikes types.Bool `json:"showspikes,omitempty"`
+	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -10284,7 +10284,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Spikedash types.String `json:"spikedash,omitempty"`
+	Spikedash types.StringType `json:"spikedash,omitempty"`
 
 	// Spikemode
 	// arrayOK: false
@@ -10304,7 +10304,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Spikethickness float64 `json:"spikethickness,omitempty"`
+	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
@@ -10316,7 +10316,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -10333,7 +10333,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -10365,13 +10365,13 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -10384,7 +10384,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -10404,7 +10404,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -10418,7 +10418,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -10432,13 +10432,13 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -10462,13 +10462,13 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
-	Zeroline types.Bool `json:"zeroline,omitempty"`
+	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
@@ -10480,7 +10480,7 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
-	Zerolinewidth float64 `json:"zerolinewidth,omitempty"`
+	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // AnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.

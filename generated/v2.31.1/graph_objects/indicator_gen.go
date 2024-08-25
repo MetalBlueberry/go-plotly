@@ -47,7 +47,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Delta
 	// arrayOK: false
@@ -76,13 +76,13 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -93,13 +93,13 @@ type Indicator struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -111,7 +111,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -124,7 +124,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Number
 	// arrayOK: false
@@ -150,7 +150,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -162,7 +162,7 @@ type Indicator struct {
 	// arrayOK: false
 	// type: number
 	// Sets the number to be displayed.
-	Value float64 `json:"value,omitempty"`
+	Value types.NumberType `json:"value,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -185,7 +185,7 @@ type IndicatorDeltaDecreasing struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol types.String `json:"symbol,omitempty"`
+	Symbol types.StringType `json:"symbol,omitempty"`
 }
 
 // IndicatorDeltaFont Set the font used to display the delta
@@ -201,13 +201,13 @@ type IndicatorDeltaFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // IndicatorDeltaIncreasing
@@ -223,7 +223,7 @@ type IndicatorDeltaIncreasing struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
-	Symbol types.String `json:"symbol,omitempty"`
+	Symbol types.StringType `json:"symbol,omitempty"`
 }
 
 // IndicatorDelta
@@ -255,31 +255,31 @@ type IndicatorDelta struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the delta.
-	Prefix types.String `json:"prefix,omitempty"`
+	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Reference
 	// arrayOK: false
 	// type: number
 	// Sets the reference value to compute the delta. By default, it is set to the current value.
-	Reference float64 `json:"reference,omitempty"`
+	Reference types.NumberType `json:"reference,omitempty"`
 
 	// Relative
 	// arrayOK: false
 	// type: boolean
 	// Show relative change
-	Relative types.Bool `json:"relative,omitempty"`
+	Relative types.BoolType `json:"relative,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the delta.
-	Suffix types.String `json:"suffix,omitempty"`
+	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat types.String `json:"valueformat,omitempty"`
+	Valueformat types.StringType `json:"valueformat,omitempty"`
 }
 
 // IndicatorDomain
@@ -289,13 +289,13 @@ type IndicatorDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this indicator trace .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this indicator trace .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -323,13 +323,13 @@ type IndicatorGaugeAxisTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // IndicatorGaugeAxisTickformatstop
@@ -345,25 +345,25 @@ type IndicatorGaugeAxisTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // IndicatorGaugeAxis
@@ -392,13 +392,13 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -410,7 +410,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -423,7 +423,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -449,7 +449,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -466,7 +466,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -477,13 +477,13 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -496,7 +496,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -509,7 +509,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -523,7 +523,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -537,19 +537,19 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 }
 
 // IndicatorGaugeBarLine
@@ -565,7 +565,7 @@ type IndicatorGaugeBarLine struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // IndicatorGaugeBar Set the appearance of the gauge's value
@@ -586,7 +586,7 @@ type IndicatorGaugeBar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 }
 
 // StepLine
@@ -602,7 +602,7 @@ type StepLine struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // IndicatorGaugeStep
@@ -623,7 +623,7 @@ type IndicatorGaugeStep struct {
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Range
 	// arrayOK: false
@@ -635,13 +635,13 @@ type IndicatorGaugeStep struct {
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 }
 
 // IndicatorGaugeThresholdLine
@@ -657,7 +657,7 @@ type IndicatorGaugeThresholdLine struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the threshold line.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // IndicatorGaugeThreshold
@@ -672,13 +672,13 @@ type IndicatorGaugeThreshold struct {
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the threshold line as a fraction of the thickness of the gauge.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets a treshold value drawn as a line.
-	Value float64 `json:"value,omitempty"`
+	Value types.NumberType `json:"value,omitempty"`
 }
 
 // IndicatorGauge The gauge of the Indicator plot.
@@ -710,7 +710,7 @@ type IndicatorGauge struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the gauge.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Shape
 	// arrayOK: false
@@ -743,13 +743,13 @@ type IndicatorLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // IndicatorLegendgrouptitle
@@ -764,7 +764,7 @@ type IndicatorLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // IndicatorNumberFont Set the font used to display main number
@@ -780,13 +780,13 @@ type IndicatorNumberFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // IndicatorNumber
@@ -801,19 +801,19 @@ type IndicatorNumber struct {
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the number.
-	Prefix types.String `json:"prefix,omitempty"`
+	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the number.
-	Suffix types.String `json:"suffix,omitempty"`
+	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Valueformat types.String `json:"valueformat,omitempty"`
+	Valueformat types.StringType `json:"valueformat,omitempty"`
 }
 
 // IndicatorStream
@@ -823,13 +823,13 @@ type IndicatorStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // IndicatorTitleFont Set the font used to display the title
@@ -845,13 +845,13 @@ type IndicatorTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // IndicatorTitle
@@ -873,7 +873,7 @@ type IndicatorTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of this indicator.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // IndicatorTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.

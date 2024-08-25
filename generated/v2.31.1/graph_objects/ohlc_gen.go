@@ -40,7 +40,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `close`.
-	Closesrc types.String `json:"closesrc,omitempty"`
+	Closesrc types.StringType `json:"closesrc,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -54,7 +54,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Decreasing
 	// arrayOK: false
@@ -73,7 +73,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `high`.
-	Highsrc types.String `json:"highsrc,omitempty"`
+	Highsrc types.StringType `json:"highsrc,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -86,7 +86,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -97,13 +97,13 @@ type Ohlc struct {
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
-	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -117,7 +117,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Increasing
 	// arrayOK: false
@@ -128,13 +128,13 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -145,13 +145,13 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -170,7 +170,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `low`.
-	Lowsrc types.String `json:"lowsrc,omitempty"`
+	Lowsrc types.StringType `json:"lowsrc,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -182,19 +182,19 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Open
 	// arrayOK: false
@@ -208,7 +208,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `open`.
-	Opensrc types.String `json:"opensrc,omitempty"`
+	Opensrc types.StringType `json:"opensrc,omitempty"`
 
 	// Selectedpoints
 	// arrayOK: false
@@ -220,7 +220,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -231,19 +231,19 @@ type Ohlc struct {
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each sample point. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to this trace's sample points.
-	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width of the open/close tick marks relative to the *x* minimal interval.
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Transforms
 	// role: Object
@@ -254,7 +254,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -281,7 +281,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis types.String `json:"xaxis,omitempty"`
+	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xcalendar
 	// arrayOK: false
@@ -294,7 +294,7 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat types.String `json:"xhoverformat,omitempty"`
+	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
@@ -319,25 +319,25 @@ type Ohlc struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc types.String `json:"xsrc,omitempty"`
+	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis types.String `json:"yaxis,omitempty"`
+	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat types.String `json:"yhoverformat,omitempty"`
+	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Zorder
 	// arrayOK: false
 	// type: integer
 	// Sets the layer on which this trace is displayed, relative to other SVG traces on the same subplot. SVG traces with higher `zorder` appear in front of those with lower `zorder`.
-	Zorder int64 `json:"zorder,omitempty"`
+	Zorder types.IntegerType `json:"zorder,omitempty"`
 }
 
 // OhlcDecreasingLine
@@ -353,13 +353,13 @@ type OhlcDecreasingLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // OhlcDecreasing
@@ -384,31 +384,31 @@ type OhlcHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
 // OhlcHoverlabel
@@ -425,7 +425,7 @@ type OhlcHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -437,7 +437,7 @@ type OhlcHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -449,7 +449,7 @@ type OhlcHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -460,19 +460,19 @@ type OhlcHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 
 	// Split
 	// arrayOK: false
 	// type: boolean
 	// Show hover information (open, close, high, low) in separate labels.
-	Split types.Bool `json:"split,omitempty"`
+	Split types.BoolType `json:"split,omitempty"`
 }
 
 // OhlcIncreasingLine
@@ -488,13 +488,13 @@ type OhlcIncreasingLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // OhlcIncreasing
@@ -519,13 +519,13 @@ type OhlcLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // OhlcLegendgrouptitle
@@ -540,7 +540,7 @@ type OhlcLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // OhlcLine
@@ -550,13 +550,13 @@ type OhlcLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*). Note that this style setting can also be set per direction via `increasing.line.dash` and `decreasing.line.dash`.
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// [object Object] Note that this style setting can also be set per direction via `increasing.line.width` and `decreasing.line.width`.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // OhlcStream
@@ -566,13 +566,13 @@ type OhlcStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // OhlcTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.

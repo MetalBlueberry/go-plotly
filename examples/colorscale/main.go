@@ -23,9 +23,9 @@ func main() {
 				Marker: &grob.Scatter3dMarker{
 					Autocolorscale: types.False,
 					Cauto:          types.False,
-					Cmin:           0,
-					Cmid:           5,
-					Cmax:           10,
+					Cmin:           types.N(0),
+					Cmid:           types.N(5),
+					Cmax:           types.N(10),
 					Color:          types.ArrayOKArray(types.UseColorScaleValues(z)...),
 					Colorscale: &types.ColorScale{
 						Values: []types.ColorScaleReference{
@@ -43,15 +43,15 @@ func main() {
 						},
 					},
 					Showscale: types.True,
-					Size:      types.ArrayOKValue(4.0),
+					Size:      types.ArrayOKValue(types.N(4.0)),
 				},
 			},
 		},
 		Layout: &grob.Layout{
-			Height: 700,
-			Width:  1200,
+			Height: types.N(700),
+			Width:  types.N(1200),
 			Title: &grob.LayoutTitle{
-				Text: "3D Spiral",
+				Text: types.S("3D Spiral"),
 			},
 		},
 	}

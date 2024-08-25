@@ -32,19 +32,19 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-	Alignmentgroup types.String `json:"alignmentgroup,omitempty"`
+	Alignmentgroup types.StringType `json:"alignmentgroup,omitempty"`
 
 	// Cliponaxis
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not markers and text nodes are clipped about the subplot axes. To show markers and text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
-	Cliponaxis types.Bool `json:"cliponaxis,omitempty"`
+	Cliponaxis types.BoolType `json:"cliponaxis,omitempty"`
 
 	// Connectgaps
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
-	Connectgaps types.Bool `json:"connectgaps,omitempty"`
+	Connectgaps types.BoolType `json:"connectgaps,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -58,19 +58,19 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Dx
 	// arrayOK: false
 	// type: number
 	// Sets the x coordinate step. See `x0` for more info.
-	Dx float64 `json:"dx,omitempty"`
+	Dx types.NumberType `json:"dx,omitempty"`
 
 	// Dy
 	// arrayOK: false
 	// type: number
 	// Sets the y coordinate step. See `y0` for more info.
-	Dy float64 `json:"dy,omitempty"`
+	Dy types.NumberType `json:"dy,omitempty"`
 
 	// ErrorX
 	// arrayOK: false
@@ -118,7 +118,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -136,25 +136,25 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate *types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
+	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -168,13 +168,13 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -185,13 +185,13 @@ type Scatter struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -213,7 +213,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -226,19 +226,19 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-	Offsetgroup types.String `json:"offsetgroup,omitempty"`
+	Offsetgroup types.StringType `json:"offsetgroup,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -262,7 +262,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stackgaps
 	// arrayOK: false
@@ -275,7 +275,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Set several scatter traces (on the same subplot) to the same stackgroup in order to add their y values (or their x values if `orientation` is *h*). If blank or omitted this trace will not be stacked. Stacking also turns `fill` on by default, using *tonexty* (*tonextx*) if `orientation` is *h* (*v*) and sets the default `mode` to *lines* irrespective of point count. You can only stack on a numeric (linear or log) axis. Traces in a `stackgroup` will only fill to (or be filled to) other traces in the same group. With multiple `stackgroup`s or some traces stacked and some not, if fill-linked traces are not already consecutive, the later ones will be pushed down in the drawing order.
-	Stackgroup types.String `json:"stackgroup,omitempty"`
+	Stackgroup types.StringType `json:"stackgroup,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -286,7 +286,7 @@ type Scatter struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
@@ -304,25 +304,25 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
-	Textpositionsrc types.String `json:"textpositionsrc,omitempty"`
+	Textpositionsrc types.StringType `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
-	Texttemplate *types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
+	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
-	Texttemplatesrc types.String `json:"texttemplatesrc,omitempty"`
+	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
 	// role: Object
@@ -333,7 +333,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -371,7 +371,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis types.String `json:"xaxis,omitempty"`
+	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xcalendar
 	// arrayOK: false
@@ -384,7 +384,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat types.String `json:"xhoverformat,omitempty"`
+	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
@@ -409,7 +409,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc types.String `json:"xsrc,omitempty"`
+	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -429,7 +429,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis types.String `json:"yaxis,omitempty"`
+	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ycalendar
 	// arrayOK: false
@@ -442,7 +442,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat types.String `json:"yhoverformat,omitempty"`
+	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Yperiod
 	// arrayOK: false
@@ -467,7 +467,7 @@ type Scatter struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc types.String `json:"ysrc,omitempty"`
+	Ysrc types.StringType `json:"ysrc,omitempty"`
 }
 
 // ScatterErrorX
@@ -493,13 +493,13 @@ type ScatterErrorX struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
-	Arrayminussrc types.String `json:"arrayminussrc,omitempty"`
+	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
-	Arraysrc types.String `json:"arraysrc,omitempty"`
+	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -511,31 +511,31 @@ type ScatterErrorX struct {
 	// arrayOK: false
 	// type: boolean
 	//
-	CopyYstyle types.Bool `json:"copy_ystyle,omitempty"`
+	CopyYstyle types.BoolType `json:"copy_ystyle,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-	Symmetric types.Bool `json:"symmetric,omitempty"`
+	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
-	Traceref int64 `json:"traceref,omitempty"`
+	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
-	Tracerefminus int64 `json:"tracerefminus,omitempty"`
+	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -548,25 +548,25 @@ type ScatterErrorX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
-	Value float64 `json:"value,omitempty"`
+	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
-	Valueminus float64 `json:"valueminus,omitempty"`
+	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // ScatterErrorY
@@ -592,13 +592,13 @@ type ScatterErrorY struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
-	Arrayminussrc types.String `json:"arrayminussrc,omitempty"`
+	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
-	Arraysrc types.String `json:"arraysrc,omitempty"`
+	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -610,25 +610,25 @@ type ScatterErrorY struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
-	Symmetric types.Bool `json:"symmetric,omitempty"`
+	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
-	Traceref int64 `json:"traceref,omitempty"`
+	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
-	Tracerefminus int64 `json:"tracerefminus,omitempty"`
+	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
 	// arrayOK: false
@@ -641,25 +641,25 @@ type ScatterErrorY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
-	Value float64 `json:"value,omitempty"`
+	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
-	Valueminus float64 `json:"valueminus,omitempty"`
+	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
-	Visible types.Bool `json:"visible,omitempty"`
+	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // ScatterFillpattern Sets the pattern within the marker.
@@ -675,7 +675,7 @@ type ScatterFillpattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
@@ -687,13 +687,13 @@ type ScatterFillpattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
-	Fgcolorsrc types.String `json:"fgcolorsrc,omitempty"`
+	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
-	Fgopacity float64 `json:"fgopacity,omitempty"`
+	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
 	// arrayOK: false
@@ -713,31 +713,31 @@ type ScatterFillpattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
-	Shapesrc types.String `json:"shapesrc,omitempty"`
+	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
-	Solidity *types.ArrayOK[*float64] `json:"solidity,omitempty"`
+	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
-	Soliditysrc types.String `json:"soliditysrc,omitempty"`
+	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
 // ScatterHoverlabelFont Sets the font used in hover labels.
@@ -753,31 +753,31 @@ type ScatterHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
 // ScatterHoverlabel
@@ -794,7 +794,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -806,7 +806,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -818,7 +818,7 @@ type ScatterHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -829,13 +829,13 @@ type ScatterHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
 // ScatterLegendgrouptitleFont Sets this legend group's title font.
@@ -851,13 +851,13 @@ type ScatterLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ScatterLegendgrouptitle
@@ -872,7 +872,7 @@ type ScatterLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // ScatterLine
@@ -882,13 +882,13 @@ type ScatterLine struct {
 	// arrayOK: true
 	// type: number
 	// Sets the line back off from the end point of the nth line segment (in px). This option is useful e.g. to avoid overlap with arrowhead markers. With *auto* the lines would trim before markers if `marker.angleref` is set to *previous*.
-	Backoff *types.ArrayOK[*float64] `json:"backoff,omitempty"`
+	Backoff *types.ArrayOK[*types.NumberType] `json:"backoff,omitempty"`
 
 	// Backoffsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `backoff`.
-	Backoffsrc types.String `json:"backoffsrc,omitempty"`
+	Backoffsrc types.StringType `json:"backoffsrc,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -900,7 +900,7 @@ type ScatterLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
-	Dash types.String `json:"dash,omitempty"`
+	Dash types.StringType `json:"dash,omitempty"`
 
 	// Shape
 	// arrayOK: false
@@ -913,19 +913,19 @@ type ScatterLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Simplifies lines by removing nearly-collinear points. When transitioning lines, it may be desirable to disable this so that the number of points along the resulting SVG path is unaffected.
-	Simplify types.Bool `json:"simplify,omitempty"`
+	Simplify types.BoolType `json:"simplify,omitempty"`
 
 	// Smoothing
 	// arrayOK: false
 	// type: number
 	// Has an effect only if `shape` is set to *spline* Sets the amount of smoothing. *0* corresponds to no smoothing (equivalent to a *linear* shape).
-	Smoothing float64 `json:"smoothing,omitempty"`
+	Smoothing types.NumberType `json:"smoothing,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // ScatterMarkerColorbarTickfont Sets the color bar's tick label font
@@ -941,13 +941,13 @@ type ScatterMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ScatterMarkerColorbarTickformatstop
@@ -963,25 +963,25 @@ type ScatterMarkerColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // ScatterMarkerColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -997,13 +997,13 @@ type ScatterMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ScatterMarkerColorbarTitle
@@ -1025,7 +1025,7 @@ type ScatterMarkerColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // ScatterMarkerColorbar
@@ -1047,7 +1047,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -1072,7 +1072,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
-	Len float64 `json:"len,omitempty"`
+	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
 	// arrayOK: false
@@ -1085,13 +1085,13 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -1110,13 +1110,13 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Outlinewidth float64 `json:"outlinewidth,omitempty"`
+	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -1129,7 +1129,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -1149,7 +1149,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
 	// arrayOK: false
@@ -1168,7 +1168,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -1185,7 +1185,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -1210,13 +1210,13 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -1229,7 +1229,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -1242,7 +1242,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -1256,7 +1256,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -1270,13 +1270,13 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -1287,7 +1287,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the x position of the color bar (in plot fraction). Defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -1300,13 +1300,13 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
-	Xpad float64 `json:"xpad,omitempty"`
+	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position of the color bar (in plot fraction). Defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -1319,7 +1319,7 @@ type ScatterMarkerColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
-	Ypad float64 `json:"ypad,omitempty"`
+	Ypad types.NumberType `json:"ypad,omitempty"`
 }
 
 // ScatterMarkerGradient
@@ -1335,7 +1335,7 @@ type ScatterMarkerGradient struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Type
 	// arrayOK: true
@@ -1348,7 +1348,7 @@ type ScatterMarkerGradient struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `type`.
-	Typesrc types.String `json:"typesrc,omitempty"`
+	Typesrc types.StringType `json:"typesrc,omitempty"`
 }
 
 // ScatterMarkerLine
@@ -1358,31 +1358,31 @@ type ScatterMarkerLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
-	Cauto types.Bool `json:"cauto,omitempty"`
+	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
-	Cmax float64 `json:"cmax,omitempty"`
+	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
-	Cmid float64 `json:"cmid,omitempty"`
+	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
-	Cmin float64 `json:"cmin,omitempty"`
+	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
@@ -1394,7 +1394,7 @@ type ScatterMarkerLine struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-	Coloraxis types.String `json:"coloraxis,omitempty"`
+	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
@@ -1406,25 +1406,25 @@ type ScatterMarkerLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
-	Reversescale types.Bool `json:"reversescale,omitempty"`
+	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
-	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc types.String `json:"widthsrc,omitempty"`
+	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
 // ScatterMarker
@@ -1434,7 +1434,7 @@ type ScatterMarker struct {
 	// arrayOK: true
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
-	Angle *types.ArrayOK[*float64] `json:"angle,omitempty"`
+	Angle *types.ArrayOK[*types.NumberType] `json:"angle,omitempty"`
 
 	// Angleref
 	// arrayOK: false
@@ -1447,37 +1447,37 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `angle`.
-	Anglesrc types.String `json:"anglesrc,omitempty"`
+	Anglesrc types.StringType `json:"anglesrc,omitempty"`
 
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
-	Cauto types.Bool `json:"cauto,omitempty"`
+	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
-	Cmax float64 `json:"cmax,omitempty"`
+	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
-	Cmid float64 `json:"cmid,omitempty"`
+	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
-	Cmin float64 `json:"cmin,omitempty"`
+	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
@@ -1489,7 +1489,7 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-	Coloraxis types.String `json:"coloraxis,omitempty"`
+	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
@@ -1506,7 +1506,7 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Gradient
 	// arrayOK: false
@@ -1522,43 +1522,43 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets a maximum number of points to be drawn on the graph. *0* corresponds to no limit.
-	Maxdisplayed float64 `json:"maxdisplayed,omitempty"`
+	Maxdisplayed types.NumberType `json:"maxdisplayed,omitempty"`
 
 	// Opacity
 	// arrayOK: true
 	// type: number
 	// Sets the marker opacity.
-	Opacity *types.ArrayOK[*float64] `json:"opacity,omitempty"`
+	Opacity *types.ArrayOK[*types.NumberType] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `opacity`.
-	Opacitysrc types.String `json:"opacitysrc,omitempty"`
+	Opacitysrc types.StringType `json:"opacitysrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
-	Reversescale types.Bool `json:"reversescale,omitempty"`
+	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
-	Showscale types.Bool `json:"showscale,omitempty"`
+	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
 	// type: number
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the minimum size (in px) of the rendered marker points.
-	Sizemin float64 `json:"sizemin,omitempty"`
+	Sizemin types.NumberType `json:"sizemin,omitempty"`
 
 	// Sizemode
 	// arrayOK: false
@@ -1571,25 +1571,25 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: number
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the scale factor used to determine the rendered size of marker points. Use with `sizemin` and `sizemode`.
-	Sizeref float64 `json:"sizeref,omitempty"`
+	Sizeref types.NumberType `json:"sizeref,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Standoff
 	// arrayOK: true
 	// type: number
 	// Moves the marker away from the data point in the direction of `angle` (in px). This can be useful for example if you have another marker at this location and you want to point an arrowhead marker at it.
-	Standoff *types.ArrayOK[*float64] `json:"standoff,omitempty"`
+	Standoff *types.ArrayOK[*types.NumberType] `json:"standoff,omitempty"`
 
 	// Standoffsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `standoff`.
-	Standoffsrc types.String `json:"standoffsrc,omitempty"`
+	Standoffsrc types.StringType `json:"standoffsrc,omitempty"`
 
 	// Symbol
 	// arrayOK: true
@@ -1602,7 +1602,7 @@ type ScatterMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `symbol`.
-	Symbolsrc types.String `json:"symbolsrc,omitempty"`
+	Symbolsrc types.StringType `json:"symbolsrc,omitempty"`
 }
 
 // ScatterSelectedMarker
@@ -1618,13 +1618,13 @@ type ScatterSelectedMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of selected points.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of selected points.
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ScatterSelectedTextfont
@@ -1658,13 +1658,13 @@ type ScatterStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // ScatterTextfont Sets the text font.
@@ -1680,31 +1680,31 @@ type ScatterTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
 // ScatterTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
@@ -1724,13 +1724,13 @@ type ScatterUnselectedMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of unselected points, applied only when a selection exists.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of unselected points, applied only when a selection exists.
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // ScatterUnselectedTextfont

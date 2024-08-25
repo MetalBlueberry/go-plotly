@@ -32,7 +32,7 @@ type Volume struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
-	Autocolorscale types.Bool `json:"autocolorscale,omitempty"`
+	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Caps
 	// arrayOK: false
@@ -43,31 +43,31 @@ type Volume struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
-	Cauto types.Bool `json:"cauto,omitempty"`
+	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Value should have the same units as `value` and if set, `cmin` must be set as well.
-	Cmax float64 `json:"cmax,omitempty"`
+	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `cmin` and/or `cmax` to be equidistant to this point. Value should have the same units as `value`. Has no effect when `cauto` is `false`.
-	Cmid float64 `json:"cmid,omitempty"`
+	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Value should have the same units as `value` and if set, `cmax` must be set as well.
-	Cmin float64 `json:"cmin,omitempty"`
+	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
-	Coloraxis types.String `json:"coloraxis,omitempty"`
+	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
@@ -97,13 +97,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Flatshading
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not normal smoothing is applied to the meshes, creating meshes with an angular, low-poly look via flat reflections.
-	Flatshading types.Bool `json:"flatshading,omitempty"`
+	Flatshading types.BoolType `json:"flatshading,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -116,7 +116,7 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -127,25 +127,25 @@ type Volume struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate *types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
+	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
-	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -159,31 +159,31 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Isomax
 	// arrayOK: false
 	// type: number
 	// Sets the maximum boundary for iso-surface plot.
-	Isomax float64 `json:"isomax,omitempty"`
+	Isomax types.NumberType `json:"isomax,omitempty"`
 
 	// Isomin
 	// arrayOK: false
 	// type: number
 	// Sets the minimum boundary for iso-surface plot.
-	Isomin float64 `json:"isomin,omitempty"`
+	Isomin types.NumberType `json:"isomin,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -194,13 +194,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Lighting
 	// arrayOK: false
@@ -222,19 +222,19 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Opacityscale
 	// arrayOK: false
@@ -246,25 +246,25 @@ type Volume struct {
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
-	Reversescale types.Bool `json:"reversescale,omitempty"`
+	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Scene
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
-	Scene types.String `json:"scene,omitempty"`
+	Scene types.StringType `json:"scene,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace.
-	Showscale types.Bool `json:"showscale,omitempty"`
+	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Slices
 	// arrayOK: false
@@ -290,19 +290,19 @@ type Volume struct {
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with the vertices. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -322,13 +322,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `value`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
-	Valuehoverformat types.String `json:"valuehoverformat,omitempty"`
+	Valuehoverformat types.StringType `json:"valuehoverformat,omitempty"`
 
 	// Valuesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `value`.
-	Valuesrc types.String `json:"valuesrc,omitempty"`
+	Valuesrc types.StringType `json:"valuesrc,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -349,13 +349,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat types.String `json:"xhoverformat,omitempty"`
+	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc types.String `json:"xsrc,omitempty"`
+	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -369,13 +369,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat types.String `json:"yhoverformat,omitempty"`
+	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc types.String `json:"ysrc,omitempty"`
+	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Z
 	// arrayOK: false
@@ -389,13 +389,13 @@ type Volume struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
-	Zhoverformat types.String `json:"zhoverformat,omitempty"`
+	Zhoverformat types.StringType `json:"zhoverformat,omitempty"`
 
 	// Zsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `z`.
-	Zsrc types.String `json:"zsrc,omitempty"`
+	Zsrc types.StringType `json:"zsrc,omitempty"`
 }
 
 // VolumeCapsX
@@ -405,13 +405,13 @@ type VolumeCapsX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the x `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeCapsY
@@ -421,13 +421,13 @@ type VolumeCapsY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the y `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeCapsZ
@@ -437,13 +437,13 @@ type VolumeCapsZ struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the z `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeCaps
@@ -478,7 +478,7 @@ type VolumeColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
 	// arrayOK: false
@@ -491,13 +491,13 @@ type VolumeColorbarTickfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow types.String `json:"shadow,omitempty"`
+	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
 	// arrayOK: false
@@ -524,7 +524,7 @@ type VolumeColorbarTickfont struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight int64 `json:"weight,omitempty"`
+	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
 // VolumeColorbarTickformatstop
@@ -540,25 +540,25 @@ type VolumeColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
-	Enabled types.Bool `json:"enabled,omitempty"`
+	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
-	Templateitemname types.String `json:"templateitemname,omitempty"`
+	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
-	Value types.String `json:"value,omitempty"`
+	Value types.StringType `json:"value,omitempty"`
 }
 
 // VolumeColorbarTitleFont Sets this color bar's title font. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -574,7 +574,7 @@ type VolumeColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
 	// arrayOK: false
@@ -587,13 +587,13 @@ type VolumeColorbarTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow types.String `json:"shadow,omitempty"`
+	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
 	// arrayOK: false
@@ -620,7 +620,7 @@ type VolumeColorbarTitleFont struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight int64 `json:"weight,omitempty"`
+	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
 // VolumeColorbarTitle
@@ -642,7 +642,7 @@ type VolumeColorbarTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // VolumeColorbar
@@ -664,7 +664,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
-	Borderwidth float64 `json:"borderwidth,omitempty"`
+	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
@@ -689,7 +689,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
-	Len float64 `json:"len,omitempty"`
+	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
 	// arrayOK: false
@@ -702,13 +702,13 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
-	Minexponent float64 `json:"minexponent,omitempty"`
+	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
-	Nticks int64 `json:"nticks,omitempty"`
+	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -727,13 +727,13 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
-	Outlinewidth float64 `json:"outlinewidth,omitempty"`
+	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
-	Separatethousands types.Bool `json:"separatethousands,omitempty"`
+	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
 	// arrayOK: false
@@ -746,7 +746,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
-	Showticklabels types.Bool `json:"showticklabels,omitempty"`
+	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
 	// arrayOK: false
@@ -766,7 +766,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
-	Thickness float64 `json:"thickness,omitempty"`
+	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
 	// arrayOK: false
@@ -785,7 +785,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
-	Tickangle float64 `json:"tickangle,omitempty"`
+	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
@@ -802,7 +802,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
-	Tickformat types.String `json:"tickformat,omitempty"`
+	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
@@ -827,13 +827,13 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
-	Ticklabelstep int64 `json:"ticklabelstep,omitempty"`
+	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
-	Ticklen float64 `json:"ticklen,omitempty"`
+	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
 	// arrayOK: false
@@ -846,7 +846,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
-	Tickprefix types.String `json:"tickprefix,omitempty"`
+	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
 	// arrayOK: false
@@ -859,7 +859,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
-	Ticksuffix types.String `json:"ticksuffix,omitempty"`
+	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
 	// arrayOK: false
@@ -873,7 +873,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
-	Ticktextsrc types.String `json:"ticktextsrc,omitempty"`
+	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
 	// arrayOK: false
@@ -887,13 +887,13 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
-	Tickvalssrc types.String `json:"tickvalssrc,omitempty"`
+	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
-	Tickwidth float64 `json:"tickwidth,omitempty"`
+	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -904,7 +904,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
@@ -917,7 +917,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
-	Xpad float64 `json:"xpad,omitempty"`
+	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
 	// arrayOK: false
@@ -930,7 +930,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -943,7 +943,7 @@ type VolumeColorbar struct {
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
-	Ypad float64 `json:"ypad,omitempty"`
+	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
 	// arrayOK: false
@@ -966,13 +966,13 @@ type VolumeContour struct {
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not dynamic contours are shown on hover
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the contour lines.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // VolumeHoverlabelFont Sets the font used in hover labels.
@@ -988,19 +988,19 @@ type VolumeHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
 	// arrayOK: true
@@ -1013,31 +1013,31 @@ type VolumeHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
-	Linepositionsrc types.String `json:"linepositionsrc,omitempty"`
+	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow *types.ArrayOK[*types.String] `json:"shadow,omitempty"`
+	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
-	Shadowsrc types.String `json:"shadowsrc,omitempty"`
+	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
 	// arrayOK: true
@@ -1050,7 +1050,7 @@ type VolumeHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
-	Stylesrc types.String `json:"stylesrc,omitempty"`
+	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
 	// arrayOK: true
@@ -1063,7 +1063,7 @@ type VolumeHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
-	Textcasesrc types.String `json:"textcasesrc,omitempty"`
+	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
 	// arrayOK: true
@@ -1076,19 +1076,19 @@ type VolumeHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
-	Variantsrc types.String `json:"variantsrc,omitempty"`
+	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight *types.ArrayOK[*int64] `json:"weight,omitempty"`
+	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
-	Weightsrc types.String `json:"weightsrc,omitempty"`
+	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
 // VolumeHoverlabel
@@ -1105,7 +1105,7 @@ type VolumeHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -1117,7 +1117,7 @@ type VolumeHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -1129,7 +1129,7 @@ type VolumeHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -1140,13 +1140,13 @@ type VolumeHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
 // VolumeLegendgrouptitleFont Sets this legend group's title font.
@@ -1162,7 +1162,7 @@ type VolumeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
 	// arrayOK: false
@@ -1175,13 +1175,13 @@ type VolumeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow types.String `json:"shadow,omitempty"`
+	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
 	// arrayOK: false
@@ -1208,7 +1208,7 @@ type VolumeLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight int64 `json:"weight,omitempty"`
+	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
 // VolumeLegendgrouptitle
@@ -1223,7 +1223,7 @@ type VolumeLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // VolumeLighting
@@ -1233,43 +1233,43 @@ type VolumeLighting struct {
 	// arrayOK: false
 	// type: number
 	// Ambient light increases overall color visibility but can wash out the image.
-	Ambient float64 `json:"ambient,omitempty"`
+	Ambient types.NumberType `json:"ambient,omitempty"`
 
 	// Diffuse
 	// arrayOK: false
 	// type: number
 	// Represents the extent that incident rays are reflected in a range of angles.
-	Diffuse float64 `json:"diffuse,omitempty"`
+	Diffuse types.NumberType `json:"diffuse,omitempty"`
 
 	// Facenormalsepsilon
 	// arrayOK: false
 	// type: number
 	// Epsilon for face normals calculation avoids math issues arising from degenerate geometry.
-	Facenormalsepsilon float64 `json:"facenormalsepsilon,omitempty"`
+	Facenormalsepsilon types.NumberType `json:"facenormalsepsilon,omitempty"`
 
 	// Fresnel
 	// arrayOK: false
 	// type: number
 	// Represents the reflectance as a dependency of the viewing angle; e.g. paper is reflective when viewing it from the edge of the paper (almost 90 degrees), causing shine.
-	Fresnel float64 `json:"fresnel,omitempty"`
+	Fresnel types.NumberType `json:"fresnel,omitempty"`
 
 	// Roughness
 	// arrayOK: false
 	// type: number
 	// Alters specular reflection; the rougher the surface, the wider and less contrasty the shine.
-	Roughness float64 `json:"roughness,omitempty"`
+	Roughness types.NumberType `json:"roughness,omitempty"`
 
 	// Specular
 	// arrayOK: false
 	// type: number
 	// Represents the level that incident rays are reflected in a single direction, causing shine.
-	Specular float64 `json:"specular,omitempty"`
+	Specular types.NumberType `json:"specular,omitempty"`
 
 	// Vertexnormalsepsilon
 	// arrayOK: false
 	// type: number
 	// Epsilon for vertex normals calculation avoids math issues arising from degenerate geometry.
-	Vertexnormalsepsilon float64 `json:"vertexnormalsepsilon,omitempty"`
+	Vertexnormalsepsilon types.NumberType `json:"vertexnormalsepsilon,omitempty"`
 }
 
 // VolumeLightposition
@@ -1279,19 +1279,19 @@ type VolumeLightposition struct {
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the X coordinate for each vertex.
-	X float64 `json:"x,omitempty"`
+	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the Y coordinate for each vertex.
-	Y float64 `json:"y,omitempty"`
+	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the Z coordinate for each vertex.
-	Z float64 `json:"z,omitempty"`
+	Z types.NumberType `json:"z,omitempty"`
 }
 
 // VolumeSlicesX
@@ -1301,7 +1301,7 @@ type VolumeSlicesX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
 	// arrayOK: false
@@ -1315,13 +1315,13 @@ type VolumeSlicesX struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
-	Locationssrc types.String `json:"locationssrc,omitempty"`
+	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the x dimension are drawn.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeSlicesY
@@ -1331,7 +1331,7 @@ type VolumeSlicesY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
 	// arrayOK: false
@@ -1345,13 +1345,13 @@ type VolumeSlicesY struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
-	Locationssrc types.String `json:"locationssrc,omitempty"`
+	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the y dimension are drawn.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeSlicesZ
@@ -1361,7 +1361,7 @@ type VolumeSlicesZ struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
 	// arrayOK: false
@@ -1375,13 +1375,13 @@ type VolumeSlicesZ struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
-	Locationssrc types.String `json:"locationssrc,omitempty"`
+	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the z dimension are drawn.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeSlices
@@ -1410,13 +1410,13 @@ type VolumeSpaceframe struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `spaceframe` elements. The default fill value is 1 meaning that they are entirely shaded. Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Displays/hides tetrahedron shapes between minimum and maximum iso-values. Often useful when either caps or surfaces are disabled or filled with values less than 1.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeStream
@@ -1426,13 +1426,13 @@ type VolumeStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // VolumeSurface
@@ -1442,13 +1442,13 @@ type VolumeSurface struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the number of iso-surfaces between minimum and maximum iso-values. By default this value is 2 meaning that only minimum and maximum surfaces would be drawn.
-	Count int64 `json:"count,omitempty"`
+	Count types.IntegerType `json:"count,omitempty"`
 
 	// Fill
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the iso-surface. The default fill value of the surface is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
-	Fill float64 `json:"fill,omitempty"`
+	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Pattern
 	// arrayOK: false
@@ -1461,7 +1461,7 @@ type VolumeSurface struct {
 	// arrayOK: false
 	// type: boolean
 	// Hides/displays surfaces between minimum and maximum iso-values.
-	Show types.Bool `json:"show,omitempty"`
+	Show types.BoolType `json:"show,omitempty"`
 }
 
 // VolumeColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.

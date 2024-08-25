@@ -90,7 +90,7 @@ Currently, most common use cases should be already covered. Feel free to create 
 - [x] Frames
   - [ ] defs
     - [ ] defs valobjects
-      - [ ] angle
+      - [ ] angle **needs validations**
       - [x] any
       - [x] boolean
       - [x] color
@@ -100,12 +100,12 @@ Currently, most common use cases should be already covered. Feel free to create 
       - [x] enumerated
       - [x] flaglist
       - [ ] info_array
-      - [ ] integer **Needs support for nil values**
-      - [ ] number **Needs support for nil values**
+      - [x] integer
+      - [x] number
       - [x] string
       - [ ] subplotid
     - [ ] defs_modifier
-      - [ ] arrayOK
+      - [x] arrayOK
       - [ ] min/max validations
       - [x] dflt  **This is not needed in the output, as plotly will do it. But it would be nice to have a method to fetch it**
       - [ ] noBlank validation

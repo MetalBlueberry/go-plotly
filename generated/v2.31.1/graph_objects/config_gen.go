@@ -13,7 +13,7 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the graphs are plotted with respect to layout.autosize:true and infer its container size.
-	Autosizable types.Bool `json:"autosizable,omitempty"`
+	Autosizable types.BoolType `json:"autosizable,omitempty"`
 
 	// DisplayModeBar
 	// arrayOK: false
@@ -26,7 +26,7 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the plotly logo is displayed on the end of the mode bar.
-	Displaylogo types.Bool `json:"displaylogo,omitempty"`
+	Displaylogo types.BoolType `json:"displaylogo,omitempty"`
 
 	// DoubleClick
 	// arrayOK: false
@@ -39,19 +39,19 @@ type Config struct {
 	// arrayOK: false
 	// type: number
 	// Sets the delay for registering a double-click in ms. This is the time interval (in ms) between first mousedown and 2nd mouseup to constitute a double-click. This setting propagates to all on-subplot double clicks (except for geo and mapbox) and on-legend double clicks.
-	DoubleClickDelay float64 `json:"doubleClickDelay,omitempty"`
+	DoubleClickDelay types.NumberType `json:"doubleClickDelay,omitempty"`
 
 	// EditSelection
 	// arrayOK: false
 	// type: boolean
 	// Enables moving selections.
-	EditSelection types.Bool `json:"editSelection,omitempty"`
+	EditSelection types.BoolType `json:"editSelection,omitempty"`
 
 	// Editable
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the graph is editable or not. Sets all pieces of `edits` unless a separate `edits` config item overrides individual parts.
-	Editable types.Bool `json:"editable,omitempty"`
+	Editable types.BoolType `json:"editable,omitempty"`
 
 	// Edits
 	// arrayOK: false
@@ -62,13 +62,13 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// When `layout.autosize` is turned on, determines whether the graph fills the container (the default) or the screen (if set to *true*).
-	FillFrame types.Bool `json:"fillFrame,omitempty"`
+	FillFrame types.BoolType `json:"fillFrame,omitempty"`
 
 	// FrameMargins
 	// arrayOK: false
 	// type: number
 	// When `layout.autosize` is turned on, set the frame margins in fraction of the graph size.
-	FrameMargins float64 `json:"frameMargins,omitempty"`
+	FrameMargins types.NumberType `json:"frameMargins,omitempty"`
 
 	// GlobalTransforms
 	// arrayOK: false
@@ -80,13 +80,13 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Sets the text appearing in the `showLink` link.
-	LinkText types.String `json:"linkText,omitempty"`
+	LinkText types.StringType `json:"linkText,omitempty"`
 
 	// Locale
 	// arrayOK: false
 	// type: string
 	// Which localization should we use? Should be a string like 'en' or 'en-US'.
-	Locale types.String `json:"locale,omitempty"`
+	Locale types.StringType `json:"locale,omitempty"`
 
 	// Locales
 	// arrayOK: false
@@ -98,13 +98,13 @@ type Config struct {
 	// arrayOK: false
 	// type: integer
 	// Turn all console logging on or off (errors will be thrown) This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no logs 1: warnings and errors, but not informational messages 2: verbose logs
-	Logging int64 `json:"logging,omitempty"`
+	Logging types.IntegerType `json:"logging,omitempty"`
 
 	// MapboxAccessToken
 	// arrayOK: false
 	// type: string
 	// Mapbox access token (required to plot mapbox trace types) If using an Mapbox Atlas server, set this option to '' so that plotly.js won't attempt to authenticate to the public Mapbox server.
-	MapboxAccessToken types.String `json:"mapboxAccessToken,omitempty"`
+	MapboxAccessToken types.StringType `json:"mapboxAccessToken,omitempty"`
 
 	// ModeBarButtons
 	// arrayOK: false
@@ -128,31 +128,31 @@ type Config struct {
 	// arrayOK: false
 	// type: integer
 	// Set on-graph logging (notifier) level This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no on-graph logs 1: warnings and errors, but not informational messages 2: verbose logs
-	NotifyOnLogging int64 `json:"notifyOnLogging,omitempty"`
+	NotifyOnLogging types.IntegerType `json:"notifyOnLogging,omitempty"`
 
 	// PlotGlPixelRatio
 	// arrayOK: false
 	// type: number
 	// Set the pixel ratio during WebGL image export. This config option was formerly named `plot3dPixelRatio` which is now deprecated.
-	PlotGlPixelRatio float64 `json:"plotGlPixelRatio,omitempty"`
+	PlotGlPixelRatio types.NumberType `json:"plotGlPixelRatio,omitempty"`
 
 	// PlotlyServerURL
 	// arrayOK: false
 	// type: string
 	// When set it determines base URL for the 'Edit in Chart Studio' `showEditInChartStudio`/`showSendToCloud` mode bar button and the showLink/sendData on-graph link. To enable sending your data to Chart Studio Cloud, you need to set both `plotlyServerURL` to 'https://chart-studio.plotly.com' and also set `showSendToCloud` to true.
-	PlotlyServerURL types.String `json:"plotlyServerURL,omitempty"`
+	PlotlyServerURL types.StringType `json:"plotlyServerURL,omitempty"`
 
 	// QueueLength
 	// arrayOK: false
 	// type: integer
 	// Sets the length of the undo/redo queue.
-	QueueLength int64 `json:"queueLength,omitempty"`
+	QueueLength types.IntegerType `json:"queueLength,omitempty"`
 
 	// Responsive
 	// arrayOK: false
 	// type: boolean
 	// Determines whether to change the layout size when window is resized. In v3, this option will be removed and will always be true.
-	Responsive types.Bool `json:"responsive,omitempty"`
+	Responsive types.BoolType `json:"responsive,omitempty"`
 
 	// ScrollZoom
 	// arrayOK: false
@@ -165,7 +165,7 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// If *showLink* is true, does it contain data just link to a Chart Studio Cloud file?
-	SendData types.Bool `json:"sendData,omitempty"`
+	SendData types.BoolType `json:"sendData,omitempty"`
 
 	// SetBackground
 	// arrayOK: false
@@ -177,31 +177,31 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// Set to *false* to omit cartesian axis pan/zoom drag handles.
-	ShowAxisDragHandles types.Bool `json:"showAxisDragHandles,omitempty"`
+	ShowAxisDragHandles types.BoolType `json:"showAxisDragHandles,omitempty"`
 
 	// ShowAxisRangeEntryBoxes
 	// arrayOK: false
 	// type: boolean
 	// Set to *false* to omit direct range entry at the pan/zoom drag points, note that `showAxisDragHandles` must be enabled to have an effect.
-	ShowAxisRangeEntryBoxes types.Bool `json:"showAxisRangeEntryBoxes,omitempty"`
+	ShowAxisRangeEntryBoxes types.BoolType `json:"showAxisRangeEntryBoxes,omitempty"`
 
 	// ShowEditInChartStudio
 	// arrayOK: false
 	// type: boolean
 	// Same as `showSendToCloud`, but use a pencil icon instead of a floppy-disk. Note that if both `showSendToCloud` and `showEditInChartStudio` are turned, only `showEditInChartStudio` will be honored.
-	ShowEditInChartStudio types.Bool `json:"showEditInChartStudio,omitempty"`
+	ShowEditInChartStudio types.BoolType `json:"showEditInChartStudio,omitempty"`
 
 	// ShowLink
 	// arrayOK: false
 	// type: boolean
 	// Determines whether a link to Chart Studio Cloud is displayed at the bottom right corner of resulting graphs. Use with `sendData` and `linkText`.
-	ShowLink types.Bool `json:"showLink,omitempty"`
+	ShowLink types.BoolType `json:"showLink,omitempty"`
 
 	// ShowSendToCloud
 	// arrayOK: false
 	// type: boolean
 	// Should we include a ModeBar button, labeled "Edit in Chart Studio", that sends this chart to chart-studio.plotly.com (formerly plot.ly) or another plotly server as specified by `plotlyServerURL` for editing, export, etc? Prior to version 1.43.0 this button was included by default, now it is opt-in using this flag. Note that this button can (depending on `plotlyServerURL` being set) send your data to an external server. However that server does not persist your data until you arrive at the Chart Studio and explicitly click "Save".
-	ShowSendToCloud types.Bool `json:"showSendToCloud,omitempty"`
+	ShowSendToCloud types.BoolType `json:"showSendToCloud,omitempty"`
 
 	// ShowSources
 	// arrayOK: false
@@ -213,13 +213,13 @@ type Config struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not tips are shown while interacting with the resulting graphs.
-	ShowTips types.Bool `json:"showTips,omitempty"`
+	ShowTips types.BoolType `json:"showTips,omitempty"`
 
 	// StaticPlot
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the graphs are interactive or not. If *false*, no interactivity, for export or image generation.
-	StaticPlot types.Bool `json:"staticPlot,omitempty"`
+	StaticPlot types.BoolType `json:"staticPlot,omitempty"`
 
 	// ToImageButtonOptions
 	// arrayOK: false
@@ -231,19 +231,19 @@ type Config struct {
 	// arrayOK: false
 	// type: string
 	// Set the URL to topojson used in geo charts. By default, the topojson files are fetched from cdn.plot.ly. For example, set this option to: <path-to-plotly.js>/dist/topojson/ to render geographical feature using the topojson files that ship with the plotly.js module.
-	TopojsonURL types.String `json:"topojsonURL,omitempty"`
+	TopojsonURL types.StringType `json:"topojsonURL,omitempty"`
 
 	// TypesetMath
 	// arrayOK: false
 	// type: boolean
 	// Determines whether math should be typeset or not, when MathJax (either v2 or v3) is present on the page.
-	TypesetMath types.Bool `json:"typesetMath,omitempty"`
+	TypesetMath types.BoolType `json:"typesetMath,omitempty"`
 
 	// Watermark
 	// arrayOK: false
 	// type: boolean
 	// watermark the images with the company's logo
-	Watermark types.Bool `json:"watermark,omitempty"`
+	Watermark types.BoolType `json:"watermark,omitempty"`
 }
 
 // ConfigEdits
@@ -253,61 +253,61 @@ type ConfigEdits struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines if the main anchor of the annotation is editable. The main anchor corresponds to the text (if no arrow) or the arrow (which drags the whole thing leaving the arrow length & direction unchanged).
-	AnnotationPosition types.Bool `json:"annotationPosition,omitempty"`
+	AnnotationPosition types.BoolType `json:"annotationPosition,omitempty"`
 
 	// AnnotationTail
 	// arrayOK: false
 	// type: boolean
 	// Has only an effect for annotations with arrows. Enables changing the length and direction of the arrow.
-	AnnotationTail types.Bool `json:"annotationTail,omitempty"`
+	AnnotationTail types.BoolType `json:"annotationTail,omitempty"`
 
 	// AnnotationText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing annotation text.
-	AnnotationText types.Bool `json:"annotationText,omitempty"`
+	AnnotationText types.BoolType `json:"annotationText,omitempty"`
 
 	// AxisTitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing axis title text.
-	AxisTitleText types.Bool `json:"axisTitleText,omitempty"`
+	AxisTitleText types.BoolType `json:"axisTitleText,omitempty"`
 
 	// ColorbarPosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving colorbars.
-	ColorbarPosition types.Bool `json:"colorbarPosition,omitempty"`
+	ColorbarPosition types.BoolType `json:"colorbarPosition,omitempty"`
 
 	// ColorbarTitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing colorbar title text.
-	ColorbarTitleText types.Bool `json:"colorbarTitleText,omitempty"`
+	ColorbarTitleText types.BoolType `json:"colorbarTitleText,omitempty"`
 
 	// LegendPosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving the legend.
-	LegendPosition types.Bool `json:"legendPosition,omitempty"`
+	LegendPosition types.BoolType `json:"legendPosition,omitempty"`
 
 	// LegendText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing the trace name fields from the legend
-	LegendText types.Bool `json:"legendText,omitempty"`
+	LegendText types.BoolType `json:"legendText,omitempty"`
 
 	// ShapePosition
 	// arrayOK: false
 	// type: boolean
 	// Enables moving shapes.
-	ShapePosition types.Bool `json:"shapePosition,omitempty"`
+	ShapePosition types.BoolType `json:"shapePosition,omitempty"`
 
 	// TitleText
 	// arrayOK: false
 	// type: boolean
 	// Enables editing the global layout title.
-	TitleText types.Bool `json:"titleText,omitempty"`
+	TitleText types.BoolType `json:"titleText,omitempty"`
 }
 
 // ConfigDisplayModeBar Determines the mode bar display mode. If *true*, the mode bar is always visible. If *false*, the mode bar is always hidden. If *hover*, the mode bar is visible while the mouse cursor is on the graph container.

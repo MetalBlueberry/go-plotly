@@ -62,26 +62,26 @@ func main() {
 			&grob.Scatter{
 				X:     types.DataArray([]float64{20, 30, 40}),
 				Y:     types.DataArray([]float64{5, 5, 5}),
-				Xaxis: "x2",
-				Yaxis: "y",
+				Xaxis: types.S("x2"),
+				Yaxis: types.S("y"),
 			},
 			&grob.Scatter{
 				X:     types.DataArray([]float64{2, 3, 4}),
 				Y:     types.DataArray([]float64{600, 700, 800}),
-				Xaxis: "x",
-				Yaxis: "y3",
+				Xaxis: types.S("x"),
+				Yaxis: types.S("y3"),
 			},
 			&grob.Scatter{
 				X:     types.DataArray([]float64{4000, 5000, 6000}),
 				Y:     types.DataArray([]float64{7000, 8000, 9000}),
-				Xaxis: "x4",
-				Yaxis: "y4",
+				Xaxis: types.S("x4"),
+				Yaxis: types.S("y4"),
 			},
 		},
 		Layout: &grob.Layout{
 			Grid: &grob.LayoutGrid{
-				Rows:    2,
-				Columns: 2,
+				Rows:    types.I(2),
+				Columns: types.I(2),
 				Subplots: [][]string{
 					{"xy", "x2y"},
 					{"xy3", "x4y4"},

@@ -59,12 +59,12 @@ func main() {
 			},
 			Updatemenus: []grob.LayoutUpdatemenu{
 				{
-					Type:       "buttons",
+					Type:       grob.UpdatemenuTypeButtons,
 					Showactive: types.False,
 					Buttons: []grob.UpdatemenuButton{
 						{
-							Label:  "Play",
-							Method: "animate",
+							Label:  types.S("Play"),
+							Method: grob.ButtonMethodAnimate,
 							Args: []*ButtonArgs{
 								nil,
 								{
@@ -80,11 +80,11 @@ func main() {
 		Frames: frames,
 		Animation: &grob.Animation{
 			Transition: &grob.AnimationTransition{
-				Duration: 500,
+				Duration: types.N(500),
 				Easing:   grob.AnimationTransitionEasingCubicInOut,
 			},
 			Frame: &grob.AnimationFrame{
-				Duration: 500,
+				Duration: types.N(500),
 				Redraw:   types.True,
 			},
 		},

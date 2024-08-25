@@ -32,13 +32,13 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: number
 	// Sets the ratio between height and width
-	Aspectratio float64 `json:"aspectratio,omitempty"`
+	Aspectratio types.NumberType `json:"aspectratio,omitempty"`
 
 	// Baseratio
 	// arrayOK: false
 	// type: number
 	// Sets the ratio between bottom length and maximum top length.
-	Baseratio float64 `json:"baseratio,omitempty"`
+	Baseratio types.NumberType `json:"baseratio,omitempty"`
 
 	// Customdata
 	// arrayOK: false
@@ -52,13 +52,13 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Dlabel
 	// arrayOK: false
 	// type: number
 	// Sets the label step. See `label0` for more info.
-	Dlabel float64 `json:"dlabel,omitempty"`
+	Dlabel types.NumberType `json:"dlabel,omitempty"`
 
 	// Domain
 	// arrayOK: false
@@ -76,7 +76,7 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -87,25 +87,25 @@ type Funnelarea struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate *types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
+	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -119,7 +119,7 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Insidetextfont
 	// arrayOK: false
@@ -130,7 +130,7 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: number
 	// Alternate to `labels`. Builds a numeric set of labels. Use with `dlabel` where `label0` is the starting label and `dlabel` the step.
-	Label0 float64 `json:"label0,omitempty"`
+	Label0 types.NumberType `json:"label0,omitempty"`
 
 	// Labels
 	// arrayOK: false
@@ -144,19 +144,19 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `labels`.
-	Labelssrc types.String `json:"labelssrc,omitempty"`
+	Labelssrc types.StringType `json:"labelssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -167,13 +167,13 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Marker
 	// arrayOK: false
@@ -190,31 +190,31 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Scalegroup
 	// arrayOK: false
 	// type: string
 	// If there are multiple funnelareas that should be sized according to their totals, link them by providing a non-empty group id here shared by every trace in the same group.
-	Scalegroup types.String `json:"scalegroup,omitempty"`
+	Scalegroup types.StringType `json:"scalegroup,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -252,25 +252,25 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
-	Textpositionsrc types.String `json:"textpositionsrc,omitempty"`
+	Textpositionsrc types.StringType `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `text` and `percent`.
-	Texttemplate *types.ArrayOK[*types.String] `json:"texttemplate,omitempty"`
+	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
-	Texttemplatesrc types.String `json:"texttemplatesrc,omitempty"`
+	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Title
 	// arrayOK: false
@@ -286,7 +286,7 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -306,7 +306,7 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
-	Valuessrc types.String `json:"valuessrc,omitempty"`
+	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -323,13 +323,13 @@ type FunnelareaDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this funnelarea trace .
-	Column int64 `json:"column,omitempty"`
+	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this funnelarea trace .
-	Row int64 `json:"row,omitempty"`
+	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -357,19 +357,19 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
 	// arrayOK: true
@@ -382,31 +382,31 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
-	Linepositionsrc types.String `json:"linepositionsrc,omitempty"`
+	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow *types.ArrayOK[*types.String] `json:"shadow,omitempty"`
+	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
-	Shadowsrc types.String `json:"shadowsrc,omitempty"`
+	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
 	// arrayOK: true
@@ -419,7 +419,7 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
-	Stylesrc types.String `json:"stylesrc,omitempty"`
+	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
 	// arrayOK: true
@@ -432,7 +432,7 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
-	Textcasesrc types.String `json:"textcasesrc,omitempty"`
+	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
 	// arrayOK: true
@@ -445,19 +445,19 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
-	Variantsrc types.String `json:"variantsrc,omitempty"`
+	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight *types.ArrayOK[*int64] `json:"weight,omitempty"`
+	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
-	Weightsrc types.String `json:"weightsrc,omitempty"`
+	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
 // FunnelareaHoverlabel
@@ -474,7 +474,7 @@ type FunnelareaHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -486,7 +486,7 @@ type FunnelareaHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -498,7 +498,7 @@ type FunnelareaHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -509,13 +509,13 @@ type FunnelareaHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
 // FunnelareaInsidetextfont Sets the font used for `textinfo` lying inside the sector.
@@ -531,19 +531,19 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
 	// arrayOK: true
@@ -556,31 +556,31 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
-	Linepositionsrc types.String `json:"linepositionsrc,omitempty"`
+	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow *types.ArrayOK[*types.String] `json:"shadow,omitempty"`
+	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
-	Shadowsrc types.String `json:"shadowsrc,omitempty"`
+	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
 	// arrayOK: true
@@ -593,7 +593,7 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
-	Stylesrc types.String `json:"stylesrc,omitempty"`
+	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
 	// arrayOK: true
@@ -606,7 +606,7 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
-	Textcasesrc types.String `json:"textcasesrc,omitempty"`
+	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
 	// arrayOK: true
@@ -619,19 +619,19 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
-	Variantsrc types.String `json:"variantsrc,omitempty"`
+	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight *types.ArrayOK[*int64] `json:"weight,omitempty"`
+	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
-	Weightsrc types.String `json:"weightsrc,omitempty"`
+	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
 // FunnelareaLegendgrouptitleFont Sets this legend group's title font.
@@ -647,7 +647,7 @@ type FunnelareaLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
 	// arrayOK: false
@@ -660,13 +660,13 @@ type FunnelareaLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow types.String `json:"shadow,omitempty"`
+	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
 	// arrayOK: false
@@ -693,7 +693,7 @@ type FunnelareaLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight int64 `json:"weight,omitempty"`
+	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
 // FunnelareaLegendgrouptitle
@@ -708,7 +708,7 @@ type FunnelareaLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // FunnelareaMarkerLine
@@ -724,19 +724,19 @@ type FunnelareaMarkerLine struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
-	Width *types.ArrayOK[*float64] `json:"width,omitempty"`
+	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
-	Widthsrc types.String `json:"widthsrc,omitempty"`
+	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
 // FunnelareaMarkerPattern Sets the pattern within the marker.
@@ -752,7 +752,7 @@ type FunnelareaMarkerPattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
@@ -764,13 +764,13 @@ type FunnelareaMarkerPattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
-	Fgcolorsrc types.String `json:"fgcolorsrc,omitempty"`
+	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
-	Fgopacity float64 `json:"fgopacity,omitempty"`
+	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
 	// arrayOK: false
@@ -790,31 +790,31 @@ type FunnelareaMarkerPattern struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
-	Shapesrc types.String `json:"shapesrc,omitempty"`
+	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
-	Solidity *types.ArrayOK[*float64] `json:"solidity,omitempty"`
+	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
-	Soliditysrc types.String `json:"soliditysrc,omitempty"`
+	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
 // FunnelareaMarker
@@ -832,7 +832,7 @@ type FunnelareaMarker struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `colors`.
-	Colorssrc types.String `json:"colorssrc,omitempty"`
+	Colorssrc types.StringType `json:"colorssrc,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -852,13 +852,13 @@ type FunnelareaStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // FunnelareaTextfont Sets the font used for `textinfo`.
@@ -874,19 +874,19 @@ type FunnelareaTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
 	// arrayOK: true
@@ -899,31 +899,31 @@ type FunnelareaTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
-	Linepositionsrc types.String `json:"linepositionsrc,omitempty"`
+	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow *types.ArrayOK[*types.String] `json:"shadow,omitempty"`
+	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
-	Shadowsrc types.String `json:"shadowsrc,omitempty"`
+	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
 	// arrayOK: true
@@ -936,7 +936,7 @@ type FunnelareaTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
-	Stylesrc types.String `json:"stylesrc,omitempty"`
+	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
 	// arrayOK: true
@@ -949,7 +949,7 @@ type FunnelareaTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
-	Textcasesrc types.String `json:"textcasesrc,omitempty"`
+	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
 	// arrayOK: true
@@ -962,19 +962,19 @@ type FunnelareaTextfont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
-	Variantsrc types.String `json:"variantsrc,omitempty"`
+	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight *types.ArrayOK[*int64] `json:"weight,omitempty"`
+	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
-	Weightsrc types.String `json:"weightsrc,omitempty"`
+	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
 // FunnelareaTitleFont Sets the font used for `title`. Note that the title's font used to be set by the now deprecated `titlefont` attribute.
@@ -990,19 +990,19 @@ type FunnelareaTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
 	// arrayOK: true
@@ -1015,31 +1015,31 @@ type FunnelareaTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
-	Linepositionsrc types.String `json:"linepositionsrc,omitempty"`
+	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
-	Shadow *types.ArrayOK[*types.String] `json:"shadow,omitempty"`
+	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
-	Shadowsrc types.String `json:"shadowsrc,omitempty"`
+	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
 	// arrayOK: true
@@ -1052,7 +1052,7 @@ type FunnelareaTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
-	Stylesrc types.String `json:"stylesrc,omitempty"`
+	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
 	// arrayOK: true
@@ -1065,7 +1065,7 @@ type FunnelareaTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
-	Textcasesrc types.String `json:"textcasesrc,omitempty"`
+	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
 	// arrayOK: true
@@ -1078,19 +1078,19 @@ type FunnelareaTitleFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
-	Variantsrc types.String `json:"variantsrc,omitempty"`
+	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
-	Weight *types.ArrayOK[*int64] `json:"weight,omitempty"`
+	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
-	Weightsrc types.String `json:"weightsrc,omitempty"`
+	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
 // FunnelareaTitle
@@ -1112,7 +1112,7 @@ type FunnelareaTitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // FunnelareaTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.

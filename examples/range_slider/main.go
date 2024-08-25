@@ -86,32 +86,32 @@ func main() {
 
 	fig.Layout = &grob.Layout{
 		Title: &grob.LayoutTitle{
-			Text: "Time series with range slider and selectors",
+			Text: types.S("Time series with range slider and selectors"),
 		},
 		Xaxis: &grob.LayoutXaxis{
 			Rangeselector: &grob.LayoutXaxisRangeselector{
 				Buttons: []grob.LayoutXaxisRangeselectorButton{
 					{
-						Count:    1,
-						Label:    "1m",
+						Count:    types.N(1),
+						Label:    types.S("1m"),
 						Step:     "month",
 						Stepmode: "backward",
 					},
 					{
-						Count:    6,
-						Label:    "6m",
+						Count:    types.N(6),
+						Label:    types.S("6m"),
 						Step:     "month",
 						Stepmode: "backward",
 					},
 					{
-						Count:    1,
-						Label:    "YTD",
+						Count:    types.N(1),
+						Label:    types.S("YTD"),
 						Step:     "year",
 						Stepmode: "todate",
 					},
 					{
-						Count:    1,
-						Label:    "1y",
+						Count:    types.N(1),
+						Label:    types.S("1y"),
 						Step:     "year",
 						Stepmode: "backward",
 					},

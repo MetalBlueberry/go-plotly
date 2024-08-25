@@ -40,7 +40,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Hoverinfo
 	// arrayOK: true
@@ -53,7 +53,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -72,7 +72,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Indices
 	// arrayOK: false
@@ -86,19 +86,19 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `indices`.
-	Indicessrc types.String `json:"indicessrc,omitempty"`
+	Indicessrc types.StringType `json:"indicessrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
-	Legend types.String `json:"legend,omitempty"`
+	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -109,13 +109,13 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Marker
 	// arrayOK: false
@@ -132,25 +132,25 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -161,19 +161,19 @@ type Pointcloud struct {
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -200,7 +200,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis types.String `json:"xaxis,omitempty"`
+	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xbounds
 	// arrayOK: false
@@ -214,13 +214,13 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `xbounds`.
-	Xboundssrc types.String `json:"xboundssrc,omitempty"`
+	Xboundssrc types.StringType `json:"xboundssrc,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc types.String `json:"xsrc,omitempty"`
+	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Xy
 	// arrayOK: false
@@ -234,7 +234,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `xy`.
-	Xysrc types.String `json:"xysrc,omitempty"`
+	Xysrc types.StringType `json:"xysrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -248,7 +248,7 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis types.String `json:"yaxis,omitempty"`
+	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ybounds
 	// arrayOK: false
@@ -262,13 +262,13 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ybounds`.
-	Yboundssrc types.String `json:"yboundssrc,omitempty"`
+	Yboundssrc types.StringType `json:"yboundssrc,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc types.String `json:"ysrc,omitempty"`
+	Ysrc types.StringType `json:"ysrc,omitempty"`
 }
 
 // PointcloudHoverlabelFont Sets the font used in hover labels.
@@ -284,31 +284,31 @@ type PointcloudHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
 // PointcloudHoverlabel
@@ -325,7 +325,7 @@ type PointcloudHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -337,7 +337,7 @@ type PointcloudHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -349,7 +349,7 @@ type PointcloudHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -360,13 +360,13 @@ type PointcloudHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
 // PointcloudLegendgrouptitleFont Sets this legend group's title font.
@@ -382,13 +382,13 @@ type PointcloudLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // PointcloudLegendgrouptitle
@@ -403,7 +403,7 @@ type PointcloudLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // PointcloudMarkerBorder
@@ -413,7 +413,7 @@ type PointcloudMarkerBorder struct {
 	// arrayOK: false
 	// type: number
 	// Specifies what fraction of the marker area is covered with the border.
-	Arearatio float64 `json:"arearatio,omitempty"`
+	Arearatio types.NumberType `json:"arearatio,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -429,7 +429,7 @@ type PointcloudMarker struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines if colors are blended together for a translucency effect in case `opacity` is specified as a value less then `1`. Setting `blend` to `true` reduces zoom/pan speed if used with large numbers of points.
-	Blend types.Bool `json:"blend,omitempty"`
+	Blend types.BoolType `json:"blend,omitempty"`
 
 	// Border
 	// arrayOK: false
@@ -446,19 +446,19 @@ type PointcloudMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity. The default value is `1` (fully opaque). If the markers are not fully opaque and there are hundreds of thousands of points, it may cause slower zooming and panning. Opacity fades the color even if `blend` is left on `false` even if there is no translucency effect in that case.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Sizemax
 	// arrayOK: false
 	// type: number
 	// Sets the maximum size (in px) of the rendered marker points. Effective when the `pointcloud` shows only few points.
-	Sizemax float64 `json:"sizemax,omitempty"`
+	Sizemax types.NumberType `json:"sizemax,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
 	// type: number
 	// Sets the minimum size (in px) of the rendered marker points, effective when the `pointcloud` shows a million or more points.
-	Sizemin float64 `json:"sizemin,omitempty"`
+	Sizemin types.NumberType `json:"sizemin,omitempty"`
 }
 
 // PointcloudStream
@@ -468,13 +468,13 @@ type PointcloudStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // PointcloudHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines

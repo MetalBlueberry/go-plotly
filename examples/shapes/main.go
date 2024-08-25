@@ -3,6 +3,7 @@ package main
 import (
 	grob "github.com/MetalBlueberry/go-plotly/generated/v2.19.0/graph_objects"
 	"github.com/MetalBlueberry/go-plotly/pkg/offline"
+	"github.com/MetalBlueberry/go-plotly/pkg/types"
 )
 
 func main() {
@@ -17,7 +18,7 @@ func main() {
 	fig := &grob.Fig{
 		Layout: &grob.Layout{
 			Title: &grob.LayoutTitle{
-				Text: "A Figure Specified By Go Struct",
+				Text: types.S("A Figure Specified By Go Struct"),
 			},
 			Shapes: []grob.LayoutShape{
 				{
@@ -28,7 +29,7 @@ func main() {
 					Y1:   2,
 					Line: &grob.ShapeLine{
 						Color: "RoyalBlue",
-						Width: 3,
+						Width: types.N(3),
 					},
 				},
 				{
@@ -39,8 +40,8 @@ func main() {
 					Y1:   2,
 					Line: &grob.ShapeLine{
 						Color: "LightSeaGreen",
-						Width: 4,
-						Dash:  string(grob.Scatter3dLineDashDashdot),
+						Width: types.N(4),
+						Dash:  types.S(string(grob.Scatter3dLineDashDashdot)),
 					},
 				},
 				{
@@ -51,8 +52,8 @@ func main() {
 					Y1:   2,
 					Line: &grob.ShapeLine{
 						Color: "MediumPurple",
-						Width: 4,
-						Dash:  string(grob.Scatter3dLineDashDot),
+						Width: types.N(4),
+						Dash:  types.S(string(grob.Scatter3dLineDashDot)),
 					},
 				},
 			},
