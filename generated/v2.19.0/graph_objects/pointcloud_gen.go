@@ -32,7 +32,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -62,7 +64,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -74,7 +78,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-	Indices interface{} `json:"indices,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Indices *types.DataArrayType `json:"indices,omitempty"`
 
 	// Indicessrc
 	// arrayOK: false
@@ -180,7 +186,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x coordinates.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
@@ -192,7 +200,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-	Xbounds interface{} `json:"xbounds,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Xbounds *types.DataArrayType `json:"xbounds,omitempty"`
 
 	// Xboundssrc
 	// arrayOK: false
@@ -210,7 +220,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Faster alternative to specifying `x` and `y` separately. If supplied, it must be a typed `Float32Array` array that represents points such that `xy[i * 2] = x[i]` and `xy[i * 2 + 1] = y[i]`
-	Xy interface{} `json:"xy,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Xy *types.DataArrayType `json:"xy,omitempty"`
 
 	// Xysrc
 	// arrayOK: false
@@ -222,7 +234,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the y coordinates.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
@@ -234,7 +248,9 @@ type Pointcloud struct {
 	// arrayOK: false
 	// type: data_array
 	// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-	Ybounds interface{} `json:"ybounds,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ybounds *types.DataArrayType `json:"ybounds,omitempty"`
 
 	// Yboundssrc
 	// arrayOK: false

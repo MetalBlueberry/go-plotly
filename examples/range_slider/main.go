@@ -80,8 +80,8 @@ func main() {
 
 	fig := &grob.Fig{}
 	fig.Data = append(fig.Data, &grob.Scatter{
-		X: df.Col("Date").Records(),
-		Y: df.Col("High").Float(),
+		X: types.DataArray(df.Col("Date").Records()),
+		Y: types.DataArray(df.Col("High").Float()),
 	})
 
 	fig.Layout = &grob.Layout{

@@ -32,7 +32,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the close values.
-	Close interface{} `json:"close,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Close *types.DataArrayType `json:"close,omitempty"`
 
 	// Closesrc
 	// arrayOK: false
@@ -44,7 +46,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -61,7 +65,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the high values.
-	High interface{} `json:"high,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	High *types.DataArrayType `json:"high,omitempty"`
 
 	// Highsrc
 	// arrayOK: false
@@ -103,7 +109,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -154,7 +162,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the low values.
-	Low interface{} `json:"low,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Low *types.DataArrayType `json:"low,omitempty"`
 
 	// Lowsrc
 	// arrayOK: false
@@ -190,7 +200,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the open values.
-	Open interface{} `json:"open,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Open *types.DataArrayType `json:"open,omitempty"`
 
 	// Opensrc
 	// arrayOK: false
@@ -261,7 +273,9 @@ type Candlestick struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x coordinates. If absent, linear coordinate will be generated.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false

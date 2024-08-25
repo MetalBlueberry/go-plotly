@@ -39,7 +39,9 @@ type Sankey struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -68,7 +70,9 @@ type Sankey struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -733,7 +737,9 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data to each link.
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -781,7 +787,9 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: data_array
 	// The shown name of the link.
-	Label interface{} `json:"label,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Label *types.DataArrayType `json:"label,omitempty"`
 
 	// Labelsrc
 	// arrayOK: false
@@ -798,7 +806,9 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: data_array
 	// An integer number `[0..nodes.length - 1]` that represents the source node.
-	Source interface{} `json:"source,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Source *types.DataArrayType `json:"source,omitempty"`
 
 	// Sourcesrc
 	// arrayOK: false
@@ -810,7 +820,9 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: data_array
 	// An integer number `[0..nodes.length - 1]` that represents the target node.
-	Target interface{} `json:"target,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Target *types.DataArrayType `json:"target,omitempty"`
 
 	// Targetsrc
 	// arrayOK: false
@@ -822,7 +834,9 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: data_array
 	// A numeric value representing the flow volume value.
-	Value interface{} `json:"value,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Value *types.DataArrayType `json:"value,omitempty"`
 
 	// Valuesrc
 	// arrayOK: false
@@ -1059,7 +1073,9 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data to each node.
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -1101,7 +1117,9 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: data_array
 	// The shown name of the node.
-	Label interface{} `json:"label,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Label *types.DataArrayType `json:"label,omitempty"`
 
 	// Labelsrc
 	// arrayOK: false
@@ -1130,7 +1148,9 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: data_array
 	// The normalized horizontal position of the node.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
@@ -1142,7 +1162,9 @@ type SankeyNode struct {
 	// arrayOK: false
 	// type: data_array
 	// The normalized vertical position of the node.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Ysrc
 	// arrayOK: false

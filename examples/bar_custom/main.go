@@ -52,8 +52,8 @@ func main() {
 	}
 
 	trace1 := &grob.Bar{
-		X:            xValue,
-		Y:            yValue,
+		X:            types.DataArray(xValue),
+		Y:            types.DataArray(yValue),
 		Text:         types.ArrayOKArray(toString(yValue)...),
 		Textposition: types.ArrayOKValue(grob.BarTextpositionAuto),
 		Hoverinfo:    types.ArrayOKValue(grob.BarHoverinfoNone),

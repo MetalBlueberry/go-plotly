@@ -223,7 +223,9 @@ type Layout struct {
 	// arrayOK: false
 	// type: data_array
 	// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-	Hiddenlabels interface{} `json:"hiddenlabels,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Hiddenlabels *types.DataArrayType `json:"hiddenlabels,omitempty"`
 
 	// Hiddenlabelssrc
 	// arrayOK: false
@@ -1410,7 +1412,9 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -1422,7 +1426,9 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -2861,7 +2867,9 @@ type LayerLine struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the length of dashes and gaps (mapbox.layer.paint.line-dasharray). Has an effect only when `type` is set to *line*.
-	Dash interface{} `json:"dash,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Dash *types.DataArrayType `json:"dash,omitempty"`
 
 	// Dashsrc
 	// arrayOK: false
@@ -3679,7 +3687,9 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -3921,7 +3931,9 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -3933,7 +3945,9 @@ type LayoutPolarAngularaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -4253,7 +4267,9 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -4501,7 +4517,9 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -4513,7 +4531,9 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -5234,7 +5254,9 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -5499,7 +5521,9 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -5511,7 +5535,9 @@ type LayoutSceneXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -5814,7 +5840,9 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -6079,7 +6107,9 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -6091,7 +6121,9 @@ type LayoutSceneYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -6394,7 +6426,9 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -6659,7 +6693,9 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -6671,7 +6707,9 @@ type LayoutSceneZaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -7938,7 +7976,9 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Defaults to `realaxis.tickvals` plus the same as negatives and zero.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -8170,7 +8210,9 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -8599,7 +8641,9 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -8611,7 +8655,9 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -9020,7 +9066,9 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -9032,7 +9080,9 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -9441,7 +9491,9 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -9453,7 +9505,9 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -10193,7 +10247,9 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -10735,7 +10791,9 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -11183,7 +11241,9 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -11195,7 +11255,9 @@ type LayoutXaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -11367,7 +11429,9 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -11667,7 +11731,9 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-	Categoryarray interface{} `json:"categoryarray,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
@@ -12111,7 +12177,9 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -12123,7 +12191,9 @@ type LayoutYaxis struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false

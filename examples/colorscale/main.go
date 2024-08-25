@@ -16,9 +16,9 @@ func main() {
 	fig := &grob.Fig{
 		Data: []types.Trace{
 			&grob.Scatter3d{
-				X:    x,
-				Y:    y,
-				Z:    z,
+				X:    types.DataArray(x),
+				Y:    types.DataArray(y),
+				Z:    types.DataArray(z),
 				Mode: grob.Scatter3dModeMarkers,
 				Marker: &grob.Scatter3dMarker{
 					Autocolorscale: types.False,
