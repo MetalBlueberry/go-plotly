@@ -96,7 +96,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -115,7 +117,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the color of each face Overrides *color* and *vertexcolor*.
-	Facecolor interface{} `json:"facecolor,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Facecolor *types.DataArrayType `json:"facecolor,omitempty"`
 
 	// Facecolorsrc
 	// arrayOK: false
@@ -175,13 +179,17 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-	I interface{} `json:"i,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	I *types.DataArrayType `json:"i,omitempty"`
 
 	// Ids
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -193,7 +201,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-	Intensity interface{} `json:"intensity,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Intensity *types.DataArrayType `json:"intensity,omitempty"`
 
 	// Intensitymode
 	// arrayOK: false
@@ -218,7 +228,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-	J interface{} `json:"j,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	J *types.DataArrayType `json:"j,omitempty"`
 
 	// Jsrc
 	// arrayOK: false
@@ -230,7 +242,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-	K interface{} `json:"k,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	K *types.DataArrayType `json:"k,omitempty"`
 
 	// Ksrc
 	// arrayOK: false
@@ -358,7 +372,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-	Vertexcolor interface{} `json:"vertexcolor,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Vertexcolor *types.DataArrayType `json:"vertexcolor,omitempty"`
 
 	// Vertexcolorsrc
 	// arrayOK: false
@@ -377,7 +393,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xcalendar
 	// arrayOK: false
@@ -402,7 +420,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Ycalendar
 	// arrayOK: false
@@ -427,7 +447,9 @@ type Mesh3d struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-	Z interface{} `json:"z,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zcalendar
 	// arrayOK: false
@@ -769,7 +791,9 @@ type Mesh3dColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -781,7 +805,9 @@ type Mesh3dColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false

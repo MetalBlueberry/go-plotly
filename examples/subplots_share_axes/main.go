@@ -56,24 +56,24 @@ func main() {
 	fig := &grob.Fig{
 		Data: []types.Trace{
 			&grob.Scatter{
-				X: []float64{1, 2, 3},
-				Y: []float64{2, 3, 4},
+				X: types.DataArray([]float64{1, 2, 3}),
+				Y: types.DataArray([]float64{2, 3, 4}),
 			},
 			&grob.Scatter{
-				X:     []float64{20, 30, 40},
-				Y:     []float64{5, 5, 5},
+				X:     types.DataArray([]float64{20, 30, 40}),
+				Y:     types.DataArray([]float64{5, 5, 5}),
 				Xaxis: "x2",
 				Yaxis: "y",
 			},
 			&grob.Scatter{
-				X:     []float64{2, 3, 4},
-				Y:     []float64{600, 700, 800},
+				X:     types.DataArray([]float64{2, 3, 4}),
+				Y:     types.DataArray([]float64{600, 700, 800}),
 				Xaxis: "x",
 				Yaxis: "y3",
 			},
 			&grob.Scatter{
-				X:     []float64{4000, 5000, 6000},
-				Y:     []float64{7000, 8000, 9000},
+				X:     types.DataArray([]float64{4000, 5000, 6000}),
+				Y:     types.DataArray([]float64{7000, 8000, 9000}),
 				Xaxis: "x4",
 				Yaxis: "y4",
 			},

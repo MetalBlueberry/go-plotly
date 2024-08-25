@@ -198,6 +198,23 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				},
 			})
 
+		case attr.ValType == ValTypeDataArray:
+			typeName := valTypeMap[attr.ValType]
+
+			fields = append(fields, structField{
+				Name:     xstrings.ToCamelCase(attr.Name),
+				JSONName: attr.Name,
+				Type:     typeName,
+				Description: []string{
+					// fmt.Sprintf("default: %s", attr.Dflt),
+					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
+					fmt.Sprintf("type: %s", attr.ValType),
+					attr.Description,
+					fmt.Sprint("use types.DataArray to pass any slice of data"),
+					fmt.Sprint("use types.BDataArray to pass data in binary format as provided by numpy"),
+				},
+			})
+
 		default:
 			typeName := valTypeMap[attr.ValType]
 

@@ -39,7 +39,9 @@ type Image struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -93,7 +95,9 @@ type Image struct {
 	// arrayOK: false
 	// type: data_array
 	// Same as `text`.
-	Hovertext interface{} `json:"hovertext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Hovertext *types.DataArrayType `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
@@ -105,7 +109,9 @@ type Image struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -175,7 +181,9 @@ type Image struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text elements associated with each z value.
-	Text interface{} `json:"text,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
@@ -230,7 +238,9 @@ type Image struct {
 	// arrayOK: false
 	// type: data_array
 	// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-	Z interface{} `json:"z,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zmax
 	// arrayOK: false

@@ -122,8 +122,8 @@ func main() {
 	// Base
 
 	trace1 := &grob.Bar{
-		X: xData,
-		Y: []int{0, 430, 0, 570, 370, 370, 0},
+		X: types.DataArray(xData),
+		Y: types.DataArray([]int{0, 430, 0, 570, 370, 370, 0}),
 		Marker: &grob.BarMarker{
 			Color: types.ArrayOKValue(types.UseColor("rgba(1,1,1,0.0)")),
 		},
@@ -132,8 +132,8 @@ func main() {
 	// Revenue
 
 	trace2 := &grob.Bar{
-		X: xData,
-		Y: []int{430, 260, 690, 0, 0, 0, 0},
+		X: types.DataArray(xData),
+		Y: types.DataArray([]int{430, 260, 690, 0, 0, 0, 0}),
 		Marker: &grob.BarMarker{
 			Color: types.ArrayOKValue(types.UseColor("rgba(55,128,191,0.7)")),
 			Line: &grob.BarMarkerLine{
@@ -146,8 +146,8 @@ func main() {
 	// Cost
 
 	trace3 := &grob.Bar{
-		X: xData,
-		Y: []int{0, 0, 0, 120, 200, 320, 0},
+		X: types.DataArray(xData),
+		Y: types.DataArray([]int{0, 0, 0, 120, 200, 320, 0}),
 		Marker: &grob.BarMarker{
 			Color: types.ArrayOKValue(types.UseColor("rgba(219, 64, 82, 0.7)")),
 			Line: &grob.BarMarkerLine{
@@ -160,8 +160,8 @@ func main() {
 	// Profit
 
 	trace4 := &grob.Bar{
-		X: xData,
-		Y: []int{0, 0, 0, 0, 0, 0, 370},
+		X: types.DataArray(xData),
+		Y: types.DataArray([]int{0, 0, 0, 0, 0, 0, 370}),
 		Marker: &grob.BarMarker{
 			Color: types.ArrayOKValue(types.UseColor("rgba(50,171, 96, 0.7)")),
 			Line: &grob.BarMarkerLine{

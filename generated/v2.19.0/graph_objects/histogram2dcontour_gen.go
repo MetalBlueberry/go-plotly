@@ -84,7 +84,9 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -140,7 +142,9 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -285,7 +289,9 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the sample data to be binned on the x axis.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
@@ -327,7 +333,9 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the sample data to be binned on the y axis.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
@@ -369,7 +377,9 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the aggregation data.
-	Z interface{} `json:"z,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zauto
 	// arrayOK: false
@@ -728,7 +738,9 @@ type Histogram2dcontourColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -740,7 +752,9 @@ type Histogram2dcontourColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -1062,7 +1076,9 @@ type Histogram2dcontourMarker struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the aggregation data.
-	Color interface{} `json:"color,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Color *types.DataArrayType `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
