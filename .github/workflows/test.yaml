@@ -31,3 +31,10 @@ jobs:
 
       - name: Build all examples
         run: cd examples && go build -v ./...
+
+      - name: Build readme examples
+        run: -|
+          mkdir -p readme
+          sed -n '/^```go/,/^```/p' README.md | sed -e '/^```/d' > "readme/main.go"
+          go build -o readme/readme "readme/main.go"
+          rm -rd readme
