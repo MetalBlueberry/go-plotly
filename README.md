@@ -77,23 +77,40 @@ Nested Properties, are defined as new types. This is great for auto completion u
 
 Flaglist and Enumerated fields are defined with a type and its constant values. This provides useful autocompletion. Keep in mind that you can compose multiple values for a Flaglist like `Mode: grob.ScatterModeMarkers + "+" + grob.ScatterModeLines,`. You can read de inline documentation to see the default value.
 
-## Tested
-
-Examples, Code generation and Offline package are based on version 1.58.4, but It should work with other versions as this library just generates standard JSON.
-
-## Testing
-
-The package lacks of unit testing basically because it's just building JSON to be consumed by plotly.js. This means that I do not see a clear way of building valuable unit testing that doesn't involve the usage of plotly.js. If the package compiles, It means that types are generated correctly.
-
-Said that, I'm thinking about adding some integration testing with Docker, but for now, I've enough if the examples are working.
-
-If you have any good idea of how to test this code, I will be happy to hear it.
-
 ## Progress
 
 The main focus is to have the structures to hold the data and provide auto competition. Once we get there, we will be on v1.0.0.
 
 Currently, most common use cases should be already covered. Feel free to create an issue if you find something that it's not working.
+
+- [x] Traces
+- [x] Layout
+- [x] Config
+- [x] Animation
+- [x] Frames
+  - [ ] defs
+    - [ ] defs valobjects
+      - [ ] angle
+      - [x] any
+      - [x] boolean
+      - [x] color
+      - [x] colorlist
+      - [x] colorscale
+      - [x] data_array
+      - [x] enumerated
+      - [x] flaglist
+      - [ ] info_array
+      - [ ] integer **Needs support for nil values**
+      - [ ] number **Needs support for nil values**
+      - [x] string
+      - [ ] subplotid
+    - [ ] defs_modifier
+      - [ ] arrayOK
+      - [ ] min/max validations
+      - [x] dflt  **This is not needed in the output, as plotly will do it. But it would be nice to have a method to fetch it**
+      - [ ] noBlank validation
+      - [ ] strict validation
+      - [ ] values list validation
 
 ## FAQ
 
@@ -101,87 +118,61 @@ Currently, most common use cases should be already covered. Feel free to create 
 
 In python, the component is called graph_objects, like in this package, but that's too long to write it over and over again. In Python, usually it's called "go" from Graph_Objects but in Go... that's not possible for a conflict with a keyword. as an alternative, I've decided to use "grob" from GRaph_OBjects.
 
-### How are the graph_object files generated?
-
-I was using "[plate](https://github.com/MetalBlueberry/plate)", but it was a bad idea. Now it is just plan go code inside the **generator package**. This should be much easier to understand and to contribute. Let me know if you want to contribute!!
-
 ### What are the usecases?
 
-1. Send plotly figures to the frontend ready to be drawn, avoiding possible mistakes in JS thanks to types!
+1. Quickly visualize data using only Go
 
-2. Generate an awesome dynamic plot in a local file with offline package.
+2. Send plotly figures to the frontend ready to be drawn, avoiding possible mistakes in JS thanks to types!
 
-3. I don't know, just do something awesome and let me know it.
+3. Generate an awesome dynamic plot in a local file with offline package.
 
-### Why are the String and Bool types defined?
-
-> I'm thinking about defining everything as a pointer, it should be better in the long run
-
-This is to handle the omitempty flag in json serialization. Turns out that if the flag is set, you cannot create a json object with a flag set to `false`. For example, turn off visibility of the legend will be impossible without this.
-
-For bool, the solution is as simple as defining the types again inside graph_objects and it feels like using normal bool values.
-
-For strings... This is a little bit more complicated, In AWS package they are using `aws.String` which maps to `*string` to workaround this issue, but I find that really annoying because you have to wrap every single string with `aws.String("whatever")`. For now I've decided to define the type String but leave it as `interface{}` instead of `*string` to allow you to use raw strings. The draw back is that you can pass any value of your choice... Hopefully you can live with this :).
-
-For numbers... It's similar to strings, Right now you cannot create plots with integer/float numbers with 0 value. I've only encounter problems when trying to remove the margin and can be workaround with an small value like `0.001`. I would like to avoid using interface{} or defining types again to keep the package interface as simple as possible.
+4. I don't know, just do something awesome and let me know it.
 
 ### Go Plotly Update to any json schema version
 
+[Example PR](https://github.com/MetalBlueberry/go-plotly/pull/29)
+
 #### Update the config to add a new version
 
-To add a new version, add a new entry in: [schemas.yaml](schemas.yaml)
+1. To add a new version, add a new entry in: [schemas.yaml](schemas.yaml)
+    > The documentation for each field can be found in [schema.go](generator%2Fschema.go)
 
-The documentation for each field can be found in [schema.go](generator%2Fschema.go)
+    Example entry:
 
-Example entry:
-```yaml
-  -  Name: Plotly 2.31.1
-     Tag: v2.31.1
-     URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
-     Path: schemas/v2.31.1/plot-schema.json
-     Generated: generated/v2.31.1
-     CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
-```
+    ```yaml
+      -  Name: Plotly 2.31.1
+         Tag: v2.31.1
+         URL: https://raw.githubusercontent.com/plotly/plotly.js/v2.31.1/test/plot-schema.json
+         # relative to the project root.
+         Path: schemas/v2.31.1/plot-schema.json
+         Generated: generated/v2.31.1
+         CDN: https://cdn.plot.ly/plotly-2.31.1.min.js
+    ```
 
-The local paths are relative to the project root.
+#### Run download and regeneration
 
-#### run download and regeneration
+1. Download all the schemas:
 
-> [!TIP]
-> Use this script for easier download of plotly json schemas.
-> ```shell
-> go run generator/cmd/downloader/main.go --config="schemas.yaml"
-> ```
-> Then run the generator, which will clean up the generated files in **graph_objects** folder of each version and regenerate the new graph objects. DO NOT REMOVE **graph_objects/plotly.go**
-> ```shell
-> go run generator/cmd/generator/main.go --config="schemas.yaml"
-> ```
-> Alternatively, you can also generate the go package using following command from the project root:
-> ```shell
-> go generate ./...
-> ```
+   ```shell
+   go run generator/cmd/downloader/main.go --config="schemas.yaml"
+   ```
 
-#### Missing Files?
+2. Then run the generator:
 
-if in doubt whether all types and traces have been generated, you can use the jsonviewer tool to introspect the json: 
-https://jsonviewer.stack.hu/
-
-Or use `jq` tool for quick introspection into the json files.
-Example:
-Display all traces in the schema.json file.
-```shell
-jq '.schema.traces | keys' schema.json --sort-keys | less
-```
-
-More on the `jq` tool on: https://jqlang.github.io/jq/manual/
-
-### plotly online editor sandbox
-http://plotly-json-editor.getforge.io/
+   ```shell
+   go generate ./...
+   ```
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Metalblueberry/go-plotly&type=Date)](https://star-history.com/#Metalblueberry/go-plotly&Date)
 
+## Other tools and information links
 
-## Official Plotly Release Notes
+### Plotly online editor sandbox
+
+http://plotly-json-editor.getforge.io/
+
+### Official Plotly Release Notes
+
 For detailed changes please follow the release notes of the original JS repo: https://github.com/plotly/plotly.js/releases
