@@ -52,7 +52,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -131,7 +133,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -183,7 +187,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-	Lowerfence interface{} `json:"lowerfence,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Lowerfence *types.DataArrayType `json:"lowerfence,omitempty"`
 
 	// Lowerfencesrc
 	// arrayOK: false
@@ -200,7 +206,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-	Mean interface{} `json:"mean,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Mean *types.DataArrayType `json:"mean,omitempty"`
 
 	// Meansrc
 	// arrayOK: false
@@ -212,7 +220,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the median values. There should be as many items as the number of boxes desired.
-	Median interface{} `json:"median,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Median *types.DataArrayType `json:"median,omitempty"`
 
 	// Mediansrc
 	// arrayOK: false
@@ -248,7 +258,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-	Notchspan interface{} `json:"notchspan,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Notchspan *types.DataArrayType `json:"notchspan,omitempty"`
 
 	// Notchspansrc
 	// arrayOK: false
@@ -291,7 +303,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-	Q1 interface{} `json:"q1,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Q1 *types.DataArrayType `json:"q1,omitempty"`
 
 	// Q1src
 	// arrayOK: false
@@ -303,7 +317,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-	Q3 interface{} `json:"q3,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Q3 *types.DataArrayType `json:"q3,omitempty"`
 
 	// Q3src
 	// arrayOK: false
@@ -322,7 +338,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-	Sd interface{} `json:"sd,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Sd *types.DataArrayType `json:"sd,omitempty"`
 
 	// Sdmultiple
 	// arrayOK: false
@@ -409,7 +427,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the upper as the last sample point above 1.5 times the IQR.
-	Upperfence interface{} `json:"upperfence,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Upperfence *types.DataArrayType `json:"upperfence,omitempty"`
 
 	// Upperfencesrc
 	// arrayOK: false
@@ -440,7 +460,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x sample data or coordinates. See overview for more info.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// X0
 	// arrayOK: false
@@ -496,7 +518,9 @@ type Box struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the y sample data or coordinates. See overview for more info.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Y0
 	// arrayOK: false

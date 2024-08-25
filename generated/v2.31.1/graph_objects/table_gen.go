@@ -37,7 +37,9 @@ type Table struct {
 	// arrayOK: false
 	// type: data_array
 	// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-	Columnorder interface{} `json:"columnorder,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Columnorder *types.DataArrayType `json:"columnorder,omitempty"`
 
 	// Columnordersrc
 	// arrayOK: false
@@ -61,7 +63,9 @@ type Table struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -101,7 +105,9 @@ type Table struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -289,7 +295,9 @@ type TableCells struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Format interface{} `json:"format,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Format *types.DataArrayType `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
@@ -336,7 +344,9 @@ type TableCells struct {
 	// arrayOK: false
 	// type: data_array
 	// Cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
-	Values interface{} `json:"values,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
@@ -487,7 +497,9 @@ type TableHeader struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-	Format interface{} `json:"format,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Format *types.DataArrayType `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
@@ -534,7 +546,9 @@ type TableHeader struct {
 	// arrayOK: false
 	// type: data_array
 	// Header cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
-	Values interface{} `json:"values,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false

@@ -37,7 +37,7 @@ func main() {
 		frames = append(frames, grob.Frame{
 			Data: []types.Trace{
 				&grob.Scatter{
-					Y: []float64{rand.Float64(), rand.Float64(), rand.Float64()},
+					Y: types.DataArray([]float64{rand.Float64(), rand.Float64(), rand.Float64()}),
 				},
 			},
 		})
@@ -46,8 +46,8 @@ func main() {
 	fig := &grob.Fig{
 		Data: []types.Trace{
 			&grob.Scatter{
-				X: []float64{1, 2, 3},
-				Y: []float64{0, 0.5, 1},
+				X: types.DataArray([]float64{1, 2, 3}),
+				Y: types.DataArray([]float64{0, 0.5, 1}),
 				Line: &grob.ScatterLine{
 					Simplify: types.False,
 				},

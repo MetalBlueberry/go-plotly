@@ -62,7 +62,9 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -133,7 +135,9 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -191,7 +195,9 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: data_array
 	// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-	Measure interface{} `json:"measure,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Measure *types.DataArrayType `json:"measure,omitempty"`
 
 	// Measuresrc
 	// arrayOK: false
@@ -370,7 +376,9 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x coordinates.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// X0
 	// arrayOK: false
@@ -419,7 +427,9 @@ type Waterfall struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the y coordinates.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Y0
 	// arrayOK: false

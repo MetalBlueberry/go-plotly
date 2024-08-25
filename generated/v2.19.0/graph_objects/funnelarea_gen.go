@@ -44,7 +44,9 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -109,7 +111,9 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -132,7 +136,9 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-	Labels interface{} `json:"labels,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Labels *types.DataArrayType `json:"labels,omitempty"`
 
 	// Labelssrc
 	// arrayOK: false
@@ -213,7 +219,9 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text interface{} `json:"text,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
@@ -284,7 +292,9 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values of the sectors. If omitted, we count occurrences of each label.
-	Values interface{} `json:"values,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
@@ -538,7 +548,9 @@ type FunnelareaMarker struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-	Colors interface{} `json:"colors,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Colors *types.DataArrayType `json:"colors,omitempty"`
 
 	// Colorssrc
 	// arrayOK: false

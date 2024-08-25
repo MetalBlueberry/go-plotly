@@ -86,7 +86,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -140,7 +142,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -263,7 +267,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x components of the vector field.
-	U interface{} `json:"u,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	U *types.DataArrayType `json:"u,omitempty"`
 
 	// Uhoverformat
 	// arrayOK: false
@@ -293,7 +299,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the y components of the vector field.
-	V interface{} `json:"v,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	V *types.DataArrayType `json:"v,omitempty"`
 
 	// Vhoverformat
 	// arrayOK: false
@@ -318,7 +326,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the z components of the vector field.
-	W interface{} `json:"w,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	W *types.DataArrayType `json:"w,omitempty"`
 
 	// Whoverformat
 	// arrayOK: false
@@ -336,7 +346,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the x coordinates of the vector field and of the displayed cones.
-	X interface{} `json:"x,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
@@ -354,7 +366,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the y coordinates of the vector field and of the displayed cones.
-	Y interface{} `json:"y,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
@@ -372,7 +386,9 @@ type Cone struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the z coordinates of the vector field and of the displayed cones.
-	Z interface{} `json:"z,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
@@ -707,7 +723,9 @@ type ConeColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -719,7 +737,9 @@ type ConeColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false

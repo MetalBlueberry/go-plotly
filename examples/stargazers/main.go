@@ -69,8 +69,8 @@ func main() {
 	fig := &grob.Fig{
 		Data: []types.Trace{
 			&grob.Scatter{
-				X:    x,
-				Y:    y,
+				X:    types.DataArray(x),
+				Y:    types.DataArray(y),
 				Text: types.ArrayOKArray(text...),
 				Meta: types.ArrayOKArray(link...),
 				Mode: grob.ScatterModeLines + "+" + grob.ScatterModeMarkers,

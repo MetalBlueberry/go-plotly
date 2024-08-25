@@ -46,7 +46,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-	Customdata interface{} `json:"customdata,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
@@ -105,7 +107,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-	Ids interface{} `json:"ids,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
@@ -129,7 +133,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the labels of each of the sectors.
-	Labels interface{} `json:"labels,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Labels *types.DataArrayType `json:"labels,omitempty"`
 
 	// Labelssrc
 	// arrayOK: false
@@ -215,7 +221,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be "ids" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-	Parents interface{} `json:"parents,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Parents *types.DataArrayType `json:"parents,omitempty"`
 
 	// Parentssrc
 	// arrayOK: false
@@ -249,7 +257,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-	Text interface{} `json:"text,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
@@ -302,7 +312,9 @@ type Sunburst struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-	Values interface{} `json:"values,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
@@ -1123,7 +1135,9 @@ type SunburstMarkerColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-	Ticktext interface{} `json:"ticktext,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
@@ -1135,7 +1149,9 @@ type SunburstMarkerColorbar struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-	Tickvals interface{} `json:"tickvals,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
@@ -1361,7 +1377,9 @@ type SunburstMarker struct {
 	// arrayOK: false
 	// type: data_array
 	// Sets the color of each sector of this trace. If not specified, the default trace color set is used to pick the sector colors.
-	Colors interface{} `json:"colors,omitempty"`
+	// use types.DataArray to pass any slice of data
+	// use types.BDataArray to pass data in binary format as provided by numpy
+	Colors *types.DataArrayType `json:"colors,omitempty"`
 
 	// Colorscale
 	// arrayOK: false

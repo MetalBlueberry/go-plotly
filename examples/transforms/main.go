@@ -18,8 +18,8 @@ func main() {
 	fig := &grob.Fig{
 		Data: []types.Trace{
 			&grob.Bar{
-				X: []float64{1, 2, 3},
-				Y: []float64{1, 2, 3},
+				X: types.DataArray([]float64{1, 2, 3}),
+				Y: types.DataArray([]float64{1, 2, 3}),
 			},
 		},
 		Layout: &grob.Layout{
