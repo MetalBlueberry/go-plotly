@@ -32,7 +32,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
-	Alignmentgroup types.String `json:"alignmentgroup,omitempty"`
+	Alignmentgroup types.StringType `json:"alignmentgroup,omitempty"`
 
 	// Boxmean
 	// arrayOK: false
@@ -60,19 +60,19 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
-	Customdatasrc types.String `json:"customdatasrc,omitempty"`
+	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Dx
 	// arrayOK: false
 	// type: number
 	// Sets the x coordinate step for multi-box traces set using q1/median/q3.
-	Dx float64 `json:"dx,omitempty"`
+	Dx types.NumberType `json:"dx,omitempty"`
 
 	// Dy
 	// arrayOK: false
 	// type: number
 	// Sets the y coordinate step for multi-box traces set using q1/median/q3.
-	Dy float64 `json:"dy,omitempty"`
+	Dy types.NumberType `json:"dy,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
@@ -91,7 +91,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
-	Hoverinfosrc types.String `json:"hoverinfosrc,omitempty"`
+	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
@@ -109,25 +109,25 @@ type Box struct {
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
-	Hovertemplate *types.ArrayOK[*types.String] `json:"hovertemplate,omitempty"`
+	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
-	Hovertemplatesrc types.String `json:"hovertemplatesrc,omitempty"`
+	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
-	Hovertext *types.ArrayOK[*types.String] `json:"hovertext,omitempty"`
+	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
-	Hovertextsrc types.String `json:"hovertextsrc,omitempty"`
+	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
 	// arrayOK: false
@@ -141,19 +141,19 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
-	Idssrc types.String `json:"idssrc,omitempty"`
+	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Jitter
 	// arrayOK: false
 	// type: number
 	// Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the box(es).
-	Jitter float64 `json:"jitter,omitempty"`
+	Jitter types.NumberType `json:"jitter,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
-	Legendgroup types.String `json:"legendgroup,omitempty"`
+	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
@@ -164,13 +164,13 @@ type Box struct {
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
-	Legendrank float64 `json:"legendrank,omitempty"`
+	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
-	Legendwidth float64 `json:"legendwidth,omitempty"`
+	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
@@ -189,7 +189,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lowerfence`.
-	Lowerfencesrc types.String `json:"lowerfencesrc,omitempty"`
+	Lowerfencesrc types.StringType `json:"lowerfencesrc,omitempty"`
 
 	// Marker
 	// arrayOK: false
@@ -208,7 +208,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `mean`.
-	Meansrc types.String `json:"meansrc,omitempty"`
+	Meansrc types.StringType `json:"meansrc,omitempty"`
 
 	// Median
 	// arrayOK: false
@@ -222,7 +222,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `median`.
-	Mediansrc types.String `json:"mediansrc,omitempty"`
+	Mediansrc types.StringType `json:"mediansrc,omitempty"`
 
 	// Meta
 	// arrayOK: true
@@ -234,19 +234,19 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
-	Metasrc types.String `json:"metasrc,omitempty"`
+	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
-	Name types.String `json:"name,omitempty"`
+	Name types.StringType `json:"name,omitempty"`
 
 	// Notched
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not notches are drawn. Notches displays a confidence interval around the median. We compute the confidence interval as median +/- 1.57 * IQR / sqrt(N), where IQR is the interquartile range and N is the sample size. If two boxes' notches do not overlap there is 95% confidence their medians differ. See https://sites.google.com/site/davidsstatistics/home/notched-box-plots for more info. Defaults to *false* unless `notchwidth` or `notchspan` is set.
-	Notched types.Bool `json:"notched,omitempty"`
+	Notched types.BoolType `json:"notched,omitempty"`
 
 	// Notchspan
 	// arrayOK: false
@@ -260,25 +260,25 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `notchspan`.
-	Notchspansrc types.String `json:"notchspansrc,omitempty"`
+	Notchspansrc types.StringType `json:"notchspansrc,omitempty"`
 
 	// Notchwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width of the notches relative to the box' width. For example, with 0, the notches are as wide as the box(es).
-	Notchwidth float64 `json:"notchwidth,omitempty"`
+	Notchwidth types.NumberType `json:"notchwidth,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
-	Offsetgroup types.String `json:"offsetgroup,omitempty"`
+	Offsetgroup types.StringType `json:"offsetgroup,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Orientation
 	// arrayOK: false
@@ -291,7 +291,7 @@ type Box struct {
 	// arrayOK: false
 	// type: number
 	// Sets the position of the sample points in relation to the box(es). If *0*, the sample points are places over the center of the box(es). Positive (negative) values correspond to positions to the right (left) for vertical boxes and above (below) for horizontal boxes
-	Pointpos float64 `json:"pointpos,omitempty"`
+	Pointpos types.NumberType `json:"pointpos,omitempty"`
 
 	// Q1
 	// arrayOK: false
@@ -305,7 +305,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `q1`.
-	Q1src types.String `json:"q1src,omitempty"`
+	Q1src types.StringType `json:"q1src,omitempty"`
 
 	// Q3
 	// arrayOK: false
@@ -319,7 +319,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `q3`.
-	Q3src types.String `json:"q3src,omitempty"`
+	Q3src types.StringType `json:"q3src,omitempty"`
 
 	// Quartilemethod
 	// arrayOK: false
@@ -340,7 +340,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `sd`.
-	Sdsrc types.String `json:"sdsrc,omitempty"`
+	Sdsrc types.StringType `json:"sdsrc,omitempty"`
 
 	// Selected
 	// arrayOK: false
@@ -357,7 +357,7 @@ type Box struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
-	Showlegend types.Bool `json:"showlegend,omitempty"`
+	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
@@ -368,13 +368,13 @@ type Box struct {
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with each sample value. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
-	Text *types.ArrayOK[*types.String] `json:"text,omitempty"`
+	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
-	Textsrc types.String `json:"textsrc,omitempty"`
+	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Transforms
 	// role: Object
@@ -385,7 +385,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
-	Uid types.String `json:"uid,omitempty"`
+	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
@@ -410,7 +410,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `upperfence`.
-	Upperfencesrc types.String `json:"upperfencesrc,omitempty"`
+	Upperfencesrc types.StringType `json:"upperfencesrc,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -423,13 +423,13 @@ type Box struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width of the whiskers relative to the box' width. For example, with 1, the whiskers are as wide as the box(es).
-	Whiskerwidth float64 `json:"whiskerwidth,omitempty"`
+	Whiskerwidth types.NumberType `json:"whiskerwidth,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the box in data coordinate If *0* (default value) the width is automatically selected based on the positions of other box traces in the same subplot.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 
 	// X
 	// arrayOK: false
@@ -449,7 +449,7 @@ type Box struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
-	Xaxis types.String `json:"xaxis,omitempty"`
+	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xcalendar
 	// arrayOK: false
@@ -462,7 +462,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
-	Xhoverformat types.String `json:"xhoverformat,omitempty"`
+	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
@@ -487,7 +487,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
-	Xsrc types.String `json:"xsrc,omitempty"`
+	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -507,7 +507,7 @@ type Box struct {
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
-	Yaxis types.String `json:"yaxis,omitempty"`
+	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ycalendar
 	// arrayOK: false
@@ -520,7 +520,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
-	Yhoverformat types.String `json:"yhoverformat,omitempty"`
+	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Yperiod
 	// arrayOK: false
@@ -545,7 +545,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
-	Ysrc types.String `json:"ysrc,omitempty"`
+	Ysrc types.StringType `json:"ysrc,omitempty"`
 }
 
 // BoxHoverlabelFont Sets the font used in hover labels.
@@ -561,31 +561,31 @@ type BoxHoverlabelFont struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
-	Colorsrc types.String `json:"colorsrc,omitempty"`
+	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family *types.ArrayOK[*types.String] `json:"family,omitempty"`
+	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
-	Familysrc types.String `json:"familysrc,omitempty"`
+	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
-	Size *types.ArrayOK[*float64] `json:"size,omitempty"`
+	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
-	Sizesrc types.String `json:"sizesrc,omitempty"`
+	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
 // BoxHoverlabel
@@ -602,7 +602,7 @@ type BoxHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
-	Alignsrc types.String `json:"alignsrc,omitempty"`
+	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
@@ -614,7 +614,7 @@ type BoxHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
-	Bgcolorsrc types.String `json:"bgcolorsrc,omitempty"`
+	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
@@ -626,7 +626,7 @@ type BoxHoverlabel struct {
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
-	Bordercolorsrc types.String `json:"bordercolorsrc,omitempty"`
+	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
@@ -637,13 +637,13 @@ type BoxHoverlabel struct {
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
-	Namelength *types.ArrayOK[*int64] `json:"namelength,omitempty"`
+	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
-	Namelengthsrc types.String `json:"namelengthsrc,omitempty"`
+	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
 // BoxLegendgrouptitleFont Sets this legend group's title font.
@@ -659,13 +659,13 @@ type BoxLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
-	Family types.String `json:"family,omitempty"`
+	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // BoxLegendgrouptitle
@@ -680,7 +680,7 @@ type BoxLegendgrouptitle struct {
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
-	Text types.String `json:"text,omitempty"`
+	Text types.StringType `json:"text,omitempty"`
 }
 
 // BoxLine
@@ -696,7 +696,7 @@ type BoxLine struct {
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of line bounding the box(es).
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // BoxMarkerLine
@@ -718,13 +718,13 @@ type BoxMarkerLine struct {
 	// arrayOK: false
 	// type: number
 	// Sets the border line width (in px) of the outlier sample points.
-	Outlierwidth float64 `json:"outlierwidth,omitempty"`
+	Outlierwidth types.NumberType `json:"outlierwidth,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
-	Width float64 `json:"width,omitempty"`
+	Width types.NumberType `json:"width,omitempty"`
 }
 
 // BoxMarker
@@ -734,7 +734,7 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
-	Angle float64 `json:"angle,omitempty"`
+	Angle types.NumberType `json:"angle,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -751,7 +751,7 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
@@ -763,7 +763,7 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker size (in px).
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 
 	// Symbol
 	// arrayOK: false
@@ -786,13 +786,13 @@ type BoxSelectedMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of selected points.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of selected points.
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // BoxSelected
@@ -811,13 +811,13 @@ type BoxStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
-	Maxpoints float64 `json:"maxpoints,omitempty"`
+	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
-	Token types.String `json:"token,omitempty"`
+	Token types.StringType `json:"token,omitempty"`
 }
 
 // BoxTransform WARNING: All transforms are deprecated and may be removed from the API in next major version. An array of operations that manipulate the trace data, for example filtering or sorting the data arrays.
@@ -837,13 +837,13 @@ type BoxUnselectedMarker struct {
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of unselected points, applied only when a selection exists.
-	Opacity float64 `json:"opacity,omitempty"`
+	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of unselected points, applied only when a selection exists.
-	Size float64 `json:"size,omitempty"`
+	Size types.NumberType `json:"size,omitempty"`
 }
 
 // BoxUnselected

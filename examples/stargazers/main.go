@@ -55,13 +55,13 @@ func main() {
 
 	x := []string{}
 	y := []int{}
-	text := []types.String{}
+	text := []types.StringType{}
 	link := []interface{}{}
 
 	for i := 0; i < len(starredAt); i++ {
 		x = append(x, starredAt[i].StarredAt.Format(time.RFC3339))
 		y = append(y, i+1)
-		text = append(text, starredAt[i].User.Login)
+		text = append(text, types.S(starredAt[i].User.Login))
 		link = append(link, starredAt[i].User.AvatarURL)
 
 	}
@@ -74,7 +74,7 @@ func main() {
 				Text: types.ArrayOKArray(text...),
 				Meta: types.ArrayOKArray(link...),
 				Mode: grob.ScatterModeLines + "+" + grob.ScatterModeMarkers,
-				Name: "Stars",
+				Name: types.S("Stars"),
 				Line: &grob.ScatterLine{
 					Color: "#f0ed46",
 				},
@@ -83,7 +83,7 @@ func main() {
 
 		Layout: &grob.Layout{
 			Title: &grob.LayoutTitle{
-				Text: "Metalblueberry/go-plotly Stargazers",
+				Text: types.S("Metalblueberry/go-plotly Stargazers"),
 			},
 			Legend: &grob.LayoutLegend{},
 		},

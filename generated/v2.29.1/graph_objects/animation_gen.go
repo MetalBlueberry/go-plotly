@@ -25,7 +25,7 @@ type Animation struct {
 	// arrayOK: false
 	// type: boolean
 	// Play frames starting at the current frame instead of the beginning.
-	Fromcurrent types.Bool `json:"fromcurrent,omitempty"`
+	Fromcurrent types.BoolType `json:"fromcurrent,omitempty"`
 
 	// Mode
 	// arrayOK: false
@@ -47,13 +47,13 @@ type AnimationFrame struct {
 	// arrayOK: false
 	// type: number
 	// The duration in milliseconds of each frame. If greater than the frame duration, it will be limited to the frame duration.
-	Duration float64 `json:"duration,omitempty"`
+	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Redraw
 	// arrayOK: false
 	// type: boolean
 	// Redraw the plot at completion of the transition. This is desirable for transitions that include properties that cannot be transitioned, but may significantly slow down updates that do not require a full redraw of the plot
-	Redraw types.Bool `json:"redraw,omitempty"`
+	Redraw types.BoolType `json:"redraw,omitempty"`
 }
 
 // AnimationTransition
@@ -63,7 +63,7 @@ type AnimationTransition struct {
 	// arrayOK: false
 	// type: number
 	// The duration of the transition, in milliseconds. If equal to zero, updates are synchronous.
-	Duration float64 `json:"duration,omitempty"`
+	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
 	// arrayOK: false

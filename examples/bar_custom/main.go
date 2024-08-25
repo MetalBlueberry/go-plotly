@@ -61,17 +61,17 @@ func main() {
 			Color: types.ArrayOKValue(types.UseColor(types.Color(
 				markerColor.Hex(), // Use colorfull
 			))),
-			Opacity: types.ArrayOKValue(0.6),
+			Opacity: types.ArrayOKValue(types.N(0.6)),
 			Line: &grob.BarMarkerLine{
 				Color: types.ArrayOKValue(types.UseColor("rgb(8,48,107)")), // Or just write the string
-				Width: types.ArrayOKValue(1.5),
+				Width: types.ArrayOKValue(types.N(1.5)),
 			},
 		},
 	}
 
 	layout := &grob.Layout{
 		Title: &grob.LayoutTitle{
-			Text: "A Figure Specified By Go Struct",
+			Text: types.S("A Figure Specified By Go Struct"),
 		},
 	}
 
@@ -84,10 +84,10 @@ func main() {
 	offline.Show(fig)
 }
 
-func toString(in []int) []types.String {
-	out := make([]types.String, len(in))
+func toString(in []int) []types.StringType {
+	out := make([]types.StringType, len(in))
 	for i := range in {
-		out[i] = strconv.Itoa(in[i])
+		out[i] = types.S(strconv.Itoa(in[i]))
 	}
 	return out
 }

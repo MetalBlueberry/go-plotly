@@ -24,7 +24,7 @@ func main() {
 		},
 		Layout: &grob.Layout{
 			Title: &grob.LayoutTitle{
-				Text: "A Figure Specified By Go Struct",
+				Text: types.S("A Figure Specified By Go Struct"),
 			},
 		},
 	}

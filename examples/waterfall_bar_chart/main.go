@@ -138,7 +138,7 @@ func main() {
 			Color: types.ArrayOKValue(types.UseColor("rgba(55,128,191,0.7)")),
 			Line: &grob.BarMarkerLine{
 				Color: types.ArrayOKValue(types.UseColor("rgba(55,128,191,1.0)")),
-				Width: types.ArrayOKValue(2.0),
+				Width: types.ArrayOKValue(types.N(2.0)),
 			},
 		},
 	}
@@ -152,7 +152,7 @@ func main() {
 			Color: types.ArrayOKValue(types.UseColor("rgba(219, 64, 82, 0.7)")),
 			Line: &grob.BarMarkerLine{
 				Color: types.ArrayOKValue(types.UseColor("rgba(219, 64, 82, 1.0)")),
-				Width: types.ArrayOKValue(2.0),
+				Width: types.ArrayOKValue(types.N(2.0)),
 			},
 		},
 	}
@@ -166,7 +166,7 @@ func main() {
 			Color: types.ArrayOKValue(types.UseColor("rgba(50,171, 96, 0.7)")),
 			Line: &grob.BarMarkerLine{
 				Color: types.ArrayOKValue(types.UseColor("rgba(50,171,96,1.0)")),
-				Width: types.ArrayOKValue(2.0),
+				Width: types.ArrayOKValue(types.N(2.0)),
 			},
 		},
 	}
@@ -178,10 +178,10 @@ func main() {
 		annotations[i] = grob.LayoutAnnotation{
 			X:    xData[i],
 			Y:    yData[i],
-			Text: textList[i],
+			Text: types.S(textList[i]),
 			Font: &grob.AnnotationFont{
-				Family: "Arial",
-				Size:   14,
+				Family: types.S("Arial"),
+				Size:   types.N(14),
 				Color:  "rgba(245,246,249,1)",
 			},
 			Showarrow: types.False,
@@ -190,13 +190,13 @@ func main() {
 
 	layout := &grob.Layout{
 		Title: &grob.LayoutTitle{
-			Text: "Annual Profit 2015",
+			Text: types.S("Annual Profit 2015"),
 		},
 		Barmode:      grob.BarBarmodeStack,
 		PaperBgcolor: "rgba(245,246,249,1)",
 		PlotBgcolor:  "rgba(245,246,249,1)",
-		Width:        600,
-		Height:       600,
+		Width:        types.N(600),
+		Height:       types.N(600),
 		Showlegend:   types.False,
 		Annotations:  annotations,
 	}
