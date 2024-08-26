@@ -19,6 +19,11 @@ func ArrayOKArray[T any](array ...T) *ArrayOK[*T] {
 		Array: out,
 	}
 }
+func ArrayOKAppend[T any](array *ArrayOK[*T], values ...T) {
+	for _, el := range values {
+		array.Array = append(array.Array, &el)
+	}
+}
 
 // ArrayOK is a type that allows you to define a single value or an array of values, But not both.
 // If Array is defined, Value will be ignored.
