@@ -27,7 +27,7 @@ func main() {
 					Y0:   0,
 					X1:   1,
 					Y1:   2,
-					Line: &grob.ShapeLine{
+					Line: &grob.LayoutShapeLine{
 						Color: "RoyalBlue",
 						Width: types.N(3),
 					},
@@ -38,7 +38,7 @@ func main() {
 					Y0:   2,
 					X1:   5,
 					Y1:   2,
-					Line: &grob.ShapeLine{
+					Line: &grob.LayoutShapeLine{
 						Color: "LightSeaGreen",
 						Width: types.N(4),
 						Dash:  types.S(string(grob.Scatter3dLineDashDashdot)),
@@ -50,7 +50,7 @@ func main() {
 					Y0:   0,
 					X1:   6,
 					Y1:   2,
-					Line: &grob.ShapeLine{
+					Line: &grob.LayoutShapeLine{
 						Color: "MediumPurple",
 						Width: types.N(4),
 						Dash:  types.S(string(grob.Scatter3dLineDashDot)),

@@ -179,7 +179,7 @@ func main() {
 			X:    xData[i],
 			Y:    yData[i],
 			Text: types.S(textList[i]),
-			Font: &grob.AnnotationFont{
+			Font: &grob.LayoutAnnotationFont{
 				Family: types.S("Arial"),
 				Size:   types.N(14),
 				Color:  "rgba(245,246,249,1)",

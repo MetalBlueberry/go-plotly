@@ -59,12 +59,12 @@ func main() {
 			},
 			Updatemenus: []grob.LayoutUpdatemenu{
 				{
-					Type:       grob.UpdatemenuTypeButtons,
+					Type:       grob.LayoutUpdatemenuTypeButtons,
 					Showactive: types.False,
-					Buttons: []grob.UpdatemenuButton{
+					Buttons: []grob.LayoutUpdatemenuButton{
 						{
 							Label:  types.S("Play"),
-							Method: grob.ButtonMethodAnimate,
+							Method: grob.LayoutUpdatemenuButtonMethodAnimate,
 							Args: []*ButtonArgs{
 								nil,
 								{
