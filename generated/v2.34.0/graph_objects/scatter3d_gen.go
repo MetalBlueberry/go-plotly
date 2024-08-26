@@ -32,6 +32,7 @@ type Scatter3d struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not gaps (i.e. {nan} or missing values) in the provided data arrays are connected.
+	// .schema.traces.scatter3d.attributes.connectgaps
 	Connectgaps types.BoolType `json:"connectgaps,omitempty"`
 
 	// Customdata
@@ -40,27 +41,32 @@ type Scatter3d struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.scatter3d.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// ErrorX
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.error_x
 	ErrorX *Scatter3dErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.error_y
 	ErrorY *Scatter3dErrorY `json:"error_y,omitempty"`
 
 	// ErrorZ
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.error_z
 	ErrorZ *Scatter3dErrorZ `json:"error_z,omitempty"`
 
 	// Hoverinfo
@@ -68,41 +74,48 @@ type Scatter3d struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.scatter3d.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*Scatter3dHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.scatter3d.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.hoverlabel
 	Hoverlabel *Scatter3dHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.scatter3d.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.scatter3d.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.scatter3d.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.scatter3d.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -111,63 +124,74 @@ type Scatter3d struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.scatter3d.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.scatter3d.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.scatter3d.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.legendgrouptitle
 	Legendgrouptitle *Scatter3dLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.scatter3d.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.scatter3d.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.line
 	Line *Scatter3dLine `json:"line,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker
 	Marker *Scatter3dMarker `json:"marker,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.scatter3d.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.scatter3d.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Mode
@@ -175,40 +199,47 @@ type Scatter3d struct {
 	// default: lines+markers
 	// type: flaglist
 	// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
+	// .schema.traces.scatter3d.attributes.mode
 	Mode Scatter3dMode `json:"mode,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.scatter3d.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.scatter3d.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Projection
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.projection
 	Projection *Scatter3dProjection `json:"projection,omitempty"`
 
 	// Scene
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
+	// .schema.traces.scatter3d.attributes.scene
 	Scene types.StringType `json:"scene,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.scatter3d.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.stream
 	Stream *Scatter3dStream `json:"stream,omitempty"`
 
 	// Surfaceaxis
@@ -216,23 +247,27 @@ type Scatter3d struct {
 	// default: %!s(float64=-1)
 	// type: enumerated
 	// If *-1*, the scatter points are not fill with a surface If *0*, *1*, *2*, the scatter points are filled with a Delaunay surface about the x, y, z respectively.
+	// .schema.traces.scatter3d.attributes.surfaceaxis
 	Surfaceaxis Scatter3dSurfaceaxis `json:"surfaceaxis,omitempty"`
 
 	// Surfacecolor
 	// arrayOK: false
 	// type: color
 	// Sets the surface fill color.
+	// .schema.traces.scatter3d.attributes.surfacecolor
 	Surfacecolor types.Color `json:"surfacecolor,omitempty"`
 
 	// Text
 	// arrayOK: true
 	// type: string
 	// Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
+	// .schema.traces.scatter3d.attributes.text
 	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.textfont
 	Textfont *Scatter3dTextfont `json:"textfont,omitempty"`
 
 	// Textposition
@@ -240,47 +275,55 @@ type Scatter3d struct {
 	// default: top center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+	// .schema.traces.scatter3d.attributes.textposition
 	Textposition *types.ArrayOK[*Scatter3dTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
+	// .schema.traces.scatter3d.attributes.textpositionsrc
 	Textpositionsrc types.StringType `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.scatter3d.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+	// .schema.traces.scatter3d.attributes.texttemplate
 	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
+	// .schema.traces.scatter3d.attributes.texttemplatesrc
 	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: Scatter3dTransform
+	// .schema.traces.scatter3d.attributes.transforms
 	Transforms []Scatter3dTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.scatter3d.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.scatter3d.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
@@ -288,6 +331,7 @@ type Scatter3d struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.scatter3d.attributes.visible
 	Visible Scatter3dVisible `json:"visible,omitempty"`
 
 	// X
@@ -296,6 +340,7 @@ type Scatter3d struct {
 	// Sets the x coordinates.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xcalendar
@@ -303,18 +348,21 @@ type Scatter3d struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
+	// .schema.traces.scatter3d.attributes.xcalendar
 	Xcalendar Scatter3dXcalendar `json:"xcalendar,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.scatter3d.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.scatter3d.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -323,6 +371,7 @@ type Scatter3d struct {
 	// Sets the y coordinates.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Ycalendar
@@ -330,18 +379,21 @@ type Scatter3d struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
+	// .schema.traces.scatter3d.attributes.ycalendar
 	Ycalendar Scatter3dYcalendar `json:"ycalendar,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.scatter3d.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.scatter3d.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Z
@@ -350,6 +402,7 @@ type Scatter3d struct {
 	// Sets the z coordinates.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.z
 	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zcalendar
@@ -357,18 +410,21 @@ type Scatter3d struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `z` date data.
+	// .schema.traces.scatter3d.attributes.zcalendar
 	Zcalendar Scatter3dZcalendar `json:"zcalendar,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+	// .schema.traces.scatter3d.attributes.zhoverformat
 	Zhoverformat types.StringType `json:"zhoverformat,omitempty"`
 
 	// Zsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `z`.
+	// .schema.traces.scatter3d.attributes.zsrc
 	Zsrc types.StringType `json:"zsrc,omitempty"`
 }
 
@@ -381,6 +437,7 @@ type Scatter3dErrorX struct {
 	// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_x.array
 	Array *types.DataArrayType `json:"array,omitempty"`
 
 	// Arrayminus
@@ -389,54 +446,63 @@ type Scatter3dErrorX struct {
 	// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_x.arrayminus
 	Arrayminus *types.DataArrayType `json:"arrayminus,omitempty"`
 
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
+	// .schema.traces.scatter3d.attributes.error_x.arrayminussrc
 	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
+	// .schema.traces.scatter3d.attributes.error_x.arraysrc
 	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
+	// .schema.traces.scatter3d.attributes.error_x.color
 	Color types.Color `json:"color,omitempty"`
 
 	// CopyZstyle
 	// arrayOK: false
 	// type: boolean
 	//
+	// .schema.traces.scatter3d.attributes.error_x.copy_zstyle
 	CopyZstyle types.BoolType `json:"copy_zstyle,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
+	// .schema.traces.scatter3d.attributes.error_x.symmetric
 	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
+	// .schema.traces.scatter3d.attributes.error_x.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_x.traceref
 	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_x.tracerefminus
 	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
@@ -444,30 +510,35 @@ type Scatter3dErrorX struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// .schema.traces.scatter3d.attributes.error_x.type
 	Type Scatter3dErrorXType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
+	// .schema.traces.scatter3d.attributes.error_x.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
+	// .schema.traces.scatter3d.attributes.error_x.valueminus
 	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
+	// .schema.traces.scatter3d.attributes.error_x.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
+	// .schema.traces.scatter3d.attributes.error_x.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -480,6 +551,7 @@ type Scatter3dErrorY struct {
 	// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_y.array
 	Array *types.DataArrayType `json:"array,omitempty"`
 
 	// Arrayminus
@@ -488,54 +560,63 @@ type Scatter3dErrorY struct {
 	// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_y.arrayminus
 	Arrayminus *types.DataArrayType `json:"arrayminus,omitempty"`
 
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
+	// .schema.traces.scatter3d.attributes.error_y.arrayminussrc
 	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
+	// .schema.traces.scatter3d.attributes.error_y.arraysrc
 	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
+	// .schema.traces.scatter3d.attributes.error_y.color
 	Color types.Color `json:"color,omitempty"`
 
 	// CopyZstyle
 	// arrayOK: false
 	// type: boolean
 	//
+	// .schema.traces.scatter3d.attributes.error_y.copy_zstyle
 	CopyZstyle types.BoolType `json:"copy_zstyle,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
+	// .schema.traces.scatter3d.attributes.error_y.symmetric
 	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
+	// .schema.traces.scatter3d.attributes.error_y.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_y.traceref
 	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_y.tracerefminus
 	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
@@ -543,30 +624,35 @@ type Scatter3dErrorY struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// .schema.traces.scatter3d.attributes.error_y.type
 	Type Scatter3dErrorYType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
+	// .schema.traces.scatter3d.attributes.error_y.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
+	// .schema.traces.scatter3d.attributes.error_y.valueminus
 	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
+	// .schema.traces.scatter3d.attributes.error_y.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
+	// .schema.traces.scatter3d.attributes.error_y.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -579,6 +665,7 @@ type Scatter3dErrorZ struct {
 	// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_z.array
 	Array *types.DataArrayType `json:"array,omitempty"`
 
 	// Arrayminus
@@ -587,48 +674,56 @@ type Scatter3dErrorZ struct {
 	// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.error_z.arrayminus
 	Arrayminus *types.DataArrayType `json:"arrayminus,omitempty"`
 
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
+	// .schema.traces.scatter3d.attributes.error_z.arrayminussrc
 	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
+	// .schema.traces.scatter3d.attributes.error_z.arraysrc
 	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
+	// .schema.traces.scatter3d.attributes.error_z.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
+	// .schema.traces.scatter3d.attributes.error_z.symmetric
 	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
+	// .schema.traces.scatter3d.attributes.error_z.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_z.traceref
 	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.scatter3d.attributes.error_z.tracerefminus
 	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
@@ -636,30 +731,35 @@ type Scatter3dErrorZ struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// .schema.traces.scatter3d.attributes.error_z.type
 	Type Scatter3dErrorZType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
+	// .schema.traces.scatter3d.attributes.error_z.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
+	// .schema.traces.scatter3d.attributes.error_z.valueminus
 	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
+	// .schema.traces.scatter3d.attributes.error_z.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
+	// .schema.traces.scatter3d.attributes.error_z.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -670,24 +770,28 @@ type Scatter3dHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -695,36 +799,42 @@ type Scatter3dHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*Scatter3dHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -732,12 +842,14 @@ type Scatter3dHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.style
 	Style *types.ArrayOK[*Scatter3dHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -745,12 +857,14 @@ type Scatter3dHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*Scatter3dHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -758,24 +872,28 @@ type Scatter3dHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.variant
 	Variant *types.ArrayOK[*Scatter3dHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -787,53 +905,62 @@ type Scatter3dHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.scatter3d.attributes.hoverlabel.align
 	Align *types.ArrayOK[*Scatter3dHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.scatter3d.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.scatter3d.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.hoverlabel.font
 	Font *Scatter3dHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.scatter3d.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.scatter3d.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -844,12 +971,14 @@ type Scatter3dLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -857,18 +986,21 @@ type Scatter3dLegendgrouptitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.lineposition
 	Lineposition Scatter3dLegendgrouptitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -876,6 +1008,7 @@ type Scatter3dLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.style
 	Style Scatter3dLegendgrouptitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -883,6 +1016,7 @@ type Scatter3dLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.textcase
 	Textcase Scatter3dLegendgrouptitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -890,12 +1024,14 @@ type Scatter3dLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.variant
 	Variant Scatter3dLegendgrouptitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -905,12 +1041,14 @@ type Scatter3dLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.font
 	Font *Scatter3dLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.scatter3d.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -921,12 +1059,14 @@ type Scatter3dLineColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -934,18 +1074,21 @@ type Scatter3dLineColorbarTickfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.lineposition
 	Lineposition Scatter3dLineColorbarTickfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -953,6 +1096,7 @@ type Scatter3dLineColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.style
 	Style Scatter3dLineColorbarTickfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -960,6 +1104,7 @@ type Scatter3dLineColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.textcase
 	Textcase Scatter3dLineColorbarTickfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -967,12 +1112,14 @@ type Scatter3dLineColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.variant
 	Variant Scatter3dLineColorbarTickfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -983,30 +1130,35 @@ type Scatter3dLineColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -1017,12 +1169,14 @@ type Scatter3dLineColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1030,18 +1184,21 @@ type Scatter3dLineColorbarTitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.lineposition
 	Lineposition Scatter3dLineColorbarTitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1049,6 +1206,7 @@ type Scatter3dLineColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.style
 	Style Scatter3dLineColorbarTitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1056,6 +1214,7 @@ type Scatter3dLineColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.textcase
 	Textcase Scatter3dLineColorbarTitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1063,12 +1222,14 @@ type Scatter3dLineColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.variant
 	Variant Scatter3dLineColorbarTitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1078,6 +1239,7 @@ type Scatter3dLineColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.font
 	Font *Scatter3dLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -1085,12 +1247,14 @@ type Scatter3dLineColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.side
 	Side Scatter3dLineColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.scatter3d.attributes.line.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1101,24 +1265,28 @@ type Scatter3dLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.scatter3d.attributes.line.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.scatter3d.attributes.line.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.scatter3d.attributes.line.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.scatter3d.attributes.line.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -1126,18 +1294,21 @@ type Scatter3dLineColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.scatter3d.attributes.line.colorbar.exponentformat
 	Exponentformat Scatter3dLineColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.scatter3d.attributes.line.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.scatter3d.attributes.line.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -1145,18 +1316,21 @@ type Scatter3dLineColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.scatter3d.attributes.line.colorbar.lenmode
 	Lenmode Scatter3dLineColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -1164,24 +1338,28 @@ type Scatter3dLineColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.scatter3d.attributes.line.colorbar.orientation
 	Orientation Scatter3dLineColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.scatter3d.attributes.line.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.scatter3d.attributes.line.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.scatter3d.attributes.line.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1189,12 +1367,14 @@ type Scatter3dLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.scatter3d.attributes.line.colorbar.showexponent
 	Showexponent Scatter3dLineColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.scatter3d.attributes.line.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1202,6 +1382,7 @@ type Scatter3dLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.scatter3d.attributes.line.colorbar.showtickprefix
 	Showtickprefix Scatter3dLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1209,12 +1390,14 @@ type Scatter3dLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.scatter3d.attributes.line.colorbar.showticksuffix
 	Showticksuffix Scatter3dLineColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.scatter3d.attributes.line.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -1222,40 +1405,47 @@ type Scatter3dLineColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.scatter3d.attributes.line.colorbar.thicknessmode
 	Thicknessmode Scatter3dLineColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickfont
 	Tickfont *Scatter3dLineColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: Scatter3dLineColorbarTickformatstop
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickformatstops
 	Tickformatstops []Scatter3dLineColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -1263,6 +1453,7 @@ type Scatter3dLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticklabeloverflow
 	Ticklabeloverflow Scatter3dLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -1270,18 +1461,21 @@ type Scatter3dLineColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticklabelposition
 	Ticklabelposition Scatter3dLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -1289,12 +1483,14 @@ type Scatter3dLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickmode
 	Tickmode Scatter3dLineColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -1302,12 +1498,14 @@ type Scatter3dLineColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticks
 	Ticks Scatter3dLineColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1316,12 +1514,14 @@ type Scatter3dLineColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1330,29 +1530,34 @@ type Scatter3dLineColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.scatter3d.attributes.line.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.line.colorbar.title
 	Title *Scatter3dLineColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -1360,12 +1565,14 @@ type Scatter3dLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.xanchor
 	Xanchor Scatter3dLineColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.scatter3d.attributes.line.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -1373,12 +1580,14 @@ type Scatter3dLineColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.scatter3d.attributes.line.colorbar.xref
 	Xref Scatter3dLineColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -1386,12 +1595,14 @@ type Scatter3dLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.scatter3d.attributes.line.colorbar.yanchor
 	Yanchor Scatter3dLineColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.scatter3d.attributes.line.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -1399,6 +1610,7 @@ type Scatter3dLineColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.scatter3d.attributes.line.colorbar.yref
 	Yref Scatter3dLineColorbarYref `json:"yref,omitempty"`
 }
 
@@ -1409,59 +1621,69 @@ type Scatter3dLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.scatter3d.attributes.line.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax` Has an effect only if in `line.color` is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
+	// .schema.traces.scatter3d.attributes.line.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
+	// .schema.traces.scatter3d.attributes.line.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
+	// .schema.traces.scatter3d.attributes.line.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
+	// .schema.traces.scatter3d.attributes.line.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
+	// .schema.traces.scatter3d.attributes.line.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.scatter3d.attributes.line.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.line.colorbar
 	Colorbar *Scatter3dLineColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.scatter3d.attributes.line.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.scatter3d.attributes.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Dash
@@ -1469,24 +1691,28 @@ type Scatter3dLine struct {
 	// default: solid
 	// type: enumerated
 	// Sets the dash style of the lines.
+	// .schema.traces.scatter3d.attributes.line.dash
 	Dash Scatter3dLineDash `json:"dash,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `line.color` is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
+	// .schema.traces.scatter3d.attributes.line.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color` is set to a numerical array.
+	// .schema.traces.scatter3d.attributes.line.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
+	// .schema.traces.scatter3d.attributes.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -1497,12 +1723,14 @@ type Scatter3dMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1510,18 +1738,21 @@ type Scatter3dMarkerColorbarTickfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.lineposition
 	Lineposition Scatter3dMarkerColorbarTickfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1529,6 +1760,7 @@ type Scatter3dMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.style
 	Style Scatter3dMarkerColorbarTickfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1536,6 +1768,7 @@ type Scatter3dMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.textcase
 	Textcase Scatter3dMarkerColorbarTickfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1543,12 +1776,14 @@ type Scatter3dMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.variant
 	Variant Scatter3dMarkerColorbarTickfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1559,30 +1794,35 @@ type Scatter3dMarkerColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -1593,12 +1833,14 @@ type Scatter3dMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1606,18 +1848,21 @@ type Scatter3dMarkerColorbarTitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.lineposition
 	Lineposition Scatter3dMarkerColorbarTitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1625,6 +1870,7 @@ type Scatter3dMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.style
 	Style Scatter3dMarkerColorbarTitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1632,6 +1878,7 @@ type Scatter3dMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.textcase
 	Textcase Scatter3dMarkerColorbarTitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1639,12 +1886,14 @@ type Scatter3dMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.variant
 	Variant Scatter3dMarkerColorbarTitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1654,6 +1903,7 @@ type Scatter3dMarkerColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.font
 	Font *Scatter3dMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -1661,12 +1911,14 @@ type Scatter3dMarkerColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.side
 	Side Scatter3dMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1677,24 +1929,28 @@ type Scatter3dMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.scatter3d.attributes.marker.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -1702,18 +1958,21 @@ type Scatter3dMarkerColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.exponentformat
 	Exponentformat Scatter3dMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -1721,18 +1980,21 @@ type Scatter3dMarkerColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.lenmode
 	Lenmode Scatter3dMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -1740,24 +2002,28 @@ type Scatter3dMarkerColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.orientation
 	Orientation Scatter3dMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.scatter3d.attributes.marker.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1765,12 +2031,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.showexponent
 	Showexponent Scatter3dMarkerColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1778,6 +2046,7 @@ type Scatter3dMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.showtickprefix
 	Showtickprefix Scatter3dMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1785,12 +2054,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.showticksuffix
 	Showticksuffix Scatter3dMarkerColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -1798,40 +2069,47 @@ type Scatter3dMarkerColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.thicknessmode
 	Thicknessmode Scatter3dMarkerColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont
 	Tickfont *Scatter3dMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: Scatter3dMarkerColorbarTickformatstop
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickformatstops
 	Tickformatstops []Scatter3dMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -1839,6 +2117,7 @@ type Scatter3dMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticklabeloverflow
 	Ticklabeloverflow Scatter3dMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -1846,18 +2125,21 @@ type Scatter3dMarkerColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticklabelposition
 	Ticklabelposition Scatter3dMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -1865,12 +2147,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickmode
 	Tickmode Scatter3dMarkerColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -1878,12 +2162,14 @@ type Scatter3dMarkerColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticks
 	Ticks Scatter3dMarkerColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1892,12 +2178,14 @@ type Scatter3dMarkerColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1906,29 +2194,34 @@ type Scatter3dMarkerColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.scatter3d.attributes.marker.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker.colorbar.title
 	Title *Scatter3dMarkerColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -1936,12 +2229,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.xanchor
 	Xanchor Scatter3dMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -1949,12 +2244,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.xref
 	Xref Scatter3dMarkerColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -1962,12 +2259,14 @@ type Scatter3dMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.yanchor
 	Yanchor Scatter3dMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -1975,6 +2274,7 @@ type Scatter3dMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.scatter3d.attributes.marker.colorbar.yref
 	Yref Scatter3dMarkerColorbarYref `json:"yref,omitempty"`
 }
 
@@ -1985,66 +2285,77 @@ type Scatter3dMarkerLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.scatter3d.attributes.marker.line.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
+	// .schema.traces.scatter3d.attributes.marker.line.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
+	// .schema.traces.scatter3d.attributes.marker.line.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
+	// .schema.traces.scatter3d.attributes.marker.line.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
+	// .schema.traces.scatter3d.attributes.marker.line.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// .schema.traces.scatter3d.attributes.marker.line.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.scatter3d.attributes.marker.line.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.scatter3d.attributes.marker.line.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.scatter3d.attributes.marker.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
+	// .schema.traces.scatter3d.attributes.marker.line.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
+	// .schema.traces.scatter3d.attributes.marker.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -2055,94 +2366,110 @@ type Scatter3dMarker struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.scatter3d.attributes.marker.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// .schema.traces.scatter3d.attributes.marker.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
+	// .schema.traces.scatter3d.attributes.marker.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
+	// .schema.traces.scatter3d.attributes.marker.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
+	// .schema.traces.scatter3d.attributes.marker.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// .schema.traces.scatter3d.attributes.marker.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.scatter3d.attributes.marker.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker.colorbar
 	Colorbar *Scatter3dMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.scatter3d.attributes.marker.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.scatter3d.attributes.marker.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.marker.line
 	Line *Scatter3dMarkerLine `json:"line,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity. Note that the marker opacity for scatter3d traces must be a scalar value for performance reasons. To set a blending opacity value (i.e. which is not transparent), set *marker.color* to an rgba color and use its alpha channel.
+	// .schema.traces.scatter3d.attributes.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// .schema.traces.scatter3d.attributes.marker.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
+	// .schema.traces.scatter3d.attributes.marker.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the marker size (in px).
+	// .schema.traces.scatter3d.attributes.marker.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizemin
 	// arrayOK: false
 	// type: number
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the minimum size (in px) of the rendered marker points.
+	// .schema.traces.scatter3d.attributes.marker.sizemin
 	Sizemin types.NumberType `json:"sizemin,omitempty"`
 
 	// Sizemode
@@ -2150,18 +2477,21 @@ type Scatter3dMarker struct {
 	// default: diameter
 	// type: enumerated
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.
+	// .schema.traces.scatter3d.attributes.marker.sizemode
 	Sizemode Scatter3dMarkerSizemode `json:"sizemode,omitempty"`
 
 	// Sizeref
 	// arrayOK: false
 	// type: number
 	// Has an effect only if `marker.size` is set to a numerical array. Sets the scale factor used to determine the rendered size of marker points. Use with `sizemin` and `sizemode`.
+	// .schema.traces.scatter3d.attributes.marker.sizeref
 	Sizeref types.NumberType `json:"sizeref,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.scatter3d.attributes.marker.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Symbol
@@ -2169,12 +2499,14 @@ type Scatter3dMarker struct {
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type.
+	// .schema.traces.scatter3d.attributes.marker.symbol
 	Symbol *types.ArrayOK[*Scatter3dMarkerSymbol] `json:"symbol,omitempty"`
 
 	// Symbolsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `symbol`.
+	// .schema.traces.scatter3d.attributes.marker.symbolsrc
 	Symbolsrc types.StringType `json:"symbolsrc,omitempty"`
 }
 
@@ -2185,18 +2517,21 @@ type Scatter3dProjectionX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the projection color.
+	// .schema.traces.scatter3d.attributes.projection.x.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Scale
 	// arrayOK: false
 	// type: number
 	// Sets the scale factor determining the size of the projection marker points.
+	// .schema.traces.scatter3d.attributes.projection.x.scale
 	Scale types.NumberType `json:"scale,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not projections are shown along the x axis.
+	// .schema.traces.scatter3d.attributes.projection.x.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -2207,18 +2542,21 @@ type Scatter3dProjectionY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the projection color.
+	// .schema.traces.scatter3d.attributes.projection.y.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Scale
 	// arrayOK: false
 	// type: number
 	// Sets the scale factor determining the size of the projection marker points.
+	// .schema.traces.scatter3d.attributes.projection.y.scale
 	Scale types.NumberType `json:"scale,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not projections are shown along the y axis.
+	// .schema.traces.scatter3d.attributes.projection.y.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -2229,18 +2567,21 @@ type Scatter3dProjectionZ struct {
 	// arrayOK: false
 	// type: number
 	// Sets the projection color.
+	// .schema.traces.scatter3d.attributes.projection.z.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Scale
 	// arrayOK: false
 	// type: number
 	// Sets the scale factor determining the size of the projection marker points.
+	// .schema.traces.scatter3d.attributes.projection.z.scale
 	Scale types.NumberType `json:"scale,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not projections are shown along the z axis.
+	// .schema.traces.scatter3d.attributes.projection.z.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -2250,16 +2591,19 @@ type Scatter3dProjection struct {
 	// X
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.projection.x
 	X *Scatter3dProjectionX `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.projection.y
 	Y *Scatter3dProjectionY `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.scatter3d.attributes.projection.z
 	Z *Scatter3dProjectionZ `json:"z,omitempty"`
 }
 
@@ -2270,12 +2614,14 @@ type Scatter3dStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.scatter3d.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.scatter3d.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -2286,36 +2632,42 @@ type Scatter3dTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.scatter3d.attributes.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.scatter3d.attributes.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.scatter3d.attributes.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.scatter3d.attributes.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.scatter3d.attributes.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.scatter3d.attributes.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -2323,12 +2675,14 @@ type Scatter3dTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.scatter3d.attributes.textfont.style
 	Style *types.ArrayOK[*Scatter3dTextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.scatter3d.attributes.textfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Variant
@@ -2336,24 +2690,28 @@ type Scatter3dTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.scatter3d.attributes.textfont.variant
 	Variant *types.ArrayOK[*Scatter3dTextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.scatter3d.attributes.textfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.scatter3d.attributes.textfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.scatter3d.attributes.textfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -2362,6 +2720,7 @@ type Scatter3dTransform struct {
 }
 
 // Scatter3dErrorXType Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+// .schema.traces.scatter3d.attributes.error_x.type
 type Scatter3dErrorXType string
 
 const (
@@ -2372,6 +2731,7 @@ const (
 )
 
 // Scatter3dErrorYType Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+// .schema.traces.scatter3d.attributes.error_y.type
 type Scatter3dErrorYType string
 
 const (
@@ -2382,6 +2742,7 @@ const (
 )
 
 // Scatter3dErrorZType Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+// .schema.traces.scatter3d.attributes.error_z.type
 type Scatter3dErrorZType string
 
 const (
@@ -2392,6 +2753,7 @@ const (
 )
 
 // Scatter3dHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.scatter3d.attributes.hoverlabel.align
 type Scatter3dHoverlabelAlign string
 
 const (
@@ -2401,6 +2763,7 @@ const (
 )
 
 // Scatter3dHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.hoverlabel.font.style
 type Scatter3dHoverlabelFontStyle string
 
 const (
@@ -2409,6 +2772,7 @@ const (
 )
 
 // Scatter3dHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.hoverlabel.font.textcase
 type Scatter3dHoverlabelFontTextcase string
 
 const (
@@ -2419,6 +2783,7 @@ const (
 )
 
 // Scatter3dHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.hoverlabel.font.variant
 type Scatter3dHoverlabelFontVariant string
 
 const (
@@ -2431,6 +2796,7 @@ const (
 )
 
 // Scatter3dLegendgrouptitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.legendgrouptitle.font.style
 type Scatter3dLegendgrouptitleFontStyle string
 
 const (
@@ -2439,6 +2805,7 @@ const (
 )
 
 // Scatter3dLegendgrouptitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.legendgrouptitle.font.textcase
 type Scatter3dLegendgrouptitleFontTextcase string
 
 const (
@@ -2449,6 +2816,7 @@ const (
 )
 
 // Scatter3dLegendgrouptitleFontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.legendgrouptitle.font.variant
 type Scatter3dLegendgrouptitleFontVariant string
 
 const (
@@ -2461,6 +2829,7 @@ const (
 )
 
 // Scatter3dLineColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.scatter3d.attributes.line.colorbar.exponentformat
 type Scatter3dLineColorbarExponentformat string
 
 const (
@@ -2473,6 +2842,7 @@ const (
 )
 
 // Scatter3dLineColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.scatter3d.attributes.line.colorbar.lenmode
 type Scatter3dLineColorbarLenmode string
 
 const (
@@ -2481,6 +2851,7 @@ const (
 )
 
 // Scatter3dLineColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.scatter3d.attributes.line.colorbar.orientation
 type Scatter3dLineColorbarOrientation string
 
 const (
@@ -2489,6 +2860,7 @@ const (
 )
 
 // Scatter3dLineColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.scatter3d.attributes.line.colorbar.showexponent
 type Scatter3dLineColorbarShowexponent string
 
 const (
@@ -2499,6 +2871,7 @@ const (
 )
 
 // Scatter3dLineColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.scatter3d.attributes.line.colorbar.showtickprefix
 type Scatter3dLineColorbarShowtickprefix string
 
 const (
@@ -2509,6 +2882,7 @@ const (
 )
 
 // Scatter3dLineColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.scatter3d.attributes.line.colorbar.showticksuffix
 type Scatter3dLineColorbarShowticksuffix string
 
 const (
@@ -2519,6 +2893,7 @@ const (
 )
 
 // Scatter3dLineColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.scatter3d.attributes.line.colorbar.thicknessmode
 type Scatter3dLineColorbarThicknessmode string
 
 const (
@@ -2527,6 +2902,7 @@ const (
 )
 
 // Scatter3dLineColorbarTickfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.style
 type Scatter3dLineColorbarTickfontStyle string
 
 const (
@@ -2535,6 +2911,7 @@ const (
 )
 
 // Scatter3dLineColorbarTickfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.textcase
 type Scatter3dLineColorbarTickfontTextcase string
 
 const (
@@ -2545,6 +2922,7 @@ const (
 )
 
 // Scatter3dLineColorbarTickfontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.variant
 type Scatter3dLineColorbarTickfontVariant string
 
 const (
@@ -2557,6 +2935,7 @@ const (
 )
 
 // Scatter3dLineColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.scatter3d.attributes.line.colorbar.ticklabeloverflow
 type Scatter3dLineColorbarTicklabeloverflow string
 
 const (
@@ -2566,6 +2945,7 @@ const (
 )
 
 // Scatter3dLineColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.scatter3d.attributes.line.colorbar.ticklabelposition
 type Scatter3dLineColorbarTicklabelposition string
 
 const (
@@ -2582,6 +2962,7 @@ const (
 )
 
 // Scatter3dLineColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.scatter3d.attributes.line.colorbar.tickmode
 type Scatter3dLineColorbarTickmode string
 
 const (
@@ -2591,6 +2972,7 @@ const (
 )
 
 // Scatter3dLineColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.scatter3d.attributes.line.colorbar.ticks
 type Scatter3dLineColorbarTicks string
 
 const (
@@ -2600,6 +2982,7 @@ const (
 )
 
 // Scatter3dLineColorbarTitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.line.colorbar.title.font.style
 type Scatter3dLineColorbarTitleFontStyle string
 
 const (
@@ -2608,6 +2991,7 @@ const (
 )
 
 // Scatter3dLineColorbarTitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.line.colorbar.title.font.textcase
 type Scatter3dLineColorbarTitleFontTextcase string
 
 const (
@@ -2618,6 +3002,7 @@ const (
 )
 
 // Scatter3dLineColorbarTitleFontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.line.colorbar.title.font.variant
 type Scatter3dLineColorbarTitleFontVariant string
 
 const (
@@ -2630,6 +3015,7 @@ const (
 )
 
 // Scatter3dLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.scatter3d.attributes.line.colorbar.title.side
 type Scatter3dLineColorbarTitleSide string
 
 const (
@@ -2639,6 +3025,7 @@ const (
 )
 
 // Scatter3dLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.scatter3d.attributes.line.colorbar.xanchor
 type Scatter3dLineColorbarXanchor string
 
 const (
@@ -2648,6 +3035,7 @@ const (
 )
 
 // Scatter3dLineColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.scatter3d.attributes.line.colorbar.xref
 type Scatter3dLineColorbarXref string
 
 const (
@@ -2656,6 +3044,7 @@ const (
 )
 
 // Scatter3dLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.scatter3d.attributes.line.colorbar.yanchor
 type Scatter3dLineColorbarYanchor string
 
 const (
@@ -2665,6 +3054,7 @@ const (
 )
 
 // Scatter3dLineColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.scatter3d.attributes.line.colorbar.yref
 type Scatter3dLineColorbarYref string
 
 const (
@@ -2673,6 +3063,7 @@ const (
 )
 
 // Scatter3dLineDash Sets the dash style of the lines.
+// .schema.traces.scatter3d.attributes.line.dash
 type Scatter3dLineDash string
 
 const (
@@ -2685,6 +3076,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.scatter3d.attributes.marker.colorbar.exponentformat
 type Scatter3dMarkerColorbarExponentformat string
 
 const (
@@ -2697,6 +3089,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.scatter3d.attributes.marker.colorbar.lenmode
 type Scatter3dMarkerColorbarLenmode string
 
 const (
@@ -2705,6 +3098,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.scatter3d.attributes.marker.colorbar.orientation
 type Scatter3dMarkerColorbarOrientation string
 
 const (
@@ -2713,6 +3107,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.scatter3d.attributes.marker.colorbar.showexponent
 type Scatter3dMarkerColorbarShowexponent string
 
 const (
@@ -2723,6 +3118,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.scatter3d.attributes.marker.colorbar.showtickprefix
 type Scatter3dMarkerColorbarShowtickprefix string
 
 const (
@@ -2733,6 +3129,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.scatter3d.attributes.marker.colorbar.showticksuffix
 type Scatter3dMarkerColorbarShowticksuffix string
 
 const (
@@ -2743,6 +3140,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.scatter3d.attributes.marker.colorbar.thicknessmode
 type Scatter3dMarkerColorbarThicknessmode string
 
 const (
@@ -2751,6 +3149,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTickfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.style
 type Scatter3dMarkerColorbarTickfontStyle string
 
 const (
@@ -2759,6 +3158,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTickfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.textcase
 type Scatter3dMarkerColorbarTickfontTextcase string
 
 const (
@@ -2769,6 +3169,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTickfontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.variant
 type Scatter3dMarkerColorbarTickfontVariant string
 
 const (
@@ -2781,6 +3182,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.scatter3d.attributes.marker.colorbar.ticklabeloverflow
 type Scatter3dMarkerColorbarTicklabeloverflow string
 
 const (
@@ -2790,6 +3192,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.scatter3d.attributes.marker.colorbar.ticklabelposition
 type Scatter3dMarkerColorbarTicklabelposition string
 
 const (
@@ -2806,6 +3209,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.scatter3d.attributes.marker.colorbar.tickmode
 type Scatter3dMarkerColorbarTickmode string
 
 const (
@@ -2815,6 +3219,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.scatter3d.attributes.marker.colorbar.ticks
 type Scatter3dMarkerColorbarTicks string
 
 const (
@@ -2824,6 +3229,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.style
 type Scatter3dMarkerColorbarTitleFontStyle string
 
 const (
@@ -2832,6 +3238,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.textcase
 type Scatter3dMarkerColorbarTitleFontTextcase string
 
 const (
@@ -2842,6 +3249,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTitleFontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.variant
 type Scatter3dMarkerColorbarTitleFontVariant string
 
 const (
@@ -2854,6 +3262,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.scatter3d.attributes.marker.colorbar.title.side
 type Scatter3dMarkerColorbarTitleSide string
 
 const (
@@ -2863,6 +3272,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.scatter3d.attributes.marker.colorbar.xanchor
 type Scatter3dMarkerColorbarXanchor string
 
 const (
@@ -2872,6 +3282,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.scatter3d.attributes.marker.colorbar.xref
 type Scatter3dMarkerColorbarXref string
 
 const (
@@ -2880,6 +3291,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.scatter3d.attributes.marker.colorbar.yanchor
 type Scatter3dMarkerColorbarYanchor string
 
 const (
@@ -2889,6 +3301,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.scatter3d.attributes.marker.colorbar.yref
 type Scatter3dMarkerColorbarYref string
 
 const (
@@ -2897,6 +3310,7 @@ const (
 )
 
 // Scatter3dMarkerSizemode Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.
+// .schema.traces.scatter3d.attributes.marker.sizemode
 type Scatter3dMarkerSizemode string
 
 const (
@@ -2905,6 +3319,7 @@ const (
 )
 
 // Scatter3dMarkerSymbol Sets the marker symbol type.
+// .schema.traces.scatter3d.attributes.marker.symbol
 type Scatter3dMarkerSymbol string
 
 const (
@@ -2919,6 +3334,7 @@ const (
 )
 
 // Scatter3dSurfaceaxis If *-1*, the scatter points are not fill with a surface If *0*, *1*, *2*, the scatter points are filled with a Delaunay surface about the x, y, z respectively.
+// .schema.traces.scatter3d.attributes.surfaceaxis
 type Scatter3dSurfaceaxis interface{}
 
 var (
@@ -2929,6 +3345,7 @@ var (
 )
 
 // Scatter3dTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.scatter3d.attributes.textfont.style
 type Scatter3dTextfontStyle string
 
 const (
@@ -2937,6 +3354,7 @@ const (
 )
 
 // Scatter3dTextfontVariant Sets the variant of the font.
+// .schema.traces.scatter3d.attributes.textfont.variant
 type Scatter3dTextfontVariant string
 
 const (
@@ -2945,6 +3363,7 @@ const (
 )
 
 // Scatter3dTextposition Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+// .schema.traces.scatter3d.attributes.textposition
 type Scatter3dTextposition string
 
 const (
@@ -2960,6 +3379,7 @@ const (
 )
 
 // Scatter3dVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.scatter3d.attributes.visible
 type Scatter3dVisible interface{}
 
 var (
@@ -2969,6 +3389,7 @@ var (
 )
 
 // Scatter3dXcalendar Sets the calendar system to use with `x` date data.
+// .schema.traces.scatter3d.attributes.xcalendar
 type Scatter3dXcalendar string
 
 const (
@@ -2991,6 +3412,7 @@ const (
 )
 
 // Scatter3dYcalendar Sets the calendar system to use with `y` date data.
+// .schema.traces.scatter3d.attributes.ycalendar
 type Scatter3dYcalendar string
 
 const (
@@ -3013,6 +3435,7 @@ const (
 )
 
 // Scatter3dZcalendar Sets the calendar system to use with `z` date data.
+// .schema.traces.scatter3d.attributes.zcalendar
 type Scatter3dZcalendar string
 
 const (
@@ -3035,6 +3458,7 @@ const (
 )
 
 // Scatter3dHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.scatter3d.attributes.hoverinfo
 type Scatter3dHoverinfo string
 
 const (
@@ -3052,6 +3476,7 @@ const (
 )
 
 // Scatter3dHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.hoverlabel.font.lineposition
 type Scatter3dHoverlabelFontLineposition string
 
 const (
@@ -3065,6 +3490,7 @@ const (
 )
 
 // Scatter3dLegendgrouptitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.legendgrouptitle.font.lineposition
 type Scatter3dLegendgrouptitleFontLineposition string
 
 const (
@@ -3078,6 +3504,7 @@ const (
 )
 
 // Scatter3dLineColorbarTickfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.line.colorbar.tickfont.lineposition
 type Scatter3dLineColorbarTickfontLineposition string
 
 const (
@@ -3091,6 +3518,7 @@ const (
 )
 
 // Scatter3dLineColorbarTitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.line.colorbar.title.font.lineposition
 type Scatter3dLineColorbarTitleFontLineposition string
 
 const (
@@ -3104,6 +3532,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTickfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.marker.colorbar.tickfont.lineposition
 type Scatter3dMarkerColorbarTickfontLineposition string
 
 const (
@@ -3117,6 +3546,7 @@ const (
 )
 
 // Scatter3dMarkerColorbarTitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.scatter3d.attributes.marker.colorbar.title.font.lineposition
 type Scatter3dMarkerColorbarTitleFontLineposition string
 
 const (
@@ -3130,6 +3560,7 @@ const (
 )
 
 // Scatter3dMode Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
+// .schema.traces.scatter3d.attributes.mode
 type Scatter3dMode string
 
 const (

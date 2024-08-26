@@ -3,6 +3,7 @@ type {{.Name }} struct {
     {{ range .Fields }}
     // {{.Name }} {{ range .Description }}
     // {{.}} {{ end }}
+    // {{ .JSONPath }}
     {{.Name }} {{.Type}} `json:"{{.JSONName}},omitempty"`
     {{ end }}
 }

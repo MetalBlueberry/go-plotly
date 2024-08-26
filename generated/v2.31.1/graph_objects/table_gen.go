@@ -31,6 +31,7 @@ type Table struct {
 	// Cells
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.cells
 	Cells *TableCells `json:"cells,omitempty"`
 
 	// Columnorder
@@ -39,24 +40,28 @@ type Table struct {
 	// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.columnorder
 	Columnorder *types.DataArrayType `json:"columnorder,omitempty"`
 
 	// Columnordersrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `columnorder`.
+	// .schema.traces.table.attributes.columnordersrc
 	Columnordersrc types.StringType `json:"columnordersrc,omitempty"`
 
 	// Columnwidth
 	// arrayOK: true
 	// type: number
 	// The width of columns expressed as a ratio. Columns fill the available width in proportion of their specified column widths.
+	// .schema.traces.table.attributes.columnwidth
 	Columnwidth *types.ArrayOK[*types.NumberType] `json:"columnwidth,omitempty"`
 
 	// Columnwidthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `columnwidth`.
+	// .schema.traces.table.attributes.columnwidthsrc
 	Columnwidthsrc types.StringType `json:"columnwidthsrc,omitempty"`
 
 	// Customdata
@@ -65,22 +70,26 @@ type Table struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.table.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.domain
 	Domain *TableDomain `json:"domain,omitempty"`
 
 	// Header
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.header
 	Header *TableHeader `json:"header,omitempty"`
 
 	// Hoverinfo
@@ -88,17 +97,20 @@ type Table struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.table.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*TableHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.table.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.hoverlabel
 	Hoverlabel *TableHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Ids
@@ -107,70 +119,82 @@ type Table struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.table.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.table.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.legendgrouptitle
 	Legendgrouptitle *TableLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.table.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.table.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.table.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.table.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.table.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.stream
 	Stream *TableStream `json:"stream,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.table.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.table.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
@@ -178,6 +202,7 @@ type Table struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.table.attributes.visible
 	Visible TableVisible `json:"visible,omitempty"`
 }
 
@@ -188,12 +213,14 @@ type TableCellsFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
+	// .schema.traces.table.attributes.cells.fill.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.cells.fill.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 }
 
@@ -204,36 +231,42 @@ type TableCellsFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.table.attributes.cells.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.cells.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.table.attributes.cells.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.table.attributes.cells.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.table.attributes.cells.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.table.attributes.cells.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -244,24 +277,28 @@ type TableCellsLine struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.table.attributes.cells.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.cells.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.table.attributes.cells.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.table.attributes.cells.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -273,22 +310,26 @@ type TableCells struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	// .schema.traces.table.attributes.cells.align
 	Align *types.ArrayOK[*TableCellsAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.table.attributes.cells.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Fill
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.cells.fill
 	Fill *TableCellsFill `json:"fill,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.cells.font
 	Font *TableCellsFont `json:"font,omitempty"`
 
 	// Format
@@ -297,47 +338,55 @@ type TableCells struct {
 	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.cells.format
 	Format *types.DataArrayType `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `format`.
+	// .schema.traces.table.attributes.cells.formatsrc
 	Formatsrc types.StringType `json:"formatsrc,omitempty"`
 
 	// Height
 	// arrayOK: false
 	// type: number
 	// The height of cells.
+	// .schema.traces.table.attributes.cells.height
 	Height types.NumberType `json:"height,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.cells.line
 	Line *TableCellsLine `json:"line,omitempty"`
 
 	// Prefix
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
+	// .schema.traces.table.attributes.cells.prefix
 	Prefix *types.ArrayOK[*types.StringType] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `prefix`.
+	// .schema.traces.table.attributes.cells.prefixsrc
 	Prefixsrc types.StringType `json:"prefixsrc,omitempty"`
 
 	// Suffix
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
+	// .schema.traces.table.attributes.cells.suffix
 	Suffix *types.ArrayOK[*types.StringType] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `suffix`.
+	// .schema.traces.table.attributes.cells.suffixsrc
 	Suffixsrc types.StringType `json:"suffixsrc,omitempty"`
 
 	// Values
@@ -346,12 +395,14 @@ type TableCells struct {
 	// Cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.cells.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.table.attributes.cells.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 }
 
@@ -362,24 +413,28 @@ type TableDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this table trace .
+	// .schema.traces.table.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this table trace .
+	// .schema.traces.table.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this table trace (in plot fraction).
+	// .schema.traces.table.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this table trace (in plot fraction).
+	// .schema.traces.table.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -390,12 +445,14 @@ type TableHeaderFill struct {
 	// arrayOK: true
 	// type: color
 	// Sets the cell fill color. It accepts either a specific color or an array of colors or a 2D array of colors.
+	// .schema.traces.table.attributes.header.fill.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.header.fill.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 }
 
@@ -406,36 +463,42 @@ type TableHeaderFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.table.attributes.header.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.header.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.table.attributes.header.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.table.attributes.header.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.table.attributes.header.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.table.attributes.header.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -446,24 +509,28 @@ type TableHeaderLine struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.table.attributes.header.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.header.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.table.attributes.header.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.table.attributes.header.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -475,22 +542,26 @@ type TableHeader struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	// .schema.traces.table.attributes.header.align
 	Align *types.ArrayOK[*TableHeaderAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.table.attributes.header.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Fill
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.header.fill
 	Fill *TableHeaderFill `json:"fill,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.header.font
 	Font *TableHeaderFont `json:"font,omitempty"`
 
 	// Format
@@ -499,47 +570,55 @@ type TableHeader struct {
 	// Sets the cell value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.header.format
 	Format *types.DataArrayType `json:"format,omitempty"`
 
 	// Formatsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `format`.
+	// .schema.traces.table.attributes.header.formatsrc
 	Formatsrc types.StringType `json:"formatsrc,omitempty"`
 
 	// Height
 	// arrayOK: false
 	// type: number
 	// The height of cells.
+	// .schema.traces.table.attributes.header.height
 	Height types.NumberType `json:"height,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.header.line
 	Line *TableHeaderLine `json:"line,omitempty"`
 
 	// Prefix
 	// arrayOK: true
 	// type: string
 	// Prefix for cell values.
+	// .schema.traces.table.attributes.header.prefix
 	Prefix *types.ArrayOK[*types.StringType] `json:"prefix,omitempty"`
 
 	// Prefixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `prefix`.
+	// .schema.traces.table.attributes.header.prefixsrc
 	Prefixsrc types.StringType `json:"prefixsrc,omitempty"`
 
 	// Suffix
 	// arrayOK: true
 	// type: string
 	// Suffix for cell values.
+	// .schema.traces.table.attributes.header.suffix
 	Suffix *types.ArrayOK[*types.StringType] `json:"suffix,omitempty"`
 
 	// Suffixsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `suffix`.
+	// .schema.traces.table.attributes.header.suffixsrc
 	Suffixsrc types.StringType `json:"suffixsrc,omitempty"`
 
 	// Values
@@ -548,12 +627,14 @@ type TableHeader struct {
 	// Header cell values. `values[m][n]` represents the value of the `n`th point in column `m`, therefore the `values[m]` vector length for all columns must be the same (longer vectors will be truncated). Each value must be a finite number or a string.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.table.attributes.header.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.table.attributes.header.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 }
 
@@ -564,36 +645,42 @@ type TableHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.table.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.table.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.table.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.table.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.table.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.table.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -605,53 +692,62 @@ type TableHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.table.attributes.hoverlabel.align
 	Align *types.ArrayOK[*TableHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.table.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.table.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.table.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.table.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.table.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.hoverlabel.font
 	Font *TableHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.table.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.table.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -662,18 +758,21 @@ type TableLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.table.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.table.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.table.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -683,12 +782,14 @@ type TableLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.table.attributes.legendgrouptitle.font
 	Font *TableLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.table.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -699,16 +800,19 @@ type TableStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.table.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.table.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
 // TableCellsAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+// .schema.traces.table.attributes.cells.align
 type TableCellsAlign string
 
 const (
@@ -718,6 +822,7 @@ const (
 )
 
 // TableHeaderAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+// .schema.traces.table.attributes.header.align
 type TableHeaderAlign string
 
 const (
@@ -727,6 +832,7 @@ const (
 )
 
 // TableHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.table.attributes.hoverlabel.align
 type TableHoverlabelAlign string
 
 const (
@@ -736,6 +842,7 @@ const (
 )
 
 // TableVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.table.attributes.visible
 type TableVisible interface{}
 
 var (
@@ -745,6 +852,7 @@ var (
 )
 
 // TableHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.table.attributes.hoverinfo
 type TableHoverinfo string
 
 const (

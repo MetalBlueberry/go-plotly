@@ -32,30 +32,35 @@ type Histogram struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
+	// .schema.traces.histogram.attributes.alignmentgroup
 	Alignmentgroup types.StringType `json:"alignmentgroup,omitempty"`
 
 	// Autobinx
 	// arrayOK: false
 	// type: boolean
 	// Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobinx` is not needed. However, we accept `autobinx: true` or `false` and will update `xbins` accordingly before deleting `autobinx` from the trace.
+	// .schema.traces.histogram.attributes.autobinx
 	Autobinx types.BoolType `json:"autobinx,omitempty"`
 
 	// Autobiny
 	// arrayOK: false
 	// type: boolean
 	// Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobiny` is not needed. However, we accept `autobiny: true` or `false` and will update `ybins` accordingly before deleting `autobiny` from the trace.
+	// .schema.traces.histogram.attributes.autobiny
 	Autobiny types.BoolType `json:"autobiny,omitempty"`
 
 	// Bingroup
 	// arrayOK: false
 	// type: string
 	// Set a group of histogram traces which will have compatible bin settings. Note that traces on the same subplot and with the same *orientation* under `barmode` *stack*, *relative* and *group* are forced into the same bingroup, Using `bingroup`, traces under `barmode` *overlay* and on different axes (of the same axis type) can have compatible bin settings. Note that histogram and histogram2d* trace can share the same `bingroup`
+	// .schema.traces.histogram.attributes.bingroup
 	Bingroup types.StringType `json:"bingroup,omitempty"`
 
 	// Cliponaxis
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the text nodes are clipped about the subplot axes. To show the text nodes above axis lines and tick labels, make sure to set `xaxis.layer` and `yaxis.layer` to *below traces*.
+	// .schema.traces.histogram.attributes.cliponaxis
 	Cliponaxis types.BoolType `json:"cliponaxis,omitempty"`
 
 	// Constraintext
@@ -63,11 +68,13 @@ type Histogram struct {
 	// default: both
 	// type: enumerated
 	// Constrain the size of text inside or outside a bar to be no larger than the bar itself.
+	// .schema.traces.histogram.attributes.constraintext
 	Constraintext HistogramConstraintext `json:"constraintext,omitempty"`
 
 	// Cumulative
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.cumulative
 	Cumulative *HistogramCumulative `json:"cumulative,omitempty"`
 
 	// Customdata
@@ -76,22 +83,26 @@ type Histogram struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.histogram.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// ErrorX
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.error_x
 	ErrorX *HistogramErrorX `json:"error_x,omitempty"`
 
 	// ErrorY
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.error_y
 	ErrorY *HistogramErrorY `json:"error_y,omitempty"`
 
 	// Histfunc
@@ -99,6 +110,7 @@ type Histogram struct {
 	// default: count
 	// type: enumerated
 	// Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
+	// .schema.traces.histogram.attributes.histfunc
 	Histfunc HistogramHistfunc `json:"histfunc,omitempty"`
 
 	// Histnorm
@@ -106,6 +118,7 @@ type Histogram struct {
 	// default:
 	// type: enumerated
 	// Specifies the type of normalization used for this histogram trace. If **, the span of each bar corresponds to the number of occurrences (i.e. the number of data points lying inside the bins). If *percent* / *probability*, the span of each bar corresponds to the percentage / fraction of occurrences with respect to the total number of sample points (here, the sum of all bin HEIGHTS equals 100% / 1). If *density*, the span of each bar corresponds to the number of occurrences in a bin divided by the size of the bin interval (here, the sum of all bin AREAS equals the total number of sample points). If *probability density*, the area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1).
+	// .schema.traces.histogram.attributes.histnorm
 	Histnorm HistogramHistnorm `json:"histnorm,omitempty"`
 
 	// Hoverinfo
@@ -113,41 +126,48 @@ type Histogram struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.histogram.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*HistogramHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.histogram.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.hoverlabel
 	Hoverlabel *HistogramHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variable `binNumber` Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.histogram.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.histogram.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
+	// .schema.traces.histogram.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.histogram.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -156,12 +176,14 @@ type Histogram struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.histogram.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Insidetextanchor
@@ -169,87 +191,102 @@ type Histogram struct {
 	// default: end
 	// type: enumerated
 	// Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
+	// .schema.traces.histogram.attributes.insidetextanchor
 	Insidetextanchor HistogramInsidetextanchor `json:"insidetextanchor,omitempty"`
 
 	// Insidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.insidetextfont
 	Insidetextfont *HistogramInsidetextfont `json:"insidetextfont,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.histogram.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.histogram.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.legendgrouptitle
 	Legendgrouptitle *HistogramLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.histogram.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.histogram.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker
 	Marker *HistogramMarker `json:"marker,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.histogram.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.histogram.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.histogram.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Nbinsx
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `xbins.size` is provided.
+	// .schema.traces.histogram.attributes.nbinsx
 	Nbinsx types.IntegerType `json:"nbinsx,omitempty"`
 
 	// Nbinsy
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `ybins.size` is provided.
+	// .schema.traces.histogram.attributes.nbinsy
 	Nbinsy types.IntegerType `json:"nbinsy,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
+	// .schema.traces.histogram.attributes.offsetgroup
 	Offsetgroup types.StringType `json:"offsetgroup,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.histogram.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Orientation
@@ -257,50 +294,59 @@ type Histogram struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the bars. With *v* (*h*), the value of the each bar spans along the vertical (horizontal).
+	// .schema.traces.histogram.attributes.orientation
 	Orientation HistogramOrientation `json:"orientation,omitempty"`
 
 	// Outsidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.outsidetextfont
 	Outsidetextfont *HistogramOutsidetextfont `json:"outsidetextfont,omitempty"`
 
 	// Selected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.selected
 	Selected *HistogramSelected `json:"selected,omitempty"`
 
 	// Selectedpoints
 	// arrayOK: false
 	// type: any
 	// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
+	// .schema.traces.histogram.attributes.selectedpoints
 	Selectedpoints interface{} `json:"selectedpoints,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.histogram.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.stream
 	Stream *HistogramStream `json:"stream,omitempty"`
 
 	// Text
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each bar. If a single string, the same string appears over all bars. If an array of string, the items are mapped in order to the this trace's coordinates.
+	// .schema.traces.histogram.attributes.text
 	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the bar. For example, a `tickangle` of -90 draws the tick labels vertically. With *auto* the texts may automatically be rotated to fit with the maximum size in bars.
+	// .schema.traces.histogram.attributes.textangle
 	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.textfont
 	Textfont *HistogramTextfont `json:"textfont,omitempty"`
 
 	// Textposition
@@ -308,40 +354,47 @@ type Histogram struct {
 	// default: auto
 	// type: enumerated
 	// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
+	// .schema.traces.histogram.attributes.textposition
 	Textposition HistogramTextposition `json:"textposition,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.histogram.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label` and `value`.
+	// .schema.traces.histogram.attributes.texttemplate
 	Texttemplate types.StringType `json:"texttemplate,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: HistogramTransform
+	// .schema.traces.histogram.attributes.transforms
 	Transforms []HistogramTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.histogram.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.histogram.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.unselected
 	Unselected *HistogramUnselected `json:"unselected,omitempty"`
 
 	// Visible
@@ -349,6 +402,7 @@ type Histogram struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.histogram.attributes.visible
 	Visible HistogramVisible `json:"visible,omitempty"`
 
 	// X
@@ -357,17 +411,20 @@ type Histogram struct {
 	// Sets the sample data to be binned on the x axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
+	// .schema.traces.histogram.attributes.xaxis
 	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xbins
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.xbins
 	Xbins *HistogramXbins `json:"xbins,omitempty"`
 
 	// Xcalendar
@@ -375,18 +432,21 @@ type Histogram struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
+	// .schema.traces.histogram.attributes.xcalendar
 	Xcalendar HistogramXcalendar `json:"xcalendar,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.histogram.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.histogram.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -395,17 +455,20 @@ type Histogram struct {
 	// Sets the sample data to be binned on the y axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
+	// .schema.traces.histogram.attributes.yaxis
 	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ybins
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.ybins
 	Ybins *HistogramYbins `json:"ybins,omitempty"`
 
 	// Ycalendar
@@ -413,24 +476,28 @@ type Histogram struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
+	// .schema.traces.histogram.attributes.ycalendar
 	Ycalendar HistogramYcalendar `json:"ycalendar,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.histogram.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.histogram.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Zorder
 	// arrayOK: false
 	// type: integer
 	// Sets the layer on which this trace is displayed, relative to other SVG traces on the same subplot. SVG traces with higher `zorder` appear in front of those with lower `zorder`.
+	// .schema.traces.histogram.attributes.zorder
 	Zorder types.IntegerType `json:"zorder,omitempty"`
 }
 
@@ -442,6 +509,7 @@ type HistogramCumulative struct {
 	// default: include
 	// type: enumerated
 	// Only applies if cumulative is enabled. Sets whether the current bin is included, excluded, or has half of its value included in the current cumulative value. *include* is the default for compatibility with various other tools, however it introduces a half-bin bias to the results. *exclude* makes the opposite half-bin bias, and *half* removes it.
+	// .schema.traces.histogram.attributes.cumulative.currentbin
 	Currentbin HistogramCumulativeCurrentbin `json:"currentbin,omitempty"`
 
 	// Direction
@@ -449,12 +517,14 @@ type HistogramCumulative struct {
 	// default: increasing
 	// type: enumerated
 	// Only applies if cumulative is enabled. If *increasing* (default) we sum all prior bins, so the result increases from left to right. If *decreasing* we sum later bins so the result decreases from left to right.
+	// .schema.traces.histogram.attributes.cumulative.direction
 	Direction HistogramCumulativeDirection `json:"direction,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// If true, display the cumulative distribution by summing the binned values. Use the `direction` and `centralbin` attributes to tune the accumulation method. Note: in this mode, the *density* `histnorm` settings behave the same as their equivalents without *density*: ** and *density* both rise to the number of data points, and *probability* and *probability density* both rise to the number of sample points.
+	// .schema.traces.histogram.attributes.cumulative.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 }
 
@@ -467,6 +537,7 @@ type HistogramErrorX struct {
 	// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.error_x.array
 	Array *types.DataArrayType `json:"array,omitempty"`
 
 	// Arrayminus
@@ -475,54 +546,63 @@ type HistogramErrorX struct {
 	// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.error_x.arrayminus
 	Arrayminus *types.DataArrayType `json:"arrayminus,omitempty"`
 
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
+	// .schema.traces.histogram.attributes.error_x.arrayminussrc
 	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
+	// .schema.traces.histogram.attributes.error_x.arraysrc
 	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
+	// .schema.traces.histogram.attributes.error_x.color
 	Color types.Color `json:"color,omitempty"`
 
 	// CopyYstyle
 	// arrayOK: false
 	// type: boolean
 	//
+	// .schema.traces.histogram.attributes.error_x.copy_ystyle
 	CopyYstyle types.BoolType `json:"copy_ystyle,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
+	// .schema.traces.histogram.attributes.error_x.symmetric
 	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
+	// .schema.traces.histogram.attributes.error_x.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.histogram.attributes.error_x.traceref
 	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.histogram.attributes.error_x.tracerefminus
 	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
@@ -530,30 +610,35 @@ type HistogramErrorX struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// .schema.traces.histogram.attributes.error_x.type
 	Type HistogramErrorXType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
+	// .schema.traces.histogram.attributes.error_x.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
+	// .schema.traces.histogram.attributes.error_x.valueminus
 	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
+	// .schema.traces.histogram.attributes.error_x.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
+	// .schema.traces.histogram.attributes.error_x.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -566,6 +651,7 @@ type HistogramErrorY struct {
 	// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.error_y.array
 	Array *types.DataArrayType `json:"array,omitempty"`
 
 	// Arrayminus
@@ -574,48 +660,56 @@ type HistogramErrorY struct {
 	// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.error_y.arrayminus
 	Arrayminus *types.DataArrayType `json:"arrayminus,omitempty"`
 
 	// Arrayminussrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `arrayminus`.
+	// .schema.traces.histogram.attributes.error_y.arrayminussrc
 	Arrayminussrc types.StringType `json:"arrayminussrc,omitempty"`
 
 	// Arraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `array`.
+	// .schema.traces.histogram.attributes.error_y.arraysrc
 	Arraysrc types.StringType `json:"arraysrc,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the stoke color of the error bars.
+	// .schema.traces.histogram.attributes.error_y.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Symmetric
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
+	// .schema.traces.histogram.attributes.error_y.symmetric
 	Symmetric types.BoolType `json:"symmetric,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the error bars.
+	// .schema.traces.histogram.attributes.error_y.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Traceref
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.histogram.attributes.error_y.traceref
 	Traceref types.IntegerType `json:"traceref,omitempty"`
 
 	// Tracerefminus
 	// arrayOK: false
 	// type: integer
 	//
+	// .schema.traces.histogram.attributes.error_y.tracerefminus
 	Tracerefminus types.IntegerType `json:"tracerefminus,omitempty"`
 
 	// Type
@@ -623,30 +717,35 @@ type HistogramErrorY struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+	// .schema.traces.histogram.attributes.error_y.type
 	Type HistogramErrorYType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars.
+	// .schema.traces.histogram.attributes.error_y.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Valueminus
 	// arrayOK: false
 	// type: number
 	// Sets the value of either the percentage (if `type` is set to *percent*) or the constant (if `type` is set to *constant*) corresponding to the lengths of the error bars in the bottom (left) direction for vertical (horizontal) bars
+	// .schema.traces.histogram.attributes.error_y.valueminus
 	Valueminus types.NumberType `json:"valueminus,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this set of error bars is visible.
+	// .schema.traces.histogram.attributes.error_y.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the cross-bar at both ends of the error bars.
+	// .schema.traces.histogram.attributes.error_y.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -657,24 +756,28 @@ type HistogramHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -682,36 +785,42 @@ type HistogramHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*HistogramHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -719,12 +828,14 @@ type HistogramHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.hoverlabel.font.style
 	Style *types.ArrayOK[*HistogramHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -732,12 +843,14 @@ type HistogramHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*HistogramHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -745,24 +858,28 @@ type HistogramHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.hoverlabel.font.variant
 	Variant *types.ArrayOK[*HistogramHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.histogram.attributes.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -774,53 +891,62 @@ type HistogramHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.histogram.attributes.hoverlabel.align
 	Align *types.ArrayOK[*HistogramHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.histogram.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.histogram.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.histogram.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.histogram.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.histogram.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.hoverlabel.font
 	Font *HistogramHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.histogram.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.histogram.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -831,12 +957,14 @@ type HistogramInsidetextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.insidetextfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.insidetextfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -844,18 +972,21 @@ type HistogramInsidetextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.insidetextfont.lineposition
 	Lineposition HistogramInsidetextfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.insidetextfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.insidetextfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -863,6 +994,7 @@ type HistogramInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.insidetextfont.style
 	Style HistogramInsidetextfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -870,6 +1002,7 @@ type HistogramInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.insidetextfont.textcase
 	Textcase HistogramInsidetextfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -877,12 +1010,14 @@ type HistogramInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.insidetextfont.variant
 	Variant HistogramInsidetextfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.insidetextfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -893,12 +1028,14 @@ type HistogramLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -906,18 +1043,21 @@ type HistogramLegendgrouptitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.lineposition
 	Lineposition HistogramLegendgrouptitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -925,6 +1065,7 @@ type HistogramLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.style
 	Style HistogramLegendgrouptitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -932,6 +1073,7 @@ type HistogramLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.textcase
 	Textcase HistogramLegendgrouptitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -939,12 +1081,14 @@ type HistogramLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.variant
 	Variant HistogramLegendgrouptitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.legendgrouptitle.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -954,12 +1098,14 @@ type HistogramLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.legendgrouptitle.font
 	Font *HistogramLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.histogram.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -970,12 +1116,14 @@ type HistogramMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -983,18 +1131,21 @@ type HistogramMarkerColorbarTickfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.lineposition
 	Lineposition HistogramMarkerColorbarTickfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1002,6 +1153,7 @@ type HistogramMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.style
 	Style HistogramMarkerColorbarTickfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1009,6 +1161,7 @@ type HistogramMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.textcase
 	Textcase HistogramMarkerColorbarTickfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1016,12 +1169,14 @@ type HistogramMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.variant
 	Variant HistogramMarkerColorbarTickfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1032,30 +1187,35 @@ type HistogramMarkerColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -1066,12 +1226,14 @@ type HistogramMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1079,18 +1241,21 @@ type HistogramMarkerColorbarTitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.lineposition
 	Lineposition HistogramMarkerColorbarTitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1098,6 +1263,7 @@ type HistogramMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.style
 	Style HistogramMarkerColorbarTitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1105,6 +1271,7 @@ type HistogramMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.textcase
 	Textcase HistogramMarkerColorbarTitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1112,12 +1279,14 @@ type HistogramMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.variant
 	Variant HistogramMarkerColorbarTitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1127,6 +1296,7 @@ type HistogramMarkerColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.colorbar.title.font
 	Font *HistogramMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -1134,12 +1304,14 @@ type HistogramMarkerColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.side
 	Side HistogramMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.histogram.attributes.marker.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1150,24 +1322,28 @@ type HistogramMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.histogram.attributes.marker.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.histogram.attributes.marker.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.histogram.attributes.marker.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.histogram.attributes.marker.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -1175,18 +1351,21 @@ type HistogramMarkerColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.histogram.attributes.marker.colorbar.exponentformat
 	Exponentformat HistogramMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.histogram.attributes.marker.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.histogram.attributes.marker.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -1194,18 +1373,21 @@ type HistogramMarkerColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.histogram.attributes.marker.colorbar.lenmode
 	Lenmode HistogramMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.histogram.attributes.marker.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.histogram.attributes.marker.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -1213,24 +1395,28 @@ type HistogramMarkerColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.histogram.attributes.marker.colorbar.orientation
 	Orientation HistogramMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.histogram.attributes.marker.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.histogram.attributes.marker.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.histogram.attributes.marker.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1238,12 +1424,14 @@ type HistogramMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.histogram.attributes.marker.colorbar.showexponent
 	Showexponent HistogramMarkerColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.histogram.attributes.marker.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1251,6 +1439,7 @@ type HistogramMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.histogram.attributes.marker.colorbar.showtickprefix
 	Showtickprefix HistogramMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1258,12 +1447,14 @@ type HistogramMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.histogram.attributes.marker.colorbar.showticksuffix
 	Showticksuffix HistogramMarkerColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.histogram.attributes.marker.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -1271,40 +1462,47 @@ type HistogramMarkerColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.histogram.attributes.marker.colorbar.thicknessmode
 	Thicknessmode HistogramMarkerColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.histogram.attributes.marker.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.colorbar.tickfont
 	Tickfont *HistogramMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: HistogramMarkerColorbarTickformatstop
+	// .schema.traces.histogram.attributes.marker.colorbar.tickformatstops
 	Tickformatstops []HistogramMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -1312,6 +1510,7 @@ type HistogramMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticklabeloverflow
 	Ticklabeloverflow HistogramMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -1319,18 +1518,21 @@ type HistogramMarkerColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticklabelposition
 	Ticklabelposition HistogramMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.histogram.attributes.marker.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -1338,12 +1540,14 @@ type HistogramMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.histogram.attributes.marker.colorbar.tickmode
 	Tickmode HistogramMarkerColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -1351,12 +1555,14 @@ type HistogramMarkerColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticks
 	Ticks HistogramMarkerColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1365,12 +1571,14 @@ type HistogramMarkerColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.marker.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.histogram.attributes.marker.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1379,29 +1587,34 @@ type HistogramMarkerColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram.attributes.marker.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.histogram.attributes.marker.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.histogram.attributes.marker.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.colorbar.title
 	Title *HistogramMarkerColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.histogram.attributes.marker.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -1409,12 +1622,14 @@ type HistogramMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.histogram.attributes.marker.colorbar.xanchor
 	Xanchor HistogramMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.histogram.attributes.marker.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -1422,12 +1637,14 @@ type HistogramMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.histogram.attributes.marker.colorbar.xref
 	Xref HistogramMarkerColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.histogram.attributes.marker.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -1435,12 +1652,14 @@ type HistogramMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.histogram.attributes.marker.colorbar.yanchor
 	Yanchor HistogramMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.histogram.attributes.marker.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -1448,6 +1667,7 @@ type HistogramMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.histogram.attributes.marker.colorbar.yref
 	Yref HistogramMarkerColorbarYref `json:"yref,omitempty"`
 }
 
@@ -1458,72 +1678,84 @@ type HistogramMarkerLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.line.colorscale`. Has an effect only if in `marker.line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.histogram.attributes.marker.line.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.line.color`) or the bounds set in `marker.line.cmin` and `marker.line.cmax` Has an effect only if in `marker.line.color` is set to a numerical array. Defaults to `false` when `marker.line.cmin` and `marker.line.cmax` are set by the user.
+	// .schema.traces.histogram.attributes.marker.line.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmin` must be set as well.
+	// .schema.traces.histogram.attributes.marker.line.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.line.cmin` and/or `marker.line.cmax` to be equidistant to this point. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color`. Has no effect when `marker.line.cauto` is `false`.
+	// .schema.traces.histogram.attributes.marker.line.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.line.color` is set to a numerical array. Value should have the same units as in `marker.line.color` and if set, `marker.line.cmax` must be set as well.
+	// .schema.traces.histogram.attributes.marker.line.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// .schema.traces.histogram.attributes.marker.line.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.histogram.attributes.marker.line.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.line.cmin` and `marker.line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.histogram.attributes.marker.line.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.histogram.attributes.marker.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.line.color` is set to a numerical array. If true, `marker.line.cmin` will correspond to the last color in the array and `marker.line.cmax` will correspond to the first color.
+	// .schema.traces.histogram.attributes.marker.line.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
+	// .schema.traces.histogram.attributes.marker.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.histogram.attributes.marker.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -1534,30 +1766,35 @@ type HistogramMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	// .schema.traces.histogram.attributes.marker.pattern.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.histogram.attributes.marker.pattern.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	// .schema.traces.histogram.attributes.marker.pattern.fgcolor
 	Fgcolor *types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	// .schema.traces.histogram.attributes.marker.pattern.fgcolorsrc
 	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	// .schema.traces.histogram.attributes.marker.pattern.fgopacity
 	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
@@ -1565,6 +1802,7 @@ type HistogramMarkerPattern struct {
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	// .schema.traces.histogram.attributes.marker.pattern.fillmode
 	Fillmode HistogramMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
@@ -1572,36 +1810,42 @@ type HistogramMarkerPattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	// .schema.traces.histogram.attributes.marker.pattern.shape
 	Shape *types.ArrayOK[*HistogramMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
+	// .schema.traces.histogram.attributes.marker.pattern.shapesrc
 	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	// .schema.traces.histogram.attributes.marker.pattern.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.histogram.attributes.marker.pattern.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	// .schema.traces.histogram.attributes.marker.pattern.solidity
 	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	// .schema.traces.histogram.attributes.marker.pattern.soliditysrc
 	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
@@ -1612,99 +1856,116 @@ type HistogramMarker struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if in `marker.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.histogram.attributes.marker.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if in `marker.color` is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// .schema.traces.histogram.attributes.marker.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmin` must be set as well.
+	// .schema.traces.histogram.attributes.marker.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color`. Has no effect when `marker.cauto` is `false`.
+	// .schema.traces.histogram.attributes.marker.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `marker.color` is set to a numerical array. Value should have the same units as in `marker.color` and if set, `marker.cmax` must be set as well.
+	// .schema.traces.histogram.attributes.marker.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// .schema.traces.histogram.attributes.marker.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.histogram.attributes.marker.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.colorbar
 	Colorbar *HistogramMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `marker.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.histogram.attributes.marker.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.histogram.attributes.marker.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Cornerradius
 	// arrayOK: false
 	// type: any
 	// Sets the rounding of corners. May be an integer number of pixels, or a percentage of bar width (as a string ending in %). Defaults to `layout.barcornerradius`. In stack or relative barmode, the first trace to set cornerradius is used for the whole stack.
+	// .schema.traces.histogram.attributes.marker.cornerradius
 	Cornerradius interface{} `json:"cornerradius,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.line
 	Line *HistogramMarkerLine `json:"line,omitempty"`
 
 	// Opacity
 	// arrayOK: true
 	// type: number
 	// Sets the opacity of the bars.
+	// .schema.traces.histogram.attributes.marker.opacity
 	Opacity *types.ArrayOK[*types.NumberType] `json:"opacity,omitempty"`
 
 	// Opacitysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `opacity`.
+	// .schema.traces.histogram.attributes.marker.opacitysrc
 	Opacitysrc types.StringType `json:"opacitysrc,omitempty"`
 
 	// Pattern
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.marker.pattern
 	Pattern *HistogramMarkerPattern `json:"pattern,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `marker.color` is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// .schema.traces.histogram.attributes.marker.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `marker.color` is set to a numerical array.
+	// .schema.traces.histogram.attributes.marker.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
@@ -1715,12 +1976,14 @@ type HistogramOutsidetextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.outsidetextfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.outsidetextfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1728,18 +1991,21 @@ type HistogramOutsidetextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.outsidetextfont.lineposition
 	Lineposition HistogramOutsidetextfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.outsidetextfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.outsidetextfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1747,6 +2013,7 @@ type HistogramOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.outsidetextfont.style
 	Style HistogramOutsidetextfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1754,6 +2021,7 @@ type HistogramOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.outsidetextfont.textcase
 	Textcase HistogramOutsidetextfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1761,12 +2029,14 @@ type HistogramOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.outsidetextfont.variant
 	Variant HistogramOutsidetextfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.outsidetextfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1777,12 +2047,14 @@ type HistogramSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
+	// .schema.traces.histogram.attributes.selected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of selected points.
+	// .schema.traces.histogram.attributes.selected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -1793,6 +2065,7 @@ type HistogramSelectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of selected points.
+	// .schema.traces.histogram.attributes.selected.textfont.color
 	Color types.Color `json:"color,omitempty"`
 }
 
@@ -1802,11 +2075,13 @@ type HistogramSelected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.selected.marker
 	Marker *HistogramSelectedMarker `json:"marker,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.selected.textfont
 	Textfont *HistogramSelectedTextfont `json:"textfont,omitempty"`
 }
 
@@ -1817,12 +2092,14 @@ type HistogramStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.histogram.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.histogram.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1833,12 +2110,14 @@ type HistogramTextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram.attributes.textfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram.attributes.textfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1846,18 +2125,21 @@ type HistogramTextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.histogram.attributes.textfont.lineposition
 	Lineposition HistogramTextfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.histogram.attributes.textfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram.attributes.textfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1865,6 +2147,7 @@ type HistogramTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.histogram.attributes.textfont.style
 	Style HistogramTextfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1872,6 +2155,7 @@ type HistogramTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.histogram.attributes.textfont.textcase
 	Textcase HistogramTextfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1879,12 +2163,14 @@ type HistogramTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.histogram.attributes.textfont.variant
 	Variant HistogramTextfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.histogram.attributes.textfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -1899,12 +2185,14 @@ type HistogramUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
+	// .schema.traces.histogram.attributes.unselected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of unselected points, applied only when a selection exists.
+	// .schema.traces.histogram.attributes.unselected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -1915,6 +2203,7 @@ type HistogramUnselectedTextfont struct {
 	// arrayOK: false
 	// type: color
 	// Sets the text font color of unselected points, applied only when a selection exists.
+	// .schema.traces.histogram.attributes.unselected.textfont.color
 	Color types.Color `json:"color,omitempty"`
 }
 
@@ -1924,11 +2213,13 @@ type HistogramUnselected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.unselected.marker
 	Marker *HistogramUnselectedMarker `json:"marker,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram.attributes.unselected.textfont
 	Textfont *HistogramUnselectedTextfont `json:"textfont,omitempty"`
 }
 
@@ -1939,18 +2230,21 @@ type HistogramXbins struct {
 	// arrayOK: false
 	// type: any
 	// Sets the end value for the x axis bins. The last bin may not end exactly at this value, we increment the bin edge by `size` from `start` until we reach or exceed `end`. Defaults to the maximum data value. Like `start`, for dates use a date string, and for category data `end` is based on the category serial numbers.
+	// .schema.traces.histogram.attributes.xbins.end
 	End interface{} `json:"end,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: any
 	// Sets the size of each x axis bin. Default behavior: If `nbinsx` is 0 or omitted, we choose a nice round bin size such that the number of bins is about the same as the typical number of samples in each bin. If `nbinsx` is provided, we choose a nice round bin size giving no more than that many bins. For date data, use milliseconds or *M<n>* for months, as in `axis.dtick`. For category data, the number of categories to bin together (always defaults to 1). If multiple non-overlaying histograms share a subplot, the first explicit `size` is used and all others discarded. If no `size` is provided,the sample data from all traces is combined to determine `size` as described above.
+	// .schema.traces.histogram.attributes.xbins.size
 	Size interface{} `json:"size,omitempty"`
 
 	// Start
 	// arrayOK: false
 	// type: any
 	// Sets the starting value for the x axis bins. Defaults to the minimum data value, shifted down if necessary to make nice round values and to remove ambiguous bin edges. For example, if most of the data is integers we shift the bin edges 0.5 down, so a `size` of 5 would have a default `start` of -0.5, so it is clear that 0-4 are in the first bin, 5-9 in the second, but continuous data gets a start of 0 and bins [0,5), [5,10) etc. Dates behave similarly, and `start` should be a date string. For category data, `start` is based on the category serial numbers, and defaults to -0.5. If multiple non-overlaying histograms share a subplot, the first explicit `start` is used exactly and all others are shifted down (if necessary) to differ from that one by an integer number of bins.
+	// .schema.traces.histogram.attributes.xbins.start
 	Start interface{} `json:"start,omitempty"`
 }
 
@@ -1961,22 +2255,26 @@ type HistogramYbins struct {
 	// arrayOK: false
 	// type: any
 	// Sets the end value for the y axis bins. The last bin may not end exactly at this value, we increment the bin edge by `size` from `start` until we reach or exceed `end`. Defaults to the maximum data value. Like `start`, for dates use a date string, and for category data `end` is based on the category serial numbers.
+	// .schema.traces.histogram.attributes.ybins.end
 	End interface{} `json:"end,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: any
 	// Sets the size of each y axis bin. Default behavior: If `nbinsy` is 0 or omitted, we choose a nice round bin size such that the number of bins is about the same as the typical number of samples in each bin. If `nbinsy` is provided, we choose a nice round bin size giving no more than that many bins. For date data, use milliseconds or *M<n>* for months, as in `axis.dtick`. For category data, the number of categories to bin together (always defaults to 1). If multiple non-overlaying histograms share a subplot, the first explicit `size` is used and all others discarded. If no `size` is provided,the sample data from all traces is combined to determine `size` as described above.
+	// .schema.traces.histogram.attributes.ybins.size
 	Size interface{} `json:"size,omitempty"`
 
 	// Start
 	// arrayOK: false
 	// type: any
 	// Sets the starting value for the y axis bins. Defaults to the minimum data value, shifted down if necessary to make nice round values and to remove ambiguous bin edges. For example, if most of the data is integers we shift the bin edges 0.5 down, so a `size` of 5 would have a default `start` of -0.5, so it is clear that 0-4 are in the first bin, 5-9 in the second, but continuous data gets a start of 0 and bins [0,5), [5,10) etc. Dates behave similarly, and `start` should be a date string. For category data, `start` is based on the category serial numbers, and defaults to -0.5. If multiple non-overlaying histograms share a subplot, the first explicit `start` is used exactly and all others are shifted down (if necessary) to differ from that one by an integer number of bins.
+	// .schema.traces.histogram.attributes.ybins.start
 	Start interface{} `json:"start,omitempty"`
 }
 
 // HistogramConstraintext Constrain the size of text inside or outside a bar to be no larger than the bar itself.
+// .schema.traces.histogram.attributes.constraintext
 type HistogramConstraintext string
 
 const (
@@ -1987,6 +2285,7 @@ const (
 )
 
 // HistogramCumulativeCurrentbin Only applies if cumulative is enabled. Sets whether the current bin is included, excluded, or has half of its value included in the current cumulative value. *include* is the default for compatibility with various other tools, however it introduces a half-bin bias to the results. *exclude* makes the opposite half-bin bias, and *half* removes it.
+// .schema.traces.histogram.attributes.cumulative.currentbin
 type HistogramCumulativeCurrentbin string
 
 const (
@@ -1996,6 +2295,7 @@ const (
 )
 
 // HistogramCumulativeDirection Only applies if cumulative is enabled. If *increasing* (default) we sum all prior bins, so the result increases from left to right. If *decreasing* we sum later bins so the result decreases from left to right.
+// .schema.traces.histogram.attributes.cumulative.direction
 type HistogramCumulativeDirection string
 
 const (
@@ -2004,6 +2304,7 @@ const (
 )
 
 // HistogramErrorXType Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+// .schema.traces.histogram.attributes.error_x.type
 type HistogramErrorXType string
 
 const (
@@ -2014,6 +2315,7 @@ const (
 )
 
 // HistogramErrorYType Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
+// .schema.traces.histogram.attributes.error_y.type
 type HistogramErrorYType string
 
 const (
@@ -2024,6 +2326,7 @@ const (
 )
 
 // HistogramHistfunc Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
+// .schema.traces.histogram.attributes.histfunc
 type HistogramHistfunc string
 
 const (
@@ -2035,6 +2338,7 @@ const (
 )
 
 // HistogramHistnorm Specifies the type of normalization used for this histogram trace. If **, the span of each bar corresponds to the number of occurrences (i.e. the number of data points lying inside the bins). If *percent* / *probability*, the span of each bar corresponds to the percentage / fraction of occurrences with respect to the total number of sample points (here, the sum of all bin HEIGHTS equals 100% / 1). If *density*, the span of each bar corresponds to the number of occurrences in a bin divided by the size of the bin interval (here, the sum of all bin AREAS equals the total number of sample points). If *probability density*, the area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1).
+// .schema.traces.histogram.attributes.histnorm
 type HistogramHistnorm string
 
 const (
@@ -2046,6 +2350,7 @@ const (
 )
 
 // HistogramHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.histogram.attributes.hoverlabel.align
 type HistogramHoverlabelAlign string
 
 const (
@@ -2055,6 +2360,7 @@ const (
 )
 
 // HistogramHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.hoverlabel.font.style
 type HistogramHoverlabelFontStyle string
 
 const (
@@ -2063,6 +2369,7 @@ const (
 )
 
 // HistogramHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.hoverlabel.font.textcase
 type HistogramHoverlabelFontTextcase string
 
 const (
@@ -2073,6 +2380,7 @@ const (
 )
 
 // HistogramHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.hoverlabel.font.variant
 type HistogramHoverlabelFontVariant string
 
 const (
@@ -2085,6 +2393,7 @@ const (
 )
 
 // HistogramInsidetextanchor Determines if texts are kept at center or start/end points in `textposition` *inside* mode.
+// .schema.traces.histogram.attributes.insidetextanchor
 type HistogramInsidetextanchor string
 
 const (
@@ -2094,6 +2403,7 @@ const (
 )
 
 // HistogramInsidetextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.insidetextfont.style
 type HistogramInsidetextfontStyle string
 
 const (
@@ -2102,6 +2412,7 @@ const (
 )
 
 // HistogramInsidetextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.insidetextfont.textcase
 type HistogramInsidetextfontTextcase string
 
 const (
@@ -2112,6 +2423,7 @@ const (
 )
 
 // HistogramInsidetextfontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.insidetextfont.variant
 type HistogramInsidetextfontVariant string
 
 const (
@@ -2124,6 +2436,7 @@ const (
 )
 
 // HistogramLegendgrouptitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.legendgrouptitle.font.style
 type HistogramLegendgrouptitleFontStyle string
 
 const (
@@ -2132,6 +2445,7 @@ const (
 )
 
 // HistogramLegendgrouptitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.legendgrouptitle.font.textcase
 type HistogramLegendgrouptitleFontTextcase string
 
 const (
@@ -2142,6 +2456,7 @@ const (
 )
 
 // HistogramLegendgrouptitleFontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.legendgrouptitle.font.variant
 type HistogramLegendgrouptitleFontVariant string
 
 const (
@@ -2154,6 +2469,7 @@ const (
 )
 
 // HistogramMarkerColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.histogram.attributes.marker.colorbar.exponentformat
 type HistogramMarkerColorbarExponentformat string
 
 const (
@@ -2166,6 +2482,7 @@ const (
 )
 
 // HistogramMarkerColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.histogram.attributes.marker.colorbar.lenmode
 type HistogramMarkerColorbarLenmode string
 
 const (
@@ -2174,6 +2491,7 @@ const (
 )
 
 // HistogramMarkerColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.histogram.attributes.marker.colorbar.orientation
 type HistogramMarkerColorbarOrientation string
 
 const (
@@ -2182,6 +2500,7 @@ const (
 )
 
 // HistogramMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.histogram.attributes.marker.colorbar.showexponent
 type HistogramMarkerColorbarShowexponent string
 
 const (
@@ -2192,6 +2511,7 @@ const (
 )
 
 // HistogramMarkerColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.histogram.attributes.marker.colorbar.showtickprefix
 type HistogramMarkerColorbarShowtickprefix string
 
 const (
@@ -2202,6 +2522,7 @@ const (
 )
 
 // HistogramMarkerColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.histogram.attributes.marker.colorbar.showticksuffix
 type HistogramMarkerColorbarShowticksuffix string
 
 const (
@@ -2212,6 +2533,7 @@ const (
 )
 
 // HistogramMarkerColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.histogram.attributes.marker.colorbar.thicknessmode
 type HistogramMarkerColorbarThicknessmode string
 
 const (
@@ -2220,6 +2542,7 @@ const (
 )
 
 // HistogramMarkerColorbarTickfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.marker.colorbar.tickfont.style
 type HistogramMarkerColorbarTickfontStyle string
 
 const (
@@ -2228,6 +2551,7 @@ const (
 )
 
 // HistogramMarkerColorbarTickfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.marker.colorbar.tickfont.textcase
 type HistogramMarkerColorbarTickfontTextcase string
 
 const (
@@ -2238,6 +2562,7 @@ const (
 )
 
 // HistogramMarkerColorbarTickfontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.marker.colorbar.tickfont.variant
 type HistogramMarkerColorbarTickfontVariant string
 
 const (
@@ -2250,6 +2575,7 @@ const (
 )
 
 // HistogramMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.histogram.attributes.marker.colorbar.ticklabeloverflow
 type HistogramMarkerColorbarTicklabeloverflow string
 
 const (
@@ -2259,6 +2585,7 @@ const (
 )
 
 // HistogramMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.histogram.attributes.marker.colorbar.ticklabelposition
 type HistogramMarkerColorbarTicklabelposition string
 
 const (
@@ -2275,6 +2602,7 @@ const (
 )
 
 // HistogramMarkerColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.histogram.attributes.marker.colorbar.tickmode
 type HistogramMarkerColorbarTickmode string
 
 const (
@@ -2284,6 +2612,7 @@ const (
 )
 
 // HistogramMarkerColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.histogram.attributes.marker.colorbar.ticks
 type HistogramMarkerColorbarTicks string
 
 const (
@@ -2293,6 +2622,7 @@ const (
 )
 
 // HistogramMarkerColorbarTitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.marker.colorbar.title.font.style
 type HistogramMarkerColorbarTitleFontStyle string
 
 const (
@@ -2301,6 +2631,7 @@ const (
 )
 
 // HistogramMarkerColorbarTitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.marker.colorbar.title.font.textcase
 type HistogramMarkerColorbarTitleFontTextcase string
 
 const (
@@ -2311,6 +2642,7 @@ const (
 )
 
 // HistogramMarkerColorbarTitleFontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.marker.colorbar.title.font.variant
 type HistogramMarkerColorbarTitleFontVariant string
 
 const (
@@ -2323,6 +2655,7 @@ const (
 )
 
 // HistogramMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.histogram.attributes.marker.colorbar.title.side
 type HistogramMarkerColorbarTitleSide string
 
 const (
@@ -2332,6 +2665,7 @@ const (
 )
 
 // HistogramMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.histogram.attributes.marker.colorbar.xanchor
 type HistogramMarkerColorbarXanchor string
 
 const (
@@ -2341,6 +2675,7 @@ const (
 )
 
 // HistogramMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.histogram.attributes.marker.colorbar.xref
 type HistogramMarkerColorbarXref string
 
 const (
@@ -2349,6 +2684,7 @@ const (
 )
 
 // HistogramMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.histogram.attributes.marker.colorbar.yanchor
 type HistogramMarkerColorbarYanchor string
 
 const (
@@ -2358,6 +2694,7 @@ const (
 )
 
 // HistogramMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.histogram.attributes.marker.colorbar.yref
 type HistogramMarkerColorbarYref string
 
 const (
@@ -2366,6 +2703,7 @@ const (
 )
 
 // HistogramMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+// .schema.traces.histogram.attributes.marker.pattern.fillmode
 type HistogramMarkerPatternFillmode string
 
 const (
@@ -2374,6 +2712,7 @@ const (
 )
 
 // HistogramMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+// .schema.traces.histogram.attributes.marker.pattern.shape
 type HistogramMarkerPatternShape string
 
 const (
@@ -2388,6 +2727,7 @@ const (
 )
 
 // HistogramOrientation Sets the orientation of the bars. With *v* (*h*), the value of the each bar spans along the vertical (horizontal).
+// .schema.traces.histogram.attributes.orientation
 type HistogramOrientation string
 
 const (
@@ -2396,6 +2736,7 @@ const (
 )
 
 // HistogramOutsidetextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.outsidetextfont.style
 type HistogramOutsidetextfontStyle string
 
 const (
@@ -2404,6 +2745,7 @@ const (
 )
 
 // HistogramOutsidetextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.outsidetextfont.textcase
 type HistogramOutsidetextfontTextcase string
 
 const (
@@ -2414,6 +2756,7 @@ const (
 )
 
 // HistogramOutsidetextfontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.outsidetextfont.variant
 type HistogramOutsidetextfontVariant string
 
 const (
@@ -2426,6 +2769,7 @@ const (
 )
 
 // HistogramTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.histogram.attributes.textfont.style
 type HistogramTextfontStyle string
 
 const (
@@ -2434,6 +2778,7 @@ const (
 )
 
 // HistogramTextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.histogram.attributes.textfont.textcase
 type HistogramTextfontTextcase string
 
 const (
@@ -2444,6 +2789,7 @@ const (
 )
 
 // HistogramTextfontVariant Sets the variant of the font.
+// .schema.traces.histogram.attributes.textfont.variant
 type HistogramTextfontVariant string
 
 const (
@@ -2456,6 +2802,7 @@ const (
 )
 
 // HistogramTextposition Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
+// .schema.traces.histogram.attributes.textposition
 type HistogramTextposition string
 
 const (
@@ -2466,6 +2813,7 @@ const (
 )
 
 // HistogramVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.histogram.attributes.visible
 type HistogramVisible interface{}
 
 var (
@@ -2475,6 +2823,7 @@ var (
 )
 
 // HistogramXcalendar Sets the calendar system to use with `x` date data.
+// .schema.traces.histogram.attributes.xcalendar
 type HistogramXcalendar string
 
 const (
@@ -2497,6 +2846,7 @@ const (
 )
 
 // HistogramYcalendar Sets the calendar system to use with `y` date data.
+// .schema.traces.histogram.attributes.ycalendar
 type HistogramYcalendar string
 
 const (
@@ -2519,6 +2869,7 @@ const (
 )
 
 // HistogramHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.histogram.attributes.hoverinfo
 type HistogramHoverinfo string
 
 const (
@@ -2536,6 +2887,7 @@ const (
 )
 
 // HistogramHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.hoverlabel.font.lineposition
 type HistogramHoverlabelFontLineposition string
 
 const (
@@ -2549,6 +2901,7 @@ const (
 )
 
 // HistogramInsidetextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.insidetextfont.lineposition
 type HistogramInsidetextfontLineposition string
 
 const (
@@ -2562,6 +2915,7 @@ const (
 )
 
 // HistogramLegendgrouptitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.legendgrouptitle.font.lineposition
 type HistogramLegendgrouptitleFontLineposition string
 
 const (
@@ -2575,6 +2929,7 @@ const (
 )
 
 // HistogramMarkerColorbarTickfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.marker.colorbar.tickfont.lineposition
 type HistogramMarkerColorbarTickfontLineposition string
 
 const (
@@ -2588,6 +2943,7 @@ const (
 )
 
 // HistogramMarkerColorbarTitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.marker.colorbar.title.font.lineposition
 type HistogramMarkerColorbarTitleFontLineposition string
 
 const (
@@ -2601,6 +2957,7 @@ const (
 )
 
 // HistogramOutsidetextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.outsidetextfont.lineposition
 type HistogramOutsidetextfontLineposition string
 
 const (
@@ -2614,6 +2971,7 @@ const (
 )
 
 // HistogramTextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.histogram.attributes.textfont.lineposition
 type HistogramTextfontLineposition string
 
 const (

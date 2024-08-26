@@ -32,17 +32,20 @@ type Violin struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
+	// .schema.traces.violin.attributes.alignmentgroup
 	Alignmentgroup types.StringType `json:"alignmentgroup,omitempty"`
 
 	// Bandwidth
 	// arrayOK: false
 	// type: number
 	// Sets the bandwidth used to compute the kernel density estimate. By default, the bandwidth is determined by Silverman's rule of thumb.
+	// .schema.traces.violin.attributes.bandwidth
 	Bandwidth types.NumberType `json:"bandwidth,omitempty"`
 
 	// Box
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.box
 	Box *ViolinBox `json:"box,omitempty"`
 
 	// Customdata
@@ -51,18 +54,21 @@ type Violin struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.violin.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.violin.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
+	// .schema.traces.violin.attributes.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
@@ -70,17 +76,20 @@ type Violin struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.violin.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*ViolinHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.violin.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.hoverlabel
 	Hoverlabel *ViolinHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
@@ -88,30 +97,35 @@ type Violin struct {
 	// default: violins+points+kde
 	// type: flaglist
 	// Do the hover effects highlight individual violins or sample points or the kernel density estimate or any combination of them?
+	// .schema.traces.violin.attributes.hoveron
 	Hoveron ViolinHoveron `json:"hoveron,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.violin.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.violin.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
+	// .schema.traces.violin.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.violin.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -120,92 +134,108 @@ type Violin struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.violin.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.violin.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Jitter
 	// arrayOK: false
 	// type: number
 	// Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the violins.
+	// .schema.traces.violin.attributes.jitter
 	Jitter types.NumberType `json:"jitter,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.violin.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.violin.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.legendgrouptitle
 	Legendgrouptitle *ViolinLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.violin.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.violin.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.line
 	Line *ViolinLine `json:"line,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.marker
 	Marker *ViolinMarker `json:"marker,omitempty"`
 
 	// Meanline
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.meanline
 	Meanline *ViolinMeanline `json:"meanline,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.violin.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.violin.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover. For violin traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical. Note that the trace name is also used as a default value for attribute `scalegroup` (please see its description for details).
+	// .schema.traces.violin.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
+	// .schema.traces.violin.attributes.offsetgroup
 	Offsetgroup types.StringType `json:"offsetgroup,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.violin.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Orientation
@@ -213,12 +243,14 @@ type Violin struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the violin(s). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
+	// .schema.traces.violin.attributes.orientation
 	Orientation ViolinOrientation `json:"orientation,omitempty"`
 
 	// Pointpos
 	// arrayOK: false
 	// type: number
 	// Sets the position of the sample points in relation to the violins. If *0*, the sample points are places over the center of the violins. Positive (negative) values correspond to positions to the right (left) for vertical violins and above (below) for horizontal violins.
+	// .schema.traces.violin.attributes.pointpos
 	Pointpos types.NumberType `json:"pointpos,omitempty"`
 
 	// Points
@@ -226,6 +258,7 @@ type Violin struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the violins are shown with no sample points. Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set, otherwise defaults to *outliers*.
+	// .schema.traces.violin.attributes.points
 	Points ViolinPoints `json:"points,omitempty"`
 
 	// Quartilemethod
@@ -233,12 +266,14 @@ type Violin struct {
 	// default: linear
 	// type: enumerated
 	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+	// .schema.traces.violin.attributes.quartilemethod
 	Quartilemethod ViolinQuartilemethod `json:"quartilemethod,omitempty"`
 
 	// Scalegroup
 	// arrayOK: false
 	// type: string
 	// If there are multiple violins that should be sized according to to some metric (see `scalemode`), link them by providing a non-empty group id here shared by every trace in the same group. If a violin's `width` is undefined, `scalegroup` will default to the trace's name. In this case, violins with the same names will be linked together
+	// .schema.traces.violin.attributes.scalegroup
 	Scalegroup types.StringType `json:"scalegroup,omitempty"`
 
 	// Scalemode
@@ -246,23 +281,27 @@ type Violin struct {
 	// default: width
 	// type: enumerated
 	// Sets the metric by which the width of each violin is determined. *width* means each violin has the same (max) width *count* means the violins are scaled by the number of sample points making up each violin.
+	// .schema.traces.violin.attributes.scalemode
 	Scalemode ViolinScalemode `json:"scalemode,omitempty"`
 
 	// Selected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.selected
 	Selected *ViolinSelected `json:"selected,omitempty"`
 
 	// Selectedpoints
 	// arrayOK: false
 	// type: any
 	// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
+	// .schema.traces.violin.attributes.selectedpoints
 	Selectedpoints interface{} `json:"selectedpoints,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.violin.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Side
@@ -270,12 +309,14 @@ type Violin struct {
 	// default: both
 	// type: enumerated
 	// Determines on which side of the position value the density function making up one half of a violin is plotted. Useful when comparing two violin traces under *overlay* mode, where one trace has `side` set to *positive* and the other to *negative*.
+	// .schema.traces.violin.attributes.side
 	Side ViolinSide `json:"side,omitempty"`
 
 	// Span
 	// arrayOK: false
 	// type: info_array
 	// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
+	// .schema.traces.violin.attributes.span
 	Span interface{} `json:"span,omitempty"`
 
 	// Spanmode
@@ -283,45 +324,53 @@ type Violin struct {
 	// default: soft
 	// type: enumerated
 	// Sets the method by which the span in data space where the density function will be computed. *soft* means the span goes from the sample's minimum value minus two bandwidths to the sample's maximum value plus two bandwidths. *hard* means the span goes from the sample's minimum to its maximum value. For custom span settings, use mode *manual* and fill in the `span` attribute.
+	// .schema.traces.violin.attributes.spanmode
 	Spanmode ViolinSpanmode `json:"spanmode,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.stream
 	Stream *ViolinStream `json:"stream,omitempty"`
 
 	// Text
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with each sample value. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.violin.attributes.text
 	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.violin.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: ViolinTransform
+	// .schema.traces.violin.attributes.transforms
 	Transforms []ViolinTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.violin.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.violin.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.unselected
 	Unselected *ViolinUnselected `json:"unselected,omitempty"`
 
 	// Visible
@@ -329,12 +378,14 @@ type Violin struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.violin.attributes.visible
 	Visible ViolinVisible `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the violin in data coordinates. If *0* (default value) the width is automatically selected based on the positions of other violin traces in the same subplot.
+	// .schema.traces.violin.attributes.width
 	Width types.NumberType `json:"width,omitempty"`
 
 	// X
@@ -343,30 +394,35 @@ type Violin struct {
 	// Sets the x sample data or coordinates. See overview for more info.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.violin.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// X0
 	// arrayOK: false
 	// type: any
 	// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
+	// .schema.traces.violin.attributes.x0
 	X0 interface{} `json:"x0,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
+	// .schema.traces.violin.attributes.xaxis
 	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.violin.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.violin.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -375,36 +431,42 @@ type Violin struct {
 	// Sets the y sample data or coordinates. See overview for more info.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.violin.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Y0
 	// arrayOK: false
 	// type: any
 	// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
+	// .schema.traces.violin.attributes.y0
 	Y0 interface{} `json:"y0,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
+	// .schema.traces.violin.attributes.yaxis
 	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.violin.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.violin.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Zorder
 	// arrayOK: false
 	// type: integer
 	// Sets the layer on which this trace is displayed, relative to other SVG traces on the same subplot. SVG traces with higher `zorder` appear in front of those with lower `zorder`.
+	// .schema.traces.violin.attributes.zorder
 	Zorder types.IntegerType `json:"zorder,omitempty"`
 }
 
@@ -415,12 +477,14 @@ type ViolinBoxLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the inner box plot bounding line color.
+	// .schema.traces.violin.attributes.box.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the inner box plot bounding line width.
+	// .schema.traces.violin.attributes.box.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -431,23 +495,27 @@ type ViolinBox struct {
 	// arrayOK: false
 	// type: color
 	// Sets the inner box plot fill color.
+	// .schema.traces.violin.attributes.box.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.box.line
 	Line *ViolinBoxLine `json:"line,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines if an miniature box plot is drawn inside the violins.
+	// .schema.traces.violin.attributes.box.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the inner box plots relative to the violins' width. For example, with 1, the inner box plots are as wide as the violins.
+	// .schema.traces.violin.attributes.box.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -458,36 +526,42 @@ type ViolinHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.violin.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.violin.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.violin.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.violin.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.violin.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.violin.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -499,53 +573,62 @@ type ViolinHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.violin.attributes.hoverlabel.align
 	Align *types.ArrayOK[*ViolinHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.violin.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.violin.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.violin.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.violin.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.violin.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.hoverlabel.font
 	Font *ViolinHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.violin.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.violin.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -556,18 +639,21 @@ type ViolinLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.violin.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.violin.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.violin.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -577,12 +663,14 @@ type ViolinLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.legendgrouptitle.font
 	Font *ViolinLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.violin.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -593,12 +681,14 @@ type ViolinLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the violin(s).
+	// .schema.traces.violin.attributes.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of line bounding the violin(s).
+	// .schema.traces.violin.attributes.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -609,24 +699,28 @@ type ViolinMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// .schema.traces.violin.attributes.marker.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border line color of the outlier sample points. Defaults to marker.color
+	// .schema.traces.violin.attributes.marker.line.outliercolor
 	Outliercolor types.Color `json:"outliercolor,omitempty"`
 
 	// Outlierwidth
 	// arrayOK: false
 	// type: number
 	// Sets the border line width (in px) of the outlier sample points.
+	// .schema.traces.violin.attributes.marker.line.outlierwidth
 	Outlierwidth types.NumberType `json:"outlierwidth,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
+	// .schema.traces.violin.attributes.marker.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -637,35 +731,41 @@ type ViolinMarker struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
+	// .schema.traces.violin.attributes.marker.angle
 	Angle types.NumberType `json:"angle,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// .schema.traces.violin.attributes.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.marker.line
 	Line *ViolinMarkerLine `json:"line,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity.
+	// .schema.traces.violin.attributes.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the outlier sample points.
+	// .schema.traces.violin.attributes.marker.outliercolor
 	Outliercolor types.Color `json:"outliercolor,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size (in px).
+	// .schema.traces.violin.attributes.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Symbol
@@ -673,6 +773,7 @@ type ViolinMarker struct {
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
+	// .schema.traces.violin.attributes.marker.symbol
 	Symbol ViolinMarkerSymbol `json:"symbol,omitempty"`
 }
 
@@ -683,18 +784,21 @@ type ViolinMeanline struct {
 	// arrayOK: false
 	// type: color
 	// Sets the mean line color.
+	// .schema.traces.violin.attributes.meanline.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines if a line corresponding to the sample's mean is shown inside the violins. If `box.visible` is turned on, the mean line is drawn inside the inner box. Otherwise, the mean line is drawn from one side of the violin to other.
+	// .schema.traces.violin.attributes.meanline.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the mean line width.
+	// .schema.traces.violin.attributes.meanline.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -705,18 +809,21 @@ type ViolinSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
+	// .schema.traces.violin.attributes.selected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of selected points.
+	// .schema.traces.violin.attributes.selected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of selected points.
+	// .schema.traces.violin.attributes.selected.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -726,6 +833,7 @@ type ViolinSelected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.selected.marker
 	Marker *ViolinSelectedMarker `json:"marker,omitempty"`
 }
 
@@ -736,12 +844,14 @@ type ViolinStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.violin.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.violin.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -756,18 +866,21 @@ type ViolinUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
+	// .schema.traces.violin.attributes.unselected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of unselected points, applied only when a selection exists.
+	// .schema.traces.violin.attributes.unselected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of unselected points, applied only when a selection exists.
+	// .schema.traces.violin.attributes.unselected.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -777,10 +890,12 @@ type ViolinUnselected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.violin.attributes.unselected.marker
 	Marker *ViolinUnselectedMarker `json:"marker,omitempty"`
 }
 
 // ViolinHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.violin.attributes.hoverlabel.align
 type ViolinHoverlabelAlign string
 
 const (
@@ -790,6 +905,7 @@ const (
 )
 
 // ViolinMarkerSymbol Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
+// .schema.traces.violin.attributes.marker.symbol
 type ViolinMarkerSymbol interface{}
 
 var (
@@ -1282,6 +1398,7 @@ var (
 )
 
 // ViolinOrientation Sets the orientation of the violin(s). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
+// .schema.traces.violin.attributes.orientation
 type ViolinOrientation string
 
 const (
@@ -1290,6 +1407,7 @@ const (
 )
 
 // ViolinPoints If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the violins are shown with no sample points. Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set, otherwise defaults to *outliers*.
+// .schema.traces.violin.attributes.points
 type ViolinPoints interface{}
 
 var (
@@ -1300,6 +1418,7 @@ var (
 )
 
 // ViolinQuartilemethod Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+// .schema.traces.violin.attributes.quartilemethod
 type ViolinQuartilemethod string
 
 const (
@@ -1309,6 +1428,7 @@ const (
 )
 
 // ViolinScalemode Sets the metric by which the width of each violin is determined. *width* means each violin has the same (max) width *count* means the violins are scaled by the number of sample points making up each violin.
+// .schema.traces.violin.attributes.scalemode
 type ViolinScalemode string
 
 const (
@@ -1317,6 +1437,7 @@ const (
 )
 
 // ViolinSide Determines on which side of the position value the density function making up one half of a violin is plotted. Useful when comparing two violin traces under *overlay* mode, where one trace has `side` set to *positive* and the other to *negative*.
+// .schema.traces.violin.attributes.side
 type ViolinSide string
 
 const (
@@ -1326,6 +1447,7 @@ const (
 )
 
 // ViolinSpanmode Sets the method by which the span in data space where the density function will be computed. *soft* means the span goes from the sample's minimum value minus two bandwidths to the sample's maximum value plus two bandwidths. *hard* means the span goes from the sample's minimum to its maximum value. For custom span settings, use mode *manual* and fill in the `span` attribute.
+// .schema.traces.violin.attributes.spanmode
 type ViolinSpanmode string
 
 const (
@@ -1335,6 +1457,7 @@ const (
 )
 
 // ViolinVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.violin.attributes.visible
 type ViolinVisible interface{}
 
 var (
@@ -1344,6 +1467,7 @@ var (
 )
 
 // ViolinHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.violin.attributes.hoverinfo
 type ViolinHoverinfo string
 
 const (
@@ -1361,6 +1485,7 @@ const (
 )
 
 // ViolinHoveron Do the hover effects highlight individual violins or sample points or the kernel density estimate or any combination of them?
+// .schema.traces.violin.attributes.hoveron
 type ViolinHoveron string
 
 const (

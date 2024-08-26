@@ -34,23 +34,27 @@ type Carpet struct {
 	// An array containing values of the first parameter value
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.a
 	A *types.DataArrayType `json:"a,omitempty"`
 
 	// A0
 	// arrayOK: false
 	// type: number
 	// Alternate to `a`. Builds a linear space of a coordinates. Use with `da` where `a0` is the starting coordinate and `da` the step.
+	// .schema.traces.carpet.attributes.a0
 	A0 types.NumberType `json:"a0,omitempty"`
 
 	// Aaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.aaxis
 	Aaxis *CarpetAaxis `json:"aaxis,omitempty"`
 
 	// Asrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `a`.
+	// .schema.traces.carpet.attributes.asrc
 	Asrc types.StringType `json:"asrc,omitempty"`
 
 	// B
@@ -59,41 +63,48 @@ type Carpet struct {
 	// A two dimensional array of y coordinates at each carpet point.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.b
 	B *types.DataArrayType `json:"b,omitempty"`
 
 	// B0
 	// arrayOK: false
 	// type: number
 	// Alternate to `b`. Builds a linear space of a coordinates. Use with `db` where `b0` is the starting coordinate and `db` the step.
+	// .schema.traces.carpet.attributes.b0
 	B0 types.NumberType `json:"b0,omitempty"`
 
 	// Baxis
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.baxis
 	Baxis *CarpetBaxis `json:"baxis,omitempty"`
 
 	// Bsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `b`.
+	// .schema.traces.carpet.attributes.bsrc
 	Bsrc types.StringType `json:"bsrc,omitempty"`
 
 	// Carpet
 	// arrayOK: false
 	// type: string
 	// An identifier for this carpet, so that `scattercarpet` and `contourcarpet` traces can specify a carpet plot on which they lie
+	// .schema.traces.carpet.attributes.carpet
 	Carpet types.StringType `json:"carpet,omitempty"`
 
 	// Cheaterslope
 	// arrayOK: false
 	// type: number
 	// The shift applied to each successive row of data in creating a cheater plot. Only used if `x` is been omitted.
+	// .schema.traces.carpet.attributes.cheaterslope
 	Cheaterslope types.NumberType `json:"cheaterslope,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.traces.carpet.attributes.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Customdata
@@ -102,29 +113,34 @@ type Carpet struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.carpet.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Da
 	// arrayOK: false
 	// type: number
 	// Sets the a coordinate step. See `a0` for more info.
+	// .schema.traces.carpet.attributes.da
 	Da types.NumberType `json:"da,omitempty"`
 
 	// Db
 	// arrayOK: false
 	// type: number
 	// Sets the b coordinate step. See `b0` for more info.
+	// .schema.traces.carpet.attributes.db
 	Db types.NumberType `json:"db,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.font
 	Font *CarpetFont `json:"font,omitempty"`
 
 	// Ids
@@ -133,76 +149,89 @@ type Carpet struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.carpet.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.carpet.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.legendgrouptitle
 	Legendgrouptitle *CarpetLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.carpet.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.carpet.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.carpet.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.carpet.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.carpet.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.carpet.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.stream
 	Stream *CarpetStream `json:"stream,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.carpet.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.carpet.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
@@ -210,6 +239,7 @@ type Carpet struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.carpet.attributes.visible
 	Visible CarpetVisible `json:"visible,omitempty"`
 
 	// X
@@ -218,18 +248,21 @@ type Carpet struct {
 	// A two dimensional array of x coordinates at each carpet point. If omitted, the plot is a cheater plot and the xaxis is hidden by default.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
+	// .schema.traces.carpet.attributes.xaxis
 	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.carpet.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -238,24 +271,28 @@ type Carpet struct {
 	// A two dimensional array of y coordinates at each carpet point.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
+	// .schema.traces.carpet.attributes.yaxis
 	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.carpet.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Zorder
 	// arrayOK: false
 	// type: integer
 	// Sets the layer on which this trace is displayed, relative to other SVG traces on the same subplot. SVG traces with higher `zorder` appear in front of those with lower `zorder`.
+	// .schema.traces.carpet.attributes.zorder
 	Zorder types.IntegerType `json:"zorder,omitempty"`
 }
 
@@ -266,18 +303,21 @@ type CarpetAaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.aaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.aaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.aaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -288,30 +328,35 @@ type CarpetAaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -322,18 +367,21 @@ type CarpetAaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.aaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.aaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.aaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -343,18 +391,21 @@ type CarpetAaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.aaxis.title.font
 	Font *CarpetAaxisTitleFont `json:"font,omitempty"`
 
 	// Offset
 	// arrayOK: false
 	// type: number
 	// An additional amount by which to offset the title from the tick labels, given in pixels. Note that this used to be set by the now deprecated `titleoffset` attribute.
+	// .schema.traces.carpet.attributes.aaxis.title.offset
 	Offset types.NumberType `json:"offset,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.carpet.attributes.aaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -365,12 +416,14 @@ type CarpetAaxis struct {
 	// arrayOK: false
 	// type: integer
 	// The stride between grid lines along the axis
+	// .schema.traces.carpet.attributes.aaxis.arraydtick
 	Arraydtick types.IntegerType `json:"arraydtick,omitempty"`
 
 	// Arraytick0
 	// arrayOK: false
 	// type: integer
 	// The starting index of grid lines along the axis
+	// .schema.traces.carpet.attributes.aaxis.arraytick0
 	Arraytick0 types.IntegerType `json:"arraytick0,omitempty"`
 
 	// Autorange
@@ -378,6 +431,7 @@ type CarpetAaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.traces.carpet.attributes.aaxis.autorange
 	Autorange CarpetAaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -385,6 +439,7 @@ type CarpetAaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.traces.carpet.attributes.aaxis.autotypenumbers
 	Autotypenumbers CarpetAaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Categoryarray
@@ -393,12 +448,14 @@ type CarpetAaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.aaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.traces.carpet.attributes.aaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -406,6 +463,7 @@ type CarpetAaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+	// .schema.traces.carpet.attributes.aaxis.categoryorder
 	Categoryorder CarpetAaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Cheatertype
@@ -413,36 +471,42 @@ type CarpetAaxis struct {
 	// default: value
 	// type: enumerated
 	//
+	// .schema.traces.carpet.attributes.aaxis.cheatertype
 	Cheatertype CarpetAaxisCheatertype `json:"cheatertype,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.traces.carpet.attributes.aaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: number
 	// The stride between grid lines along the axis
+	// .schema.traces.carpet.attributes.aaxis.dtick
 	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Endline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
+	// .schema.traces.carpet.attributes.aaxis.endline
 	Endline types.BoolType `json:"endline,omitempty"`
 
 	// Endlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
+	// .schema.traces.carpet.attributes.aaxis.endlinecolor
 	Endlinecolor types.Color `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the end line.
+	// .schema.traces.carpet.attributes.aaxis.endlinewidth
 	Endlinewidth types.NumberType `json:"endlinewidth,omitempty"`
 
 	// Exponentformat
@@ -450,108 +514,126 @@ type CarpetAaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.carpet.attributes.aaxis.exponentformat
 	Exponentformat CarpetAaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Fixedrange
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
+	// .schema.traces.carpet.attributes.aaxis.fixedrange
 	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.carpet.attributes.aaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.traces.carpet.attributes.aaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.carpet.attributes.aaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.carpet.attributes.aaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Labelpadding
 	// arrayOK: false
 	// type: integer
 	// Extra padding between label and the axis
+	// .schema.traces.carpet.attributes.aaxis.labelpadding
 	Labelpadding types.IntegerType `json:"labelpadding,omitempty"`
 
 	// Labelprefix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label prefix.
+	// .schema.traces.carpet.attributes.aaxis.labelprefix
 	Labelprefix types.StringType `json:"labelprefix,omitempty"`
 
 	// Labelsuffix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label suffix.
+	// .schema.traces.carpet.attributes.aaxis.labelsuffix
 	Labelsuffix types.StringType `json:"labelsuffix,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.carpet.attributes.aaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.carpet.attributes.aaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number
+	// .schema.traces.carpet.attributes.aaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minorgridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.traces.carpet.attributes.aaxis.minorgridcolor
 	Minorgridcolor types.Color `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
 	// type: integer
 	// Sets the number of minor grid ticks per major grid tick
+	// .schema.traces.carpet.attributes.aaxis.minorgridcount
 	Minorgridcount types.IntegerType `json:"minorgridcount,omitempty"`
 
 	// Minorgriddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.traces.carpet.attributes.aaxis.minorgriddash
 	Minorgriddash types.StringType `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.traces.carpet.attributes.aaxis.minorgridwidth
 	Minorgridwidth types.NumberType `json:"minorgridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.carpet.attributes.aaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.carpet.attributes.aaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -559,12 +641,14 @@ type CarpetAaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
+	// .schema.traces.carpet.attributes.aaxis.rangemode
 	Rangemode CarpetAaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.carpet.attributes.aaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -572,18 +656,21 @@ type CarpetAaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.carpet.attributes.aaxis.showexponent
 	Showexponent CarpetAaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.traces.carpet.attributes.aaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.traces.carpet.attributes.aaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
@@ -591,6 +678,7 @@ type CarpetAaxis struct {
 	// default: start
 	// type: enumerated
 	// Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
+	// .schema.traces.carpet.attributes.aaxis.showticklabels
 	Showticklabels CarpetAaxisShowticklabels `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -598,6 +686,7 @@ type CarpetAaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.carpet.attributes.aaxis.showtickprefix
 	Showtickprefix CarpetAaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -605,58 +694,68 @@ type CarpetAaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.carpet.attributes.aaxis.showticksuffix
 	Showticksuffix CarpetAaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Smoothing
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.aaxis.smoothing
 	Smoothing types.NumberType `json:"smoothing,omitempty"`
 
 	// Startline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
+	// .schema.traces.carpet.attributes.aaxis.startline
 	Startline types.BoolType `json:"startline,omitempty"`
 
 	// Startlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
+	// .schema.traces.carpet.attributes.aaxis.startlinecolor
 	Startlinecolor types.Color `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the start line.
+	// .schema.traces.carpet.attributes.aaxis.startlinewidth
 	Startlinewidth types.NumberType `json:"startlinewidth,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// The starting index of grid lines along the axis
+	// .schema.traces.carpet.attributes.aaxis.tick0
 	Tick0 types.NumberType `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.carpet.attributes.aaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.aaxis.tickfont
 	Tickfont *CarpetAaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.carpet.attributes.aaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: CarpetAaxisTickformatstop
+	// .schema.traces.carpet.attributes.aaxis.tickformatstops
 	Tickformatstops []CarpetAaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Tickmode
@@ -664,18 +763,21 @@ type CarpetAaxis struct {
 	// default: array
 	// type: enumerated
 	//
+	// .schema.traces.carpet.attributes.aaxis.tickmode
 	Tickmode CarpetAaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.carpet.attributes.aaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.carpet.attributes.aaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -684,12 +786,14 @@ type CarpetAaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.aaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.carpet.attributes.aaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -698,17 +802,20 @@ type CarpetAaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.aaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.carpet.attributes.aaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.aaxis.title
 	Title *CarpetAaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -716,6 +823,7 @@ type CarpetAaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.traces.carpet.attributes.aaxis.type
 	Type CarpetAaxisType `json:"type,omitempty"`
 }
 
@@ -726,18 +834,21 @@ type CarpetBaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.baxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.baxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.baxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -748,30 +859,35 @@ type CarpetBaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.carpet.attributes.baxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.carpet.attributes.baxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.carpet.attributes.baxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.carpet.attributes.baxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.carpet.attributes.baxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -782,18 +898,21 @@ type CarpetBaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.baxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.baxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.baxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -803,18 +922,21 @@ type CarpetBaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.baxis.title.font
 	Font *CarpetBaxisTitleFont `json:"font,omitempty"`
 
 	// Offset
 	// arrayOK: false
 	// type: number
 	// An additional amount by which to offset the title from the tick labels, given in pixels. Note that this used to be set by the now deprecated `titleoffset` attribute.
+	// .schema.traces.carpet.attributes.baxis.title.offset
 	Offset types.NumberType `json:"offset,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.carpet.attributes.baxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -825,12 +947,14 @@ type CarpetBaxis struct {
 	// arrayOK: false
 	// type: integer
 	// The stride between grid lines along the axis
+	// .schema.traces.carpet.attributes.baxis.arraydtick
 	Arraydtick types.IntegerType `json:"arraydtick,omitempty"`
 
 	// Arraytick0
 	// arrayOK: false
 	// type: integer
 	// The starting index of grid lines along the axis
+	// .schema.traces.carpet.attributes.baxis.arraytick0
 	Arraytick0 types.IntegerType `json:"arraytick0,omitempty"`
 
 	// Autorange
@@ -838,6 +962,7 @@ type CarpetBaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.traces.carpet.attributes.baxis.autorange
 	Autorange CarpetBaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -845,6 +970,7 @@ type CarpetBaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.traces.carpet.attributes.baxis.autotypenumbers
 	Autotypenumbers CarpetBaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Categoryarray
@@ -853,12 +979,14 @@ type CarpetBaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.baxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.traces.carpet.attributes.baxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -866,6 +994,7 @@ type CarpetBaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+	// .schema.traces.carpet.attributes.baxis.categoryorder
 	Categoryorder CarpetBaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Cheatertype
@@ -873,36 +1002,42 @@ type CarpetBaxis struct {
 	// default: value
 	// type: enumerated
 	//
+	// .schema.traces.carpet.attributes.baxis.cheatertype
 	Cheatertype CarpetBaxisCheatertype `json:"cheatertype,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.traces.carpet.attributes.baxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: number
 	// The stride between grid lines along the axis
+	// .schema.traces.carpet.attributes.baxis.dtick
 	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Endline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the final value of this axis. If *true*, the end line is drawn on top of the grid lines.
+	// .schema.traces.carpet.attributes.baxis.endline
 	Endline types.BoolType `json:"endline,omitempty"`
 
 	// Endlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the end line.
+	// .schema.traces.carpet.attributes.baxis.endlinecolor
 	Endlinecolor types.Color `json:"endlinecolor,omitempty"`
 
 	// Endlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the end line.
+	// .schema.traces.carpet.attributes.baxis.endlinewidth
 	Endlinewidth types.NumberType `json:"endlinewidth,omitempty"`
 
 	// Exponentformat
@@ -910,108 +1045,126 @@ type CarpetBaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.carpet.attributes.baxis.exponentformat
 	Exponentformat CarpetBaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Fixedrange
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
+	// .schema.traces.carpet.attributes.baxis.fixedrange
 	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.carpet.attributes.baxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.traces.carpet.attributes.baxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.carpet.attributes.baxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.carpet.attributes.baxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Labelpadding
 	// arrayOK: false
 	// type: integer
 	// Extra padding between label and the axis
+	// .schema.traces.carpet.attributes.baxis.labelpadding
 	Labelpadding types.IntegerType `json:"labelpadding,omitempty"`
 
 	// Labelprefix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label prefix.
+	// .schema.traces.carpet.attributes.baxis.labelprefix
 	Labelprefix types.StringType `json:"labelprefix,omitempty"`
 
 	// Labelsuffix
 	// arrayOK: false
 	// type: string
 	// Sets a axis label suffix.
+	// .schema.traces.carpet.attributes.baxis.labelsuffix
 	Labelsuffix types.StringType `json:"labelsuffix,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.carpet.attributes.baxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.carpet.attributes.baxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number
+	// .schema.traces.carpet.attributes.baxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minorgridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.traces.carpet.attributes.baxis.minorgridcolor
 	Minorgridcolor types.Color `json:"minorgridcolor,omitempty"`
 
 	// Minorgridcount
 	// arrayOK: false
 	// type: integer
 	// Sets the number of minor grid ticks per major grid tick
+	// .schema.traces.carpet.attributes.baxis.minorgridcount
 	Minorgridcount types.IntegerType `json:"minorgridcount,omitempty"`
 
 	// Minorgriddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.traces.carpet.attributes.baxis.minorgriddash
 	Minorgriddash types.StringType `json:"minorgriddash,omitempty"`
 
 	// Minorgridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.traces.carpet.attributes.baxis.minorgridwidth
 	Minorgridwidth types.NumberType `json:"minorgridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.carpet.attributes.baxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.carpet.attributes.baxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -1019,12 +1172,14 @@ type CarpetBaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
+	// .schema.traces.carpet.attributes.baxis.rangemode
 	Rangemode CarpetBaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.carpet.attributes.baxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1032,18 +1187,21 @@ type CarpetBaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.carpet.attributes.baxis.showexponent
 	Showexponent CarpetBaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.traces.carpet.attributes.baxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.traces.carpet.attributes.baxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
@@ -1051,6 +1209,7 @@ type CarpetBaxis struct {
 	// default: start
 	// type: enumerated
 	// Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
+	// .schema.traces.carpet.attributes.baxis.showticklabels
 	Showticklabels CarpetBaxisShowticklabels `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1058,6 +1217,7 @@ type CarpetBaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.carpet.attributes.baxis.showtickprefix
 	Showtickprefix CarpetBaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1065,58 +1225,68 @@ type CarpetBaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.carpet.attributes.baxis.showticksuffix
 	Showticksuffix CarpetBaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Smoothing
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.baxis.smoothing
 	Smoothing types.NumberType `json:"smoothing,omitempty"`
 
 	// Startline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the starting value of this axis. If *true*, the start line is drawn on top of the grid lines.
+	// .schema.traces.carpet.attributes.baxis.startline
 	Startline types.BoolType `json:"startline,omitempty"`
 
 	// Startlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the start line.
+	// .schema.traces.carpet.attributes.baxis.startlinecolor
 	Startlinecolor types.Color `json:"startlinecolor,omitempty"`
 
 	// Startlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the start line.
+	// .schema.traces.carpet.attributes.baxis.startlinewidth
 	Startlinewidth types.NumberType `json:"startlinewidth,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// The starting index of grid lines along the axis
+	// .schema.traces.carpet.attributes.baxis.tick0
 	Tick0 types.NumberType `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.carpet.attributes.baxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.baxis.tickfont
 	Tickfont *CarpetBaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.carpet.attributes.baxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: CarpetBaxisTickformatstop
+	// .schema.traces.carpet.attributes.baxis.tickformatstops
 	Tickformatstops []CarpetBaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Tickmode
@@ -1124,18 +1294,21 @@ type CarpetBaxis struct {
 	// default: array
 	// type: enumerated
 	//
+	// .schema.traces.carpet.attributes.baxis.tickmode
 	Tickmode CarpetBaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.carpet.attributes.baxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.carpet.attributes.baxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1144,12 +1317,14 @@ type CarpetBaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.baxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.carpet.attributes.baxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1158,17 +1333,20 @@ type CarpetBaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.carpet.attributes.baxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.carpet.attributes.baxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.baxis.title
 	Title *CarpetBaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -1176,6 +1354,7 @@ type CarpetBaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.traces.carpet.attributes.baxis.type
 	Type CarpetBaxisType `json:"type,omitempty"`
 }
 
@@ -1186,18 +1365,21 @@ type CarpetFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1208,18 +1390,21 @@ type CarpetLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.carpet.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.carpet.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.carpet.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1229,12 +1414,14 @@ type CarpetLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.carpet.attributes.legendgrouptitle.font
 	Font *CarpetLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.carpet.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1245,16 +1432,19 @@ type CarpetStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.carpet.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.carpet.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
 // CarpetAaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.traces.carpet.attributes.aaxis.autorange
 type CarpetAaxisAutorange interface{}
 
 var (
@@ -1264,6 +1454,7 @@ var (
 )
 
 // CarpetAaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.traces.carpet.attributes.aaxis.autotypenumbers
 type CarpetAaxisAutotypenumbers string
 
 const (
@@ -1272,6 +1463,7 @@ const (
 )
 
 // CarpetAaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+// .schema.traces.carpet.attributes.aaxis.categoryorder
 type CarpetAaxisCategoryorder string
 
 const (
@@ -1282,6 +1474,7 @@ const (
 )
 
 // CarpetAaxisCheatertype
+// .schema.traces.carpet.attributes.aaxis.cheatertype
 type CarpetAaxisCheatertype string
 
 const (
@@ -1290,6 +1483,7 @@ const (
 )
 
 // CarpetAaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.carpet.attributes.aaxis.exponentformat
 type CarpetAaxisExponentformat string
 
 const (
@@ -1302,6 +1496,7 @@ const (
 )
 
 // CarpetAaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
+// .schema.traces.carpet.attributes.aaxis.rangemode
 type CarpetAaxisRangemode string
 
 const (
@@ -1311,6 +1506,7 @@ const (
 )
 
 // CarpetAaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.carpet.attributes.aaxis.showexponent
 type CarpetAaxisShowexponent string
 
 const (
@@ -1321,6 +1517,7 @@ const (
 )
 
 // CarpetAaxisShowticklabels Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
+// .schema.traces.carpet.attributes.aaxis.showticklabels
 type CarpetAaxisShowticklabels string
 
 const (
@@ -1331,6 +1528,7 @@ const (
 )
 
 // CarpetAaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.carpet.attributes.aaxis.showtickprefix
 type CarpetAaxisShowtickprefix string
 
 const (
@@ -1341,6 +1539,7 @@ const (
 )
 
 // CarpetAaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.carpet.attributes.aaxis.showticksuffix
 type CarpetAaxisShowticksuffix string
 
 const (
@@ -1351,6 +1550,7 @@ const (
 )
 
 // CarpetAaxisTickmode
+// .schema.traces.carpet.attributes.aaxis.tickmode
 type CarpetAaxisTickmode string
 
 const (
@@ -1359,6 +1559,7 @@ const (
 )
 
 // CarpetAaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.traces.carpet.attributes.aaxis.type
 type CarpetAaxisType string
 
 const (
@@ -1369,6 +1570,7 @@ const (
 )
 
 // CarpetBaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.traces.carpet.attributes.baxis.autorange
 type CarpetBaxisAutorange interface{}
 
 var (
@@ -1378,6 +1580,7 @@ var (
 )
 
 // CarpetBaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.traces.carpet.attributes.baxis.autotypenumbers
 type CarpetBaxisAutotypenumbers string
 
 const (
@@ -1386,6 +1589,7 @@ const (
 )
 
 // CarpetBaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+// .schema.traces.carpet.attributes.baxis.categoryorder
 type CarpetBaxisCategoryorder string
 
 const (
@@ -1396,6 +1600,7 @@ const (
 )
 
 // CarpetBaxisCheatertype
+// .schema.traces.carpet.attributes.baxis.cheatertype
 type CarpetBaxisCheatertype string
 
 const (
@@ -1404,6 +1609,7 @@ const (
 )
 
 // CarpetBaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.carpet.attributes.baxis.exponentformat
 type CarpetBaxisExponentformat string
 
 const (
@@ -1416,6 +1622,7 @@ const (
 )
 
 // CarpetBaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data.
+// .schema.traces.carpet.attributes.baxis.rangemode
 type CarpetBaxisRangemode string
 
 const (
@@ -1425,6 +1632,7 @@ const (
 )
 
 // CarpetBaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.carpet.attributes.baxis.showexponent
 type CarpetBaxisShowexponent string
 
 const (
@@ -1435,6 +1643,7 @@ const (
 )
 
 // CarpetBaxisShowticklabels Determines whether axis labels are drawn on the low side, the high side, both, or neither side of the axis.
+// .schema.traces.carpet.attributes.baxis.showticklabels
 type CarpetBaxisShowticklabels string
 
 const (
@@ -1445,6 +1654,7 @@ const (
 )
 
 // CarpetBaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.carpet.attributes.baxis.showtickprefix
 type CarpetBaxisShowtickprefix string
 
 const (
@@ -1455,6 +1665,7 @@ const (
 )
 
 // CarpetBaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.carpet.attributes.baxis.showticksuffix
 type CarpetBaxisShowticksuffix string
 
 const (
@@ -1465,6 +1676,7 @@ const (
 )
 
 // CarpetBaxisTickmode
+// .schema.traces.carpet.attributes.baxis.tickmode
 type CarpetBaxisTickmode string
 
 const (
@@ -1473,6 +1685,7 @@ const (
 )
 
 // CarpetBaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.traces.carpet.attributes.baxis.type
 type CarpetBaxisType string
 
 const (
@@ -1483,6 +1696,7 @@ const (
 )
 
 // CarpetVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.carpet.attributes.visible
 type CarpetVisible interface{}
 
 var (

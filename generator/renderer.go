@@ -133,7 +133,7 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		FlagLists: []flagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, trace.Attributes.Names)
+	fields, err := traceFile.parseAttributes(".schema.traces."+traceName+".attributes", traceFile.MainType.Name, traceFile.MainType.Name, trace.Attributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -233,7 +233,7 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 		FlagLists: []flagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(".schema.layout.layoutAttributes", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -241,7 +241,7 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 
 	for _, name := range sortKeys(r.root.Schema.Traces) {
 		trace := r.root.Schema.Traces[name]
-		fields, err := traceFile.parseAttributes(xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
+		fields, err := traceFile.parseAttributes(".schema.traces."+name+".layoutAttributes", xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
 		if err != nil {
 			return fmt.Errorf("cannot parse attributes, %w", err)
 		}
@@ -275,7 +275,7 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 			continue
 		}
 		// Review this merge operation
-		uniqueEnums[previous].appendValues(enum.Values...)
+		uniqueEnums[previous].appendUniqueValues(enum.Values...)
 	}
 	traceFile.Enums = uniqueEnums
 
@@ -309,6 +309,9 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	}
 	traceFile.Objects = uniqueObjects
 
+	// ADR: The actual js library needs the field to have subfixes.
+	// We could rewrite this to use arrayOk type on X/YAxis and it will provably work well, but then we will need custom logic to serialise the data
+	// therefore, I think this solution will cover most of the cases. I don't think anyone will need more than Axes.
 	// add multiple x and y axis
 	for _, label := range []string{"X", "Y"} {
 		for i := 2; i < 7; i++ {
@@ -390,7 +393,7 @@ func (r *Renderer) WriteAnimation(w io.Writer) error {
 		Enums:     []enumFile{},
 		FlagLists: []flagList{},
 	}
-	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Animation.Names)
+	fields, err := traceFile.parseAttributes(".schema.animation", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Animation.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -499,7 +502,7 @@ func (r *Renderer) WriteConfig(w io.Writer) error {
 		Enums:     []enumFile{},
 		FlagLists: []flagList{},
 	}
-	fields, err := traceFile.parseAttributes(traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Config.Names)
+	fields, err := traceFile.parseAttributes(".schema.config", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Config.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}

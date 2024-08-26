@@ -33,6 +33,7 @@ type Sankey struct {
 	// default: snap
 	// type: enumerated
 	// If value is `snap` (the default), the node arrangement is assisted by automatic snapping of elements to preserve space between nodes specified via `nodepad`. If value is `perpendicular`, the nodes can only move along a line perpendicular to the flow. If value is `freeform`, the nodes can freely move on the plane. If value is `fixed`, the nodes are stationary.
+	// .schema.traces.sankey.attributes.arrangement
 	Arrangement SankeyArrangement `json:"arrangement,omitempty"`
 
 	// Customdata
@@ -41,17 +42,20 @@ type Sankey struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.sankey.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.domain
 	Domain *SankeyDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
@@ -59,11 +63,13 @@ type Sankey struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired. Note that this attribute is superseded by `node.hoverinfo` and `node.hoverinfo` for nodes and links respectively.
+	// .schema.traces.sankey.attributes.hoverinfo
 	Hoverinfo SankeyHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.hoverlabel
 	Hoverlabel *SankeyHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Ids
@@ -72,63 +78,74 @@ type Sankey struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.sankey.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.sankey.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.legendgrouptitle
 	Legendgrouptitle *SankeyLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.sankey.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.sankey.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Link
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.link
 	Link *SankeyLink `json:"link,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.sankey.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.sankey.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.sankey.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Node
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.node
 	Node *SankeyNode `json:"node,omitempty"`
 
 	// Orientation
@@ -136,46 +153,54 @@ type Sankey struct {
 	// default: h
 	// type: enumerated
 	// Sets the orientation of the Sankey diagram.
+	// .schema.traces.sankey.attributes.orientation
 	Orientation SankeyOrientation `json:"orientation,omitempty"`
 
 	// Selectedpoints
 	// arrayOK: false
 	// type: any
 	// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
+	// .schema.traces.sankey.attributes.selectedpoints
 	Selectedpoints interface{} `json:"selectedpoints,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.stream
 	Stream *SankeyStream `json:"stream,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.textfont
 	Textfont *SankeyTextfont `json:"textfont,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.sankey.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.sankey.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
+	// .schema.traces.sankey.attributes.valueformat
 	Valueformat types.StringType `json:"valueformat,omitempty"`
 
 	// Valuesuffix
 	// arrayOK: false
 	// type: string
 	// Adds a unit to follow the value in the hover tooltip. Add a space if a separation is necessary from the value.
+	// .schema.traces.sankey.attributes.valuesuffix
 	Valuesuffix types.StringType `json:"valuesuffix,omitempty"`
 
 	// Visible
@@ -183,6 +208,7 @@ type Sankey struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.sankey.attributes.visible
 	Visible SankeyVisible `json:"visible,omitempty"`
 }
 
@@ -193,24 +219,28 @@ type SankeyDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this sankey trace .
+	// .schema.traces.sankey.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this sankey trace .
+	// .schema.traces.sankey.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this sankey trace (in plot fraction).
+	// .schema.traces.sankey.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this sankey trace (in plot fraction).
+	// .schema.traces.sankey.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -221,24 +251,28 @@ type SankeyHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.sankey.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.sankey.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -246,36 +280,42 @@ type SankeyHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.sankey.attributes.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*SankeyHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.sankey.attributes.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.sankey.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -283,12 +323,14 @@ type SankeyHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.sankey.attributes.hoverlabel.font.style
 	Style *types.ArrayOK[*SankeyHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -296,12 +338,14 @@ type SankeyHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.sankey.attributes.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*SankeyHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -309,24 +353,28 @@ type SankeyHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.sankey.attributes.hoverlabel.font.variant
 	Variant *types.ArrayOK[*SankeyHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.sankey.attributes.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.sankey.attributes.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -338,53 +386,62 @@ type SankeyHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.sankey.attributes.hoverlabel.align
 	Align *types.ArrayOK[*SankeyHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.sankey.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.sankey.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.sankey.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.sankey.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.sankey.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.hoverlabel.font
 	Font *SankeyHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.sankey.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.sankey.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -395,12 +452,14 @@ type SankeyLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -408,18 +467,21 @@ type SankeyLegendgrouptitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.lineposition
 	Lineposition SankeyLegendgrouptitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -427,6 +489,7 @@ type SankeyLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.style
 	Style SankeyLegendgrouptitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -434,6 +497,7 @@ type SankeyLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.textcase
 	Textcase SankeyLegendgrouptitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -441,12 +505,14 @@ type SankeyLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.variant
 	Variant SankeyLegendgrouptitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.sankey.attributes.legendgrouptitle.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -456,12 +522,14 @@ type SankeyLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.legendgrouptitle.font
 	Font *SankeyLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.sankey.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -472,36 +540,42 @@ type SankeyLinkConcentrationscales struct {
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// The label of the links to color based on their concentration within a flow.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.label
 	Label types.StringType `json:"label,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.sankey.attributes.link.colorscales.items.concentrationscales.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 }
 
@@ -512,24 +586,28 @@ type SankeyLinkHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -537,36 +615,42 @@ type SankeyLinkHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*SankeyLinkHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -574,12 +658,14 @@ type SankeyLinkHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.style
 	Style *types.ArrayOK[*SankeyLinkHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -587,12 +673,14 @@ type SankeyLinkHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*SankeyLinkHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -600,24 +688,28 @@ type SankeyLinkHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.variant
 	Variant *types.ArrayOK[*SankeyLinkHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -629,53 +721,62 @@ type SankeyLinkHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.sankey.attributes.link.hoverlabel.align
 	Align *types.ArrayOK[*SankeyLinkHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.sankey.attributes.link.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.sankey.attributes.link.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.link.hoverlabel.font
 	Font *SankeyLinkHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.sankey.attributes.link.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.sankey.attributes.link.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -686,24 +787,28 @@ type SankeyLinkLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the `line` around each `link`.
+	// .schema.traces.sankey.attributes.link.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.link.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the `line` around each `link`.
+	// .schema.traces.sankey.attributes.link.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.sankey.attributes.link.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -714,23 +819,27 @@ type SankeyLink struct {
 	// arrayOK: false
 	// type: number
 	// Sets the length (in px) of the links arrow, if 0 no arrow will be drawn.
+	// .schema.traces.sankey.attributes.link.arrowlen
 	Arrowlen types.NumberType `json:"arrowlen,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the `link` color. It can be a single value, or an array for specifying color for each `link`. If `link.color` is omitted, then by default, a translucent grey link will be used.
+	// .schema.traces.sankey.attributes.link.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorscales
 	// role: Object
 	// items: SankeyLinkConcentrationscales
+	// .schema.traces.sankey.attributes.link.colorscales
 	Colorscales []SankeyLinkConcentrationscales `json:"colorscales,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.link.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Customdata
@@ -739,24 +848,28 @@ type SankeyLink struct {
 	// Assigns extra data to each link.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.link.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.sankey.attributes.link.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Hovercolor
 	// arrayOK: true
 	// type: color
 	// Sets the `link` hover color. It can be a single value, or an array for specifying hover colors for each `link`. If `link.hovercolor` is omitted, then by default, links will become slightly more opaque when hovered over.
+	// .schema.traces.sankey.attributes.link.hovercolor
 	Hovercolor *types.ArrayOK[*types.Color] `json:"hovercolor,omitempty"`
 
 	// Hovercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovercolor`.
+	// .schema.traces.sankey.attributes.link.hovercolorsrc
 	Hovercolorsrc types.StringType `json:"hovercolorsrc,omitempty"`
 
 	// Hoverinfo
@@ -764,23 +877,27 @@ type SankeyLink struct {
 	// default: all
 	// type: enumerated
 	// Determines which trace information appear when hovering links. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.sankey.attributes.link.hoverinfo
 	Hoverinfo SankeyLinkHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.link.hoverlabel
 	Hoverlabel *SankeyLinkHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Variables `source` and `target` are node objects.Finally, the template string has access to variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.sankey.attributes.link.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.sankey.attributes.link.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Label
@@ -789,17 +906,20 @@ type SankeyLink struct {
 	// The shown name of the link.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.link.label
 	Label *types.DataArrayType `json:"label,omitempty"`
 
 	// Labelsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `label`.
+	// .schema.traces.sankey.attributes.link.labelsrc
 	Labelsrc types.StringType `json:"labelsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.link.line
 	Line *SankeyLinkLine `json:"line,omitempty"`
 
 	// Source
@@ -808,12 +928,14 @@ type SankeyLink struct {
 	// An integer number `[0..nodes.length - 1]` that represents the source node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.link.source
 	Source *types.DataArrayType `json:"source,omitempty"`
 
 	// Sourcesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `source`.
+	// .schema.traces.sankey.attributes.link.sourcesrc
 	Sourcesrc types.StringType `json:"sourcesrc,omitempty"`
 
 	// Target
@@ -822,12 +944,14 @@ type SankeyLink struct {
 	// An integer number `[0..nodes.length - 1]` that represents the target node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.link.target
 	Target *types.DataArrayType `json:"target,omitempty"`
 
 	// Targetsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `target`.
+	// .schema.traces.sankey.attributes.link.targetsrc
 	Targetsrc types.StringType `json:"targetsrc,omitempty"`
 
 	// Value
@@ -836,12 +960,14 @@ type SankeyLink struct {
 	// A numeric value representing the flow volume value.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.link.value
 	Value *types.DataArrayType `json:"value,omitempty"`
 
 	// Valuesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `value`.
+	// .schema.traces.sankey.attributes.link.valuesrc
 	Valuesrc types.StringType `json:"valuesrc,omitempty"`
 }
 
@@ -852,24 +978,28 @@ type SankeyNodeHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -877,36 +1007,42 @@ type SankeyNodeHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*SankeyNodeHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -914,12 +1050,14 @@ type SankeyNodeHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.style
 	Style *types.ArrayOK[*SankeyNodeHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -927,12 +1065,14 @@ type SankeyNodeHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*SankeyNodeHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -940,24 +1080,28 @@ type SankeyNodeHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.variant
 	Variant *types.ArrayOK[*SankeyNodeHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -969,53 +1113,62 @@ type SankeyNodeHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.sankey.attributes.node.hoverlabel.align
 	Align *types.ArrayOK[*SankeyNodeHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.sankey.attributes.node.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.sankey.attributes.node.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.node.hoverlabel.font
 	Font *SankeyNodeHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.sankey.attributes.node.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.sankey.attributes.node.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -1026,24 +1179,28 @@ type SankeyNodeLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the `line` around each `node`.
+	// .schema.traces.sankey.attributes.node.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.node.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the `line` around each `node`.
+	// .schema.traces.sankey.attributes.node.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.sankey.attributes.node.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -1055,18 +1212,21 @@ type SankeyNode struct {
 	// default: justify
 	// type: enumerated
 	// Sets the alignment method used to position the nodes along the horizontal axis.
+	// .schema.traces.sankey.attributes.node.align
 	Align SankeyNodeAlign `json:"align,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the `node` color. It can be a single value, or an array for specifying color for each `node`. If `node.color` is omitted, then the default `Plotly` color palette will be cycled through to have a variety of colors. These defaults are not fully opaque, to allow some visibility of what is beneath the node.
+	// .schema.traces.sankey.attributes.node.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.sankey.attributes.node.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Customdata
@@ -1075,18 +1235,21 @@ type SankeyNode struct {
 	// Assigns extra data to each node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.node.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.sankey.attributes.node.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Groups
 	// arrayOK: false
 	// type: info_array
 	// Groups of nodes. Each group is defined by an array with the indices of the nodes it contains. Multiple groups can be specified.
+	// .schema.traces.sankey.attributes.node.groups
 	Groups interface{} `json:"groups,omitempty"`
 
 	// Hoverinfo
@@ -1094,23 +1257,27 @@ type SankeyNode struct {
 	// default: all
 	// type: enumerated
 	// Determines which trace information appear when hovering nodes. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.sankey.attributes.node.hoverinfo
 	Hoverinfo SankeyNodeHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.node.hoverlabel
 	Hoverlabel *SankeyNodeHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Variables `sourceLinks` and `targetLinks` are arrays of link objects.Finally, the template string has access to variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.sankey.attributes.node.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.sankey.attributes.node.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Label
@@ -1119,29 +1286,34 @@ type SankeyNode struct {
 	// The shown name of the node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.node.label
 	Label *types.DataArrayType `json:"label,omitempty"`
 
 	// Labelsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `label`.
+	// .schema.traces.sankey.attributes.node.labelsrc
 	Labelsrc types.StringType `json:"labelsrc,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.sankey.attributes.node.line
 	Line *SankeyNodeLine `json:"line,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// type: number
 	// Sets the padding (in px) between the `nodes`.
+	// .schema.traces.sankey.attributes.node.pad
 	Pad types.NumberType `json:"pad,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the `nodes`.
+	// .schema.traces.sankey.attributes.node.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// X
@@ -1150,12 +1322,14 @@ type SankeyNode struct {
 	// The normalized horizontal position of the node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.node.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.sankey.attributes.node.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -1164,12 +1338,14 @@ type SankeyNode struct {
 	// The normalized vertical position of the node.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.sankey.attributes.node.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.sankey.attributes.node.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 }
 
@@ -1180,12 +1356,14 @@ type SankeyStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.sankey.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.sankey.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1196,12 +1374,14 @@ type SankeyTextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.sankey.attributes.textfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.sankey.attributes.textfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -1209,18 +1389,21 @@ type SankeyTextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.sankey.attributes.textfont.lineposition
 	Lineposition SankeyTextfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.sankey.attributes.textfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.sankey.attributes.textfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -1228,6 +1411,7 @@ type SankeyTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.sankey.attributes.textfont.style
 	Style SankeyTextfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -1235,6 +1419,7 @@ type SankeyTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.sankey.attributes.textfont.textcase
 	Textcase SankeyTextfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -1242,16 +1427,19 @@ type SankeyTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.sankey.attributes.textfont.variant
 	Variant SankeyTextfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.sankey.attributes.textfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
 // SankeyArrangement If value is `snap` (the default), the node arrangement is assisted by automatic snapping of elements to preserve space between nodes specified via `nodepad`. If value is `perpendicular`, the nodes can only move along a line perpendicular to the flow. If value is `freeform`, the nodes can freely move on the plane. If value is `fixed`, the nodes are stationary.
+// .schema.traces.sankey.attributes.arrangement
 type SankeyArrangement string
 
 const (
@@ -1262,6 +1450,7 @@ const (
 )
 
 // SankeyHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.sankey.attributes.hoverlabel.align
 type SankeyHoverlabelAlign string
 
 const (
@@ -1271,6 +1460,7 @@ const (
 )
 
 // SankeyHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.sankey.attributes.hoverlabel.font.style
 type SankeyHoverlabelFontStyle string
 
 const (
@@ -1279,6 +1469,7 @@ const (
 )
 
 // SankeyHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.sankey.attributes.hoverlabel.font.textcase
 type SankeyHoverlabelFontTextcase string
 
 const (
@@ -1289,6 +1480,7 @@ const (
 )
 
 // SankeyHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.sankey.attributes.hoverlabel.font.variant
 type SankeyHoverlabelFontVariant string
 
 const (
@@ -1301,6 +1493,7 @@ const (
 )
 
 // SankeyLegendgrouptitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.sankey.attributes.legendgrouptitle.font.style
 type SankeyLegendgrouptitleFontStyle string
 
 const (
@@ -1309,6 +1502,7 @@ const (
 )
 
 // SankeyLegendgrouptitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.sankey.attributes.legendgrouptitle.font.textcase
 type SankeyLegendgrouptitleFontTextcase string
 
 const (
@@ -1319,6 +1513,7 @@ const (
 )
 
 // SankeyLegendgrouptitleFontVariant Sets the variant of the font.
+// .schema.traces.sankey.attributes.legendgrouptitle.font.variant
 type SankeyLegendgrouptitleFontVariant string
 
 const (
@@ -1331,6 +1526,7 @@ const (
 )
 
 // SankeyLinkHoverinfo Determines which trace information appear when hovering links. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.sankey.attributes.link.hoverinfo
 type SankeyLinkHoverinfo string
 
 const (
@@ -1340,6 +1536,7 @@ const (
 )
 
 // SankeyLinkHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.sankey.attributes.link.hoverlabel.align
 type SankeyLinkHoverlabelAlign string
 
 const (
@@ -1349,6 +1546,7 @@ const (
 )
 
 // SankeyLinkHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.sankey.attributes.link.hoverlabel.font.style
 type SankeyLinkHoverlabelFontStyle string
 
 const (
@@ -1357,6 +1555,7 @@ const (
 )
 
 // SankeyLinkHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.sankey.attributes.link.hoverlabel.font.textcase
 type SankeyLinkHoverlabelFontTextcase string
 
 const (
@@ -1367,6 +1566,7 @@ const (
 )
 
 // SankeyLinkHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.sankey.attributes.link.hoverlabel.font.variant
 type SankeyLinkHoverlabelFontVariant string
 
 const (
@@ -1379,6 +1579,7 @@ const (
 )
 
 // SankeyNodeAlign Sets the alignment method used to position the nodes along the horizontal axis.
+// .schema.traces.sankey.attributes.node.align
 type SankeyNodeAlign string
 
 const (
@@ -1389,6 +1590,7 @@ const (
 )
 
 // SankeyNodeHoverinfo Determines which trace information appear when hovering nodes. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.sankey.attributes.node.hoverinfo
 type SankeyNodeHoverinfo string
 
 const (
@@ -1398,6 +1600,7 @@ const (
 )
 
 // SankeyNodeHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.sankey.attributes.node.hoverlabel.align
 type SankeyNodeHoverlabelAlign string
 
 const (
@@ -1407,6 +1610,7 @@ const (
 )
 
 // SankeyNodeHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.sankey.attributes.node.hoverlabel.font.style
 type SankeyNodeHoverlabelFontStyle string
 
 const (
@@ -1415,6 +1619,7 @@ const (
 )
 
 // SankeyNodeHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.sankey.attributes.node.hoverlabel.font.textcase
 type SankeyNodeHoverlabelFontTextcase string
 
 const (
@@ -1425,6 +1630,7 @@ const (
 )
 
 // SankeyNodeHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.sankey.attributes.node.hoverlabel.font.variant
 type SankeyNodeHoverlabelFontVariant string
 
 const (
@@ -1437,6 +1643,7 @@ const (
 )
 
 // SankeyOrientation Sets the orientation of the Sankey diagram.
+// .schema.traces.sankey.attributes.orientation
 type SankeyOrientation string
 
 const (
@@ -1445,6 +1652,7 @@ const (
 )
 
 // SankeyTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.sankey.attributes.textfont.style
 type SankeyTextfontStyle string
 
 const (
@@ -1453,6 +1661,7 @@ const (
 )
 
 // SankeyTextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.sankey.attributes.textfont.textcase
 type SankeyTextfontTextcase string
 
 const (
@@ -1463,6 +1672,7 @@ const (
 )
 
 // SankeyTextfontVariant Sets the variant of the font.
+// .schema.traces.sankey.attributes.textfont.variant
 type SankeyTextfontVariant string
 
 const (
@@ -1475,6 +1685,7 @@ const (
 )
 
 // SankeyVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.sankey.attributes.visible
 type SankeyVisible interface{}
 
 var (
@@ -1484,6 +1695,7 @@ var (
 )
 
 // SankeyHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired. Note that this attribute is superseded by `node.hoverinfo` and `node.hoverinfo` for nodes and links respectively.
+// .schema.traces.sankey.attributes.hoverinfo
 type SankeyHoverinfo string
 
 const (
@@ -1496,6 +1708,7 @@ const (
 )
 
 // SankeyHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.sankey.attributes.hoverlabel.font.lineposition
 type SankeyHoverlabelFontLineposition string
 
 const (
@@ -1509,6 +1722,7 @@ const (
 )
 
 // SankeyLegendgrouptitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.sankey.attributes.legendgrouptitle.font.lineposition
 type SankeyLegendgrouptitleFontLineposition string
 
 const (
@@ -1522,6 +1736,7 @@ const (
 )
 
 // SankeyLinkHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.sankey.attributes.link.hoverlabel.font.lineposition
 type SankeyLinkHoverlabelFontLineposition string
 
 const (
@@ -1535,6 +1750,7 @@ const (
 )
 
 // SankeyNodeHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.sankey.attributes.node.hoverlabel.font.lineposition
 type SankeyNodeHoverlabelFontLineposition string
 
 const (
@@ -1548,6 +1764,7 @@ const (
 )
 
 // SankeyTextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.sankey.attributes.textfont.lineposition
 type SankeyTextfontLineposition string
 
 const (

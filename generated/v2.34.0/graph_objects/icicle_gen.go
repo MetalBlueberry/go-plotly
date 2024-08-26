@@ -33,6 +33,7 @@ type Icicle struct {
 	// default: remainder
 	// type: enumerated
 	// Determines how the items in `values` are summed. When set to *total*, items in `values` are taken to be value of all its descendants. When set to *remainder*, items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
+	// .schema.traces.icicle.attributes.branchvalues
 	Branchvalues IcicleBranchvalues `json:"branchvalues,omitempty"`
 
 	// Count
@@ -40,6 +41,7 @@ type Icicle struct {
 	// default: leaves
 	// type: flaglist
 	// Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
+	// .schema.traces.icicle.attributes.count
 	Count IcicleCount `json:"count,omitempty"`
 
 	// Customdata
@@ -48,17 +50,20 @@ type Icicle struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.icicle.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.domain
 	Domain *IcicleDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
@@ -66,41 +71,48 @@ type Icicle struct {
 	// default: label+text+value+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.icicle.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*IcicleHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.icicle.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.hoverlabel
 	Hoverlabel *IcicleHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.icicle.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.icicle.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.icicle.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.icicle.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -109,17 +121,20 @@ type Icicle struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.icicle.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Insidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.insidetextfont
 	Insidetextfont *IcicleInsidetextfont `json:"insidetextfont,omitempty"`
 
 	// Labels
@@ -128,86 +143,101 @@ type Icicle struct {
 	// Sets the labels of each of the sectors.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.labels
 	Labels *types.DataArrayType `json:"labels,omitempty"`
 
 	// Labelssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `labels`.
+	// .schema.traces.icicle.attributes.labelssrc
 	Labelssrc types.StringType `json:"labelssrc,omitempty"`
 
 	// Leaf
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.leaf
 	Leaf *IcicleLeaf `json:"leaf,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.icicle.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.legendgrouptitle
 	Legendgrouptitle *IcicleLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.icicle.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.icicle.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Level
 	// arrayOK: false
 	// type: any
 	// Sets the level from which this trace hierarchy is rendered. Set `level` to `''` to start from the root node in the hierarchy. Must be an "id" if `ids` is filled in, otherwise plotly attempts to find a matching item in `labels`.
+	// .schema.traces.icicle.attributes.level
 	Level interface{} `json:"level,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker
 	Marker *IcicleMarker `json:"marker,omitempty"`
 
 	// Maxdepth
 	// arrayOK: false
 	// type: integer
 	// Sets the number of rendered sectors from any given `level`. Set `maxdepth` to *-1* to render all the levels in the hierarchy.
+	// .schema.traces.icicle.attributes.maxdepth
 	Maxdepth types.IntegerType `json:"maxdepth,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.icicle.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.icicle.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.icicle.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.icicle.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Outsidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.outsidetextfont
 	Outsidetextfont *IcicleOutsidetextfont `json:"outsidetextfont,omitempty"`
 
 	// Parents
@@ -216,33 +246,39 @@ type Icicle struct {
 	// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be "ids" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.parents
 	Parents *types.DataArrayType `json:"parents,omitempty"`
 
 	// Parentssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `parents`.
+	// .schema.traces.icicle.attributes.parentssrc
 	Parentssrc types.StringType `json:"parentssrc,omitempty"`
 
 	// Pathbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.pathbar
 	Pathbar *IciclePathbar `json:"pathbar,omitempty"`
 
 	// Root
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.root
 	Root *IcicleRoot `json:"root,omitempty"`
 
 	// Sort
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the sectors are reordered from largest to smallest.
+	// .schema.traces.icicle.attributes.sort
 	Sort types.BoolType `json:"sort,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.stream
 	Stream *IcicleStream `json:"stream,omitempty"`
 
 	// Text
@@ -251,11 +287,13 @@ type Icicle struct {
 	// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.text
 	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.textfont
 	Textfont *IcicleTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
@@ -263,6 +301,7 @@ type Icicle struct {
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
+	// .schema.traces.icicle.attributes.textinfo
 	Textinfo IcicleTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
@@ -270,46 +309,54 @@ type Icicle struct {
 	// default: top left
 	// type: enumerated
 	// Sets the positions of the `text` elements.
+	// .schema.traces.icicle.attributes.textposition
 	Textposition IcicleTextposition `json:"textposition,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.icicle.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
+	// .schema.traces.icicle.attributes.texttemplate
 	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
+	// .schema.traces.icicle.attributes.texttemplatesrc
 	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Tiling
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.tiling
 	Tiling *IcicleTiling `json:"tiling,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: IcicleTransform
+	// .schema.traces.icicle.attributes.transforms
 	Transforms []IcicleTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.icicle.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.icicle.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Values
@@ -318,12 +365,14 @@ type Icicle struct {
 	// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.icicle.attributes.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 
 	// Visible
@@ -331,6 +380,7 @@ type Icicle struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.icicle.attributes.visible
 	Visible IcicleVisible `json:"visible,omitempty"`
 }
 
@@ -341,24 +391,28 @@ type IcicleDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this icicle trace .
+	// .schema.traces.icicle.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this icicle trace .
+	// .schema.traces.icicle.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this icicle trace (in plot fraction).
+	// .schema.traces.icicle.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this icicle trace (in plot fraction).
+	// .schema.traces.icicle.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -369,24 +423,28 @@ type IcicleHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -394,36 +452,42 @@ type IcicleHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*IcicleHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -431,12 +495,14 @@ type IcicleHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.hoverlabel.font.style
 	Style *types.ArrayOK[*IcicleHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -444,12 +510,14 @@ type IcicleHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*IcicleHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -457,24 +525,28 @@ type IcicleHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.hoverlabel.font.variant
 	Variant *types.ArrayOK[*IcicleHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.icicle.attributes.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -486,53 +558,62 @@ type IcicleHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.icicle.attributes.hoverlabel.align
 	Align *types.ArrayOK[*IcicleHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.icicle.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.icicle.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.icicle.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.icicle.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.icicle.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.hoverlabel.font
 	Font *IcicleHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.icicle.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.icicle.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -543,24 +624,28 @@ type IcicleInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.insidetextfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.insidetextfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.insidetextfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.icicle.attributes.insidetextfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -568,36 +653,42 @@ type IcicleInsidetextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.insidetextfont.lineposition
 	Lineposition *types.ArrayOK[*IcicleInsidetextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.icicle.attributes.insidetextfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.insidetextfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.icicle.attributes.insidetextfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.insidetextfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.insidetextfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -605,12 +696,14 @@ type IcicleInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.insidetextfont.style
 	Style *types.ArrayOK[*IcicleInsidetextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.icicle.attributes.insidetextfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -618,12 +711,14 @@ type IcicleInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.insidetextfont.textcase
 	Textcase *types.ArrayOK[*IcicleInsidetextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.icicle.attributes.insidetextfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -631,24 +726,28 @@ type IcicleInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.insidetextfont.variant
 	Variant *types.ArrayOK[*IcicleInsidetextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.icicle.attributes.insidetextfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.insidetextfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.icicle.attributes.insidetextfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -659,6 +758,7 @@ type IcicleLeaf struct {
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the leaves. With colorscale it is defaulted to 1; otherwise it is defaulted to 0.7
+	// .schema.traces.icicle.attributes.leaf.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -669,12 +769,14 @@ type IcicleLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -682,18 +784,21 @@ type IcicleLegendgrouptitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.lineposition
 	Lineposition IcicleLegendgrouptitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -701,6 +806,7 @@ type IcicleLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.style
 	Style IcicleLegendgrouptitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -708,6 +814,7 @@ type IcicleLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.textcase
 	Textcase IcicleLegendgrouptitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -715,12 +822,14 @@ type IcicleLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.variant
 	Variant IcicleLegendgrouptitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.legendgrouptitle.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -730,12 +839,14 @@ type IcicleLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.legendgrouptitle.font
 	Font *IcicleLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.icicle.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -746,12 +857,14 @@ type IcicleMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -759,18 +872,21 @@ type IcicleMarkerColorbarTickfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.lineposition
 	Lineposition IcicleMarkerColorbarTickfontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -778,6 +894,7 @@ type IcicleMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.style
 	Style IcicleMarkerColorbarTickfontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -785,6 +902,7 @@ type IcicleMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.textcase
 	Textcase IcicleMarkerColorbarTickfontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -792,12 +910,14 @@ type IcicleMarkerColorbarTickfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.variant
 	Variant IcicleMarkerColorbarTickfontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -808,30 +928,35 @@ type IcicleMarkerColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -842,12 +967,14 @@ type IcicleMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -855,18 +982,21 @@ type IcicleMarkerColorbarTitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.lineposition
 	Lineposition IcicleMarkerColorbarTitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -874,6 +1004,7 @@ type IcicleMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.style
 	Style IcicleMarkerColorbarTitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -881,6 +1012,7 @@ type IcicleMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.textcase
 	Textcase IcicleMarkerColorbarTitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -888,12 +1020,14 @@ type IcicleMarkerColorbarTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.variant
 	Variant IcicleMarkerColorbarTitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -903,6 +1037,7 @@ type IcicleMarkerColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.colorbar.title.font
 	Font *IcicleMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -910,12 +1045,14 @@ type IcicleMarkerColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.side
 	Side IcicleMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.icicle.attributes.marker.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -926,24 +1063,28 @@ type IcicleMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.icicle.attributes.marker.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.icicle.attributes.marker.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.icicle.attributes.marker.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.icicle.attributes.marker.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -951,18 +1092,21 @@ type IcicleMarkerColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.icicle.attributes.marker.colorbar.exponentformat
 	Exponentformat IcicleMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.icicle.attributes.marker.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.icicle.attributes.marker.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -970,18 +1114,21 @@ type IcicleMarkerColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.icicle.attributes.marker.colorbar.lenmode
 	Lenmode IcicleMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.icicle.attributes.marker.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.icicle.attributes.marker.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -989,24 +1136,28 @@ type IcicleMarkerColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.icicle.attributes.marker.colorbar.orientation
 	Orientation IcicleMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.icicle.attributes.marker.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.icicle.attributes.marker.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.icicle.attributes.marker.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1014,12 +1165,14 @@ type IcicleMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.icicle.attributes.marker.colorbar.showexponent
 	Showexponent IcicleMarkerColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.icicle.attributes.marker.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1027,6 +1180,7 @@ type IcicleMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.icicle.attributes.marker.colorbar.showtickprefix
 	Showtickprefix IcicleMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1034,12 +1188,14 @@ type IcicleMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.icicle.attributes.marker.colorbar.showticksuffix
 	Showticksuffix IcicleMarkerColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.icicle.attributes.marker.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -1047,40 +1203,47 @@ type IcicleMarkerColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.icicle.attributes.marker.colorbar.thicknessmode
 	Thicknessmode IcicleMarkerColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.icicle.attributes.marker.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.colorbar.tickfont
 	Tickfont *IcicleMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: IcicleMarkerColorbarTickformatstop
+	// .schema.traces.icicle.attributes.marker.colorbar.tickformatstops
 	Tickformatstops []IcicleMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -1088,6 +1251,7 @@ type IcicleMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticklabeloverflow
 	Ticklabeloverflow IcicleMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -1095,18 +1259,21 @@ type IcicleMarkerColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticklabelposition
 	Ticklabelposition IcicleMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.icicle.attributes.marker.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -1114,12 +1281,14 @@ type IcicleMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.icicle.attributes.marker.colorbar.tickmode
 	Tickmode IcicleMarkerColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -1127,12 +1296,14 @@ type IcicleMarkerColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticks
 	Ticks IcicleMarkerColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1141,12 +1312,14 @@ type IcicleMarkerColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.marker.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.icicle.attributes.marker.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1155,29 +1328,34 @@ type IcicleMarkerColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.marker.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.icicle.attributes.marker.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.icicle.attributes.marker.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.colorbar.title
 	Title *IcicleMarkerColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.icicle.attributes.marker.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -1185,12 +1363,14 @@ type IcicleMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.icicle.attributes.marker.colorbar.xanchor
 	Xanchor IcicleMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.icicle.attributes.marker.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -1198,12 +1378,14 @@ type IcicleMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.icicle.attributes.marker.colorbar.xref
 	Xref IcicleMarkerColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.icicle.attributes.marker.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -1211,12 +1393,14 @@ type IcicleMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.icicle.attributes.marker.colorbar.yanchor
 	Yanchor IcicleMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.icicle.attributes.marker.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -1224,6 +1408,7 @@ type IcicleMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.icicle.attributes.marker.colorbar.yref
 	Yref IcicleMarkerColorbarYref `json:"yref,omitempty"`
 }
 
@@ -1234,24 +1419,28 @@ type IcicleMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the line enclosing each sector. Defaults to the `paper_bgcolor` value.
+	// .schema.traces.icicle.attributes.marker.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.marker.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
+	// .schema.traces.icicle.attributes.marker.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.icicle.attributes.marker.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -1262,30 +1451,35 @@ type IcicleMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	// .schema.traces.icicle.attributes.marker.pattern.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.icicle.attributes.marker.pattern.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	// .schema.traces.icicle.attributes.marker.pattern.fgcolor
 	Fgcolor *types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	// .schema.traces.icicle.attributes.marker.pattern.fgcolorsrc
 	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	// .schema.traces.icicle.attributes.marker.pattern.fgopacity
 	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
@@ -1293,6 +1487,7 @@ type IcicleMarkerPattern struct {
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	// .schema.traces.icicle.attributes.marker.pattern.fillmode
 	Fillmode IcicleMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
@@ -1300,36 +1495,42 @@ type IcicleMarkerPattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	// .schema.traces.icicle.attributes.marker.pattern.shape
 	Shape *types.ArrayOK[*IcicleMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
+	// .schema.traces.icicle.attributes.marker.pattern.shapesrc
 	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	// .schema.traces.icicle.attributes.marker.pattern.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.marker.pattern.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	// .schema.traces.icicle.attributes.marker.pattern.solidity
 	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	// .schema.traces.icicle.attributes.marker.pattern.soliditysrc
 	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
@@ -1340,41 +1541,48 @@ type IcicleMarker struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if colors is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.icicle.attributes.marker.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here colors) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if colors is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// .schema.traces.icicle.attributes.marker.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if colors is set to a numerical array. Value should have the same units as colors and if set, `marker.cmin` must be set as well.
+	// .schema.traces.icicle.attributes.marker.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if colors is set to a numerical array. Value should have the same units as colors. Has no effect when `marker.cauto` is `false`.
+	// .schema.traces.icicle.attributes.marker.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if colors is set to a numerical array. Value should have the same units as colors and if set, `marker.cmax` must be set as well.
+	// .schema.traces.icicle.attributes.marker.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.icicle.attributes.marker.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.colorbar
 	Colorbar *IcicleMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colors
@@ -1383,40 +1591,47 @@ type IcicleMarker struct {
 	// Sets the color of each sector of this trace. If not specified, the default trace color set is used to pick the sector colors.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.icicle.attributes.marker.colors
 	Colors *types.DataArrayType `json:"colors,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if colors is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.icicle.attributes.marker.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `colors`.
+	// .schema.traces.icicle.attributes.marker.colorssrc
 	Colorssrc types.StringType `json:"colorssrc,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.line
 	Line *IcicleMarkerLine `json:"line,omitempty"`
 
 	// Pattern
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.marker.pattern
 	Pattern *IcicleMarkerPattern `json:"pattern,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if colors is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// .schema.traces.icicle.attributes.marker.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if colors is set to a numerical array.
+	// .schema.traces.icicle.attributes.marker.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
@@ -1427,24 +1642,28 @@ type IcicleOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.outsidetextfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.outsidetextfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.outsidetextfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.icicle.attributes.outsidetextfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -1452,36 +1671,42 @@ type IcicleOutsidetextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.outsidetextfont.lineposition
 	Lineposition *types.ArrayOK[*IcicleOutsidetextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.icicle.attributes.outsidetextfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.outsidetextfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.icicle.attributes.outsidetextfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.outsidetextfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.outsidetextfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -1489,12 +1714,14 @@ type IcicleOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.outsidetextfont.style
 	Style *types.ArrayOK[*IcicleOutsidetextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.icicle.attributes.outsidetextfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -1502,12 +1729,14 @@ type IcicleOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.outsidetextfont.textcase
 	Textcase *types.ArrayOK[*IcicleOutsidetextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.icicle.attributes.outsidetextfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -1515,24 +1744,28 @@ type IcicleOutsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.outsidetextfont.variant
 	Variant *types.ArrayOK[*IcicleOutsidetextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.icicle.attributes.outsidetextfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.outsidetextfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.icicle.attributes.outsidetextfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -1543,24 +1776,28 @@ type IciclePathbarTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.pathbar.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.pathbar.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -1568,36 +1805,42 @@ type IciclePathbarTextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.pathbar.textfont.lineposition
 	Lineposition *types.ArrayOK[*IciclePathbarTextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.pathbar.textfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.pathbar.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -1605,12 +1848,14 @@ type IciclePathbarTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.pathbar.textfont.style
 	Style *types.ArrayOK[*IciclePathbarTextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -1618,12 +1863,14 @@ type IciclePathbarTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.pathbar.textfont.textcase
 	Textcase *types.ArrayOK[*IciclePathbarTextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -1631,24 +1878,28 @@ type IciclePathbarTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.pathbar.textfont.variant
 	Variant *types.ArrayOK[*IciclePathbarTextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.pathbar.textfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.icicle.attributes.pathbar.textfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -1660,6 +1911,7 @@ type IciclePathbar struct {
 	// default: >
 	// type: enumerated
 	// Determines which shape is used for edges between `barpath` labels.
+	// .schema.traces.icicle.attributes.pathbar.edgeshape
 	Edgeshape IciclePathbarEdgeshape `json:"edgeshape,omitempty"`
 
 	// Side
@@ -1667,23 +1919,27 @@ type IciclePathbar struct {
 	// default: top
 	// type: enumerated
 	// Determines on which side of the the treemap the `pathbar` should be presented.
+	// .schema.traces.icicle.attributes.pathbar.side
 	Side IciclePathbarSide `json:"side,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.icicle.attributes.pathbar.textfont
 	Textfont *IciclePathbarTextfont `json:"textfont,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of `pathbar` (in px). If not specified the `pathbar.textfont.size` is used with 3 pixles extra padding on each side.
+	// .schema.traces.icicle.attributes.pathbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines if the path bar is drawn i.e. outside the trace `domain` and with one pixel gap.
+	// .schema.traces.icicle.attributes.pathbar.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -1694,6 +1950,7 @@ type IcicleRoot struct {
 	// arrayOK: false
 	// type: color
 	// sets the color of the root node for a sunburst/treemap/icicle trace. this has no effect when a colorscale is used to set the markers.
+	// .schema.traces.icicle.attributes.root.color
 	Color types.Color `json:"color,omitempty"`
 }
 
@@ -1704,12 +1961,14 @@ type IcicleStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.icicle.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.icicle.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1720,24 +1979,28 @@ type IcicleTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.icicle.attributes.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.icicle.attributes.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.icicle.attributes.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.icicle.attributes.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -1745,36 +2008,42 @@ type IcicleTextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.icicle.attributes.textfont.lineposition
 	Lineposition *types.ArrayOK[*IcicleTextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.icicle.attributes.textfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.icicle.attributes.textfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.icicle.attributes.textfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.icicle.attributes.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.icicle.attributes.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -1782,12 +2051,14 @@ type IcicleTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.icicle.attributes.textfont.style
 	Style *types.ArrayOK[*IcicleTextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.icicle.attributes.textfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -1795,12 +2066,14 @@ type IcicleTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.icicle.attributes.textfont.textcase
 	Textcase *types.ArrayOK[*IcicleTextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.icicle.attributes.textfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -1808,24 +2081,28 @@ type IcicleTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.icicle.attributes.textfont.variant
 	Variant *types.ArrayOK[*IcicleTextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.icicle.attributes.textfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.icicle.attributes.textfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.icicle.attributes.textfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -1837,6 +2114,7 @@ type IcicleTiling struct {
 	// default:
 	// type: flaglist
 	// Determines if the positions obtained from solver are flipped on each axis.
+	// .schema.traces.icicle.attributes.tiling.flip
 	Flip IcicleTilingFlip `json:"flip,omitempty"`
 
 	// Orientation
@@ -1844,12 +2122,14 @@ type IcicleTiling struct {
 	// default: h
 	// type: enumerated
 	// When set in conjunction with `tiling.flip`, determines on which side the root nodes are drawn in the chart. If `tiling.orientation` is *v* and `tiling.flip` is **, the root nodes appear at the top. If `tiling.orientation` is *v* and `tiling.flip` is *y*, the root nodes appear at the bottom. If `tiling.orientation` is *h* and `tiling.flip` is **, the root nodes appear at the left. If `tiling.orientation` is *h* and `tiling.flip` is *x*, the root nodes appear at the right.
+	// .schema.traces.icicle.attributes.tiling.orientation
 	Orientation IcicleTilingOrientation `json:"orientation,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// type: number
 	// Sets the inner padding (in px).
+	// .schema.traces.icicle.attributes.tiling.pad
 	Pad types.NumberType `json:"pad,omitempty"`
 }
 
@@ -1858,6 +2138,7 @@ type IcicleTransform struct {
 }
 
 // IcicleBranchvalues Determines how the items in `values` are summed. When set to *total*, items in `values` are taken to be value of all its descendants. When set to *remainder*, items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
+// .schema.traces.icicle.attributes.branchvalues
 type IcicleBranchvalues string
 
 const (
@@ -1866,6 +2147,7 @@ const (
 )
 
 // IcicleHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.icicle.attributes.hoverlabel.align
 type IcicleHoverlabelAlign string
 
 const (
@@ -1875,6 +2157,7 @@ const (
 )
 
 // IcicleHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.hoverlabel.font.style
 type IcicleHoverlabelFontStyle string
 
 const (
@@ -1883,6 +2166,7 @@ const (
 )
 
 // IcicleHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.hoverlabel.font.textcase
 type IcicleHoverlabelFontTextcase string
 
 const (
@@ -1893,6 +2177,7 @@ const (
 )
 
 // IcicleHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.hoverlabel.font.variant
 type IcicleHoverlabelFontVariant string
 
 const (
@@ -1905,6 +2190,7 @@ const (
 )
 
 // IcicleInsidetextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.insidetextfont.style
 type IcicleInsidetextfontStyle string
 
 const (
@@ -1913,6 +2199,7 @@ const (
 )
 
 // IcicleInsidetextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.insidetextfont.textcase
 type IcicleInsidetextfontTextcase string
 
 const (
@@ -1923,6 +2210,7 @@ const (
 )
 
 // IcicleInsidetextfontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.insidetextfont.variant
 type IcicleInsidetextfontVariant string
 
 const (
@@ -1935,6 +2223,7 @@ const (
 )
 
 // IcicleLegendgrouptitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.legendgrouptitle.font.style
 type IcicleLegendgrouptitleFontStyle string
 
 const (
@@ -1943,6 +2232,7 @@ const (
 )
 
 // IcicleLegendgrouptitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.legendgrouptitle.font.textcase
 type IcicleLegendgrouptitleFontTextcase string
 
 const (
@@ -1953,6 +2243,7 @@ const (
 )
 
 // IcicleLegendgrouptitleFontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.legendgrouptitle.font.variant
 type IcicleLegendgrouptitleFontVariant string
 
 const (
@@ -1965,6 +2256,7 @@ const (
 )
 
 // IcicleMarkerColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.icicle.attributes.marker.colorbar.exponentformat
 type IcicleMarkerColorbarExponentformat string
 
 const (
@@ -1977,6 +2269,7 @@ const (
 )
 
 // IcicleMarkerColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.icicle.attributes.marker.colorbar.lenmode
 type IcicleMarkerColorbarLenmode string
 
 const (
@@ -1985,6 +2278,7 @@ const (
 )
 
 // IcicleMarkerColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.icicle.attributes.marker.colorbar.orientation
 type IcicleMarkerColorbarOrientation string
 
 const (
@@ -1993,6 +2287,7 @@ const (
 )
 
 // IcicleMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.icicle.attributes.marker.colorbar.showexponent
 type IcicleMarkerColorbarShowexponent string
 
 const (
@@ -2003,6 +2298,7 @@ const (
 )
 
 // IcicleMarkerColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.icicle.attributes.marker.colorbar.showtickprefix
 type IcicleMarkerColorbarShowtickprefix string
 
 const (
@@ -2013,6 +2309,7 @@ const (
 )
 
 // IcicleMarkerColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.icicle.attributes.marker.colorbar.showticksuffix
 type IcicleMarkerColorbarShowticksuffix string
 
 const (
@@ -2023,6 +2320,7 @@ const (
 )
 
 // IcicleMarkerColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.icicle.attributes.marker.colorbar.thicknessmode
 type IcicleMarkerColorbarThicknessmode string
 
 const (
@@ -2031,6 +2329,7 @@ const (
 )
 
 // IcicleMarkerColorbarTickfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.marker.colorbar.tickfont.style
 type IcicleMarkerColorbarTickfontStyle string
 
 const (
@@ -2039,6 +2338,7 @@ const (
 )
 
 // IcicleMarkerColorbarTickfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.marker.colorbar.tickfont.textcase
 type IcicleMarkerColorbarTickfontTextcase string
 
 const (
@@ -2049,6 +2349,7 @@ const (
 )
 
 // IcicleMarkerColorbarTickfontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.marker.colorbar.tickfont.variant
 type IcicleMarkerColorbarTickfontVariant string
 
 const (
@@ -2061,6 +2362,7 @@ const (
 )
 
 // IcicleMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.icicle.attributes.marker.colorbar.ticklabeloverflow
 type IcicleMarkerColorbarTicklabeloverflow string
 
 const (
@@ -2070,6 +2372,7 @@ const (
 )
 
 // IcicleMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.icicle.attributes.marker.colorbar.ticklabelposition
 type IcicleMarkerColorbarTicklabelposition string
 
 const (
@@ -2086,6 +2389,7 @@ const (
 )
 
 // IcicleMarkerColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.icicle.attributes.marker.colorbar.tickmode
 type IcicleMarkerColorbarTickmode string
 
 const (
@@ -2095,6 +2399,7 @@ const (
 )
 
 // IcicleMarkerColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.icicle.attributes.marker.colorbar.ticks
 type IcicleMarkerColorbarTicks string
 
 const (
@@ -2104,6 +2409,7 @@ const (
 )
 
 // IcicleMarkerColorbarTitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.marker.colorbar.title.font.style
 type IcicleMarkerColorbarTitleFontStyle string
 
 const (
@@ -2112,6 +2418,7 @@ const (
 )
 
 // IcicleMarkerColorbarTitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.marker.colorbar.title.font.textcase
 type IcicleMarkerColorbarTitleFontTextcase string
 
 const (
@@ -2122,6 +2429,7 @@ const (
 )
 
 // IcicleMarkerColorbarTitleFontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.marker.colorbar.title.font.variant
 type IcicleMarkerColorbarTitleFontVariant string
 
 const (
@@ -2134,6 +2442,7 @@ const (
 )
 
 // IcicleMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.icicle.attributes.marker.colorbar.title.side
 type IcicleMarkerColorbarTitleSide string
 
 const (
@@ -2143,6 +2452,7 @@ const (
 )
 
 // IcicleMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.icicle.attributes.marker.colorbar.xanchor
 type IcicleMarkerColorbarXanchor string
 
 const (
@@ -2152,6 +2462,7 @@ const (
 )
 
 // IcicleMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.icicle.attributes.marker.colorbar.xref
 type IcicleMarkerColorbarXref string
 
 const (
@@ -2160,6 +2471,7 @@ const (
 )
 
 // IcicleMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.icicle.attributes.marker.colorbar.yanchor
 type IcicleMarkerColorbarYanchor string
 
 const (
@@ -2169,6 +2481,7 @@ const (
 )
 
 // IcicleMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.icicle.attributes.marker.colorbar.yref
 type IcicleMarkerColorbarYref string
 
 const (
@@ -2177,6 +2490,7 @@ const (
 )
 
 // IcicleMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+// .schema.traces.icicle.attributes.marker.pattern.fillmode
 type IcicleMarkerPatternFillmode string
 
 const (
@@ -2185,6 +2499,7 @@ const (
 )
 
 // IcicleMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+// .schema.traces.icicle.attributes.marker.pattern.shape
 type IcicleMarkerPatternShape string
 
 const (
@@ -2199,6 +2514,7 @@ const (
 )
 
 // IcicleOutsidetextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.outsidetextfont.style
 type IcicleOutsidetextfontStyle string
 
 const (
@@ -2207,6 +2523,7 @@ const (
 )
 
 // IcicleOutsidetextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.outsidetextfont.textcase
 type IcicleOutsidetextfontTextcase string
 
 const (
@@ -2217,6 +2534,7 @@ const (
 )
 
 // IcicleOutsidetextfontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.outsidetextfont.variant
 type IcicleOutsidetextfontVariant string
 
 const (
@@ -2229,6 +2547,7 @@ const (
 )
 
 // IciclePathbarEdgeshape Determines which shape is used for edges between `barpath` labels.
+// .schema.traces.icicle.attributes.pathbar.edgeshape
 type IciclePathbarEdgeshape string
 
 const (
@@ -2240,6 +2559,7 @@ const (
 )
 
 // IciclePathbarSide Determines on which side of the the treemap the `pathbar` should be presented.
+// .schema.traces.icicle.attributes.pathbar.side
 type IciclePathbarSide string
 
 const (
@@ -2248,6 +2568,7 @@ const (
 )
 
 // IciclePathbarTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.pathbar.textfont.style
 type IciclePathbarTextfontStyle string
 
 const (
@@ -2256,6 +2577,7 @@ const (
 )
 
 // IciclePathbarTextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.pathbar.textfont.textcase
 type IciclePathbarTextfontTextcase string
 
 const (
@@ -2266,6 +2588,7 @@ const (
 )
 
 // IciclePathbarTextfontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.pathbar.textfont.variant
 type IciclePathbarTextfontVariant string
 
 const (
@@ -2278,6 +2601,7 @@ const (
 )
 
 // IcicleTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.icicle.attributes.textfont.style
 type IcicleTextfontStyle string
 
 const (
@@ -2286,6 +2610,7 @@ const (
 )
 
 // IcicleTextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.icicle.attributes.textfont.textcase
 type IcicleTextfontTextcase string
 
 const (
@@ -2296,6 +2621,7 @@ const (
 )
 
 // IcicleTextfontVariant Sets the variant of the font.
+// .schema.traces.icicle.attributes.textfont.variant
 type IcicleTextfontVariant string
 
 const (
@@ -2308,6 +2634,7 @@ const (
 )
 
 // IcicleTextposition Sets the positions of the `text` elements.
+// .schema.traces.icicle.attributes.textposition
 type IcicleTextposition string
 
 const (
@@ -2323,6 +2650,7 @@ const (
 )
 
 // IcicleTilingOrientation When set in conjunction with `tiling.flip`, determines on which side the root nodes are drawn in the chart. If `tiling.orientation` is *v* and `tiling.flip` is **, the root nodes appear at the top. If `tiling.orientation` is *v* and `tiling.flip` is *y*, the root nodes appear at the bottom. If `tiling.orientation` is *h* and `tiling.flip` is **, the root nodes appear at the left. If `tiling.orientation` is *h* and `tiling.flip` is *x*, the root nodes appear at the right.
+// .schema.traces.icicle.attributes.tiling.orientation
 type IcicleTilingOrientation string
 
 const (
@@ -2331,6 +2659,7 @@ const (
 )
 
 // IcicleVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.icicle.attributes.visible
 type IcicleVisible interface{}
 
 var (
@@ -2340,6 +2669,7 @@ var (
 )
 
 // IcicleCount Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
+// .schema.traces.icicle.attributes.count
 type IcicleCount string
 
 const (
@@ -2352,6 +2682,7 @@ const (
 )
 
 // IcicleHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.icicle.attributes.hoverinfo
 type IcicleHoverinfo string
 
 const (
@@ -2372,6 +2703,7 @@ const (
 )
 
 // IcicleHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.hoverlabel.font.lineposition
 type IcicleHoverlabelFontLineposition string
 
 const (
@@ -2385,6 +2717,7 @@ const (
 )
 
 // IcicleInsidetextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.insidetextfont.lineposition
 type IcicleInsidetextfontLineposition string
 
 const (
@@ -2398,6 +2731,7 @@ const (
 )
 
 // IcicleLegendgrouptitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.legendgrouptitle.font.lineposition
 type IcicleLegendgrouptitleFontLineposition string
 
 const (
@@ -2411,6 +2745,7 @@ const (
 )
 
 // IcicleMarkerColorbarTickfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.marker.colorbar.tickfont.lineposition
 type IcicleMarkerColorbarTickfontLineposition string
 
 const (
@@ -2424,6 +2759,7 @@ const (
 )
 
 // IcicleMarkerColorbarTitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.marker.colorbar.title.font.lineposition
 type IcicleMarkerColorbarTitleFontLineposition string
 
 const (
@@ -2437,6 +2773,7 @@ const (
 )
 
 // IcicleOutsidetextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.outsidetextfont.lineposition
 type IcicleOutsidetextfontLineposition string
 
 const (
@@ -2450,6 +2787,7 @@ const (
 )
 
 // IciclePathbarTextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.pathbar.textfont.lineposition
 type IciclePathbarTextfontLineposition string
 
 const (
@@ -2463,6 +2801,7 @@ const (
 )
 
 // IcicleTextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.icicle.attributes.textfont.lineposition
 type IcicleTextfontLineposition string
 
 const (
@@ -2476,6 +2815,7 @@ const (
 )
 
 // IcicleTextinfo Determines which trace information appear on the graph.
+// .schema.traces.icicle.attributes.textinfo
 type IcicleTextinfo string
 
 const (
@@ -2493,6 +2833,7 @@ const (
 )
 
 // IcicleTilingFlip Determines if the positions obtained from solver are flipped on each axis.
+// .schema.traces.icicle.attributes.tiling.flip
 type IcicleTilingFlip string
 
 const (

@@ -32,12 +32,14 @@ type Funnelarea struct {
 	// arrayOK: false
 	// type: number
 	// Sets the ratio between height and width
+	// .schema.traces.funnelarea.attributes.aspectratio
 	Aspectratio types.NumberType `json:"aspectratio,omitempty"`
 
 	// Baseratio
 	// arrayOK: false
 	// type: number
 	// Sets the ratio between bottom length and maximum top length.
+	// .schema.traces.funnelarea.attributes.baseratio
 	Baseratio types.NumberType `json:"baseratio,omitempty"`
 
 	// Customdata
@@ -46,23 +48,27 @@ type Funnelarea struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.funnelarea.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Dlabel
 	// arrayOK: false
 	// type: number
 	// Sets the label step. See `label0` for more info.
+	// .schema.traces.funnelarea.attributes.dlabel
 	Dlabel types.NumberType `json:"dlabel,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.domain
 	Domain *FunnelareaDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
@@ -70,41 +76,48 @@ type Funnelarea struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.funnelarea.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*FunnelareaHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.funnelarea.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.hoverlabel
 	Hoverlabel *FunnelareaHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.funnelarea.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.funnelarea.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.funnelarea.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.funnelarea.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -113,23 +126,27 @@ type Funnelarea struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.funnelarea.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Insidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.insidetextfont
 	Insidetextfont *FunnelareaInsidetextfont `json:"insidetextfont,omitempty"`
 
 	// Label0
 	// arrayOK: false
 	// type: number
 	// Alternate to `labels`. Builds a numeric set of labels. Use with `dlabel` where `label0` is the starting label and `dlabel` the step.
+	// .schema.traces.funnelarea.attributes.label0
 	Label0 types.NumberType `json:"label0,omitempty"`
 
 	// Labels
@@ -138,87 +155,102 @@ type Funnelarea struct {
 	// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.labels
 	Labels *types.DataArrayType `json:"labels,omitempty"`
 
 	// Labelssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `labels`.
+	// .schema.traces.funnelarea.attributes.labelssrc
 	Labelssrc types.StringType `json:"labelssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.funnelarea.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.funnelarea.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.legendgrouptitle
 	Legendgrouptitle *FunnelareaLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.funnelarea.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.funnelarea.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.marker
 	Marker *FunnelareaMarker `json:"marker,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.funnelarea.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.funnelarea.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.funnelarea.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.funnelarea.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Scalegroup
 	// arrayOK: false
 	// type: string
 	// If there are multiple funnelareas that should be sized according to their totals, link them by providing a non-empty group id here shared by every trace in the same group.
+	// .schema.traces.funnelarea.attributes.scalegroup
 	Scalegroup types.StringType `json:"scalegroup,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.funnelarea.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.stream
 	Stream *FunnelareaStream `json:"stream,omitempty"`
 
 	// Text
@@ -227,11 +259,13 @@ type Funnelarea struct {
 	// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.text
 	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.textfont
 	Textfont *FunnelareaTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
@@ -239,6 +273,7 @@ type Funnelarea struct {
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
+	// .schema.traces.funnelarea.attributes.textinfo
 	Textinfo FunnelareaTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
@@ -246,52 +281,61 @@ type Funnelarea struct {
 	// default: inside
 	// type: enumerated
 	// Specifies the location of the `textinfo`.
+	// .schema.traces.funnelarea.attributes.textposition
 	Textposition *types.ArrayOK[*FunnelareaTextposition] `json:"textposition,omitempty"`
 
 	// Textpositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textposition`.
+	// .schema.traces.funnelarea.attributes.textpositionsrc
 	Textpositionsrc types.StringType `json:"textpositionsrc,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.funnelarea.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `label`, `color`, `value`, `text` and `percent`.
+	// .schema.traces.funnelarea.attributes.texttemplate
 	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
+	// .schema.traces.funnelarea.attributes.texttemplatesrc
 	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.title
 	Title *FunnelareaTitle `json:"title,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: FunnelareaTransform
+	// .schema.traces.funnelarea.attributes.transforms
 	Transforms []FunnelareaTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.funnelarea.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.funnelarea.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Values
@@ -300,12 +344,14 @@ type Funnelarea struct {
 	// Sets the values of the sectors. If omitted, we count occurrences of each label.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.funnelarea.attributes.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 
 	// Visible
@@ -313,6 +359,7 @@ type Funnelarea struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.funnelarea.attributes.visible
 	Visible FunnelareaVisible `json:"visible,omitempty"`
 }
 
@@ -323,24 +370,28 @@ type FunnelareaDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this funnelarea trace .
+	// .schema.traces.funnelarea.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this funnelarea trace .
+	// .schema.traces.funnelarea.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this funnelarea trace (in plot fraction).
+	// .schema.traces.funnelarea.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this funnelarea trace (in plot fraction).
+	// .schema.traces.funnelarea.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -351,24 +402,28 @@ type FunnelareaHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -376,36 +431,42 @@ type FunnelareaHoverlabelFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.lineposition
 	Lineposition *types.ArrayOK[*FunnelareaHoverlabelFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -413,12 +474,14 @@ type FunnelareaHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.style
 	Style *types.ArrayOK[*FunnelareaHoverlabelFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -426,12 +489,14 @@ type FunnelareaHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.textcase
 	Textcase *types.ArrayOK[*FunnelareaHoverlabelFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -439,24 +504,28 @@ type FunnelareaHoverlabelFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.variant
 	Variant *types.ArrayOK[*FunnelareaHoverlabelFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -468,53 +537,62 @@ type FunnelareaHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.funnelarea.attributes.hoverlabel.align
 	Align *types.ArrayOK[*FunnelareaHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.funnelarea.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.funnelarea.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.hoverlabel.font
 	Font *FunnelareaHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.funnelarea.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.funnelarea.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -525,24 +603,28 @@ type FunnelareaInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.funnelarea.attributes.insidetextfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.funnelarea.attributes.insidetextfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -550,36 +632,42 @@ type FunnelareaInsidetextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.funnelarea.attributes.insidetextfont.lineposition
 	Lineposition *types.ArrayOK[*FunnelareaInsidetextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.funnelarea.attributes.insidetextfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.funnelarea.attributes.insidetextfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -587,12 +675,14 @@ type FunnelareaInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.funnelarea.attributes.insidetextfont.style
 	Style *types.ArrayOK[*FunnelareaInsidetextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -600,12 +690,14 @@ type FunnelareaInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.funnelarea.attributes.insidetextfont.textcase
 	Textcase *types.ArrayOK[*FunnelareaInsidetextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -613,24 +705,28 @@ type FunnelareaInsidetextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.funnelarea.attributes.insidetextfont.variant
 	Variant *types.ArrayOK[*FunnelareaInsidetextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.funnelarea.attributes.insidetextfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.funnelarea.attributes.insidetextfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -641,12 +737,14 @@ type FunnelareaLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Lineposition
@@ -654,18 +752,21 @@ type FunnelareaLegendgrouptitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.lineposition
 	Lineposition FunnelareaLegendgrouptitleFontLineposition `json:"lineposition,omitempty"`
 
 	// Shadow
 	// arrayOK: false
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.shadow
 	Shadow types.StringType `json:"shadow,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Style
@@ -673,6 +774,7 @@ type FunnelareaLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.style
 	Style FunnelareaLegendgrouptitleFontStyle `json:"style,omitempty"`
 
 	// Textcase
@@ -680,6 +782,7 @@ type FunnelareaLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.textcase
 	Textcase FunnelareaLegendgrouptitleFontTextcase `json:"textcase,omitempty"`
 
 	// Variant
@@ -687,12 +790,14 @@ type FunnelareaLegendgrouptitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.variant
 	Variant FunnelareaLegendgrouptitleFontVariant `json:"variant,omitempty"`
 
 	// Weight
 	// arrayOK: false
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font.weight
 	Weight types.IntegerType `json:"weight,omitempty"`
 }
 
@@ -702,12 +807,14 @@ type FunnelareaLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.font
 	Font *FunnelareaLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.funnelarea.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -718,24 +825,28 @@ type FunnelareaMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the line enclosing each sector. Defaults to the `paper_bgcolor` value.
+	// .schema.traces.funnelarea.attributes.marker.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.funnelarea.attributes.marker.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
+	// .schema.traces.funnelarea.attributes.marker.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.funnelarea.attributes.marker.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -746,30 +857,35 @@ type FunnelareaMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	// .schema.traces.funnelarea.attributes.marker.pattern.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.fgcolor
 	Fgcolor *types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.fgcolorsrc
 	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	// .schema.traces.funnelarea.attributes.marker.pattern.fgopacity
 	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
@@ -777,6 +893,7 @@ type FunnelareaMarkerPattern struct {
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.fillmode
 	Fillmode FunnelareaMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
@@ -784,36 +901,42 @@ type FunnelareaMarkerPattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	// .schema.traces.funnelarea.attributes.marker.pattern.shape
 	Shape *types.ArrayOK[*FunnelareaMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.shapesrc
 	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	// .schema.traces.funnelarea.attributes.marker.pattern.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	// .schema.traces.funnelarea.attributes.marker.pattern.solidity
 	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	// .schema.traces.funnelarea.attributes.marker.pattern.soliditysrc
 	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
@@ -826,22 +949,26 @@ type FunnelareaMarker struct {
 	// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.attributes.marker.colors
 	Colors *types.DataArrayType `json:"colors,omitempty"`
 
 	// Colorssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `colors`.
+	// .schema.traces.funnelarea.attributes.marker.colorssrc
 	Colorssrc types.StringType `json:"colorssrc,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.marker.line
 	Line *FunnelareaMarkerLine `json:"line,omitempty"`
 
 	// Pattern
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.marker.pattern
 	Pattern *FunnelareaMarkerPattern `json:"pattern,omitempty"`
 }
 
@@ -852,12 +979,14 @@ type FunnelareaStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.funnelarea.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.funnelarea.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -868,24 +997,28 @@ type FunnelareaTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.funnelarea.attributes.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.funnelarea.attributes.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.funnelarea.attributes.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.funnelarea.attributes.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -893,36 +1026,42 @@ type FunnelareaTextfont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.funnelarea.attributes.textfont.lineposition
 	Lineposition *types.ArrayOK[*FunnelareaTextfontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.funnelarea.attributes.textfont.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.funnelarea.attributes.textfont.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.funnelarea.attributes.textfont.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.funnelarea.attributes.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.funnelarea.attributes.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -930,12 +1069,14 @@ type FunnelareaTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.funnelarea.attributes.textfont.style
 	Style *types.ArrayOK[*FunnelareaTextfontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.funnelarea.attributes.textfont.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -943,12 +1084,14 @@ type FunnelareaTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.funnelarea.attributes.textfont.textcase
 	Textcase *types.ArrayOK[*FunnelareaTextfontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.funnelarea.attributes.textfont.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -956,24 +1099,28 @@ type FunnelareaTextfont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.funnelarea.attributes.textfont.variant
 	Variant *types.ArrayOK[*FunnelareaTextfontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.funnelarea.attributes.textfont.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.funnelarea.attributes.textfont.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.funnelarea.attributes.textfont.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -984,24 +1131,28 @@ type FunnelareaTitleFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.funnelarea.attributes.title.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.funnelarea.attributes.title.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.funnelarea.attributes.title.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.funnelarea.attributes.title.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Lineposition
@@ -1009,36 +1160,42 @@ type FunnelareaTitleFont struct {
 	// default: none
 	// type: flaglist
 	// Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+	// .schema.traces.funnelarea.attributes.title.font.lineposition
 	Lineposition *types.ArrayOK[*FunnelareaTitleFontLineposition] `json:"lineposition,omitempty"`
 
 	// Linepositionsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lineposition`.
+	// .schema.traces.funnelarea.attributes.title.font.linepositionsrc
 	Linepositionsrc types.StringType `json:"linepositionsrc,omitempty"`
 
 	// Shadow
 	// arrayOK: true
 	// type: string
 	// Sets the shape and color of the shadow behind text. *auto* places minimal shadow and applies contrast text font color. See https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow for additional options.
+	// .schema.traces.funnelarea.attributes.title.font.shadow
 	Shadow *types.ArrayOK[*types.StringType] `json:"shadow,omitempty"`
 
 	// Shadowsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shadow`.
+	// .schema.traces.funnelarea.attributes.title.font.shadowsrc
 	Shadowsrc types.StringType `json:"shadowsrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.funnelarea.attributes.title.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.funnelarea.attributes.title.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Style
@@ -1046,12 +1203,14 @@ type FunnelareaTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets whether a font should be styled with a normal or italic face from its family.
+	// .schema.traces.funnelarea.attributes.title.font.style
 	Style *types.ArrayOK[*FunnelareaTitleFontStyle] `json:"style,omitempty"`
 
 	// Stylesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `style`.
+	// .schema.traces.funnelarea.attributes.title.font.stylesrc
 	Stylesrc types.StringType `json:"stylesrc,omitempty"`
 
 	// Textcase
@@ -1059,12 +1218,14 @@ type FunnelareaTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+	// .schema.traces.funnelarea.attributes.title.font.textcase
 	Textcase *types.ArrayOK[*FunnelareaTitleFontTextcase] `json:"textcase,omitempty"`
 
 	// Textcasesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `textcase`.
+	// .schema.traces.funnelarea.attributes.title.font.textcasesrc
 	Textcasesrc types.StringType `json:"textcasesrc,omitempty"`
 
 	// Variant
@@ -1072,24 +1233,28 @@ type FunnelareaTitleFont struct {
 	// default: normal
 	// type: enumerated
 	// Sets the variant of the font.
+	// .schema.traces.funnelarea.attributes.title.font.variant
 	Variant *types.ArrayOK[*FunnelareaTitleFontVariant] `json:"variant,omitempty"`
 
 	// Variantsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `variant`.
+	// .schema.traces.funnelarea.attributes.title.font.variantsrc
 	Variantsrc types.StringType `json:"variantsrc,omitempty"`
 
 	// Weight
 	// arrayOK: true
 	// type: integer
 	// Sets the weight (or boldness) of the font.
+	// .schema.traces.funnelarea.attributes.title.font.weight
 	Weight *types.ArrayOK[*types.IntegerType] `json:"weight,omitempty"`
 
 	// Weightsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `weight`.
+	// .schema.traces.funnelarea.attributes.title.font.weightsrc
 	Weightsrc types.StringType `json:"weightsrc,omitempty"`
 }
 
@@ -1099,6 +1264,7 @@ type FunnelareaTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.funnelarea.attributes.title.font
 	Font *FunnelareaTitleFont `json:"font,omitempty"`
 
 	// Position
@@ -1106,12 +1272,14 @@ type FunnelareaTitle struct {
 	// default: top center
 	// type: enumerated
 	// Specifies the location of the `title`. Note that the title's position used to be set by the now deprecated `titleposition` attribute.
+	// .schema.traces.funnelarea.attributes.title.position
 	Position FunnelareaTitlePosition `json:"position,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the chart. If it is empty, no title is displayed. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.funnelarea.attributes.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1120,6 +1288,7 @@ type FunnelareaTransform struct {
 }
 
 // FunnelareaHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.funnelarea.attributes.hoverlabel.align
 type FunnelareaHoverlabelAlign string
 
 const (
@@ -1129,6 +1298,7 @@ const (
 )
 
 // FunnelareaHoverlabelFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.funnelarea.attributes.hoverlabel.font.style
 type FunnelareaHoverlabelFontStyle string
 
 const (
@@ -1137,6 +1307,7 @@ const (
 )
 
 // FunnelareaHoverlabelFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.funnelarea.attributes.hoverlabel.font.textcase
 type FunnelareaHoverlabelFontTextcase string
 
 const (
@@ -1147,6 +1318,7 @@ const (
 )
 
 // FunnelareaHoverlabelFontVariant Sets the variant of the font.
+// .schema.traces.funnelarea.attributes.hoverlabel.font.variant
 type FunnelareaHoverlabelFontVariant string
 
 const (
@@ -1159,6 +1331,7 @@ const (
 )
 
 // FunnelareaInsidetextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.funnelarea.attributes.insidetextfont.style
 type FunnelareaInsidetextfontStyle string
 
 const (
@@ -1167,6 +1340,7 @@ const (
 )
 
 // FunnelareaInsidetextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.funnelarea.attributes.insidetextfont.textcase
 type FunnelareaInsidetextfontTextcase string
 
 const (
@@ -1177,6 +1351,7 @@ const (
 )
 
 // FunnelareaInsidetextfontVariant Sets the variant of the font.
+// .schema.traces.funnelarea.attributes.insidetextfont.variant
 type FunnelareaInsidetextfontVariant string
 
 const (
@@ -1189,6 +1364,7 @@ const (
 )
 
 // FunnelareaLegendgrouptitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.funnelarea.attributes.legendgrouptitle.font.style
 type FunnelareaLegendgrouptitleFontStyle string
 
 const (
@@ -1197,6 +1373,7 @@ const (
 )
 
 // FunnelareaLegendgrouptitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.funnelarea.attributes.legendgrouptitle.font.textcase
 type FunnelareaLegendgrouptitleFontTextcase string
 
 const (
@@ -1207,6 +1384,7 @@ const (
 )
 
 // FunnelareaLegendgrouptitleFontVariant Sets the variant of the font.
+// .schema.traces.funnelarea.attributes.legendgrouptitle.font.variant
 type FunnelareaLegendgrouptitleFontVariant string
 
 const (
@@ -1219,6 +1397,7 @@ const (
 )
 
 // FunnelareaMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+// .schema.traces.funnelarea.attributes.marker.pattern.fillmode
 type FunnelareaMarkerPatternFillmode string
 
 const (
@@ -1227,6 +1406,7 @@ const (
 )
 
 // FunnelareaMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+// .schema.traces.funnelarea.attributes.marker.pattern.shape
 type FunnelareaMarkerPatternShape string
 
 const (
@@ -1241,6 +1421,7 @@ const (
 )
 
 // FunnelareaTextfontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.funnelarea.attributes.textfont.style
 type FunnelareaTextfontStyle string
 
 const (
@@ -1249,6 +1430,7 @@ const (
 )
 
 // FunnelareaTextfontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.funnelarea.attributes.textfont.textcase
 type FunnelareaTextfontTextcase string
 
 const (
@@ -1259,6 +1441,7 @@ const (
 )
 
 // FunnelareaTextfontVariant Sets the variant of the font.
+// .schema.traces.funnelarea.attributes.textfont.variant
 type FunnelareaTextfontVariant string
 
 const (
@@ -1271,6 +1454,7 @@ const (
 )
 
 // FunnelareaTextposition Specifies the location of the `textinfo`.
+// .schema.traces.funnelarea.attributes.textposition
 type FunnelareaTextposition string
 
 const (
@@ -1279,6 +1463,7 @@ const (
 )
 
 // FunnelareaTitleFontStyle Sets whether a font should be styled with a normal or italic face from its family.
+// .schema.traces.funnelarea.attributes.title.font.style
 type FunnelareaTitleFontStyle string
 
 const (
@@ -1287,6 +1472,7 @@ const (
 )
 
 // FunnelareaTitleFontTextcase Sets capitalization of text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+// .schema.traces.funnelarea.attributes.title.font.textcase
 type FunnelareaTitleFontTextcase string
 
 const (
@@ -1297,6 +1483,7 @@ const (
 )
 
 // FunnelareaTitleFontVariant Sets the variant of the font.
+// .schema.traces.funnelarea.attributes.title.font.variant
 type FunnelareaTitleFontVariant string
 
 const (
@@ -1309,6 +1496,7 @@ const (
 )
 
 // FunnelareaTitlePosition Specifies the location of the `title`. Note that the title's position used to be set by the now deprecated `titleposition` attribute.
+// .schema.traces.funnelarea.attributes.title.position
 type FunnelareaTitlePosition string
 
 const (
@@ -1318,6 +1506,7 @@ const (
 )
 
 // FunnelareaVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.funnelarea.attributes.visible
 type FunnelareaVisible interface{}
 
 var (
@@ -1327,6 +1516,7 @@ var (
 )
 
 // FunnelareaHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.funnelarea.attributes.hoverinfo
 type FunnelareaHoverinfo string
 
 const (
@@ -1344,6 +1534,7 @@ const (
 )
 
 // FunnelareaHoverlabelFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.funnelarea.attributes.hoverlabel.font.lineposition
 type FunnelareaHoverlabelFontLineposition string
 
 const (
@@ -1357,6 +1548,7 @@ const (
 )
 
 // FunnelareaInsidetextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.funnelarea.attributes.insidetextfont.lineposition
 type FunnelareaInsidetextfontLineposition string
 
 const (
@@ -1370,6 +1562,7 @@ const (
 )
 
 // FunnelareaLegendgrouptitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.funnelarea.attributes.legendgrouptitle.font.lineposition
 type FunnelareaLegendgrouptitleFontLineposition string
 
 const (
@@ -1383,6 +1576,7 @@ const (
 )
 
 // FunnelareaTextfontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.funnelarea.attributes.textfont.lineposition
 type FunnelareaTextfontLineposition string
 
 const (
@@ -1396,6 +1590,7 @@ const (
 )
 
 // FunnelareaTextinfo Determines which trace information appear on the graph.
+// .schema.traces.funnelarea.attributes.textinfo
 type FunnelareaTextinfo string
 
 const (
@@ -1410,6 +1605,7 @@ const (
 )
 
 // FunnelareaTitleFontLineposition Sets the kind of decoration line(s) with text, such as an *under*, *over* or *through* as well as combinations e.g. *under+over*, etc.
+// .schema.traces.funnelarea.attributes.title.font.lineposition
 type FunnelareaTitleFontLineposition string
 
 const (

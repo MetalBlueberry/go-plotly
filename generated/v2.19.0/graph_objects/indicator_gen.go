@@ -33,6 +33,7 @@ type Indicator struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered
+	// .schema.traces.indicator.attributes.align
 	Align IndicatorAlign `json:"align,omitempty"`
 
 	// Customdata
@@ -41,27 +42,32 @@ type Indicator struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.indicator.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.indicator.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Delta
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.delta
 	Delta *IndicatorDelta `json:"delta,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.domain
 	Domain *IndicatorDomain `json:"domain,omitempty"`
 
 	// Gauge
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge
 	Gauge *IndicatorGauge `json:"gauge,omitempty"`
 
 	// Ids
@@ -70,41 +76,48 @@ type Indicator struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.indicator.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.indicator.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.legendgrouptitle
 	Legendgrouptitle *IndicatorLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+	// .schema.traces.indicator.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.indicator.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.indicator.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.indicator.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Mode
@@ -112,50 +125,59 @@ type Indicator struct {
 	// default: number
 	// type: flaglist
 	// Determines how the value is displayed on the graph. `number` displays the value numerically in text. `delta` displays the difference to a reference value in text. Finally, `gauge` displays the value graphically on an axis.
+	// .schema.traces.indicator.attributes.mode
 	Mode IndicatorMode `json:"mode,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// .schema.traces.indicator.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Number
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.number
 	Number *IndicatorNumber `json:"number,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.stream
 	Stream *IndicatorStream `json:"stream,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.title
 	Title *IndicatorTitle `json:"title,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: IndicatorTransform
+	// .schema.traces.indicator.attributes.transforms
 	Transforms []IndicatorTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.indicator.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.indicator.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets the number to be displayed.
+	// .schema.traces.indicator.attributes.value
 	Value types.NumberType `json:"value,omitempty"`
 
 	// Visible
@@ -163,6 +185,7 @@ type Indicator struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.indicator.attributes.visible
 	Visible IndicatorVisible `json:"visible,omitempty"`
 }
 
@@ -173,12 +196,14 @@ type IndicatorDeltaDecreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
+	// .schema.traces.indicator.attributes.delta.decreasing.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
+	// .schema.traces.indicator.attributes.delta.decreasing.symbol
 	Symbol types.StringType `json:"symbol,omitempty"`
 }
 
@@ -189,18 +214,21 @@ type IndicatorDeltaFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.indicator.attributes.delta.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.indicator.attributes.delta.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.indicator.attributes.delta.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -211,12 +239,14 @@ type IndicatorDeltaIncreasing struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color for increasing value.
+	// .schema.traces.indicator.attributes.delta.increasing.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// type: string
 	// Sets the symbol to display for increasing value
+	// .schema.traces.indicator.attributes.delta.increasing.symbol
 	Symbol types.StringType `json:"symbol,omitempty"`
 }
 
@@ -226,16 +256,19 @@ type IndicatorDelta struct {
 	// Decreasing
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.delta.decreasing
 	Decreasing *IndicatorDeltaDecreasing `json:"decreasing,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.delta.font
 	Font *IndicatorDeltaFont `json:"font,omitempty"`
 
 	// Increasing
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.delta.increasing
 	Increasing *IndicatorDeltaIncreasing `json:"increasing,omitempty"`
 
 	// Position
@@ -243,36 +276,42 @@ type IndicatorDelta struct {
 	// default: bottom
 	// type: enumerated
 	// Sets the position of delta with respect to the number.
+	// .schema.traces.indicator.attributes.delta.position
 	Position IndicatorDeltaPosition `json:"position,omitempty"`
 
 	// Prefix
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the delta.
+	// .schema.traces.indicator.attributes.delta.prefix
 	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Reference
 	// arrayOK: false
 	// type: number
 	// Sets the reference value to compute the delta. By default, it is set to the current value.
+	// .schema.traces.indicator.attributes.delta.reference
 	Reference types.NumberType `json:"reference,omitempty"`
 
 	// Relative
 	// arrayOK: false
 	// type: boolean
 	// Show relative change
+	// .schema.traces.indicator.attributes.delta.relative
 	Relative types.BoolType `json:"relative,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the delta.
+	// .schema.traces.indicator.attributes.delta.suffix
 	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
+	// .schema.traces.indicator.attributes.delta.valueformat
 	Valueformat types.StringType `json:"valueformat,omitempty"`
 }
 
@@ -283,24 +322,28 @@ type IndicatorDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this indicator trace .
+	// .schema.traces.indicator.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this indicator trace .
+	// .schema.traces.indicator.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this indicator trace (in plot fraction).
+	// .schema.traces.indicator.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this indicator trace (in plot fraction).
+	// .schema.traces.indicator.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -311,18 +354,21 @@ type IndicatorGaugeAxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.indicator.attributes.gauge.axis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.indicator.attributes.gauge.axis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.indicator.attributes.gauge.axis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -333,30 +379,35 @@ type IndicatorGaugeAxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -367,6 +418,7 @@ type IndicatorGaugeAxis struct {
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.indicator.attributes.gauge.axis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -374,36 +426,42 @@ type IndicatorGaugeAxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.indicator.attributes.gauge.axis.exponentformat
 	Exponentformat IndicatorGaugeAxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.indicator.attributes.gauge.axis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.indicator.attributes.gauge.axis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.indicator.attributes.gauge.axis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis.
+	// .schema.traces.indicator.attributes.gauge.axis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.indicator.attributes.gauge.axis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -411,12 +469,14 @@ type IndicatorGaugeAxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.indicator.attributes.gauge.axis.showexponent
 	Showexponent IndicatorGaugeAxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.indicator.attributes.gauge.axis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -424,6 +484,7 @@ type IndicatorGaugeAxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.indicator.attributes.gauge.axis.showtickprefix
 	Showtickprefix IndicatorGaugeAxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -431,52 +492,61 @@ type IndicatorGaugeAxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.indicator.attributes.gauge.axis.showticksuffix
 	Showticksuffix IndicatorGaugeAxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.indicator.attributes.gauge.axis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.indicator.attributes.gauge.axis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.indicator.attributes.gauge.axis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.axis.tickfont
 	Tickfont *IndicatorGaugeAxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.indicator.attributes.gauge.axis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: IndicatorGaugeAxisTickformatstop
+	// .schema.traces.indicator.attributes.gauge.axis.tickformatstops
 	Tickformatstops []IndicatorGaugeAxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.indicator.attributes.gauge.axis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.indicator.attributes.gauge.axis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -484,12 +554,14 @@ type IndicatorGaugeAxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.indicator.attributes.gauge.axis.tickmode
 	Tickmode IndicatorGaugeAxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.indicator.attributes.gauge.axis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -497,12 +569,14 @@ type IndicatorGaugeAxis struct {
 	// default: outside
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.indicator.attributes.gauge.axis.ticks
 	Ticks IndicatorGaugeAxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.indicator.attributes.gauge.axis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -511,12 +585,14 @@ type IndicatorGaugeAxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.indicator.attributes.gauge.axis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.indicator.attributes.gauge.axis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -525,24 +601,28 @@ type IndicatorGaugeAxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.indicator.attributes.gauge.axis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.indicator.attributes.gauge.axis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.indicator.attributes.gauge.axis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.traces.indicator.attributes.gauge.axis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -553,12 +633,14 @@ type IndicatorGaugeBarLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the line enclosing each sector.
+	// .schema.traces.indicator.attributes.gauge.bar.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
+	// .schema.traces.indicator.attributes.gauge.bar.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -569,17 +651,20 @@ type IndicatorGaugeBar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the arc.
+	// .schema.traces.indicator.attributes.gauge.bar.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.bar.line
 	Line *IndicatorGaugeBarLine `json:"line,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
+	// .schema.traces.indicator.attributes.gauge.bar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 }
 
@@ -590,12 +675,14 @@ type StepLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the line enclosing each sector.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -606,35 +693,41 @@ type IndicatorGaugeStep struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the arc.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.line
 	Line *StepLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
+	// .schema.traces.indicator.attributes.gauge.steps.items.step.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 }
 
@@ -645,12 +738,14 @@ type IndicatorGaugeThresholdLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the threshold line.
+	// .schema.traces.indicator.attributes.gauge.threshold.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the threshold line.
+	// .schema.traces.indicator.attributes.gauge.threshold.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -660,18 +755,21 @@ type IndicatorGaugeThreshold struct {
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.threshold.line
 	Line *IndicatorGaugeThresholdLine `json:"line,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the threshold line as a fraction of the thickness of the gauge.
+	// .schema.traces.indicator.attributes.gauge.threshold.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: number
 	// Sets a treshold value drawn as a line.
+	// .schema.traces.indicator.attributes.gauge.threshold.value
 	Value types.NumberType `json:"value,omitempty"`
 }
 
@@ -681,29 +779,34 @@ type IndicatorGauge struct {
 	// Axis
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.axis
 	Axis *IndicatorGaugeAxis `json:"axis,omitempty"`
 
 	// Bar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.bar
 	Bar *IndicatorGaugeBar `json:"bar,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the gauge background color.
+	// .schema.traces.indicator.attributes.gauge.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the gauge.
+	// .schema.traces.indicator.attributes.gauge.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the gauge.
+	// .schema.traces.indicator.attributes.gauge.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Shape
@@ -711,16 +814,19 @@ type IndicatorGauge struct {
 	// default: angular
 	// type: enumerated
 	// Set the shape of the gauge
+	// .schema.traces.indicator.attributes.gauge.shape
 	Shape IndicatorGaugeShape `json:"shape,omitempty"`
 
 	// Steps
 	// role: Object
 	// items: IndicatorGaugeStep
+	// .schema.traces.indicator.attributes.gauge.steps
 	Steps []IndicatorGaugeStep `json:"steps,omitempty"`
 
 	// Threshold
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.gauge.threshold
 	Threshold *IndicatorGaugeThreshold `json:"threshold,omitempty"`
 }
 
@@ -731,18 +837,21 @@ type IndicatorLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.indicator.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.indicator.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.indicator.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -752,12 +861,14 @@ type IndicatorLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.legendgrouptitle.font
 	Font *IndicatorLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.indicator.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -768,18 +879,21 @@ type IndicatorNumberFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.indicator.attributes.number.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.indicator.attributes.number.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.indicator.attributes.number.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -789,24 +903,28 @@ type IndicatorNumber struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.number.font
 	Font *IndicatorNumberFont `json:"font,omitempty"`
 
 	// Prefix
 	// arrayOK: false
 	// type: string
 	// Sets a prefix appearing before the number.
+	// .schema.traces.indicator.attributes.number.prefix
 	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// Sets a suffix appearing next to the number.
+	// .schema.traces.indicator.attributes.number.suffix
 	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Valueformat
 	// arrayOK: false
 	// type: string
 	// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
+	// .schema.traces.indicator.attributes.number.valueformat
 	Valueformat types.StringType `json:"valueformat,omitempty"`
 }
 
@@ -817,12 +935,14 @@ type IndicatorStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.indicator.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.indicator.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -833,18 +953,21 @@ type IndicatorTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.indicator.attributes.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.indicator.attributes.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.indicator.attributes.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -856,17 +979,20 @@ type IndicatorTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the horizontal alignment of the title. It defaults to `center` except for bullet charts for which it defaults to right.
+	// .schema.traces.indicator.attributes.title.align
 	Align IndicatorTitleAlign `json:"align,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.indicator.attributes.title.font
 	Font *IndicatorTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this indicator.
+	// .schema.traces.indicator.attributes.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -875,6 +1001,7 @@ type IndicatorTransform struct {
 }
 
 // IndicatorAlign Sets the horizontal alignment of the `text` within the box. Note that this attribute has no effect if an angular gauge is displayed: in this case, it is always centered
+// .schema.traces.indicator.attributes.align
 type IndicatorAlign string
 
 const (
@@ -884,6 +1011,7 @@ const (
 )
 
 // IndicatorDeltaPosition Sets the position of delta with respect to the number.
+// .schema.traces.indicator.attributes.delta.position
 type IndicatorDeltaPosition string
 
 const (
@@ -894,6 +1022,7 @@ const (
 )
 
 // IndicatorGaugeAxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.indicator.attributes.gauge.axis.exponentformat
 type IndicatorGaugeAxisExponentformat string
 
 const (
@@ -906,6 +1035,7 @@ const (
 )
 
 // IndicatorGaugeAxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.indicator.attributes.gauge.axis.showexponent
 type IndicatorGaugeAxisShowexponent string
 
 const (
@@ -916,6 +1046,7 @@ const (
 )
 
 // IndicatorGaugeAxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.indicator.attributes.gauge.axis.showtickprefix
 type IndicatorGaugeAxisShowtickprefix string
 
 const (
@@ -926,6 +1057,7 @@ const (
 )
 
 // IndicatorGaugeAxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.indicator.attributes.gauge.axis.showticksuffix
 type IndicatorGaugeAxisShowticksuffix string
 
 const (
@@ -936,6 +1068,7 @@ const (
 )
 
 // IndicatorGaugeAxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.indicator.attributes.gauge.axis.tickmode
 type IndicatorGaugeAxisTickmode string
 
 const (
@@ -945,6 +1078,7 @@ const (
 )
 
 // IndicatorGaugeAxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.indicator.attributes.gauge.axis.ticks
 type IndicatorGaugeAxisTicks string
 
 const (
@@ -954,6 +1088,7 @@ const (
 )
 
 // IndicatorGaugeShape Set the shape of the gauge
+// .schema.traces.indicator.attributes.gauge.shape
 type IndicatorGaugeShape string
 
 const (
@@ -962,6 +1097,7 @@ const (
 )
 
 // IndicatorTitleAlign Sets the horizontal alignment of the title. It defaults to `center` except for bullet charts for which it defaults to right.
+// .schema.traces.indicator.attributes.title.align
 type IndicatorTitleAlign string
 
 const (
@@ -971,6 +1107,7 @@ const (
 )
 
 // IndicatorVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.indicator.attributes.visible
 type IndicatorVisible interface{}
 
 var (
@@ -980,6 +1117,7 @@ var (
 )
 
 // IndicatorMode Determines how the value is displayed on the graph. `number` displays the value numerically in text. `delta` displays the difference to a reference value in text. Finally, `gauge` displays the value graphically on an axis.
+// .schema.traces.indicator.attributes.mode
 type IndicatorMode string
 
 const (

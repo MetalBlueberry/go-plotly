@@ -32,52 +32,61 @@ type Histogram2dcontour struct {
 	// arrayOK: false
 	// type: boolean
 	// Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobinx` is not needed. However, we accept `autobinx: true` or `false` and will update `xbins` accordingly before deleting `autobinx` from the trace.
+	// .schema.traces.histogram2dcontour.attributes.autobinx
 	Autobinx types.BoolType `json:"autobinx,omitempty"`
 
 	// Autobiny
 	// arrayOK: false
 	// type: boolean
 	// Obsolete: since v1.42 each bin attribute is auto-determined separately and `autobiny` is not needed. However, we accept `autobiny: true` or `false` and will update `ybins` accordingly before deleting `autobiny` from the trace.
+	// .schema.traces.histogram2dcontour.attributes.autobiny
 	Autobiny types.BoolType `json:"autobiny,omitempty"`
 
 	// Autocolorscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.histogram2dcontour.attributes.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Autocontour
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the contour level attributes are picked by an algorithm. If *true*, the number of contour levels can be set in `ncontours`. If *false*, set the contour level attributes in `contours`.
+	// .schema.traces.histogram2dcontour.attributes.autocontour
 	Autocontour types.BoolType `json:"autocontour,omitempty"`
 
 	// Bingroup
 	// arrayOK: false
 	// type: string
 	// Set the `xbingroup` and `ybingroup` default prefix For example, setting a `bingroup` of *1* on two histogram2d traces will make them their x-bins and y-bins match separately.
+	// .schema.traces.histogram2dcontour.attributes.bingroup
 	Bingroup types.StringType `json:"bingroup,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.histogram2dcontour.attributes.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.colorbar
 	Colorbar *Histogram2dcontourColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `zmin` and `zmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.histogram2dcontour.attributes.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Contours
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.contours
 	Contours *Histogram2dcontourContours `json:"contours,omitempty"`
 
 	// Customdata
@@ -86,12 +95,14 @@ type Histogram2dcontour struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.histogram2dcontour.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Histfunc
@@ -99,6 +110,7 @@ type Histogram2dcontour struct {
 	// default: count
 	// type: enumerated
 	// Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
+	// .schema.traces.histogram2dcontour.attributes.histfunc
 	Histfunc Histogram2dcontourHistfunc `json:"histfunc,omitempty"`
 
 	// Histnorm
@@ -106,6 +118,7 @@ type Histogram2dcontour struct {
 	// default:
 	// type: enumerated
 	// Specifies the type of normalization used for this histogram trace. If **, the span of each bar corresponds to the number of occurrences (i.e. the number of data points lying inside the bins). If *percent* / *probability*, the span of each bar corresponds to the percentage / fraction of occurrences with respect to the total number of sample points (here, the sum of all bin HEIGHTS equals 100% / 1). If *density*, the span of each bar corresponds to the number of occurrences in a bin divided by the size of the bin interval (here, the sum of all bin AREAS equals the total number of sample points). If *probability density*, the area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1).
+	// .schema.traces.histogram2dcontour.attributes.histnorm
 	Histnorm Histogram2dcontourHistnorm `json:"histnorm,omitempty"`
 
 	// Hoverinfo
@@ -113,29 +126,34 @@ type Histogram2dcontour struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.histogram2dcontour.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*Histogram2dcontourHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.histogram2dcontour.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel
 	Hoverlabel *Histogram2dcontourHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.histogram2dcontour.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.histogram2dcontour.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Ids
@@ -144,138 +162,162 @@ type Histogram2dcontour struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.histogram2dcontour.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.histogram2dcontour.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle
 	Legendgrouptitle *Histogram2dcontourLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+	// .schema.traces.histogram2dcontour.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.histogram2dcontour.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.line
 	Line *Histogram2dcontourLine `json:"line,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.marker
 	Marker *Histogram2dcontourMarker `json:"marker,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.histogram2dcontour.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.histogram2dcontour.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// .schema.traces.histogram2dcontour.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Nbinsx
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `xbins.size` is provided.
+	// .schema.traces.histogram2dcontour.attributes.nbinsx
 	Nbinsx types.IntegerType `json:"nbinsx,omitempty"`
 
 	// Nbinsy
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of desired bins. This value will be used in an algorithm that will decide the optimal bin size such that the histogram best visualizes the distribution of the data. Ignored if `ybins.size` is provided.
+	// .schema.traces.histogram2dcontour.attributes.nbinsy
 	Nbinsy types.IntegerType `json:"nbinsy,omitempty"`
 
 	// Ncontours
 	// arrayOK: false
 	// type: integer
 	// Sets the maximum number of contour levels. The actual number of contours will be chosen automatically to be less than or equal to the value of `ncontours`. Has an effect only if `autocontour` is *true* or if `contours.size` is missing.
+	// .schema.traces.histogram2dcontour.attributes.ncontours
 	Ncontours types.IntegerType `json:"ncontours,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.histogram2dcontour.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. If true, `zmin` will correspond to the last color in the array and `zmax` will correspond to the first color.
+	// .schema.traces.histogram2dcontour.attributes.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.histogram2dcontour.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace.
+	// .schema.traces.histogram2dcontour.attributes.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.stream
 	Stream *Histogram2dcontourStream `json:"stream,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.textfont
 	Textfont *Histogram2dcontourTextfont `json:"textfont,omitempty"`
 
 	// Texttemplate
 	// arrayOK: false
 	// type: string
 	// For this trace it only has an effect if `coloring` is set to *heatmap*. Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `x`, `y`, `z` and `text`.
+	// .schema.traces.histogram2dcontour.attributes.texttemplate
 	Texttemplate types.StringType `json:"texttemplate,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: Histogram2dcontourTransform
+	// .schema.traces.histogram2dcontour.attributes.transforms
 	Transforms []Histogram2dcontourTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.histogram2dcontour.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.histogram2dcontour.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
@@ -283,6 +325,7 @@ type Histogram2dcontour struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.histogram2dcontour.attributes.visible
 	Visible Histogram2dcontourVisible `json:"visible,omitempty"`
 
 	// X
@@ -291,23 +334,27 @@ type Histogram2dcontour struct {
 	// Sets the sample data to be binned on the x axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
+	// .schema.traces.histogram2dcontour.attributes.xaxis
 	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xbingroup
 	// arrayOK: false
 	// type: string
 	// Set a group of histogram traces which will have compatible x-bin settings. Using `xbingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible x-bin settings. Note that the same `xbingroup` value can be used to set (1D) histogram `bingroup`
+	// .schema.traces.histogram2dcontour.attributes.xbingroup
 	Xbingroup types.StringType `json:"xbingroup,omitempty"`
 
 	// Xbins
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.xbins
 	Xbins *Histogram2dcontourXbins `json:"xbins,omitempty"`
 
 	// Xcalendar
@@ -315,18 +362,21 @@ type Histogram2dcontour struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
+	// .schema.traces.histogram2dcontour.attributes.xcalendar
 	Xcalendar Histogram2dcontourXcalendar `json:"xcalendar,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.histogram2dcontour.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.histogram2dcontour.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -335,23 +385,27 @@ type Histogram2dcontour struct {
 	// Sets the sample data to be binned on the y axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
+	// .schema.traces.histogram2dcontour.attributes.yaxis
 	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ybingroup
 	// arrayOK: false
 	// type: string
 	// Set a group of histogram traces which will have compatible y-bin settings. Using `ybingroup`, histogram2d and histogram2dcontour traces  (on axes of the same axis type) can have compatible y-bin settings. Note that the same `ybingroup` value can be used to set (1D) histogram `bingroup`
+	// .schema.traces.histogram2dcontour.attributes.ybingroup
 	Ybingroup types.StringType `json:"ybingroup,omitempty"`
 
 	// Ybins
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.ybins
 	Ybins *Histogram2dcontourYbins `json:"ybins,omitempty"`
 
 	// Ycalendar
@@ -359,18 +413,21 @@ type Histogram2dcontour struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
+	// .schema.traces.histogram2dcontour.attributes.ycalendar
 	Ycalendar Histogram2dcontourYcalendar `json:"ycalendar,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.histogram2dcontour.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.histogram2dcontour.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Z
@@ -379,42 +436,49 @@ type Histogram2dcontour struct {
 	// Sets the aggregation data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.z
 	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax` Defaults to `false` when `zmin` and `zmax` are set by the user.
+	// .schema.traces.histogram2dcontour.attributes.zauto
 	Zauto types.BoolType `json:"zauto,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
+	// .schema.traces.histogram2dcontour.attributes.zhoverformat
 	Zhoverformat types.StringType `json:"zhoverformat,omitempty"`
 
 	// Zmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Value should have the same units as in `z` and if set, `zmin` must be set as well.
+	// .schema.traces.histogram2dcontour.attributes.zmax
 	Zmax types.NumberType `json:"zmax,omitempty"`
 
 	// Zmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `zmin` and/or `zmax` to be equidistant to this point. Value should have the same units as in `z`. Has no effect when `zauto` is `false`.
+	// .schema.traces.histogram2dcontour.attributes.zmid
 	Zmid types.NumberType `json:"zmid,omitempty"`
 
 	// Zmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Value should have the same units as in `z` and if set, `zmax` must be set as well.
+	// .schema.traces.histogram2dcontour.attributes.zmin
 	Zmin types.NumberType `json:"zmin,omitempty"`
 
 	// Zsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `z`.
+	// .schema.traces.histogram2dcontour.attributes.zsrc
 	Zsrc types.StringType `json:"zsrc,omitempty"`
 }
 
@@ -425,18 +489,21 @@ type Histogram2dcontourColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -447,30 +514,35 @@ type Histogram2dcontourColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -481,18 +553,21 @@ type Histogram2dcontourColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -502,6 +577,7 @@ type Histogram2dcontourColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.font
 	Font *Histogram2dcontourColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -509,12 +585,14 @@ type Histogram2dcontourColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.side
 	Side Histogram2dcontourColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -525,24 +603,28 @@ type Histogram2dcontourColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.histogram2dcontour.attributes.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -550,18 +632,21 @@ type Histogram2dcontourColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.exponentformat
 	Exponentformat Histogram2dcontourColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -569,18 +654,21 @@ type Histogram2dcontourColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.lenmode
 	Lenmode Histogram2dcontourColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -588,24 +676,28 @@ type Histogram2dcontourColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.orientation
 	Orientation Histogram2dcontourColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.histogram2dcontour.attributes.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -613,12 +705,14 @@ type Histogram2dcontourColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.showexponent
 	Showexponent Histogram2dcontourColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -626,6 +720,7 @@ type Histogram2dcontourColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.showtickprefix
 	Showtickprefix Histogram2dcontourColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -633,12 +728,14 @@ type Histogram2dcontourColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.showticksuffix
 	Showticksuffix Histogram2dcontourColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -646,40 +743,47 @@ type Histogram2dcontourColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.thicknessmode
 	Thicknessmode Histogram2dcontourColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickfont
 	Tickfont *Histogram2dcontourColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: Histogram2dcontourColorbarTickformatstop
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickformatstops
 	Tickformatstops []Histogram2dcontourColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -687,6 +791,7 @@ type Histogram2dcontourColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticklabeloverflow
 	Ticklabeloverflow Histogram2dcontourColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -694,18 +799,21 @@ type Histogram2dcontourColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticklabelposition
 	Ticklabelposition Histogram2dcontourColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -713,12 +821,14 @@ type Histogram2dcontourColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickmode
 	Tickmode Histogram2dcontourColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -726,12 +836,14 @@ type Histogram2dcontourColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticks
 	Ticks Histogram2dcontourColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -740,12 +852,14 @@ type Histogram2dcontourColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -754,29 +868,34 @@ type Histogram2dcontourColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.histogram2dcontour.attributes.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.colorbar.title
 	Title *Histogram2dcontourColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position of the color bar (in plot fraction). Defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -784,18 +903,21 @@ type Histogram2dcontourColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.xanchor
 	Xanchor Histogram2dcontourColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position of the color bar (in plot fraction). Defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -803,12 +925,14 @@ type Histogram2dcontourColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.yanchor
 	Yanchor Histogram2dcontourColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.histogram2dcontour.attributes.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 }
 
@@ -819,18 +943,21 @@ type Histogram2dcontourContoursLabelfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.contours.labelfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.contours.labelfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.contours.labelfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -842,23 +969,27 @@ type Histogram2dcontourContours struct {
 	// default: fill
 	// type: enumerated
 	// Determines the coloring method showing the contour values. If *fill*, coloring is done evenly between each contour level If *heatmap*, a heatmap gradient coloring is applied between each contour level. If *lines*, coloring is done on the contour lines. If *none*, no coloring is applied on this trace.
+	// .schema.traces.histogram2dcontour.attributes.contours.coloring
 	Coloring Histogram2dcontourContoursColoring `json:"coloring,omitempty"`
 
 	// End
 	// arrayOK: false
 	// type: number
 	// Sets the end contour level value. Must be more than `contours.start`
+	// .schema.traces.histogram2dcontour.attributes.contours.end
 	End types.NumberType `json:"end,omitempty"`
 
 	// Labelfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.contours.labelfont
 	Labelfont *Histogram2dcontourContoursLabelfont `json:"labelfont,omitempty"`
 
 	// Labelformat
 	// arrayOK: false
 	// type: string
 	// Sets the contour label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
+	// .schema.traces.histogram2dcontour.attributes.contours.labelformat
 	Labelformat types.StringType `json:"labelformat,omitempty"`
 
 	// Operation
@@ -866,30 +997,35 @@ type Histogram2dcontourContours struct {
 	// default: =
 	// type: enumerated
 	// Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
+	// .schema.traces.histogram2dcontour.attributes.contours.operation
 	Operation Histogram2dcontourContoursOperation `json:"operation,omitempty"`
 
 	// Showlabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether to label the contour lines with their values.
+	// .schema.traces.histogram2dcontour.attributes.contours.showlabels
 	Showlabels types.BoolType `json:"showlabels,omitempty"`
 
 	// Showlines
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the contour lines are drawn. Has an effect only if `contours.coloring` is set to *fill*.
+	// .schema.traces.histogram2dcontour.attributes.contours.showlines
 	Showlines types.BoolType `json:"showlines,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the step between each contour level. Must be positive.
+	// .schema.traces.histogram2dcontour.attributes.contours.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Start
 	// arrayOK: false
 	// type: number
 	// Sets the starting contour level value. Must be less than `contours.end`
+	// .schema.traces.histogram2dcontour.attributes.contours.start
 	Start types.NumberType `json:"start,omitempty"`
 
 	// Type
@@ -897,12 +1033,14 @@ type Histogram2dcontourContours struct {
 	// default: levels
 	// type: enumerated
 	// If `levels`, the data is represented as a contour plot with multiple levels displayed. If `constraint`, the data is represented as constraints with the invalid region shaded as specified by the `operation` and `value` parameters.
+	// .schema.traces.histogram2dcontour.attributes.contours.type
 	Type Histogram2dcontourContoursType `json:"type,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: any
 	// Sets the value or values of the constraint boundary. When `operation` is set to one of the comparison values (=,<,>=,>,<=) *value* is expected to be a number. When `operation` is set to one of the interval values ([],(),[),(],][,)(,](,)[) *value* is expected to be an array of two numbers where the first is the lower bound and the second is the upper bound.
+	// .schema.traces.histogram2dcontour.attributes.contours.value
 	Value interface{} `json:"value,omitempty"`
 }
 
@@ -913,36 +1051,42 @@ type Histogram2dcontourHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -954,53 +1098,62 @@ type Histogram2dcontourHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.align
 	Align *types.ArrayOK[*Histogram2dcontourHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.font
 	Font *Histogram2dcontourHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.histogram2dcontour.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -1011,18 +1164,21 @@ type Histogram2dcontourLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1032,12 +1188,14 @@ type Histogram2dcontourLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle.font
 	Font *Histogram2dcontourLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.histogram2dcontour.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1048,24 +1206,28 @@ type Histogram2dcontourLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the contour level. Has no effect if `contours.coloring` is set to *lines*.
+	// .schema.traces.histogram2dcontour.attributes.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.traces.histogram2dcontour.attributes.line.dash
 	Dash types.StringType `json:"dash,omitempty"`
 
 	// Smoothing
 	// arrayOK: false
 	// type: number
 	// Sets the amount of smoothing for the contour lines, where *0* corresponds to no smoothing.
+	// .schema.traces.histogram2dcontour.attributes.line.smoothing
 	Smoothing types.NumberType `json:"smoothing,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the contour line width in (in px)
+	// .schema.traces.histogram2dcontour.attributes.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -1078,12 +1240,14 @@ type Histogram2dcontourMarker struct {
 	// Sets the aggregation data.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.histogram2dcontour.attributes.marker.color
 	Color *types.DataArrayType `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.histogram2dcontour.attributes.marker.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 }
 
@@ -1094,12 +1258,14 @@ type Histogram2dcontourStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.histogram2dcontour.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.histogram2dcontour.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1110,18 +1276,21 @@ type Histogram2dcontourTextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.histogram2dcontour.attributes.textfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.histogram2dcontour.attributes.textfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.histogram2dcontour.attributes.textfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1136,18 +1305,21 @@ type Histogram2dcontourXbins struct {
 	// arrayOK: false
 	// type: any
 	// Sets the end value for the x axis bins. The last bin may not end exactly at this value, we increment the bin edge by `size` from `start` until we reach or exceed `end`. Defaults to the maximum data value. Like `start`, for dates use a date string, and for category data `end` is based on the category serial numbers.
+	// .schema.traces.histogram2dcontour.attributes.xbins.end
 	End interface{} `json:"end,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: any
 	// Sets the size of each x axis bin. Default behavior: If `nbinsx` is 0 or omitted, we choose a nice round bin size such that the number of bins is about the same as the typical number of samples in each bin. If `nbinsx` is provided, we choose a nice round bin size giving no more than that many bins. For date data, use milliseconds or *M<n>* for months, as in `axis.dtick`. For category data, the number of categories to bin together (always defaults to 1).
+	// .schema.traces.histogram2dcontour.attributes.xbins.size
 	Size interface{} `json:"size,omitempty"`
 
 	// Start
 	// arrayOK: false
 	// type: any
 	// Sets the starting value for the x axis bins. Defaults to the minimum data value, shifted down if necessary to make nice round values and to remove ambiguous bin edges. For example, if most of the data is integers we shift the bin edges 0.5 down, so a `size` of 5 would have a default `start` of -0.5, so it is clear that 0-4 are in the first bin, 5-9 in the second, but continuous data gets a start of 0 and bins [0,5), [5,10) etc. Dates behave similarly, and `start` should be a date string. For category data, `start` is based on the category serial numbers, and defaults to -0.5.
+	// .schema.traces.histogram2dcontour.attributes.xbins.start
 	Start interface{} `json:"start,omitempty"`
 }
 
@@ -1158,22 +1330,26 @@ type Histogram2dcontourYbins struct {
 	// arrayOK: false
 	// type: any
 	// Sets the end value for the y axis bins. The last bin may not end exactly at this value, we increment the bin edge by `size` from `start` until we reach or exceed `end`. Defaults to the maximum data value. Like `start`, for dates use a date string, and for category data `end` is based on the category serial numbers.
+	// .schema.traces.histogram2dcontour.attributes.ybins.end
 	End interface{} `json:"end,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: any
 	// Sets the size of each y axis bin. Default behavior: If `nbinsy` is 0 or omitted, we choose a nice round bin size such that the number of bins is about the same as the typical number of samples in each bin. If `nbinsy` is provided, we choose a nice round bin size giving no more than that many bins. For date data, use milliseconds or *M<n>* for months, as in `axis.dtick`. For category data, the number of categories to bin together (always defaults to 1).
+	// .schema.traces.histogram2dcontour.attributes.ybins.size
 	Size interface{} `json:"size,omitempty"`
 
 	// Start
 	// arrayOK: false
 	// type: any
 	// Sets the starting value for the y axis bins. Defaults to the minimum data value, shifted down if necessary to make nice round values and to remove ambiguous bin edges. For example, if most of the data is integers we shift the bin edges 0.5 down, so a `size` of 5 would have a default `start` of -0.5, so it is clear that 0-4 are in the first bin, 5-9 in the second, but continuous data gets a start of 0 and bins [0,5), [5,10) etc. Dates behave similarly, and `start` should be a date string. For category data, `start` is based on the category serial numbers, and defaults to -0.5.
+	// .schema.traces.histogram2dcontour.attributes.ybins.start
 	Start interface{} `json:"start,omitempty"`
 }
 
 // Histogram2dcontourColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.histogram2dcontour.attributes.colorbar.exponentformat
 type Histogram2dcontourColorbarExponentformat string
 
 const (
@@ -1186,6 +1362,7 @@ const (
 )
 
 // Histogram2dcontourColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.histogram2dcontour.attributes.colorbar.lenmode
 type Histogram2dcontourColorbarLenmode string
 
 const (
@@ -1194,6 +1371,7 @@ const (
 )
 
 // Histogram2dcontourColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.histogram2dcontour.attributes.colorbar.orientation
 type Histogram2dcontourColorbarOrientation string
 
 const (
@@ -1202,6 +1380,7 @@ const (
 )
 
 // Histogram2dcontourColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.histogram2dcontour.attributes.colorbar.showexponent
 type Histogram2dcontourColorbarShowexponent string
 
 const (
@@ -1212,6 +1391,7 @@ const (
 )
 
 // Histogram2dcontourColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.histogram2dcontour.attributes.colorbar.showtickprefix
 type Histogram2dcontourColorbarShowtickprefix string
 
 const (
@@ -1222,6 +1402,7 @@ const (
 )
 
 // Histogram2dcontourColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.histogram2dcontour.attributes.colorbar.showticksuffix
 type Histogram2dcontourColorbarShowticksuffix string
 
 const (
@@ -1232,6 +1413,7 @@ const (
 )
 
 // Histogram2dcontourColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.histogram2dcontour.attributes.colorbar.thicknessmode
 type Histogram2dcontourColorbarThicknessmode string
 
 const (
@@ -1240,6 +1422,7 @@ const (
 )
 
 // Histogram2dcontourColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.histogram2dcontour.attributes.colorbar.ticklabeloverflow
 type Histogram2dcontourColorbarTicklabeloverflow string
 
 const (
@@ -1249,6 +1432,7 @@ const (
 )
 
 // Histogram2dcontourColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.histogram2dcontour.attributes.colorbar.ticklabelposition
 type Histogram2dcontourColorbarTicklabelposition string
 
 const (
@@ -1265,6 +1449,7 @@ const (
 )
 
 // Histogram2dcontourColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.histogram2dcontour.attributes.colorbar.tickmode
 type Histogram2dcontourColorbarTickmode string
 
 const (
@@ -1274,6 +1459,7 @@ const (
 )
 
 // Histogram2dcontourColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.histogram2dcontour.attributes.colorbar.ticks
 type Histogram2dcontourColorbarTicks string
 
 const (
@@ -1283,6 +1469,7 @@ const (
 )
 
 // Histogram2dcontourColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.histogram2dcontour.attributes.colorbar.title.side
 type Histogram2dcontourColorbarTitleSide string
 
 const (
@@ -1292,6 +1479,7 @@ const (
 )
 
 // Histogram2dcontourColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.histogram2dcontour.attributes.colorbar.xanchor
 type Histogram2dcontourColorbarXanchor string
 
 const (
@@ -1301,6 +1489,7 @@ const (
 )
 
 // Histogram2dcontourColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.histogram2dcontour.attributes.colorbar.yanchor
 type Histogram2dcontourColorbarYanchor string
 
 const (
@@ -1310,6 +1499,7 @@ const (
 )
 
 // Histogram2dcontourContoursColoring Determines the coloring method showing the contour values. If *fill*, coloring is done evenly between each contour level If *heatmap*, a heatmap gradient coloring is applied between each contour level. If *lines*, coloring is done on the contour lines. If *none*, no coloring is applied on this trace.
+// .schema.traces.histogram2dcontour.attributes.contours.coloring
 type Histogram2dcontourContoursColoring string
 
 const (
@@ -1320,6 +1510,7 @@ const (
 )
 
 // Histogram2dcontourContoursOperation Sets the constraint operation. *=* keeps regions equal to `value` *<* and *<=* keep regions less than `value` *>* and *>=* keep regions greater than `value` *[]*, *()*, *[)*, and *(]* keep regions inside `value[0]` to `value[1]` *][*, *)(*, *](*, *)[* keep regions outside `value[0]` to value[1]` Open vs. closed intervals make no difference to constraint display, but all versions are allowed for consistency with filter transforms.
+// .schema.traces.histogram2dcontour.attributes.contours.operation
 type Histogram2dcontourContoursOperation string
 
 const (
@@ -1339,6 +1530,7 @@ const (
 )
 
 // Histogram2dcontourContoursType If `levels`, the data is represented as a contour plot with multiple levels displayed. If `constraint`, the data is represented as constraints with the invalid region shaded as specified by the `operation` and `value` parameters.
+// .schema.traces.histogram2dcontour.attributes.contours.type
 type Histogram2dcontourContoursType string
 
 const (
@@ -1347,6 +1539,7 @@ const (
 )
 
 // Histogram2dcontourHistfunc Specifies the binning function used for this histogram trace. If *count*, the histogram values are computed by counting the number of values lying inside each bin. If *sum*, *avg*, *min*, *max*, the histogram values are computed using the sum, the average, the minimum or the maximum of the values lying inside each bin respectively.
+// .schema.traces.histogram2dcontour.attributes.histfunc
 type Histogram2dcontourHistfunc string
 
 const (
@@ -1358,6 +1551,7 @@ const (
 )
 
 // Histogram2dcontourHistnorm Specifies the type of normalization used for this histogram trace. If **, the span of each bar corresponds to the number of occurrences (i.e. the number of data points lying inside the bins). If *percent* / *probability*, the span of each bar corresponds to the percentage / fraction of occurrences with respect to the total number of sample points (here, the sum of all bin HEIGHTS equals 100% / 1). If *density*, the span of each bar corresponds to the number of occurrences in a bin divided by the size of the bin interval (here, the sum of all bin AREAS equals the total number of sample points). If *probability density*, the area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1).
+// .schema.traces.histogram2dcontour.attributes.histnorm
 type Histogram2dcontourHistnorm string
 
 const (
@@ -1369,6 +1563,7 @@ const (
 )
 
 // Histogram2dcontourHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.histogram2dcontour.attributes.hoverlabel.align
 type Histogram2dcontourHoverlabelAlign string
 
 const (
@@ -1378,6 +1573,7 @@ const (
 )
 
 // Histogram2dcontourVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.histogram2dcontour.attributes.visible
 type Histogram2dcontourVisible interface{}
 
 var (
@@ -1387,6 +1583,7 @@ var (
 )
 
 // Histogram2dcontourXcalendar Sets the calendar system to use with `x` date data.
+// .schema.traces.histogram2dcontour.attributes.xcalendar
 type Histogram2dcontourXcalendar string
 
 const (
@@ -1409,6 +1606,7 @@ const (
 )
 
 // Histogram2dcontourYcalendar Sets the calendar system to use with `y` date data.
+// .schema.traces.histogram2dcontour.attributes.ycalendar
 type Histogram2dcontourYcalendar string
 
 const (
@@ -1431,6 +1629,7 @@ const (
 )
 
 // Histogram2dcontourHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.histogram2dcontour.attributes.hoverinfo
 type Histogram2dcontourHoverinfo string
 
 const (

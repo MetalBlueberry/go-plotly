@@ -32,6 +32,7 @@ type Box struct {
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same alignmentgroup. This controls whether bars compute their positional range dependently or independently.
+	// .schema.traces.box.attributes.alignmentgroup
 	Alignmentgroup types.StringType `json:"alignmentgroup,omitempty"`
 
 	// Boxmean
@@ -39,6 +40,7 @@ type Box struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *true*, the mean of the box(es)' underlying distribution is drawn as a dashed line inside the box(es). If *sd* the standard deviation is also drawn. Defaults to *true* when `mean` is set. Defaults to *sd* when `sd` is set Otherwise defaults to *false*.
+	// .schema.traces.box.attributes.boxmean
 	Boxmean BoxBoxmean `json:"boxmean,omitempty"`
 
 	// Boxpoints
@@ -46,6 +48,7 @@ type Box struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the box(es) are shown with no sample points Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set. Defaults to *all* under the q1/median/q3 signature. Otherwise defaults to *outliers*.
+	// .schema.traces.box.attributes.boxpoints
 	Boxpoints BoxBoxpoints `json:"boxpoints,omitempty"`
 
 	// Customdata
@@ -54,30 +57,35 @@ type Box struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.box.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Dx
 	// arrayOK: false
 	// type: number
 	// Sets the x coordinate step for multi-box traces set using q1/median/q3.
+	// .schema.traces.box.attributes.dx
 	Dx types.NumberType `json:"dx,omitempty"`
 
 	// Dy
 	// arrayOK: false
 	// type: number
 	// Sets the y coordinate step for multi-box traces set using q1/median/q3.
+	// .schema.traces.box.attributes.dy
 	Dy types.NumberType `json:"dy,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
 	// type: color
 	// Sets the fill color. Defaults to a half-transparent variant of the line color, marker color, or marker line color, whichever is available.
+	// .schema.traces.box.attributes.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Hoverinfo
@@ -85,17 +93,20 @@ type Box struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.box.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*BoxHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.box.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.hoverlabel
 	Hoverlabel *BoxHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hoveron
@@ -103,30 +114,35 @@ type Box struct {
 	// default: boxes+points
 	// type: flaglist
 	// Do the hover effects highlight individual boxes  or sample points or both?
+	// .schema.traces.box.attributes.hoveron
 	Hoveron BoxHoveron `json:"hoveron,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.box.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.box.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
+	// .schema.traces.box.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.box.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -135,52 +151,61 @@ type Box struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.box.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Jitter
 	// arrayOK: false
 	// type: number
 	// Sets the amount of jitter in the sample points drawn. If *0*, the sample points align along the distribution axis. If *1*, the sample points are drawn in a random jitter of width equal to the width of the box(es).
+	// .schema.traces.box.attributes.jitter
 	Jitter types.NumberType `json:"jitter,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.box.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces and shapes part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.box.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.legendgrouptitle
 	Legendgrouptitle *BoxLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.box.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.box.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.line
 	Line *BoxLine `json:"line,omitempty"`
 
 	// Lowerfence
@@ -189,17 +214,20 @@ type Box struct {
 	// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.lowerfence
 	Lowerfence *types.DataArrayType `json:"lowerfence,omitempty"`
 
 	// Lowerfencesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `lowerfence`.
+	// .schema.traces.box.attributes.lowerfencesrc
 	Lowerfencesrc types.StringType `json:"lowerfencesrc,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.marker
 	Marker *BoxMarker `json:"marker,omitempty"`
 
 	// Mean
@@ -208,12 +236,14 @@ type Box struct {
 	// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.mean
 	Mean *types.DataArrayType `json:"mean,omitempty"`
 
 	// Meansrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `mean`.
+	// .schema.traces.box.attributes.meansrc
 	Meansrc types.StringType `json:"meansrc,omitempty"`
 
 	// Median
@@ -222,36 +252,42 @@ type Box struct {
 	// Sets the median values. There should be as many items as the number of boxes desired.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.median
 	Median *types.DataArrayType `json:"median,omitempty"`
 
 	// Mediansrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `median`.
+	// .schema.traces.box.attributes.mediansrc
 	Mediansrc types.StringType `json:"mediansrc,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.box.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.box.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
+	// .schema.traces.box.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Notched
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not notches are drawn. Notches displays a confidence interval around the median. We compute the confidence interval as median +/- 1.57 * IQR / sqrt(N), where IQR is the interquartile range and N is the sample size. If two boxes' notches do not overlap there is 95% confidence their medians differ. See https://sites.google.com/site/davidsstatistics/home/notched-box-plots for more info. Defaults to *false* unless `notchwidth` or `notchspan` is set.
+	// .schema.traces.box.attributes.notched
 	Notched types.BoolType `json:"notched,omitempty"`
 
 	// Notchspan
@@ -260,30 +296,35 @@ type Box struct {
 	// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.notchspan
 	Notchspan *types.DataArrayType `json:"notchspan,omitempty"`
 
 	// Notchspansrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `notchspan`.
+	// .schema.traces.box.attributes.notchspansrc
 	Notchspansrc types.StringType `json:"notchspansrc,omitempty"`
 
 	// Notchwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width of the notches relative to the box' width. For example, with 0, the notches are as wide as the box(es).
+	// .schema.traces.box.attributes.notchwidth
 	Notchwidth types.NumberType `json:"notchwidth,omitempty"`
 
 	// Offsetgroup
 	// arrayOK: false
 	// type: string
 	// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
+	// .schema.traces.box.attributes.offsetgroup
 	Offsetgroup types.StringType `json:"offsetgroup,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.box.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Orientation
@@ -291,12 +332,14 @@ type Box struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the orientation of the box(es). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
+	// .schema.traces.box.attributes.orientation
 	Orientation BoxOrientation `json:"orientation,omitempty"`
 
 	// Pointpos
 	// arrayOK: false
 	// type: number
 	// Sets the position of the sample points in relation to the box(es). If *0*, the sample points are places over the center of the box(es). Positive (negative) values correspond to positions to the right (left) for vertical boxes and above (below) for horizontal boxes
+	// .schema.traces.box.attributes.pointpos
 	Pointpos types.NumberType `json:"pointpos,omitempty"`
 
 	// Q1
@@ -305,12 +348,14 @@ type Box struct {
 	// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.q1
 	Q1 *types.DataArrayType `json:"q1,omitempty"`
 
 	// Q1src
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `q1`.
+	// .schema.traces.box.attributes.q1src
 	Q1src types.StringType `json:"q1src,omitempty"`
 
 	// Q3
@@ -319,12 +364,14 @@ type Box struct {
 	// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.q3
 	Q3 *types.DataArrayType `json:"q3,omitempty"`
 
 	// Q3src
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `q3`.
+	// .schema.traces.box.attributes.q3src
 	Q3src types.StringType `json:"q3src,omitempty"`
 
 	// Quartilemethod
@@ -332,6 +379,7 @@ type Box struct {
 	// default: linear
 	// type: enumerated
 	// Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+	// .schema.traces.box.attributes.quartilemethod
 	Quartilemethod BoxQuartilemethod `json:"quartilemethod,omitempty"`
 
 	// Sd
@@ -340,41 +388,48 @@ type Box struct {
 	// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.sd
 	Sd *types.DataArrayType `json:"sd,omitempty"`
 
 	// Sdmultiple
 	// arrayOK: false
 	// type: number
 	// Scales the box size when sizemode=sd Allowing boxes to be drawn across any stddev range For example 1-stddev, 3-stddev, 5-stddev
+	// .schema.traces.box.attributes.sdmultiple
 	Sdmultiple types.NumberType `json:"sdmultiple,omitempty"`
 
 	// Sdsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `sd`.
+	// .schema.traces.box.attributes.sdsrc
 	Sdsrc types.StringType `json:"sdsrc,omitempty"`
 
 	// Selected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.selected
 	Selected *BoxSelected `json:"selected,omitempty"`
 
 	// Selectedpoints
 	// arrayOK: false
 	// type: any
 	// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
+	// .schema.traces.box.attributes.selectedpoints
 	Selectedpoints interface{} `json:"selectedpoints,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.box.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Showwhiskers
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not whiskers are visible. Defaults to true for `sizemode` *quartiles*, false for *sd*.
+	// .schema.traces.box.attributes.showwhiskers
 	Showwhiskers types.BoolType `json:"showwhiskers,omitempty"`
 
 	// Sizemode
@@ -382,45 +437,53 @@ type Box struct {
 	// default: quartiles
 	// type: enumerated
 	// Sets the upper and lower bound for the boxes quartiles means box is drawn between Q1 and Q3 SD means the box is drawn between Mean +- Standard Deviation Argument sdmultiple (default 1) to scale the box size So it could be drawn 1-stddev, 3-stddev etc
+	// .schema.traces.box.attributes.sizemode
 	Sizemode BoxSizemode `json:"sizemode,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.stream
 	Stream *BoxStream `json:"stream,omitempty"`
 
 	// Text
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with each sample value. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.box.attributes.text
 	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.box.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: BoxTransform
+	// .schema.traces.box.attributes.transforms
 	Transforms []BoxTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.box.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.box.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Unselected
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.unselected
 	Unselected *BoxUnselected `json:"unselected,omitempty"`
 
 	// Upperfence
@@ -429,12 +492,14 @@ type Box struct {
 	// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the upper as the last sample point above 1.5 times the IQR.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.upperfence
 	Upperfence *types.DataArrayType `json:"upperfence,omitempty"`
 
 	// Upperfencesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `upperfence`.
+	// .schema.traces.box.attributes.upperfencesrc
 	Upperfencesrc types.StringType `json:"upperfencesrc,omitempty"`
 
 	// Visible
@@ -442,18 +507,21 @@ type Box struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.box.attributes.visible
 	Visible BoxVisible `json:"visible,omitempty"`
 
 	// Whiskerwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width of the whiskers relative to the box' width. For example, with 1, the whiskers are as wide as the box(es).
+	// .schema.traces.box.attributes.whiskerwidth
 	Whiskerwidth types.NumberType `json:"whiskerwidth,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the box in data coordinate If *0* (default value) the width is automatically selected based on the positions of other box traces in the same subplot.
+	// .schema.traces.box.attributes.width
 	Width types.NumberType `json:"width,omitempty"`
 
 	// X
@@ -462,18 +530,21 @@ type Box struct {
 	// Sets the x sample data or coordinates. See overview for more info.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// X0
 	// arrayOK: false
 	// type: any
 	// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
+	// .schema.traces.box.attributes.x0
 	X0 interface{} `json:"x0,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
+	// .schema.traces.box.attributes.xaxis
 	Xaxis types.StringType `json:"xaxis,omitempty"`
 
 	// Xcalendar
@@ -481,24 +552,28 @@ type Box struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `x` date data.
+	// .schema.traces.box.attributes.xcalendar
 	Xcalendar BoxXcalendar `json:"xcalendar,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.box.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xperiod
 	// arrayOK: false
 	// type: any
 	// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+	// .schema.traces.box.attributes.xperiod
 	Xperiod interface{} `json:"xperiod,omitempty"`
 
 	// Xperiod0
 	// arrayOK: false
 	// type: any
 	// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+	// .schema.traces.box.attributes.xperiod0
 	Xperiod0 interface{} `json:"xperiod0,omitempty"`
 
 	// Xperiodalignment
@@ -506,12 +581,14 @@ type Box struct {
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+	// .schema.traces.box.attributes.xperiodalignment
 	Xperiodalignment BoxXperiodalignment `json:"xperiodalignment,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.box.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -520,18 +597,21 @@ type Box struct {
 	// Sets the y sample data or coordinates. See overview for more info.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.box.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Y0
 	// arrayOK: false
 	// type: any
 	// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
+	// .schema.traces.box.attributes.y0
 	Y0 interface{} `json:"y0,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
+	// .schema.traces.box.attributes.yaxis
 	Yaxis types.StringType `json:"yaxis,omitempty"`
 
 	// Ycalendar
@@ -539,24 +619,28 @@ type Box struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use with `y` date data.
+	// .schema.traces.box.attributes.ycalendar
 	Ycalendar BoxYcalendar `json:"ycalendar,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.box.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Yperiod
 	// arrayOK: false
 	// type: any
 	// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+	// .schema.traces.box.attributes.yperiod
 	Yperiod interface{} `json:"yperiod,omitempty"`
 
 	// Yperiod0
 	// arrayOK: false
 	// type: any
 	// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+	// .schema.traces.box.attributes.yperiod0
 	Yperiod0 interface{} `json:"yperiod0,omitempty"`
 
 	// Yperiodalignment
@@ -564,12 +648,14 @@ type Box struct {
 	// default: middle
 	// type: enumerated
 	// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+	// .schema.traces.box.attributes.yperiodalignment
 	Yperiodalignment BoxYperiodalignment `json:"yperiodalignment,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.box.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 }
 
@@ -580,36 +666,42 @@ type BoxHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.box.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.box.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.box.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.box.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.box.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.box.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -621,53 +713,62 @@ type BoxHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.box.attributes.hoverlabel.align
 	Align *types.ArrayOK[*BoxHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.box.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.box.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.box.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.box.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.box.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.hoverlabel.font
 	Font *BoxHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.box.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.box.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -678,18 +779,21 @@ type BoxLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.box.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.box.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.box.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -699,12 +803,14 @@ type BoxLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.legendgrouptitle.font
 	Font *BoxLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.box.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -715,12 +821,14 @@ type BoxLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of line bounding the box(es).
+	// .schema.traces.box.attributes.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of line bounding the box(es).
+	// .schema.traces.box.attributes.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -731,24 +839,28 @@ type BoxMarkerLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker.line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.line.cmin` and `marker.line.cmax` if set.
+	// .schema.traces.box.attributes.marker.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border line color of the outlier sample points. Defaults to marker.color
+	// .schema.traces.box.attributes.marker.line.outliercolor
 	Outliercolor types.Color `json:"outliercolor,omitempty"`
 
 	// Outlierwidth
 	// arrayOK: false
 	// type: number
 	// Sets the border line width (in px) of the outlier sample points.
+	// .schema.traces.box.attributes.marker.line.outlierwidth
 	Outlierwidth types.NumberType `json:"outlierwidth,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the lines bounding the marker points.
+	// .schema.traces.box.attributes.marker.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -759,35 +871,41 @@ type BoxMarker struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the marker angle in respect to `angleref`.
+	// .schema.traces.box.attributes.marker.angle
 	Angle types.NumberType `json:"angle,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the marker color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
+	// .schema.traces.box.attributes.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.marker.line
 	Line *BoxMarkerLine `json:"line,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity.
+	// .schema.traces.box.attributes.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Outliercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the outlier sample points.
+	// .schema.traces.box.attributes.marker.outliercolor
 	Outliercolor types.Color `json:"outliercolor,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size (in px).
+	// .schema.traces.box.attributes.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 
 	// Symbol
@@ -795,6 +913,7 @@ type BoxMarker struct {
 	// default: circle
 	// type: enumerated
 	// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
+	// .schema.traces.box.attributes.marker.symbol
 	Symbol BoxMarkerSymbol `json:"symbol,omitempty"`
 }
 
@@ -805,18 +924,21 @@ type BoxSelectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of selected points.
+	// .schema.traces.box.attributes.selected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of selected points.
+	// .schema.traces.box.attributes.selected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of selected points.
+	// .schema.traces.box.attributes.selected.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -826,6 +948,7 @@ type BoxSelected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.selected.marker
 	Marker *BoxSelectedMarker `json:"marker,omitempty"`
 }
 
@@ -836,12 +959,14 @@ type BoxStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.box.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.box.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -856,18 +981,21 @@ type BoxUnselectedMarker struct {
 	// arrayOK: false
 	// type: color
 	// Sets the marker color of unselected points, applied only when a selection exists.
+	// .schema.traces.box.attributes.unselected.marker.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the marker opacity of unselected points, applied only when a selection exists.
+	// .schema.traces.box.attributes.unselected.marker.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	// Sets the marker size of unselected points, applied only when a selection exists.
+	// .schema.traces.box.attributes.unselected.marker.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -877,10 +1005,12 @@ type BoxUnselected struct {
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.box.attributes.unselected.marker
 	Marker *BoxUnselectedMarker `json:"marker,omitempty"`
 }
 
 // BoxBoxmean If *true*, the mean of the box(es)' underlying distribution is drawn as a dashed line inside the box(es). If *sd* the standard deviation is also drawn. Defaults to *true* when `mean` is set. Defaults to *sd* when `sd` is set Otherwise defaults to *false*.
+// .schema.traces.box.attributes.boxmean
 type BoxBoxmean interface{}
 
 var (
@@ -890,6 +1020,7 @@ var (
 )
 
 // BoxBoxpoints If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the box(es) are shown with no sample points Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set. Defaults to *all* under the q1/median/q3 signature. Otherwise defaults to *outliers*.
+// .schema.traces.box.attributes.boxpoints
 type BoxBoxpoints interface{}
 
 var (
@@ -900,6 +1031,7 @@ var (
 )
 
 // BoxHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.box.attributes.hoverlabel.align
 type BoxHoverlabelAlign string
 
 const (
@@ -909,6 +1041,7 @@ const (
 )
 
 // BoxMarkerSymbol Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
+// .schema.traces.box.attributes.marker.symbol
 type BoxMarkerSymbol interface{}
 
 var (
@@ -1401,6 +1534,7 @@ var (
 )
 
 // BoxOrientation Sets the orientation of the box(es). If *v* (*h*), the distribution is visualized along the vertical (horizontal).
+// .schema.traces.box.attributes.orientation
 type BoxOrientation string
 
 const (
@@ -1409,6 +1543,7 @@ const (
 )
 
 // BoxQuartilemethod Sets the method used to compute the sample's Q1 and Q3 quartiles. The *linear* method uses the 25th percentile for Q1 and 75th percentile for Q3 as computed using method #10 (listed on http://jse.amstat.org/v14n3/langford.html). The *exclusive* method uses the median to divide the ordered dataset into two halves if the sample is odd, it does not include the median in either half - Q1 is then the median of the lower half and Q3 the median of the upper half. The *inclusive* method also uses the median to divide the ordered dataset into two halves but if the sample is odd, it includes the median in both halves - Q1 is then the median of the lower half and Q3 the median of the upper half.
+// .schema.traces.box.attributes.quartilemethod
 type BoxQuartilemethod string
 
 const (
@@ -1418,6 +1553,7 @@ const (
 )
 
 // BoxSizemode Sets the upper and lower bound for the boxes quartiles means box is drawn between Q1 and Q3 SD means the box is drawn between Mean +- Standard Deviation Argument sdmultiple (default 1) to scale the box size So it could be drawn 1-stddev, 3-stddev etc
+// .schema.traces.box.attributes.sizemode
 type BoxSizemode string
 
 const (
@@ -1426,6 +1562,7 @@ const (
 )
 
 // BoxVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.box.attributes.visible
 type BoxVisible interface{}
 
 var (
@@ -1435,6 +1572,7 @@ var (
 )
 
 // BoxXcalendar Sets the calendar system to use with `x` date data.
+// .schema.traces.box.attributes.xcalendar
 type BoxXcalendar string
 
 const (
@@ -1457,6 +1595,7 @@ const (
 )
 
 // BoxXperiodalignment Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+// .schema.traces.box.attributes.xperiodalignment
 type BoxXperiodalignment string
 
 const (
@@ -1466,6 +1605,7 @@ const (
 )
 
 // BoxYcalendar Sets the calendar system to use with `y` date data.
+// .schema.traces.box.attributes.ycalendar
 type BoxYcalendar string
 
 const (
@@ -1488,6 +1628,7 @@ const (
 )
 
 // BoxYperiodalignment Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+// .schema.traces.box.attributes.yperiodalignment
 type BoxYperiodalignment string
 
 const (
@@ -1497,6 +1638,7 @@ const (
 )
 
 // BoxHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.box.attributes.hoverinfo
 type BoxHoverinfo string
 
 const (
@@ -1514,6 +1656,7 @@ const (
 )
 
 // BoxHoveron Do the hover effects highlight individual boxes  or sample points or both?
+// .schema.traces.box.attributes.hoveron
 type BoxHoveron string
 
 const (

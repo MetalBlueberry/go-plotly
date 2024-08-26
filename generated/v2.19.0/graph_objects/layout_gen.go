@@ -12,22 +12,26 @@ type Layout struct {
 	// Activeselection
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.activeselection
 	Activeselection *LayoutActiveselection `json:"activeselection,omitempty"`
 
 	// Activeshape
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.activeshape
 	Activeshape *LayoutActiveshape `json:"activeshape,omitempty"`
 
 	// Annotations
 	// role: Object
 	// items: LayoutAnnotation
+	// .schema.layout.layoutAttributes.annotations
 	Annotations []LayoutAnnotation `json:"annotations,omitempty"`
 
 	// Autosize
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
+	// .schema.layout.layoutAttributes.autosize
 	Autosize types.BoolType `json:"autosize,omitempty"`
 
 	// Autotypenumbers
@@ -35,18 +39,21 @@ type Layout struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
+	// .schema.layout.layoutAttributes.autotypenumbers
 	Autotypenumbers LayoutAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Bargap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
+	// .schema.traces.histogram.layoutAttributes.bargap
 	Bargap types.NumberType `json:"bargap,omitempty"`
 
 	// Bargroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
+	// .schema.traces.bar.layoutAttributes.bargroupgap
 	Bargroupgap types.NumberType `json:"bargroupgap,omitempty"`
 
 	// Barmode
@@ -54,6 +61,7 @@ type Layout struct {
 	// default: group
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+	// .schema.traces.histogram.layoutAttributes.barmode
 	Barmode LayoutBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
@@ -61,18 +69,21 @@ type Layout struct {
 	// default:
 	// type: enumerated
 	// Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
+	// .schema.traces.bar.layoutAttributes.barnorm
 	Barnorm LayoutBarnorm `json:"barnorm,omitempty"`
 
 	// Boxgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between boxes of adjacent location coordinates. Has no effect on traces that have *width* set.
+	// .schema.traces.box.layoutAttributes.boxgap
 	Boxgap types.NumberType `json:"boxgap,omitempty"`
 
 	// Boxgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between boxes of the same location coordinate. Has no effect on traces that have *width* set.
+	// .schema.traces.box.layoutAttributes.boxgroupgap
 	Boxgroupgap types.NumberType `json:"boxgroupgap,omitempty"`
 
 	// Boxmode
@@ -80,6 +91,7 @@ type Layout struct {
 	// default: overlay
 	// type: enumerated
 	// Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
+	// .schema.traces.candlestick.layoutAttributes.boxmode
 	Boxmode LayoutBoxmode `json:"boxmode,omitempty"`
 
 	// Calendar
@@ -87,6 +99,7 @@ type Layout struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
+	// .schema.layout.layoutAttributes.calendar
 	Calendar LayoutCalendar `json:"calendar,omitempty"`
 
 	// Clickmode
@@ -94,34 +107,40 @@ type Layout struct {
 	// default: event
 	// type: flaglist
 	// Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
+	// .schema.layout.layoutAttributes.clickmode
 	Clickmode LayoutClickmode `json:"clickmode,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.coloraxis
 	Coloraxis *LayoutColoraxis `json:"coloraxis,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.colorscale
 	Colorscale *LayoutColorscale `json:"colorscale,omitempty"`
 
 	// Colorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default trace colors.
+	// .schema.layout.layoutAttributes.colorway
 	Colorway *types.ColorList `json:"colorway,omitempty"`
 
 	// Computed
 	// arrayOK: false
 	// type: any
 	// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+	// .schema.layout.layoutAttributes.computed
 	Computed interface{} `json:"computed,omitempty"`
 
 	// Datarevision
 	// arrayOK: false
 	// type: any
 	// If provided, a changed value tells `Plotly.react` that one or more data arrays has changed. This way you can modify arrays in-place rather than making a complete new copy for an incremental change. If NOT provided, `Plotly.react` assumes that data arrays are being treated as immutable, thus any data array with a different identity from its predecessor contains new data.
+	// .schema.layout.layoutAttributes.datarevision
 	Datarevision interface{} `json:"datarevision,omitempty"`
 
 	// Dragmode
@@ -129,65 +148,76 @@ type Layout struct {
 	// default: zoom
 	// type: enumerated
 	// Determines the mode of drag interactions. *select* and *lasso* apply only to scatter traces with markers or text. *orbit* and *turntable* apply only to 3D scenes.
+	// .schema.layout.layoutAttributes.dragmode
 	Dragmode LayoutDragmode `json:"dragmode,omitempty"`
 
 	// Editrevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in `editable: true` configuration, other than trace names and axis titles. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.editrevision
 	Editrevision interface{} `json:"editrevision,omitempty"`
 
 	// Extendfunnelareacolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the funnelarea slice colors (whether given by `funnelareacolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+	// .schema.traces.funnelarea.layoutAttributes.extendfunnelareacolors
 	Extendfunnelareacolors types.BoolType `json:"extendfunnelareacolors,omitempty"`
 
 	// Extendiciclecolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the icicle slice colors (whether given by `iciclecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+	// .schema.traces.icicle.layoutAttributes.extendiciclecolors
 	Extendiciclecolors types.BoolType `json:"extendiciclecolors,omitempty"`
 
 	// Extendpiecolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the pie slice colors (whether given by `piecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+	// .schema.traces.pie.layoutAttributes.extendpiecolors
 	Extendpiecolors types.BoolType `json:"extendpiecolors,omitempty"`
 
 	// Extendsunburstcolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the sunburst slice colors (whether given by `sunburstcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+	// .schema.traces.sunburst.layoutAttributes.extendsunburstcolors
 	Extendsunburstcolors types.BoolType `json:"extendsunburstcolors,omitempty"`
 
 	// Extendtreemapcolors
 	// arrayOK: false
 	// type: boolean
 	// If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+	// .schema.traces.treemap.layoutAttributes.extendtreemapcolors
 	Extendtreemapcolors types.BoolType `json:"extendtreemapcolors,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.font
 	Font *LayoutFont `json:"font,omitempty"`
 
 	// Funnelareacolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
+	// .schema.traces.funnelarea.layoutAttributes.funnelareacolorway
 	Funnelareacolorway *types.ColorList `json:"funnelareacolorway,omitempty"`
 
 	// Funnelgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
+	// .schema.traces.funnel.layoutAttributes.funnelgap
 	Funnelgap types.NumberType `json:"funnelgap,omitempty"`
 
 	// Funnelgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
+	// .schema.traces.funnel.layoutAttributes.funnelgroupgap
 	Funnelgroupgap types.NumberType `json:"funnelgroupgap,omitempty"`
 
 	// Funnelmode
@@ -195,22 +225,26 @@ type Layout struct {
 	// default: stack
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+	// .schema.traces.funnel.layoutAttributes.funnelmode
 	Funnelmode LayoutFunnelmode `json:"funnelmode,omitempty"`
 
 	// Geo
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo
 	Geo *LayoutGeo `json:"geo,omitempty"`
 
 	// Grid
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.grid
 	Grid *LayoutGrid `json:"grid,omitempty"`
 
 	// Height
 	// arrayOK: false
 	// type: number
 	// Sets the plot's height (in px).
+	// .schema.layout.layoutAttributes.height
 	Height types.NumberType `json:"height,omitempty"`
 
 	// Hiddenlabels
@@ -219,29 +253,34 @@ type Layout struct {
 	// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.funnelarea.layoutAttributes.hiddenlabels
 	Hiddenlabels *types.DataArrayType `json:"hiddenlabels,omitempty"`
 
 	// Hiddenlabelssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hiddenlabels`.
+	// .schema.traces.pie.layoutAttributes.hiddenlabelssrc
 	Hiddenlabelssrc types.StringType `json:"hiddenlabelssrc,omitempty"`
 
 	// Hidesources
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a text link citing the data source is placed at the bottom-right cored of the figure. Has only an effect only on graphs that have been generated via forked graphs from the Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise).
+	// .schema.layout.layoutAttributes.hidesources
 	Hidesources types.BoolType `json:"hidesources,omitempty"`
 
 	// Hoverdistance
 	// arrayOK: false
 	// type: integer
 	// Sets the default distance (in pixels) to look for data to add hover labels (-1 means no cutoff, 0 means no looking for data). This is only a real distance for hovering on point-like objects, like scatter points. For area-like objects (bars, scatter fills, etc) hovering is on inside the area and off outside, but these objects will not supersede hover on point-like objects in case of conflict.
+	// .schema.layout.layoutAttributes.hoverdistance
 	Hoverdistance types.IntegerType `json:"hoverdistance,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.hoverlabel
 	Hoverlabel *LayoutHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovermode
@@ -249,100 +288,118 @@ type Layout struct {
 	// default: closest
 	// type: enumerated
 	// Determines the mode of hover interactions. If *closest*, a single hoverlabel will appear for the *closest* point within the `hoverdistance`. If *x* (or *y*), multiple hoverlabels will appear for multiple points at the *closest* x- (or y-) coordinate within the `hoverdistance`, with the caveat that no more than one hoverlabel will appear per trace. If *x unified* (or *y unified*), a single hoverlabel will appear multiple points at the closest x- (or y-) coordinate within the `hoverdistance` with the caveat that no more than one hoverlabel will appear per trace. In this mode, spikelines are enabled by default perpendicular to the specified axis. If false, hover interactions are disabled.
+	// .schema.layout.layoutAttributes.hovermode
 	Hovermode LayoutHovermode `json:"hovermode,omitempty"`
 
 	// Iciclecolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
+	// .schema.traces.icicle.layoutAttributes.iciclecolorway
 	Iciclecolorway *types.ColorList `json:"iciclecolorway,omitempty"`
 
 	// Images
 	// role: Object
 	// items: LayoutImage
+	// .schema.layout.layoutAttributes.images
 	Images []LayoutImage `json:"images,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.legend
 	Legend *LayoutLegend `json:"legend,omitempty"`
 
 	// Mapbox
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox
 	Mapbox *LayoutMapbox `json:"mapbox,omitempty"`
 
 	// Margin
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.margin
 	Margin *LayoutMargin `json:"margin,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information that can be used in various `text` attributes. Attributes such as the graph, axis and colorbar `title.text`, annotation `text` `trace.name` in legend items, `rangeselector`, `updatemenus` and `sliders` `label` text all support `meta`. One can access `meta` fields using template strings: `%{meta[i]}` where `i` is the index of the `meta` item in question. `meta` can also be an object for example `{key: value}` which can be accessed %{meta[key]}.
+	// .schema.layout.layoutAttributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.layout.layoutAttributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Minreducedheight
 	// arrayOK: false
 	// type: number
 	// Minimum height of the plot with margin.automargin applied (in px)
+	// .schema.layout.layoutAttributes.minreducedheight
 	Minreducedheight types.NumberType `json:"minreducedheight,omitempty"`
 
 	// Minreducedwidth
 	// arrayOK: false
 	// type: number
 	// Minimum width of the plot with margin.automargin applied (in px)
+	// .schema.layout.layoutAttributes.minreducedwidth
 	Minreducedwidth types.NumberType `json:"minreducedwidth,omitempty"`
 
 	// Modebar
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.modebar
 	Modebar *LayoutModebar `json:"modebar,omitempty"`
 
 	// Newselection
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newselection
 	Newselection *LayoutNewselection `json:"newselection,omitempty"`
 
 	// Newshape
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newshape
 	Newshape *LayoutNewshape `json:"newshape,omitempty"`
 
 	// PaperBgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the paper where the graph is drawn.
+	// .schema.layout.layoutAttributes.paper_bgcolor
 	PaperBgcolor types.Color `json:"paper_bgcolor,omitempty"`
 
 	// Piecolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
+	// .schema.traces.pie.layoutAttributes.piecolorway
 	Piecolorway *types.ColorList `json:"piecolorway,omitempty"`
 
 	// PlotBgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the plotting area in-between x and y axes.
+	// .schema.layout.layoutAttributes.plot_bgcolor
 	PlotBgcolor types.Color `json:"plot_bgcolor,omitempty"`
 
 	// Polar
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar
 	Polar *LayoutPolar `json:"polar,omitempty"`
 
 	// Scattergap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between scatter points of adjacent location coordinates. Defaults to `bargap`.
+	// .schema.traces.scatter.layoutAttributes.scattergap
 	Scattergap types.NumberType `json:"scattergap,omitempty"`
 
 	// Scattermode
@@ -350,11 +407,13 @@ type Layout struct {
 	// default: overlay
 	// type: enumerated
 	// Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
+	// .schema.traces.scatter.layoutAttributes.scattermode
 	Scattermode LayoutScattermode `json:"scattermode,omitempty"`
 
 	// Scene
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene
 	Scene *LayoutScene `json:"scene,omitempty"`
 
 	// Selectdirection
@@ -362,111 +421,131 @@ type Layout struct {
 	// default: any
 	// type: enumerated
 	// When `dragmode` is set to *select*, this limits the selection of the drag to horizontal, vertical or diagonal. *h* only allows horizontal selection, *v* only vertical, *d* only diagonal and *any* sets no limit.
+	// .schema.layout.layoutAttributes.selectdirection
 	Selectdirection LayoutSelectdirection `json:"selectdirection,omitempty"`
 
 	// Selectionrevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in selected points from all traces.
+	// .schema.layout.layoutAttributes.selectionrevision
 	Selectionrevision interface{} `json:"selectionrevision,omitempty"`
 
 	// Selections
 	// role: Object
 	// items: LayoutSelection
+	// .schema.layout.layoutAttributes.selections
 	Selections []LayoutSelection `json:"selections,omitempty"`
 
 	// Separators
 	// arrayOK: false
 	// type: string
 	// Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
+	// .schema.layout.layoutAttributes.separators
 	Separators types.StringType `json:"separators,omitempty"`
 
 	// Shapes
 	// role: Object
 	// items: LayoutShape
+	// .schema.layout.layoutAttributes.shapes
 	Shapes []LayoutShape `json:"shapes,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a legend is drawn. Default is `true` if there is a trace to show and any of these: a) Two or more traces would by default be shown in the legend. b) One pie trace is shown in the legend. c) One trace is explicitly given with `showlegend: true`.
+	// .schema.layout.layoutAttributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Sliders
 	// role: Object
 	// items: LayoutSlider
+	// .schema.layout.layoutAttributes.sliders
 	Sliders []LayoutSlider `json:"sliders,omitempty"`
 
 	// Smith
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith
 	Smith *LayoutSmith `json:"smith,omitempty"`
 
 	// Spikedistance
 	// arrayOK: false
 	// type: integer
 	// Sets the default distance (in pixels) to look for data to draw spikelines to (-1 means no cutoff, 0 means no looking for data). As with hoverdistance, distance does not apply to area-like objects. In addition, some objects can be hovered on but will not generate spikelines, such as scatter fills.
+	// .schema.layout.layoutAttributes.spikedistance
 	Spikedistance types.IntegerType `json:"spikedistance,omitempty"`
 
 	// Sunburstcolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
+	// .schema.traces.sunburst.layoutAttributes.sunburstcolorway
 	Sunburstcolorway *types.ColorList `json:"sunburstcolorway,omitempty"`
 
 	// Template
 	// arrayOK: false
 	// type: any
 	// Default attributes to be applied to the plot. Templates can be created from existing plots using `Plotly.makeTemplate`, or created manually. They should be objects with format: `{layout: layoutTemplate, data: {[type]: [traceTemplate, ...]}, ...}` `layoutTemplate` and `traceTemplate` are objects matching the attribute structure of `layout` and a data trace.  Trace templates are applied cyclically to traces of each type. Container arrays (eg `annotations`) have special handling: An object ending in `defaults` (eg `annotationdefaults`) is applied to each array item. But if an item has a `templateitemname` key we look in the template array for an item with matching `name` and apply that instead. If no matching `name` is found we mark the item invisible. Any named template item not referenced is appended to the end of the array, so you can use this for a watermark annotation or a logo image, for example. To omit one of these items on the plot, make an item with matching `templateitemname` and `visible: false`.
+	// .schema.layout.layoutAttributes.template
 	Template interface{} `json:"template,omitempty"`
 
 	// Ternary
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary
 	Ternary *LayoutTernary `json:"ternary,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.title
 	Title *LayoutTitle `json:"title,omitempty"`
 
 	// Transition
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.transition
 	Transition *LayoutTransition `json:"transition,omitempty"`
 
 	// Treemapcolorway
 	// arrayOK: false
 	// type: colorlist
 	// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
+	// .schema.traces.treemap.layoutAttributes.treemapcolorway
 	Treemapcolorway *types.ColorList `json:"treemapcolorway,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Used to allow user interactions with the plot to persist after `Plotly.react` calls that are unaware of these interactions. If `uirevision` is omitted, or if it is given and it changed from the previous `Plotly.react` call, the exact new figure is used. If `uirevision` is truthy and did NOT change, any attribute that has been affected by user interactions and did not receive a different value in the new figure will keep the interaction value. `layout.uirevision` attribute serves as the default for `uirevision` attributes in various sub-containers. For finer control you can set these sub-attributes directly. For example, if your app separately controls the data on the x and y axes you might set `xaxis.uirevision=*time*` and `yaxis.uirevision=*cost*`. Then if only the y data is changed, you can update `yaxis.uirevision=*quantity*` and the y axis range will reset but the x axis range will retain any user-driven zoom.
+	// .schema.layout.layoutAttributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Uniformtext
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.uniformtext
 	Uniformtext *LayoutUniformtext `json:"uniformtext,omitempty"`
 
 	// Updatemenus
 	// role: Object
 	// items: LayoutUpdatemenu
+	// .schema.layout.layoutAttributes.updatemenus
 	Updatemenus []LayoutUpdatemenu `json:"updatemenus,omitempty"`
 
 	// Violingap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between violins of adjacent location coordinates. Has no effect on traces that have *width* set.
+	// .schema.traces.violin.layoutAttributes.violingap
 	Violingap types.NumberType `json:"violingap,omitempty"`
 
 	// Violingroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between violins of the same location coordinate. Has no effect on traces that have *width* set.
+	// .schema.traces.violin.layoutAttributes.violingroupgap
 	Violingroupgap types.NumberType `json:"violingroupgap,omitempty"`
 
 	// Violinmode
@@ -474,18 +553,21 @@ type Layout struct {
 	// default: overlay
 	// type: enumerated
 	// Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
+	// .schema.traces.violin.layoutAttributes.violinmode
 	Violinmode LayoutViolinmode `json:"violinmode,omitempty"`
 
 	// Waterfallgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of adjacent location coordinates.
+	// .schema.traces.waterfall.layoutAttributes.waterfallgap
 	Waterfallgap types.NumberType `json:"waterfallgap,omitempty"`
 
 	// Waterfallgroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the gap (in plot fraction) between bars of the same location coordinate.
+	// .schema.traces.waterfall.layoutAttributes.waterfallgroupgap
 	Waterfallgroupgap types.NumberType `json:"waterfallgroupgap,omitempty"`
 
 	// Waterfallmode
@@ -493,62 +575,76 @@ type Layout struct {
 	// default: group
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+	// .schema.traces.waterfall.layoutAttributes.waterfallmode
 	Waterfallmode LayoutWaterfallmode `json:"waterfallmode,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the plot's width (in px).
+	// .schema.layout.layoutAttributes.width
 	Width types.NumberType `json:"width,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis
 	Xaxis *LayoutXaxis `json:"xaxis,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.yaxis
 	Yaxis *LayoutYaxis `json:"yaxis,omitempty"`
 
 	// XAxis2
 	// X Axis number 2
+	//
 	XAxis2 *LayoutXaxis `json:"xaxis2,omitempty"`
 
 	// XAxis3
 	// X Axis number 3
+	//
 	XAxis3 *LayoutXaxis `json:"xaxis3,omitempty"`
 
 	// XAxis4
 	// X Axis number 4
+	//
 	XAxis4 *LayoutXaxis `json:"xaxis4,omitempty"`
 
 	// XAxis5
 	// X Axis number 5
+	//
 	XAxis5 *LayoutXaxis `json:"xaxis5,omitempty"`
 
 	// XAxis6
 	// X Axis number 6
+	//
 	XAxis6 *LayoutXaxis `json:"xaxis6,omitempty"`
 
 	// YAxis2
 	// Y Axis number 2
+	//
 	YAxis2 *LayoutYaxis `json:"yaxis2,omitempty"`
 
 	// YAxis3
 	// Y Axis number 3
+	//
 	YAxis3 *LayoutYaxis `json:"yaxis3,omitempty"`
 
 	// YAxis4
 	// Y Axis number 4
+	//
 	YAxis4 *LayoutYaxis `json:"yaxis4,omitempty"`
 
 	// YAxis5
 	// Y Axis number 5
+	//
 	YAxis5 *LayoutYaxis `json:"yaxis5,omitempty"`
 
 	// YAxis6
 	// Y Axis number 6
+	//
 	YAxis6 *LayoutYaxis `json:"yaxis6,omitempty"`
 }
 
@@ -559,12 +655,14 @@ type LayoutActiveselection struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color filling the active selection' interior.
+	// .schema.layout.layoutAttributes.activeselection.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the active selection.
+	// .schema.layout.layoutAttributes.activeselection.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -575,12 +673,14 @@ type LayoutActiveshape struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color filling the active shape' interior.
+	// .schema.layout.layoutAttributes.activeshape.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the active shape.
+	// .schema.layout.layoutAttributes.activeshape.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -591,18 +691,21 @@ type AnnotationFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.annotations.items.annotation.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.annotations.items.annotation.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -613,18 +716,21 @@ type AnnotationHoverlabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -635,17 +741,20 @@ type AnnotationHoverlabel struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the hover label. By default uses the annotation's `bgcolor` made opaque, or white if it was transparent.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border color of the hover label. By default uses either dark grey or white, for maximum contrast with `hoverlabel.bgcolor`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.font
 	Font *AnnotationHoverlabelFont `json:"font,omitempty"`
 }
 
@@ -657,18 +766,21 @@ type LayoutAnnotation struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.align
 	Align AnnotationAlign `json:"align,omitempty"`
 
 	// Arrowcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the annotation arrow.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowcolor
 	Arrowcolor types.Color `json:"arrowcolor,omitempty"`
 
 	// Arrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the end annotation arrow head style.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowhead
 	Arrowhead types.IntegerType `json:"arrowhead,omitempty"`
 
 	// Arrowside
@@ -676,24 +788,28 @@ type LayoutAnnotation struct {
 	// default: end
 	// type: flaglist
 	// Sets the annotation arrow head position.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowside
 	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
 
 	// Arrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowsize
 	Arrowsize types.NumberType `json:"arrowsize,omitempty"`
 
 	// Arrowwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of annotation arrow line.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowwidth
 	Arrowwidth types.NumberType `json:"arrowwidth,omitempty"`
 
 	// Ax
 	// arrayOK: false
 	// type: any
 	// Sets the x component of the arrow tail about the arrow head. If `axref` is `pixel`, a positive (negative) component corresponds to an arrow pointing from right to left (left to right). If `axref` is not `pixel` and is exactly the same as `xref`, this is an absolute value on that axis, like `x`, specified in the same coordinates as `xref`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.ax
 	Ax interface{} `json:"ax,omitempty"`
 
 	// Axref
@@ -701,12 +817,14 @@ type LayoutAnnotation struct {
 	// default: pixel
 	// type: enumerated
 	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.axref
 	Axref AnnotationAxref `json:"axref,omitempty"`
 
 	// Ay
 	// arrayOK: false
 	// type: any
 	// Sets the y component of the arrow tail about the arrow head. If `ayref` is `pixel`, a positive (negative) component corresponds to an arrow pointing from bottom to top (top to bottom). If `ayref` is not `pixel` and is exactly the same as `yref`, this is an absolute value on that axis, like `y`, specified in the same coordinates as `yref`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.ay
 	Ay interface{} `json:"ay,omitempty"`
 
 	// Ayref
@@ -714,36 +832,42 @@ type LayoutAnnotation struct {
 	// default: pixel
 	// type: enumerated
 	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.ayref
 	Ayref AnnotationAyref `json:"ayref,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the annotation.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the annotation `text`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderpad
 	// arrayOK: false
 	// type: number
 	// Sets the padding (in px) between the `text` and the enclosing border.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.borderpad
 	Borderpad types.NumberType `json:"borderpad,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the annotation `text`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Captureevents
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.captureevents
 	Captureevents types.BoolType `json:"captureevents,omitempty"`
 
 	// Clicktoshow
@@ -751,88 +875,103 @@ type LayoutAnnotation struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.clicktoshow
 	Clicktoshow AnnotationClicktoshow `json:"clicktoshow,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.annotations.items.annotation.font
 	Font *AnnotationFont `json:"font,omitempty"`
 
 	// Height
 	// arrayOK: false
 	// type: number
 	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.height
 	Height types.NumberType `json:"height,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel
 	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertext
 	// arrayOK: false
 	// type: string
 	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.hovertext
 	Hovertext types.StringType `json:"hovertext,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the annotation (text + arrow).
+	// .schema.layout.layoutAttributes.annotations.items.annotation.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showarrow
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.showarrow
 	Showarrow types.BoolType `json:"showarrow,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.standoff
 	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Startarrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the start annotation arrow head style.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.startarrowhead
 	Startarrowhead types.IntegerType `json:"startarrowhead,omitempty"`
 
 	// Startarrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.startarrowsize
 	Startarrowsize types.NumberType `json:"startarrowsize,omitempty"`
 
 	// Startstandoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.startstandoff
 	Startstandoff types.NumberType `json:"startstandoff,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the `text` is drawn with respect to the horizontal.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.textangle
 	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Valign
@@ -840,24 +979,28 @@ type LayoutAnnotation struct {
 	// default: middle
 	// type: enumerated
 	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.valign
 	Valign AnnotationValign `json:"valign,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this annotation is visible.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.width
 	Width types.NumberType `json:"width,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: any
 	// Sets the annotation's x position. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.x
 	X interface{} `json:"x,omitempty"`
 
 	// Xanchor
@@ -865,12 +1008,14 @@ type LayoutAnnotation struct {
 	// default: auto
 	// type: enumerated
 	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.xanchor
 	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
 
 	// Xclick
 	// arrayOK: false
 	// type: any
 	// Toggle this annotation when clicking a data point whose `x` value is `xclick` rather than the annotation's `x` value.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.xclick
 	Xclick interface{} `json:"xclick,omitempty"`
 
 	// Xref
@@ -878,18 +1023,21 @@ type LayoutAnnotation struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.xref
 	Xref AnnotationXref `json:"xref,omitempty"`
 
 	// Xshift
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.xshift
 	Xshift types.NumberType `json:"xshift,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: any
 	// Sets the annotation's y position. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.y
 	Y interface{} `json:"y,omitempty"`
 
 	// Yanchor
@@ -897,12 +1045,14 @@ type LayoutAnnotation struct {
 	// default: auto
 	// type: enumerated
 	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.yanchor
 	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
 
 	// Yclick
 	// arrayOK: false
 	// type: any
 	// Toggle this annotation when clicking a data point whose `y` value is `yclick` rather than the annotation's `y` value.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.yclick
 	Yclick interface{} `json:"yclick,omitempty"`
 
 	// Yref
@@ -910,12 +1060,14 @@ type LayoutAnnotation struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.yref
 	Yref AnnotationYref `json:"yref,omitempty"`
 
 	// Yshift
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
+	// .schema.layout.layoutAttributes.annotations.items.annotation.yshift
 	Yshift types.NumberType `json:"yshift,omitempty"`
 }
 
@@ -926,18 +1078,21 @@ type LayoutColoraxisColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -948,30 +1103,35 @@ type LayoutColoraxisColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -982,18 +1142,21 @@ type LayoutColoraxisColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1003,6 +1166,7 @@ type LayoutColoraxisColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.font
 	Font *LayoutColoraxisColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -1010,12 +1174,14 @@ type LayoutColoraxisColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.side
 	Side LayoutColoraxisColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1026,24 +1192,28 @@ type LayoutColoraxisColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -1051,18 +1221,21 @@ type LayoutColoraxisColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.exponentformat
 	Exponentformat LayoutColoraxisColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -1070,18 +1243,21 @@ type LayoutColoraxisColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.lenmode
 	Lenmode LayoutColoraxisColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -1089,24 +1265,28 @@ type LayoutColoraxisColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.orientation
 	Orientation LayoutColoraxisColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -1114,12 +1294,14 @@ type LayoutColoraxisColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.showexponent
 	Showexponent LayoutColoraxisColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -1127,6 +1309,7 @@ type LayoutColoraxisColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.showtickprefix
 	Showtickprefix LayoutColoraxisColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -1134,12 +1317,14 @@ type LayoutColoraxisColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.showticksuffix
 	Showticksuffix LayoutColoraxisColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -1147,40 +1332,47 @@ type LayoutColoraxisColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.thicknessmode
 	Thicknessmode LayoutColoraxisColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickfont
 	Tickfont *LayoutColoraxisColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutColoraxisColorbarTickformatstop
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickformatstops
 	Tickformatstops []LayoutColoraxisColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -1188,6 +1380,7 @@ type LayoutColoraxisColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklabeloverflow
 	Ticklabeloverflow LayoutColoraxisColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -1195,18 +1388,21 @@ type LayoutColoraxisColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklabelposition
 	Ticklabelposition LayoutColoraxisColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -1214,12 +1410,14 @@ type LayoutColoraxisColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickmode
 	Tickmode LayoutColoraxisColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -1227,12 +1425,14 @@ type LayoutColoraxisColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticks
 	Ticks LayoutColoraxisColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -1241,12 +1441,14 @@ type LayoutColoraxisColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -1255,29 +1457,34 @@ type LayoutColoraxisColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.title
 	Title *LayoutColoraxisColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position of the color bar (in plot fraction). Defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -1285,18 +1492,21 @@ type LayoutColoraxisColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.xanchor
 	Xanchor LayoutColoraxisColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position of the color bar (in plot fraction). Defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -1304,12 +1514,14 @@ type LayoutColoraxisColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.yanchor
 	Yanchor LayoutColoraxisColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.layout.layoutAttributes.coloraxis.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 }
 
@@ -1320,53 +1532,62 @@ type LayoutColoraxis struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.layout.layoutAttributes.coloraxis.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here corresponding trace color array(s)) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
+	// .schema.layout.layoutAttributes.coloraxis.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Value should have the same units as corresponding trace color array(s) and if set, `cmin` must be set as well.
+	// .schema.layout.layoutAttributes.coloraxis.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `cmin` and/or `cmax` to be equidistant to this point. Value should have the same units as corresponding trace color array(s). Has no effect when `cauto` is `false`.
+	// .schema.layout.layoutAttributes.coloraxis.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Value should have the same units as corresponding trace color array(s) and if set, `cmax` must be set as well.
+	// .schema.layout.layoutAttributes.coloraxis.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.coloraxis.colorbar
 	Colorbar *LayoutColoraxisColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.layout.layoutAttributes.coloraxis.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
+	// .schema.layout.layoutAttributes.coloraxis.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace.
+	// .schema.layout.layoutAttributes.coloraxis.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
@@ -1377,18 +1598,21 @@ type LayoutColorscale struct {
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default diverging colorscale. Note that `autocolorscale` must be true for this attribute to work.
+	// .schema.layout.layoutAttributes.colorscale.diverging
 	Diverging *types.ColorScale `json:"diverging,omitempty"`
 
 	// Sequential
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for positive values. Note that `autocolorscale` must be true for this attribute to work.
+	// .schema.layout.layoutAttributes.colorscale.sequential
 	Sequential *types.ColorScale `json:"sequential,omitempty"`
 
 	// Sequentialminus
 	// arrayOK: false
 	// type: colorscale
 	// Sets the default sequential colorscale for negative values. Note that `autocolorscale` must be true for this attribute to work.
+	// .schema.layout.layoutAttributes.colorscale.sequentialminus
 	Sequentialminus *types.ColorScale `json:"sequentialminus,omitempty"`
 }
 
@@ -1399,18 +1623,21 @@ type LayoutFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1421,12 +1648,14 @@ type LayoutGeoCenter struct {
 	// arrayOK: false
 	// type: number
 	// Sets the latitude of the map's center. For all projection types, the map's latitude center lies at the middle of the latitude range by default.
+	// .schema.layout.layoutAttributes.geo.center.lat
 	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Sets the longitude of the map's center. By default, the map's longitude center lies at the middle of the longitude range for scoped projection and above `projection.rotation.lon` otherwise.
+	// .schema.layout.layoutAttributes.geo.center.lon
 	Lon types.NumberType `json:"lon,omitempty"`
 }
 
@@ -1437,24 +1666,28 @@ type LayoutGeoDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this geo subplot . Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
+	// .schema.layout.layoutAttributes.geo.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this geo subplot . Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
+	// .schema.layout.layoutAttributes.geo.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this geo subplot (in plot fraction). Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
+	// .schema.layout.layoutAttributes.geo.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this geo subplot (in plot fraction). Note that geo subplots are constrained by domain. In general, when `projection.scale` is set to 1. a map will fit either its x or y domain, but not both.
+	// .schema.layout.layoutAttributes.geo.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -1465,42 +1698,49 @@ type LayoutGeoLataxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's longitude/latitude tick step.
+	// .schema.layout.layoutAttributes.geo.lataxis.dtick
 	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the graticule's stroke color.
+	// .schema.layout.layoutAttributes.geo.lataxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.geo.lataxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's stroke width (in px).
+	// .schema.layout.layoutAttributes.geo.lataxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
+	// .schema.layout.layoutAttributes.geo.lataxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not graticule are shown on the map.
+	// .schema.layout.layoutAttributes.geo.lataxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's starting tick longitude/latitude.
+	// .schema.layout.layoutAttributes.geo.lataxis.tick0
 	Tick0 types.NumberType `json:"tick0,omitempty"`
 }
 
@@ -1511,42 +1751,49 @@ type LayoutGeoLonaxis struct {
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's longitude/latitude tick step.
+	// .schema.layout.layoutAttributes.geo.lonaxis.dtick
 	Dtick types.NumberType `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the graticule's stroke color.
+	// .schema.layout.layoutAttributes.geo.lonaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.geo.lonaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's stroke width (in px).
+	// .schema.layout.layoutAttributes.geo.lonaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
+	// .schema.layout.layoutAttributes.geo.lonaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not graticule are shown on the map.
+	// .schema.layout.layoutAttributes.geo.lonaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: number
 	// Sets the graticule's starting tick longitude/latitude.
+	// .schema.layout.layoutAttributes.geo.lonaxis.tick0
 	Tick0 types.NumberType `json:"tick0,omitempty"`
 }
 
@@ -1557,18 +1804,21 @@ type LayoutGeoProjectionRotation struct {
 	// arrayOK: false
 	// type: number
 	// Rotates the map along meridians (in degrees North).
+	// .schema.layout.layoutAttributes.geo.projection.rotation.lat
 	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Rotates the map along parallels (in degrees East). Defaults to the center of the `lonaxis.range` values.
+	// .schema.layout.layoutAttributes.geo.projection.rotation.lon
 	Lon types.NumberType `json:"lon,omitempty"`
 
 	// Roll
 	// arrayOK: false
 	// type: number
 	// Roll the map (in degrees) For example, a roll of *180* makes the map appear upside down.
+	// .schema.layout.layoutAttributes.geo.projection.rotation.roll
 	Roll types.NumberType `json:"roll,omitempty"`
 }
 
@@ -1579,29 +1829,34 @@ type LayoutGeoProjection struct {
 	// arrayOK: false
 	// type: number
 	// For satellite projection type only. Sets the distance from the center of the sphere to the point of view as a proportion of the sphere’s radius.
+	// .schema.layout.layoutAttributes.geo.projection.distance
 	Distance types.NumberType `json:"distance,omitempty"`
 
 	// Parallels
 	// arrayOK: false
 	// type: info_array
 	// For conic projection types only. Sets the parallels (tangent, secant) where the cone intersects the sphere.
+	// .schema.layout.layoutAttributes.geo.projection.parallels
 	Parallels interface{} `json:"parallels,omitempty"`
 
 	// Rotation
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.projection.rotation
 	Rotation *LayoutGeoProjectionRotation `json:"rotation,omitempty"`
 
 	// Scale
 	// arrayOK: false
 	// type: number
 	// Zooms in or out on the map view. A scale of *1* corresponds to the largest zoom level that fits the map's lon and lat ranges.
+	// .schema.layout.layoutAttributes.geo.projection.scale
 	Scale types.NumberType `json:"scale,omitempty"`
 
 	// Tilt
 	// arrayOK: false
 	// type: number
 	// For satellite projection type only. Sets the tilt angle of perspective projection.
+	// .schema.layout.layoutAttributes.geo.projection.tilt
 	Tilt types.NumberType `json:"tilt,omitempty"`
 
 	// Type
@@ -1609,6 +1864,7 @@ type LayoutGeoProjection struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the projection type.
+	// .schema.layout.layoutAttributes.geo.projection.type
 	Type LayoutGeoProjectionType `json:"type,omitempty"`
 }
 
@@ -1619,40 +1875,47 @@ type LayoutGeo struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the map
+	// .schema.layout.layoutAttributes.geo.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Center
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.center
 	Center *LayoutGeoCenter `json:"center,omitempty"`
 
 	// Coastlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the coastline color.
+	// .schema.layout.layoutAttributes.geo.coastlinecolor
 	Coastlinecolor types.Color `json:"coastlinecolor,omitempty"`
 
 	// Coastlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the coastline stroke width (in px).
+	// .schema.layout.layoutAttributes.geo.coastlinewidth
 	Coastlinewidth types.NumberType `json:"coastlinewidth,omitempty"`
 
 	// Countrycolor
 	// arrayOK: false
 	// type: color
 	// Sets line color of the country boundaries.
+	// .schema.layout.layoutAttributes.geo.countrycolor
 	Countrycolor types.Color `json:"countrycolor,omitempty"`
 
 	// Countrywidth
 	// arrayOK: false
 	// type: number
 	// Sets line width (in px) of the country boundaries.
+	// .schema.layout.layoutAttributes.geo.countrywidth
 	Countrywidth types.NumberType `json:"countrywidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.domain
 	Domain *LayoutGeoDomain `json:"domain,omitempty"`
 
 	// Fitbounds
@@ -1660,51 +1923,60 @@ type LayoutGeo struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if this subplot's view settings are auto-computed to fit trace data. On scoped maps, setting `fitbounds` leads to `center.lon` and `center.lat` getting auto-filled. On maps with a non-clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, and `projection.rotation.lon` getting auto-filled. On maps with a clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, `projection.rotation.lon`, `projection.rotation.lat`, `lonaxis.range` and `lonaxis.range` getting auto-filled. If *locations*, only the trace's visible locations are considered in the `fitbounds` computations. If *geojson*, the entire trace input `geojson` (if provided) is considered in the `fitbounds` computations, Defaults to *false*.
+	// .schema.layout.layoutAttributes.geo.fitbounds
 	Fitbounds LayoutGeoFitbounds `json:"fitbounds,omitempty"`
 
 	// Framecolor
 	// arrayOK: false
 	// type: color
 	// Sets the color the frame.
+	// .schema.layout.layoutAttributes.geo.framecolor
 	Framecolor types.Color `json:"framecolor,omitempty"`
 
 	// Framewidth
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the frame.
+	// .schema.layout.layoutAttributes.geo.framewidth
 	Framewidth types.NumberType `json:"framewidth,omitempty"`
 
 	// Lakecolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the lakes.
+	// .schema.layout.layoutAttributes.geo.lakecolor
 	Lakecolor types.Color `json:"lakecolor,omitempty"`
 
 	// Landcolor
 	// arrayOK: false
 	// type: color
 	// Sets the land mass color.
+	// .schema.layout.layoutAttributes.geo.landcolor
 	Landcolor types.Color `json:"landcolor,omitempty"`
 
 	// Lataxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.lataxis
 	Lataxis *LayoutGeoLataxis `json:"lataxis,omitempty"`
 
 	// Lonaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.lonaxis
 	Lonaxis *LayoutGeoLonaxis `json:"lonaxis,omitempty"`
 
 	// Oceancolor
 	// arrayOK: false
 	// type: color
 	// Sets the ocean color
+	// .schema.layout.layoutAttributes.geo.oceancolor
 	Oceancolor types.Color `json:"oceancolor,omitempty"`
 
 	// Projection
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.geo.projection
 	Projection *LayoutGeoProjection `json:"projection,omitempty"`
 
 	// Resolution
@@ -1712,18 +1984,21 @@ type LayoutGeo struct {
 	// default: %!s(float64=110)
 	// type: enumerated
 	// Sets the resolution of the base layers. The values have units of km/mm e.g. 110 corresponds to a scale ratio of 1:110,000,000.
+	// .schema.layout.layoutAttributes.geo.resolution
 	Resolution LayoutGeoResolution `json:"resolution,omitempty"`
 
 	// Rivercolor
 	// arrayOK: false
 	// type: color
 	// Sets color of the rivers.
+	// .schema.layout.layoutAttributes.geo.rivercolor
 	Rivercolor types.Color `json:"rivercolor,omitempty"`
 
 	// Riverwidth
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the rivers.
+	// .schema.layout.layoutAttributes.geo.riverwidth
 	Riverwidth types.NumberType `json:"riverwidth,omitempty"`
 
 	// Scope
@@ -1731,78 +2006,91 @@ type LayoutGeo struct {
 	// default: world
 	// type: enumerated
 	// Set the scope of the map.
+	// .schema.layout.layoutAttributes.geo.scope
 	Scope LayoutGeoScope `json:"scope,omitempty"`
 
 	// Showcoastlines
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not the coastlines are drawn.
+	// .schema.layout.layoutAttributes.geo.showcoastlines
 	Showcoastlines types.BoolType `json:"showcoastlines,omitempty"`
 
 	// Showcountries
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not country boundaries are drawn.
+	// .schema.layout.layoutAttributes.geo.showcountries
 	Showcountries types.BoolType `json:"showcountries,omitempty"`
 
 	// Showframe
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not a frame is drawn around the map.
+	// .schema.layout.layoutAttributes.geo.showframe
 	Showframe types.BoolType `json:"showframe,omitempty"`
 
 	// Showlakes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not lakes are drawn.
+	// .schema.layout.layoutAttributes.geo.showlakes
 	Showlakes types.BoolType `json:"showlakes,omitempty"`
 
 	// Showland
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not land masses are filled in color.
+	// .schema.layout.layoutAttributes.geo.showland
 	Showland types.BoolType `json:"showland,omitempty"`
 
 	// Showocean
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not oceans are filled in color.
+	// .schema.layout.layoutAttributes.geo.showocean
 	Showocean types.BoolType `json:"showocean,omitempty"`
 
 	// Showrivers
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not rivers are drawn.
+	// .schema.layout.layoutAttributes.geo.showrivers
 	Showrivers types.BoolType `json:"showrivers,omitempty"`
 
 	// Showsubunits
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not boundaries of subunits within countries (e.g. states, provinces) are drawn.
+	// .schema.layout.layoutAttributes.geo.showsubunits
 	Showsubunits types.BoolType `json:"showsubunits,omitempty"`
 
 	// Subunitcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the subunits boundaries.
+	// .schema.layout.layoutAttributes.geo.subunitcolor
 	Subunitcolor types.Color `json:"subunitcolor,omitempty"`
 
 	// Subunitwidth
 	// arrayOK: false
 	// type: number
 	// Sets the stroke width (in px) of the subunits boundaries.
+	// .schema.layout.layoutAttributes.geo.subunitwidth
 	Subunitwidth types.NumberType `json:"subunitwidth,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in the view (projection and center). Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.geo.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Sets the default visibility of the base layers.
+	// .schema.layout.layoutAttributes.geo.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -1813,12 +2101,14 @@ type LayoutGridDomain struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this grid subplot (in plot fraction). The first and last cells end exactly at the domain edges, with no grout around the edges.
+	// .schema.layout.layoutAttributes.grid.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this grid subplot (in plot fraction). The first and last cells end exactly at the domain edges, with no grout around the edges.
+	// .schema.layout.layoutAttributes.grid.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -1829,11 +2119,13 @@ type LayoutGrid struct {
 	// arrayOK: false
 	// type: integer
 	// The number of columns in the grid. If you provide a 2D `subplots` array, the length of its longest row is used as the default. If you give an `xaxes` array, its length is used as the default. But it's also possible to have a different length, if you want to leave a row at the end for non-cartesian subplots.
+	// .schema.layout.layoutAttributes.grid.columns
 	Columns types.IntegerType `json:"columns,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.grid.domain
 	Domain *LayoutGridDomain `json:"domain,omitempty"`
 
 	// Pattern
@@ -1841,6 +2133,7 @@ type LayoutGrid struct {
 	// default: coupled
 	// type: enumerated
 	// If no `subplots`, `xaxes`, or `yaxes` are given but we do have `rows` and `columns`, we can generate defaults using consecutive axis IDs, in two ways: *coupled* gives one x axis per column and one y axis per row. *independent* uses a new xy pair for each cell, left-to-right across each row then iterating rows according to `roworder`.
+	// .schema.layout.layoutAttributes.grid.pattern
 	Pattern LayoutGridPattern `json:"pattern,omitempty"`
 
 	// Roworder
@@ -1848,30 +2141,35 @@ type LayoutGrid struct {
 	// default: top to bottom
 	// type: enumerated
 	// Is the first row the top or the bottom? Note that columns are always enumerated from left to right.
+	// .schema.layout.layoutAttributes.grid.roworder
 	Roworder LayoutGridRoworder `json:"roworder,omitempty"`
 
 	// Rows
 	// arrayOK: false
 	// type: integer
 	// The number of rows in the grid. If you provide a 2D `subplots` array or a `yaxes` array, its length is used as the default. But it's also possible to have a different length, if you want to leave a row at the end for non-cartesian subplots.
+	// .schema.layout.layoutAttributes.grid.rows
 	Rows types.IntegerType `json:"rows,omitempty"`
 
 	// Subplots
 	// arrayOK: false
 	// type: info_array
 	// Used for freeform grids, where some axes may be shared across subplots but others are not. Each entry should be a cartesian subplot id, like *xy* or *x3y2*, or ** to leave that cell empty. You may reuse x axes within the same column, and y axes within the same row. Non-cartesian subplots and traces that support `domain` can place themselves in this grid separately using the `gridcell` attribute.
+	// .schema.layout.layoutAttributes.grid.subplots
 	Subplots interface{} `json:"subplots,omitempty"`
 
 	// Xaxes
 	// arrayOK: false
 	// type: info_array
 	// Used with `yaxes` when the x and y axes are shared across columns and rows. Each entry should be an x axis id like *x*, *x2*, etc., or ** to not put an x axis in that column. Entries other than ** must be unique. Ignored if `subplots` is present. If missing but `yaxes` is present, will generate consecutive IDs.
+	// .schema.layout.layoutAttributes.grid.xaxes
 	Xaxes interface{} `json:"xaxes,omitempty"`
 
 	// Xgap
 	// arrayOK: false
 	// type: number
 	// Horizontal space between grid cells, expressed as a fraction of the total width available to one cell. Defaults to 0.1 for coupled-axes grids and 0.2 for independent grids.
+	// .schema.layout.layoutAttributes.grid.xgap
 	Xgap types.NumberType `json:"xgap,omitempty"`
 
 	// Xside
@@ -1879,18 +2177,21 @@ type LayoutGrid struct {
 	// default: bottom plot
 	// type: enumerated
 	// Sets where the x axis labels and titles go. *bottom* means the very bottom of the grid. *bottom plot* is the lowest plot that each x axis is used in. *top* and *top plot* are similar.
+	// .schema.layout.layoutAttributes.grid.xside
 	Xside LayoutGridXside `json:"xside,omitempty"`
 
 	// Yaxes
 	// arrayOK: false
 	// type: info_array
 	// Used with `yaxes` when the x and y axes are shared across columns and rows. Each entry should be an y axis id like *y*, *y2*, etc., or ** to not put a y axis in that row. Entries other than ** must be unique. Ignored if `subplots` is present. If missing but `xaxes` is present, will generate consecutive IDs.
+	// .schema.layout.layoutAttributes.grid.yaxes
 	Yaxes interface{} `json:"yaxes,omitempty"`
 
 	// Ygap
 	// arrayOK: false
 	// type: number
 	// Vertical space between grid cells, expressed as a fraction of the total height available to one cell. Defaults to 0.1 for coupled-axes grids and 0.3 for independent grids.
+	// .schema.layout.layoutAttributes.grid.ygap
 	Ygap types.NumberType `json:"ygap,omitempty"`
 
 	// Yside
@@ -1898,6 +2199,7 @@ type LayoutGrid struct {
 	// default: left plot
 	// type: enumerated
 	// Sets where the y axis labels and titles go. *left* means the very left edge of the grid. *left plot* is the leftmost plot that each y axis is used in. *right* and *right plot* are similar.
+	// .schema.layout.layoutAttributes.grid.yside
 	Yside LayoutGridYside `json:"yside,omitempty"`
 }
 
@@ -1908,18 +2210,21 @@ type LayoutHoverlabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.hoverlabel.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.hoverlabel.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.hoverlabel.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1930,18 +2235,21 @@ type LayoutHoverlabelGrouptitlefont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.hoverlabel.grouptitlefont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.hoverlabel.grouptitlefont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.hoverlabel.grouptitlefont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -1953,34 +2261,40 @@ type LayoutHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.layout.layoutAttributes.hoverlabel.align
 	Align LayoutHoverlabelAlign `json:"align,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of all hover labels on graph
+	// .schema.layout.layoutAttributes.hoverlabel.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border color of all hover labels on graph.
+	// .schema.layout.layoutAttributes.hoverlabel.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.hoverlabel.font
 	Font *LayoutHoverlabelFont `json:"font,omitempty"`
 
 	// Grouptitlefont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.hoverlabel.grouptitlefont
 	Grouptitlefont *LayoutHoverlabelGrouptitlefont `json:"grouptitlefont,omitempty"`
 
 	// Namelength
 	// arrayOK: false
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.layout.layoutAttributes.hoverlabel.namelength
 	Namelength types.IntegerType `json:"namelength,omitempty"`
 }
 
@@ -1992,30 +2306,35 @@ type LayoutImage struct {
 	// default: above
 	// type: enumerated
 	// Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
+	// .schema.layout.layoutAttributes.images.items.image.layer
 	Layer ImageLayer `json:"layer,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.images.items.image.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the image.
+	// .schema.layout.layoutAttributes.images.items.image.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Sizex
 	// arrayOK: false
 	// type: number
 	// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width. When `xref` ends with ` domain`, units are sized relative to the axis width.
+	// .schema.layout.layoutAttributes.images.items.image.sizex
 	Sizex types.NumberType `json:"sizex,omitempty"`
 
 	// Sizey
 	// arrayOK: false
 	// type: number
 	// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height. When `yref` ends with ` domain`, units are sized relative to the axis height.
+	// .schema.layout.layoutAttributes.images.items.image.sizey
 	Sizey types.NumberType `json:"sizey,omitempty"`
 
 	// Sizing
@@ -2023,30 +2342,35 @@ type LayoutImage struct {
 	// default: contain
 	// type: enumerated
 	// Specifies which dimension of the image to constrain.
+	// .schema.layout.layoutAttributes.images.items.image.sizing
 	Sizing ImageSizing `json:"sizing,omitempty"`
 
 	// Source
 	// arrayOK: false
 	// type: string
 	// Specifies the URL of the image to be used. The URL must be accessible from the domain where the plot code is run, and can be either relative or absolute.
+	// .schema.layout.layoutAttributes.images.items.image.source
 	Source types.StringType `json:"source,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.images.items.image.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this image is visible.
+	// .schema.layout.layoutAttributes.images.items.image.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: any
 	// Sets the image's x position. When `xref` is set to `paper`, units are sized relative to the plot height. See `xref` for more info
+	// .schema.layout.layoutAttributes.images.items.image.x
 	X interface{} `json:"x,omitempty"`
 
 	// Xanchor
@@ -2054,6 +2378,7 @@ type LayoutImage struct {
 	// default: left
 	// type: enumerated
 	// Sets the anchor for the x position
+	// .schema.layout.layoutAttributes.images.items.image.xanchor
 	Xanchor ImageXanchor `json:"xanchor,omitempty"`
 
 	// Xref
@@ -2061,12 +2386,14 @@ type LayoutImage struct {
 	// default: paper
 	// type: enumerated
 	// Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	// .schema.layout.layoutAttributes.images.items.image.xref
 	Xref ImageXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: any
 	// Sets the image's y position. When `yref` is set to `paper`, units are sized relative to the plot height. See `yref` for more info
+	// .schema.layout.layoutAttributes.images.items.image.y
 	Y interface{} `json:"y,omitempty"`
 
 	// Yanchor
@@ -2074,6 +2401,7 @@ type LayoutImage struct {
 	// default: top
 	// type: enumerated
 	// Sets the anchor for the y position.
+	// .schema.layout.layoutAttributes.images.items.image.yanchor
 	Yanchor ImageYanchor `json:"yanchor,omitempty"`
 
 	// Yref
@@ -2081,6 +2409,7 @@ type LayoutImage struct {
 	// default: paper
 	// type: enumerated
 	// Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	// .schema.layout.layoutAttributes.images.items.image.yref
 	Yref ImageYref `json:"yref,omitempty"`
 }
 
@@ -2091,18 +2420,21 @@ type LayoutLegendFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.legend.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.legend.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.legend.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2113,18 +2445,21 @@ type LayoutLegendGrouptitlefont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.legend.grouptitlefont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.legend.grouptitlefont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.legend.grouptitlefont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2135,18 +2470,21 @@ type LayoutLegendTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.legend.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.legend.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.legend.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2156,6 +2494,7 @@ type LayoutLegendTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.legend.title.font
 	Font *LayoutLegendTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -2163,12 +2502,14 @@ type LayoutLegendTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of legend's title with respect to the legend items. Defaulted to *top* with `orientation` is *h*. Defaulted to *left* with `orientation` is *v*. The *top left* options could be used to expand legend area in both x and y sides.
+	// .schema.layout.layoutAttributes.legend.title.side
 	Side LayoutLegendTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend.
+	// .schema.layout.layoutAttributes.legend.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -2179,24 +2520,28 @@ type LayoutLegend struct {
 	// arrayOK: false
 	// type: color
 	// Sets the legend background color. Defaults to `layout.paper_bgcolor`.
+	// .schema.layout.layoutAttributes.legend.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the legend.
+	// .schema.layout.layoutAttributes.legend.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the legend.
+	// .schema.layout.layoutAttributes.legend.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Entrywidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend. Use 0 to size the entry based on the text width, when `entrywidthmode` is set to *pixels*.
+	// .schema.layout.layoutAttributes.legend.entrywidth
 	Entrywidth types.NumberType `json:"entrywidth,omitempty"`
 
 	// Entrywidthmode
@@ -2204,11 +2549,13 @@ type LayoutLegend struct {
 	// default: pixels
 	// type: enumerated
 	// Determines what entrywidth means.
+	// .schema.layout.layoutAttributes.legend.entrywidthmode
 	Entrywidthmode LayoutLegendEntrywidthmode `json:"entrywidthmode,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.legend.font
 	Font *LayoutLegendFont `json:"font,omitempty"`
 
 	// Groupclick
@@ -2216,11 +2563,13 @@ type LayoutLegend struct {
 	// default: togglegroup
 	// type: enumerated
 	// Determines the behavior on legend group item click. *toggleitem* toggles the visibility of the individual item clicked on the graph. *togglegroup* toggles the visibility of all items in the same legendgroup as the item clicked on the graph.
+	// .schema.layout.layoutAttributes.legend.groupclick
 	Groupclick LayoutLegendGroupclick `json:"groupclick,omitempty"`
 
 	// Grouptitlefont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.legend.grouptitlefont
 	Grouptitlefont *LayoutLegendGrouptitlefont `json:"grouptitlefont,omitempty"`
 
 	// Itemclick
@@ -2228,6 +2577,7 @@ type LayoutLegend struct {
 	// default: toggle
 	// type: enumerated
 	// Determines the behavior on legend item click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item click interactions.
+	// .schema.layout.layoutAttributes.legend.itemclick
 	Itemclick LayoutLegendItemclick `json:"itemclick,omitempty"`
 
 	// Itemdoubleclick
@@ -2235,6 +2585,7 @@ type LayoutLegend struct {
 	// default: toggleothers
 	// type: enumerated
 	// Determines the behavior on legend item double-click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item double-click interactions.
+	// .schema.layout.layoutAttributes.legend.itemdoubleclick
 	Itemdoubleclick LayoutLegendItemdoubleclick `json:"itemdoubleclick,omitempty"`
 
 	// Itemsizing
@@ -2242,12 +2593,14 @@ type LayoutLegend struct {
 	// default: trace
 	// type: enumerated
 	// Determines if the legend items symbols scale with their corresponding *trace* attributes or remain *constant* independent of the symbol size on the graph.
+	// .schema.layout.layoutAttributes.legend.itemsizing
 	Itemsizing LayoutLegendItemsizing `json:"itemsizing,omitempty"`
 
 	// Itemwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the legend item symbols (the part other than the title.text).
+	// .schema.layout.layoutAttributes.legend.itemwidth
 	Itemwidth types.NumberType `json:"itemwidth,omitempty"`
 
 	// Orientation
@@ -2255,17 +2608,20 @@ type LayoutLegend struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the legend.
+	// .schema.layout.layoutAttributes.legend.orientation
 	Orientation LayoutLegendOrientation `json:"orientation,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.legend.title
 	Title *LayoutLegendTitle `json:"title,omitempty"`
 
 	// Tracegroupgap
 	// arrayOK: false
 	// type: number
 	// Sets the amount of vertical space (in px) between legend groups.
+	// .schema.layout.layoutAttributes.legend.tracegroupgap
 	Tracegroupgap types.NumberType `json:"tracegroupgap,omitempty"`
 
 	// Traceorder
@@ -2273,12 +2629,14 @@ type LayoutLegend struct {
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines the order at which the legend items are displayed. If *normal*, the items are displayed top-to-bottom in the same order as the input data. If *reversed*, the items are displayed in the opposite order as *normal*. If *grouped*, the items are displayed in groups (when a trace `legendgroup` is provided). if *grouped+reversed*, the items are displayed in the opposite order as *grouped*.
+	// .schema.layout.layoutAttributes.legend.traceorder
 	Traceorder LayoutLegendTraceorder `json:"traceorder,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of legend-driven changes in trace and pie label visibility. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.legend.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Valign
@@ -2286,12 +2644,14 @@ type LayoutLegend struct {
 	// default: middle
 	// type: enumerated
 	// Sets the vertical alignment of the symbols with respect to their associated text.
+	// .schema.layout.layoutAttributes.legend.valign
 	Valign LayoutLegendValign `json:"valign,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the legend. Defaults to *1.02* for vertical legends and defaults to *0* for horizontal legends.
+	// .schema.layout.layoutAttributes.legend.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -2299,12 +2659,14 @@ type LayoutLegend struct {
 	// default: left
 	// type: enumerated
 	// Sets the legend's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the legend. Value *auto* anchors legends to the right for `x` values greater than or equal to 2/3, anchors legends to the left for `x` values less than or equal to 1/3 and anchors legends with respect to their center otherwise.
+	// .schema.layout.layoutAttributes.legend.xanchor
 	Xanchor LayoutLegendXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the legend. Defaults to *1* for vertical legends, defaults to *-0.1* for horizontal legends on graphs w/o range sliders and defaults to *1.1* for horizontal legends on graph with one or multiple range sliders.
+	// .schema.layout.layoutAttributes.legend.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -2312,6 +2674,7 @@ type LayoutLegend struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the legend's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the legend. Value *auto* anchors legends at their bottom for `y` values less than or equal to 1/3, anchors legends to at their top for `y` values greater than or equal to 2/3 and anchors legends with respect to their middle otherwise.
+	// .schema.layout.layoutAttributes.legend.yanchor
 	Yanchor LayoutLegendYanchor `json:"yanchor,omitempty"`
 }
 
@@ -2322,24 +2685,28 @@ type LayoutMapboxBounds struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum longitude of the map (in degrees East) if `west`, `south` and `north` are declared.
+	// .schema.layout.layoutAttributes.mapbox.bounds.east
 	East types.NumberType `json:"east,omitempty"`
 
 	// North
 	// arrayOK: false
 	// type: number
 	// Sets the maximum latitude of the map (in degrees North) if `east`, `west` and `south` are declared.
+	// .schema.layout.layoutAttributes.mapbox.bounds.north
 	North types.NumberType `json:"north,omitempty"`
 
 	// South
 	// arrayOK: false
 	// type: number
 	// Sets the minimum latitude of the map (in degrees North) if `east`, `west` and `north` are declared.
+	// .schema.layout.layoutAttributes.mapbox.bounds.south
 	South types.NumberType `json:"south,omitempty"`
 
 	// West
 	// arrayOK: false
 	// type: number
 	// Sets the minimum longitude of the map (in degrees East) if `east`, `south` and `north` are declared.
+	// .schema.layout.layoutAttributes.mapbox.bounds.west
 	West types.NumberType `json:"west,omitempty"`
 }
 
@@ -2350,12 +2717,14 @@ type LayoutMapboxCenter struct {
 	// arrayOK: false
 	// type: number
 	// Sets the latitude of the center of the map (in degrees North).
+	// .schema.layout.layoutAttributes.mapbox.center.lat
 	Lat types.NumberType `json:"lat,omitempty"`
 
 	// Lon
 	// arrayOK: false
 	// type: number
 	// Sets the longitude of the center of the map (in degrees East).
+	// .schema.layout.layoutAttributes.mapbox.center.lon
 	Lon types.NumberType `json:"lon,omitempty"`
 }
 
@@ -2366,24 +2735,28 @@ type LayoutMapboxDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this mapbox subplot .
+	// .schema.layout.layoutAttributes.mapbox.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this mapbox subplot .
+	// .schema.layout.layoutAttributes.mapbox.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this mapbox subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.mapbox.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this mapbox subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.mapbox.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -2394,6 +2767,7 @@ type LayerCircle struct {
 	// arrayOK: false
 	// type: number
 	// Sets the circle radius (mapbox.layer.paint.circle-radius). Has an effect only when `type` is set to *circle*.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.circle.radius
 	Radius types.NumberType `json:"radius,omitempty"`
 }
 
@@ -2404,6 +2778,7 @@ type LayerFill struct {
 	// arrayOK: false
 	// type: color
 	// Sets the fill outline color (mapbox.layer.paint.fill-outline-color). Has an effect only when `type` is set to *fill*.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.fill.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 }
 
@@ -2416,18 +2791,21 @@ type LayerLine struct {
 	// Sets the length of dashes and gaps (mapbox.layer.paint.line-dasharray). Has an effect only when `type` is set to *line*.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.line.dash
 	Dash *types.DataArrayType `json:"dash,omitempty"`
 
 	// Dashsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `dash`.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.line.dashsrc
 	Dashsrc types.StringType `json:"dashsrc,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (mapbox.layer.paint.line-width). Has an effect only when `type` is set to *line*.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -2438,18 +2816,21 @@ type LayerSymbolTextfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2460,12 +2841,14 @@ type LayerSymbol struct {
 	// arrayOK: false
 	// type: string
 	// Sets the symbol icon image (mapbox.layer.layout.icon-image). Full list: https://www.mapbox.com/maki-icons/
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.icon
 	Icon types.StringType `json:"icon,omitempty"`
 
 	// Iconsize
 	// arrayOK: false
 	// type: number
 	// Sets the symbol icon size (mapbox.layer.layout.icon-size). Has an effect only when `type` is set to *symbol*.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.iconsize
 	Iconsize types.NumberType `json:"iconsize,omitempty"`
 
 	// Placement
@@ -2473,17 +2856,20 @@ type LayerSymbol struct {
 	// default: point
 	// type: enumerated
 	// Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.placement
 	Placement LayerSymbolPlacement `json:"placement,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the symbol text (mapbox.layer.layout.text-field).
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textfont
 	Textfont *LayerSymbolTextfont `json:"textfont,omitempty"`
 
 	// Textposition
@@ -2491,6 +2877,7 @@ type LayerSymbol struct {
 	// default: middle center
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textposition
 	Textposition LayerSymbolTextposition `json:"textposition,omitempty"`
 }
 
@@ -2501,75 +2888,88 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// type: string
 	// Determines if the layer will be inserted before the layer with the specified ID. If omitted or set to '', the layer will be inserted above every existing layer.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.below
 	Below types.StringType `json:"below,omitempty"`
 
 	// Circle
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.circle
 	Circle *LayerCircle `json:"circle,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the primary layer color. If `type` is *circle*, color corresponds to the circle color (mapbox.layer.paint.circle-color) If `type` is *line*, color corresponds to the line color (mapbox.layer.paint.line-color) If `type` is *fill*, color corresponds to the fill color (mapbox.layer.paint.fill-color) If `type` is *symbol*, color corresponds to the icon color (mapbox.layer.paint.icon-color)
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Coordinates
 	// arrayOK: false
 	// type: any
 	// Sets the coordinates array contains [longitude, latitude] pairs for the image corners listed in clockwise order: top left, top right, bottom right, bottom left. Only has an effect for *image* `sourcetype`.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.coordinates
 	Coordinates interface{} `json:"coordinates,omitempty"`
 
 	// Fill
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.fill
 	Fill *LayerFill `json:"fill,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.line
 	Line *LayerLine `json:"line,omitempty"`
 
 	// Maxzoom
 	// arrayOK: false
 	// type: number
 	// Sets the maximum zoom level (mapbox.layer.maxzoom). At zoom levels equal to or greater than the maxzoom, the layer will be hidden.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.maxzoom
 	Maxzoom types.NumberType `json:"maxzoom,omitempty"`
 
 	// Minzoom
 	// arrayOK: false
 	// type: number
 	// Sets the minimum zoom level (mapbox.layer.minzoom). At zoom levels less than the minzoom, the layer will be hidden.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.minzoom
 	Minzoom types.NumberType `json:"minzoom,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the layer. If `type` is *circle*, opacity corresponds to the circle opacity (mapbox.layer.paint.circle-opacity) If `type` is *line*, opacity corresponds to the line opacity (mapbox.layer.paint.line-opacity) If `type` is *fill*, opacity corresponds to the fill opacity (mapbox.layer.paint.fill-opacity) If `type` is *symbol*, opacity corresponds to the icon/text opacity (mapbox.layer.paint.text-opacity)
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Source
 	// arrayOK: false
 	// type: any
 	// Sets the source data for this layer (mapbox.layer.source). When `sourcetype` is set to *geojson*, `source` can be a URL to a GeoJSON or a GeoJSON object. When `sourcetype` is set to *vector* or *raster*, `source` can be a URL or an array of tile URLs. When `sourcetype` is set to *image*, `source` can be a URL to an image.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.source
 	Source interface{} `json:"source,omitempty"`
 
 	// Sourceattribution
 	// arrayOK: false
 	// type: string
 	// Sets the attribution for this source.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourceattribution
 	Sourceattribution types.StringType `json:"sourceattribution,omitempty"`
 
 	// Sourcelayer
 	// arrayOK: false
 	// type: string
 	// Specifies the layer to use from a vector tile source (mapbox.layer.source-layer). Required for *vector* source type that supports multiple layers.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcelayer
 	Sourcelayer types.StringType `json:"sourcelayer,omitempty"`
 
 	// Sourcetype
@@ -2577,17 +2977,20 @@ type LayoutMapboxLayer struct {
 	// default: geojson
 	// type: enumerated
 	// Sets the source type for this layer, that is the type of the layer data.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcetype
 	Sourcetype LayerSourcetype `json:"sourcetype,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol
 	Symbol *LayerSymbol `json:"symbol,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
@@ -2595,12 +2998,14 @@ type LayoutMapboxLayer struct {
 	// default: circle
 	// type: enumerated
 	// Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.type
 	Type LayerType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this layer is displayed
+	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -2611,56 +3016,66 @@ type LayoutMapbox struct {
 	// arrayOK: false
 	// type: string
 	// Sets the mapbox access token to be used for this mapbox map. Alternatively, the mapbox access token can be set in the configuration options under `mapboxAccessToken`. Note that accessToken are only required when `style` (e.g with values : basic, streets, outdoors, light, dark, satellite, satellite-streets ) and/or a layout layer references the Mapbox server.
+	// .schema.layout.layoutAttributes.mapbox.accesstoken
 	Accesstoken types.StringType `json:"accesstoken,omitempty"`
 
 	// Bearing
 	// arrayOK: false
 	// type: number
 	// Sets the bearing angle of the map in degrees counter-clockwise from North (mapbox.bearing).
+	// .schema.layout.layoutAttributes.mapbox.bearing
 	Bearing types.NumberType `json:"bearing,omitempty"`
 
 	// Bounds
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.bounds
 	Bounds *LayoutMapboxBounds `json:"bounds,omitempty"`
 
 	// Center
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.center
 	Center *LayoutMapboxCenter `json:"center,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.mapbox.domain
 	Domain *LayoutMapboxDomain `json:"domain,omitempty"`
 
 	// Layers
 	// role: Object
 	// items: LayoutMapboxLayer
+	// .schema.layout.layoutAttributes.mapbox.layers
 	Layers []LayoutMapboxLayer `json:"layers,omitempty"`
 
 	// Pitch
 	// arrayOK: false
 	// type: number
 	// Sets the pitch angle of the map (in degrees, where *0* means perpendicular to the surface of the map) (mapbox.pitch).
+	// .schema.layout.layoutAttributes.mapbox.pitch
 	Pitch types.NumberType `json:"pitch,omitempty"`
 
 	// Style
 	// arrayOK: false
 	// type: any
 	// Defines the map layers that are rendered by default below the trace layers defined in `data`, which are themselves by default rendered below the layers defined in `layout.mapbox.layers`.  These layers can be defined either explicitly as a Mapbox Style object which can contain multiple layer definitions that load data from any public or private Tile Map Service (TMS or XYZ) or Web Map Service (WMS) or implicitly by using one of the built-in style objects which use WMSes which do not require any access tokens, or by using a default Mapbox style or custom Mapbox style URL, both of which require a Mapbox access token  Note that Mapbox access token can be set in the `accesstoken` attribute or in the `mapboxAccessToken` config option.  Mapbox Style objects are of the form described in the Mapbox GL JS documentation available at https://docs.mapbox.com/mapbox-gl-js/style-spec  The built-in plotly.js styles objects are: carto-darkmatter, carto-positron, open-street-map, stamen-terrain, stamen-toner, stamen-watercolor, white-bg  The built-in Mapbox styles are: basic, streets, outdoors, light, dark, satellite, satellite-streets  Mapbox style URLs are of the form: mapbox://mapbox.mapbox-<name>-<version>
+	// .schema.layout.layoutAttributes.mapbox.style
 	Style interface{} `json:"style,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in the view: `center`, `zoom`, `bearing`, `pitch`. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.mapbox.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Zoom
 	// arrayOK: false
 	// type: number
 	// Sets the zoom level of the map (mapbox.zoom).
+	// .schema.layout.layoutAttributes.mapbox.zoom
 	Zoom types.NumberType `json:"zoom,omitempty"`
 }
 
@@ -2671,36 +3086,42 @@ type LayoutMargin struct {
 	// arrayOK: false
 	// type: boolean
 	// Turns on/off margin expansion computations. Legends, colorbars, updatemenus, sliders, axis rangeselector and rangeslider are allowed to push the margins by defaults.
+	// .schema.layout.layoutAttributes.margin.autoexpand
 	Autoexpand types.BoolType `json:"autoexpand,omitempty"`
 
 	// B
 	// arrayOK: false
 	// type: number
 	// Sets the bottom margin (in px).
+	// .schema.layout.layoutAttributes.margin.b
 	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// Sets the left margin (in px).
+	// .schema.layout.layoutAttributes.margin.l
 	L types.NumberType `json:"l,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) between the plotting area and the axis lines
+	// .schema.layout.layoutAttributes.margin.pad
 	Pad types.NumberType `json:"pad,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// Sets the right margin (in px).
+	// .schema.layout.layoutAttributes.margin.r
 	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// Sets the top margin (in px).
+	// .schema.layout.layoutAttributes.margin.t
 	T types.NumberType `json:"t,omitempty"`
 }
 
@@ -2711,30 +3132,35 @@ type LayoutModebar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the active or hovered on icons in the modebar.
+	// .schema.layout.layoutAttributes.modebar.activecolor
 	Activecolor types.Color `json:"activecolor,omitempty"`
 
 	// Add
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to add. Please note that these buttons will only be shown if they are compatible with all trace types used in a graph. Similar to `config.modeBarButtonsToAdd` option. This may include *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect*, *eraseshape*.
+	// .schema.layout.layoutAttributes.modebar.add
 	Add *types.ArrayOK[*types.StringType] `json:"add,omitempty"`
 
 	// Addsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `add`.
+	// .schema.layout.layoutAttributes.modebar.addsrc
 	Addsrc types.StringType `json:"addsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the modebar.
+	// .schema.layout.layoutAttributes.modebar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets the color of the icons in the modebar.
+	// .schema.layout.layoutAttributes.modebar.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Orientation
@@ -2742,24 +3168,28 @@ type LayoutModebar struct {
 	// default: h
 	// type: enumerated
 	// Sets the orientation of the modebar.
+	// .schema.layout.layoutAttributes.modebar.orientation
 	Orientation LayoutModebarOrientation `json:"orientation,omitempty"`
 
 	// Remove
 	// arrayOK: true
 	// type: string
 	// Determines which predefined modebar buttons to remove. Similar to `config.modeBarButtonsToRemove` option. This may include *autoScale2d*, *autoscale*, *editInChartStudio*, *editinchartstudio*, *hoverCompareCartesian*, *hovercompare*, *lasso*, *lasso2d*, *orbitRotation*, *orbitrotation*, *pan*, *pan2d*, *pan3d*, *reset*, *resetCameraDefault3d*, *resetCameraLastSave3d*, *resetGeo*, *resetSankeyGroup*, *resetScale2d*, *resetViewMapbox*, *resetViews*, *resetcameradefault*, *resetcameralastsave*, *resetsankeygroup*, *resetscale*, *resetview*, *resetviews*, *select*, *select2d*, *sendDataToCloud*, *senddatatocloud*, *tableRotation*, *tablerotation*, *toImage*, *toggleHover*, *toggleSpikelines*, *togglehover*, *togglespikelines*, *toimage*, *zoom*, *zoom2d*, *zoom3d*, *zoomIn2d*, *zoomInGeo*, *zoomInMapbox*, *zoomOut2d*, *zoomOutGeo*, *zoomOutMapbox*, *zoomin*, *zoomout*.
+	// .schema.layout.layoutAttributes.modebar.remove
 	Remove *types.ArrayOK[*types.StringType] `json:"remove,omitempty"`
 
 	// Removesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `remove`.
+	// .schema.layout.layoutAttributes.modebar.removesrc
 	Removesrc types.StringType `json:"removesrc,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes related to the modebar, including `hovermode`, `dragmode`, and `showspikes` at both the root level and inside subplots. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.modebar.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -2770,18 +3200,21 @@ type LayoutNewselectionLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color. By default uses either dark grey or white to increase contrast with background color.
+	// .schema.layout.layoutAttributes.newselection.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.newselection.line.dash
 	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
+	// .schema.layout.layoutAttributes.newselection.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -2791,6 +3224,7 @@ type LayoutNewselection struct {
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newselection.line
 	Line *LayoutNewselectionLine `json:"line,omitempty"`
 
 	// Mode
@@ -2798,6 +3232,7 @@ type LayoutNewselection struct {
 	// default: immediate
 	// type: enumerated
 	// Describes how a new selection is created. If `immediate`, a new selection is created after first mouse up. If `gradual`, a new selection is not created after first mouse. By adding to and subtracting from the initial selection, this option allows declaring extra outlines of the selection.
+	// .schema.layout.layoutAttributes.newselection.mode
 	Mode LayoutNewselectionMode `json:"mode,omitempty"`
 }
 
@@ -2808,18 +3243,21 @@ type LayoutNewshapeLabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.newshape.label.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.newshape.label.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.newshape.label.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2829,24 +3267,28 @@ type LayoutNewshapeLabel struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newshape.label.font
 	Font *LayoutNewshapeLabelFont `json:"font,omitempty"`
 
 	// Padding
 	// arrayOK: false
 	// type: number
 	// Sets padding (in px) between edge of label and edge of new shape.
+	// .schema.layout.layoutAttributes.newshape.label.padding
 	Padding types.NumberType `json:"padding,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text to display with the new shape.
+	// .schema.layout.layoutAttributes.newshape.label.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the label text is drawn with respect to the horizontal. For lines, angle *auto* is the same angle as the line. For all other shapes, angle *auto* is horizontal.
+	// .schema.layout.layoutAttributes.newshape.label.textangle
 	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Textposition
@@ -2854,6 +3296,7 @@ type LayoutNewshapeLabel struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the position of the label text relative to the new shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+	// .schema.layout.layoutAttributes.newshape.label.textposition
 	Textposition LayoutNewshapeLabelTextposition `json:"textposition,omitempty"`
 
 	// Xanchor
@@ -2861,6 +3304,7 @@ type LayoutNewshapeLabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the new shape.
+	// .schema.layout.layoutAttributes.newshape.label.xanchor
 	Xanchor LayoutNewshapeLabelXanchor `json:"xanchor,omitempty"`
 
 	// Yanchor
@@ -2868,6 +3312,7 @@ type LayoutNewshapeLabel struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the new shape.
+	// .schema.layout.layoutAttributes.newshape.label.yanchor
 	Yanchor LayoutNewshapeLabelYanchor `json:"yanchor,omitempty"`
 }
 
@@ -2878,18 +3323,21 @@ type LayoutNewshapeLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color. By default uses either dark grey or white to increase contrast with background color.
+	// .schema.layout.layoutAttributes.newshape.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.newshape.line.dash
 	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
+	// .schema.layout.layoutAttributes.newshape.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -2901,12 +3349,14 @@ type LayoutNewshape struct {
 	// default: diagonal
 	// type: enumerated
 	// When `dragmode` is set to *drawrect*, *drawline* or *drawcircle* this limits the drag to be horizontal, vertical or diagonal. Using *diagonal* there is no limit e.g. in drawing lines in any direction. *ortho* limits the draw to be either horizontal or vertical. *horizontal* allows horizontal extend. *vertical* allows vertical extend.
+	// .schema.layout.layoutAttributes.newshape.drawdirection
 	Drawdirection LayoutNewshapeDrawdirection `json:"drawdirection,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color filling new shapes' interior. Please note that if using a fillcolor with alpha greater than half, drag inside the active shape starts moving the shape underneath, otherwise a new shape could be started over.
+	// .schema.layout.layoutAttributes.newshape.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Fillrule
@@ -2914,11 +3364,13 @@ type LayoutNewshape struct {
 	// default: evenodd
 	// type: enumerated
 	// Determines the path's interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+	// .schema.layout.layoutAttributes.newshape.fillrule
 	Fillrule LayoutNewshapeFillrule `json:"fillrule,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newshape.label
 	Label *LayoutNewshapeLabel `json:"label,omitempty"`
 
 	// Layer
@@ -2926,17 +3378,20 @@ type LayoutNewshape struct {
 	// default: above
 	// type: enumerated
 	// Specifies whether new shapes are drawn below or above traces.
+	// .schema.layout.layoutAttributes.newshape.layer
 	Layer LayoutNewshapeLayer `json:"layer,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.newshape.line
 	Line *LayoutNewshapeLine `json:"line,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of new shapes.
+	// .schema.layout.layoutAttributes.newshape.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
@@ -2947,18 +3402,21 @@ type LayoutPolarAngularaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -2969,30 +3427,35 @@ type LayoutPolarAngularaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -3004,6 +3467,7 @@ type LayoutPolarAngularaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.polar.angularaxis.autotypenumbers
 	Autotypenumbers LayoutPolarAngularaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Categoryarray
@@ -3012,12 +3476,14 @@ type LayoutPolarAngularaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.angularaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -3025,12 +3491,14 @@ type LayoutPolarAngularaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.polar.angularaxis.categoryorder
 	Categoryorder LayoutPolarAngularaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.polar.angularaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Direction
@@ -3038,12 +3506,14 @@ type LayoutPolarAngularaxis struct {
 	// default: counterclockwise
 	// type: enumerated
 	// Sets the direction corresponding to positive angles.
+	// .schema.layout.layoutAttributes.polar.angularaxis.direction
 	Direction LayoutPolarAngularaxisDirection `json:"direction,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.polar.angularaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -3051,36 +3521,42 @@ type LayoutPolarAngularaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.polar.angularaxis.exponentformat
 	Exponentformat LayoutPolarAngularaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.polar.angularaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.polar.angularaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.polar.angularaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.polar.angularaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.polar.angularaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -3088,48 +3564,56 @@ type LayoutPolarAngularaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.polar.angularaxis.layer
 	Layer LayoutPolarAngularaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.polar.angularaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.polar.angularaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Period
 	// arrayOK: false
 	// type: number
 	// Set the angular period. Has an effect only when `angularaxis.type` is *category*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.period
 	Period types.NumberType `json:"period,omitempty"`
 
 	// Rotation
 	// arrayOK: false
 	// type: angle
 	// Sets that start position (in degrees) of the angular axis By default, polar subplots with `direction` set to *counterclockwise* get a `rotation` of *0* which corresponds to due East (like what mathematicians prefer). In turn, polar with `direction` set to *clockwise* get a rotation of *90* which corresponds to due North (like on a compass),
+	// .schema.layout.layoutAttributes.polar.angularaxis.rotation
 	Rotation types.NumberType `json:"rotation,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.polar.angularaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -3137,24 +3621,28 @@ type LayoutPolarAngularaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showexponent
 	Showexponent LayoutPolarAngularaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -3162,6 +3650,7 @@ type LayoutPolarAngularaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showtickprefix
 	Showtickprefix LayoutPolarAngularaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -3169,6 +3658,7 @@ type LayoutPolarAngularaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.polar.angularaxis.showticksuffix
 	Showticksuffix LayoutPolarAngularaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thetaunit
@@ -3176,52 +3666,61 @@ type LayoutPolarAngularaxis struct {
 	// default: degrees
 	// type: enumerated
 	// Sets the format unit of the formatted *theta* values. Has an effect only when `angularaxis.type` is *linear*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.thetaunit
 	Thetaunit LayoutPolarAngularaxisThetaunit `json:"thetaunit,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickfont
 	Tickfont *LayoutPolarAngularaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutPolarAngularaxisTickformatstop
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickformatstops
 	Tickformatstops []LayoutPolarAngularaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -3229,12 +3728,14 @@ type LayoutPolarAngularaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickmode
 	Tickmode LayoutPolarAngularaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -3242,12 +3743,14 @@ type LayoutPolarAngularaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticks
 	Ticks LayoutPolarAngularaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -3256,12 +3759,14 @@ type LayoutPolarAngularaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -3270,18 +3775,21 @@ type LayoutPolarAngularaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.polar.angularaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Type
@@ -3289,18 +3797,21 @@ type LayoutPolarAngularaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the angular axis type. If *linear*, set `thetaunit` to determine the unit in which axis value are shown. If *category, use `period` to set the number of integer coordinates around polar axis.
+	// .schema.layout.layoutAttributes.polar.angularaxis.type
 	Type LayoutPolarAngularaxisType `json:"type,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `rotation`. Defaults to `polar<N>.uirevision`.
+	// .schema.layout.layoutAttributes.polar.angularaxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.polar.angularaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -3311,24 +3822,28 @@ type LayoutPolarDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this polar subplot .
+	// .schema.layout.layoutAttributes.polar.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this polar subplot .
+	// .schema.layout.layoutAttributes.polar.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this polar subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.polar.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this polar subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.polar.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -3339,18 +3854,21 @@ type LayoutPolarRadialaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -3361,30 +3879,35 @@ type LayoutPolarRadialaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -3395,18 +3918,21 @@ type LayoutPolarRadialaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.polar.radialaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.polar.radialaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -3416,12 +3942,14 @@ type LayoutPolarRadialaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.radialaxis.title.font
 	Font *LayoutPolarRadialaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.polar.radialaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -3432,6 +3960,7 @@ type LayoutPolarRadialaxis struct {
 	// arrayOK: false
 	// type: angle
 	// Sets the angle (in degrees) from which the radial axis is drawn. Note that by default, radial axis line on the theta=0 line corresponds to a line pointing right (like what mathematicians prefer). Defaults to the first `polar.sector` angle.
+	// .schema.layout.layoutAttributes.polar.radialaxis.angle
 	Angle types.NumberType `json:"angle,omitempty"`
 
 	// Autorange
@@ -3439,6 +3968,7 @@ type LayoutPolarRadialaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.autorange
 	Autorange LayoutPolarRadialaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -3446,6 +3976,7 @@ type LayoutPolarRadialaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.polar.radialaxis.autotypenumbers
 	Autotypenumbers LayoutPolarRadialaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
@@ -3453,6 +3984,7 @@ type LayoutPolarRadialaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.polar.radialaxis.calendar
 	Calendar LayoutPolarRadialaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -3461,12 +3993,14 @@ type LayoutPolarRadialaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.radialaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -3474,18 +4008,21 @@ type LayoutPolarRadialaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.polar.radialaxis.categoryorder
 	Categoryorder LayoutPolarRadialaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.polar.radialaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.polar.radialaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -3493,36 +4030,42 @@ type LayoutPolarRadialaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.polar.radialaxis.exponentformat
 	Exponentformat LayoutPolarRadialaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.polar.radialaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.polar.radialaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.polar.radialaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.polar.radialaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.polar.radialaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -3530,36 +4073,42 @@ type LayoutPolarRadialaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.polar.radialaxis.layer
 	Layer LayoutPolarRadialaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.polar.radialaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.polar.radialaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.polar.radialaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -3567,12 +4116,14 @@ type LayoutPolarRadialaxis struct {
 	// default: tozero
 	// type: enumerated
 	// If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. If *normal*, the range is computed in relation to the extrema of the input data (same behavior as for cartesian axes).
+	// .schema.layout.layoutAttributes.polar.radialaxis.rangemode
 	Rangemode LayoutPolarRadialaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.polar.radialaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -3580,24 +4131,28 @@ type LayoutPolarRadialaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showexponent
 	Showexponent LayoutPolarRadialaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -3605,6 +4160,7 @@ type LayoutPolarRadialaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showtickprefix
 	Showtickprefix LayoutPolarRadialaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -3612,6 +4168,7 @@ type LayoutPolarRadialaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.polar.radialaxis.showticksuffix
 	Showticksuffix LayoutPolarRadialaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
@@ -3619,52 +4176,61 @@ type LayoutPolarRadialaxis struct {
 	// default: clockwise
 	// type: enumerated
 	// Determines on which side of radial axis line the tick and tick labels appear.
+	// .schema.layout.layoutAttributes.polar.radialaxis.side
 	Side LayoutPolarRadialaxisSide `json:"side,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickfont
 	Tickfont *LayoutPolarRadialaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutPolarRadialaxisTickformatstop
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickformatstops
 	Tickformatstops []LayoutPolarRadialaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -3672,12 +4238,14 @@ type LayoutPolarRadialaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickmode
 	Tickmode LayoutPolarRadialaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -3685,12 +4253,14 @@ type LayoutPolarRadialaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticks
 	Ticks LayoutPolarRadialaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -3699,12 +4269,14 @@ type LayoutPolarRadialaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -3713,23 +4285,27 @@ type LayoutPolarRadialaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.polar.radialaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.radialaxis.title
 	Title *LayoutPolarRadialaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -3737,18 +4313,21 @@ type LayoutPolarRadialaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.polar.radialaxis.type
 	Type LayoutPolarRadialaxisType `json:"type,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `range`, `autorange`, `angle`, and `title` if in `editable: true` configuration. Defaults to `polar<N>.uirevision`.
+	// .schema.layout.layoutAttributes.polar.radialaxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.polar.radialaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -3758,17 +4337,20 @@ type LayoutPolar struct {
 	// Angularaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.angularaxis
 	Angularaxis *LayoutPolarAngularaxis `json:"angularaxis,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
+	// .schema.layout.layoutAttributes.polar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.domain
 	Domain *LayoutPolarDomain `json:"domain,omitempty"`
 
 	// Gridshape
@@ -3776,29 +4358,34 @@ type LayoutPolar struct {
 	// default: circular
 	// type: enumerated
 	// Determines if the radial axis grid lines and angular axis line are drawn as *circular* sectors or as *linear* (polygon) sectors. Has an effect only when the angular axis has `type` *category*. Note that `radialaxis.angle` is snapped to the angle of the closest vertex when `gridshape` is *circular* (so that radial axis scale is the same as the data scale).
+	// .schema.layout.layoutAttributes.polar.gridshape
 	Gridshape LayoutPolarGridshape `json:"gridshape,omitempty"`
 
 	// Hole
 	// arrayOK: false
 	// type: number
 	// Sets the fraction of the radius to cut out of the polar subplot.
+	// .schema.layout.layoutAttributes.polar.hole
 	Hole types.NumberType `json:"hole,omitempty"`
 
 	// Radialaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.polar.radialaxis
 	Radialaxis *LayoutPolarRadialaxis `json:"radialaxis,omitempty"`
 
 	// Sector
 	// arrayOK: false
 	// type: info_array
 	// Sets angular span of this polar subplot with two angles (in degrees). Sector are assumed to be spanned in the counterclockwise direction with *0* corresponding to rightmost limit of the polar subplot.
+	// .schema.layout.layoutAttributes.polar.sector
 	Sector interface{} `json:"sector,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis attributes, if not overridden in the individual axes. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.polar.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -3810,18 +4397,21 @@ type LayoutSceneAnnotation struct {
 	// default: center
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.align
 	Align AnnotationAlign `json:"align,omitempty"`
 
 	// Arrowcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the annotation arrow.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowcolor
 	Arrowcolor types.Color `json:"arrowcolor,omitempty"`
 
 	// Arrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the end annotation arrow head style.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowhead
 	Arrowhead types.IntegerType `json:"arrowhead,omitempty"`
 
 	// Arrowside
@@ -3829,142 +4419,166 @@ type LayoutSceneAnnotation struct {
 	// default: end
 	// type: flaglist
 	// Sets the annotation arrow head position.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowside
 	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
 
 	// Arrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowsize
 	Arrowsize types.NumberType `json:"arrowsize,omitempty"`
 
 	// Arrowwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of annotation arrow line.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowwidth
 	Arrowwidth types.NumberType `json:"arrowwidth,omitempty"`
 
 	// Ax
 	// arrayOK: false
 	// type: number
 	// Sets the x component of the arrow tail about the arrow head (in pixels).
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.ax
 	Ax types.NumberType `json:"ax,omitempty"`
 
 	// Ay
 	// arrayOK: false
 	// type: number
 	// Sets the y component of the arrow tail about the arrow head (in pixels).
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.ay
 	Ay types.NumberType `json:"ay,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the annotation.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the annotation `text`.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderpad
 	// arrayOK: false
 	// type: number
 	// Sets the padding (in px) between the `text` and the enclosing border.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.borderpad
 	Borderpad types.NumberType `json:"borderpad,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the annotation `text`.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Captureevents
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the annotation text box captures mouse move and click events, or allows those events to pass through to data points in the plot that may be behind the annotation. By default `captureevents` is *false* unless `hovertext` is provided. If you use the event `plotly_clickannotation` without `hovertext` you must explicitly enable `captureevents`.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.captureevents
 	Captureevents types.BoolType `json:"captureevents,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.font
 	Font *AnnotationFont `json:"font,omitempty"`
 
 	// Height
 	// arrayOK: false
 	// type: number
 	// Sets an explicit height for the text box. null (default) lets the text set the box height. Taller text will be clipped.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.height
 	Height types.NumberType `json:"height,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel
 	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertext
 	// arrayOK: false
 	// type: string
 	// Sets text to appear when hovering over this annotation. If omitted or blank, no hover label will appear.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hovertext
 	Hovertext types.StringType `json:"hovertext,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the annotation (text + arrow).
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Showarrow
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the annotation is drawn with an arrow. If *true*, `text` is placed near the arrow's tail. If *false*, `text` lines up with the `x` and `y` provided.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.showarrow
 	Showarrow types.BoolType `json:"showarrow,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the end arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.standoff
 	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Startarrowhead
 	// arrayOK: false
 	// type: integer
 	// Sets the start annotation arrow head style.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.startarrowhead
 	Startarrowhead types.IntegerType `json:"startarrowhead,omitempty"`
 
 	// Startarrowsize
 	// arrayOK: false
 	// type: number
 	// Sets the size of the start annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.startarrowsize
 	Startarrowsize types.NumberType `json:"startarrowsize,omitempty"`
 
 	// Startstandoff
 	// arrayOK: false
 	// type: number
 	// Sets a distance, in pixels, to move the start arrowhead away from the position it is pointing at, for example to point at the edge of a marker independent of zoom. Note that this shortens the arrow from the `ax` / `ay` vector, in contrast to `xshift` / `yshift` which moves everything by this amount.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.startstandoff
 	Startstandoff types.NumberType `json:"startstandoff,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the `text` is drawn with respect to the horizontal.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.textangle
 	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Valign
@@ -3972,24 +4586,28 @@ type LayoutSceneAnnotation struct {
 	// default: middle
 	// type: enumerated
 	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.valign
 	Valign AnnotationValign `json:"valign,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this annotation is visible.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets an explicit width for the text box. null (default) lets the text set the box width. Wider text will be clipped. There is no automatic wrapping; use <br> to start a new line.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.width
 	Width types.NumberType `json:"width,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: any
 	// Sets the annotation's x position.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.x
 	X interface{} `json:"x,omitempty"`
 
 	// Xanchor
@@ -3997,18 +4615,21 @@ type LayoutSceneAnnotation struct {
 	// default: auto
 	// type: enumerated
 	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.xanchor
 	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
 
 	// Xshift
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow to the right (positive) or left (negative) by this many pixels.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.xshift
 	Xshift types.NumberType `json:"xshift,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: any
 	// Sets the annotation's y position.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.y
 	Y interface{} `json:"y,omitempty"`
 
 	// Yanchor
@@ -4016,18 +4637,21 @@ type LayoutSceneAnnotation struct {
 	// default: auto
 	// type: enumerated
 	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.yanchor
 	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
 
 	// Yshift
 	// arrayOK: false
 	// type: number
 	// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.yshift
 	Yshift types.NumberType `json:"yshift,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: any
 	// Sets the annotation's z position.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.z
 	Z interface{} `json:"z,omitempty"`
 }
 
@@ -4038,18 +4662,21 @@ type LayoutSceneAspectratio struct {
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.aspectratio.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.aspectratio.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.aspectratio.z
 	Z types.NumberType `json:"z,omitempty"`
 }
 
@@ -4060,18 +4687,21 @@ type LayoutSceneCameraCenter struct {
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.center.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.center.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.center.z
 	Z types.NumberType `json:"z,omitempty"`
 }
 
@@ -4082,18 +4712,21 @@ type LayoutSceneCameraEye struct {
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.eye.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.eye.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.eye.z
 	Z types.NumberType `json:"z,omitempty"`
 }
 
@@ -4105,6 +4738,7 @@ type LayoutSceneCameraProjection struct {
 	// default: perspective
 	// type: enumerated
 	// Sets the projection type. The projection type could be either *perspective* or *orthographic*. The default is *perspective*.
+	// .schema.layout.layoutAttributes.scene.camera.projection.type
 	Type LayoutSceneCameraProjectionType `json:"type,omitempty"`
 }
 
@@ -4115,18 +4749,21 @@ type LayoutSceneCameraUp struct {
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.up.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.up.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.camera.up.z
 	Z types.NumberType `json:"z,omitempty"`
 }
 
@@ -4136,21 +4773,25 @@ type LayoutSceneCamera struct {
 	// Center
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.camera.center
 	Center *LayoutSceneCameraCenter `json:"center,omitempty"`
 
 	// Eye
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.camera.eye
 	Eye *LayoutSceneCameraEye `json:"eye,omitempty"`
 
 	// Projection
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.camera.projection
 	Projection *LayoutSceneCameraProjection `json:"projection,omitempty"`
 
 	// Up
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.camera.up
 	Up *LayoutSceneCameraUp `json:"up,omitempty"`
 }
 
@@ -4161,24 +4802,28 @@ type LayoutSceneDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this scene subplot .
+	// .schema.layout.layoutAttributes.scene.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this scene subplot .
+	// .schema.layout.layoutAttributes.scene.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this scene subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.scene.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this scene subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.scene.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -4189,18 +4834,21 @@ type LayoutSceneXaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.xaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.xaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -4211,30 +4859,35 @@ type LayoutSceneXaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -4245,18 +4898,21 @@ type LayoutSceneXaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.xaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.xaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.xaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -4266,12 +4922,14 @@ type LayoutSceneXaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.xaxis.title.font
 	Font *LayoutSceneXaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.scene.xaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -4283,6 +4941,7 @@ type LayoutSceneXaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.scene.xaxis.autorange
 	Autorange LayoutSceneXaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -4290,12 +4949,14 @@ type LayoutSceneXaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.scene.xaxis.autotypenumbers
 	Autotypenumbers LayoutSceneXaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Backgroundcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
+	// .schema.layout.layoutAttributes.scene.xaxis.backgroundcolor
 	Backgroundcolor types.Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
@@ -4303,6 +4964,7 @@ type LayoutSceneXaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.scene.xaxis.calendar
 	Calendar LayoutSceneXaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -4311,12 +4973,14 @@ type LayoutSceneXaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.xaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.scene.xaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -4324,18 +4988,21 @@ type LayoutSceneXaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.scene.xaxis.categoryorder
 	Categoryorder LayoutSceneXaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.scene.xaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.scene.xaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -4343,48 +5010,56 @@ type LayoutSceneXaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.scene.xaxis.exponentformat
 	Exponentformat LayoutSceneXaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.scene.xaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.scene.xaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.xaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.scene.xaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.scene.xaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.scene.xaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.scene.xaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
@@ -4392,18 +5067,21 @@ type LayoutSceneXaxis struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+	// .schema.layout.layoutAttributes.scene.xaxis.mirror
 	Mirror LayoutSceneXaxisMirror `json:"mirror,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.scene.xaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.xaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -4411,24 +5089,28 @@ type LayoutSceneXaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+	// .schema.layout.layoutAttributes.scene.xaxis.rangemode
 	Rangemode LayoutSceneXaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.scene.xaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
+	// .schema.layout.layoutAttributes.scene.xaxis.showaxeslabels
 	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
+	// .schema.layout.layoutAttributes.scene.xaxis.showbackground
 	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
@@ -4436,30 +5118,35 @@ type LayoutSceneXaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.scene.xaxis.showexponent
 	Showexponent LayoutSceneXaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.scene.xaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.scene.xaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
+	// .schema.layout.layoutAttributes.scene.xaxis.showspikes
 	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.scene.xaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -4467,6 +5154,7 @@ type LayoutSceneXaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.scene.xaxis.showtickprefix
 	Showtickprefix LayoutSceneXaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -4474,64 +5162,75 @@ type LayoutSceneXaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.scene.xaxis.showticksuffix
 	Showticksuffix LayoutSceneXaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Spikecolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
+	// .schema.layout.layoutAttributes.scene.xaxis.spikecolor
 	Spikecolor types.Color `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
+	// .schema.layout.layoutAttributes.scene.xaxis.spikesides
 	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
+	// .schema.layout.layoutAttributes.scene.xaxis.spikethickness
 	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.xaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.xaxis.tickfont
 	Tickfont *LayoutSceneXaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutSceneXaxisTickformatstop
+	// .schema.layout.layoutAttributes.scene.xaxis.tickformatstops
 	Tickformatstops []LayoutSceneXaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.scene.xaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -4539,12 +5238,14 @@ type LayoutSceneXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.scene.xaxis.tickmode
 	Tickmode LayoutSceneXaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -4552,12 +5253,14 @@ type LayoutSceneXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.scene.xaxis.ticks
 	Ticks LayoutSceneXaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.scene.xaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -4566,12 +5269,14 @@ type LayoutSceneXaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.xaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.scene.xaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -4580,23 +5285,27 @@ type LayoutSceneXaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.xaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.scene.xaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.scene.xaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.xaxis.title
 	Title *LayoutSceneXaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -4604,30 +5313,35 @@ type LayoutSceneXaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.scene.xaxis.type
 	Type LayoutSceneXaxisType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.scene.xaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
+	// .schema.layout.layoutAttributes.scene.xaxis.zeroline
 	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
+	// .schema.layout.layoutAttributes.scene.xaxis.zerolinecolor
 	Zerolinecolor types.Color `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.scene.xaxis.zerolinewidth
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
@@ -4638,18 +5352,21 @@ type LayoutSceneYaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.yaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.yaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -4660,30 +5377,35 @@ type LayoutSceneYaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -4694,18 +5416,21 @@ type LayoutSceneYaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.yaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.yaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.yaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -4715,12 +5440,14 @@ type LayoutSceneYaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.yaxis.title.font
 	Font *LayoutSceneYaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.scene.yaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -4732,6 +5459,7 @@ type LayoutSceneYaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.scene.yaxis.autorange
 	Autorange LayoutSceneYaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -4739,12 +5467,14 @@ type LayoutSceneYaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.scene.yaxis.autotypenumbers
 	Autotypenumbers LayoutSceneYaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Backgroundcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
+	// .schema.layout.layoutAttributes.scene.yaxis.backgroundcolor
 	Backgroundcolor types.Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
@@ -4752,6 +5482,7 @@ type LayoutSceneYaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.scene.yaxis.calendar
 	Calendar LayoutSceneYaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -4760,12 +5491,14 @@ type LayoutSceneYaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.yaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.scene.yaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -4773,18 +5506,21 @@ type LayoutSceneYaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.scene.yaxis.categoryorder
 	Categoryorder LayoutSceneYaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.scene.yaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.scene.yaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -4792,48 +5528,56 @@ type LayoutSceneYaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.scene.yaxis.exponentformat
 	Exponentformat LayoutSceneYaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.scene.yaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.scene.yaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.yaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.scene.yaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.scene.yaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.scene.yaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.scene.yaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
@@ -4841,18 +5585,21 @@ type LayoutSceneYaxis struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+	// .schema.layout.layoutAttributes.scene.yaxis.mirror
 	Mirror LayoutSceneYaxisMirror `json:"mirror,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.scene.yaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.yaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -4860,24 +5607,28 @@ type LayoutSceneYaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+	// .schema.layout.layoutAttributes.scene.yaxis.rangemode
 	Rangemode LayoutSceneYaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.scene.yaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
+	// .schema.layout.layoutAttributes.scene.yaxis.showaxeslabels
 	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
+	// .schema.layout.layoutAttributes.scene.yaxis.showbackground
 	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
@@ -4885,30 +5636,35 @@ type LayoutSceneYaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.scene.yaxis.showexponent
 	Showexponent LayoutSceneYaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.scene.yaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.scene.yaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
+	// .schema.layout.layoutAttributes.scene.yaxis.showspikes
 	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.scene.yaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -4916,6 +5672,7 @@ type LayoutSceneYaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.scene.yaxis.showtickprefix
 	Showtickprefix LayoutSceneYaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -4923,64 +5680,75 @@ type LayoutSceneYaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.scene.yaxis.showticksuffix
 	Showticksuffix LayoutSceneYaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Spikecolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
+	// .schema.layout.layoutAttributes.scene.yaxis.spikecolor
 	Spikecolor types.Color `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
+	// .schema.layout.layoutAttributes.scene.yaxis.spikesides
 	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
+	// .schema.layout.layoutAttributes.scene.yaxis.spikethickness
 	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.yaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.yaxis.tickfont
 	Tickfont *LayoutSceneYaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutSceneYaxisTickformatstop
+	// .schema.layout.layoutAttributes.scene.yaxis.tickformatstops
 	Tickformatstops []LayoutSceneYaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.scene.yaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -4988,12 +5756,14 @@ type LayoutSceneYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.scene.yaxis.tickmode
 	Tickmode LayoutSceneYaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -5001,12 +5771,14 @@ type LayoutSceneYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.scene.yaxis.ticks
 	Ticks LayoutSceneYaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.scene.yaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -5015,12 +5787,14 @@ type LayoutSceneYaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.yaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.scene.yaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -5029,23 +5803,27 @@ type LayoutSceneYaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.yaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.scene.yaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.scene.yaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.yaxis.title
 	Title *LayoutSceneYaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -5053,30 +5831,35 @@ type LayoutSceneYaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.scene.yaxis.type
 	Type LayoutSceneYaxisType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.scene.yaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
+	// .schema.layout.layoutAttributes.scene.yaxis.zeroline
 	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
+	// .schema.layout.layoutAttributes.scene.yaxis.zerolinecolor
 	Zerolinecolor types.Color `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.scene.yaxis.zerolinewidth
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
@@ -5087,18 +5870,21 @@ type LayoutSceneZaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.zaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.zaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -5109,30 +5895,35 @@ type LayoutSceneZaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -5143,18 +5934,21 @@ type LayoutSceneZaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.zaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.zaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.scene.zaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -5164,12 +5958,14 @@ type LayoutSceneZaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.zaxis.title.font
 	Font *LayoutSceneZaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.scene.zaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -5181,6 +5977,7 @@ type LayoutSceneZaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.scene.zaxis.autorange
 	Autorange LayoutSceneZaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -5188,12 +5985,14 @@ type LayoutSceneZaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.scene.zaxis.autotypenumbers
 	Autotypenumbers LayoutSceneZaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Backgroundcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of this axis' wall.
+	// .schema.layout.layoutAttributes.scene.zaxis.backgroundcolor
 	Backgroundcolor types.Color `json:"backgroundcolor,omitempty"`
 
 	// Calendar
@@ -5201,6 +6000,7 @@ type LayoutSceneZaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.scene.zaxis.calendar
 	Calendar LayoutSceneZaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -5209,12 +6009,14 @@ type LayoutSceneZaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.zaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.scene.zaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -5222,18 +6024,21 @@ type LayoutSceneZaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.scene.zaxis.categoryorder
 	Categoryorder LayoutSceneZaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.scene.zaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.scene.zaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -5241,48 +6046,56 @@ type LayoutSceneZaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.scene.zaxis.exponentformat
 	Exponentformat LayoutSceneZaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.scene.zaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.scene.zaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.zaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.scene.zaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.scene.zaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.scene.zaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.scene.zaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Mirror
@@ -5290,18 +6103,21 @@ type LayoutSceneZaxis struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+	// .schema.layout.layoutAttributes.scene.zaxis.mirror
 	Mirror LayoutSceneZaxisMirror `json:"mirror,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.scene.zaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.zaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -5309,24 +6125,28 @@ type LayoutSceneZaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+	// .schema.layout.layoutAttributes.scene.zaxis.rangemode
 	Rangemode LayoutSceneZaxisRangemode `json:"rangemode,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.scene.zaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showaxeslabels
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis is labeled
+	// .schema.layout.layoutAttributes.scene.zaxis.showaxeslabels
 	Showaxeslabels types.BoolType `json:"showaxeslabels,omitempty"`
 
 	// Showbackground
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not this axis' wall has a background color.
+	// .schema.layout.layoutAttributes.scene.zaxis.showbackground
 	Showbackground types.BoolType `json:"showbackground,omitempty"`
 
 	// Showexponent
@@ -5334,30 +6154,35 @@ type LayoutSceneZaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.scene.zaxis.showexponent
 	Showexponent LayoutSceneZaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.scene.zaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.scene.zaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes starting from data points to this axis' wall are shown on hover.
+	// .schema.layout.layoutAttributes.scene.zaxis.showspikes
 	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.scene.zaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -5365,6 +6190,7 @@ type LayoutSceneZaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.scene.zaxis.showtickprefix
 	Showtickprefix LayoutSceneZaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -5372,64 +6198,75 @@ type LayoutSceneZaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.scene.zaxis.showticksuffix
 	Showticksuffix LayoutSceneZaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Spikecolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the spikes.
+	// .schema.layout.layoutAttributes.scene.zaxis.spikecolor
 	Spikecolor types.Color `json:"spikecolor,omitempty"`
 
 	// Spikesides
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
+	// .schema.layout.layoutAttributes.scene.zaxis.spikesides
 	Spikesides types.BoolType `json:"spikesides,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness (in px) of the spikes.
+	// .schema.layout.layoutAttributes.scene.zaxis.spikethickness
 	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.scene.zaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.zaxis.tickfont
 	Tickfont *LayoutSceneZaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutSceneZaxisTickformatstop
+	// .schema.layout.layoutAttributes.scene.zaxis.tickformatstops
 	Tickformatstops []LayoutSceneZaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.scene.zaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -5437,12 +6274,14 @@ type LayoutSceneZaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.scene.zaxis.tickmode
 	Tickmode LayoutSceneZaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -5450,12 +6289,14 @@ type LayoutSceneZaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.scene.zaxis.ticks
 	Ticks LayoutSceneZaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.scene.zaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -5464,12 +6305,14 @@ type LayoutSceneZaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.zaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.scene.zaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -5478,23 +6321,27 @@ type LayoutSceneZaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.scene.zaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.scene.zaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.scene.zaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.zaxis.title
 	Title *LayoutSceneZaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -5502,30 +6349,35 @@ type LayoutSceneZaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.scene.zaxis.type
 	Type LayoutSceneZaxisType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.scene.zaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
+	// .schema.layout.layoutAttributes.scene.zaxis.zeroline
 	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
+	// .schema.layout.layoutAttributes.scene.zaxis.zerolinecolor
 	Zerolinecolor types.Color `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.scene.zaxis.zerolinewidth
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
@@ -5535,6 +6387,7 @@ type LayoutScene struct {
 	// Annotations
 	// role: Object
 	// items: LayoutSceneAnnotation
+	// .schema.layout.layoutAttributes.scene.annotations
 	Annotations []LayoutSceneAnnotation `json:"annotations,omitempty"`
 
 	// Aspectmode
@@ -5542,27 +6395,32 @@ type LayoutScene struct {
 	// default: auto
 	// type: enumerated
 	// If *cube*, this scene's axes are drawn as a cube, regardless of the axes' ranges. If *data*, this scene's axes are drawn in proportion with the axes' ranges. If *manual*, this scene's axes are drawn in proportion with the input of *aspectratio* (the default behavior if *aspectratio* is provided). If *auto*, this scene's axes are drawn using the results of *data* except when one axis is more than four times the size of the two others, where in that case the results of *cube* are used.
+	// .schema.layout.layoutAttributes.scene.aspectmode
 	Aspectmode LayoutSceneAspectmode `json:"aspectmode,omitempty"`
 
 	// Aspectratio
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.aspectratio
 	Aspectratio *LayoutSceneAspectratio `json:"aspectratio,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.scene.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Camera
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.camera
 	Camera *LayoutSceneCamera `json:"camera,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.domain
 	Domain *LayoutSceneDomain `json:"domain,omitempty"`
 
 	// Dragmode
@@ -5570,6 +6428,7 @@ type LayoutScene struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the mode of drag interactions for this scene.
+	// .schema.layout.layoutAttributes.scene.dragmode
 	Dragmode LayoutSceneDragmode `json:"dragmode,omitempty"`
 
 	// Hovermode
@@ -5577,27 +6436,32 @@ type LayoutScene struct {
 	// default: closest
 	// type: enumerated
 	// Determines the mode of hover interactions for this scene.
+	// .schema.layout.layoutAttributes.scene.hovermode
 	Hovermode LayoutSceneHovermode `json:"hovermode,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in camera attributes. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.scene.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Xaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.xaxis
 	Xaxis *LayoutSceneXaxis `json:"xaxis,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.yaxis
 	Yaxis *LayoutSceneYaxis `json:"yaxis,omitempty"`
 
 	// Zaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.scene.zaxis
 	Zaxis *LayoutSceneZaxis `json:"zaxis,omitempty"`
 }
 
@@ -5608,18 +6472,21 @@ type SelectionLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
+	// .schema.layout.layoutAttributes.selections.items.selection.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.selections.items.selection.line.dash
 	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
+	// .schema.layout.layoutAttributes.selections.items.selection.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -5629,30 +6496,35 @@ type LayoutSelection struct {
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.selections.items.selection.line
 	Line *SelectionLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.selections.items.selection.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the selection.
+	// .schema.layout.layoutAttributes.selections.items.selection.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Path
 	// arrayOK: false
 	// type: string
 	// For `type` *path* - a valid SVG path similar to `shapes.path` in data coordinates. Allowed segments are: M, L and Z.
+	// .schema.layout.layoutAttributes.selections.items.selection.path
 	Path types.StringType `json:"path,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.selections.items.selection.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
@@ -5660,18 +6532,21 @@ type LayoutSelection struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
+	// .schema.layout.layoutAttributes.selections.items.selection.type
 	Type SelectionType `json:"type,omitempty"`
 
 	// X0
 	// arrayOK: false
 	// type: any
 	// Sets the selection's starting x position.
+	// .schema.layout.layoutAttributes.selections.items.selection.x0
 	X0 interface{} `json:"x0,omitempty"`
 
 	// X1
 	// arrayOK: false
 	// type: any
 	// Sets the selection's end x position.
+	// .schema.layout.layoutAttributes.selections.items.selection.x1
 	X1 interface{} `json:"x1,omitempty"`
 
 	// Xref
@@ -5679,18 +6554,21 @@ type LayoutSelection struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	// .schema.layout.layoutAttributes.selections.items.selection.xref
 	Xref SelectionXref `json:"xref,omitempty"`
 
 	// Y0
 	// arrayOK: false
 	// type: any
 	// Sets the selection's starting y position.
+	// .schema.layout.layoutAttributes.selections.items.selection.y0
 	Y0 interface{} `json:"y0,omitempty"`
 
 	// Y1
 	// arrayOK: false
 	// type: any
 	// Sets the selection's end y position.
+	// .schema.layout.layoutAttributes.selections.items.selection.y1
 	Y1 interface{} `json:"y1,omitempty"`
 
 	// Yref
@@ -5698,6 +6576,7 @@ type LayoutSelection struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	// .schema.layout.layoutAttributes.selections.items.selection.yref
 	Yref SelectionYref `json:"yref,omitempty"`
 }
 
@@ -5708,18 +6587,21 @@ type ShapeLabelFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -5729,24 +6611,28 @@ type ShapeLabel struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.font
 	Font *ShapeLabelFont `json:"font,omitempty"`
 
 	// Padding
 	// arrayOK: false
 	// type: number
 	// Sets padding (in px) between edge of label and edge of shape.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.padding
 	Padding types.NumberType `json:"padding,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the text to display with shape.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// Textangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle at which the label text is drawn with respect to the horizontal. For lines, angle *auto* is the same angle as the line. For all other shapes, angle *auto* is horizontal.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.textangle
 	Textangle types.NumberType `json:"textangle,omitempty"`
 
 	// Textposition
@@ -5754,6 +6640,7 @@ type ShapeLabel struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.textposition
 	Textposition ShapeLabelTextposition `json:"textposition,omitempty"`
 
 	// Xanchor
@@ -5761,6 +6648,7 @@ type ShapeLabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.xanchor
 	Xanchor ShapeLabelXanchor `json:"xanchor,omitempty"`
 
 	// Yanchor
@@ -5768,6 +6656,7 @@ type ShapeLabel struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
+	// .schema.layout.layoutAttributes.shapes.items.shape.label.yanchor
 	Yanchor ShapeLabelYanchor `json:"yanchor,omitempty"`
 }
 
@@ -5778,18 +6667,21 @@ type ShapeLine struct {
 	// arrayOK: false
 	// type: color
 	// Sets the line color.
+	// .schema.layout.layoutAttributes.shapes.items.shape.line.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.shapes.items.shape.line.dash
 	Dash types.StringType `json:"dash,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the line width (in px).
+	// .schema.layout.layoutAttributes.shapes.items.shape.line.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -5800,12 +6692,14 @@ type LayoutShape struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the shape could be activated for edit or not. Has no effect when the older editable shapes mode is enabled via `config.editable` or `config.edits.shapePosition`.
+	// .schema.layout.layoutAttributes.shapes.items.shape.editable
 	Editable types.BoolType `json:"editable,omitempty"`
 
 	// Fillcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color filling the shape's interior. Only applies to closed shapes.
+	// .schema.layout.layoutAttributes.shapes.items.shape.fillcolor
 	Fillcolor types.Color `json:"fillcolor,omitempty"`
 
 	// Fillrule
@@ -5813,11 +6707,13 @@ type LayoutShape struct {
 	// default: evenodd
 	// type: enumerated
 	// Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+	// .schema.layout.layoutAttributes.shapes.items.shape.fillrule
 	Fillrule ShapeFillrule `json:"fillrule,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.shapes.items.shape.label
 	Label *ShapeLabel `json:"label,omitempty"`
 
 	// Layer
@@ -5825,35 +6721,41 @@ type LayoutShape struct {
 	// default: above
 	// type: enumerated
 	// Specifies whether shapes are drawn below or above traces.
+	// .schema.layout.layoutAttributes.shapes.items.shape.layer
 	Layer ShapeLayer `json:"layer,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.shapes.items.shape.line
 	Line *ShapeLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.shapes.items.shape.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the shape.
+	// .schema.layout.layoutAttributes.shapes.items.shape.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Path
 	// arrayOK: false
 	// type: string
 	// For `type` *path* - a valid SVG path with the pixel values replaced by data values in `xsizemode`/`ysizemode` being *scaled* and taken unmodified as pixels relative to `xanchor` and `yanchor` in case of *pixel* size mode. There are a few restrictions / quirks only absolute instructions, not relative. So the allowed segments are: M, L, H, V, Q, C, T, S, and Z arcs (A) are not allowed because radius rx and ry are relative. In the future we could consider supporting relative commands, but we would have to decide on how to handle date and log axes. Note that even as is, Q and C Bezier paths that are smooth on linear axes may not be smooth on log, and vice versa. no chained "polybezier" commands - specify the segment type for each one. On category axes, values are numbers scaled to the serial numbers of categories because using the categories themselves there would be no way to describe fractional positions On data axes: because space and T are both normal components of path strings, we can't use either to separate date from time parts. Therefore we'll use underscore for this purpose: 2015-02-21_13:45:56.789
+	// .schema.layout.layoutAttributes.shapes.items.shape.path
 	Path types.StringType `json:"path,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.shapes.items.shape.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
@@ -5861,30 +6763,35 @@ type LayoutShape struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
+	// .schema.layout.layoutAttributes.shapes.items.shape.type
 	Type ShapeType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this shape is visible.
+	// .schema.layout.layoutAttributes.shapes.items.shape.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X0
 	// arrayOK: false
 	// type: any
 	// Sets the shape's starting x position. See `type` and `xsizemode` for more info.
+	// .schema.layout.layoutAttributes.shapes.items.shape.x0
 	X0 interface{} `json:"x0,omitempty"`
 
 	// X1
 	// arrayOK: false
 	// type: any
 	// Sets the shape's end x position. See `type` and `xsizemode` for more info.
+	// .schema.layout.layoutAttributes.shapes.items.shape.x1
 	X1 interface{} `json:"x1,omitempty"`
 
 	// Xanchor
 	// arrayOK: false
 	// type: any
 	// Only relevant in conjunction with `xsizemode` set to *pixel*. Specifies the anchor point on the x axis to which `x0`, `x1` and x coordinates within `path` are relative to. E.g. useful to attach a pixel sized shape to a certain data value. No effect when `xsizemode` not set to *pixel*.
+	// .schema.layout.layoutAttributes.shapes.items.shape.xanchor
 	Xanchor interface{} `json:"xanchor,omitempty"`
 
 	// Xref
@@ -5892,6 +6799,7 @@ type LayoutShape struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+	// .schema.layout.layoutAttributes.shapes.items.shape.xref
 	Xref ShapeXref `json:"xref,omitempty"`
 
 	// Xsizemode
@@ -5899,24 +6807,28 @@ type LayoutShape struct {
 	// default: scaled
 	// type: enumerated
 	// Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
+	// .schema.layout.layoutAttributes.shapes.items.shape.xsizemode
 	Xsizemode ShapeXsizemode `json:"xsizemode,omitempty"`
 
 	// Y0
 	// arrayOK: false
 	// type: any
 	// Sets the shape's starting y position. See `type` and `ysizemode` for more info.
+	// .schema.layout.layoutAttributes.shapes.items.shape.y0
 	Y0 interface{} `json:"y0,omitempty"`
 
 	// Y1
 	// arrayOK: false
 	// type: any
 	// Sets the shape's end y position. See `type` and `ysizemode` for more info.
+	// .schema.layout.layoutAttributes.shapes.items.shape.y1
 	Y1 interface{} `json:"y1,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
 	// type: any
 	// Only relevant in conjunction with `ysizemode` set to *pixel*. Specifies the anchor point on the y axis to which `y0`, `y1` and y coordinates within `path` are relative to. E.g. useful to attach a pixel sized shape to a certain data value. No effect when `ysizemode` not set to *pixel*.
+	// .schema.layout.layoutAttributes.shapes.items.shape.yanchor
 	Yanchor interface{} `json:"yanchor,omitempty"`
 
 	// Yref
@@ -5924,6 +6836,7 @@ type LayoutShape struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+	// .schema.layout.layoutAttributes.shapes.items.shape.yref
 	Yref ShapeYref `json:"yref,omitempty"`
 
 	// Ysizemode
@@ -5931,6 +6844,7 @@ type LayoutShape struct {
 	// default: scaled
 	// type: enumerated
 	// Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
+	// .schema.layout.layoutAttributes.shapes.items.shape.ysizemode
 	Ysizemode ShapeYsizemode `json:"ysizemode,omitempty"`
 }
 
@@ -5941,18 +6855,21 @@ type SliderCurrentvalueFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -5962,30 +6879,35 @@ type SliderCurrentvalue struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.font
 	Font *SliderCurrentvalueFont `json:"font,omitempty"`
 
 	// Offset
 	// arrayOK: false
 	// type: number
 	// The amount of space, in pixels, between the current value label and the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.offset
 	Offset types.NumberType `json:"offset,omitempty"`
 
 	// Prefix
 	// arrayOK: false
 	// type: string
 	// When currentvalue.visible is true, this sets the prefix of the label.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.prefix
 	Prefix types.StringType `json:"prefix,omitempty"`
 
 	// Suffix
 	// arrayOK: false
 	// type: string
 	// When currentvalue.visible is true, this sets the suffix of the label.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.suffix
 	Suffix types.StringType `json:"suffix,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Shows the currently-selected value above the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Xanchor
@@ -5993,6 +6915,7 @@ type SliderCurrentvalue struct {
 	// default: left
 	// type: enumerated
 	// The alignment of the value readout relative to the length of the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.xanchor
 	Xanchor SliderCurrentvalueXanchor `json:"xanchor,omitempty"`
 }
 
@@ -6003,18 +6926,21 @@ type SliderFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.sliders.items.slider.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.sliders.items.slider.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.sliders.items.slider.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -6025,24 +6951,28 @@ type SliderPad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
+	// .schema.layout.layoutAttributes.sliders.items.slider.pad.b
 	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
+	// .schema.layout.layoutAttributes.sliders.items.slider.pad.l
 	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
+	// .schema.layout.layoutAttributes.sliders.items.slider.pad.r
 	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
+	// .schema.layout.layoutAttributes.sliders.items.slider.pad.t
 	T types.NumberType `json:"t,omitempty"`
 }
 
@@ -6053,18 +6983,21 @@ type SliderStep struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.args
 	Args interface{} `json:"args,omitempty"`
 
 	// Execute
 	// arrayOK: false
 	// type: boolean
 	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_sliderchange` method and executing the API command manually without losing the benefit of the slider automatically binding to the state of the plot through the specification of `method` and `args`.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.execute
 	Execute types.BoolType `json:"execute,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the slider
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.label
 	Label types.StringType `json:"label,omitempty"`
 
 	// Method
@@ -6072,30 +7005,35 @@ type SliderStep struct {
 	// default: restyle
 	// type: enumerated
 	// Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.method
 	Method StepMethod `json:"method,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// Sets the value of the slider step, used to refer to the step programatically. Defaults to the slider label if not provided.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.value
 	Value types.StringType `json:"value,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this step is included in the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -6106,6 +7044,7 @@ type SliderTransition struct {
 	// arrayOK: false
 	// type: number
 	// Sets the duration of the slider transition
+	// .schema.layout.layoutAttributes.sliders.items.slider.transition.duration
 	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
@@ -6113,6 +7052,7 @@ type SliderTransition struct {
 	// default: cubic-in-out
 	// type: enumerated
 	// Sets the easing function of the slider transition
+	// .schema.layout.layoutAttributes.sliders.items.slider.transition.easing
 	Easing SliderTransitionEasing `json:"easing,omitempty"`
 }
 
@@ -6123,46 +7063,54 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// type: number
 	// Determines which button (by index starting from 0) is considered active.
+	// .schema.layout.layoutAttributes.sliders.items.slider.active
 	Active types.NumberType `json:"active,omitempty"`
 
 	// Activebgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the slider grip while dragging.
+	// .schema.layout.layoutAttributes.sliders.items.slider.activebgcolor
 	Activebgcolor types.Color `json:"activebgcolor,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Currentvalue
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue
 	Currentvalue *SliderCurrentvalue `json:"currentvalue,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.sliders.items.slider.font
 	Font *SliderFont `json:"font,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the slider This measure excludes the padding of both ends. That is, the slider's length is this length minus the padding on both ends.
+	// .schema.layout.layoutAttributes.sliders.items.slider.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -6170,69 +7118,81 @@ type LayoutSlider struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.layout.layoutAttributes.sliders.items.slider.lenmode
 	Lenmode SliderLenmode `json:"lenmode,omitempty"`
 
 	// Minorticklen
 	// arrayOK: false
 	// type: number
 	// Sets the length in pixels of minor step tick marks
+	// .schema.layout.layoutAttributes.sliders.items.slider.minorticklen
 	Minorticklen types.NumberType `json:"minorticklen,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.sliders.items.slider.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.sliders.items.slider.pad
 	Pad *SliderPad `json:"pad,omitempty"`
 
 	// Steps
 	// role: Object
 	// items: SliderStep
+	// .schema.layout.layoutAttributes.sliders.items.slider.steps
 	Steps []SliderStep `json:"steps,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.sliders.items.slider.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the length in pixels of step tick marks
+	// .schema.layout.layoutAttributes.sliders.items.slider.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.sliders.items.slider.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Transition
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.sliders.items.slider.transition
 	Transition *SliderTransition `json:"transition,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the slider is visible.
+	// .schema.layout.layoutAttributes.sliders.items.slider.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -6240,12 +7200,14 @@ type LayoutSlider struct {
 	// default: left
 	// type: enumerated
 	// Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+	// .schema.layout.layoutAttributes.sliders.items.slider.xanchor
 	Xanchor SliderXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the slider.
+	// .schema.layout.layoutAttributes.sliders.items.slider.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -6253,6 +7215,7 @@ type LayoutSlider struct {
 	// default: top
 	// type: enumerated
 	// Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+	// .schema.layout.layoutAttributes.sliders.items.slider.yanchor
 	Yanchor SliderYanchor `json:"yanchor,omitempty"`
 }
 
@@ -6263,24 +7226,28 @@ type LayoutSmithDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this smith subplot .
+	// .schema.layout.layoutAttributes.smith.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this smith subplot .
+	// .schema.layout.layoutAttributes.smith.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this smith subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.smith.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this smith subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.smith.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -6291,18 +7258,21 @@ type LayoutSmithImaginaryaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -6313,36 +7283,42 @@ type LayoutSmithImaginaryaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -6350,36 +7326,42 @@ type LayoutSmithImaginaryaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.layer
 	Layer LayoutSmithImaginaryaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -6387,6 +7369,7 @@ type LayoutSmithImaginaryaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.showtickprefix
 	Showtickprefix LayoutSmithImaginaryaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -6394,35 +7377,41 @@ type LayoutSmithImaginaryaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.showticksuffix
 	Showticksuffix LayoutSmithImaginaryaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickfont
 	Tickfont *LayoutSmithImaginaryaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -6430,12 +7419,14 @@ type LayoutSmithImaginaryaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.ticks
 	Ticks LayoutSmithImaginaryaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Tickvals
@@ -6444,24 +7435,28 @@ type LayoutSmithImaginaryaxis struct {
 	// Sets the values at which ticks on this axis appear. Defaults to `realaxis.tickvals` plus the same as negatives and zero.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -6472,18 +7467,21 @@ type LayoutSmithRealaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.smith.realaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.smith.realaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.smith.realaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -6494,36 +7492,42 @@ type LayoutSmithRealaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.smith.realaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.smith.realaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.smith.realaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.smith.realaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.smith.realaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.smith.realaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -6531,36 +7535,42 @@ type LayoutSmithRealaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.smith.realaxis.layer
 	Layer LayoutSmithRealaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.smith.realaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.smith.realaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.smith.realaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.smith.realaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.smith.realaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -6568,6 +7578,7 @@ type LayoutSmithRealaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.smith.realaxis.showtickprefix
 	Showtickprefix LayoutSmithRealaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -6575,6 +7586,7 @@ type LayoutSmithRealaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.smith.realaxis.showticksuffix
 	Showticksuffix LayoutSmithRealaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
@@ -6582,41 +7594,48 @@ type LayoutSmithRealaxis struct {
 	// default: top
 	// type: enumerated
 	// Determines on which side of real axis line the tick and tick labels appear.
+	// .schema.layout.layoutAttributes.smith.realaxis.side
 	Side LayoutSmithRealaxisSide `json:"side,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.smith.realaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.smith.realaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith.realaxis.tickfont
 	Tickfont *LayoutSmithRealaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.smith.realaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.smith.realaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.smith.realaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -6624,12 +7643,14 @@ type LayoutSmithRealaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *top* (*bottom*), this axis' are drawn above (below) the axis line.
+	// .schema.layout.layoutAttributes.smith.realaxis.ticks
 	Ticks LayoutSmithRealaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.smith.realaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Tickvals
@@ -6638,24 +7659,28 @@ type LayoutSmithRealaxis struct {
 	// Sets the values at which ticks on this axis appear.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.smith.realaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.smith.realaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.smith.realaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.smith.realaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -6666,21 +7691,25 @@ type LayoutSmith struct {
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
+	// .schema.layout.layoutAttributes.smith.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith.domain
 	Domain *LayoutSmithDomain `json:"domain,omitempty"`
 
 	// Imaginaryaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith.imaginaryaxis
 	Imaginaryaxis *LayoutSmithImaginaryaxis `json:"imaginaryaxis,omitempty"`
 
 	// Realaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.smith.realaxis
 	Realaxis *LayoutSmithRealaxis `json:"realaxis,omitempty"`
 }
 
@@ -6691,18 +7720,21 @@ type LayoutTernaryAaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -6713,30 +7745,35 @@ type LayoutTernaryAaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -6747,18 +7784,21 @@ type LayoutTernaryAaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.aaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.aaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.aaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -6768,12 +7808,14 @@ type LayoutTernaryAaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.aaxis.title.font
 	Font *LayoutTernaryAaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.ternary.aaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -6784,12 +7826,14 @@ type LayoutTernaryAaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.ternary.aaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.ternary.aaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -6797,36 +7841,42 @@ type LayoutTernaryAaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.ternary.aaxis.exponentformat
 	Exponentformat LayoutTernaryAaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.aaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.ternary.aaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.aaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.aaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.ternary.aaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -6834,42 +7884,49 @@ type LayoutTernaryAaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.ternary.aaxis.layer
 	Layer LayoutTernaryAaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.ternary.aaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.ternary.aaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
+	// .schema.layout.layoutAttributes.ternary.aaxis.min
 	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.ternary.aaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.ternary.aaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.ternary.aaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -6877,24 +7934,28 @@ type LayoutTernaryAaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showexponent
 	Showexponent LayoutTernaryAaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -6902,6 +7963,7 @@ type LayoutTernaryAaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showtickprefix
 	Showtickprefix LayoutTernaryAaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -6909,52 +7971,61 @@ type LayoutTernaryAaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.ternary.aaxis.showticksuffix
 	Showticksuffix LayoutTernaryAaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickfont
 	Tickfont *LayoutTernaryAaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutTernaryAaxisTickformatstop
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickformatstops
 	Tickformatstops []LayoutTernaryAaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -6962,12 +8033,14 @@ type LayoutTernaryAaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickmode
 	Tickmode LayoutTernaryAaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -6975,12 +8048,14 @@ type LayoutTernaryAaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticks
 	Ticks LayoutTernaryAaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -6989,12 +8064,14 @@ type LayoutTernaryAaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.ternary.aaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -7003,29 +8080,34 @@ type LayoutTernaryAaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.ternary.aaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.aaxis.title
 	Title *LayoutTernaryAaxisTitle `json:"title,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `min`, and `title` if in `editable: true` configuration. Defaults to `ternary<N>.uirevision`.
+	// .schema.layout.layoutAttributes.ternary.aaxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -7036,18 +8118,21 @@ type LayoutTernaryBaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.baxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.baxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -7058,30 +8143,35 @@ type LayoutTernaryBaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -7092,18 +8182,21 @@ type LayoutTernaryBaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.baxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.baxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.baxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -7113,12 +8206,14 @@ type LayoutTernaryBaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.baxis.title.font
 	Font *LayoutTernaryBaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.ternary.baxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -7129,12 +8224,14 @@ type LayoutTernaryBaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.ternary.baxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.ternary.baxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -7142,36 +8239,42 @@ type LayoutTernaryBaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.ternary.baxis.exponentformat
 	Exponentformat LayoutTernaryBaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.baxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.ternary.baxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.baxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.baxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.ternary.baxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -7179,42 +8282,49 @@ type LayoutTernaryBaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.ternary.baxis.layer
 	Layer LayoutTernaryBaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.ternary.baxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.ternary.baxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
+	// .schema.layout.layoutAttributes.ternary.baxis.min
 	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.ternary.baxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.ternary.baxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.ternary.baxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -7222,24 +8332,28 @@ type LayoutTernaryBaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.ternary.baxis.showexponent
 	Showexponent LayoutTernaryBaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.ternary.baxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.ternary.baxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.ternary.baxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -7247,6 +8361,7 @@ type LayoutTernaryBaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.ternary.baxis.showtickprefix
 	Showtickprefix LayoutTernaryBaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -7254,52 +8369,61 @@ type LayoutTernaryBaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.ternary.baxis.showticksuffix
 	Showticksuffix LayoutTernaryBaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.ternary.baxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.baxis.tickfont
 	Tickfont *LayoutTernaryBaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutTernaryBaxisTickformatstop
+	// .schema.layout.layoutAttributes.ternary.baxis.tickformatstops
 	Tickformatstops []LayoutTernaryBaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.ternary.baxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.ternary.baxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -7307,12 +8431,14 @@ type LayoutTernaryBaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.ternary.baxis.tickmode
 	Tickmode LayoutTernaryBaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -7320,12 +8446,14 @@ type LayoutTernaryBaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.ternary.baxis.ticks
 	Ticks LayoutTernaryBaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.ternary.baxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -7334,12 +8462,14 @@ type LayoutTernaryBaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.baxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.ternary.baxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -7348,29 +8478,34 @@ type LayoutTernaryBaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.baxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.ternary.baxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.ternary.baxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.baxis.title
 	Title *LayoutTernaryBaxisTitle `json:"title,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `min`, and `title` if in `editable: true` configuration. Defaults to `ternary<N>.uirevision`.
+	// .schema.layout.layoutAttributes.ternary.baxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -7381,18 +8516,21 @@ type LayoutTernaryCaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.caxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.caxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -7403,30 +8541,35 @@ type LayoutTernaryCaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -7437,18 +8580,21 @@ type LayoutTernaryCaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.ternary.caxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.ternary.caxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.ternary.caxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -7458,12 +8604,14 @@ type LayoutTernaryCaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.caxis.title.font
 	Font *LayoutTernaryCaxisTitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.ternary.caxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -7474,12 +8622,14 @@ type LayoutTernaryCaxis struct {
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.ternary.caxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.ternary.caxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -7487,36 +8637,42 @@ type LayoutTernaryCaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.ternary.caxis.exponentformat
 	Exponentformat LayoutTernaryCaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.caxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.ternary.caxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.ternary.caxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.caxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.ternary.caxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -7524,42 +8680,49 @@ type LayoutTernaryCaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.ternary.caxis.layer
 	Layer LayoutTernaryCaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.ternary.caxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.ternary.caxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Min
 	// arrayOK: false
 	// type: number
 	// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
+	// .schema.layout.layoutAttributes.ternary.caxis.min
 	Min types.NumberType `json:"min,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.ternary.caxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.ternary.caxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.ternary.caxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -7567,24 +8730,28 @@ type LayoutTernaryCaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.ternary.caxis.showexponent
 	Showexponent LayoutTernaryCaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.ternary.caxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.ternary.caxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.ternary.caxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -7592,6 +8759,7 @@ type LayoutTernaryCaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.ternary.caxis.showtickprefix
 	Showtickprefix LayoutTernaryCaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -7599,52 +8767,61 @@ type LayoutTernaryCaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.ternary.caxis.showticksuffix
 	Showticksuffix LayoutTernaryCaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.ternary.caxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.caxis.tickfont
 	Tickfont *LayoutTernaryCaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutTernaryCaxisTickformatstop
+	// .schema.layout.layoutAttributes.ternary.caxis.tickformatstops
 	Tickformatstops []LayoutTernaryCaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.ternary.caxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.ternary.caxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -7652,12 +8829,14 @@ type LayoutTernaryCaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.ternary.caxis.tickmode
 	Tickmode LayoutTernaryCaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -7665,12 +8844,14 @@ type LayoutTernaryCaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.ternary.caxis.ticks
 	Ticks LayoutTernaryCaxisTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.ternary.caxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -7679,12 +8860,14 @@ type LayoutTernaryCaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.caxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.ternary.caxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -7693,29 +8876,34 @@ type LayoutTernaryCaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.ternary.caxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.ternary.caxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.ternary.caxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.caxis.title
 	Title *LayoutTernaryCaxisTitle `json:"title,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `min`, and `title` if in `editable: true` configuration. Defaults to `ternary<N>.uirevision`.
+	// .schema.layout.layoutAttributes.ternary.caxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -7726,24 +8914,28 @@ type LayoutTernaryDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this ternary subplot .
+	// .schema.layout.layoutAttributes.ternary.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this ternary subplot .
+	// .schema.layout.layoutAttributes.ternary.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this ternary subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.ternary.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this ternary subplot (in plot fraction).
+	// .schema.layout.layoutAttributes.ternary.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -7753,39 +8945,46 @@ type LayoutTernary struct {
 	// Aaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.aaxis
 	Aaxis *LayoutTernaryAaxis `json:"aaxis,omitempty"`
 
 	// Baxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.baxis
 	Baxis *LayoutTernaryBaxis `json:"baxis,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Set the background color of the subplot
+	// .schema.layout.layoutAttributes.ternary.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Caxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.caxis
 	Caxis *LayoutTernaryCaxis `json:"caxis,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.ternary.domain
 	Domain *LayoutTernaryDomain `json:"domain,omitempty"`
 
 	// Sum
 	// arrayOK: false
 	// type: number
 	// The number each triplet should sum to, and the maximum range of each axis
+	// .schema.layout.layoutAttributes.ternary.sum
 	Sum types.NumberType `json:"sum,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `min` and `title`, if not overridden in the individual axes. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.ternary.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
@@ -7796,18 +8995,21 @@ type LayoutTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -7818,24 +9020,28 @@ type LayoutTitlePad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
+	// .schema.layout.layoutAttributes.title.pad.b
 	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
+	// .schema.layout.layoutAttributes.title.pad.l
 	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
+	// .schema.layout.layoutAttributes.title.pad.r
 	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
+	// .schema.layout.layoutAttributes.title.pad.t
 	T types.NumberType `json:"t,omitempty"`
 }
 
@@ -7845,23 +9051,27 @@ type LayoutTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.title.font
 	Font *LayoutTitleFont `json:"font,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.title.pad
 	Pad *LayoutTitlePad `json:"pad,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the plot's title. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.title.text
 	Text types.StringType `json:"text,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` in normalized coordinates from *0* (left) to *1* (right).
+	// .schema.layout.layoutAttributes.title.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -7869,6 +9079,7 @@ type LayoutTitle struct {
 	// default: auto
 	// type: enumerated
 	// Sets the title's horizontal alignment with respect to its x position. *left* means that the title starts at x, *right* means that the title ends at x and *center* means that the title's center is at x. *auto* divides `xref` by three and calculates the `xanchor` value automatically based on the value of `x`.
+	// .schema.layout.layoutAttributes.title.xanchor
 	Xanchor LayoutTitleXanchor `json:"xanchor,omitempty"`
 
 	// Xref
@@ -7876,12 +9087,14 @@ type LayoutTitle struct {
 	// default: container
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.layout.layoutAttributes.title.xref
 	Xref LayoutTitleXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` in normalized coordinates from *0* (bottom) to *1* (top). *auto* places the baseline of the title onto the vertical center of the top margin.
+	// .schema.layout.layoutAttributes.title.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -7889,6 +9102,7 @@ type LayoutTitle struct {
 	// default: auto
 	// type: enumerated
 	// Sets the title's vertical alignment with respect to its y position. *top* means that the title's cap line is at y, *bottom* means that the title's baseline is at y and *middle* means that the title's midline is at y. *auto* divides `yref` by three and calculates the `yanchor` value automatically based on the value of `y`.
+	// .schema.layout.layoutAttributes.title.yanchor
 	Yanchor LayoutTitleYanchor `json:"yanchor,omitempty"`
 
 	// Yref
@@ -7896,6 +9110,7 @@ type LayoutTitle struct {
 	// default: container
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.layout.layoutAttributes.title.yref
 	Yref LayoutTitleYref `json:"yref,omitempty"`
 }
 
@@ -7906,6 +9121,7 @@ type LayoutTransition struct {
 	// arrayOK: false
 	// type: number
 	// The duration of the transition, in milliseconds. If equal to zero, updates are synchronous.
+	// .schema.layout.layoutAttributes.transition.duration
 	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
@@ -7913,6 +9129,7 @@ type LayoutTransition struct {
 	// default: cubic-in-out
 	// type: enumerated
 	// The easing function used for the transition
+	// .schema.layout.layoutAttributes.transition.easing
 	Easing LayoutTransitionEasing `json:"easing,omitempty"`
 
 	// Ordering
@@ -7920,6 +9137,7 @@ type LayoutTransition struct {
 	// default: layout first
 	// type: enumerated
 	// Determines whether the figure's layout or traces smoothly transitions during updates that make both traces and layout change.
+	// .schema.layout.layoutAttributes.transition.ordering
 	Ordering LayoutTransitionOrdering `json:"ordering,omitempty"`
 }
 
@@ -7930,6 +9148,7 @@ type LayoutUniformtext struct {
 	// arrayOK: false
 	// type: number
 	// Sets the minimum text size between traces of the same type.
+	// .schema.layout.layoutAttributes.uniformtext.minsize
 	Minsize types.NumberType `json:"minsize,omitempty"`
 
 	// Mode
@@ -7937,6 +9156,7 @@ type LayoutUniformtext struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines how the font size for various text elements are uniformed between each trace type. If the computed text sizes were smaller than the minimum size defined by `uniformtext.minsize` using *hide* option hides the text; and using *show* option shows the text without further downscaling. Please note that if the size defined by `minsize` is greater than the font size defined by trace, then the `minsize` is used.
+	// .schema.layout.layoutAttributes.uniformtext.mode
 	Mode LayoutUniformtextMode `json:"mode,omitempty"`
 }
 
@@ -7947,24 +9167,28 @@ type UpdatemenuButton struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the arguments values to be passed to the Plotly method set in `method` on click.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.args
 	Args interface{} `json:"args,omitempty"`
 
 	// Args2
 	// arrayOK: false
 	// type: info_array
 	// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.args2
 	Args2 interface{} `json:"args2,omitempty"`
 
 	// Execute
 	// arrayOK: false
 	// type: boolean
 	// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_buttonclicked` method and executing the API command manually without losing the benefit of the updatemenu automatically binding to the state of the plot through the specification of `method` and `args`.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.execute
 	Execute types.BoolType `json:"execute,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the button.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.label
 	Label types.StringType `json:"label,omitempty"`
 
 	// Method
@@ -7972,24 +9196,28 @@ type UpdatemenuButton struct {
 	// default: restyle
 	// type: enumerated
 	// Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.method
 	Method ButtonMethod `json:"method,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this button is visible.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -8000,18 +9228,21 @@ type UpdatemenuFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -8022,24 +9253,28 @@ type UpdatemenuPad struct {
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the bottom of the component.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad.b
 	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the left side of the component.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad.l
 	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) on the right side of the component.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad.r
 	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// The amount of padding (in px) along the top of the component.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad.t
 	T types.NumberType `json:"t,omitempty"`
 }
 
@@ -8050,29 +9285,34 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// type: integer
 	// Determines which button (by index starting from 0) is considered active.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.active
 	Active types.IntegerType `json:"active,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the update menu buttons.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the update menu.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the update menu.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Buttons
 	// role: Object
 	// items: UpdatemenuButton
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons
 	Buttons []UpdatemenuButton `json:"buttons,omitempty"`
 
 	// Direction
@@ -8080,34 +9320,40 @@ type LayoutUpdatemenu struct {
 	// default: down
 	// type: enumerated
 	// Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.direction
 	Direction UpdatemenuDirection `json:"direction,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.font
 	Font *UpdatemenuFont `json:"font,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad
 	Pad *UpdatemenuPad `json:"pad,omitempty"`
 
 	// Showactive
 	// arrayOK: false
 	// type: boolean
 	// Highlights active dropdown item or active button if true.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.showactive
 	Showactive types.BoolType `json:"showactive,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Type
@@ -8115,18 +9361,21 @@ type LayoutUpdatemenu struct {
 	// default: dropdown
 	// type: enumerated
 	// Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.type
 	Type UpdatemenuType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the update menu is visible.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the update menu.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -8134,12 +9383,14 @@ type LayoutUpdatemenu struct {
 	// default: right
 	// type: enumerated
 	// Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.xanchor
 	Xanchor UpdatemenuXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the update menu.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -8147,6 +9398,7 @@ type LayoutUpdatemenu struct {
 	// default: top
 	// type: enumerated
 	// Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.yanchor
 	Yanchor UpdatemenuYanchor `json:"yanchor,omitempty"`
 }
 
@@ -8157,54 +9409,63 @@ type LayoutXaxisMinor struct {
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.xaxis.minor.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.xaxis.minor.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.xaxis.minor.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.xaxis.minor.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.xaxis.minor.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.xaxis.minor.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.xaxis.minor.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.xaxis.minor.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.xaxis.minor.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -8212,6 +9473,7 @@ type LayoutXaxisMinor struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.xaxis.minor.tickmode
 	Tickmode LayoutXaxisMinorTickmode `json:"tickmode,omitempty"`
 
 	// Ticks
@@ -8219,6 +9481,7 @@ type LayoutXaxisMinor struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.xaxis.minor.ticks
 	Ticks LayoutXaxisMinorTicks `json:"ticks,omitempty"`
 
 	// Tickvals
@@ -8227,18 +9490,21 @@ type LayoutXaxisMinor struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.xaxis.minor.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.xaxis.minor.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.xaxis.minor.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 }
 
@@ -8249,24 +9515,28 @@ type LayoutXaxisRangebreak struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the lower and upper bounds of this axis rangebreak. Can be used with `pattern`.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.bounds
 	Bounds interface{} `json:"bounds,omitempty"`
 
 	// Dvalue
 	// arrayOK: false
 	// type: number
 	// Sets the size of each `values` item. The default is one day in milliseconds.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.dvalue
 	Dvalue types.NumberType `json:"dvalue,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Pattern
@@ -8274,18 +9544,21 @@ type LayoutXaxisRangebreak struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.pattern
 	Pattern RangebreakPattern `json:"pattern,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Values
 	// arrayOK: false
 	// type: info_array
 	// Sets the coordinate values corresponding to the rangebreaks. An alternative to `bounds`. Use `dvalue` to set the size of the values along the axis.
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.values
 	Values interface{} `json:"values,omitempty"`
 }
 
@@ -8296,18 +9569,21 @@ type LayoutXaxisRangeselectorButton struct {
 	// arrayOK: false
 	// type: number
 	// Sets the number of steps to take to update the range. Use with `step` to specify the update interval.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.count
 	Count types.NumberType `json:"count,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// Sets the text label to appear on the button.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.label
 	Label types.StringType `json:"label,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Step
@@ -8315,6 +9591,7 @@ type LayoutXaxisRangeselectorButton struct {
 	// default: month
 	// type: enumerated
 	// The unit of measurement that the `count` value will set the range by.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.step
 	Step ButtonStep `json:"step,omitempty"`
 
 	// Stepmode
@@ -8322,18 +9599,21 @@ type LayoutXaxisRangeselectorButton struct {
 	// default: backward
 	// type: enumerated
 	// Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.stepmode
 	Stepmode ButtonStepmode `json:"stepmode,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this button is visible.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -8344,18 +9624,21 @@ type LayoutXaxisRangeselectorFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -8366,46 +9649,54 @@ type LayoutXaxisRangeselector struct {
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the active range selector button.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.activecolor
 	Activecolor types.Color `json:"activecolor,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the range selector buttons.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the border enclosing the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the border enclosing the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Buttons
 	// role: Object
 	// items: LayoutXaxisRangeselectorButton
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons
 	Buttons []LayoutXaxisRangeselectorButton `json:"buttons,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.font
 	Font *LayoutXaxisRangeselectorFont `json:"font,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this range selector is visible. Note that range selectors are only available for x axes of `type` set to or auto-typed to *date*.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position (in normalized coordinates) of the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -8413,12 +9704,14 @@ type LayoutXaxisRangeselector struct {
 	// default: left
 	// type: enumerated
 	// Sets the range selector's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.xanchor
 	Xanchor LayoutXaxisRangeselectorXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position (in normalized coordinates) of the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -8426,6 +9719,7 @@ type LayoutXaxisRangeselector struct {
 	// default: bottom
 	// type: enumerated
 	// Sets the range selector's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+	// .schema.layout.layoutAttributes.xaxis.rangeselector.yanchor
 	Yanchor LayoutXaxisRangeselectorYanchor `json:"yanchor,omitempty"`
 }
 
@@ -8436,6 +9730,7 @@ type LayoutXaxisRangesliderYaxis struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis for the rangeslider.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.yaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangemode
@@ -8443,6 +9738,7 @@ type LayoutXaxisRangesliderYaxis struct {
 	// default: match
 	// type: enumerated
 	// Determines whether or not the range of this axis in the rangeslider use the same value than in the main plot when zooming in/out. If *auto*, the autorange will be used. If *fixed*, the `range` is used. If *match*, the current range of the corresponding y-axis on the main subplot is used.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.yaxis.rangemode
 	Rangemode LayoutXaxisRangesliderYaxisRangemode `json:"rangemode,omitempty"`
 }
 
@@ -8453,47 +9749,55 @@ type LayoutXaxisRangeslider struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the range slider range is computed in relation to the input data. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.autorange
 	Autorange types.BoolType `json:"autorange,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
 	// type: color
 	// Sets the background color of the range slider.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the border color of the range slider.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: integer
 	// Sets the border width of the range slider.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.borderwidth
 	Borderwidth types.IntegerType `json:"borderwidth,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of the range slider. If not set, defaults to the full xaxis range. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// The height of the range slider as a fraction of the total plot area height.
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the range slider will be visible. If visible, perpendicular axes will be set to `fixedrange`
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Yaxis
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.rangeslider.yaxis
 	Yaxis *LayoutXaxisRangesliderYaxis `json:"yaxis,omitempty"`
 }
 
@@ -8504,18 +9808,21 @@ type LayoutXaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.xaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.xaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.xaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -8526,30 +9833,35 @@ type LayoutXaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -8560,18 +9872,21 @@ type LayoutXaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.xaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.xaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.xaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -8581,18 +9896,21 @@ type LayoutXaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.title.font
 	Font *LayoutXaxisTitleFont `json:"font,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets the standoff distance (in px) between the axis labels and the title text The default value is a function of the axis tick labels, the title `font.size` and the axis `linewidth`. Note that the axis title position is always constrained within the margins, so the actual standoff distance is always less than the set or default value. By setting `standoff` and turning on `automargin`, plotly.js will push the margins to fit the axis title at given standoff distance.
+	// .schema.layout.layoutAttributes.xaxis.title.standoff
 	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.xaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -8604,6 +9922,7 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
+	// .schema.layout.layoutAttributes.xaxis.anchor
 	Anchor LayoutXaxisAnchor `json:"anchor,omitempty"`
 
 	// Automargin
@@ -8611,6 +9930,7 @@ type LayoutXaxis struct {
 	// default: %!s(bool=false)
 	// type: flaglist
 	// Determines whether long tick labels automatically grow the figure margins.
+	// .schema.layout.layoutAttributes.xaxis.automargin
 	Automargin LayoutXaxisAutomargin `json:"automargin,omitempty"`
 
 	// Autorange
@@ -8618,6 +9938,7 @@ type LayoutXaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.xaxis.autorange
 	Autorange LayoutXaxisAutorange `json:"autorange,omitempty"`
 
 	// Autotypenumbers
@@ -8625,6 +9946,7 @@ type LayoutXaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.xaxis.autotypenumbers
 	Autotypenumbers LayoutXaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
@@ -8632,6 +9954,7 @@ type LayoutXaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.xaxis.calendar
 	Calendar LayoutXaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -8640,12 +9963,14 @@ type LayoutXaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.xaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.xaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -8653,12 +9978,14 @@ type LayoutXaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.xaxis.categoryorder
 	Categoryorder LayoutXaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.xaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Constrain
@@ -8666,6 +9993,7 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
+	// .schema.layout.layoutAttributes.xaxis.constrain
 	Constrain LayoutXaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward
@@ -8673,30 +10001,35 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
+	// .schema.layout.layoutAttributes.xaxis.constraintoward
 	Constraintoward LayoutXaxisConstraintoward `json:"constraintoward,omitempty"`
 
 	// Dividercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the dividers Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.xaxis.dividercolor
 	Dividercolor types.Color `json:"dividercolor,omitempty"`
 
 	// Dividerwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.xaxis.dividerwidth
 	Dividerwidth types.NumberType `json:"dividerwidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// type: info_array
 	// Sets the domain of this axis (in plot fraction).
+	// .schema.layout.layoutAttributes.xaxis.domain
 	Domain interface{} `json:"domain,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.xaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -8704,42 +10037,49 @@ type LayoutXaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.xaxis.exponentformat
 	Exponentformat LayoutXaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Fixedrange
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
+	// .schema.layout.layoutAttributes.xaxis.fixedrange
 	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.xaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.xaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.xaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.xaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.xaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -8747,18 +10087,21 @@ type LayoutXaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.xaxis.layer
 	Layer LayoutXaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.xaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.xaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Matches
@@ -8766,17 +10109,20 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
+	// .schema.layout.layoutAttributes.xaxis.matches
 	Matches LayoutXaxisMatches `json:"matches,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.xaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minor
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.minor
 	Minor *LayoutXaxisMinor `json:"minor,omitempty"`
 
 	// Mirror
@@ -8784,12 +10130,14 @@ type LayoutXaxis struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+	// .schema.layout.layoutAttributes.xaxis.mirror
 	Mirror LayoutXaxisMirror `json:"mirror,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.xaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Overlaying
@@ -8797,23 +10145,27 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
+	// .schema.layout.layoutAttributes.xaxis.overlaying
 	Overlaying LayoutXaxisOverlaying `json:"overlaying,omitempty"`
 
 	// Position
 	// arrayOK: false
 	// type: number
 	// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
+	// .schema.layout.layoutAttributes.xaxis.position
 	Position types.NumberType `json:"position,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.xaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks
 	// role: Object
 	// items: LayoutXaxisRangebreak
+	// .schema.layout.layoutAttributes.xaxis.rangebreaks
 	Rangebreaks []LayoutXaxisRangebreak `json:"rangebreaks,omitempty"`
 
 	// Rangemode
@@ -8821,16 +10173,19 @@ type LayoutXaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+	// .schema.layout.layoutAttributes.xaxis.rangemode
 	Rangemode LayoutXaxisRangemode `json:"rangemode,omitempty"`
 
 	// Rangeselector
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.rangeselector
 	Rangeselector *LayoutXaxisRangeselector `json:"rangeselector,omitempty"`
 
 	// Rangeslider
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.rangeslider
 	Rangeslider *LayoutXaxisRangeslider `json:"rangeslider,omitempty"`
 
 	// Scaleanchor
@@ -8838,24 +10193,28 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden.
+	// .schema.layout.layoutAttributes.xaxis.scaleanchor
 	Scaleanchor LayoutXaxisScaleanchor `json:"scaleanchor,omitempty"`
 
 	// Scaleratio
 	// arrayOK: false
 	// type: number
 	// If this axis is linked to another by `scaleanchor`, this determines the pixel to unit scale ratio. For example, if this value is 10, then every unit on this axis spans 10 times the number of pixels as a unit on the linked axis. Use this for example to create an elevation profile where the vertical scale is exaggerated a fixed amount with respect to the horizontal.
+	// .schema.layout.layoutAttributes.xaxis.scaleratio
 	Scaleratio types.NumberType `json:"scaleratio,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.xaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showdividers
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.xaxis.showdividers
 	Showdividers types.BoolType `json:"showdividers,omitempty"`
 
 	// Showexponent
@@ -8863,30 +10222,35 @@ type LayoutXaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.xaxis.showexponent
 	Showexponent LayoutXaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.xaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.xaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
+	// .schema.layout.layoutAttributes.xaxis.showspikes
 	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.xaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -8894,6 +10258,7 @@ type LayoutXaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.xaxis.showtickprefix
 	Showtickprefix LayoutXaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -8901,6 +10266,7 @@ type LayoutXaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.xaxis.showticksuffix
 	Showticksuffix LayoutXaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
@@ -8908,18 +10274,21 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
+	// .schema.layout.layoutAttributes.xaxis.side
 	Side LayoutXaxisSide `json:"side,omitempty"`
 
 	// Spikecolor
 	// arrayOK: false
 	// type: color
 	// Sets the spike color. If undefined, will use the series color
+	// .schema.layout.layoutAttributes.xaxis.spikecolor
 	Spikecolor types.Color `json:"spikecolor,omitempty"`
 
 	// Spikedash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.xaxis.spikedash
 	Spikedash types.StringType `json:"spikedash,omitempty"`
 
 	// Spikemode
@@ -8927,6 +10296,7 @@ type LayoutXaxis struct {
 	// default: toaxis
 	// type: flaglist
 	// Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
+	// .schema.layout.layoutAttributes.xaxis.spikemode
 	Spikemode LayoutXaxisSpikemode `json:"spikemode,omitempty"`
 
 	// Spikesnap
@@ -8934,46 +10304,54 @@ type LayoutXaxis struct {
 	// default: hovered data
 	// type: enumerated
 	// Determines whether spikelines are stuck to the cursor or to the closest datapoints.
+	// .schema.layout.layoutAttributes.xaxis.spikesnap
 	Spikesnap LayoutXaxisSpikesnap `json:"spikesnap,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.xaxis.spikethickness
 	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.xaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.xaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.xaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.tickfont
 	Tickfont *LayoutXaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.xaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutXaxisTickformatstop
+	// .schema.layout.layoutAttributes.xaxis.tickformatstops
 	Tickformatstops []LayoutXaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
@@ -8981,6 +10359,7 @@ type LayoutXaxis struct {
 	// default: instant
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+	// .schema.layout.layoutAttributes.xaxis.ticklabelmode
 	Ticklabelmode LayoutXaxisTicklabelmode `json:"ticklabelmode,omitempty"`
 
 	// Ticklabeloverflow
@@ -8988,6 +10367,7 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+	// .schema.layout.layoutAttributes.xaxis.ticklabeloverflow
 	Ticklabeloverflow LayoutXaxisTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -8995,18 +10375,21 @@ type LayoutXaxis struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+	// .schema.layout.layoutAttributes.xaxis.ticklabelposition
 	Ticklabelposition LayoutXaxisTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.xaxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.xaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -9014,12 +10397,14 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
+	// .schema.layout.layoutAttributes.xaxis.tickmode
 	Tickmode LayoutXaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.xaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -9027,6 +10412,7 @@ type LayoutXaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.xaxis.ticks
 	Ticks LayoutXaxisTicks `json:"ticks,omitempty"`
 
 	// Tickson
@@ -9034,12 +10420,14 @@ type LayoutXaxis struct {
 	// default: labels
 	// type: enumerated
 	// Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
+	// .schema.layout.layoutAttributes.xaxis.tickson
 	Tickson LayoutXaxisTickson `json:"tickson,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.xaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -9048,12 +10436,14 @@ type LayoutXaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.xaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.xaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -9062,23 +10452,27 @@ type LayoutXaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.xaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.xaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.xaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.xaxis.title
 	Title *LayoutXaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -9086,36 +10480,42 @@ type LayoutXaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.xaxis.type
 	Type LayoutXaxisType `json:"type,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `range`, `autorange`, and `title` if in `editable: true` configuration. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.xaxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.xaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
+	// .schema.layout.layoutAttributes.xaxis.zeroline
 	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
+	// .schema.layout.layoutAttributes.xaxis.zerolinecolor
 	Zerolinecolor types.Color `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.xaxis.zerolinewidth
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
@@ -9126,54 +10526,63 @@ type LayoutYaxisMinor struct {
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.yaxis.minor.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.yaxis.minor.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.yaxis.minor.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.yaxis.minor.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.yaxis.minor.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.yaxis.minor.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.yaxis.minor.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.yaxis.minor.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.yaxis.minor.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -9181,6 +10590,7 @@ type LayoutYaxisMinor struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.layout.layoutAttributes.yaxis.minor.tickmode
 	Tickmode LayoutYaxisMinorTickmode `json:"tickmode,omitempty"`
 
 	// Ticks
@@ -9188,6 +10598,7 @@ type LayoutYaxisMinor struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.yaxis.minor.ticks
 	Ticks LayoutYaxisMinorTicks `json:"ticks,omitempty"`
 
 	// Tickvals
@@ -9196,18 +10607,21 @@ type LayoutYaxisMinor struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.yaxis.minor.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.yaxis.minor.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.yaxis.minor.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 }
 
@@ -9218,24 +10632,28 @@ type LayoutYaxisRangebreak struct {
 	// arrayOK: false
 	// type: info_array
 	// Sets the lower and upper bounds of this axis rangebreak. Can be used with `pattern`.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.bounds
 	Bounds interface{} `json:"bounds,omitempty"`
 
 	// Dvalue
 	// arrayOK: false
 	// type: number
 	// Sets the size of each `values` item. The default is one day in milliseconds.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.dvalue
 	Dvalue types.NumberType `json:"dvalue,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether this axis rangebreak is enabled or disabled. Please note that `rangebreaks` only work for *date* axis type.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Pattern
@@ -9243,18 +10661,21 @@ type LayoutYaxisRangebreak struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.pattern
 	Pattern RangebreakPattern `json:"pattern,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Values
 	// arrayOK: false
 	// type: info_array
 	// Sets the coordinate values corresponding to the rangebreaks. An alternative to `bounds`. Use `dvalue` to set the size of the values along the axis.
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.values
 	Values interface{} `json:"values,omitempty"`
 }
 
@@ -9265,18 +10686,21 @@ type LayoutYaxisTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.yaxis.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.yaxis.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.yaxis.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -9287,30 +10711,35 @@ type LayoutYaxisTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -9321,18 +10750,21 @@ type LayoutYaxisTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.layout.layoutAttributes.yaxis.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.yaxis.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.layout.layoutAttributes.yaxis.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -9342,18 +10774,21 @@ type LayoutYaxisTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.yaxis.title.font
 	Font *LayoutYaxisTitleFont `json:"font,omitempty"`
 
 	// Standoff
 	// arrayOK: false
 	// type: number
 	// Sets the standoff distance (in px) between the axis labels and the title text The default value is a function of the axis tick labels, the title `font.size` and the axis `linewidth`. Note that the axis title position is always constrained within the margins, so the actual standoff distance is always less than the set or default value. By setting `standoff` and turning on `automargin`, plotly.js will push the margins to fit the axis title at given standoff distance.
+	// .schema.layout.layoutAttributes.yaxis.title.standoff
 	Standoff types.NumberType `json:"standoff,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of this axis. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.layout.layoutAttributes.yaxis.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -9365,6 +10800,7 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
+	// .schema.layout.layoutAttributes.yaxis.anchor
 	Anchor LayoutYaxisAnchor `json:"anchor,omitempty"`
 
 	// Automargin
@@ -9372,6 +10808,7 @@ type LayoutYaxis struct {
 	// default: %!s(bool=false)
 	// type: flaglist
 	// Determines whether long tick labels automatically grow the figure margins.
+	// .schema.layout.layoutAttributes.yaxis.automargin
 	Automargin LayoutYaxisAutomargin `json:"automargin,omitempty"`
 
 	// Autorange
@@ -9379,12 +10816,14 @@ type LayoutYaxis struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+	// .schema.layout.layoutAttributes.yaxis.autorange
 	Autorange LayoutYaxisAutorange `json:"autorange,omitempty"`
 
 	// Autoshift
 	// arrayOK: false
 	// type: boolean
 	// Automatically reposition the axis to avoid overlap with other axes with the same `overlaying` value. This repositioning will account for any `shift` amount applied to other axes on the same side with `autoshift` is set to true. Only has an effect if `anchor` is set to *free*.
+	// .schema.layout.layoutAttributes.yaxis.autoshift
 	Autoshift types.BoolType `json:"autoshift,omitempty"`
 
 	// Autotypenumbers
@@ -9392,6 +10831,7 @@ type LayoutYaxis struct {
 	// default: convert types
 	// type: enumerated
 	// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+	// .schema.layout.layoutAttributes.yaxis.autotypenumbers
 	Autotypenumbers LayoutYaxisAutotypenumbers `json:"autotypenumbers,omitempty"`
 
 	// Calendar
@@ -9399,6 +10839,7 @@ type LayoutYaxis struct {
 	// default: gregorian
 	// type: enumerated
 	// Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+	// .schema.layout.layoutAttributes.yaxis.calendar
 	Calendar LayoutYaxisCalendar `json:"calendar,omitempty"`
 
 	// Categoryarray
@@ -9407,12 +10848,14 @@ type LayoutYaxis struct {
 	// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.yaxis.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.layout.layoutAttributes.yaxis.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -9420,12 +10863,14 @@ type LayoutYaxis struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+	// .schema.layout.layoutAttributes.yaxis.categoryorder
 	Categoryorder LayoutYaxisCategoryorder `json:"categoryorder,omitempty"`
 
 	// Color
 	// arrayOK: false
 	// type: color
 	// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
+	// .schema.layout.layoutAttributes.yaxis.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Constrain
@@ -9433,6 +10878,7 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
+	// .schema.layout.layoutAttributes.yaxis.constrain
 	Constrain LayoutYaxisConstrain `json:"constrain,omitempty"`
 
 	// Constraintoward
@@ -9440,30 +10886,35 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
+	// .schema.layout.layoutAttributes.yaxis.constraintoward
 	Constraintoward LayoutYaxisConstraintoward `json:"constraintoward,omitempty"`
 
 	// Dividercolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the dividers Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.yaxis.dividercolor
 	Dividercolor types.Color `json:"dividercolor,omitempty"`
 
 	// Dividerwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.yaxis.dividerwidth
 	Dividerwidth types.NumberType `json:"dividerwidth,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// type: info_array
 	// Sets the domain of this axis (in plot fraction).
+	// .schema.layout.layoutAttributes.yaxis.domain
 	Domain interface{} `json:"domain,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.layout.layoutAttributes.yaxis.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -9471,42 +10922,49 @@ type LayoutYaxis struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.layout.layoutAttributes.yaxis.exponentformat
 	Exponentformat LayoutYaxisExponentformat `json:"exponentformat,omitempty"`
 
 	// Fixedrange
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
+	// .schema.layout.layoutAttributes.yaxis.fixedrange
 	Fixedrange types.BoolType `json:"fixedrange,omitempty"`
 
 	// Gridcolor
 	// arrayOK: false
 	// type: color
 	// Sets the color of the grid lines.
+	// .schema.layout.layoutAttributes.yaxis.gridcolor
 	Gridcolor types.Color `json:"gridcolor,omitempty"`
 
 	// Griddash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.yaxis.griddash
 	Griddash types.StringType `json:"griddash,omitempty"`
 
 	// Gridwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the grid lines.
+	// .schema.layout.layoutAttributes.yaxis.gridwidth
 	Gridwidth types.NumberType `json:"gridwidth,omitempty"`
 
 	// Hoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.yaxis.hoverformat
 	Hoverformat types.StringType `json:"hoverformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.layout.layoutAttributes.yaxis.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Layer
@@ -9514,18 +10972,21 @@ type LayoutYaxis struct {
 	// default: above traces
 	// type: enumerated
 	// Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+	// .schema.layout.layoutAttributes.yaxis.layer
 	Layer LayoutYaxisLayer `json:"layer,omitempty"`
 
 	// Linecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.layout.layoutAttributes.yaxis.linecolor
 	Linecolor types.Color `json:"linecolor,omitempty"`
 
 	// Linewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.layout.layoutAttributes.yaxis.linewidth
 	Linewidth types.NumberType `json:"linewidth,omitempty"`
 
 	// Matches
@@ -9533,17 +10994,20 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
+	// .schema.layout.layoutAttributes.yaxis.matches
 	Matches LayoutYaxisMatches `json:"matches,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.layout.layoutAttributes.yaxis.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Minor
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.yaxis.minor
 	Minor *LayoutYaxisMinor `json:"minor,omitempty"`
 
 	// Mirror
@@ -9551,12 +11015,14 @@ type LayoutYaxis struct {
 	// default: %!s(bool=false)
 	// type: enumerated
 	// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+	// .schema.layout.layoutAttributes.yaxis.mirror
 	Mirror LayoutYaxisMirror `json:"mirror,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.layout.layoutAttributes.yaxis.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Overlaying
@@ -9564,23 +11030,27 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
+	// .schema.layout.layoutAttributes.yaxis.overlaying
 	Overlaying LayoutYaxisOverlaying `json:"overlaying,omitempty"`
 
 	// Position
 	// arrayOK: false
 	// type: number
 	// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
+	// .schema.layout.layoutAttributes.yaxis.position
 	Position types.NumberType `json:"position,omitempty"`
 
 	// Range
 	// arrayOK: false
 	// type: info_array
 	// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.yaxis.range
 	Range interface{} `json:"range,omitempty"`
 
 	// Rangebreaks
 	// role: Object
 	// items: LayoutYaxisRangebreak
+	// .schema.layout.layoutAttributes.yaxis.rangebreaks
 	Rangebreaks []LayoutYaxisRangebreak `json:"rangebreaks,omitempty"`
 
 	// Rangemode
@@ -9588,6 +11058,7 @@ type LayoutYaxis struct {
 	// default: normal
 	// type: enumerated
 	// If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+	// .schema.layout.layoutAttributes.yaxis.rangemode
 	Rangemode LayoutYaxisRangemode `json:"rangemode,omitempty"`
 
 	// Scaleanchor
@@ -9595,30 +11066,35 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden.
+	// .schema.layout.layoutAttributes.yaxis.scaleanchor
 	Scaleanchor LayoutYaxisScaleanchor `json:"scaleanchor,omitempty"`
 
 	// Scaleratio
 	// arrayOK: false
 	// type: number
 	// If this axis is linked to another by `scaleanchor`, this determines the pixel to unit scale ratio. For example, if this value is 10, then every unit on this axis spans 10 times the number of pixels as a unit on the linked axis. Use this for example to create an elevation profile where the vertical scale is exaggerated a fixed amount with respect to the horizontal.
+	// .schema.layout.layoutAttributes.yaxis.scaleratio
 	Scaleratio types.NumberType `json:"scaleratio,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.layout.layoutAttributes.yaxis.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Shift
 	// arrayOK: false
 	// type: number
 	// Moves the axis a given number of pixels from where it would have been otherwise. Accepts both positive and negative values, which will shift the axis either right or left, respectively. If `autoshift` is set to true, then this defaults to a padding of -3 if `side` is set to *left*. and defaults to +3 if `side` is set to *right*. Defaults to 0 if `autoshift` is set to false. Only has an effect if `anchor` is set to *free*.
+	// .schema.layout.layoutAttributes.yaxis.shift
 	Shift types.NumberType `json:"shift,omitempty"`
 
 	// Showdividers
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a dividers are drawn between the category levels of this axis. Only has an effect on *multicategory* axes.
+	// .schema.layout.layoutAttributes.yaxis.showdividers
 	Showdividers types.BoolType `json:"showdividers,omitempty"`
 
 	// Showexponent
@@ -9626,30 +11102,35 @@ type LayoutYaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.layout.layoutAttributes.yaxis.showexponent
 	Showexponent LayoutYaxisShowexponent `json:"showexponent,omitempty"`
 
 	// Showgrid
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not grid lines are drawn. If *true*, the grid lines are drawn at every tick mark.
+	// .schema.layout.layoutAttributes.yaxis.showgrid
 	Showgrid types.BoolType `json:"showgrid,omitempty"`
 
 	// Showline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line bounding this axis is drawn.
+	// .schema.layout.layoutAttributes.yaxis.showline
 	Showline types.BoolType `json:"showline,omitempty"`
 
 	// Showspikes
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not spikes (aka droplines) are drawn for this axis. Note: This only takes affect when hovermode = closest
+	// .schema.layout.layoutAttributes.yaxis.showspikes
 	Showspikes types.BoolType `json:"showspikes,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.layout.layoutAttributes.yaxis.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -9657,6 +11138,7 @@ type LayoutYaxis struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.layout.layoutAttributes.yaxis.showtickprefix
 	Showtickprefix LayoutYaxisShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -9664,6 +11146,7 @@ type LayoutYaxis struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.layout.layoutAttributes.yaxis.showticksuffix
 	Showticksuffix LayoutYaxisShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Side
@@ -9671,18 +11154,21 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
+	// .schema.layout.layoutAttributes.yaxis.side
 	Side LayoutYaxisSide `json:"side,omitempty"`
 
 	// Spikecolor
 	// arrayOK: false
 	// type: color
 	// Sets the spike color. If undefined, will use the series color
+	// .schema.layout.layoutAttributes.yaxis.spikecolor
 	Spikecolor types.Color `json:"spikecolor,omitempty"`
 
 	// Spikedash
 	// arrayOK: false
 	// type: string
 	// Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*).
+	// .schema.layout.layoutAttributes.yaxis.spikedash
 	Spikedash types.StringType `json:"spikedash,omitempty"`
 
 	// Spikemode
@@ -9690,6 +11176,7 @@ type LayoutYaxis struct {
 	// default: toaxis
 	// type: flaglist
 	// Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
+	// .schema.layout.layoutAttributes.yaxis.spikemode
 	Spikemode LayoutYaxisSpikemode `json:"spikemode,omitempty"`
 
 	// Spikesnap
@@ -9697,46 +11184,54 @@ type LayoutYaxis struct {
 	// default: hovered data
 	// type: enumerated
 	// Determines whether spikelines are stuck to the cursor or to the closest datapoints.
+	// .schema.layout.layoutAttributes.yaxis.spikesnap
 	Spikesnap LayoutYaxisSpikesnap `json:"spikesnap,omitempty"`
 
 	// Spikethickness
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.yaxis.spikethickness
 	Spikethickness types.NumberType `json:"spikethickness,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.layout.layoutAttributes.yaxis.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.layout.layoutAttributes.yaxis.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.layout.layoutAttributes.yaxis.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.yaxis.tickfont
 	Tickfont *LayoutYaxisTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.layout.layoutAttributes.yaxis.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: LayoutYaxisTickformatstop
+	// .schema.layout.layoutAttributes.yaxis.tickformatstops
 	Tickformatstops []LayoutYaxisTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabelmode
@@ -9744,6 +11239,7 @@ type LayoutYaxis struct {
 	// default: instant
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+	// .schema.layout.layoutAttributes.yaxis.ticklabelmode
 	Ticklabelmode LayoutYaxisTicklabelmode `json:"ticklabelmode,omitempty"`
 
 	// Ticklabeloverflow
@@ -9751,6 +11247,7 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+	// .schema.layout.layoutAttributes.yaxis.ticklabeloverflow
 	Ticklabeloverflow LayoutYaxisTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -9758,18 +11255,21 @@ type LayoutYaxis struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+	// .schema.layout.layoutAttributes.yaxis.ticklabelposition
 	Ticklabelposition LayoutYaxisTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.layout.layoutAttributes.yaxis.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.layout.layoutAttributes.yaxis.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -9777,12 +11277,14 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
+	// .schema.layout.layoutAttributes.yaxis.tickmode
 	Tickmode LayoutYaxisTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.layout.layoutAttributes.yaxis.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -9790,6 +11292,7 @@ type LayoutYaxis struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.layout.layoutAttributes.yaxis.ticks
 	Ticks LayoutYaxisTicks `json:"ticks,omitempty"`
 
 	// Tickson
@@ -9797,12 +11300,14 @@ type LayoutYaxis struct {
 	// default: labels
 	// type: enumerated
 	// Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
+	// .schema.layout.layoutAttributes.yaxis.tickson
 	Tickson LayoutYaxisTickson `json:"tickson,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.layout.layoutAttributes.yaxis.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -9811,12 +11316,14 @@ type LayoutYaxis struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.yaxis.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.layout.layoutAttributes.yaxis.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -9825,23 +11332,27 @@ type LayoutYaxis struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.layout.layoutAttributes.yaxis.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.layout.layoutAttributes.yaxis.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.layout.layoutAttributes.yaxis.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.layout.layoutAttributes.yaxis.title
 	Title *LayoutYaxisTitle `json:"title,omitempty"`
 
 	// Type
@@ -9849,40 +11360,47 @@ type LayoutYaxis struct {
 	// default: -
 	// type: enumerated
 	// Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+	// .schema.layout.layoutAttributes.yaxis.type
 	Type LayoutYaxisType `json:"type,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of user-driven changes in axis `range`, `autorange`, and `title` if in `editable: true` configuration. Defaults to `layout.uirevision`.
+	// .schema.layout.layoutAttributes.yaxis.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
+	// .schema.layout.layoutAttributes.yaxis.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 
 	// Zeroline
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a line is drawn at along the 0 value of this axis. If *true*, the zero line is drawn on top of the grid lines.
+	// .schema.layout.layoutAttributes.yaxis.zeroline
 	Zeroline types.BoolType `json:"zeroline,omitempty"`
 
 	// Zerolinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the line color of the zero line.
+	// .schema.layout.layoutAttributes.yaxis.zerolinecolor
 	Zerolinecolor types.Color `json:"zerolinecolor,omitempty"`
 
 	// Zerolinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the zero line.
+	// .schema.layout.layoutAttributes.yaxis.zerolinewidth
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
 // AnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.align
 type AnnotationAlign string
 
 const (
@@ -9892,6 +11410,7 @@ const (
 )
 
 // AnnotationAxref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+// .schema.layout.layoutAttributes.annotations.items.annotation.axref
 type AnnotationAxref string
 
 const (
@@ -9900,6 +11419,7 @@ const (
 )
 
 // AnnotationAyref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+// .schema.layout.layoutAttributes.annotations.items.annotation.ayref
 type AnnotationAyref string
 
 const (
@@ -9908,6 +11428,7 @@ const (
 )
 
 // AnnotationClicktoshow Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
+// .schema.layout.layoutAttributes.annotations.items.annotation.clicktoshow
 type AnnotationClicktoshow interface{}
 
 var (
@@ -9917,6 +11438,7 @@ var (
 )
 
 // AnnotationValign Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+// .schema.layout.layoutAttributes.annotations.items.annotation.valign
 type AnnotationValign string
 
 const (
@@ -9926,6 +11448,7 @@ const (
 )
 
 // AnnotationXanchor Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// .schema.layout.layoutAttributes.annotations.items.annotation.xanchor
 type AnnotationXanchor string
 
 const (
@@ -9936,6 +11459,7 @@ const (
 )
 
 // AnnotationXref Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.annotations.items.annotation.xref
 type AnnotationXref string
 
 const (
@@ -9944,6 +11468,7 @@ const (
 )
 
 // AnnotationYanchor Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// .schema.layout.layoutAttributes.annotations.items.annotation.yanchor
 type AnnotationYanchor string
 
 const (
@@ -9954,6 +11479,7 @@ const (
 )
 
 // AnnotationYref Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.annotations.items.annotation.yref
 type AnnotationYref string
 
 const (
@@ -9962,6 +11488,7 @@ const (
 )
 
 // ButtonMethod Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.method
 type ButtonMethod string
 
 const (
@@ -9973,6 +11500,7 @@ const (
 )
 
 // ButtonStep The unit of measurement that the `count` value will set the range by.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.step
 type ButtonStep string
 
 const (
@@ -9986,6 +11514,7 @@ const (
 )
 
 // ButtonStepmode Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.stepmode
 type ButtonStepmode string
 
 const (
@@ -9994,6 +11523,7 @@ const (
 )
 
 // ImageLayer Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
+// .schema.layout.layoutAttributes.images.items.image.layer
 type ImageLayer string
 
 const (
@@ -10002,6 +11532,7 @@ const (
 )
 
 // ImageSizing Specifies which dimension of the image to constrain.
+// .schema.layout.layoutAttributes.images.items.image.sizing
 type ImageSizing string
 
 const (
@@ -10011,6 +11542,7 @@ const (
 )
 
 // ImageXanchor Sets the anchor for the x position
+// .schema.layout.layoutAttributes.images.items.image.xanchor
 type ImageXanchor string
 
 const (
@@ -10020,6 +11552,7 @@ const (
 )
 
 // ImageXref Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.images.items.image.xref
 type ImageXref string
 
 const (
@@ -10028,6 +11561,7 @@ const (
 )
 
 // ImageYanchor Sets the anchor for the y position.
+// .schema.layout.layoutAttributes.images.items.image.yanchor
 type ImageYanchor string
 
 const (
@@ -10037,6 +11571,7 @@ const (
 )
 
 // ImageYref Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.images.items.image.yref
 type ImageYref string
 
 const (
@@ -10045,6 +11580,7 @@ const (
 )
 
 // LayerSourcetype Sets the source type for this layer, that is the type of the layer data.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcetype
 type LayerSourcetype string
 
 const (
@@ -10055,6 +11591,7 @@ const (
 )
 
 // LayerSymbolPlacement Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.placement
 type LayerSymbolPlacement string
 
 const (
@@ -10064,6 +11601,7 @@ const (
 )
 
 // LayerSymbolTextposition Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textposition
 type LayerSymbolTextposition string
 
 const (
@@ -10079,6 +11617,7 @@ const (
 )
 
 // LayerType Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.type
 type LayerType string
 
 const (
@@ -10090,6 +11629,7 @@ const (
 )
 
 // LayoutAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
+// .schema.layout.layoutAttributes.autotypenumbers
 type LayoutAutotypenumbers string
 
 const (
@@ -10098,6 +11638,7 @@ const (
 )
 
 // LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.histogram.layoutAttributes.barmode
 type LayoutBarmode string
 
 const (
@@ -10114,6 +11655,7 @@ const (
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
+// .schema.traces.histogram.layoutAttributes.barnorm
 type LayoutBarnorm string
 
 const (
@@ -10126,6 +11668,7 @@ const (
 )
 
 // LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
+// .schema.traces.candlestick.layoutAttributes.boxmode
 type LayoutBoxmode string
 
 const (
@@ -10136,6 +11679,7 @@ const (
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
+// .schema.layout.layoutAttributes.calendar
 type LayoutCalendar string
 
 const (
@@ -10158,6 +11702,7 @@ const (
 )
 
 // LayoutColoraxisColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.exponentformat
 type LayoutColoraxisColorbarExponentformat string
 
 const (
@@ -10170,6 +11715,7 @@ const (
 )
 
 // LayoutColoraxisColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.lenmode
 type LayoutColoraxisColorbarLenmode string
 
 const (
@@ -10178,6 +11724,7 @@ const (
 )
 
 // LayoutColoraxisColorbarOrientation Sets the orientation of the colorbar.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.orientation
 type LayoutColoraxisColorbarOrientation string
 
 const (
@@ -10186,6 +11733,7 @@ const (
 )
 
 // LayoutColoraxisColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.showexponent
 type LayoutColoraxisColorbarShowexponent string
 
 const (
@@ -10196,6 +11744,7 @@ const (
 )
 
 // LayoutColoraxisColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.showtickprefix
 type LayoutColoraxisColorbarShowtickprefix string
 
 const (
@@ -10206,6 +11755,7 @@ const (
 )
 
 // LayoutColoraxisColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.showticksuffix
 type LayoutColoraxisColorbarShowticksuffix string
 
 const (
@@ -10216,6 +11766,7 @@ const (
 )
 
 // LayoutColoraxisColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.thicknessmode
 type LayoutColoraxisColorbarThicknessmode string
 
 const (
@@ -10224,6 +11775,7 @@ const (
 )
 
 // LayoutColoraxisColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklabeloverflow
 type LayoutColoraxisColorbarTicklabeloverflow string
 
 const (
@@ -10233,6 +11785,7 @@ const (
 )
 
 // LayoutColoraxisColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.ticklabelposition
 type LayoutColoraxisColorbarTicklabelposition string
 
 const (
@@ -10249,6 +11802,7 @@ const (
 )
 
 // LayoutColoraxisColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.coloraxis.colorbar.tickmode
 type LayoutColoraxisColorbarTickmode string
 
 const (
@@ -10258,6 +11812,7 @@ const (
 )
 
 // LayoutColoraxisColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.ticks
 type LayoutColoraxisColorbarTicks string
 
 const (
@@ -10267,6 +11822,7 @@ const (
 )
 
 // LayoutColoraxisColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.title.side
 type LayoutColoraxisColorbarTitleSide string
 
 const (
@@ -10276,6 +11832,7 @@ const (
 )
 
 // LayoutColoraxisColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.xanchor
 type LayoutColoraxisColorbarXanchor string
 
 const (
@@ -10285,6 +11842,7 @@ const (
 )
 
 // LayoutColoraxisColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.layout.layoutAttributes.coloraxis.colorbar.yanchor
 type LayoutColoraxisColorbarYanchor string
 
 const (
@@ -10294,6 +11852,7 @@ const (
 )
 
 // LayoutDragmode Determines the mode of drag interactions. *select* and *lasso* apply only to scatter traces with markers or text. *orbit* and *turntable* apply only to 3D scenes.
+// .schema.layout.layoutAttributes.dragmode
 type LayoutDragmode interface{}
 
 var (
@@ -10312,6 +11871,7 @@ var (
 )
 
 // LayoutFunnelmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.funnel.layoutAttributes.funnelmode
 type LayoutFunnelmode string
 
 const (
@@ -10321,6 +11881,7 @@ const (
 )
 
 // LayoutGeoFitbounds Determines if this subplot's view settings are auto-computed to fit trace data. On scoped maps, setting `fitbounds` leads to `center.lon` and `center.lat` getting auto-filled. On maps with a non-clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, and `projection.rotation.lon` getting auto-filled. On maps with a clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, `projection.rotation.lon`, `projection.rotation.lat`, `lonaxis.range` and `lonaxis.range` getting auto-filled. If *locations*, only the trace's visible locations are considered in the `fitbounds` computations. If *geojson*, the entire trace input `geojson` (if provided) is considered in the `fitbounds` computations, Defaults to *false*.
+// .schema.layout.layoutAttributes.geo.fitbounds
 type LayoutGeoFitbounds interface{}
 
 var (
@@ -10330,6 +11891,7 @@ var (
 )
 
 // LayoutGeoProjectionType Sets the projection type.
+// .schema.layout.layoutAttributes.geo.projection.type
 type LayoutGeoProjectionType string
 
 const (
@@ -10419,6 +11981,7 @@ const (
 )
 
 // LayoutGeoResolution Sets the resolution of the base layers. The values have units of km/mm e.g. 110 corresponds to a scale ratio of 1:110,000,000.
+// .schema.layout.layoutAttributes.geo.resolution
 type LayoutGeoResolution interface{}
 
 var (
@@ -10427,6 +11990,7 @@ var (
 )
 
 // LayoutGeoScope Set the scope of the map.
+// .schema.layout.layoutAttributes.geo.scope
 type LayoutGeoScope string
 
 const (
@@ -10440,6 +12004,7 @@ const (
 )
 
 // LayoutGridPattern If no `subplots`, `xaxes`, or `yaxes` are given but we do have `rows` and `columns`, we can generate defaults using consecutive axis IDs, in two ways: *coupled* gives one x axis per column and one y axis per row. *independent* uses a new xy pair for each cell, left-to-right across each row then iterating rows according to `roworder`.
+// .schema.layout.layoutAttributes.grid.pattern
 type LayoutGridPattern string
 
 const (
@@ -10448,6 +12013,7 @@ const (
 )
 
 // LayoutGridRoworder Is the first row the top or the bottom? Note that columns are always enumerated from left to right.
+// .schema.layout.layoutAttributes.grid.roworder
 type LayoutGridRoworder string
 
 const (
@@ -10456,6 +12022,7 @@ const (
 )
 
 // LayoutGridXside Sets where the x axis labels and titles go. *bottom* means the very bottom of the grid. *bottom plot* is the lowest plot that each x axis is used in. *top* and *top plot* are similar.
+// .schema.layout.layoutAttributes.grid.xside
 type LayoutGridXside string
 
 const (
@@ -10466,6 +12033,7 @@ const (
 )
 
 // LayoutGridYside Sets where the y axis labels and titles go. *left* means the very left edge of the grid. *left plot* is the leftmost plot that each y axis is used in. *right* and *right plot* are similar.
+// .schema.layout.layoutAttributes.grid.yside
 type LayoutGridYside string
 
 const (
@@ -10476,6 +12044,7 @@ const (
 )
 
 // LayoutHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.layout.layoutAttributes.hoverlabel.align
 type LayoutHoverlabelAlign string
 
 const (
@@ -10485,6 +12054,7 @@ const (
 )
 
 // LayoutHovermode Determines the mode of hover interactions. If *closest*, a single hoverlabel will appear for the *closest* point within the `hoverdistance`. If *x* (or *y*), multiple hoverlabels will appear for multiple points at the *closest* x- (or y-) coordinate within the `hoverdistance`, with the caveat that no more than one hoverlabel will appear per trace. If *x unified* (or *y unified*), a single hoverlabel will appear multiple points at the closest x- (or y-) coordinate within the `hoverdistance` with the caveat that no more than one hoverlabel will appear per trace. In this mode, spikelines are enabled by default perpendicular to the specified axis. If false, hover interactions are disabled.
+// .schema.layout.layoutAttributes.hovermode
 type LayoutHovermode interface{}
 
 var (
@@ -10497,6 +12067,7 @@ var (
 )
 
 // LayoutLegendEntrywidthmode Determines what entrywidth means.
+// .schema.layout.layoutAttributes.legend.entrywidthmode
 type LayoutLegendEntrywidthmode string
 
 const (
@@ -10505,6 +12076,7 @@ const (
 )
 
 // LayoutLegendGroupclick Determines the behavior on legend group item click. *toggleitem* toggles the visibility of the individual item clicked on the graph. *togglegroup* toggles the visibility of all items in the same legendgroup as the item clicked on the graph.
+// .schema.layout.layoutAttributes.legend.groupclick
 type LayoutLegendGroupclick string
 
 const (
@@ -10513,6 +12085,7 @@ const (
 )
 
 // LayoutLegendItemclick Determines the behavior on legend item click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item click interactions.
+// .schema.layout.layoutAttributes.legend.itemclick
 type LayoutLegendItemclick interface{}
 
 var (
@@ -10522,6 +12095,7 @@ var (
 )
 
 // LayoutLegendItemdoubleclick Determines the behavior on legend item double-click. *toggle* toggles the visibility of the item clicked on the graph. *toggleothers* makes the clicked item the sole visible item on the graph. *false* disables legend item double-click interactions.
+// .schema.layout.layoutAttributes.legend.itemdoubleclick
 type LayoutLegendItemdoubleclick interface{}
 
 var (
@@ -10531,6 +12105,7 @@ var (
 )
 
 // LayoutLegendItemsizing Determines if the legend items symbols scale with their corresponding *trace* attributes or remain *constant* independent of the symbol size on the graph.
+// .schema.layout.layoutAttributes.legend.itemsizing
 type LayoutLegendItemsizing string
 
 const (
@@ -10539,6 +12114,7 @@ const (
 )
 
 // LayoutLegendOrientation Sets the orientation of the legend.
+// .schema.layout.layoutAttributes.legend.orientation
 type LayoutLegendOrientation string
 
 const (
@@ -10547,6 +12123,7 @@ const (
 )
 
 // LayoutLegendTitleSide Determines the location of legend's title with respect to the legend items. Defaulted to *top* with `orientation` is *h*. Defaulted to *left* with `orientation` is *v*. The *top left* options could be used to expand legend area in both x and y sides.
+// .schema.layout.layoutAttributes.legend.title.side
 type LayoutLegendTitleSide string
 
 const (
@@ -10556,6 +12133,7 @@ const (
 )
 
 // LayoutLegendValign Sets the vertical alignment of the symbols with respect to their associated text.
+// .schema.layout.layoutAttributes.legend.valign
 type LayoutLegendValign string
 
 const (
@@ -10565,6 +12143,7 @@ const (
 )
 
 // LayoutLegendXanchor Sets the legend's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the legend. Value *auto* anchors legends to the right for `x` values greater than or equal to 2/3, anchors legends to the left for `x` values less than or equal to 1/3 and anchors legends with respect to their center otherwise.
+// .schema.layout.layoutAttributes.legend.xanchor
 type LayoutLegendXanchor string
 
 const (
@@ -10575,6 +12154,7 @@ const (
 )
 
 // LayoutLegendYanchor Sets the legend's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the legend. Value *auto* anchors legends at their bottom for `y` values less than or equal to 1/3, anchors legends to at their top for `y` values greater than or equal to 2/3 and anchors legends with respect to their middle otherwise.
+// .schema.layout.layoutAttributes.legend.yanchor
 type LayoutLegendYanchor string
 
 const (
@@ -10585,6 +12165,7 @@ const (
 )
 
 // LayoutModebarOrientation Sets the orientation of the modebar.
+// .schema.layout.layoutAttributes.modebar.orientation
 type LayoutModebarOrientation string
 
 const (
@@ -10593,6 +12174,7 @@ const (
 )
 
 // LayoutNewselectionMode Describes how a new selection is created. If `immediate`, a new selection is created after first mouse up. If `gradual`, a new selection is not created after first mouse. By adding to and subtracting from the initial selection, this option allows declaring extra outlines of the selection.
+// .schema.layout.layoutAttributes.newselection.mode
 type LayoutNewselectionMode string
 
 const (
@@ -10601,6 +12183,7 @@ const (
 )
 
 // LayoutNewshapeDrawdirection When `dragmode` is set to *drawrect*, *drawline* or *drawcircle* this limits the drag to be horizontal, vertical or diagonal. Using *diagonal* there is no limit e.g. in drawing lines in any direction. *ortho* limits the draw to be either horizontal or vertical. *horizontal* allows horizontal extend. *vertical* allows vertical extend.
+// .schema.layout.layoutAttributes.newshape.drawdirection
 type LayoutNewshapeDrawdirection string
 
 const (
@@ -10611,6 +12194,7 @@ const (
 )
 
 // LayoutNewshapeFillrule Determines the path's interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+// .schema.layout.layoutAttributes.newshape.fillrule
 type LayoutNewshapeFillrule string
 
 const (
@@ -10619,6 +12203,7 @@ const (
 )
 
 // LayoutNewshapeLabelTextposition Sets the position of the label text relative to the new shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+// .schema.layout.layoutAttributes.newshape.label.textposition
 type LayoutNewshapeLabelTextposition string
 
 const (
@@ -10637,6 +12222,7 @@ const (
 )
 
 // LayoutNewshapeLabelXanchor Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the new shape.
+// .schema.layout.layoutAttributes.newshape.label.xanchor
 type LayoutNewshapeLabelXanchor string
 
 const (
@@ -10647,6 +12233,7 @@ const (
 )
 
 // LayoutNewshapeLabelYanchor Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the new shape.
+// .schema.layout.layoutAttributes.newshape.label.yanchor
 type LayoutNewshapeLabelYanchor string
 
 const (
@@ -10656,6 +12243,7 @@ const (
 )
 
 // LayoutNewshapeLayer Specifies whether new shapes are drawn below or above traces.
+// .schema.layout.layoutAttributes.newshape.layer
 type LayoutNewshapeLayer string
 
 const (
@@ -10664,6 +12252,7 @@ const (
 )
 
 // LayoutPolarAngularaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.polar.angularaxis.autotypenumbers
 type LayoutPolarAngularaxisAutotypenumbers string
 
 const (
@@ -10672,6 +12261,7 @@ const (
 )
 
 // LayoutPolarAngularaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.polar.angularaxis.categoryorder
 type LayoutPolarAngularaxisCategoryorder string
 
 const (
@@ -10694,6 +12284,7 @@ const (
 )
 
 // LayoutPolarAngularaxisDirection Sets the direction corresponding to positive angles.
+// .schema.layout.layoutAttributes.polar.angularaxis.direction
 type LayoutPolarAngularaxisDirection string
 
 const (
@@ -10702,6 +12293,7 @@ const (
 )
 
 // LayoutPolarAngularaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.polar.angularaxis.exponentformat
 type LayoutPolarAngularaxisExponentformat string
 
 const (
@@ -10714,6 +12306,7 @@ const (
 )
 
 // LayoutPolarAngularaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.polar.angularaxis.layer
 type LayoutPolarAngularaxisLayer string
 
 const (
@@ -10722,6 +12315,7 @@ const (
 )
 
 // LayoutPolarAngularaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.polar.angularaxis.showexponent
 type LayoutPolarAngularaxisShowexponent string
 
 const (
@@ -10732,6 +12326,7 @@ const (
 )
 
 // LayoutPolarAngularaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.polar.angularaxis.showtickprefix
 type LayoutPolarAngularaxisShowtickprefix string
 
 const (
@@ -10742,6 +12337,7 @@ const (
 )
 
 // LayoutPolarAngularaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.polar.angularaxis.showticksuffix
 type LayoutPolarAngularaxisShowticksuffix string
 
 const (
@@ -10752,6 +12348,7 @@ const (
 )
 
 // LayoutPolarAngularaxisThetaunit Sets the format unit of the formatted *theta* values. Has an effect only when `angularaxis.type` is *linear*.
+// .schema.layout.layoutAttributes.polar.angularaxis.thetaunit
 type LayoutPolarAngularaxisThetaunit string
 
 const (
@@ -10760,6 +12357,7 @@ const (
 )
 
 // LayoutPolarAngularaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.polar.angularaxis.tickmode
 type LayoutPolarAngularaxisTickmode string
 
 const (
@@ -10769,6 +12367,7 @@ const (
 )
 
 // LayoutPolarAngularaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.polar.angularaxis.ticks
 type LayoutPolarAngularaxisTicks string
 
 const (
@@ -10778,6 +12377,7 @@ const (
 )
 
 // LayoutPolarAngularaxisType Sets the angular axis type. If *linear*, set `thetaunit` to determine the unit in which axis value are shown. If *category, use `period` to set the number of integer coordinates around polar axis.
+// .schema.layout.layoutAttributes.polar.angularaxis.type
 type LayoutPolarAngularaxisType string
 
 const (
@@ -10787,6 +12387,7 @@ const (
 )
 
 // LayoutPolarGridshape Determines if the radial axis grid lines and angular axis line are drawn as *circular* sectors or as *linear* (polygon) sectors. Has an effect only when the angular axis has `type` *category*. Note that `radialaxis.angle` is snapped to the angle of the closest vertex when `gridshape` is *circular* (so that radial axis scale is the same as the data scale).
+// .schema.layout.layoutAttributes.polar.gridshape
 type LayoutPolarGridshape string
 
 const (
@@ -10795,6 +12396,7 @@ const (
 )
 
 // LayoutPolarRadialaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.polar.radialaxis.autorange
 type LayoutPolarRadialaxisAutorange interface{}
 
 var (
@@ -10804,6 +12406,7 @@ var (
 )
 
 // LayoutPolarRadialaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.polar.radialaxis.autotypenumbers
 type LayoutPolarRadialaxisAutotypenumbers string
 
 const (
@@ -10812,6 +12415,7 @@ const (
 )
 
 // LayoutPolarRadialaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.polar.radialaxis.calendar
 type LayoutPolarRadialaxisCalendar string
 
 const (
@@ -10834,6 +12438,7 @@ const (
 )
 
 // LayoutPolarRadialaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.polar.radialaxis.categoryorder
 type LayoutPolarRadialaxisCategoryorder string
 
 const (
@@ -10856,6 +12461,7 @@ const (
 )
 
 // LayoutPolarRadialaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.polar.radialaxis.exponentformat
 type LayoutPolarRadialaxisExponentformat string
 
 const (
@@ -10868,6 +12474,7 @@ const (
 )
 
 // LayoutPolarRadialaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.polar.radialaxis.layer
 type LayoutPolarRadialaxisLayer string
 
 const (
@@ -10876,6 +12483,7 @@ const (
 )
 
 // LayoutPolarRadialaxisRangemode If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. If *normal*, the range is computed in relation to the extrema of the input data (same behavior as for cartesian axes).
+// .schema.layout.layoutAttributes.polar.radialaxis.rangemode
 type LayoutPolarRadialaxisRangemode string
 
 const (
@@ -10885,6 +12493,7 @@ const (
 )
 
 // LayoutPolarRadialaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.polar.radialaxis.showexponent
 type LayoutPolarRadialaxisShowexponent string
 
 const (
@@ -10895,6 +12504,7 @@ const (
 )
 
 // LayoutPolarRadialaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.polar.radialaxis.showtickprefix
 type LayoutPolarRadialaxisShowtickprefix string
 
 const (
@@ -10905,6 +12515,7 @@ const (
 )
 
 // LayoutPolarRadialaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.polar.radialaxis.showticksuffix
 type LayoutPolarRadialaxisShowticksuffix string
 
 const (
@@ -10915,6 +12526,7 @@ const (
 )
 
 // LayoutPolarRadialaxisSide Determines on which side of radial axis line the tick and tick labels appear.
+// .schema.layout.layoutAttributes.polar.radialaxis.side
 type LayoutPolarRadialaxisSide string
 
 const (
@@ -10923,6 +12535,7 @@ const (
 )
 
 // LayoutPolarRadialaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.polar.radialaxis.tickmode
 type LayoutPolarRadialaxisTickmode string
 
 const (
@@ -10932,6 +12545,7 @@ const (
 )
 
 // LayoutPolarRadialaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.polar.radialaxis.ticks
 type LayoutPolarRadialaxisTicks string
 
 const (
@@ -10941,6 +12555,7 @@ const (
 )
 
 // LayoutPolarRadialaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.polar.radialaxis.type
 type LayoutPolarRadialaxisType string
 
 const (
@@ -10952,6 +12567,7 @@ const (
 )
 
 // LayoutScattermode Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
+// .schema.traces.scatter.layoutAttributes.scattermode
 type LayoutScattermode string
 
 const (
@@ -10960,6 +12576,7 @@ const (
 )
 
 // LayoutSceneAspectmode If *cube*, this scene's axes are drawn as a cube, regardless of the axes' ranges. If *data*, this scene's axes are drawn in proportion with the axes' ranges. If *manual*, this scene's axes are drawn in proportion with the input of *aspectratio* (the default behavior if *aspectratio* is provided). If *auto*, this scene's axes are drawn using the results of *data* except when one axis is more than four times the size of the two others, where in that case the results of *cube* are used.
+// .schema.layout.layoutAttributes.scene.aspectmode
 type LayoutSceneAspectmode string
 
 const (
@@ -10970,6 +12587,7 @@ const (
 )
 
 // LayoutSceneCameraProjectionType Sets the projection type. The projection type could be either *perspective* or *orthographic*. The default is *perspective*.
+// .schema.layout.layoutAttributes.scene.camera.projection.type
 type LayoutSceneCameraProjectionType string
 
 const (
@@ -10978,6 +12596,7 @@ const (
 )
 
 // LayoutSceneDragmode Determines the mode of drag interactions for this scene.
+// .schema.layout.layoutAttributes.scene.dragmode
 type LayoutSceneDragmode interface{}
 
 var (
@@ -10989,6 +12608,7 @@ var (
 )
 
 // LayoutSceneHovermode Determines the mode of hover interactions for this scene.
+// .schema.layout.layoutAttributes.scene.hovermode
 type LayoutSceneHovermode interface{}
 
 var (
@@ -10997,6 +12617,7 @@ var (
 )
 
 // LayoutSceneXaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.scene.xaxis.autorange
 type LayoutSceneXaxisAutorange interface{}
 
 var (
@@ -11006,6 +12627,7 @@ var (
 )
 
 // LayoutSceneXaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.scene.xaxis.autotypenumbers
 type LayoutSceneXaxisAutotypenumbers string
 
 const (
@@ -11014,6 +12636,7 @@ const (
 )
 
 // LayoutSceneXaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.scene.xaxis.calendar
 type LayoutSceneXaxisCalendar string
 
 const (
@@ -11036,6 +12659,7 @@ const (
 )
 
 // LayoutSceneXaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.scene.xaxis.categoryorder
 type LayoutSceneXaxisCategoryorder string
 
 const (
@@ -11058,6 +12682,7 @@ const (
 )
 
 // LayoutSceneXaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.scene.xaxis.exponentformat
 type LayoutSceneXaxisExponentformat string
 
 const (
@@ -11070,6 +12695,7 @@ const (
 )
 
 // LayoutSceneXaxisMirror Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+// .schema.layout.layoutAttributes.scene.xaxis.mirror
 type LayoutSceneXaxisMirror interface{}
 
 var (
@@ -11081,6 +12707,7 @@ var (
 )
 
 // LayoutSceneXaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+// .schema.layout.layoutAttributes.scene.xaxis.rangemode
 type LayoutSceneXaxisRangemode string
 
 const (
@@ -11090,6 +12717,7 @@ const (
 )
 
 // LayoutSceneXaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.scene.xaxis.showexponent
 type LayoutSceneXaxisShowexponent string
 
 const (
@@ -11100,6 +12728,7 @@ const (
 )
 
 // LayoutSceneXaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.scene.xaxis.showtickprefix
 type LayoutSceneXaxisShowtickprefix string
 
 const (
@@ -11110,6 +12739,7 @@ const (
 )
 
 // LayoutSceneXaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.scene.xaxis.showticksuffix
 type LayoutSceneXaxisShowticksuffix string
 
 const (
@@ -11120,6 +12750,7 @@ const (
 )
 
 // LayoutSceneXaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.scene.xaxis.tickmode
 type LayoutSceneXaxisTickmode string
 
 const (
@@ -11129,6 +12760,7 @@ const (
 )
 
 // LayoutSceneXaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.scene.xaxis.ticks
 type LayoutSceneXaxisTicks string
 
 const (
@@ -11138,6 +12770,7 @@ const (
 )
 
 // LayoutSceneXaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.scene.xaxis.type
 type LayoutSceneXaxisType string
 
 const (
@@ -11149,6 +12782,7 @@ const (
 )
 
 // LayoutSceneYaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.scene.yaxis.autorange
 type LayoutSceneYaxisAutorange interface{}
 
 var (
@@ -11158,6 +12792,7 @@ var (
 )
 
 // LayoutSceneYaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.scene.yaxis.autotypenumbers
 type LayoutSceneYaxisAutotypenumbers string
 
 const (
@@ -11166,6 +12801,7 @@ const (
 )
 
 // LayoutSceneYaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.scene.yaxis.calendar
 type LayoutSceneYaxisCalendar string
 
 const (
@@ -11188,6 +12824,7 @@ const (
 )
 
 // LayoutSceneYaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.scene.yaxis.categoryorder
 type LayoutSceneYaxisCategoryorder string
 
 const (
@@ -11210,6 +12847,7 @@ const (
 )
 
 // LayoutSceneYaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.scene.yaxis.exponentformat
 type LayoutSceneYaxisExponentformat string
 
 const (
@@ -11222,6 +12860,7 @@ const (
 )
 
 // LayoutSceneYaxisMirror Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+// .schema.layout.layoutAttributes.scene.yaxis.mirror
 type LayoutSceneYaxisMirror interface{}
 
 var (
@@ -11233,6 +12872,7 @@ var (
 )
 
 // LayoutSceneYaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+// .schema.layout.layoutAttributes.scene.yaxis.rangemode
 type LayoutSceneYaxisRangemode string
 
 const (
@@ -11242,6 +12882,7 @@ const (
 )
 
 // LayoutSceneYaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.scene.yaxis.showexponent
 type LayoutSceneYaxisShowexponent string
 
 const (
@@ -11252,6 +12893,7 @@ const (
 )
 
 // LayoutSceneYaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.scene.yaxis.showtickprefix
 type LayoutSceneYaxisShowtickprefix string
 
 const (
@@ -11262,6 +12904,7 @@ const (
 )
 
 // LayoutSceneYaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.scene.yaxis.showticksuffix
 type LayoutSceneYaxisShowticksuffix string
 
 const (
@@ -11272,6 +12915,7 @@ const (
 )
 
 // LayoutSceneYaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.scene.yaxis.tickmode
 type LayoutSceneYaxisTickmode string
 
 const (
@@ -11281,6 +12925,7 @@ const (
 )
 
 // LayoutSceneYaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.scene.yaxis.ticks
 type LayoutSceneYaxisTicks string
 
 const (
@@ -11290,6 +12935,7 @@ const (
 )
 
 // LayoutSceneYaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.scene.yaxis.type
 type LayoutSceneYaxisType string
 
 const (
@@ -11301,6 +12947,7 @@ const (
 )
 
 // LayoutSceneZaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.scene.zaxis.autorange
 type LayoutSceneZaxisAutorange interface{}
 
 var (
@@ -11310,6 +12957,7 @@ var (
 )
 
 // LayoutSceneZaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.scene.zaxis.autotypenumbers
 type LayoutSceneZaxisAutotypenumbers string
 
 const (
@@ -11318,6 +12966,7 @@ const (
 )
 
 // LayoutSceneZaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.scene.zaxis.calendar
 type LayoutSceneZaxisCalendar string
 
 const (
@@ -11340,6 +12989,7 @@ const (
 )
 
 // LayoutSceneZaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.scene.zaxis.categoryorder
 type LayoutSceneZaxisCategoryorder string
 
 const (
@@ -11362,6 +13012,7 @@ const (
 )
 
 // LayoutSceneZaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.scene.zaxis.exponentformat
 type LayoutSceneZaxisExponentformat string
 
 const (
@@ -11374,6 +13025,7 @@ const (
 )
 
 // LayoutSceneZaxisMirror Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+// .schema.layout.layoutAttributes.scene.zaxis.mirror
 type LayoutSceneZaxisMirror interface{}
 
 var (
@@ -11385,6 +13037,7 @@ var (
 )
 
 // LayoutSceneZaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+// .schema.layout.layoutAttributes.scene.zaxis.rangemode
 type LayoutSceneZaxisRangemode string
 
 const (
@@ -11394,6 +13047,7 @@ const (
 )
 
 // LayoutSceneZaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.scene.zaxis.showexponent
 type LayoutSceneZaxisShowexponent string
 
 const (
@@ -11404,6 +13058,7 @@ const (
 )
 
 // LayoutSceneZaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.scene.zaxis.showtickprefix
 type LayoutSceneZaxisShowtickprefix string
 
 const (
@@ -11414,6 +13069,7 @@ const (
 )
 
 // LayoutSceneZaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.scene.zaxis.showticksuffix
 type LayoutSceneZaxisShowticksuffix string
 
 const (
@@ -11424,6 +13080,7 @@ const (
 )
 
 // LayoutSceneZaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.scene.zaxis.tickmode
 type LayoutSceneZaxisTickmode string
 
 const (
@@ -11433,6 +13090,7 @@ const (
 )
 
 // LayoutSceneZaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.scene.zaxis.ticks
 type LayoutSceneZaxisTicks string
 
 const (
@@ -11442,6 +13100,7 @@ const (
 )
 
 // LayoutSceneZaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.scene.zaxis.type
 type LayoutSceneZaxisType string
 
 const (
@@ -11453,6 +13112,7 @@ const (
 )
 
 // LayoutSelectdirection When `dragmode` is set to *select*, this limits the selection of the drag to horizontal, vertical or diagonal. *h* only allows horizontal selection, *v* only vertical, *d* only diagonal and *any* sets no limit.
+// .schema.layout.layoutAttributes.selectdirection
 type LayoutSelectdirection string
 
 const (
@@ -11463,6 +13123,7 @@ const (
 )
 
 // LayoutSmithImaginaryaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.smith.imaginaryaxis.layer
 type LayoutSmithImaginaryaxisLayer string
 
 const (
@@ -11471,6 +13132,7 @@ const (
 )
 
 // LayoutSmithImaginaryaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.smith.imaginaryaxis.showtickprefix
 type LayoutSmithImaginaryaxisShowtickprefix string
 
 const (
@@ -11481,6 +13143,7 @@ const (
 )
 
 // LayoutSmithImaginaryaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.smith.imaginaryaxis.showticksuffix
 type LayoutSmithImaginaryaxisShowticksuffix string
 
 const (
@@ -11491,6 +13154,7 @@ const (
 )
 
 // LayoutSmithImaginaryaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.smith.imaginaryaxis.ticks
 type LayoutSmithImaginaryaxisTicks string
 
 const (
@@ -11500,6 +13164,7 @@ const (
 )
 
 // LayoutSmithRealaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.smith.realaxis.layer
 type LayoutSmithRealaxisLayer string
 
 const (
@@ -11508,6 +13173,7 @@ const (
 )
 
 // LayoutSmithRealaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.smith.realaxis.showtickprefix
 type LayoutSmithRealaxisShowtickprefix string
 
 const (
@@ -11518,6 +13184,7 @@ const (
 )
 
 // LayoutSmithRealaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.smith.realaxis.showticksuffix
 type LayoutSmithRealaxisShowticksuffix string
 
 const (
@@ -11528,6 +13195,7 @@ const (
 )
 
 // LayoutSmithRealaxisSide Determines on which side of real axis line the tick and tick labels appear.
+// .schema.layout.layoutAttributes.smith.realaxis.side
 type LayoutSmithRealaxisSide string
 
 const (
@@ -11536,6 +13204,7 @@ const (
 )
 
 // LayoutSmithRealaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *top* (*bottom*), this axis' are drawn above (below) the axis line.
+// .schema.layout.layoutAttributes.smith.realaxis.ticks
 type LayoutSmithRealaxisTicks string
 
 const (
@@ -11545,6 +13214,7 @@ const (
 )
 
 // LayoutTernaryAaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.ternary.aaxis.exponentformat
 type LayoutTernaryAaxisExponentformat string
 
 const (
@@ -11557,6 +13227,7 @@ const (
 )
 
 // LayoutTernaryAaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.ternary.aaxis.layer
 type LayoutTernaryAaxisLayer string
 
 const (
@@ -11565,6 +13236,7 @@ const (
 )
 
 // LayoutTernaryAaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.ternary.aaxis.showexponent
 type LayoutTernaryAaxisShowexponent string
 
 const (
@@ -11575,6 +13247,7 @@ const (
 )
 
 // LayoutTernaryAaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.ternary.aaxis.showtickprefix
 type LayoutTernaryAaxisShowtickprefix string
 
 const (
@@ -11585,6 +13258,7 @@ const (
 )
 
 // LayoutTernaryAaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.ternary.aaxis.showticksuffix
 type LayoutTernaryAaxisShowticksuffix string
 
 const (
@@ -11595,6 +13269,7 @@ const (
 )
 
 // LayoutTernaryAaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.ternary.aaxis.tickmode
 type LayoutTernaryAaxisTickmode string
 
 const (
@@ -11604,6 +13279,7 @@ const (
 )
 
 // LayoutTernaryAaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.ternary.aaxis.ticks
 type LayoutTernaryAaxisTicks string
 
 const (
@@ -11613,6 +13289,7 @@ const (
 )
 
 // LayoutTernaryBaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.ternary.baxis.exponentformat
 type LayoutTernaryBaxisExponentformat string
 
 const (
@@ -11625,6 +13302,7 @@ const (
 )
 
 // LayoutTernaryBaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.ternary.baxis.layer
 type LayoutTernaryBaxisLayer string
 
 const (
@@ -11633,6 +13311,7 @@ const (
 )
 
 // LayoutTernaryBaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.ternary.baxis.showexponent
 type LayoutTernaryBaxisShowexponent string
 
 const (
@@ -11643,6 +13322,7 @@ const (
 )
 
 // LayoutTernaryBaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.ternary.baxis.showtickprefix
 type LayoutTernaryBaxisShowtickprefix string
 
 const (
@@ -11653,6 +13333,7 @@ const (
 )
 
 // LayoutTernaryBaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.ternary.baxis.showticksuffix
 type LayoutTernaryBaxisShowticksuffix string
 
 const (
@@ -11663,6 +13344,7 @@ const (
 )
 
 // LayoutTernaryBaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.ternary.baxis.tickmode
 type LayoutTernaryBaxisTickmode string
 
 const (
@@ -11672,6 +13354,7 @@ const (
 )
 
 // LayoutTernaryBaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.ternary.baxis.ticks
 type LayoutTernaryBaxisTicks string
 
 const (
@@ -11681,6 +13364,7 @@ const (
 )
 
 // LayoutTernaryCaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.ternary.caxis.exponentformat
 type LayoutTernaryCaxisExponentformat string
 
 const (
@@ -11693,6 +13377,7 @@ const (
 )
 
 // LayoutTernaryCaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.ternary.caxis.layer
 type LayoutTernaryCaxisLayer string
 
 const (
@@ -11701,6 +13386,7 @@ const (
 )
 
 // LayoutTernaryCaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.ternary.caxis.showexponent
 type LayoutTernaryCaxisShowexponent string
 
 const (
@@ -11711,6 +13397,7 @@ const (
 )
 
 // LayoutTernaryCaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.ternary.caxis.showtickprefix
 type LayoutTernaryCaxisShowtickprefix string
 
 const (
@@ -11721,6 +13408,7 @@ const (
 )
 
 // LayoutTernaryCaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.ternary.caxis.showticksuffix
 type LayoutTernaryCaxisShowticksuffix string
 
 const (
@@ -11731,6 +13419,7 @@ const (
 )
 
 // LayoutTernaryCaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.ternary.caxis.tickmode
 type LayoutTernaryCaxisTickmode string
 
 const (
@@ -11740,6 +13429,7 @@ const (
 )
 
 // LayoutTernaryCaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.ternary.caxis.ticks
 type LayoutTernaryCaxisTicks string
 
 const (
@@ -11749,6 +13439,7 @@ const (
 )
 
 // LayoutTitleXanchor Sets the title's horizontal alignment with respect to its x position. *left* means that the title starts at x, *right* means that the title ends at x and *center* means that the title's center is at x. *auto* divides `xref` by three and calculates the `xanchor` value automatically based on the value of `x`.
+// .schema.layout.layoutAttributes.title.xanchor
 type LayoutTitleXanchor string
 
 const (
@@ -11759,6 +13450,7 @@ const (
 )
 
 // LayoutTitleXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.layout.layoutAttributes.title.xref
 type LayoutTitleXref string
 
 const (
@@ -11767,6 +13459,7 @@ const (
 )
 
 // LayoutTitleYanchor Sets the title's vertical alignment with respect to its y position. *top* means that the title's cap line is at y, *bottom* means that the title's baseline is at y and *middle* means that the title's midline is at y. *auto* divides `yref` by three and calculates the `yanchor` value automatically based on the value of `y`.
+// .schema.layout.layoutAttributes.title.yanchor
 type LayoutTitleYanchor string
 
 const (
@@ -11777,6 +13470,7 @@ const (
 )
 
 // LayoutTitleYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.layout.layoutAttributes.title.yref
 type LayoutTitleYref string
 
 const (
@@ -11785,6 +13479,7 @@ const (
 )
 
 // LayoutTransitionEasing The easing function used for the transition
+// .schema.layout.layoutAttributes.transition.easing
 type LayoutTransitionEasing string
 
 const (
@@ -11827,6 +13522,7 @@ const (
 )
 
 // LayoutTransitionOrdering Determines whether the figure's layout or traces smoothly transitions during updates that make both traces and layout change.
+// .schema.layout.layoutAttributes.transition.ordering
 type LayoutTransitionOrdering string
 
 const (
@@ -11835,6 +13531,7 @@ const (
 )
 
 // LayoutUniformtextMode Determines how the font size for various text elements are uniformed between each trace type. If the computed text sizes were smaller than the minimum size defined by `uniformtext.minsize` using *hide* option hides the text; and using *show* option shows the text without further downscaling. Please note that if the size defined by `minsize` is greater than the font size defined by trace, then the `minsize` is used.
+// .schema.layout.layoutAttributes.uniformtext.mode
 type LayoutUniformtextMode interface{}
 
 var (
@@ -11844,6 +13541,7 @@ var (
 )
 
 // LayoutViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
+// .schema.traces.violin.layoutAttributes.violinmode
 type LayoutViolinmode string
 
 const (
@@ -11852,6 +13550,7 @@ const (
 )
 
 // LayoutWaterfallmode Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.waterfall.layoutAttributes.waterfallmode
 type LayoutWaterfallmode string
 
 const (
@@ -11860,6 +13559,7 @@ const (
 )
 
 // LayoutXaxisAnchor If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
+// .schema.layout.layoutAttributes.xaxis.anchor
 type LayoutXaxisAnchor string
 
 const (
@@ -11869,6 +13569,7 @@ const (
 )
 
 // LayoutXaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.xaxis.autorange
 type LayoutXaxisAutorange interface{}
 
 var (
@@ -11878,6 +13579,7 @@ var (
 )
 
 // LayoutXaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.xaxis.autotypenumbers
 type LayoutXaxisAutotypenumbers string
 
 const (
@@ -11886,6 +13588,7 @@ const (
 )
 
 // LayoutXaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.xaxis.calendar
 type LayoutXaxisCalendar string
 
 const (
@@ -11908,6 +13611,7 @@ const (
 )
 
 // LayoutXaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.xaxis.categoryorder
 type LayoutXaxisCategoryorder string
 
 const (
@@ -11930,6 +13634,7 @@ const (
 )
 
 // LayoutXaxisConstrain If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
+// .schema.layout.layoutAttributes.xaxis.constrain
 type LayoutXaxisConstrain string
 
 const (
@@ -11938,6 +13643,7 @@ const (
 )
 
 // LayoutXaxisConstraintoward If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
+// .schema.layout.layoutAttributes.xaxis.constraintoward
 type LayoutXaxisConstraintoward string
 
 const (
@@ -11950,6 +13656,7 @@ const (
 )
 
 // LayoutXaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.xaxis.exponentformat
 type LayoutXaxisExponentformat string
 
 const (
@@ -11962,6 +13669,7 @@ const (
 )
 
 // LayoutXaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.xaxis.layer
 type LayoutXaxisLayer string
 
 const (
@@ -11970,6 +13678,7 @@ const (
 )
 
 // LayoutXaxisMatches If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
+// .schema.layout.layoutAttributes.xaxis.matches
 type LayoutXaxisMatches string
 
 const (
@@ -11978,6 +13687,7 @@ const (
 )
 
 // LayoutXaxisMinorTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.xaxis.minor.tickmode
 type LayoutXaxisMinorTickmode string
 
 const (
@@ -11987,6 +13697,7 @@ const (
 )
 
 // LayoutXaxisMinorTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.xaxis.minor.ticks
 type LayoutXaxisMinorTicks string
 
 const (
@@ -11996,6 +13707,7 @@ const (
 )
 
 // LayoutXaxisMirror Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+// .schema.layout.layoutAttributes.xaxis.mirror
 type LayoutXaxisMirror interface{}
 
 var (
@@ -12007,6 +13719,7 @@ var (
 )
 
 // LayoutXaxisOverlaying If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
+// .schema.layout.layoutAttributes.xaxis.overlaying
 type LayoutXaxisOverlaying string
 
 const (
@@ -12016,6 +13729,7 @@ const (
 )
 
 // LayoutXaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+// .schema.layout.layoutAttributes.xaxis.rangemode
 type LayoutXaxisRangemode string
 
 const (
@@ -12025,6 +13739,7 @@ const (
 )
 
 // LayoutXaxisRangeselectorXanchor Sets the range selector's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.xanchor
 type LayoutXaxisRangeselectorXanchor string
 
 const (
@@ -12035,6 +13750,7 @@ const (
 )
 
 // LayoutXaxisRangeselectorYanchor Sets the range selector's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.yanchor
 type LayoutXaxisRangeselectorYanchor string
 
 const (
@@ -12045,6 +13761,7 @@ const (
 )
 
 // LayoutXaxisRangesliderYaxisRangemode Determines whether or not the range of this axis in the rangeslider use the same value than in the main plot when zooming in/out. If *auto*, the autorange will be used. If *fixed*, the `range` is used. If *match*, the current range of the corresponding y-axis on the main subplot is used.
+// .schema.layout.layoutAttributes.xaxis.rangeslider.yaxis.rangemode
 type LayoutXaxisRangesliderYaxisRangemode string
 
 const (
@@ -12054,6 +13771,7 @@ const (
 )
 
 // LayoutXaxisScaleanchor If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden.
+// .schema.layout.layoutAttributes.xaxis.scaleanchor
 type LayoutXaxisScaleanchor string
 
 const (
@@ -12062,6 +13780,7 @@ const (
 )
 
 // LayoutXaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.xaxis.showexponent
 type LayoutXaxisShowexponent string
 
 const (
@@ -12072,6 +13791,7 @@ const (
 )
 
 // LayoutXaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.xaxis.showtickprefix
 type LayoutXaxisShowtickprefix string
 
 const (
@@ -12082,6 +13802,7 @@ const (
 )
 
 // LayoutXaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.xaxis.showticksuffix
 type LayoutXaxisShowticksuffix string
 
 const (
@@ -12092,6 +13813,7 @@ const (
 )
 
 // LayoutXaxisSide Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
+// .schema.layout.layoutAttributes.xaxis.side
 type LayoutXaxisSide string
 
 const (
@@ -12102,6 +13824,7 @@ const (
 )
 
 // LayoutXaxisSpikesnap Determines whether spikelines are stuck to the cursor or to the closest datapoints.
+// .schema.layout.layoutAttributes.xaxis.spikesnap
 type LayoutXaxisSpikesnap string
 
 const (
@@ -12111,6 +13834,7 @@ const (
 )
 
 // LayoutXaxisTicklabelmode Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+// .schema.layout.layoutAttributes.xaxis.ticklabelmode
 type LayoutXaxisTicklabelmode string
 
 const (
@@ -12119,6 +13843,7 @@ const (
 )
 
 // LayoutXaxisTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+// .schema.layout.layoutAttributes.xaxis.ticklabeloverflow
 type LayoutXaxisTicklabeloverflow string
 
 const (
@@ -12128,6 +13853,7 @@ const (
 )
 
 // LayoutXaxisTicklabelposition Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+// .schema.layout.layoutAttributes.xaxis.ticklabelposition
 type LayoutXaxisTicklabelposition string
 
 const (
@@ -12144,6 +13870,7 @@ const (
 )
 
 // LayoutXaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
+// .schema.layout.layoutAttributes.xaxis.tickmode
 type LayoutXaxisTickmode string
 
 const (
@@ -12154,6 +13881,7 @@ const (
 )
 
 // LayoutXaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.xaxis.ticks
 type LayoutXaxisTicks string
 
 const (
@@ -12163,6 +13891,7 @@ const (
 )
 
 // LayoutXaxisTickson Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
+// .schema.layout.layoutAttributes.xaxis.tickson
 type LayoutXaxisTickson string
 
 const (
@@ -12171,6 +13900,7 @@ const (
 )
 
 // LayoutXaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.xaxis.type
 type LayoutXaxisType string
 
 const (
@@ -12183,6 +13913,7 @@ const (
 )
 
 // LayoutYaxisAnchor If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
+// .schema.layout.layoutAttributes.yaxis.anchor
 type LayoutYaxisAnchor string
 
 const (
@@ -12192,6 +13923,7 @@ const (
 )
 
 // LayoutYaxisAutorange Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
+// .schema.layout.layoutAttributes.yaxis.autorange
 type LayoutYaxisAutorange interface{}
 
 var (
@@ -12201,6 +13933,7 @@ var (
 )
 
 // LayoutYaxisAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+// .schema.layout.layoutAttributes.yaxis.autotypenumbers
 type LayoutYaxisAutotypenumbers string
 
 const (
@@ -12209,6 +13942,7 @@ const (
 )
 
 // LayoutYaxisCalendar Sets the calendar system to use for `range` and `tick0` if this is a date axis. This does not set the calendar for interpreting data on this axis, that's specified in the trace or via the global `layout.calendar`
+// .schema.layout.layoutAttributes.yaxis.calendar
 type LayoutYaxisCalendar string
 
 const (
@@ -12231,6 +13965,7 @@ const (
 )
 
 // LayoutYaxisCategoryorder Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.
+// .schema.layout.layoutAttributes.yaxis.categoryorder
 type LayoutYaxisCategoryorder string
 
 const (
@@ -12253,6 +13988,7 @@ const (
 )
 
 // LayoutYaxisConstrain If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
+// .schema.layout.layoutAttributes.yaxis.constrain
 type LayoutYaxisConstrain string
 
 const (
@@ -12261,6 +13997,7 @@ const (
 )
 
 // LayoutYaxisConstraintoward If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines which direction we push the originally specified plot area. Options are *left*, *center* (default), and *right* for x axes, and *top*, *middle* (default), and *bottom* for y axes.
+// .schema.layout.layoutAttributes.yaxis.constraintoward
 type LayoutYaxisConstraintoward string
 
 const (
@@ -12273,6 +14010,7 @@ const (
 )
 
 // LayoutYaxisExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.layout.layoutAttributes.yaxis.exponentformat
 type LayoutYaxisExponentformat string
 
 const (
@@ -12285,6 +14023,7 @@ const (
 )
 
 // LayoutYaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
+// .schema.layout.layoutAttributes.yaxis.layer
 type LayoutYaxisLayer string
 
 const (
@@ -12293,6 +14032,7 @@ const (
 )
 
 // LayoutYaxisMatches If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
+// .schema.layout.layoutAttributes.yaxis.matches
 type LayoutYaxisMatches string
 
 const (
@@ -12301,6 +14041,7 @@ const (
 )
 
 // LayoutYaxisMinorTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.layout.layoutAttributes.yaxis.minor.tickmode
 type LayoutYaxisMinorTickmode string
 
 const (
@@ -12310,6 +14051,7 @@ const (
 )
 
 // LayoutYaxisMinorTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.yaxis.minor.ticks
 type LayoutYaxisMinorTicks string
 
 const (
@@ -12319,6 +14061,7 @@ const (
 )
 
 // LayoutYaxisMirror Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
+// .schema.layout.layoutAttributes.yaxis.mirror
 type LayoutYaxisMirror interface{}
 
 var (
@@ -12330,6 +14073,7 @@ var (
 )
 
 // LayoutYaxisOverlaying If set a same-letter axis id, this axis is overlaid on top of the corresponding same-letter axis, with traces and axes visible for both axes. If *false*, this axis does not overlay any same-letter axes. In this case, for axes with overlapping domains only the highest-numbered axis will be visible.
+// .schema.layout.layoutAttributes.yaxis.overlaying
 type LayoutYaxisOverlaying string
 
 const (
@@ -12339,6 +14083,7 @@ const (
 )
 
 // LayoutYaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
+// .schema.layout.layoutAttributes.yaxis.rangemode
 type LayoutYaxisRangemode string
 
 const (
@@ -12348,6 +14093,7 @@ const (
 )
 
 // LayoutYaxisScaleanchor If set to another axis id (e.g. `x2`, `y`), the range of this axis changes together with the range of the corresponding axis such that the scale of pixels per unit is in a constant ratio. Both axes are still zoomable, but when you zoom one, the other will zoom the same amount, keeping a fixed midpoint. `constrain` and `constraintoward` determine how we enforce the constraint. You can chain these, ie `yaxis: {scaleanchor: *x*}, xaxis2: {scaleanchor: *y*}` but you can only link axes of the same `type`. The linked axis can have the opposite letter (to constrain the aspect ratio) or the same letter (to match scales across subplots). Loops (`yaxis: {scaleanchor: *x*}, xaxis: {scaleanchor: *y*}` or longer) are redundant and the last constraint encountered will be ignored to avoid possible inconsistent constraints via `scaleratio`. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden.
+// .schema.layout.layoutAttributes.yaxis.scaleanchor
 type LayoutYaxisScaleanchor string
 
 const (
@@ -12356,6 +14102,7 @@ const (
 )
 
 // LayoutYaxisShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.layout.layoutAttributes.yaxis.showexponent
 type LayoutYaxisShowexponent string
 
 const (
@@ -12366,6 +14113,7 @@ const (
 )
 
 // LayoutYaxisShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.layout.layoutAttributes.yaxis.showtickprefix
 type LayoutYaxisShowtickprefix string
 
 const (
@@ -12376,6 +14124,7 @@ const (
 )
 
 // LayoutYaxisShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.layout.layoutAttributes.yaxis.showticksuffix
 type LayoutYaxisShowticksuffix string
 
 const (
@@ -12386,6 +14135,7 @@ const (
 )
 
 // LayoutYaxisSide Determines whether a x (y) axis is positioned at the *bottom* (*left*) or *top* (*right*) of the plotting area.
+// .schema.layout.layoutAttributes.yaxis.side
 type LayoutYaxisSide string
 
 const (
@@ -12396,6 +14146,7 @@ const (
 )
 
 // LayoutYaxisSpikesnap Determines whether spikelines are stuck to the cursor or to the closest datapoints.
+// .schema.layout.layoutAttributes.yaxis.spikesnap
 type LayoutYaxisSpikesnap string
 
 const (
@@ -12405,6 +14156,7 @@ const (
 )
 
 // LayoutYaxisTicklabelmode Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+// .schema.layout.layoutAttributes.yaxis.ticklabelmode
 type LayoutYaxisTicklabelmode string
 
 const (
@@ -12413,6 +14165,7 @@ const (
 )
 
 // LayoutYaxisTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+// .schema.layout.layoutAttributes.yaxis.ticklabeloverflow
 type LayoutYaxisTicklabeloverflow string
 
 const (
@@ -12422,6 +14175,7 @@ const (
 )
 
 // LayoutYaxisTicklabelposition Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+// .schema.layout.layoutAttributes.yaxis.ticklabelposition
 type LayoutYaxisTicklabelposition string
 
 const (
@@ -12438,6 +14192,7 @@ const (
 )
 
 // LayoutYaxisTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided). If *sync*, the number of ticks will sync with the overlayed axis set by `overlaying` property.
+// .schema.layout.layoutAttributes.yaxis.tickmode
 type LayoutYaxisTickmode string
 
 const (
@@ -12448,6 +14203,7 @@ const (
 )
 
 // LayoutYaxisTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.layout.layoutAttributes.yaxis.ticks
 type LayoutYaxisTicks string
 
 const (
@@ -12457,6 +14213,7 @@ const (
 )
 
 // LayoutYaxisTickson Determines where ticks and grid lines are drawn with respect to their corresponding tick labels. Only has an effect for axes of `type` *category* or *multicategory*. When set to *boundaries*, ticks and grid lines are drawn half a category to the left/bottom of labels.
+// .schema.layout.layoutAttributes.yaxis.tickson
 type LayoutYaxisTickson string
 
 const (
@@ -12465,6 +14222,7 @@ const (
 )
 
 // LayoutYaxisType Sets the axis type. By default, plotly attempts to determined the axis type by looking into the data of the traces that referenced the axis in question.
+// .schema.layout.layoutAttributes.yaxis.type
 type LayoutYaxisType string
 
 const (
@@ -12477,6 +14235,7 @@ const (
 )
 
 // RangebreakPattern Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.pattern
 type RangebreakPattern string
 
 const (
@@ -12486,6 +14245,7 @@ const (
 )
 
 // SelectionType Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
+// .schema.layout.layoutAttributes.selections.items.selection.type
 type SelectionType string
 
 const (
@@ -12494,6 +14254,7 @@ const (
 )
 
 // SelectionXref Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.selections.items.selection.xref
 type SelectionXref string
 
 const (
@@ -12502,6 +14263,7 @@ const (
 )
 
 // SelectionYref Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.selections.items.selection.yref
 type SelectionYref string
 
 const (
@@ -12510,6 +14272,7 @@ const (
 )
 
 // ShapeFillrule Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+// .schema.layout.layoutAttributes.shapes.items.shape.fillrule
 type ShapeFillrule string
 
 const (
@@ -12518,6 +14281,7 @@ const (
 )
 
 // ShapeLabelTextposition Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.textposition
 type ShapeLabelTextposition string
 
 const (
@@ -12536,6 +14300,7 @@ const (
 )
 
 // ShapeLabelXanchor Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.xanchor
 type ShapeLabelXanchor string
 
 const (
@@ -12546,6 +14311,7 @@ const (
 )
 
 // ShapeLabelYanchor Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.yanchor
 type ShapeLabelYanchor string
 
 const (
@@ -12555,6 +14321,7 @@ const (
 )
 
 // ShapeLayer Specifies whether shapes are drawn below or above traces.
+// .schema.layout.layoutAttributes.shapes.items.shape.layer
 type ShapeLayer string
 
 const (
@@ -12563,6 +14330,7 @@ const (
 )
 
 // ShapeType Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
+// .schema.layout.layoutAttributes.shapes.items.shape.type
 type ShapeType string
 
 const (
@@ -12573,6 +14341,7 @@ const (
 )
 
 // ShapeXref Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.shapes.items.shape.xref
 type ShapeXref string
 
 const (
@@ -12581,6 +14350,7 @@ const (
 )
 
 // ShapeXsizemode Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
+// .schema.layout.layoutAttributes.shapes.items.shape.xsizemode
 type ShapeXsizemode string
 
 const (
@@ -12589,6 +14359,7 @@ const (
 )
 
 // ShapeYref Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.shapes.items.shape.yref
 type ShapeYref string
 
 const (
@@ -12597,6 +14368,7 @@ const (
 )
 
 // ShapeYsizemode Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
+// .schema.layout.layoutAttributes.shapes.items.shape.ysizemode
 type ShapeYsizemode string
 
 const (
@@ -12605,6 +14377,7 @@ const (
 )
 
 // SliderCurrentvalueXanchor The alignment of the value readout relative to the length of the slider.
+// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.xanchor
 type SliderCurrentvalueXanchor string
 
 const (
@@ -12614,6 +14387,7 @@ const (
 )
 
 // SliderLenmode Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.layout.layoutAttributes.sliders.items.slider.lenmode
 type SliderLenmode string
 
 const (
@@ -12622,6 +14396,7 @@ const (
 )
 
 // SliderTransitionEasing Sets the easing function of the slider transition
+// .schema.layout.layoutAttributes.sliders.items.slider.transition.easing
 type SliderTransitionEasing string
 
 const (
@@ -12664,6 +14439,7 @@ const (
 )
 
 // SliderXanchor Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+// .schema.layout.layoutAttributes.sliders.items.slider.xanchor
 type SliderXanchor string
 
 const (
@@ -12674,6 +14450,7 @@ const (
 )
 
 // SliderYanchor Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+// .schema.layout.layoutAttributes.sliders.items.slider.yanchor
 type SliderYanchor string
 
 const (
@@ -12684,6 +14461,7 @@ const (
 )
 
 // StepMethod Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
+// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.method
 type StepMethod string
 
 const (
@@ -12695,6 +14473,7 @@ const (
 )
 
 // UpdatemenuDirection Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.direction
 type UpdatemenuDirection string
 
 const (
@@ -12705,6 +14484,7 @@ const (
 )
 
 // UpdatemenuType Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.type
 type UpdatemenuType string
 
 const (
@@ -12713,6 +14493,7 @@ const (
 )
 
 // UpdatemenuXanchor Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.xanchor
 type UpdatemenuXanchor string
 
 const (
@@ -12723,6 +14504,7 @@ const (
 )
 
 // UpdatemenuYanchor Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.yanchor
 type UpdatemenuYanchor string
 
 const (
@@ -12733,6 +14515,7 @@ const (
 )
 
 // AnnotationArrowside Sets the annotation arrow head position.
+// .schema.layout.layoutAttributes.annotations.items.annotation.arrowside
 type AnnotationArrowside string
 
 const (
@@ -12745,6 +14528,7 @@ const (
 )
 
 // LayoutClickmode Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
+// .schema.layout.layoutAttributes.clickmode
 type LayoutClickmode string
 
 const (
@@ -12757,6 +14541,7 @@ const (
 )
 
 // LayoutLegendTraceorder Determines the order at which the legend items are displayed. If *normal*, the items are displayed top-to-bottom in the same order as the input data. If *reversed*, the items are displayed in the opposite order as *normal*. If *grouped*, the items are displayed in groups (when a trace `legendgroup` is provided). if *grouped+reversed*, the items are displayed in the opposite order as *grouped*.
+// .schema.layout.layoutAttributes.legend.traceorder
 type LayoutLegendTraceorder string
 
 const (
@@ -12769,6 +14554,7 @@ const (
 )
 
 // LayoutXaxisAutomargin Determines whether long tick labels automatically grow the figure margins.
+// .schema.layout.layoutAttributes.xaxis.automargin
 type LayoutXaxisAutomargin interface{}
 
 var (
@@ -12786,6 +14572,7 @@ var (
 )
 
 // LayoutXaxisSpikemode Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
+// .schema.layout.layoutAttributes.xaxis.spikemode
 type LayoutXaxisSpikemode string
 
 const (
@@ -12799,6 +14586,7 @@ const (
 )
 
 // LayoutYaxisAutomargin Determines whether long tick labels automatically grow the figure margins.
+// .schema.layout.layoutAttributes.yaxis.automargin
 type LayoutYaxisAutomargin interface{}
 
 var (
@@ -12816,6 +14604,7 @@ var (
 )
 
 // LayoutYaxisSpikemode Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
+// .schema.layout.layoutAttributes.yaxis.spikemode
 type LayoutYaxisSpikemode string
 
 const (

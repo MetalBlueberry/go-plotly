@@ -33,34 +33,40 @@ type Parcats struct {
 	// default: perpendicular
 	// type: enumerated
 	// Sets the drag interaction mode for categories and dimensions. If `perpendicular`, the categories can only move along a line perpendicular to the paths. If `freeform`, the categories can freely move on the plane. If `fixed`, the categories and dimensions are stationary.
+	// .schema.traces.parcats.attributes.arrangement
 	Arrangement ParcatsArrangement `json:"arrangement,omitempty"`
 
 	// Bundlecolors
 	// arrayOK: false
 	// type: boolean
 	// Sort paths so that like colors are bundled together within each category.
+	// .schema.traces.parcats.attributes.bundlecolors
 	Bundlecolors types.BoolType `json:"bundlecolors,omitempty"`
 
 	// Counts
 	// arrayOK: true
 	// type: number
 	// The number of observations represented by each state. Defaults to 1 so that each state represents one observation
+	// .schema.traces.parcats.attributes.counts
 	Counts *types.ArrayOK[*types.NumberType] `json:"counts,omitempty"`
 
 	// Countssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `counts`.
+	// .schema.traces.parcats.attributes.countssrc
 	Countssrc types.StringType `json:"countssrc,omitempty"`
 
 	// Dimensions
 	// role: Object
 	// items: ParcatsDimension
+	// .schema.traces.parcats.attributes.dimensions
 	Dimensions []ParcatsDimension `json:"dimensions,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.domain
 	Domain *ParcatsDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
@@ -68,6 +74,7 @@ type Parcats struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.parcats.attributes.hoverinfo
 	Hoverinfo ParcatsHoverinfo `json:"hoverinfo,omitempty"`
 
 	// Hoveron
@@ -75,51 +82,60 @@ type Parcats struct {
 	// default: category
 	// type: enumerated
 	// Sets the hover interaction mode for the parcats diagram. If `category`, hover interaction take place per category. If `color`, hover interactions take place per color per category. If `dimension`, hover interactions take place across all categories per dimension.
+	// .schema.traces.parcats.attributes.hoveron
 	Hoveron ParcatsHoveron `json:"hoveron,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  This value here applies when hovering over dimensions. Note that `*categorycount`, *colorcount* and *bandcolorcount* are only available when `hoveron` contains the *color* flagFinally, the template string has access to variables `count`, `probability`, `category`, `categorycount`, `colorcount` and `bandcolorcount`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.parcats.attributes.hovertemplate
 	Hovertemplate types.StringType `json:"hovertemplate,omitempty"`
 
 	// Labelfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.labelfont
 	Labelfont *ParcatsLabelfont `json:"labelfont,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.legendgrouptitle
 	Legendgrouptitle *ParcatsLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.parcats.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.line
 	Line *ParcatsLine `json:"line,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.parcats.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.parcats.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.parcats.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Sortpaths
@@ -127,33 +143,39 @@ type Parcats struct {
 	// default: forward
 	// type: enumerated
 	// Sets the path sorting algorithm. If `forward`, sort paths based on dimension categories from left to right. If `backward`, sort paths based on dimensions categories from right to left.
+	// .schema.traces.parcats.attributes.sortpaths
 	Sortpaths ParcatsSortpaths `json:"sortpaths,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.stream
 	Stream *ParcatsStream `json:"stream,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.tickfont
 	Tickfont *ParcatsTickfont `json:"tickfont,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: ParcatsTransform
+	// .schema.traces.parcats.attributes.transforms
 	Transforms []ParcatsTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.parcats.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.parcats.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Visible
@@ -161,6 +183,7 @@ type Parcats struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.parcats.attributes.visible
 	Visible ParcatsVisible `json:"visible,omitempty"`
 }
 
@@ -173,12 +196,14 @@ type ParcatsDimension struct {
 	// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.categoryarray
 	Categoryarray *types.DataArrayType `json:"categoryarray,omitempty"`
 
 	// Categoryarraysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `categoryarray`.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.categoryarraysrc
 	Categoryarraysrc types.StringType `json:"categoryarraysrc,omitempty"`
 
 	// Categoryorder
@@ -186,18 +211,21 @@ type ParcatsDimension struct {
 	// default: trace
 	// type: enumerated
 	// Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.categoryorder
 	Categoryorder DimensionCategoryorder `json:"categoryorder,omitempty"`
 
 	// Displayindex
 	// arrayOK: false
 	// type: integer
 	// The display index of dimension, from left to right, zero indexed, defaults to dimension index.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.displayindex
 	Displayindex types.IntegerType `json:"displayindex,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// type: string
 	// The shown name of the dimension.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.label
 	Label types.StringType `json:"label,omitempty"`
 
 	// Ticktext
@@ -206,12 +234,14 @@ type ParcatsDimension struct {
 	// Sets alternative tick labels for the categories in this dimension. Only has an effect if `categoryorder` is set to *array*. Should be an array the same length as `categoryarray` Used with `categoryorder`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Values
@@ -220,18 +250,21 @@ type ParcatsDimension struct {
 	// Dimension values. `values[n]` represents the category value of the `n`th point in the dataset, therefore the `values` vector for all dimensions must be the same (longer vectors will be truncated).
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Shows the dimension when set to `true` (the default). Hides the dimension for `false`.
+	// .schema.traces.parcats.attributes.dimensions.items.dimension.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -242,24 +275,28 @@ type ParcatsDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this parcats trace .
+	// .schema.traces.parcats.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this parcats trace .
+	// .schema.traces.parcats.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this parcats trace (in plot fraction).
+	// .schema.traces.parcats.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this parcats trace (in plot fraction).
+	// .schema.traces.parcats.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -270,18 +307,21 @@ type ParcatsLabelfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.parcats.attributes.labelfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.parcats.attributes.labelfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.parcats.attributes.labelfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -292,18 +332,21 @@ type ParcatsLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.parcats.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.parcats.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.parcats.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -313,12 +356,14 @@ type ParcatsLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.legendgrouptitle.font
 	Font *ParcatsLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.parcats.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -329,18 +374,21 @@ type ParcatsLineColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.parcats.attributes.line.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.parcats.attributes.line.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.parcats.attributes.line.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -351,30 +399,35 @@ type ParcatsLineColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -385,18 +438,21 @@ type ParcatsLineColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.parcats.attributes.line.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.parcats.attributes.line.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.parcats.attributes.line.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -406,6 +462,7 @@ type ParcatsLineColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.line.colorbar.title.font
 	Font *ParcatsLineColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -413,12 +470,14 @@ type ParcatsLineColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.parcats.attributes.line.colorbar.title.side
 	Side ParcatsLineColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.parcats.attributes.line.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -429,24 +488,28 @@ type ParcatsLineColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.parcats.attributes.line.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.parcats.attributes.line.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.parcats.attributes.line.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.parcats.attributes.line.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -454,18 +517,21 @@ type ParcatsLineColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.parcats.attributes.line.colorbar.exponentformat
 	Exponentformat ParcatsLineColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.parcats.attributes.line.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.parcats.attributes.line.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -473,18 +539,21 @@ type ParcatsLineColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.parcats.attributes.line.colorbar.lenmode
 	Lenmode ParcatsLineColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.parcats.attributes.line.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.parcats.attributes.line.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -492,24 +561,28 @@ type ParcatsLineColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.parcats.attributes.line.colorbar.orientation
 	Orientation ParcatsLineColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.parcats.attributes.line.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.parcats.attributes.line.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.parcats.attributes.line.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -517,12 +590,14 @@ type ParcatsLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.parcats.attributes.line.colorbar.showexponent
 	Showexponent ParcatsLineColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.parcats.attributes.line.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -530,6 +605,7 @@ type ParcatsLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.parcats.attributes.line.colorbar.showtickprefix
 	Showtickprefix ParcatsLineColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -537,12 +613,14 @@ type ParcatsLineColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.parcats.attributes.line.colorbar.showticksuffix
 	Showticksuffix ParcatsLineColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.parcats.attributes.line.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -550,40 +628,47 @@ type ParcatsLineColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.parcats.attributes.line.colorbar.thicknessmode
 	Thicknessmode ParcatsLineColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.parcats.attributes.line.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.parcats.attributes.line.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.parcats.attributes.line.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.line.colorbar.tickfont
 	Tickfont *ParcatsLineColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.parcats.attributes.line.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: ParcatsLineColorbarTickformatstop
+	// .schema.traces.parcats.attributes.line.colorbar.tickformatstops
 	Tickformatstops []ParcatsLineColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -591,6 +676,7 @@ type ParcatsLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.parcats.attributes.line.colorbar.ticklabeloverflow
 	Ticklabeloverflow ParcatsLineColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -598,18 +684,21 @@ type ParcatsLineColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.parcats.attributes.line.colorbar.ticklabelposition
 	Ticklabelposition ParcatsLineColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.parcats.attributes.line.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.parcats.attributes.line.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -617,12 +706,14 @@ type ParcatsLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.parcats.attributes.line.colorbar.tickmode
 	Tickmode ParcatsLineColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.parcats.attributes.line.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -630,12 +721,14 @@ type ParcatsLineColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.parcats.attributes.line.colorbar.ticks
 	Ticks ParcatsLineColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.parcats.attributes.line.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -644,12 +737,14 @@ type ParcatsLineColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.parcats.attributes.line.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.parcats.attributes.line.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -658,29 +753,34 @@ type ParcatsLineColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.parcats.attributes.line.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.parcats.attributes.line.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.parcats.attributes.line.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.line.colorbar.title
 	Title *ParcatsLineColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.parcats.attributes.line.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -688,12 +788,14 @@ type ParcatsLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.parcats.attributes.line.colorbar.xanchor
 	Xanchor ParcatsLineColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.parcats.attributes.line.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -701,12 +803,14 @@ type ParcatsLineColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.parcats.attributes.line.colorbar.xref
 	Xref ParcatsLineColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.parcats.attributes.line.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -714,12 +818,14 @@ type ParcatsLineColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.parcats.attributes.line.colorbar.yanchor
 	Yanchor ParcatsLineColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.parcats.attributes.line.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -727,6 +833,7 @@ type ParcatsLineColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.parcats.attributes.line.colorbar.yref
 	Yref ParcatsLineColorbarYref `json:"yref,omitempty"`
 }
 
@@ -737,71 +844,83 @@ type ParcatsLine struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `line.colorscale`. Has an effect only if in `line.color` is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.parcats.attributes.line.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here in `line.color`) or the bounds set in `line.cmin` and `line.cmax` Has an effect only if in `line.color` is set to a numerical array. Defaults to `false` when `line.cmin` and `line.cmax` are set by the user.
+	// .schema.traces.parcats.attributes.line.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmin` must be set as well.
+	// .schema.traces.parcats.attributes.line.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `line.cmin` and/or `line.cmax` to be equidistant to this point. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color`. Has no effect when `line.cauto` is `false`.
+	// .schema.traces.parcats.attributes.line.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if in `line.color` is set to a numerical array. Value should have the same units as in `line.color` and if set, `line.cmax` must be set as well.
+	// .schema.traces.parcats.attributes.line.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Color
 	// arrayOK: true
 	// type: color
 	// Sets the line color. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `line.cmin` and `line.cmax` if set.
+	// .schema.traces.parcats.attributes.line.color
 	Color *types.ArrayOK[*types.ColorWithColorScale] `json:"color,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.parcats.attributes.line.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.parcats.attributes.line.colorbar
 	Colorbar *ParcatsLineColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if in `line.color` is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `line.cmin` and `line.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.parcats.attributes.line.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.parcats.attributes.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: false
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  This value here applies when hovering over lines.Finally, the template string has access to variables `count` and `probability`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.parcats.attributes.line.hovertemplate
 	Hovertemplate types.StringType `json:"hovertemplate,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if in `line.color` is set to a numerical array. If true, `line.cmin` will correspond to the last color in the array and `line.cmax` will correspond to the first color.
+	// .schema.traces.parcats.attributes.line.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Shape
@@ -809,12 +928,14 @@ type ParcatsLine struct {
 	// default: linear
 	// type: enumerated
 	// Sets the shape of the paths. If `linear`, paths are composed of straight lines. If `hspline`, paths are composed of horizontal curved splines
+	// .schema.traces.parcats.attributes.line.shape
 	Shape ParcatsLineShape `json:"shape,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if in `line.color` is set to a numerical array.
+	// .schema.traces.parcats.attributes.line.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
@@ -825,12 +946,14 @@ type ParcatsStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.parcats.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.parcats.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -841,18 +964,21 @@ type ParcatsTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.parcats.attributes.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.parcats.attributes.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.parcats.attributes.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -861,6 +987,7 @@ type ParcatsTransform struct {
 }
 
 // ParcatsArrangement Sets the drag interaction mode for categories and dimensions. If `perpendicular`, the categories can only move along a line perpendicular to the paths. If `freeform`, the categories can freely move on the plane. If `fixed`, the categories and dimensions are stationary.
+// .schema.traces.parcats.attributes.arrangement
 type ParcatsArrangement string
 
 const (
@@ -870,6 +997,7 @@ const (
 )
 
 // DimensionCategoryorder Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+// .schema.traces.parcats.attributes.dimensions.items.dimension.categoryorder
 type DimensionCategoryorder string
 
 const (
@@ -880,6 +1008,7 @@ const (
 )
 
 // ParcatsHoveron Sets the hover interaction mode for the parcats diagram. If `category`, hover interaction take place per category. If `color`, hover interactions take place per color per category. If `dimension`, hover interactions take place across all categories per dimension.
+// .schema.traces.parcats.attributes.hoveron
 type ParcatsHoveron string
 
 const (
@@ -889,6 +1018,7 @@ const (
 )
 
 // ParcatsLineColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.parcats.attributes.line.colorbar.exponentformat
 type ParcatsLineColorbarExponentformat string
 
 const (
@@ -901,6 +1031,7 @@ const (
 )
 
 // ParcatsLineColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.parcats.attributes.line.colorbar.lenmode
 type ParcatsLineColorbarLenmode string
 
 const (
@@ -909,6 +1040,7 @@ const (
 )
 
 // ParcatsLineColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.parcats.attributes.line.colorbar.orientation
 type ParcatsLineColorbarOrientation string
 
 const (
@@ -917,6 +1049,7 @@ const (
 )
 
 // ParcatsLineColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.parcats.attributes.line.colorbar.showexponent
 type ParcatsLineColorbarShowexponent string
 
 const (
@@ -927,6 +1060,7 @@ const (
 )
 
 // ParcatsLineColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.parcats.attributes.line.colorbar.showtickprefix
 type ParcatsLineColorbarShowtickprefix string
 
 const (
@@ -937,6 +1071,7 @@ const (
 )
 
 // ParcatsLineColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.parcats.attributes.line.colorbar.showticksuffix
 type ParcatsLineColorbarShowticksuffix string
 
 const (
@@ -947,6 +1082,7 @@ const (
 )
 
 // ParcatsLineColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.parcats.attributes.line.colorbar.thicknessmode
 type ParcatsLineColorbarThicknessmode string
 
 const (
@@ -955,6 +1091,7 @@ const (
 )
 
 // ParcatsLineColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.parcats.attributes.line.colorbar.ticklabeloverflow
 type ParcatsLineColorbarTicklabeloverflow string
 
 const (
@@ -964,6 +1101,7 @@ const (
 )
 
 // ParcatsLineColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.parcats.attributes.line.colorbar.ticklabelposition
 type ParcatsLineColorbarTicklabelposition string
 
 const (
@@ -980,6 +1118,7 @@ const (
 )
 
 // ParcatsLineColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.parcats.attributes.line.colorbar.tickmode
 type ParcatsLineColorbarTickmode string
 
 const (
@@ -989,6 +1128,7 @@ const (
 )
 
 // ParcatsLineColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.parcats.attributes.line.colorbar.ticks
 type ParcatsLineColorbarTicks string
 
 const (
@@ -998,6 +1138,7 @@ const (
 )
 
 // ParcatsLineColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.parcats.attributes.line.colorbar.title.side
 type ParcatsLineColorbarTitleSide string
 
 const (
@@ -1007,6 +1148,7 @@ const (
 )
 
 // ParcatsLineColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.parcats.attributes.line.colorbar.xanchor
 type ParcatsLineColorbarXanchor string
 
 const (
@@ -1016,6 +1158,7 @@ const (
 )
 
 // ParcatsLineColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.parcats.attributes.line.colorbar.xref
 type ParcatsLineColorbarXref string
 
 const (
@@ -1024,6 +1167,7 @@ const (
 )
 
 // ParcatsLineColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.parcats.attributes.line.colorbar.yanchor
 type ParcatsLineColorbarYanchor string
 
 const (
@@ -1033,6 +1177,7 @@ const (
 )
 
 // ParcatsLineColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.parcats.attributes.line.colorbar.yref
 type ParcatsLineColorbarYref string
 
 const (
@@ -1041,6 +1186,7 @@ const (
 )
 
 // ParcatsLineShape Sets the shape of the paths. If `linear`, paths are composed of straight lines. If `hspline`, paths are composed of horizontal curved splines
+// .schema.traces.parcats.attributes.line.shape
 type ParcatsLineShape string
 
 const (
@@ -1049,6 +1195,7 @@ const (
 )
 
 // ParcatsSortpaths Sets the path sorting algorithm. If `forward`, sort paths based on dimension categories from left to right. If `backward`, sort paths based on dimensions categories from right to left.
+// .schema.traces.parcats.attributes.sortpaths
 type ParcatsSortpaths string
 
 const (
@@ -1057,6 +1204,7 @@ const (
 )
 
 // ParcatsVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.parcats.attributes.visible
 type ParcatsVisible interface{}
 
 var (
@@ -1066,6 +1214,7 @@ var (
 )
 
 // ParcatsHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.parcats.attributes.hoverinfo
 type ParcatsHoverinfo string
 
 const (

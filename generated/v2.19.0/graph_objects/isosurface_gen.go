@@ -32,57 +32,67 @@ type Isosurface struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `colorscale`. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.isosurface.attributes.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Caps
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.caps
 	Caps *IsosurfaceCaps `json:"caps,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax` Defaults to `false` when `cmin` and `cmax` are set by the user.
+	// .schema.traces.isosurface.attributes.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Value should have the same units as `value` and if set, `cmin` must be set as well.
+	// .schema.traces.isosurface.attributes.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `cmin` and/or `cmax` to be equidistant to this point. Value should have the same units as `value`. Has no effect when `cauto` is `false`.
+	// .schema.traces.isosurface.attributes.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Value should have the same units as `value` and if set, `cmax` must be set as well.
+	// .schema.traces.isosurface.attributes.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.isosurface.attributes.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.colorbar
 	Colorbar *IsosurfaceColorbar `json:"colorbar,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `cmin` and `cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.isosurface.attributes.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Contour
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.contour
 	Contour *IsosurfaceContour `json:"contour,omitempty"`
 
 	// Customdata
@@ -91,18 +101,21 @@ type Isosurface struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.isosurface.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Flatshading
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not normal smoothing is applied to the meshes, creating meshes with an angular, low-poly look via flat reflections.
+	// .schema.traces.isosurface.attributes.flatshading
 	Flatshading types.BoolType `json:"flatshading,omitempty"`
 
 	// Hoverinfo
@@ -110,41 +123,48 @@ type Isosurface struct {
 	// default: all
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.isosurface.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*IsosurfaceHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.isosurface.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.hoverlabel
 	Hoverlabel *IsosurfaceHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.isosurface.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.isosurface.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Same as `text`.
+	// .schema.traces.isosurface.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.isosurface.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -153,149 +173,175 @@ type Isosurface struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.isosurface.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Isomax
 	// arrayOK: false
 	// type: number
 	// Sets the maximum boundary for iso-surface plot.
+	// .schema.traces.isosurface.attributes.isomax
 	Isomax types.NumberType `json:"isomax,omitempty"`
 
 	// Isomin
 	// arrayOK: false
 	// type: number
 	// Sets the minimum boundary for iso-surface plot.
+	// .schema.traces.isosurface.attributes.isomin
 	Isomin types.NumberType `json:"isomin,omitempty"`
 
 	// Legendgroup
 	// arrayOK: false
 	// type: string
 	// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+	// .schema.traces.isosurface.attributes.legendgroup
 	Legendgroup types.StringType `json:"legendgroup,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.legendgrouptitle
 	Legendgrouptitle *IsosurfaceLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+	// .schema.traces.isosurface.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.isosurface.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Lighting
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.lighting
 	Lighting *IsosurfaceLighting `json:"lighting,omitempty"`
 
 	// Lightposition
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.lightposition
 	Lightposition *IsosurfaceLightposition `json:"lightposition,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.isosurface.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.isosurface.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appear as the legend item and on hover.
+	// .schema.traces.isosurface.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
+	// .schema.traces.isosurface.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. If true, `cmin` will correspond to the last color in the array and `cmax` will correspond to the first color.
+	// .schema.traces.isosurface.attributes.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Scene
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
+	// .schema.traces.isosurface.attributes.scene
 	Scene types.StringType `json:"scene,omitempty"`
 
 	// Showlegend
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not an item corresponding to this trace is shown in the legend.
+	// .schema.traces.isosurface.attributes.showlegend
 	Showlegend types.BoolType `json:"showlegend,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace.
+	// .schema.traces.isosurface.attributes.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 
 	// Slices
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.slices
 	Slices *IsosurfaceSlices `json:"slices,omitempty"`
 
 	// Spaceframe
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.spaceframe
 	Spaceframe *IsosurfaceSpaceframe `json:"spaceframe,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.stream
 	Stream *IsosurfaceStream `json:"stream,omitempty"`
 
 	// Surface
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.surface
 	Surface *IsosurfaceSurface `json:"surface,omitempty"`
 
 	// Text
 	// arrayOK: true
 	// type: string
 	// Sets the text elements associated with the vertices. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
+	// .schema.traces.isosurface.attributes.text
 	Text *types.ArrayOK[*types.StringType] `json:"text,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.isosurface.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.isosurface.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.isosurface.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Value
@@ -304,18 +350,21 @@ type Isosurface struct {
 	// Sets the 4th dimension (value) of the vertices.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.value
 	Value *types.DataArrayType `json:"value,omitempty"`
 
 	// Valuehoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `value`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format.By default the values are formatted using generic number format.
+	// .schema.traces.isosurface.attributes.valuehoverformat
 	Valuehoverformat types.StringType `json:"valuehoverformat,omitempty"`
 
 	// Valuesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `value`.
+	// .schema.traces.isosurface.attributes.valuesrc
 	Valuesrc types.StringType `json:"valuesrc,omitempty"`
 
 	// Visible
@@ -323,6 +372,7 @@ type Isosurface struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.isosurface.attributes.visible
 	Visible IsosurfaceVisible `json:"visible,omitempty"`
 
 	// X
@@ -331,18 +381,21 @@ type Isosurface struct {
 	// Sets the X coordinates of the vertices on X axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.x
 	X *types.DataArrayType `json:"x,omitempty"`
 
 	// Xhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+	// .schema.traces.isosurface.attributes.xhoverformat
 	Xhoverformat types.StringType `json:"xhoverformat,omitempty"`
 
 	// Xsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `x`.
+	// .schema.traces.isosurface.attributes.xsrc
 	Xsrc types.StringType `json:"xsrc,omitempty"`
 
 	// Y
@@ -351,18 +404,21 @@ type Isosurface struct {
 	// Sets the Y coordinates of the vertices on Y axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.y
 	Y *types.DataArrayType `json:"y,omitempty"`
 
 	// Yhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+	// .schema.traces.isosurface.attributes.yhoverformat
 	Yhoverformat types.StringType `json:"yhoverformat,omitempty"`
 
 	// Ysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `y`.
+	// .schema.traces.isosurface.attributes.ysrc
 	Ysrc types.StringType `json:"ysrc,omitempty"`
 
 	// Z
@@ -371,18 +427,21 @@ type Isosurface struct {
 	// Sets the Z coordinates of the vertices on Z axis.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.z
 	Z *types.DataArrayType `json:"z,omitempty"`
 
 	// Zhoverformat
 	// arrayOK: false
 	// type: string
 	// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+	// .schema.traces.isosurface.attributes.zhoverformat
 	Zhoverformat types.StringType `json:"zhoverformat,omitempty"`
 
 	// Zsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `z`.
+	// .schema.traces.isosurface.attributes.zsrc
 	Zsrc types.StringType `json:"zsrc,omitempty"`
 }
 
@@ -393,12 +452,14 @@ type IsosurfaceCapsX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.x.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the x `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.x.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -409,12 +470,14 @@ type IsosurfaceCapsY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.y.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the y `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.y.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -425,12 +488,14 @@ type IsosurfaceCapsZ struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `caps`. The default fill value of the `caps` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.z.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets the fill ratio of the `slices`. The default fill value of the z `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.caps.z.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -440,16 +505,19 @@ type IsosurfaceCaps struct {
 	// X
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.caps.x
 	X *IsosurfaceCapsX `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.caps.y
 	Y *IsosurfaceCapsY `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.caps.z
 	Z *IsosurfaceCapsZ `json:"z,omitempty"`
 }
 
@@ -460,18 +528,21 @@ type IsosurfaceColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.isosurface.attributes.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.isosurface.attributes.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.isosurface.attributes.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -482,30 +553,35 @@ type IsosurfaceColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -516,18 +592,21 @@ type IsosurfaceColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.isosurface.attributes.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.isosurface.attributes.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.isosurface.attributes.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -537,6 +616,7 @@ type IsosurfaceColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.colorbar.title.font
 	Font *IsosurfaceColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -544,12 +624,14 @@ type IsosurfaceColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.isosurface.attributes.colorbar.title.side
 	Side IsosurfaceColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.isosurface.attributes.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -560,24 +642,28 @@ type IsosurfaceColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.isosurface.attributes.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.isosurface.attributes.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.isosurface.attributes.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.isosurface.attributes.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -585,18 +671,21 @@ type IsosurfaceColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.isosurface.attributes.colorbar.exponentformat
 	Exponentformat IsosurfaceColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.isosurface.attributes.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.isosurface.attributes.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -604,18 +693,21 @@ type IsosurfaceColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.isosurface.attributes.colorbar.lenmode
 	Lenmode IsosurfaceColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.isosurface.attributes.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.isosurface.attributes.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -623,24 +715,28 @@ type IsosurfaceColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.isosurface.attributes.colorbar.orientation
 	Orientation IsosurfaceColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.isosurface.attributes.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.isosurface.attributes.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.isosurface.attributes.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -648,12 +744,14 @@ type IsosurfaceColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.isosurface.attributes.colorbar.showexponent
 	Showexponent IsosurfaceColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.isosurface.attributes.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -661,6 +759,7 @@ type IsosurfaceColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.isosurface.attributes.colorbar.showtickprefix
 	Showtickprefix IsosurfaceColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -668,12 +767,14 @@ type IsosurfaceColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.isosurface.attributes.colorbar.showticksuffix
 	Showticksuffix IsosurfaceColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.isosurface.attributes.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -681,40 +782,47 @@ type IsosurfaceColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.isosurface.attributes.colorbar.thicknessmode
 	Thicknessmode IsosurfaceColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.isosurface.attributes.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.isosurface.attributes.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.isosurface.attributes.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.colorbar.tickfont
 	Tickfont *IsosurfaceColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.isosurface.attributes.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: IsosurfaceColorbarTickformatstop
+	// .schema.traces.isosurface.attributes.colorbar.tickformatstops
 	Tickformatstops []IsosurfaceColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -722,6 +830,7 @@ type IsosurfaceColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.isosurface.attributes.colorbar.ticklabeloverflow
 	Ticklabeloverflow IsosurfaceColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -729,18 +838,21 @@ type IsosurfaceColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.isosurface.attributes.colorbar.ticklabelposition
 	Ticklabelposition IsosurfaceColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.isosurface.attributes.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.isosurface.attributes.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -748,12 +860,14 @@ type IsosurfaceColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.isosurface.attributes.colorbar.tickmode
 	Tickmode IsosurfaceColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.isosurface.attributes.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -761,12 +875,14 @@ type IsosurfaceColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.isosurface.attributes.colorbar.ticks
 	Ticks IsosurfaceColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.isosurface.attributes.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -775,12 +891,14 @@ type IsosurfaceColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.isosurface.attributes.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -789,29 +907,34 @@ type IsosurfaceColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.isosurface.attributes.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.isosurface.attributes.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.colorbar.title
 	Title *IsosurfaceColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position of the color bar (in plot fraction). Defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*.
+	// .schema.traces.isosurface.attributes.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -819,18 +942,21 @@ type IsosurfaceColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.isosurface.attributes.colorbar.xanchor
 	Xanchor IsosurfaceColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.isosurface.attributes.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position of the color bar (in plot fraction). Defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*.
+	// .schema.traces.isosurface.attributes.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -838,12 +964,14 @@ type IsosurfaceColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.isosurface.attributes.colorbar.yanchor
 	Yanchor IsosurfaceColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.isosurface.attributes.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 }
 
@@ -854,18 +982,21 @@ type IsosurfaceContour struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of the contour lines.
+	// .schema.traces.isosurface.attributes.contour.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Sets whether or not dynamic contours are shown on hover
+	// .schema.traces.isosurface.attributes.contour.show
 	Show types.BoolType `json:"show,omitempty"`
 
 	// Width
 	// arrayOK: false
 	// type: number
 	// Sets the width of the contour lines.
+	// .schema.traces.isosurface.attributes.contour.width
 	Width types.NumberType `json:"width,omitempty"`
 }
 
@@ -876,36 +1007,42 @@ type IsosurfaceHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.isosurface.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.isosurface.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.isosurface.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.isosurface.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.isosurface.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.isosurface.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -917,53 +1054,62 @@ type IsosurfaceHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.isosurface.attributes.hoverlabel.align
 	Align *types.ArrayOK[*IsosurfaceHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.isosurface.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.isosurface.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.isosurface.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.isosurface.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.isosurface.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.hoverlabel.font
 	Font *IsosurfaceHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.isosurface.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.isosurface.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -974,18 +1120,21 @@ type IsosurfaceLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.isosurface.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.isosurface.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.isosurface.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -995,12 +1144,14 @@ type IsosurfaceLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.legendgrouptitle.font
 	Font *IsosurfaceLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.isosurface.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -1011,42 +1162,49 @@ type IsosurfaceLighting struct {
 	// arrayOK: false
 	// type: number
 	// Ambient light increases overall color visibility but can wash out the image.
+	// .schema.traces.isosurface.attributes.lighting.ambient
 	Ambient types.NumberType `json:"ambient,omitempty"`
 
 	// Diffuse
 	// arrayOK: false
 	// type: number
 	// Represents the extent that incident rays are reflected in a range of angles.
+	// .schema.traces.isosurface.attributes.lighting.diffuse
 	Diffuse types.NumberType `json:"diffuse,omitempty"`
 
 	// Facenormalsepsilon
 	// arrayOK: false
 	// type: number
 	// Epsilon for face normals calculation avoids math issues arising from degenerate geometry.
+	// .schema.traces.isosurface.attributes.lighting.facenormalsepsilon
 	Facenormalsepsilon types.NumberType `json:"facenormalsepsilon,omitempty"`
 
 	// Fresnel
 	// arrayOK: false
 	// type: number
 	// Represents the reflectance as a dependency of the viewing angle; e.g. paper is reflective when viewing it from the edge of the paper (almost 90 degrees), causing shine.
+	// .schema.traces.isosurface.attributes.lighting.fresnel
 	Fresnel types.NumberType `json:"fresnel,omitempty"`
 
 	// Roughness
 	// arrayOK: false
 	// type: number
 	// Alters specular reflection; the rougher the surface, the wider and less contrasty the shine.
+	// .schema.traces.isosurface.attributes.lighting.roughness
 	Roughness types.NumberType `json:"roughness,omitempty"`
 
 	// Specular
 	// arrayOK: false
 	// type: number
 	// Represents the level that incident rays are reflected in a single direction, causing shine.
+	// .schema.traces.isosurface.attributes.lighting.specular
 	Specular types.NumberType `json:"specular,omitempty"`
 
 	// Vertexnormalsepsilon
 	// arrayOK: false
 	// type: number
 	// Epsilon for vertex normals calculation avoids math issues arising from degenerate geometry.
+	// .schema.traces.isosurface.attributes.lighting.vertexnormalsepsilon
 	Vertexnormalsepsilon types.NumberType `json:"vertexnormalsepsilon,omitempty"`
 }
 
@@ -1057,18 +1215,21 @@ type IsosurfaceLightposition struct {
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the X coordinate for each vertex.
+	// .schema.traces.isosurface.attributes.lightposition.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the Y coordinate for each vertex.
+	// .schema.traces.isosurface.attributes.lightposition.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// type: number
 	// Numeric vector, representing the Z coordinate for each vertex.
+	// .schema.traces.isosurface.attributes.lightposition.z
 	Z types.NumberType `json:"z,omitempty"`
 }
 
@@ -1079,6 +1240,7 @@ type IsosurfaceSlicesX struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.slices.x.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
@@ -1087,18 +1249,21 @@ type IsosurfaceSlicesX struct {
 	// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis x except start and end.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.slices.x.locations
 	Locations *types.DataArrayType `json:"locations,omitempty"`
 
 	// Locationssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
+	// .schema.traces.isosurface.attributes.slices.x.locationssrc
 	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the x dimension are drawn.
+	// .schema.traces.isosurface.attributes.slices.x.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -1109,6 +1274,7 @@ type IsosurfaceSlicesY struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.slices.y.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
@@ -1117,18 +1283,21 @@ type IsosurfaceSlicesY struct {
 	// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.slices.y.locations
 	Locations *types.DataArrayType `json:"locations,omitempty"`
 
 	// Locationssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
+	// .schema.traces.isosurface.attributes.slices.y.locationssrc
 	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the y dimension are drawn.
+	// .schema.traces.isosurface.attributes.slices.y.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -1139,6 +1308,7 @@ type IsosurfaceSlicesZ struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.slices.z.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Locations
@@ -1147,18 +1317,21 @@ type IsosurfaceSlicesZ struct {
 	// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.isosurface.attributes.slices.z.locations
 	Locations *types.DataArrayType `json:"locations,omitempty"`
 
 	// Locationssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `locations`.
+	// .schema.traces.isosurface.attributes.slices.z.locationssrc
 	Locationssrc types.StringType `json:"locationssrc,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not slice planes about the z dimension are drawn.
+	// .schema.traces.isosurface.attributes.slices.z.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -1168,16 +1341,19 @@ type IsosurfaceSlices struct {
 	// X
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.slices.x
 	X *IsosurfaceSlicesX `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.slices.y
 	Y *IsosurfaceSlicesY `json:"y,omitempty"`
 
 	// Z
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.isosurface.attributes.slices.z
 	Z *IsosurfaceSlicesZ `json:"z,omitempty"`
 }
 
@@ -1188,12 +1364,14 @@ type IsosurfaceSpaceframe struct {
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the `spaceframe` elements. The default fill value is 0.15 meaning that only 15% of the area of every faces of tetras would be shaded. Applying a greater `fill` ratio would allow the creation of stronger elements or could be sued to have entirely closed areas (in case of using 1).
+	// .schema.traces.isosurface.attributes.spaceframe.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Displays/hides tetrahedron shapes between minimum and maximum iso-values. Often useful when either caps or surfaces are disabled or filled with values less than 1.
+	// .schema.traces.isosurface.attributes.spaceframe.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
@@ -1204,12 +1382,14 @@ type IsosurfaceStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.isosurface.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.isosurface.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1220,12 +1400,14 @@ type IsosurfaceSurface struct {
 	// arrayOK: false
 	// type: integer
 	// Sets the number of iso-surfaces between minimum and maximum iso-values. By default this value is 2 meaning that only minimum and maximum surfaces would be drawn.
+	// .schema.traces.isosurface.attributes.surface.count
 	Count types.IntegerType `json:"count,omitempty"`
 
 	// Fill
 	// arrayOK: false
 	// type: number
 	// Sets the fill ratio of the iso-surface. The default fill value of the surface is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
+	// .schema.traces.isosurface.attributes.surface.fill
 	Fill types.NumberType `json:"fill,omitempty"`
 
 	// Pattern
@@ -1233,16 +1415,19 @@ type IsosurfaceSurface struct {
 	// default: all
 	// type: flaglist
 	// Sets the surface pattern of the iso-surface 3-D sections. The default pattern of the surface is `all` meaning that the rest of surface elements would be shaded. The check options (either 1 or 2) could be used to draw half of the squares on the surface. Using various combinations of capital `A`, `B`, `C`, `D` and `E` may also be used to reduce the number of triangles on the iso-surfaces and creating other patterns of interest.
+	// .schema.traces.isosurface.attributes.surface.pattern
 	Pattern IsosurfaceSurfacePattern `json:"pattern,omitempty"`
 
 	// Show
 	// arrayOK: false
 	// type: boolean
 	// Hides/displays surfaces between minimum and maximum iso-values.
+	// .schema.traces.isosurface.attributes.surface.show
 	Show types.BoolType `json:"show,omitempty"`
 }
 
 // IsosurfaceColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.isosurface.attributes.colorbar.exponentformat
 type IsosurfaceColorbarExponentformat string
 
 const (
@@ -1255,6 +1440,7 @@ const (
 )
 
 // IsosurfaceColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.isosurface.attributes.colorbar.lenmode
 type IsosurfaceColorbarLenmode string
 
 const (
@@ -1263,6 +1449,7 @@ const (
 )
 
 // IsosurfaceColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.isosurface.attributes.colorbar.orientation
 type IsosurfaceColorbarOrientation string
 
 const (
@@ -1271,6 +1458,7 @@ const (
 )
 
 // IsosurfaceColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.isosurface.attributes.colorbar.showexponent
 type IsosurfaceColorbarShowexponent string
 
 const (
@@ -1281,6 +1469,7 @@ const (
 )
 
 // IsosurfaceColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.isosurface.attributes.colorbar.showtickprefix
 type IsosurfaceColorbarShowtickprefix string
 
 const (
@@ -1291,6 +1480,7 @@ const (
 )
 
 // IsosurfaceColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.isosurface.attributes.colorbar.showticksuffix
 type IsosurfaceColorbarShowticksuffix string
 
 const (
@@ -1301,6 +1491,7 @@ const (
 )
 
 // IsosurfaceColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.isosurface.attributes.colorbar.thicknessmode
 type IsosurfaceColorbarThicknessmode string
 
 const (
@@ -1309,6 +1500,7 @@ const (
 )
 
 // IsosurfaceColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.isosurface.attributes.colorbar.ticklabeloverflow
 type IsosurfaceColorbarTicklabeloverflow string
 
 const (
@@ -1318,6 +1510,7 @@ const (
 )
 
 // IsosurfaceColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.isosurface.attributes.colorbar.ticklabelposition
 type IsosurfaceColorbarTicklabelposition string
 
 const (
@@ -1334,6 +1527,7 @@ const (
 )
 
 // IsosurfaceColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.isosurface.attributes.colorbar.tickmode
 type IsosurfaceColorbarTickmode string
 
 const (
@@ -1343,6 +1537,7 @@ const (
 )
 
 // IsosurfaceColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.isosurface.attributes.colorbar.ticks
 type IsosurfaceColorbarTicks string
 
 const (
@@ -1352,6 +1547,7 @@ const (
 )
 
 // IsosurfaceColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.isosurface.attributes.colorbar.title.side
 type IsosurfaceColorbarTitleSide string
 
 const (
@@ -1361,6 +1557,7 @@ const (
 )
 
 // IsosurfaceColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.isosurface.attributes.colorbar.xanchor
 type IsosurfaceColorbarXanchor string
 
 const (
@@ -1370,6 +1567,7 @@ const (
 )
 
 // IsosurfaceColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.isosurface.attributes.colorbar.yanchor
 type IsosurfaceColorbarYanchor string
 
 const (
@@ -1379,6 +1577,7 @@ const (
 )
 
 // IsosurfaceHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.isosurface.attributes.hoverlabel.align
 type IsosurfaceHoverlabelAlign string
 
 const (
@@ -1388,6 +1587,7 @@ const (
 )
 
 // IsosurfaceVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.isosurface.attributes.visible
 type IsosurfaceVisible interface{}
 
 var (
@@ -1397,6 +1597,7 @@ var (
 )
 
 // IsosurfaceHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.isosurface.attributes.hoverinfo
 type IsosurfaceHoverinfo string
 
 const (
@@ -1414,6 +1615,7 @@ const (
 )
 
 // IsosurfaceSurfacePattern Sets the surface pattern of the iso-surface 3-D sections. The default pattern of the surface is `all` meaning that the rest of surface elements would be shaded. The check options (either 1 or 2) could be used to draw half of the squares on the surface. Using various combinations of capital `A`, `B`, `C`, `D` and `E` may also be used to reduce the number of triangles on the iso-surfaces and creating other patterns of interest.
+// .schema.traces.isosurface.attributes.surface.pattern
 type IsosurfaceSurfacePattern string
 
 const (

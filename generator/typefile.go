@@ -33,6 +33,7 @@ type structField struct {
 	JSONName    string
 	Type        string
 	Description []string
+	JSONPath    string
 }
 
 type enumFields []enumFile
@@ -47,9 +48,11 @@ type enumFile struct {
 	Type        string
 	ConstOrVar  costOrVar
 	Values      []enumValue
+	JSONPath    string
 }
 
-func (e *enumFile) appendValues(values ...enumValue) {
+// appendUniqueValues adds the given values to the enum but ignoring duplicates
+func (e *enumFile) appendUniqueValues(values ...enumValue) {
 	duplicates := map[string]bool{}
 	for _, v := range e.Values {
 		duplicates[v.Name] = true
@@ -75,6 +78,7 @@ type flagList struct {
 	ConstOrVar  costOrVar
 	Flags       []flagListValue
 	Extra       []flagListValue
+	JSONPath    string
 }
 
 type flagListValue struct {
@@ -91,7 +95,7 @@ const (
 
 // parseAttributes returns a []StructField containing all the fields for the attributes parsed.
 // Nested structures found such as enums, flags u other objects are stored in the TypeFile caller.
-func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
+func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
 	fields := make([]structField, 0, len(attrs))
 
 	for _, name := range sortKeys(attrs) {
@@ -112,13 +116,13 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				itemAttr = a
 			}
 			prefix := xstrings.ToCamelCase(itemName)
-			itemFields, err := file.parseAttributes(prefix, xstrings.ToCamelCase(itemName), itemAttr.Attributes)
+			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, xstrings.ToCamelCase(itemName), itemAttr.Attributes)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to parse items inside object, %s", err)
 			}
 
 			object := sstruct{
-				Name:        typePrefix + xstrings.ToCamelCase(itemName),
+				Name:        namePrefix + xstrings.ToCamelCase(itemName),
 				Description: itemAttr.Description,
 				Fields:      itemFields,
 			}
@@ -127,16 +131,17 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "[]" + typePrefix + xstrings.ToCamelCase(itemName),
+				Type:     "[]" + namePrefix + xstrings.ToCamelCase(itemName),
 				Description: []string{
 					"role: Object",
 					fmt.Sprintf("items: %s", object.Name),
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 
 		case attr.Role == RoleObject:
 			name := namePrefix + xstrings.ToCamelCase(attr.Name)
-			err := file.parseObject(name, attr)
+			err := file.parseObject(JSONPath+"."+attr.Name, name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)
 			}
@@ -152,11 +157,12 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					"role: Object",
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 
 		case attr.ValType == ValTypeFlagList:
 			name := namePrefix + xstrings.ToCamelCase(attr.Name)
-			err := file.parseFlaglist(name, attr)
+			err := file.parseFlaglist(JSONPath+"."+attr.Name, name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
 			}
@@ -174,12 +180,13 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 
 		case attr.ValType == ValTypeEnum:
 			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
 			valueName := namePrefix + xstrings.ToCamelCase(attr.Name)
-			err := file.parseEnum(typeName, valueName, attr)
+			err := file.parseEnum(JSONPath+"."+attr.Name, typeName, valueName, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
@@ -196,6 +203,7 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 
 		case attr.ValType == ValTypeDataArray:
@@ -206,13 +214,13 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				JSONName: attr.Name,
 				Type:     typeName,
 				Description: []string{
-					// fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
 					fmt.Sprint("use types.DataArray to pass any slice of data"),
 					fmt.Sprint("use types.BDataArray to pass data in binary format as provided by numpy"),
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 
 		default:
@@ -231,25 +239,25 @@ func (file *typeFile) parseAttributes(namePrefix string, typePrefix string, attr
 				JSONName: attr.Name,
 				Type:     typeName,
 				Description: []string{
-					// fmt.Sprintf("default: %s", attr.Dflt),
 					fmt.Sprintf("arrayOK: %t", attr.ArrayOK),
 					fmt.Sprintf("type: %s", attr.ValType),
 					attr.Description,
 				},
+				JSONPath: JSONPath + "." + attr.Name,
 			})
 		}
 	}
 	return fields, nil
 }
 
-func (file *typeFile) parseObject(name string, attr *Attribute) error {
+func (file *typeFile) parseObject(JSONpath string, name string, attr *Attribute) error {
 	objStruct := sstruct{
 		Name:        name,
 		Description: attr.Description,
 		Fields:      []structField{},
 	}
 
-	fields, err := file.parseAttributes(objStruct.Name, objStruct.Name, attr.Attributes)
+	fields, err := file.parseAttributes(JSONpath, objStruct.Name, objStruct.Name, attr.Attributes)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -259,7 +267,7 @@ func (file *typeFile) parseObject(name string, attr *Attribute) error {
 	return nil
 }
 
-func (file *typeFile) parseEnum(typeName string, valuePrefix string, attr *Attribute) error {
+func (file *typeFile) parseEnum(JSONPath string, typeName string, valuePrefix string, attr *Attribute) error {
 
 	values := make([]enumValue, 0, len(attr.Values))
 	for _, attrValue := range attr.Values {
@@ -339,13 +347,14 @@ func (file *typeFile) parseEnum(typeName string, valuePrefix string, attr *Attri
 		Values:      values,
 		ConstOrVar:  ConstOrVar,
 		Type:        Type,
+		JSONPath:    JSONPath,
 	}
 
 	file.Enums = append(file.Enums, enum)
 	return nil
 }
 
-func (file *typeFile) parseFlaglist(name string, attr *Attribute) error {
+func (file *typeFile) parseFlaglist(JSONPath string, name string, attr *Attribute) error {
 
 	flags := make([]flagListValue, 0, len(attr.Flags))
 	for _, attrValue := range attr.Flags {
@@ -417,6 +426,7 @@ func (file *typeFile) parseFlaglist(name string, attr *Attribute) error {
 		Type:        Type,
 		Flags:       flags,
 		Extra:       extra,
+		JSONPath:    JSONPath,
 	}
 
 	file.FlagLists = append(file.FlagLists, flaglist)

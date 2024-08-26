@@ -14,17 +14,20 @@ type Animation struct {
 	// default: forward
 	// type: enumerated
 	// The direction in which to play the frames triggered by the animation call
+	// .schema.animation.direction
 	Direction AnimationDirection `json:"direction,omitempty"`
 
 	// Frame
 	// arrayOK: false
 	// role: Object
+	// .schema.animation.frame
 	Frame *AnimationFrame `json:"frame,omitempty"`
 
 	// Fromcurrent
 	// arrayOK: false
 	// type: boolean
 	// Play frames starting at the current frame instead of the beginning.
+	// .schema.animation.fromcurrent
 	Fromcurrent types.BoolType `json:"fromcurrent,omitempty"`
 
 	// Mode
@@ -32,11 +35,13 @@ type Animation struct {
 	// default: afterall
 	// type: enumerated
 	// Describes how a new animate call interacts with currently-running animations. If `immediate`, current animations are interrupted and the new animation is started. If `next`, the current frame is allowed to complete, after which the new animation is started. If `afterall` all existing frames are animated to completion before the new animation is started.
+	// .schema.animation.mode
 	Mode AnimationMode `json:"mode,omitempty"`
 
 	// Transition
 	// arrayOK: false
 	// role: Object
+	// .schema.animation.transition
 	Transition *AnimationTransition `json:"transition,omitempty"`
 }
 
@@ -47,12 +52,14 @@ type AnimationFrame struct {
 	// arrayOK: false
 	// type: number
 	// The duration in milliseconds of each frame. If greater than the frame duration, it will be limited to the frame duration.
+	// .schema.animation.frame.duration
 	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Redraw
 	// arrayOK: false
 	// type: boolean
 	// Redraw the plot at completion of the transition. This is desirable for transitions that include properties that cannot be transitioned, but may significantly slow down updates that do not require a full redraw of the plot
+	// .schema.animation.frame.redraw
 	Redraw types.BoolType `json:"redraw,omitempty"`
 }
 
@@ -63,6 +70,7 @@ type AnimationTransition struct {
 	// arrayOK: false
 	// type: number
 	// The duration of the transition, in milliseconds. If equal to zero, updates are synchronous.
+	// .schema.animation.transition.duration
 	Duration types.NumberType `json:"duration,omitempty"`
 
 	// Easing
@@ -70,6 +78,7 @@ type AnimationTransition struct {
 	// default: cubic-in-out
 	// type: enumerated
 	// The easing function used for the transition
+	// .schema.animation.transition.easing
 	Easing AnimationTransitionEasing `json:"easing,omitempty"`
 
 	// Ordering
@@ -77,10 +86,12 @@ type AnimationTransition struct {
 	// default: layout first
 	// type: enumerated
 	// Determines whether the figure's layout or traces smoothly transitions during updates that make both traces and layout change.
+	// .schema.animation.transition.ordering
 	Ordering AnimationTransitionOrdering `json:"ordering,omitempty"`
 }
 
 // AnimationDirection The direction in which to play the frames triggered by the animation call
+// .schema.animation.direction
 type AnimationDirection string
 
 const (
@@ -89,6 +100,7 @@ const (
 )
 
 // AnimationMode Describes how a new animate call interacts with currently-running animations. If `immediate`, current animations are interrupted and the new animation is started. If `next`, the current frame is allowed to complete, after which the new animation is started. If `afterall` all existing frames are animated to completion before the new animation is started.
+// .schema.animation.mode
 type AnimationMode string
 
 const (
@@ -98,6 +110,7 @@ const (
 )
 
 // AnimationTransitionEasing The easing function used for the transition
+// .schema.animation.transition.easing
 type AnimationTransitionEasing string
 
 const (
@@ -140,6 +153,7 @@ const (
 )
 
 // AnimationTransitionOrdering Determines whether the figure's layout or traces smoothly transitions during updates that make both traces and layout change.
+// .schema.animation.transition.ordering
 type AnimationTransitionOrdering string
 
 const (

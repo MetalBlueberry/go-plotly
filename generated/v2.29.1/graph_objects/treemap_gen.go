@@ -33,6 +33,7 @@ type Treemap struct {
 	// default: remainder
 	// type: enumerated
 	// Determines how the items in `values` are summed. When set to *total*, items in `values` are taken to be value of all its descendants. When set to *remainder*, items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
+	// .schema.traces.treemap.attributes.branchvalues
 	Branchvalues TreemapBranchvalues `json:"branchvalues,omitempty"`
 
 	// Count
@@ -40,6 +41,7 @@ type Treemap struct {
 	// default: leaves
 	// type: flaglist
 	// Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
+	// .schema.traces.treemap.attributes.count
 	Count TreemapCount `json:"count,omitempty"`
 
 	// Customdata
@@ -48,17 +50,20 @@ type Treemap struct {
 	// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.customdata
 	Customdata *types.DataArrayType `json:"customdata,omitempty"`
 
 	// Customdatasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `customdata`.
+	// .schema.traces.treemap.attributes.customdatasrc
 	Customdatasrc types.StringType `json:"customdatasrc,omitempty"`
 
 	// Domain
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.domain
 	Domain *TreemapDomain `json:"domain,omitempty"`
 
 	// Hoverinfo
@@ -66,41 +71,48 @@ type Treemap struct {
 	// default: label+text+value+name
 	// type: flaglist
 	// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+	// .schema.traces.treemap.attributes.hoverinfo
 	Hoverinfo *types.ArrayOK[*TreemapHoverinfo] `json:"hoverinfo,omitempty"`
 
 	// Hoverinfosrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hoverinfo`.
+	// .schema.traces.treemap.attributes.hoverinfosrc
 	Hoverinfosrc types.StringType `json:"hoverinfosrc,omitempty"`
 
 	// Hoverlabel
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.hoverlabel
 	Hoverlabel *TreemapHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example "y: %{y}" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example "<extra>{fullData.name}</extra>". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+	// .schema.traces.treemap.attributes.hovertemplate
 	Hovertemplate *types.ArrayOK[*types.StringType] `json:"hovertemplate,omitempty"`
 
 	// Hovertemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertemplate`.
+	// .schema.traces.treemap.attributes.hovertemplatesrc
 	Hovertemplatesrc types.StringType `json:"hovertemplatesrc,omitempty"`
 
 	// Hovertext
 	// arrayOK: true
 	// type: string
 	// Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
+	// .schema.traces.treemap.attributes.hovertext
 	Hovertext *types.ArrayOK[*types.StringType] `json:"hovertext,omitempty"`
 
 	// Hovertextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `hovertext`.
+	// .schema.traces.treemap.attributes.hovertextsrc
 	Hovertextsrc types.StringType `json:"hovertextsrc,omitempty"`
 
 	// Ids
@@ -109,17 +121,20 @@ type Treemap struct {
 	// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.ids
 	Ids *types.DataArrayType `json:"ids,omitempty"`
 
 	// Idssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ids`.
+	// .schema.traces.treemap.attributes.idssrc
 	Idssrc types.StringType `json:"idssrc,omitempty"`
 
 	// Insidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.insidetextfont
 	Insidetextfont *TreemapInsidetextfont `json:"insidetextfont,omitempty"`
 
 	// Labels
@@ -128,81 +143,95 @@ type Treemap struct {
 	// Sets the labels of each of the sectors.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.labels
 	Labels *types.DataArrayType `json:"labels,omitempty"`
 
 	// Labelssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `labels`.
+	// .schema.traces.treemap.attributes.labelssrc
 	Labelssrc types.StringType `json:"labelssrc,omitempty"`
 
 	// Legend
 	// arrayOK: false
 	// type: subplotid
 	// Sets the reference to a legend to show this trace in. References to these legends are *legend*, *legend2*, *legend3*, etc. Settings for these legends are set in the layout, under `layout.legend`, `layout.legend2`, etc.
+	// .schema.traces.treemap.attributes.legend
 	Legend types.StringType `json:"legend,omitempty"`
 
 	// Legendgrouptitle
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.legendgrouptitle
 	Legendgrouptitle *TreemapLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
 	// type: number
 	// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with *reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items. When having unranked or equal rank items shapes would be displayed after traces i.e. according to their order in data and layout.
+	// .schema.traces.treemap.attributes.legendrank
 	Legendrank types.NumberType `json:"legendrank,omitempty"`
 
 	// Legendwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px or fraction) of the legend for this trace.
+	// .schema.traces.treemap.attributes.legendwidth
 	Legendwidth types.NumberType `json:"legendwidth,omitempty"`
 
 	// Level
 	// arrayOK: false
 	// type: any
 	// Sets the level from which this trace hierarchy is rendered. Set `level` to `''` to start from the root node in the hierarchy. Must be an "id" if `ids` is filled in, otherwise plotly attempts to find a matching item in `labels`.
+	// .schema.traces.treemap.attributes.level
 	Level interface{} `json:"level,omitempty"`
 
 	// Marker
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker
 	Marker *TreemapMarker `json:"marker,omitempty"`
 
 	// Maxdepth
 	// arrayOK: false
 	// type: integer
 	// Sets the number of rendered sectors from any given `level`. Set `maxdepth` to *-1* to render all the levels in the hierarchy.
+	// .schema.traces.treemap.attributes.maxdepth
 	Maxdepth types.IntegerType `json:"maxdepth,omitempty"`
 
 	// Meta
 	// arrayOK: true
 	// type: any
 	// Assigns extra meta information associated with this trace that can be used in various text attributes. Attributes such as trace `name`, graph, axis and colorbar `title.text`, annotation `text` `rangeselector`, `updatemenues` and `sliders` `label` text all support `meta`. To access the trace `meta` values in an attribute in the same trace, simply use `%{meta[i]}` where `i` is the index or key of the `meta` item in question. To access trace `meta` in layout attributes, use `%{data[n[.meta[i]}` where `i` is the index or key of the `meta` and `n` is the trace index.
+	// .schema.traces.treemap.attributes.meta
 	Meta *types.ArrayOK[*interface{}] `json:"meta,omitempty"`
 
 	// Metasrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `meta`.
+	// .schema.traces.treemap.attributes.metasrc
 	Metasrc types.StringType `json:"metasrc,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// Sets the trace name. The trace name appears as the legend item and on hover.
+	// .schema.traces.treemap.attributes.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Opacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the trace.
+	// .schema.traces.treemap.attributes.opacity
 	Opacity types.NumberType `json:"opacity,omitempty"`
 
 	// Outsidetextfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.outsidetextfont
 	Outsidetextfont *TreemapOutsidetextfont `json:"outsidetextfont,omitempty"`
 
 	// Parents
@@ -211,33 +240,39 @@ type Treemap struct {
 	// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be "ids" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.parents
 	Parents *types.DataArrayType `json:"parents,omitempty"`
 
 	// Parentssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `parents`.
+	// .schema.traces.treemap.attributes.parentssrc
 	Parentssrc types.StringType `json:"parentssrc,omitempty"`
 
 	// Pathbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.pathbar
 	Pathbar *TreemapPathbar `json:"pathbar,omitempty"`
 
 	// Root
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.root
 	Root *TreemapRoot `json:"root,omitempty"`
 
 	// Sort
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the sectors are reordered from largest to smallest.
+	// .schema.traces.treemap.attributes.sort
 	Sort types.BoolType `json:"sort,omitempty"`
 
 	// Stream
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.stream
 	Stream *TreemapStream `json:"stream,omitempty"`
 
 	// Text
@@ -246,11 +281,13 @@ type Treemap struct {
 	// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.text
 	Text *types.DataArrayType `json:"text,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.textfont
 	Textfont *TreemapTextfont `json:"textfont,omitempty"`
 
 	// Textinfo
@@ -258,6 +295,7 @@ type Treemap struct {
 	// default: %!s(<nil>)
 	// type: flaglist
 	// Determines which trace information appear on the graph.
+	// .schema.traces.treemap.attributes.textinfo
 	Textinfo TreemapTextinfo `json:"textinfo,omitempty"`
 
 	// Textposition
@@ -265,46 +303,54 @@ type Treemap struct {
 	// default: top left
 	// type: enumerated
 	// Sets the positions of the `text` elements.
+	// .schema.traces.treemap.attributes.textposition
 	Textposition TreemapTextposition `json:"textposition,omitempty"`
 
 	// Textsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `text`.
+	// .schema.traces.treemap.attributes.textsrc
 	Textsrc types.StringType `json:"textsrc,omitempty"`
 
 	// Texttemplate
 	// arrayOK: true
 	// type: string
 	// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example "y: %{y}". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example "Price: %{y:$.2f}". https://github.com/d3/d3-format/tree/v1.4.5#d3-format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example "Day: %{2019-01-01|%A}". https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. Finally, the template string has access to variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
+	// .schema.traces.treemap.attributes.texttemplate
 	Texttemplate *types.ArrayOK[*types.StringType] `json:"texttemplate,omitempty"`
 
 	// Texttemplatesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `texttemplate`.
+	// .schema.traces.treemap.attributes.texttemplatesrc
 	Texttemplatesrc types.StringType `json:"texttemplatesrc,omitempty"`
 
 	// Tiling
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.tiling
 	Tiling *TreemapTiling `json:"tiling,omitempty"`
 
 	// Transforms
 	// role: Object
 	// items: TreemapTransform
+	// .schema.traces.treemap.attributes.transforms
 	Transforms []TreemapTransform `json:"transforms,omitempty"`
 
 	// Uid
 	// arrayOK: false
 	// type: string
 	// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
+	// .schema.traces.treemap.attributes.uid
 	Uid types.StringType `json:"uid,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
 	// type: any
 	// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
+	// .schema.traces.treemap.attributes.uirevision
 	Uirevision interface{} `json:"uirevision,omitempty"`
 
 	// Values
@@ -313,12 +359,14 @@ type Treemap struct {
 	// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.values
 	Values *types.DataArrayType `json:"values,omitempty"`
 
 	// Valuessrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `values`.
+	// .schema.traces.treemap.attributes.valuessrc
 	Valuessrc types.StringType `json:"valuessrc,omitempty"`
 
 	// Visible
@@ -326,6 +374,7 @@ type Treemap struct {
 	// default: %!s(bool=true)
 	// type: enumerated
 	// Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+	// .schema.traces.treemap.attributes.visible
 	Visible TreemapVisible `json:"visible,omitempty"`
 }
 
@@ -336,24 +385,28 @@ type TreemapDomain struct {
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this column in the grid for this treemap trace .
+	// .schema.traces.treemap.attributes.domain.column
 	Column types.IntegerType `json:"column,omitempty"`
 
 	// Row
 	// arrayOK: false
 	// type: integer
 	// If there is a layout grid, use the domain for this row in the grid for this treemap trace .
+	// .schema.traces.treemap.attributes.domain.row
 	Row types.IntegerType `json:"row,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: info_array
 	// Sets the horizontal domain of this treemap trace (in plot fraction).
+	// .schema.traces.treemap.attributes.domain.x
 	X interface{} `json:"x,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: info_array
 	// Sets the vertical domain of this treemap trace (in plot fraction).
+	// .schema.traces.treemap.attributes.domain.y
 	Y interface{} `json:"y,omitempty"`
 }
 
@@ -364,36 +417,42 @@ type TreemapHoverlabelFont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.hoverlabel.font.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.hoverlabel.font.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.hoverlabel.font.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.treemap.attributes.hoverlabel.font.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.hoverlabel.font.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.hoverlabel.font.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -405,53 +464,62 @@ type TreemapHoverlabel struct {
 	// default: auto
 	// type: enumerated
 	// Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+	// .schema.traces.treemap.attributes.hoverlabel.align
 	Align *types.ArrayOK[*TreemapHoverlabelAlign] `json:"align,omitempty"`
 
 	// Alignsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `align`.
+	// .schema.traces.treemap.attributes.hoverlabel.alignsrc
 	Alignsrc types.StringType `json:"alignsrc,omitempty"`
 
 	// Bgcolor
 	// arrayOK: true
 	// type: color
 	// Sets the background color of the hover labels for this trace
+	// .schema.traces.treemap.attributes.hoverlabel.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.treemap.attributes.hoverlabel.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Bordercolor
 	// arrayOK: true
 	// type: color
 	// Sets the border color of the hover labels for this trace.
+	// .schema.traces.treemap.attributes.hoverlabel.bordercolor
 	Bordercolor *types.ArrayOK[*types.Color] `json:"bordercolor,omitempty"`
 
 	// Bordercolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bordercolor`.
+	// .schema.traces.treemap.attributes.hoverlabel.bordercolorsrc
 	Bordercolorsrc types.StringType `json:"bordercolorsrc,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.hoverlabel.font
 	Font *TreemapHoverlabelFont `json:"font,omitempty"`
 
 	// Namelength
 	// arrayOK: true
 	// type: integer
 	// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
+	// .schema.traces.treemap.attributes.hoverlabel.namelength
 	Namelength *types.ArrayOK[*types.IntegerType] `json:"namelength,omitempty"`
 
 	// Namelengthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `namelength`.
+	// .schema.traces.treemap.attributes.hoverlabel.namelengthsrc
 	Namelengthsrc types.StringType `json:"namelengthsrc,omitempty"`
 }
 
@@ -462,36 +530,42 @@ type TreemapInsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.insidetextfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.insidetextfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.insidetextfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.treemap.attributes.insidetextfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.insidetextfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.insidetextfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -502,18 +576,21 @@ type TreemapLegendgrouptitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.legendgrouptitle.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.legendgrouptitle.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.legendgrouptitle.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -523,12 +600,14 @@ type TreemapLegendgrouptitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.legendgrouptitle.font
 	Font *TreemapLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the legend group.
+	// .schema.traces.treemap.attributes.legendgrouptitle.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -539,18 +618,21 @@ type TreemapMarkerColorbarTickfont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.marker.colorbar.tickfont.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickfont.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.marker.colorbar.tickfont.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -561,30 +643,35 @@ type TreemapMarkerColorbarTickformatstop struct {
 	// arrayOK: false
 	// type: info_array
 	// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops.items.tickformatstop.dtickrange
 	Dtickrange interface{} `json:"dtickrange,omitempty"`
 
 	// Enabled
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops.items.tickformatstop.enabled
 	Enabled types.BoolType `json:"enabled,omitempty"`
 
 	// Name
 	// arrayOK: false
 	// type: string
 	// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops.items.tickformatstop.name
 	Name types.StringType `json:"name,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
 	// type: string
 	// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops.items.tickformatstop.templateitemname
 	Templateitemname types.StringType `json:"templateitemname,omitempty"`
 
 	// Value
 	// arrayOK: false
 	// type: string
 	// string - dtickformat for described zoom level, the same as *tickformat*
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops.items.tickformatstop.value
 	Value types.StringType `json:"value,omitempty"`
 }
 
@@ -595,18 +682,21 @@ type TreemapMarkerColorbarTitleFont struct {
 	// arrayOK: false
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.marker.colorbar.title.font.color
 	Color types.Color `json:"color,omitempty"`
 
 	// Family
 	// arrayOK: false
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.marker.colorbar.title.font.family
 	Family types.StringType `json:"family,omitempty"`
 
 	// Size
 	// arrayOK: false
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.marker.colorbar.title.font.size
 	Size types.NumberType `json:"size,omitempty"`
 }
 
@@ -616,6 +706,7 @@ type TreemapMarkerColorbarTitle struct {
 	// Font
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.colorbar.title.font
 	Font *TreemapMarkerColorbarTitleFont `json:"font,omitempty"`
 
 	// Side
@@ -623,12 +714,14 @@ type TreemapMarkerColorbarTitle struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+	// .schema.traces.treemap.attributes.marker.colorbar.title.side
 	Side TreemapMarkerColorbarTitleSide `json:"side,omitempty"`
 
 	// Text
 	// arrayOK: false
 	// type: string
 	// Sets the title of the color bar. Note that before the existence of `title.text`, the title's contents used to be defined as the `title` attribute itself. This behavior has been deprecated.
+	// .schema.traces.treemap.attributes.marker.colorbar.title.text
 	Text types.StringType `json:"text,omitempty"`
 }
 
@@ -639,24 +732,28 @@ type TreemapMarkerColorbar struct {
 	// arrayOK: false
 	// type: color
 	// Sets the color of padded area.
+	// .schema.traces.treemap.attributes.marker.colorbar.bgcolor
 	Bgcolor types.Color `json:"bgcolor,omitempty"`
 
 	// Bordercolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.treemap.attributes.marker.colorbar.bordercolor
 	Bordercolor types.Color `json:"bordercolor,omitempty"`
 
 	// Borderwidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) or the border enclosing this color bar.
+	// .schema.traces.treemap.attributes.marker.colorbar.borderwidth
 	Borderwidth types.NumberType `json:"borderwidth,omitempty"`
 
 	// Dtick
 	// arrayOK: false
 	// type: any
 	// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
+	// .schema.traces.treemap.attributes.marker.colorbar.dtick
 	Dtick interface{} `json:"dtick,omitempty"`
 
 	// Exponentformat
@@ -664,18 +761,21 @@ type TreemapMarkerColorbar struct {
 	// default: B
 	// type: enumerated
 	// Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+	// .schema.traces.treemap.attributes.marker.colorbar.exponentformat
 	Exponentformat TreemapMarkerColorbarExponentformat `json:"exponentformat,omitempty"`
 
 	// Labelalias
 	// arrayOK: false
 	// type: any
 	// Replacement text for specific tick or hover labels. For example using {US: 'USA', CA: 'Canada'} changes US to USA and CA to Canada. The labels we would have shown must match the keys exactly, after adding any tickprefix or ticksuffix. For negative numbers the minus sign symbol used (U+2212) is wider than the regular ascii dash. That means you need to use −1 instead of -1. labelalias can be used with any axis type, and both keys (if needed) and values (if desired) can include html-like tags or MathJax.
+	// .schema.traces.treemap.attributes.marker.colorbar.labelalias
 	Labelalias interface{} `json:"labelalias,omitempty"`
 
 	// Len
 	// arrayOK: false
 	// type: number
 	// Sets the length of the color bar This measure excludes the padding of both ends. That is, the color bar length is this length minus the padding on both ends.
+	// .schema.traces.treemap.attributes.marker.colorbar.len
 	Len types.NumberType `json:"len,omitempty"`
 
 	// Lenmode
@@ -683,18 +783,21 @@ type TreemapMarkerColorbar struct {
 	// default: fraction
 	// type: enumerated
 	// Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+	// .schema.traces.treemap.attributes.marker.colorbar.lenmode
 	Lenmode TreemapMarkerColorbarLenmode `json:"lenmode,omitempty"`
 
 	// Minexponent
 	// arrayOK: false
 	// type: number
 	// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+	// .schema.traces.treemap.attributes.marker.colorbar.minexponent
 	Minexponent types.NumberType `json:"minexponent,omitempty"`
 
 	// Nticks
 	// arrayOK: false
 	// type: integer
 	// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
+	// .schema.traces.treemap.attributes.marker.colorbar.nticks
 	Nticks types.IntegerType `json:"nticks,omitempty"`
 
 	// Orientation
@@ -702,24 +805,28 @@ type TreemapMarkerColorbar struct {
 	// default: v
 	// type: enumerated
 	// Sets the orientation of the colorbar.
+	// .schema.traces.treemap.attributes.marker.colorbar.orientation
 	Orientation TreemapMarkerColorbarOrientation `json:"orientation,omitempty"`
 
 	// Outlinecolor
 	// arrayOK: false
 	// type: color
 	// Sets the axis line color.
+	// .schema.traces.treemap.attributes.marker.colorbar.outlinecolor
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 
 	// Outlinewidth
 	// arrayOK: false
 	// type: number
 	// Sets the width (in px) of the axis line.
+	// .schema.traces.treemap.attributes.marker.colorbar.outlinewidth
 	Outlinewidth types.NumberType `json:"outlinewidth,omitempty"`
 
 	// Separatethousands
 	// arrayOK: false
 	// type: boolean
 	// If "true", even 4-digit integers are separated
+	// .schema.traces.treemap.attributes.marker.colorbar.separatethousands
 	Separatethousands types.BoolType `json:"separatethousands,omitempty"`
 
 	// Showexponent
@@ -727,12 +834,14 @@ type TreemapMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+	// .schema.traces.treemap.attributes.marker.colorbar.showexponent
 	Showexponent TreemapMarkerColorbarShowexponent `json:"showexponent,omitempty"`
 
 	// Showticklabels
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the tick labels are drawn.
+	// .schema.traces.treemap.attributes.marker.colorbar.showticklabels
 	Showticklabels types.BoolType `json:"showticklabels,omitempty"`
 
 	// Showtickprefix
@@ -740,6 +849,7 @@ type TreemapMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+	// .schema.traces.treemap.attributes.marker.colorbar.showtickprefix
 	Showtickprefix TreemapMarkerColorbarShowtickprefix `json:"showtickprefix,omitempty"`
 
 	// Showticksuffix
@@ -747,12 +857,14 @@ type TreemapMarkerColorbar struct {
 	// default: all
 	// type: enumerated
 	// Same as `showtickprefix` but for tick suffixes.
+	// .schema.traces.treemap.attributes.marker.colorbar.showticksuffix
 	Showticksuffix TreemapMarkerColorbarShowticksuffix `json:"showticksuffix,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of the color bar This measure excludes the size of the padding, ticks and labels.
+	// .schema.traces.treemap.attributes.marker.colorbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Thicknessmode
@@ -760,40 +872,47 @@ type TreemapMarkerColorbar struct {
 	// default: pixels
 	// type: enumerated
 	// Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+	// .schema.traces.treemap.attributes.marker.colorbar.thicknessmode
 	Thicknessmode TreemapMarkerColorbarThicknessmode `json:"thicknessmode,omitempty"`
 
 	// Tick0
 	// arrayOK: false
 	// type: any
 	// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
+	// .schema.traces.treemap.attributes.marker.colorbar.tick0
 	Tick0 interface{} `json:"tick0,omitempty"`
 
 	// Tickangle
 	// arrayOK: false
 	// type: angle
 	// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickangle
 	Tickangle types.NumberType `json:"tickangle,omitempty"`
 
 	// Tickcolor
 	// arrayOK: false
 	// type: color
 	// Sets the tick color.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickcolor
 	Tickcolor types.Color `json:"tickcolor,omitempty"`
 
 	// Tickfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.colorbar.tickfont
 	Tickfont *TreemapMarkerColorbarTickfont `json:"tickfont,omitempty"`
 
 	// Tickformat
 	// arrayOK: false
 	// type: string
 	// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-format/tree/v1.4.5#d3-format. And for dates see: https://github.com/d3/d3-time-format/tree/v2.2.3#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformat
 	Tickformat types.StringType `json:"tickformat,omitempty"`
 
 	// Tickformatstops
 	// role: Object
 	// items: TreemapMarkerColorbarTickformatstop
+	// .schema.traces.treemap.attributes.marker.colorbar.tickformatstops
 	Tickformatstops []TreemapMarkerColorbarTickformatstop `json:"tickformatstops,omitempty"`
 
 	// Ticklabeloverflow
@@ -801,6 +920,7 @@ type TreemapMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticklabeloverflow
 	Ticklabeloverflow TreemapMarkerColorbarTicklabeloverflow `json:"ticklabeloverflow,omitempty"`
 
 	// Ticklabelposition
@@ -808,18 +928,21 @@ type TreemapMarkerColorbar struct {
 	// default: outside
 	// type: enumerated
 	// Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticklabelposition
 	Ticklabelposition TreemapMarkerColorbarTicklabelposition `json:"ticklabelposition,omitempty"`
 
 	// Ticklabelstep
 	// arrayOK: false
 	// type: integer
 	// Sets the spacing between tick labels as compared to the spacing between ticks. A value of 1 (default) means each tick gets a label. A value of 2 means shows every 2nd label. A larger value n means only every nth tick is labeled. `tick0` determines which labels are shown. Not implemented for axes with `type` *log* or *multicategory*, or when `tickmode` is *array*.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticklabelstep
 	Ticklabelstep types.IntegerType `json:"ticklabelstep,omitempty"`
 
 	// Ticklen
 	// arrayOK: false
 	// type: number
 	// Sets the tick length (in px).
+	// .schema.traces.treemap.attributes.marker.colorbar.ticklen
 	Ticklen types.NumberType `json:"ticklen,omitempty"`
 
 	// Tickmode
@@ -827,12 +950,14 @@ type TreemapMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+	// .schema.traces.treemap.attributes.marker.colorbar.tickmode
 	Tickmode TreemapMarkerColorbarTickmode `json:"tickmode,omitempty"`
 
 	// Tickprefix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label prefix.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickprefix
 	Tickprefix types.StringType `json:"tickprefix,omitempty"`
 
 	// Ticks
@@ -840,12 +965,14 @@ type TreemapMarkerColorbar struct {
 	// default:
 	// type: enumerated
 	// Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticks
 	Ticks TreemapMarkerColorbarTicks `json:"ticks,omitempty"`
 
 	// Ticksuffix
 	// arrayOK: false
 	// type: string
 	// Sets a tick label suffix.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticksuffix
 	Ticksuffix types.StringType `json:"ticksuffix,omitempty"`
 
 	// Ticktext
@@ -854,12 +981,14 @@ type TreemapMarkerColorbar struct {
 	// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.marker.colorbar.ticktext
 	Ticktext *types.DataArrayType `json:"ticktext,omitempty"`
 
 	// Ticktextsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `ticktext`.
+	// .schema.traces.treemap.attributes.marker.colorbar.ticktextsrc
 	Ticktextsrc types.StringType `json:"ticktextsrc,omitempty"`
 
 	// Tickvals
@@ -868,29 +997,34 @@ type TreemapMarkerColorbar struct {
 	// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.marker.colorbar.tickvals
 	Tickvals *types.DataArrayType `json:"tickvals,omitempty"`
 
 	// Tickvalssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `tickvals`.
+	// .schema.traces.treemap.attributes.marker.colorbar.tickvalssrc
 	Tickvalssrc types.StringType `json:"tickvalssrc,omitempty"`
 
 	// Tickwidth
 	// arrayOK: false
 	// type: number
 	// Sets the tick width (in px).
+	// .schema.traces.treemap.attributes.marker.colorbar.tickwidth
 	Tickwidth types.NumberType `json:"tickwidth,omitempty"`
 
 	// Title
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.colorbar.title
 	Title *TreemapMarkerColorbarTitle `json:"title,omitempty"`
 
 	// X
 	// arrayOK: false
 	// type: number
 	// Sets the x position with respect to `xref` of the color bar (in plot fraction). When `xref` is *paper*, defaults to 1.02 when `orientation` is *v* and 0.5 when `orientation` is *h*. When `xref` is *container*, defaults to *1* when `orientation` is *v* and 0.5 when `orientation` is *h*. Must be between *0* and *1* if `xref` is *container* and between *-2* and *3* if `xref` is *paper*.
+	// .schema.traces.treemap.attributes.marker.colorbar.x
 	X types.NumberType `json:"x,omitempty"`
 
 	// Xanchor
@@ -898,12 +1032,14 @@ type TreemapMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+	// .schema.traces.treemap.attributes.marker.colorbar.xanchor
 	Xanchor TreemapMarkerColorbarXanchor `json:"xanchor,omitempty"`
 
 	// Xpad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the x direction.
+	// .schema.traces.treemap.attributes.marker.colorbar.xpad
 	Xpad types.NumberType `json:"xpad,omitempty"`
 
 	// Xref
@@ -911,12 +1047,14 @@ type TreemapMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+	// .schema.traces.treemap.attributes.marker.colorbar.xref
 	Xref TreemapMarkerColorbarXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
 	// type: number
 	// Sets the y position with respect to `yref` of the color bar (in plot fraction). When `yref` is *paper*, defaults to 0.5 when `orientation` is *v* and 1.02 when `orientation` is *h*. When `yref` is *container*, defaults to 0.5 when `orientation` is *v* and 1 when `orientation` is *h*. Must be between *0* and *1* if `yref` is *container* and between *-2* and *3* if `yref` is *paper*.
+	// .schema.traces.treemap.attributes.marker.colorbar.y
 	Y types.NumberType `json:"y,omitempty"`
 
 	// Yanchor
@@ -924,12 +1062,14 @@ type TreemapMarkerColorbar struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+	// .schema.traces.treemap.attributes.marker.colorbar.yanchor
 	Yanchor TreemapMarkerColorbarYanchor `json:"yanchor,omitempty"`
 
 	// Ypad
 	// arrayOK: false
 	// type: number
 	// Sets the amount of padding (in px) along the y direction.
+	// .schema.traces.treemap.attributes.marker.colorbar.ypad
 	Ypad types.NumberType `json:"ypad,omitempty"`
 
 	// Yref
@@ -937,6 +1077,7 @@ type TreemapMarkerColorbar struct {
 	// default: paper
 	// type: enumerated
 	// Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+	// .schema.traces.treemap.attributes.marker.colorbar.yref
 	Yref TreemapMarkerColorbarYref `json:"yref,omitempty"`
 }
 
@@ -947,24 +1088,28 @@ type TreemapMarkerLine struct {
 	// arrayOK: true
 	// type: color
 	// Sets the color of the line enclosing each sector. Defaults to the `paper_bgcolor` value.
+	// .schema.traces.treemap.attributes.marker.line.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.marker.line.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Width
 	// arrayOK: true
 	// type: number
 	// Sets the width (in px) of the line enclosing each sector.
+	// .schema.traces.treemap.attributes.marker.line.width
 	Width *types.ArrayOK[*types.NumberType] `json:"width,omitempty"`
 
 	// Widthsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `width`.
+	// .schema.traces.treemap.attributes.marker.line.widthsrc
 	Widthsrc types.StringType `json:"widthsrc,omitempty"`
 }
 
@@ -975,24 +1120,28 @@ type TreemapMarkerPad struct {
 	// arrayOK: false
 	// type: number
 	// Sets the padding form the bottom (in px).
+	// .schema.traces.treemap.attributes.marker.pad.b
 	B types.NumberType `json:"b,omitempty"`
 
 	// L
 	// arrayOK: false
 	// type: number
 	// Sets the padding form the left (in px).
+	// .schema.traces.treemap.attributes.marker.pad.l
 	L types.NumberType `json:"l,omitempty"`
 
 	// R
 	// arrayOK: false
 	// type: number
 	// Sets the padding form the right (in px).
+	// .schema.traces.treemap.attributes.marker.pad.r
 	R types.NumberType `json:"r,omitempty"`
 
 	// T
 	// arrayOK: false
 	// type: number
 	// Sets the padding form the top (in px).
+	// .schema.traces.treemap.attributes.marker.pad.t
 	T types.NumberType `json:"t,omitempty"`
 }
 
@@ -1003,30 +1152,35 @@ type TreemapMarkerPattern struct {
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of background pattern fill. Defaults to a `marker.color` background when `fillmode` is *overlay*. Otherwise, defaults to a transparent background.
+	// .schema.traces.treemap.attributes.marker.pattern.bgcolor
 	Bgcolor *types.ArrayOK[*types.Color] `json:"bgcolor,omitempty"`
 
 	// Bgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `bgcolor`.
+	// .schema.traces.treemap.attributes.marker.pattern.bgcolorsrc
 	Bgcolorsrc types.StringType `json:"bgcolorsrc,omitempty"`
 
 	// Fgcolor
 	// arrayOK: true
 	// type: color
 	// When there is no colorscale sets the color of foreground pattern fill. Defaults to a `marker.color` background when `fillmode` is *replace*. Otherwise, defaults to dark grey or white to increase contrast with the `bgcolor`.
+	// .schema.traces.treemap.attributes.marker.pattern.fgcolor
 	Fgcolor *types.ArrayOK[*types.Color] `json:"fgcolor,omitempty"`
 
 	// Fgcolorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `fgcolor`.
+	// .schema.traces.treemap.attributes.marker.pattern.fgcolorsrc
 	Fgcolorsrc types.StringType `json:"fgcolorsrc,omitempty"`
 
 	// Fgopacity
 	// arrayOK: false
 	// type: number
 	// Sets the opacity of the foreground pattern fill. Defaults to a 0.5 when `fillmode` is *overlay*. Otherwise, defaults to 1.
+	// .schema.traces.treemap.attributes.marker.pattern.fgopacity
 	Fgopacity types.NumberType `json:"fgopacity,omitempty"`
 
 	// Fillmode
@@ -1034,6 +1188,7 @@ type TreemapMarkerPattern struct {
 	// default: replace
 	// type: enumerated
 	// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+	// .schema.traces.treemap.attributes.marker.pattern.fillmode
 	Fillmode TreemapMarkerPatternFillmode `json:"fillmode,omitempty"`
 
 	// Shape
@@ -1041,36 +1196,42 @@ type TreemapMarkerPattern struct {
 	// default:
 	// type: enumerated
 	// Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+	// .schema.traces.treemap.attributes.marker.pattern.shape
 	Shape *types.ArrayOK[*TreemapMarkerPatternShape] `json:"shape,omitempty"`
 
 	// Shapesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `shape`.
+	// .schema.traces.treemap.attributes.marker.pattern.shapesrc
 	Shapesrc types.StringType `json:"shapesrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	// Sets the size of unit squares of the pattern fill in pixels, which corresponds to the interval of repetition of the pattern.
+	// .schema.traces.treemap.attributes.marker.pattern.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.marker.pattern.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 
 	// Solidity
 	// arrayOK: true
 	// type: number
 	// Sets the solidity of the pattern fill. Solidity is roughly the fraction of the area filled by the pattern. Solidity of 0 shows only the background color without pattern and solidty of 1 shows only the foreground color without pattern.
+	// .schema.traces.treemap.attributes.marker.pattern.solidity
 	Solidity *types.ArrayOK[*types.NumberType] `json:"solidity,omitempty"`
 
 	// Soliditysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `solidity`.
+	// .schema.traces.treemap.attributes.marker.pattern.soliditysrc
 	Soliditysrc types.StringType `json:"soliditysrc,omitempty"`
 }
 
@@ -1081,41 +1242,48 @@ type TreemapMarker struct {
 	// arrayOK: false
 	// type: boolean
 	// Determines whether the colorscale is a default palette (`autocolorscale: true`) or the palette determined by `marker.colorscale`. Has an effect only if colors is set to a numerical array. In case `colorscale` is unspecified or `autocolorscale` is true, the default palette will be chosen according to whether numbers in the `color` array are all positive, all negative or mixed.
+	// .schema.traces.treemap.attributes.marker.autocolorscale
 	Autocolorscale types.BoolType `json:"autocolorscale,omitempty"`
 
 	// Cauto
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not the color domain is computed with respect to the input data (here colors) or the bounds set in `marker.cmin` and `marker.cmax` Has an effect only if colors is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
+	// .schema.traces.treemap.attributes.marker.cauto
 	Cauto types.BoolType `json:"cauto,omitempty"`
 
 	// Cmax
 	// arrayOK: false
 	// type: number
 	// Sets the upper bound of the color domain. Has an effect only if colors is set to a numerical array. Value should have the same units as colors and if set, `marker.cmin` must be set as well.
+	// .schema.traces.treemap.attributes.marker.cmax
 	Cmax types.NumberType `json:"cmax,omitempty"`
 
 	// Cmid
 	// arrayOK: false
 	// type: number
 	// Sets the mid-point of the color domain by scaling `marker.cmin` and/or `marker.cmax` to be equidistant to this point. Has an effect only if colors is set to a numerical array. Value should have the same units as colors. Has no effect when `marker.cauto` is `false`.
+	// .schema.traces.treemap.attributes.marker.cmid
 	Cmid types.NumberType `json:"cmid,omitempty"`
 
 	// Cmin
 	// arrayOK: false
 	// type: number
 	// Sets the lower bound of the color domain. Has an effect only if colors is set to a numerical array. Value should have the same units as colors and if set, `marker.cmax` must be set as well.
+	// .schema.traces.treemap.attributes.marker.cmin
 	Cmin types.NumberType `json:"cmin,omitempty"`
 
 	// Coloraxis
 	// arrayOK: false
 	// type: subplotid
 	// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
+	// .schema.traces.treemap.attributes.marker.coloraxis
 	Coloraxis types.StringType `json:"coloraxis,omitempty"`
 
 	// Colorbar
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.colorbar
 	Colorbar *TreemapMarkerColorbar `json:"colorbar,omitempty"`
 
 	// Colors
@@ -1124,24 +1292,28 @@ type TreemapMarker struct {
 	// Sets the color of each sector of this trace. If not specified, the default trace color set is used to pick the sector colors.
 	// use types.DataArray to pass any slice of data
 	// use types.BDataArray to pass data in binary format as provided by numpy
+	// .schema.traces.treemap.attributes.marker.colors
 	Colors *types.DataArrayType `json:"colors,omitempty"`
 
 	// Colorscale
 	// arrayOK: false
 	// type: colorscale
 	// Sets the colorscale. Has an effect only if colors is set to a numerical array. The colorscale must be an array containing arrays mapping a normalized value to an rgb, rgba, hex, hsl, hsv, or named color string. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 'rgb(0,0,255)'], [1, 'rgb(255,0,0)']]`. To control the bounds of the colorscale in color space, use `marker.cmin` and `marker.cmax`. Alternatively, `colorscale` may be a palette name string of the following list: Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
+	// .schema.traces.treemap.attributes.marker.colorscale
 	Colorscale *types.ColorScale `json:"colorscale,omitempty"`
 
 	// Colorssrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `colors`.
+	// .schema.traces.treemap.attributes.marker.colorssrc
 	Colorssrc types.StringType `json:"colorssrc,omitempty"`
 
 	// Cornerradius
 	// arrayOK: false
 	// type: number
 	// Sets the maximum rounding of corners (in px).
+	// .schema.traces.treemap.attributes.marker.cornerradius
 	Cornerradius types.NumberType `json:"cornerradius,omitempty"`
 
 	// Depthfade
@@ -1149,33 +1321,39 @@ type TreemapMarker struct {
 	// default: %!s(<nil>)
 	// type: enumerated
 	// Determines if the sector colors are faded towards the background from the leaves up to the headers. This option is unavailable when a `colorscale` is present, defaults to false when `marker.colors` is set, but otherwise defaults to true. When set to *reversed*, the fading direction is inverted, that is the top elements within hierarchy are drawn with fully saturated colors while the leaves are faded towards the background color.
+	// .schema.traces.treemap.attributes.marker.depthfade
 	Depthfade TreemapMarkerDepthfade `json:"depthfade,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.line
 	Line *TreemapMarkerLine `json:"line,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.pad
 	Pad *TreemapMarkerPad `json:"pad,omitempty"`
 
 	// Pattern
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.marker.pattern
 	Pattern *TreemapMarkerPattern `json:"pattern,omitempty"`
 
 	// Reversescale
 	// arrayOK: false
 	// type: boolean
 	// Reverses the color mapping if true. Has an effect only if colors is set to a numerical array. If true, `marker.cmin` will correspond to the last color in the array and `marker.cmax` will correspond to the first color.
+	// .schema.traces.treemap.attributes.marker.reversescale
 	Reversescale types.BoolType `json:"reversescale,omitempty"`
 
 	// Showscale
 	// arrayOK: false
 	// type: boolean
 	// Determines whether or not a colorbar is displayed for this trace. Has an effect only if colors is set to a numerical array.
+	// .schema.traces.treemap.attributes.marker.showscale
 	Showscale types.BoolType `json:"showscale,omitempty"`
 }
 
@@ -1186,36 +1364,42 @@ type TreemapOutsidetextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.outsidetextfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.outsidetextfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.outsidetextfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.treemap.attributes.outsidetextfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.outsidetextfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.outsidetextfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -1226,36 +1410,42 @@ type TreemapPathbarTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.pathbar.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.pathbar.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.pathbar.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.treemap.attributes.pathbar.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.pathbar.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.pathbar.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -1267,6 +1457,7 @@ type TreemapPathbar struct {
 	// default: >
 	// type: enumerated
 	// Determines which shape is used for edges between `barpath` labels.
+	// .schema.traces.treemap.attributes.pathbar.edgeshape
 	Edgeshape TreemapPathbarEdgeshape `json:"edgeshape,omitempty"`
 
 	// Side
@@ -1274,23 +1465,27 @@ type TreemapPathbar struct {
 	// default: top
 	// type: enumerated
 	// Determines on which side of the the treemap the `pathbar` should be presented.
+	// .schema.traces.treemap.attributes.pathbar.side
 	Side TreemapPathbarSide `json:"side,omitempty"`
 
 	// Textfont
 	// arrayOK: false
 	// role: Object
+	// .schema.traces.treemap.attributes.pathbar.textfont
 	Textfont *TreemapPathbarTextfont `json:"textfont,omitempty"`
 
 	// Thickness
 	// arrayOK: false
 	// type: number
 	// Sets the thickness of `pathbar` (in px). If not specified the `pathbar.textfont.size` is used with 3 pixles extra padding on each side.
+	// .schema.traces.treemap.attributes.pathbar.thickness
 	Thickness types.NumberType `json:"thickness,omitempty"`
 
 	// Visible
 	// arrayOK: false
 	// type: boolean
 	// Determines if the path bar is drawn i.e. outside the trace `domain` and with one pixel gap.
+	// .schema.traces.treemap.attributes.pathbar.visible
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
@@ -1301,6 +1496,7 @@ type TreemapRoot struct {
 	// arrayOK: false
 	// type: color
 	// sets the color of the root node for a sunburst/treemap/icicle trace. this has no effect when a colorscale is used to set the markers.
+	// .schema.traces.treemap.attributes.root.color
 	Color types.Color `json:"color,omitempty"`
 }
 
@@ -1311,12 +1507,14 @@ type TreemapStream struct {
 	// arrayOK: false
 	// type: number
 	// Sets the maximum number of points to keep on the plots from an incoming stream. If `maxpoints` is set to *50*, only the newest 50 points will be displayed on the plot.
+	// .schema.traces.treemap.attributes.stream.maxpoints
 	Maxpoints types.NumberType `json:"maxpoints,omitempty"`
 
 	// Token
 	// arrayOK: false
 	// type: string
 	// The stream id number links a data trace on a plot with a stream. See https://chart-studio.plotly.com/settings for more details.
+	// .schema.traces.treemap.attributes.stream.token
 	Token types.StringType `json:"token,omitempty"`
 }
 
@@ -1327,36 +1525,42 @@ type TreemapTextfont struct {
 	// arrayOK: true
 	// type: color
 	//
+	// .schema.traces.treemap.attributes.textfont.color
 	Color *types.ArrayOK[*types.Color] `json:"color,omitempty"`
 
 	// Colorsrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `color`.
+	// .schema.traces.treemap.attributes.textfont.colorsrc
 	Colorsrc types.StringType `json:"colorsrc,omitempty"`
 
 	// Family
 	// arrayOK: true
 	// type: string
 	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.traces.treemap.attributes.textfont.family
 	Family *types.ArrayOK[*types.StringType] `json:"family,omitempty"`
 
 	// Familysrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `family`.
+	// .schema.traces.treemap.attributes.textfont.familysrc
 	Familysrc types.StringType `json:"familysrc,omitempty"`
 
 	// Size
 	// arrayOK: true
 	// type: number
 	//
+	// .schema.traces.treemap.attributes.textfont.size
 	Size *types.ArrayOK[*types.NumberType] `json:"size,omitempty"`
 
 	// Sizesrc
 	// arrayOK: false
 	// type: string
 	// Sets the source reference on Chart Studio Cloud for `size`.
+	// .schema.traces.treemap.attributes.textfont.sizesrc
 	Sizesrc types.StringType `json:"sizesrc,omitempty"`
 }
 
@@ -1368,6 +1572,7 @@ type TreemapTiling struct {
 	// default:
 	// type: flaglist
 	// Determines if the positions obtained from solver are flipped on each axis.
+	// .schema.traces.treemap.attributes.tiling.flip
 	Flip TreemapTilingFlip `json:"flip,omitempty"`
 
 	// Packing
@@ -1375,18 +1580,21 @@ type TreemapTiling struct {
 	// default: squarify
 	// type: enumerated
 	// Determines d3 treemap solver. For more info please refer to https://github.com/d3/d3-hierarchy#treemap-tiling
+	// .schema.traces.treemap.attributes.tiling.packing
 	Packing TreemapTilingPacking `json:"packing,omitempty"`
 
 	// Pad
 	// arrayOK: false
 	// type: number
 	// Sets the inner padding (in px).
+	// .schema.traces.treemap.attributes.tiling.pad
 	Pad types.NumberType `json:"pad,omitempty"`
 
 	// Squarifyratio
 	// arrayOK: false
 	// type: number
 	// When using *squarify* `packing` algorithm, according to https://github.com/d3/d3-hierarchy/blob/v3.1.1/README.md#squarify_ratio this option specifies the desired aspect ratio of the generated rectangles. The ratio must be specified as a number greater than or equal to one. Note that the orientation of the generated rectangles (tall or wide) is not implied by the ratio; for example, a ratio of two will attempt to produce a mixture of rectangles whose width:height ratio is either 2:1 or 1:2. When using *squarify*, unlike d3 which uses the Golden Ratio i.e. 1.618034, Plotly applies 1 to increase squares in treemap layouts.
+	// .schema.traces.treemap.attributes.tiling.squarifyratio
 	Squarifyratio types.NumberType `json:"squarifyratio,omitempty"`
 }
 
@@ -1395,6 +1603,7 @@ type TreemapTransform struct {
 }
 
 // TreemapBranchvalues Determines how the items in `values` are summed. When set to *total*, items in `values` are taken to be value of all its descendants. When set to *remainder*, items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
+// .schema.traces.treemap.attributes.branchvalues
 type TreemapBranchvalues string
 
 const (
@@ -1403,6 +1612,7 @@ const (
 )
 
 // TreemapHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines
+// .schema.traces.treemap.attributes.hoverlabel.align
 type TreemapHoverlabelAlign string
 
 const (
@@ -1412,6 +1622,7 @@ const (
 )
 
 // TreemapMarkerColorbarExponentformat Determines a formatting rule for the tick exponents. For example, consider the number 1,000,000,000. If *none*, it appears as 1,000,000,000. If *e*, 1e+9. If *E*, 1E+9. If *power*, 1x10^9 (with 9 in a super script). If *SI*, 1G. If *B*, 1B.
+// .schema.traces.treemap.attributes.marker.colorbar.exponentformat
 type TreemapMarkerColorbarExponentformat string
 
 const (
@@ -1424,6 +1635,7 @@ const (
 )
 
 // TreemapMarkerColorbarLenmode Determines whether this color bar's length (i.e. the measure in the color variation direction) is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.traces.treemap.attributes.marker.colorbar.lenmode
 type TreemapMarkerColorbarLenmode string
 
 const (
@@ -1432,6 +1644,7 @@ const (
 )
 
 // TreemapMarkerColorbarOrientation Sets the orientation of the colorbar.
+// .schema.traces.treemap.attributes.marker.colorbar.orientation
 type TreemapMarkerColorbarOrientation string
 
 const (
@@ -1440,6 +1653,7 @@ const (
 )
 
 // TreemapMarkerColorbarShowexponent If *all*, all exponents are shown besides their significands. If *first*, only the exponent of the first tick is shown. If *last*, only the exponent of the last tick is shown. If *none*, no exponents appear.
+// .schema.traces.treemap.attributes.marker.colorbar.showexponent
 type TreemapMarkerColorbarShowexponent string
 
 const (
@@ -1450,6 +1664,7 @@ const (
 )
 
 // TreemapMarkerColorbarShowtickprefix If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.
+// .schema.traces.treemap.attributes.marker.colorbar.showtickprefix
 type TreemapMarkerColorbarShowtickprefix string
 
 const (
@@ -1460,6 +1675,7 @@ const (
 )
 
 // TreemapMarkerColorbarShowticksuffix Same as `showtickprefix` but for tick suffixes.
+// .schema.traces.treemap.attributes.marker.colorbar.showticksuffix
 type TreemapMarkerColorbarShowticksuffix string
 
 const (
@@ -1470,6 +1686,7 @@ const (
 )
 
 // TreemapMarkerColorbarThicknessmode Determines whether this color bar's thickness (i.e. the measure in the constant color direction) is set in units of plot *fraction* or in *pixels*. Use `thickness` to set the value.
+// .schema.traces.treemap.attributes.marker.colorbar.thicknessmode
 type TreemapMarkerColorbarThicknessmode string
 
 const (
@@ -1478,6 +1695,7 @@ const (
 )
 
 // TreemapMarkerColorbarTicklabeloverflow Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+// .schema.traces.treemap.attributes.marker.colorbar.ticklabeloverflow
 type TreemapMarkerColorbarTicklabeloverflow string
 
 const (
@@ -1487,6 +1705,7 @@ const (
 )
 
 // TreemapMarkerColorbarTicklabelposition Determines where tick labels are drawn relative to the ticks. Left and right options are used when `orientation` is *h*, top and bottom when `orientation` is *v*.
+// .schema.traces.treemap.attributes.marker.colorbar.ticklabelposition
 type TreemapMarkerColorbarTicklabelposition string
 
 const (
@@ -1503,6 +1722,7 @@ const (
 )
 
 // TreemapMarkerColorbarTickmode Sets the tick mode for this axis. If *auto*, the number of ticks is set via `nticks`. If *linear*, the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick` (*linear* is the default value if `tick0` and `dtick` are provided). If *array*, the placement of the ticks is set via `tickvals` and the tick text is `ticktext`. (*array* is the default value if `tickvals` is provided).
+// .schema.traces.treemap.attributes.marker.colorbar.tickmode
 type TreemapMarkerColorbarTickmode string
 
 const (
@@ -1512,6 +1732,7 @@ const (
 )
 
 // TreemapMarkerColorbarTicks Determines whether ticks are drawn or not. If **, this axis' ticks are not drawn. If *outside* (*inside*), this axis' are drawn outside (inside) the axis lines.
+// .schema.traces.treemap.attributes.marker.colorbar.ticks
 type TreemapMarkerColorbarTicks string
 
 const (
@@ -1521,6 +1742,7 @@ const (
 )
 
 // TreemapMarkerColorbarTitleSide Determines the location of color bar's title with respect to the color bar. Defaults to *top* when `orientation` if *v* and  defaults to *right* when `orientation` if *h*. Note that the title's location used to be set by the now deprecated `titleside` attribute.
+// .schema.traces.treemap.attributes.marker.colorbar.title.side
 type TreemapMarkerColorbarTitleSide string
 
 const (
@@ -1530,6 +1752,7 @@ const (
 )
 
 // TreemapMarkerColorbarXanchor Sets this color bar's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the color bar. Defaults to *left* when `orientation` is *v* and *center* when `orientation` is *h*.
+// .schema.traces.treemap.attributes.marker.colorbar.xanchor
 type TreemapMarkerColorbarXanchor string
 
 const (
@@ -1539,6 +1762,7 @@ const (
 )
 
 // TreemapMarkerColorbarXref Sets the container `x` refers to. *container* spans the entire `width` of the plot. *paper* refers to the width of the plotting area only.
+// .schema.traces.treemap.attributes.marker.colorbar.xref
 type TreemapMarkerColorbarXref string
 
 const (
@@ -1547,6 +1771,7 @@ const (
 )
 
 // TreemapMarkerColorbarYanchor Sets this color bar's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the color bar. Defaults to *middle* when `orientation` is *v* and *bottom* when `orientation` is *h*.
+// .schema.traces.treemap.attributes.marker.colorbar.yanchor
 type TreemapMarkerColorbarYanchor string
 
 const (
@@ -1556,6 +1781,7 @@ const (
 )
 
 // TreemapMarkerColorbarYref Sets the container `y` refers to. *container* spans the entire `height` of the plot. *paper* refers to the height of the plotting area only.
+// .schema.traces.treemap.attributes.marker.colorbar.yref
 type TreemapMarkerColorbarYref string
 
 const (
@@ -1564,6 +1790,7 @@ const (
 )
 
 // TreemapMarkerDepthfade Determines if the sector colors are faded towards the background from the leaves up to the headers. This option is unavailable when a `colorscale` is present, defaults to false when `marker.colors` is set, but otherwise defaults to true. When set to *reversed*, the fading direction is inverted, that is the top elements within hierarchy are drawn with fully saturated colors while the leaves are faded towards the background color.
+// .schema.traces.treemap.attributes.marker.depthfade
 type TreemapMarkerDepthfade interface{}
 
 var (
@@ -1573,6 +1800,7 @@ var (
 )
 
 // TreemapMarkerPatternFillmode Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
+// .schema.traces.treemap.attributes.marker.pattern.fillmode
 type TreemapMarkerPatternFillmode string
 
 const (
@@ -1581,6 +1809,7 @@ const (
 )
 
 // TreemapMarkerPatternShape Sets the shape of the pattern fill. By default, no pattern is used for filling the area.
+// .schema.traces.treemap.attributes.marker.pattern.shape
 type TreemapMarkerPatternShape string
 
 const (
@@ -1595,6 +1824,7 @@ const (
 )
 
 // TreemapPathbarEdgeshape Determines which shape is used for edges between `barpath` labels.
+// .schema.traces.treemap.attributes.pathbar.edgeshape
 type TreemapPathbarEdgeshape string
 
 const (
@@ -1606,6 +1836,7 @@ const (
 )
 
 // TreemapPathbarSide Determines on which side of the the treemap the `pathbar` should be presented.
+// .schema.traces.treemap.attributes.pathbar.side
 type TreemapPathbarSide string
 
 const (
@@ -1614,6 +1845,7 @@ const (
 )
 
 // TreemapTextposition Sets the positions of the `text` elements.
+// .schema.traces.treemap.attributes.textposition
 type TreemapTextposition string
 
 const (
@@ -1629,6 +1861,7 @@ const (
 )
 
 // TreemapTilingPacking Determines d3 treemap solver. For more info please refer to https://github.com/d3/d3-hierarchy#treemap-tiling
+// .schema.traces.treemap.attributes.tiling.packing
 type TreemapTilingPacking string
 
 const (
@@ -1641,6 +1874,7 @@ const (
 )
 
 // TreemapVisible Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.traces.treemap.attributes.visible
 type TreemapVisible interface{}
 
 var (
@@ -1650,6 +1884,7 @@ var (
 )
 
 // TreemapCount Determines default for `values` when it is not provided, by inferring a 1 for each of the *leaves* and/or *branches*, otherwise 0.
+// .schema.traces.treemap.attributes.count
 type TreemapCount string
 
 const (
@@ -1662,6 +1897,7 @@ const (
 )
 
 // TreemapHoverinfo Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
+// .schema.traces.treemap.attributes.hoverinfo
 type TreemapHoverinfo string
 
 const (
@@ -1682,6 +1918,7 @@ const (
 )
 
 // TreemapTextinfo Determines which trace information appear on the graph.
+// .schema.traces.treemap.attributes.textinfo
 type TreemapTextinfo string
 
 const (
@@ -1699,6 +1936,7 @@ const (
 )
 
 // TreemapTilingFlip Determines if the positions obtained from solver are flipped on each axis.
+// .schema.traces.treemap.attributes.tiling.flip
 type TreemapTilingFlip string
 
 const (
