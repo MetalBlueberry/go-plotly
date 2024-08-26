@@ -208,7 +208,7 @@ func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs 
 			})
 
 		case attr.ValType == ValTypeDataArray:
-			typeName := valTypeMap[attr.ValType]
+			typeName := "*types.DataArrayType"
 
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
@@ -225,7 +225,10 @@ func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs 
 			})
 
 		default:
-			typeName := valTypeMap[attr.ValType]
+			typeName, ok := valTypeMap[attr.ValType]
+			if !ok {
+				panic("valType typeName not defined")
+			}
 
 			// Special case, the attribute color may also be a ColorScale
 			if attr.ValType == ValTypeColor && attr.Name == "color" && attrs["colorscale"] != nil {

@@ -606,8 +606,6 @@ func (r *Renderer) WriteUnmarshalTests(w io.Writer) error {
 
 // valTypeMap maps between ValTypes and go types
 var valTypeMap = map[ValType]string{
-	ValTypeDataArray:  "*types.DataArrayType",
-	ValTypeEnum:       "NO-TYPE",
 	ValTypeBoolean:    "types.BoolType",
 	ValTypeNumber:     "types.NumberType",
 	ValTypeInteger:    "types.IntegerType",
@@ -617,7 +615,6 @@ var valTypeMap = map[ValType]string{
 	ValTypeColorscale: "*types.ColorScale",
 	ValTypeAngle:      "types.NumberType",
 	ValTypeSubplotID:  "types.StringType",
-	ValTypeFlagList:   "NO-TYPE",
 	ValTypeAny:        "interface{}",
 	ValTypeInfoArray:  "interface{}",
 }
