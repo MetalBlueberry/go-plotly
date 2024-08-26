@@ -118,14 +118,14 @@ func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs 
 				itemName = n
 				itemAttr = a
 			}
-			prefix := typePrefix + xstrings.ToCamelCase(itemName)
-			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, itemAttr.Attributes)
+			objectName := typePrefix + xstrings.ToCamelCase(itemName)
+			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, objectName, itemAttr.Attributes)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to parse items inside object, %s", err)
 			}
 
 			object := sstruct{
-				Name:        typePrefix + xstrings.ToCamelCase(itemName),
+				Name:        objectName,
 				Description: itemAttr.Description,
 				Fields:      itemFields,
 			}
@@ -134,7 +134,7 @@ func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs 
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "[]" + typePrefix + xstrings.ToCamelCase(itemName),
+				Type:     "[]" + objectName,
 				Description: []string{
 					"role: Object",
 					fmt.Sprintf("items: %s", object.Name),
@@ -164,12 +164,11 @@ func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs 
 			})
 
 		case attr.ValType == ValTypeFlagList:
-			name := typePrefix + xstrings.ToCamelCase(attr.Name)
-			err := file.parseFlaglist(JSONPath+"."+attr.Name, name, attr)
-			if err != nil {
-				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
-			}
 			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
+			err := file.parseFlaglist(JSONPath+"."+attr.Name, typeName, attr)
+			if err != nil {
+				return nil, fmt.Errorf("cannot parse flaglist %s, %w", typeName, err)
+			}
 			if attr.ArrayOK {
 				typeName = fmt.Sprintf("*types.ArrayOK[*%s]", typeName)
 			}
