@@ -767,8 +767,8 @@ type IndicatorGaugeBar struct {
 	Thickness types.NumberType `json:"thickness,omitempty"`
 }
 
-// StepLine
-type StepLine struct {
+// IndicatorGaugeStepLine
+type IndicatorGaugeStepLine struct {
 
 	// Color
 	// arrayOK: false
@@ -799,7 +799,7 @@ type IndicatorGaugeStep struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.traces.indicator.attributes.gauge.steps.items.step.line
-	Line *StepLine `json:"line,omitempty"`
+	Line *IndicatorGaugeStepLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false

@@ -255,12 +255,14 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 	uniqueFields := make([]structField, 0, len(traceFile.MainType.Fields))
 	fieldMap := map[string]int{}
 	for i, field := range traceFile.MainType.Fields {
-		_, ok := fieldMap[field.Name]
+		_, ok := fieldMap[field.JSONName]
 		if !ok {
-			fieldMap[field.Name] = i
+			fieldMap[field.JSONName] = i
 			uniqueFields = append(uniqueFields, field)
 			continue
 		}
+		// ADR: Flags with the same name always contain the same values.
+		// The decision here is to leave only one of them to avoid name conflicts
 	}
 	traceFile.MainType.Fields = uniqueFields
 
@@ -274,12 +276,14 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 			enumMap[enum.Name] = len(uniqueEnums) - 1
 			continue
 		}
-		// Review this merge operation
+		// ADR: Some enum values are different between types.
+		// The decision here is to merge unique values as both will have the exact same values
+		// This may add some type unsafely as you will find values that may not be valid. But for now I think this is acceptable
 		uniqueEnums[previous].appendUniqueValues(enum.Values...)
 	}
 	traceFile.Enums = uniqueEnums
 
-	// merge duplicate flagLists
+	// remove duplicate flagLists
 	uniqueFlaglist := make([]flagList, 0, len(traceFile.FlagLists))
 	flaglistMap := map[string]int{}
 	for _, flaglist := range traceFile.FlagLists {
@@ -289,25 +293,10 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 			flaglistMap[flaglist.Name] = len(uniqueFlaglist) - 1
 			continue
 		}
-		// Review this merge operation
-		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
+		// ADR: Flags with the same name always contain the same values.
+		// The decision here is to leave only one of them to avoid name conflicts
 	}
 	traceFile.FlagLists = uniqueFlaglist
-
-	// merge duplicate objects
-	uniqueObjects := make([]sstruct, 0, len(traceFile.Objects))
-	objectsMap := map[string]int{}
-	for _, object := range traceFile.Objects {
-		_, ok := objectsMap[object.Name]
-		if !ok {
-			uniqueObjects = append(uniqueObjects, object)
-			objectsMap[object.Name] = len(uniqueObjects) - 1
-			continue
-		}
-		// Review this merge operation
-		// uniqueFlaglist[previous].Flags = append(uniqueFlaglist[previous].Flags, flaglist.Flags...)
-	}
-	traceFile.Objects = uniqueObjects
 
 	// ADR: The actual js library needs the field to have subfixes.
 	// We could rewrite this to use arrayOk type on X/YAxis and it will provably work well, but then we will need custom logic to serialise the data

@@ -212,7 +212,7 @@ type ParcatsDimension struct {
 	// type: enumerated
 	// Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
 	// .schema.traces.parcats.attributes.dimensions.items.dimension.categoryorder
-	Categoryorder DimensionCategoryorder `json:"categoryorder,omitempty"`
+	Categoryorder ParcatsDimensionCategoryorder `json:"categoryorder,omitempty"`
 
 	// Displayindex
 	// arrayOK: false
@@ -980,15 +980,15 @@ const (
 	ParcatsArrangementFixed         ParcatsArrangement = "fixed"
 )
 
-// DimensionCategoryorder Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
+// ParcatsDimensionCategoryorder Specifies the ordering logic for the categories in the dimension. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`.
 // .schema.traces.parcats.attributes.dimensions.items.dimension.categoryorder
-type DimensionCategoryorder string
+type ParcatsDimensionCategoryorder string
 
 const (
-	DimensionCategoryorderTrace              DimensionCategoryorder = "trace"
-	DimensionCategoryorderCategoryAscending  DimensionCategoryorder = "category ascending"
-	DimensionCategoryorderCategoryDescending DimensionCategoryorder = "category descending"
-	DimensionCategoryorderArray              DimensionCategoryorder = "array"
+	ParcatsDimensionCategoryorderTrace              ParcatsDimensionCategoryorder = "trace"
+	ParcatsDimensionCategoryorderCategoryAscending  ParcatsDimensionCategoryorder = "category ascending"
+	ParcatsDimensionCategoryorderCategoryDescending ParcatsDimensionCategoryorder = "category descending"
+	ParcatsDimensionCategoryorderArray              ParcatsDimensionCategoryorder = "array"
 )
 
 // ParcatsHoveron Sets the hover interaction mode for the parcats diagram. If `category`, hover interaction take place per category. If `color`, hover interactions take place per color per category. If `dimension`, hover interactions take place across all categories per dimension.

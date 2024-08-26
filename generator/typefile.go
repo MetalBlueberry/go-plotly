@@ -115,8 +115,8 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 				itemName = n
 				itemAttr = a
 			}
-			prefix := xstrings.ToCamelCase(itemName)
-			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, xstrings.ToCamelCase(itemName), itemAttr.Attributes)
+			prefix := namePrefix + xstrings.ToCamelCase(itemName)
+			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, prefix, itemAttr.Attributes)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to parse items inside object, %s", err)
 			}
@@ -140,7 +140,7 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 			})
 
 		case attr.Role == RoleObject:
-			name := namePrefix + xstrings.ToCamelCase(attr.Name)
+			name := typePrefix + xstrings.ToCamelCase(attr.Name)
 			err := file.parseObject(JSONPath+"."+attr.Name, name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse object %s, %w", name, err)

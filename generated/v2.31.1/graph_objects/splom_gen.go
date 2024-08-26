@@ -317,8 +317,8 @@ type SplomDiagonal struct {
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
-// DimensionAxis
-type DimensionAxis struct {
+// SplomDimensionAxis
+type SplomDimensionAxis struct {
 
 	// Matches
 	// arrayOK: false
@@ -333,7 +333,7 @@ type DimensionAxis struct {
 	// type: enumerated
 	// Sets the axis type for this dimension's generated x and y axes. Note that the axis `type` values set in layout take precedence over this attribute.
 	// .schema.traces.splom.attributes.dimensions.items.dimension.axis.type
-	Type DimensionAxisType `json:"type,omitempty"`
+	Type SplomDimensionAxisType `json:"type,omitempty"`
 }
 
 // SplomDimension
@@ -343,7 +343,7 @@ type SplomDimension struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.traces.splom.attributes.dimensions.items.dimension.axis
-	Axis *DimensionAxis `json:"axis,omitempty"`
+	Axis *SplomDimensionAxis `json:"axis,omitempty"`
 
 	// Label
 	// arrayOK: false
@@ -1367,15 +1367,15 @@ type SplomUnselected struct {
 	Marker *SplomUnselectedMarker `json:"marker,omitempty"`
 }
 
-// DimensionAxisType Sets the axis type for this dimension's generated x and y axes. Note that the axis `type` values set in layout take precedence over this attribute.
+// SplomDimensionAxisType Sets the axis type for this dimension's generated x and y axes. Note that the axis `type` values set in layout take precedence over this attribute.
 // .schema.traces.splom.attributes.dimensions.items.dimension.axis.type
-type DimensionAxisType string
+type SplomDimensionAxisType string
 
 const (
-	DimensionAxisTypeLinear   DimensionAxisType = "linear"
-	DimensionAxisTypeLog      DimensionAxisType = "log"
-	DimensionAxisTypeDate     DimensionAxisType = "date"
-	DimensionAxisTypeCategory DimensionAxisType = "category"
+	SplomDimensionAxisTypeLinear   SplomDimensionAxisType = "linear"
+	SplomDimensionAxisTypeLog      SplomDimensionAxisType = "log"
+	SplomDimensionAxisTypeDate     SplomDimensionAxisType = "date"
+	SplomDimensionAxisTypeCategory SplomDimensionAxisType = "category"
 )
 
 // SplomHoverlabelAlign Sets the horizontal alignment of the text content within hover label box. Has an effect only if the hover label text spans more two or more lines

@@ -691,8 +691,8 @@ type LayoutActiveshape struct {
 	Opacity types.NumberType `json:"opacity,omitempty"`
 }
 
-// AnnotationFont Sets the annotation text font.
-type AnnotationFont struct {
+// LayoutAnnotationFont Sets the annotation text font.
+type LayoutAnnotationFont struct {
 
 	// Color
 	// arrayOK: false
@@ -716,8 +716,8 @@ type AnnotationFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// AnnotationHoverlabelFont Sets the hover label text font. By default uses the global hover font and size, with color from `hoverlabel.bordercolor`.
-type AnnotationHoverlabelFont struct {
+// LayoutAnnotationHoverlabelFont Sets the hover label text font. By default uses the global hover font and size, with color from `hoverlabel.bordercolor`.
+type LayoutAnnotationHoverlabelFont struct {
 
 	// Color
 	// arrayOK: false
@@ -741,8 +741,8 @@ type AnnotationHoverlabelFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// AnnotationHoverlabel
-type AnnotationHoverlabel struct {
+// LayoutAnnotationHoverlabel
+type LayoutAnnotationHoverlabel struct {
 
 	// Bgcolor
 	// arrayOK: false
@@ -762,7 +762,7 @@ type AnnotationHoverlabel struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel.font
-	Font *AnnotationHoverlabelFont `json:"font,omitempty"`
+	Font *LayoutAnnotationHoverlabelFont `json:"font,omitempty"`
 }
 
 // LayoutAnnotation
@@ -774,7 +774,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.align
-	Align AnnotationAlign `json:"align,omitempty"`
+	Align LayoutAnnotationAlign `json:"align,omitempty"`
 
 	// Arrowcolor
 	// arrayOK: false
@@ -796,7 +796,7 @@ type LayoutAnnotation struct {
 	// type: flaglist
 	// Sets the annotation arrow head position.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.arrowside
-	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
+	Arrowside LayoutAnnotationArrowside `json:"arrowside,omitempty"`
 
 	// Arrowsize
 	// arrayOK: false
@@ -825,7 +825,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.axref
-	Axref AnnotationAxref `json:"axref,omitempty"`
+	Axref LayoutAnnotationAxref `json:"axref,omitempty"`
 
 	// Ay
 	// arrayOK: false
@@ -840,7 +840,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.ayref
-	Ayref AnnotationAyref `json:"ayref,omitempty"`
+	Ayref LayoutAnnotationAyref `json:"ayref,omitempty"`
 
 	// Bgcolor
 	// arrayOK: false
@@ -883,13 +883,13 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.clicktoshow
-	Clicktoshow AnnotationClicktoshow `json:"clicktoshow,omitempty"`
+	Clicktoshow LayoutAnnotationClicktoshow `json:"clicktoshow,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.annotations.items.annotation.font
-	Font *AnnotationFont `json:"font,omitempty"`
+	Font *LayoutAnnotationFont `json:"font,omitempty"`
 
 	// Height
 	// arrayOK: false
@@ -902,7 +902,7 @@ type LayoutAnnotation struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.annotations.items.annotation.hoverlabel
-	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
+	Hoverlabel *LayoutAnnotationHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertext
 	// arrayOK: false
@@ -987,7 +987,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.valign
-	Valign AnnotationValign `json:"valign,omitempty"`
+	Valign LayoutAnnotationValign `json:"valign,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -1016,7 +1016,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.xanchor
-	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutAnnotationXanchor `json:"xanchor,omitempty"`
 
 	// Xclick
 	// arrayOK: false
@@ -1031,7 +1031,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.xref
-	Xref AnnotationXref `json:"xref,omitempty"`
+	Xref LayoutAnnotationXref `json:"xref,omitempty"`
 
 	// Xshift
 	// arrayOK: false
@@ -1053,7 +1053,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.yanchor
-	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutAnnotationYanchor `json:"yanchor,omitempty"`
 
 	// Yclick
 	// arrayOK: false
@@ -1068,7 +1068,7 @@ type LayoutAnnotation struct {
 	// type: enumerated
 	// Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
 	// .schema.layout.layoutAttributes.annotations.items.annotation.yref
-	Yref AnnotationYref `json:"yref,omitempty"`
+	Yref LayoutAnnotationYref `json:"yref,omitempty"`
 
 	// Yshift
 	// arrayOK: false
@@ -2330,7 +2330,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
 	// .schema.layout.layoutAttributes.images.items.image.layer
-	Layer ImageLayer `json:"layer,omitempty"`
+	Layer LayoutImageLayer `json:"layer,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -2366,7 +2366,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Specifies which dimension of the image to constrain.
 	// .schema.layout.layoutAttributes.images.items.image.sizing
-	Sizing ImageSizing `json:"sizing,omitempty"`
+	Sizing LayoutImageSizing `json:"sizing,omitempty"`
 
 	// Source
 	// arrayOK: false
@@ -2402,7 +2402,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Sets the anchor for the x position
 	// .schema.layout.layoutAttributes.images.items.image.xanchor
-	Xanchor ImageXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutImageXanchor `json:"xanchor,omitempty"`
 
 	// Xref
 	// arrayOK: false
@@ -2410,7 +2410,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
 	// .schema.layout.layoutAttributes.images.items.image.xref
-	Xref ImageXref `json:"xref,omitempty"`
+	Xref LayoutImageXref `json:"xref,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -2425,7 +2425,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Sets the anchor for the y position.
 	// .schema.layout.layoutAttributes.images.items.image.yanchor
-	Yanchor ImageYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutImageYanchor `json:"yanchor,omitempty"`
 
 	// Yref
 	// arrayOK: false
@@ -2433,7 +2433,7 @@ type LayoutImage struct {
 	// type: enumerated
 	// Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
 	// .schema.layout.layoutAttributes.images.items.image.yref
-	Yref ImageYref `json:"yref,omitempty"`
+	Yref LayoutImageYref `json:"yref,omitempty"`
 }
 
 // LayoutLegendFont Sets the font used to text the legend items.
@@ -2806,8 +2806,8 @@ type LayoutMapboxDomain struct {
 	Y interface{} `json:"y,omitempty"`
 }
 
-// LayerCircle
-type LayerCircle struct {
+// LayoutMapboxLayerCircle
+type LayoutMapboxLayerCircle struct {
 
 	// Radius
 	// arrayOK: false
@@ -2817,8 +2817,8 @@ type LayerCircle struct {
 	Radius types.NumberType `json:"radius,omitempty"`
 }
 
-// LayerFill
-type LayerFill struct {
+// LayoutMapboxLayerFill
+type LayoutMapboxLayerFill struct {
 
 	// Outlinecolor
 	// arrayOK: false
@@ -2828,8 +2828,8 @@ type LayerFill struct {
 	Outlinecolor types.Color `json:"outlinecolor,omitempty"`
 }
 
-// LayerLine
-type LayerLine struct {
+// LayoutMapboxLayerLine
+type LayoutMapboxLayerLine struct {
 
 	// Dash
 	// arrayOK: false
@@ -2855,8 +2855,8 @@ type LayerLine struct {
 	Width types.NumberType `json:"width,omitempty"`
 }
 
-// LayerSymbolTextfont Sets the icon text font (color=mapbox.layer.paint.text-color, size=mapbox.layer.layout.text-size). Has an effect only when `type` is set to *symbol*.
-type LayerSymbolTextfont struct {
+// LayoutMapboxLayerSymbolTextfont Sets the icon text font (color=mapbox.layer.paint.text-color, size=mapbox.layer.layout.text-size). Has an effect only when `type` is set to *symbol*.
+type LayoutMapboxLayerSymbolTextfont struct {
 
 	// Color
 	// arrayOK: false
@@ -2880,8 +2880,8 @@ type LayerSymbolTextfont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// LayerSymbol
-type LayerSymbol struct {
+// LayoutMapboxLayerSymbol
+type LayoutMapboxLayerSymbol struct {
 
 	// Icon
 	// arrayOK: false
@@ -2903,7 +2903,7 @@ type LayerSymbol struct {
 	// type: enumerated
 	// Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.placement
-	Placement LayerSymbolPlacement `json:"placement,omitempty"`
+	Placement LayoutMapboxLayerSymbolPlacement `json:"placement,omitempty"`
 
 	// Text
 	// arrayOK: false
@@ -2916,7 +2916,7 @@ type LayerSymbol struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textfont
-	Textfont *LayerSymbolTextfont `json:"textfont,omitempty"`
+	Textfont *LayoutMapboxLayerSymbolTextfont `json:"textfont,omitempty"`
 
 	// Textposition
 	// arrayOK: false
@@ -2924,7 +2924,7 @@ type LayerSymbol struct {
 	// type: enumerated
 	// Sets the positions of the `text` elements with respects to the (x,y) coordinates.
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textposition
-	Textposition LayerSymbolTextposition `json:"textposition,omitempty"`
+	Textposition LayoutMapboxLayerSymbolTextposition `json:"textposition,omitempty"`
 }
 
 // LayoutMapboxLayer
@@ -2941,7 +2941,7 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.circle
-	Circle *LayerCircle `json:"circle,omitempty"`
+	Circle *LayoutMapboxLayerCircle `json:"circle,omitempty"`
 
 	// Color
 	// arrayOK: false
@@ -2961,13 +2961,13 @@ type LayoutMapboxLayer struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.fill
-	Fill *LayerFill `json:"fill,omitempty"`
+	Fill *LayoutMapboxLayerFill `json:"fill,omitempty"`
 
 	// Line
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.line
-	Line *LayerLine `json:"line,omitempty"`
+	Line *LayoutMapboxLayerLine `json:"line,omitempty"`
 
 	// Maxzoom
 	// arrayOK: false
@@ -3024,13 +3024,13 @@ type LayoutMapboxLayer struct {
 	// type: enumerated
 	// Sets the source type for this layer, that is the type of the layer data.
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcetype
-	Sourcetype LayerSourcetype `json:"sourcetype,omitempty"`
+	Sourcetype LayoutMapboxLayerSourcetype `json:"sourcetype,omitempty"`
 
 	// Symbol
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol
-	Symbol *LayerSymbol `json:"symbol,omitempty"`
+	Symbol *LayoutMapboxLayerSymbol `json:"symbol,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
@@ -3045,7 +3045,7 @@ type LayoutMapboxLayer struct {
 	// type: enumerated
 	// Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
 	// .schema.layout.layoutAttributes.mapbox.layers.items.layer.type
-	Type LayerType `json:"type,omitempty"`
+	Type LayoutMapboxLayerType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -4613,6 +4613,80 @@ type LayoutPolar struct {
 	Uirevision interface{} `json:"uirevision,omitempty"`
 }
 
+// LayoutSceneAnnotationFont Sets the annotation text font.
+type LayoutSceneAnnotationFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.font.color
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.font.family
+	Family types.StringType `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.font.size
+	Size types.NumberType `json:"size,omitempty"`
+}
+
+// LayoutSceneAnnotationHoverlabelFont Sets the hover label text font. By default uses the global hover font and size, with color from `hoverlabel.bordercolor`.
+type LayoutSceneAnnotationHoverlabelFont struct {
+
+	// Color
+	// arrayOK: false
+	// type: color
+	//
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.font.color
+	Color types.Color `json:"color,omitempty"`
+
+	// Family
+	// arrayOK: false
+	// type: string
+	// HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.font.family
+	Family types.StringType `json:"family,omitempty"`
+
+	// Size
+	// arrayOK: false
+	// type: number
+	//
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.font.size
+	Size types.NumberType `json:"size,omitempty"`
+}
+
+// LayoutSceneAnnotationHoverlabel
+type LayoutSceneAnnotationHoverlabel struct {
+
+	// Bgcolor
+	// arrayOK: false
+	// type: color
+	// Sets the background color of the hover label. By default uses the annotation's `bgcolor` made opaque, or white if it was transparent.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.bgcolor
+	Bgcolor types.Color `json:"bgcolor,omitempty"`
+
+	// Bordercolor
+	// arrayOK: false
+	// type: color
+	// Sets the border color of the hover label. By default uses either dark grey or white, for maximum contrast with `hoverlabel.bgcolor`.
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.bordercolor
+	Bordercolor types.Color `json:"bordercolor,omitempty"`
+
+	// Font
+	// arrayOK: false
+	// role: Object
+	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel.font
+	Font *LayoutSceneAnnotationHoverlabelFont `json:"font,omitempty"`
+}
+
 // LayoutSceneAnnotation
 type LayoutSceneAnnotation struct {
 
@@ -4622,7 +4696,7 @@ type LayoutSceneAnnotation struct {
 	// type: enumerated
 	// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.align
-	Align AnnotationAlign `json:"align,omitempty"`
+	Align LayoutSceneAnnotationAlign `json:"align,omitempty"`
 
 	// Arrowcolor
 	// arrayOK: false
@@ -4644,7 +4718,7 @@ type LayoutSceneAnnotation struct {
 	// type: flaglist
 	// Sets the annotation arrow head position.
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowside
-	Arrowside AnnotationArrowside `json:"arrowside,omitempty"`
+	Arrowside LayoutSceneAnnotationArrowside `json:"arrowside,omitempty"`
 
 	// Arrowsize
 	// arrayOK: false
@@ -4713,7 +4787,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.font
-	Font *AnnotationFont `json:"font,omitempty"`
+	Font *LayoutSceneAnnotationFont `json:"font,omitempty"`
 
 	// Height
 	// arrayOK: false
@@ -4726,7 +4800,7 @@ type LayoutSceneAnnotation struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.hoverlabel
-	Hoverlabel *AnnotationHoverlabel `json:"hoverlabel,omitempty"`
+	Hoverlabel *LayoutSceneAnnotationHoverlabel `json:"hoverlabel,omitempty"`
 
 	// Hovertext
 	// arrayOK: false
@@ -4811,7 +4885,7 @@ type LayoutSceneAnnotation struct {
 	// type: enumerated
 	// Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.valign
-	Valign AnnotationValign `json:"valign,omitempty"`
+	Valign LayoutSceneAnnotationValign `json:"valign,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -4840,7 +4914,7 @@ type LayoutSceneAnnotation struct {
 	// type: enumerated
 	// Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.xanchor
-	Xanchor AnnotationXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutSceneAnnotationXanchor `json:"xanchor,omitempty"`
 
 	// Xshift
 	// arrayOK: false
@@ -4862,7 +4936,7 @@ type LayoutSceneAnnotation struct {
 	// type: enumerated
 	// Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 	// .schema.layout.layoutAttributes.scene.annotations.items.annotation.yanchor
-	Yanchor AnnotationYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutSceneAnnotationYanchor `json:"yanchor,omitempty"`
 
 	// Yshift
 	// arrayOK: false
@@ -6887,8 +6961,8 @@ type LayoutScene struct {
 	Zaxis *LayoutSceneZaxis `json:"zaxis,omitempty"`
 }
 
-// SelectionLine
-type SelectionLine struct {
+// LayoutSelectionLine
+type LayoutSelectionLine struct {
 
 	// Color
 	// arrayOK: false
@@ -6919,7 +6993,7 @@ type LayoutSelection struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.selections.items.selection.line
-	Line *SelectionLine `json:"line,omitempty"`
+	Line *LayoutSelectionLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -6955,7 +7029,7 @@ type LayoutSelection struct {
 	// type: enumerated
 	// Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
 	// .schema.layout.layoutAttributes.selections.items.selection.type
-	Type SelectionType `json:"type,omitempty"`
+	Type LayoutSelectionType `json:"type,omitempty"`
 
 	// X0
 	// arrayOK: false
@@ -6977,7 +7051,7 @@ type LayoutSelection struct {
 	// type: enumerated
 	// Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
 	// .schema.layout.layoutAttributes.selections.items.selection.xref
-	Xref SelectionXref `json:"xref,omitempty"`
+	Xref LayoutSelectionXref `json:"xref,omitempty"`
 
 	// Y0
 	// arrayOK: false
@@ -6999,11 +7073,11 @@ type LayoutSelection struct {
 	// type: enumerated
 	// Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
 	// .schema.layout.layoutAttributes.selections.items.selection.yref
-	Yref SelectionYref `json:"yref,omitempty"`
+	Yref LayoutSelectionYref `json:"yref,omitempty"`
 }
 
-// ShapeLabelFont Sets the shape label text font.
-type ShapeLabelFont struct {
+// LayoutShapeLabelFont Sets the shape label text font.
+type LayoutShapeLabelFont struct {
 
 	// Color
 	// arrayOK: false
@@ -7027,14 +7101,14 @@ type ShapeLabelFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// ShapeLabel
-type ShapeLabel struct {
+// LayoutShapeLabel
+type LayoutShapeLabel struct {
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.shapes.items.shape.label.font
-	Font *ShapeLabelFont `json:"font,omitempty"`
+	Font *LayoutShapeLabelFont `json:"font,omitempty"`
 
 	// Padding
 	// arrayOK: false
@@ -7063,7 +7137,7 @@ type ShapeLabel struct {
 	// type: enumerated
 	// Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
 	// .schema.layout.layoutAttributes.shapes.items.shape.label.textposition
-	Textposition ShapeLabelTextposition `json:"textposition,omitempty"`
+	Textposition LayoutShapeLabelTextposition `json:"textposition,omitempty"`
 
 	// Texttemplate
 	// arrayOK: false
@@ -7078,7 +7152,7 @@ type ShapeLabel struct {
 	// type: enumerated
 	// Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
 	// .schema.layout.layoutAttributes.shapes.items.shape.label.xanchor
-	Xanchor ShapeLabelXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutShapeLabelXanchor `json:"xanchor,omitempty"`
 
 	// Yanchor
 	// arrayOK: false
@@ -7086,11 +7160,11 @@ type ShapeLabel struct {
 	// type: enumerated
 	// Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
 	// .schema.layout.layoutAttributes.shapes.items.shape.label.yanchor
-	Yanchor ShapeLabelYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutShapeLabelYanchor `json:"yanchor,omitempty"`
 }
 
-// ShapeLegendgrouptitleFont Sets this legend group's title font.
-type ShapeLegendgrouptitleFont struct {
+// LayoutShapeLegendgrouptitleFont Sets this legend group's title font.
+type LayoutShapeLegendgrouptitleFont struct {
 
 	// Color
 	// arrayOK: false
@@ -7114,14 +7188,14 @@ type ShapeLegendgrouptitleFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// ShapeLegendgrouptitle
-type ShapeLegendgrouptitle struct {
+// LayoutShapeLegendgrouptitle
+type LayoutShapeLegendgrouptitle struct {
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.shapes.items.shape.legendgrouptitle.font
-	Font *ShapeLegendgrouptitleFont `json:"font,omitempty"`
+	Font *LayoutShapeLegendgrouptitleFont `json:"font,omitempty"`
 
 	// Text
 	// arrayOK: false
@@ -7131,8 +7205,8 @@ type ShapeLegendgrouptitle struct {
 	Text types.StringType `json:"text,omitempty"`
 }
 
-// ShapeLine
-type ShapeLine struct {
+// LayoutShapeLine
+type LayoutShapeLine struct {
 
 	// Color
 	// arrayOK: false
@@ -7179,13 +7253,13 @@ type LayoutShape struct {
 	// type: enumerated
 	// Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
 	// .schema.layout.layoutAttributes.shapes.items.shape.fillrule
-	Fillrule ShapeFillrule `json:"fillrule,omitempty"`
+	Fillrule LayoutShapeFillrule `json:"fillrule,omitempty"`
 
 	// Label
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.shapes.items.shape.label
-	Label *ShapeLabel `json:"label,omitempty"`
+	Label *LayoutShapeLabel `json:"label,omitempty"`
 
 	// Layer
 	// arrayOK: false
@@ -7193,7 +7267,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Specifies whether shapes are drawn below or above traces.
 	// .schema.layout.layoutAttributes.shapes.items.shape.layer
-	Layer ShapeLayer `json:"layer,omitempty"`
+	Layer LayoutShapeLayer `json:"layer,omitempty"`
 
 	// Legend
 	// arrayOK: false
@@ -7213,7 +7287,7 @@ type LayoutShape struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.shapes.items.shape.legendgrouptitle
-	Legendgrouptitle *ShapeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
+	Legendgrouptitle *LayoutShapeLegendgrouptitle `json:"legendgrouptitle,omitempty"`
 
 	// Legendrank
 	// arrayOK: false
@@ -7233,7 +7307,7 @@ type LayoutShape struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.shapes.items.shape.line
-	Line *ShapeLine `json:"line,omitempty"`
+	Line *LayoutShapeLine `json:"line,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -7276,7 +7350,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
 	// .schema.layout.layoutAttributes.shapes.items.shape.type
-	Type ShapeType `json:"type,omitempty"`
+	Type LayoutShapeType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -7284,7 +7358,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Determines whether or not this shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
 	// .schema.layout.layoutAttributes.shapes.items.shape.visible
-	Visible ShapeVisible `json:"visible,omitempty"`
+	Visible LayoutShapeVisible `json:"visible,omitempty"`
 
 	// X0
 	// arrayOK: false
@@ -7313,7 +7387,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
 	// .schema.layout.layoutAttributes.shapes.items.shape.xref
-	Xref ShapeXref `json:"xref,omitempty"`
+	Xref LayoutShapeXref `json:"xref,omitempty"`
 
 	// Xsizemode
 	// arrayOK: false
@@ -7321,7 +7395,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
 	// .schema.layout.layoutAttributes.shapes.items.shape.xsizemode
-	Xsizemode ShapeXsizemode `json:"xsizemode,omitempty"`
+	Xsizemode LayoutShapeXsizemode `json:"xsizemode,omitempty"`
 
 	// Y0
 	// arrayOK: false
@@ -7350,7 +7424,7 @@ type LayoutShape struct {
 	// type: enumerated
 	// Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
 	// .schema.layout.layoutAttributes.shapes.items.shape.yref
-	Yref ShapeYref `json:"yref,omitempty"`
+	Yref LayoutShapeYref `json:"yref,omitempty"`
 
 	// Ysizemode
 	// arrayOK: false
@@ -7358,11 +7432,11 @@ type LayoutShape struct {
 	// type: enumerated
 	// Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
 	// .schema.layout.layoutAttributes.shapes.items.shape.ysizemode
-	Ysizemode ShapeYsizemode `json:"ysizemode,omitempty"`
+	Ysizemode LayoutShapeYsizemode `json:"ysizemode,omitempty"`
 }
 
-// SliderCurrentvalueFont Sets the font of the current value label text.
-type SliderCurrentvalueFont struct {
+// LayoutSliderCurrentvalueFont Sets the font of the current value label text.
+type LayoutSliderCurrentvalueFont struct {
 
 	// Color
 	// arrayOK: false
@@ -7386,14 +7460,14 @@ type SliderCurrentvalueFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// SliderCurrentvalue
-type SliderCurrentvalue struct {
+// LayoutSliderCurrentvalue
+type LayoutSliderCurrentvalue struct {
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.font
-	Font *SliderCurrentvalueFont `json:"font,omitempty"`
+	Font *LayoutSliderCurrentvalueFont `json:"font,omitempty"`
 
 	// Offset
 	// arrayOK: false
@@ -7429,11 +7503,11 @@ type SliderCurrentvalue struct {
 	// type: enumerated
 	// The alignment of the value readout relative to the length of the slider.
 	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.xanchor
-	Xanchor SliderCurrentvalueXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutSliderCurrentvalueXanchor `json:"xanchor,omitempty"`
 }
 
-// SliderFont Sets the font of the slider step labels.
-type SliderFont struct {
+// LayoutSliderFont Sets the font of the slider step labels.
+type LayoutSliderFont struct {
 
 	// Color
 	// arrayOK: false
@@ -7457,8 +7531,8 @@ type SliderFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// SliderPad Set the padding of the slider component along each side.
-type SliderPad struct {
+// LayoutSliderPad Set the padding of the slider component along each side.
+type LayoutSliderPad struct {
 
 	// B
 	// arrayOK: false
@@ -7489,8 +7563,8 @@ type SliderPad struct {
 	T types.NumberType `json:"t,omitempty"`
 }
 
-// SliderStep
-type SliderStep struct {
+// LayoutSliderStep
+type LayoutSliderStep struct {
 
 	// Args
 	// arrayOK: false
@@ -7519,7 +7593,7 @@ type SliderStep struct {
 	// type: enumerated
 	// Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
 	// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.method
-	Method StepMethod `json:"method,omitempty"`
+	Method LayoutSliderStepMethod `json:"method,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -7550,8 +7624,8 @@ type SliderStep struct {
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
-// SliderTransition
-type SliderTransition struct {
+// LayoutSliderTransition
+type LayoutSliderTransition struct {
 
 	// Duration
 	// arrayOK: false
@@ -7566,7 +7640,7 @@ type SliderTransition struct {
 	// type: enumerated
 	// Sets the easing function of the slider transition
 	// .schema.layout.layoutAttributes.sliders.items.slider.transition.easing
-	Easing SliderTransitionEasing `json:"easing,omitempty"`
+	Easing LayoutSliderTransitionEasing `json:"easing,omitempty"`
 }
 
 // LayoutSlider
@@ -7611,13 +7685,13 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue
-	Currentvalue *SliderCurrentvalue `json:"currentvalue,omitempty"`
+	Currentvalue *LayoutSliderCurrentvalue `json:"currentvalue,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.sliders.items.slider.font
-	Font *SliderFont `json:"font,omitempty"`
+	Font *LayoutSliderFont `json:"font,omitempty"`
 
 	// Len
 	// arrayOK: false
@@ -7632,7 +7706,7 @@ type LayoutSlider struct {
 	// type: enumerated
 	// Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
 	// .schema.layout.layoutAttributes.sliders.items.slider.lenmode
-	Lenmode SliderLenmode `json:"lenmode,omitempty"`
+	Lenmode LayoutSliderLenmode `json:"lenmode,omitempty"`
 
 	// Minorticklen
 	// arrayOK: false
@@ -7652,13 +7726,13 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.sliders.items.slider.pad
-	Pad *SliderPad `json:"pad,omitempty"`
+	Pad *LayoutSliderPad `json:"pad,omitempty"`
 
 	// Steps
 	// role: Object
-	// items: SliderStep
+	// items: LayoutSliderStep
 	// .schema.layout.layoutAttributes.sliders.items.slider.steps
-	Steps []SliderStep `json:"steps,omitempty"`
+	Steps []LayoutSliderStep `json:"steps,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
@@ -7692,7 +7766,7 @@ type LayoutSlider struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.sliders.items.slider.transition
-	Transition *SliderTransition `json:"transition,omitempty"`
+	Transition *LayoutSliderTransition `json:"transition,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -7714,7 +7788,7 @@ type LayoutSlider struct {
 	// type: enumerated
 	// Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
 	// .schema.layout.layoutAttributes.sliders.items.slider.xanchor
-	Xanchor SliderXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutSliderXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -7729,7 +7803,7 @@ type LayoutSlider struct {
 	// type: enumerated
 	// Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
 	// .schema.layout.layoutAttributes.sliders.items.slider.yanchor
-	Yanchor SliderYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutSliderYanchor `json:"yanchor,omitempty"`
 }
 
 // LayoutSmithDomain
@@ -9680,8 +9754,8 @@ type LayoutUniformtext struct {
 	Mode LayoutUniformtextMode `json:"mode,omitempty"`
 }
 
-// UpdatemenuButton
-type UpdatemenuButton struct {
+// LayoutUpdatemenuButton
+type LayoutUpdatemenuButton struct {
 
 	// Args
 	// arrayOK: false
@@ -9717,7 +9791,7 @@ type UpdatemenuButton struct {
 	// type: enumerated
 	// Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.method
-	Method ButtonMethod `json:"method,omitempty"`
+	Method LayoutUpdatemenuButtonMethod `json:"method,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -9741,8 +9815,8 @@ type UpdatemenuButton struct {
 	Visible types.BoolType `json:"visible,omitempty"`
 }
 
-// UpdatemenuFont Sets the font of the update menu button text.
-type UpdatemenuFont struct {
+// LayoutUpdatemenuFont Sets the font of the update menu button text.
+type LayoutUpdatemenuFont struct {
 
 	// Color
 	// arrayOK: false
@@ -9766,8 +9840,8 @@ type UpdatemenuFont struct {
 	Size types.NumberType `json:"size,omitempty"`
 }
 
-// UpdatemenuPad Sets the padding around the buttons or dropdown menu.
-type UpdatemenuPad struct {
+// LayoutUpdatemenuPad Sets the padding around the buttons or dropdown menu.
+type LayoutUpdatemenuPad struct {
 
 	// B
 	// arrayOK: false
@@ -9831,9 +9905,9 @@ type LayoutUpdatemenu struct {
 
 	// Buttons
 	// role: Object
-	// items: UpdatemenuButton
+	// items: LayoutUpdatemenuButton
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons
-	Buttons []UpdatemenuButton `json:"buttons,omitempty"`
+	Buttons []LayoutUpdatemenuButton `json:"buttons,omitempty"`
 
 	// Direction
 	// arrayOK: false
@@ -9841,13 +9915,13 @@ type LayoutUpdatemenu struct {
 	// type: enumerated
 	// Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.direction
-	Direction UpdatemenuDirection `json:"direction,omitempty"`
+	Direction LayoutUpdatemenuDirection `json:"direction,omitempty"`
 
 	// Font
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.font
-	Font *UpdatemenuFont `json:"font,omitempty"`
+	Font *LayoutUpdatemenuFont `json:"font,omitempty"`
 
 	// Name
 	// arrayOK: false
@@ -9860,7 +9934,7 @@ type LayoutUpdatemenu struct {
 	// arrayOK: false
 	// role: Object
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.pad
-	Pad *UpdatemenuPad `json:"pad,omitempty"`
+	Pad *LayoutUpdatemenuPad `json:"pad,omitempty"`
 
 	// Showactive
 	// arrayOK: false
@@ -9882,7 +9956,7 @@ type LayoutUpdatemenu struct {
 	// type: enumerated
 	// Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.type
-	Type UpdatemenuType `json:"type,omitempty"`
+	Type LayoutUpdatemenuType `json:"type,omitempty"`
 
 	// Visible
 	// arrayOK: false
@@ -9904,7 +9978,7 @@ type LayoutUpdatemenu struct {
 	// type: enumerated
 	// Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.xanchor
-	Xanchor UpdatemenuXanchor `json:"xanchor,omitempty"`
+	Xanchor LayoutUpdatemenuXanchor `json:"xanchor,omitempty"`
 
 	// Y
 	// arrayOK: false
@@ -9919,7 +9993,7 @@ type LayoutUpdatemenu struct {
 	// type: enumerated
 	// Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
 	// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.yanchor
-	Yanchor UpdatemenuYanchor `json:"yanchor,omitempty"`
+	Yanchor LayoutUpdatemenuYanchor `json:"yanchor,omitempty"`
 }
 
 // LayoutXaxisAutorangeoptions
@@ -10111,7 +10185,7 @@ type LayoutXaxisRangebreak struct {
 	// type: enumerated
 	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
 	// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.pattern
-	Pattern RangebreakPattern `json:"pattern,omitempty"`
+	Pattern LayoutXaxisRangebreakPattern `json:"pattern,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
@@ -10158,7 +10232,7 @@ type LayoutXaxisRangeselectorButton struct {
 	// type: enumerated
 	// The unit of measurement that the `count` value will set the range by.
 	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.step
-	Step ButtonStep `json:"step,omitempty"`
+	Step LayoutXaxisRangeselectorButtonStep `json:"step,omitempty"`
 
 	// Stepmode
 	// arrayOK: false
@@ -10166,7 +10240,7 @@ type LayoutXaxisRangeselectorButton struct {
 	// type: enumerated
 	// Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
 	// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.stepmode
-	Stepmode ButtonStepmode `json:"stepmode,omitempty"`
+	Stepmode LayoutXaxisRangeselectorButtonStepmode `json:"stepmode,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
@@ -11308,7 +11382,7 @@ type LayoutYaxisRangebreak struct {
 	// type: enumerated
 	// Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
 	// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.pattern
-	Pattern RangebreakPattern `json:"pattern,omitempty"`
+	Pattern LayoutYaxisRangebreakPattern `json:"pattern,omitempty"`
 
 	// Templateitemname
 	// arrayOK: false
@@ -12079,233 +12153,92 @@ type LayoutYaxis struct {
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
-// AnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
-// .schema.layout.layoutAttributes.scene.annotations.items.annotation.align
-type AnnotationAlign string
+// LayoutAnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+// .schema.layout.layoutAttributes.annotations.items.annotation.align
+type LayoutAnnotationAlign string
 
 const (
-	AnnotationAlignLeft   AnnotationAlign = "left"
-	AnnotationAlignCenter AnnotationAlign = "center"
-	AnnotationAlignRight  AnnotationAlign = "right"
+	LayoutAnnotationAlignLeft   LayoutAnnotationAlign = "left"
+	LayoutAnnotationAlignCenter LayoutAnnotationAlign = "center"
+	LayoutAnnotationAlignRight  LayoutAnnotationAlign = "right"
 )
 
-// AnnotationAxref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+// LayoutAnnotationAxref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
 // .schema.layout.layoutAttributes.annotations.items.annotation.axref
-type AnnotationAxref string
+type LayoutAnnotationAxref string
 
 const (
-	AnnotationAxrefPixel                                                                                                                   AnnotationAxref = "pixel"
-	AnnotationAxrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationAxref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+	LayoutAnnotationAxrefPixel                                                                                                                   LayoutAnnotationAxref = "pixel"
+	LayoutAnnotationAxrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutAnnotationAxref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
-// AnnotationAyref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
+// LayoutAnnotationAyref Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
 // .schema.layout.layoutAttributes.annotations.items.annotation.ayref
-type AnnotationAyref string
+type LayoutAnnotationAyref string
 
 const (
-	AnnotationAyrefPixel                                                                                                                   AnnotationAyref = "pixel"
-	AnnotationAyrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationAyref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+	LayoutAnnotationAyrefPixel                                                                                                                   LayoutAnnotationAyref = "pixel"
+	LayoutAnnotationAyrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutAnnotationAyref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
-// AnnotationClicktoshow Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
+// LayoutAnnotationClicktoshow Makes this annotation respond to clicks on the plot. If you click a data point that exactly matches the `x` and `y` values of this annotation, and it is hidden (visible: false), it will appear. In *onoff* mode, you must click the same point again to make it disappear, so if you click multiple points, you can show multiple annotations. In *onout* mode, a click anywhere else in the plot (on another data point or not) will hide this annotation. If you need to show/hide this annotation in response to different `x` or `y` values, you can set `xclick` and/or `yclick`. This is useful for example to label the side of a bar. To label markers though, `standoff` is preferred over `xclick` and `yclick`.
 // .schema.layout.layoutAttributes.annotations.items.annotation.clicktoshow
-type AnnotationClicktoshow interface{}
+type LayoutAnnotationClicktoshow interface{}
 
 var (
-	AnnotationClicktoshowFalse AnnotationClicktoshow = false
-	AnnotationClicktoshowOnoff AnnotationClicktoshow = "onoff"
-	AnnotationClicktoshowOnout AnnotationClicktoshow = "onout"
+	LayoutAnnotationClicktoshowFalse LayoutAnnotationClicktoshow = false
+	LayoutAnnotationClicktoshowOnoff LayoutAnnotationClicktoshow = "onoff"
+	LayoutAnnotationClicktoshowOnout LayoutAnnotationClicktoshow = "onout"
 )
 
-// AnnotationValign Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+// LayoutAnnotationValign Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
 // .schema.layout.layoutAttributes.annotations.items.annotation.valign
-type AnnotationValign string
+type LayoutAnnotationValign string
 
 const (
-	AnnotationValignTop    AnnotationValign = "top"
-	AnnotationValignMiddle AnnotationValign = "middle"
-	AnnotationValignBottom AnnotationValign = "bottom"
+	LayoutAnnotationValignTop    LayoutAnnotationValign = "top"
+	LayoutAnnotationValignMiddle LayoutAnnotationValign = "middle"
+	LayoutAnnotationValignBottom LayoutAnnotationValign = "bottom"
 )
 
-// AnnotationXanchor Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// LayoutAnnotationXanchor Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 // .schema.layout.layoutAttributes.annotations.items.annotation.xanchor
-type AnnotationXanchor string
+type LayoutAnnotationXanchor string
 
 const (
-	AnnotationXanchorAuto   AnnotationXanchor = "auto"
-	AnnotationXanchorLeft   AnnotationXanchor = "left"
-	AnnotationXanchorCenter AnnotationXanchor = "center"
-	AnnotationXanchorRight  AnnotationXanchor = "right"
+	LayoutAnnotationXanchorAuto   LayoutAnnotationXanchor = "auto"
+	LayoutAnnotationXanchorLeft   LayoutAnnotationXanchor = "left"
+	LayoutAnnotationXanchorCenter LayoutAnnotationXanchor = "center"
+	LayoutAnnotationXanchorRight  LayoutAnnotationXanchor = "right"
 )
 
-// AnnotationXref Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// LayoutAnnotationXref Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
 // .schema.layout.layoutAttributes.annotations.items.annotation.xref
-type AnnotationXref string
+type LayoutAnnotationXref string
 
 const (
-	AnnotationXrefPaper                                                                                                                   AnnotationXref = "paper"
-	AnnotationXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+	LayoutAnnotationXrefPaper                                                                                                                   LayoutAnnotationXref = "paper"
+	LayoutAnnotationXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutAnnotationXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
-// AnnotationYanchor Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// LayoutAnnotationYanchor Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
 // .schema.layout.layoutAttributes.annotations.items.annotation.yanchor
-type AnnotationYanchor string
+type LayoutAnnotationYanchor string
 
 const (
-	AnnotationYanchorAuto   AnnotationYanchor = "auto"
-	AnnotationYanchorTop    AnnotationYanchor = "top"
-	AnnotationYanchorMiddle AnnotationYanchor = "middle"
-	AnnotationYanchorBottom AnnotationYanchor = "bottom"
+	LayoutAnnotationYanchorAuto   LayoutAnnotationYanchor = "auto"
+	LayoutAnnotationYanchorTop    LayoutAnnotationYanchor = "top"
+	LayoutAnnotationYanchorMiddle LayoutAnnotationYanchor = "middle"
+	LayoutAnnotationYanchorBottom LayoutAnnotationYanchor = "bottom"
 )
 
-// AnnotationYref Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// LayoutAnnotationYref Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
 // .schema.layout.layoutAttributes.annotations.items.annotation.yref
-type AnnotationYref string
+type LayoutAnnotationYref string
 
 const (
-	AnnotationYrefPaper                                                                                                                   AnnotationYref = "paper"
-	AnnotationYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash AnnotationYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// ButtonMethod Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
-// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.method
-type ButtonMethod string
-
-const (
-	ButtonMethodRestyle  ButtonMethod = "restyle"
-	ButtonMethodRelayout ButtonMethod = "relayout"
-	ButtonMethodAnimate  ButtonMethod = "animate"
-	ButtonMethodUpdate   ButtonMethod = "update"
-	ButtonMethodSkip     ButtonMethod = "skip"
-)
-
-// ButtonStep The unit of measurement that the `count` value will set the range by.
-// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.step
-type ButtonStep string
-
-const (
-	ButtonStepMonth  ButtonStep = "month"
-	ButtonStepYear   ButtonStep = "year"
-	ButtonStepDay    ButtonStep = "day"
-	ButtonStepHour   ButtonStep = "hour"
-	ButtonStepMinute ButtonStep = "minute"
-	ButtonStepSecond ButtonStep = "second"
-	ButtonStepAll    ButtonStep = "all"
-)
-
-// ButtonStepmode Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
-// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.stepmode
-type ButtonStepmode string
-
-const (
-	ButtonStepmodeBackward ButtonStepmode = "backward"
-	ButtonStepmodeTodate   ButtonStepmode = "todate"
-)
-
-// ImageLayer Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
-// .schema.layout.layoutAttributes.images.items.image.layer
-type ImageLayer string
-
-const (
-	ImageLayerBelow ImageLayer = "below"
-	ImageLayerAbove ImageLayer = "above"
-)
-
-// ImageSizing Specifies which dimension of the image to constrain.
-// .schema.layout.layoutAttributes.images.items.image.sizing
-type ImageSizing string
-
-const (
-	ImageSizingFill    ImageSizing = "fill"
-	ImageSizingContain ImageSizing = "contain"
-	ImageSizingStretch ImageSizing = "stretch"
-)
-
-// ImageXanchor Sets the anchor for the x position
-// .schema.layout.layoutAttributes.images.items.image.xanchor
-type ImageXanchor string
-
-const (
-	ImageXanchorLeft   ImageXanchor = "left"
-	ImageXanchorCenter ImageXanchor = "center"
-	ImageXanchorRight  ImageXanchor = "right"
-)
-
-// ImageXref Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
-// .schema.layout.layoutAttributes.images.items.image.xref
-type ImageXref string
-
-const (
-	ImageXrefPaper                                                                                                                   ImageXref = "paper"
-	ImageXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ImageXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// ImageYanchor Sets the anchor for the y position.
-// .schema.layout.layoutAttributes.images.items.image.yanchor
-type ImageYanchor string
-
-const (
-	ImageYanchorTop    ImageYanchor = "top"
-	ImageYanchorMiddle ImageYanchor = "middle"
-	ImageYanchorBottom ImageYanchor = "bottom"
-)
-
-// ImageYref Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
-// .schema.layout.layoutAttributes.images.items.image.yref
-type ImageYref string
-
-const (
-	ImageYrefPaper                                                                                                                   ImageYref = "paper"
-	ImageYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ImageYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// LayerSourcetype Sets the source type for this layer, that is the type of the layer data.
-// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcetype
-type LayerSourcetype string
-
-const (
-	LayerSourcetypeGeojson LayerSourcetype = "geojson"
-	LayerSourcetypeVector  LayerSourcetype = "vector"
-	LayerSourcetypeRaster  LayerSourcetype = "raster"
-	LayerSourcetypeImage   LayerSourcetype = "image"
-)
-
-// LayerSymbolPlacement Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
-// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.placement
-type LayerSymbolPlacement string
-
-const (
-	LayerSymbolPlacementPoint      LayerSymbolPlacement = "point"
-	LayerSymbolPlacementLine       LayerSymbolPlacement = "line"
-	LayerSymbolPlacementLineCenter LayerSymbolPlacement = "line-center"
-)
-
-// LayerSymbolTextposition Sets the positions of the `text` elements with respects to the (x,y) coordinates.
-// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textposition
-type LayerSymbolTextposition string
-
-const (
-	LayerSymbolTextpositionTopLeft      LayerSymbolTextposition = "top left"
-	LayerSymbolTextpositionTopCenter    LayerSymbolTextposition = "top center"
-	LayerSymbolTextpositionTopRight     LayerSymbolTextposition = "top right"
-	LayerSymbolTextpositionMiddleLeft   LayerSymbolTextposition = "middle left"
-	LayerSymbolTextpositionMiddleCenter LayerSymbolTextposition = "middle center"
-	LayerSymbolTextpositionMiddleRight  LayerSymbolTextposition = "middle right"
-	LayerSymbolTextpositionBottomLeft   LayerSymbolTextposition = "bottom left"
-	LayerSymbolTextpositionBottomCenter LayerSymbolTextposition = "bottom center"
-	LayerSymbolTextpositionBottomRight  LayerSymbolTextposition = "bottom right"
-)
-
-// LayerType Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
-// .schema.layout.layoutAttributes.mapbox.layers.items.layer.type
-type LayerType string
-
-const (
-	LayerTypeCircle LayerType = "circle"
-	LayerTypeLine   LayerType = "line"
-	LayerTypeFill   LayerType = "fill"
-	LayerTypeSymbol LayerType = "symbol"
-	LayerTypeRaster LayerType = "raster"
+	LayoutAnnotationYrefPaper                                                                                                                   LayoutAnnotationYref = "paper"
+	LayoutAnnotationYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutAnnotationYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
 // LayoutAutotypenumbers Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
@@ -12318,44 +12251,44 @@ const (
 )
 
 // LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
-// .schema.traces.histogram.layoutAttributes.barmode
+// .schema.traces.bar.layoutAttributes.barmode
 type LayoutBarmode string
 
 const (
-	HistogramBarmodeStack    LayoutBarmode = "stack"
-	HistogramBarmodeGroup    LayoutBarmode = "group"
-	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
-	HistogramBarmodeRelative LayoutBarmode = "relative"
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
 	BarBarmodeStack          LayoutBarmode = "stack"
 	BarBarmodeGroup          LayoutBarmode = "group"
 	BarBarmodeOverlay        LayoutBarmode = "overlay"
 	BarBarmodeRelative       LayoutBarmode = "relative"
+	BarpolarBarmodeStack     LayoutBarmode = "stack"
+	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
+	HistogramBarmodeStack    LayoutBarmode = "stack"
+	HistogramBarmodeGroup    LayoutBarmode = "group"
+	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
+	HistogramBarmodeRelative LayoutBarmode = "relative"
 )
 
 // LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
-// .schema.traces.histogram.layoutAttributes.barnorm
+// .schema.traces.bar.layoutAttributes.barnorm
 type LayoutBarnorm string
 
 const (
-	HistogramBarnormEmpty    LayoutBarnorm = ""
-	HistogramBarnormFraction LayoutBarnorm = "fraction"
-	HistogramBarnormPercent  LayoutBarnorm = "percent"
 	BarBarnormEmpty          LayoutBarnorm = ""
 	BarBarnormFraction       LayoutBarnorm = "fraction"
 	BarBarnormPercent        LayoutBarnorm = "percent"
+	HistogramBarnormEmpty    LayoutBarnorm = ""
+	HistogramBarnormFraction LayoutBarnorm = "fraction"
+	HistogramBarnormPercent  LayoutBarnorm = "percent"
 )
 
 // LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
-// .schema.traces.candlestick.layoutAttributes.boxmode
+// .schema.traces.box.layoutAttributes.boxmode
 type LayoutBoxmode string
 
 const (
-	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
-	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 	BoxBoxmodeGroup           LayoutBoxmode = "group"
 	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
+	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
+	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
@@ -12765,6 +12698,63 @@ var (
 	LayoutHovermodeYUnified LayoutHovermode = "y unified"
 )
 
+// LayoutImageLayer Specifies whether images are drawn below or above traces. When `xref` and `yref` are both set to `paper`, image is drawn below the entire plot area.
+// .schema.layout.layoutAttributes.images.items.image.layer
+type LayoutImageLayer string
+
+const (
+	LayoutImageLayerBelow LayoutImageLayer = "below"
+	LayoutImageLayerAbove LayoutImageLayer = "above"
+)
+
+// LayoutImageSizing Specifies which dimension of the image to constrain.
+// .schema.layout.layoutAttributes.images.items.image.sizing
+type LayoutImageSizing string
+
+const (
+	LayoutImageSizingFill    LayoutImageSizing = "fill"
+	LayoutImageSizingContain LayoutImageSizing = "contain"
+	LayoutImageSizingStretch LayoutImageSizing = "stretch"
+)
+
+// LayoutImageXanchor Sets the anchor for the x position
+// .schema.layout.layoutAttributes.images.items.image.xanchor
+type LayoutImageXanchor string
+
+const (
+	LayoutImageXanchorLeft   LayoutImageXanchor = "left"
+	LayoutImageXanchorCenter LayoutImageXanchor = "center"
+	LayoutImageXanchorRight  LayoutImageXanchor = "right"
+)
+
+// LayoutImageXref Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.images.items.image.xref
+type LayoutImageXref string
+
+const (
+	LayoutImageXrefPaper                                                                                                                   LayoutImageXref = "paper"
+	LayoutImageXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutImageXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayoutImageYanchor Sets the anchor for the y position.
+// .schema.layout.layoutAttributes.images.items.image.yanchor
+type LayoutImageYanchor string
+
+const (
+	LayoutImageYanchorTop    LayoutImageYanchor = "top"
+	LayoutImageYanchorMiddle LayoutImageYanchor = "middle"
+	LayoutImageYanchorBottom LayoutImageYanchor = "bottom"
+)
+
+// LayoutImageYref Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.images.items.image.yref
+type LayoutImageYref string
+
+const (
+	LayoutImageYrefPaper                                                                                                                   LayoutImageYref = "paper"
+	LayoutImageYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutImageYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
 // LayoutLegendEntrywidthmode Determines what entrywidth means.
 // .schema.layout.layoutAttributes.legend.entrywidthmode
 type LayoutLegendEntrywidthmode string
@@ -12881,6 +12871,55 @@ type LayoutLegendYref string
 const (
 	LayoutLegendYrefContainer LayoutLegendYref = "container"
 	LayoutLegendYrefPaper     LayoutLegendYref = "paper"
+)
+
+// LayoutMapboxLayerSourcetype Sets the source type for this layer, that is the type of the layer data.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.sourcetype
+type LayoutMapboxLayerSourcetype string
+
+const (
+	LayoutMapboxLayerSourcetypeGeojson LayoutMapboxLayerSourcetype = "geojson"
+	LayoutMapboxLayerSourcetypeVector  LayoutMapboxLayerSourcetype = "vector"
+	LayoutMapboxLayerSourcetypeRaster  LayoutMapboxLayerSourcetype = "raster"
+	LayoutMapboxLayerSourcetypeImage   LayoutMapboxLayerSourcetype = "image"
+)
+
+// LayoutMapboxLayerSymbolPlacement Sets the symbol and/or text placement (mapbox.layer.layout.symbol-placement). If `placement` is *point*, the label is placed where the geometry is located If `placement` is *line*, the label is placed along the line of the geometry If `placement` is *line-center*, the label is placed on the center of the geometry
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.placement
+type LayoutMapboxLayerSymbolPlacement string
+
+const (
+	LayoutMapboxLayerSymbolPlacementPoint      LayoutMapboxLayerSymbolPlacement = "point"
+	LayoutMapboxLayerSymbolPlacementLine       LayoutMapboxLayerSymbolPlacement = "line"
+	LayoutMapboxLayerSymbolPlacementLineCenter LayoutMapboxLayerSymbolPlacement = "line-center"
+)
+
+// LayoutMapboxLayerSymbolTextposition Sets the positions of the `text` elements with respects to the (x,y) coordinates.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.symbol.textposition
+type LayoutMapboxLayerSymbolTextposition string
+
+const (
+	LayoutMapboxLayerSymbolTextpositionTopLeft      LayoutMapboxLayerSymbolTextposition = "top left"
+	LayoutMapboxLayerSymbolTextpositionTopCenter    LayoutMapboxLayerSymbolTextposition = "top center"
+	LayoutMapboxLayerSymbolTextpositionTopRight     LayoutMapboxLayerSymbolTextposition = "top right"
+	LayoutMapboxLayerSymbolTextpositionMiddleLeft   LayoutMapboxLayerSymbolTextposition = "middle left"
+	LayoutMapboxLayerSymbolTextpositionMiddleCenter LayoutMapboxLayerSymbolTextposition = "middle center"
+	LayoutMapboxLayerSymbolTextpositionMiddleRight  LayoutMapboxLayerSymbolTextposition = "middle right"
+	LayoutMapboxLayerSymbolTextpositionBottomLeft   LayoutMapboxLayerSymbolTextposition = "bottom left"
+	LayoutMapboxLayerSymbolTextpositionBottomCenter LayoutMapboxLayerSymbolTextposition = "bottom center"
+	LayoutMapboxLayerSymbolTextpositionBottomRight  LayoutMapboxLayerSymbolTextposition = "bottom right"
+)
+
+// LayoutMapboxLayerType Sets the layer type, that is the how the layer data set in `source` will be rendered With `sourcetype` set to *geojson*, the following values are allowed: *circle*, *line*, *fill* and *symbol*. but note that *line* and *fill* are not compatible with Point GeoJSON geometries. With `sourcetype` set to *vector*, the following values are allowed:  *circle*, *line*, *fill* and *symbol*. With `sourcetype` set to *raster* or `*image*`, only the *raster* value is allowed.
+// .schema.layout.layoutAttributes.mapbox.layers.items.layer.type
+type LayoutMapboxLayerType string
+
+const (
+	LayoutMapboxLayerTypeCircle LayoutMapboxLayerType = "circle"
+	LayoutMapboxLayerTypeLine   LayoutMapboxLayerType = "line"
+	LayoutMapboxLayerTypeFill   LayoutMapboxLayerType = "fill"
+	LayoutMapboxLayerTypeSymbol LayoutMapboxLayerType = "symbol"
+	LayoutMapboxLayerTypeRaster LayoutMapboxLayerType = "raster"
 )
 
 // LayoutModebarOrientation Sets the orientation of the modebar.
@@ -13306,6 +13345,48 @@ type LayoutScattermode string
 const (
 	ScatterScattermodeGroup   LayoutScattermode = "group"
 	ScatterScattermodeOverlay LayoutScattermode = "overlay"
+)
+
+// LayoutSceneAnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.align
+type LayoutSceneAnnotationAlign string
+
+const (
+	LayoutSceneAnnotationAlignLeft   LayoutSceneAnnotationAlign = "left"
+	LayoutSceneAnnotationAlignCenter LayoutSceneAnnotationAlign = "center"
+	LayoutSceneAnnotationAlignRight  LayoutSceneAnnotationAlign = "right"
+)
+
+// LayoutSceneAnnotationValign Sets the vertical alignment of the `text` within the box. Has an effect only if an explicit height is set to override the text height.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.valign
+type LayoutSceneAnnotationValign string
+
+const (
+	LayoutSceneAnnotationValignTop    LayoutSceneAnnotationValign = "top"
+	LayoutSceneAnnotationValignMiddle LayoutSceneAnnotationValign = "middle"
+	LayoutSceneAnnotationValignBottom LayoutSceneAnnotationValign = "bottom"
+)
+
+// LayoutSceneAnnotationXanchor Sets the text box's horizontal position anchor This anchor binds the `x` position to the *left*, *center* or *right* of the annotation. For example, if `x` is set to 1, `xref` to *paper* and `xanchor` to *right* then the right-most portion of the annotation lines up with the right-most edge of the plotting area. If *auto*, the anchor is equivalent to *center* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.xanchor
+type LayoutSceneAnnotationXanchor string
+
+const (
+	LayoutSceneAnnotationXanchorAuto   LayoutSceneAnnotationXanchor = "auto"
+	LayoutSceneAnnotationXanchorLeft   LayoutSceneAnnotationXanchor = "left"
+	LayoutSceneAnnotationXanchorCenter LayoutSceneAnnotationXanchor = "center"
+	LayoutSceneAnnotationXanchorRight  LayoutSceneAnnotationXanchor = "right"
+)
+
+// LayoutSceneAnnotationYanchor Sets the text box's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the annotation. For example, if `y` is set to 1, `yref` to *paper* and `yanchor` to *top* then the top-most portion of the annotation lines up with the top-most edge of the plotting area. If *auto*, the anchor is equivalent to *middle* for data-referenced annotations or if there is an arrow, whereas for paper-referenced with no arrow, the anchor picked corresponds to the closest side.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.yanchor
+type LayoutSceneAnnotationYanchor string
+
+const (
+	LayoutSceneAnnotationYanchorAuto   LayoutSceneAnnotationYanchor = "auto"
+	LayoutSceneAnnotationYanchorTop    LayoutSceneAnnotationYanchor = "top"
+	LayoutSceneAnnotationYanchorMiddle LayoutSceneAnnotationYanchor = "middle"
+	LayoutSceneAnnotationYanchorBottom LayoutSceneAnnotationYanchor = "bottom"
 )
 
 // LayoutSceneAspectmode If *cube*, this scene's axes are drawn as a cube, regardless of the axes' ranges. If *data*, this scene's axes are drawn in proportion with the axes' ranges. If *manual*, this scene's axes are drawn in proportion with the input of *aspectratio* (the default behavior if *aspectratio* is provided). If *auto*, this scene's axes are drawn using the results of *data* except when one axis is more than four times the size of the two others, where in that case the results of *cube* are used.
@@ -13867,6 +13948,244 @@ const (
 	LayoutSelectdirectionAny LayoutSelectdirection = "any"
 )
 
+// LayoutSelectionType Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
+// .schema.layout.layoutAttributes.selections.items.selection.type
+type LayoutSelectionType string
+
+const (
+	LayoutSelectionTypeRect LayoutSelectionType = "rect"
+	LayoutSelectionTypePath LayoutSelectionType = "path"
+)
+
+// LayoutSelectionXref Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.selections.items.selection.xref
+type LayoutSelectionXref string
+
+const (
+	LayoutSelectionXrefPaper                                                                                                                   LayoutSelectionXref = "paper"
+	LayoutSelectionXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutSelectionXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayoutSelectionYref Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.selections.items.selection.yref
+type LayoutSelectionYref string
+
+const (
+	LayoutSelectionYrefPaper                                                                                                                   LayoutSelectionYref = "paper"
+	LayoutSelectionYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutSelectionYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayoutShapeFillrule Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+// .schema.layout.layoutAttributes.shapes.items.shape.fillrule
+type LayoutShapeFillrule string
+
+const (
+	LayoutShapeFillruleEvenodd LayoutShapeFillrule = "evenodd"
+	LayoutShapeFillruleNonzero LayoutShapeFillrule = "nonzero"
+)
+
+// LayoutShapeLabelTextposition Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.textposition
+type LayoutShapeLabelTextposition string
+
+const (
+	LayoutShapeLabelTextpositionTopLeft      LayoutShapeLabelTextposition = "top left"
+	LayoutShapeLabelTextpositionTopCenter    LayoutShapeLabelTextposition = "top center"
+	LayoutShapeLabelTextpositionTopRight     LayoutShapeLabelTextposition = "top right"
+	LayoutShapeLabelTextpositionMiddleLeft   LayoutShapeLabelTextposition = "middle left"
+	LayoutShapeLabelTextpositionMiddleCenter LayoutShapeLabelTextposition = "middle center"
+	LayoutShapeLabelTextpositionMiddleRight  LayoutShapeLabelTextposition = "middle right"
+	LayoutShapeLabelTextpositionBottomLeft   LayoutShapeLabelTextposition = "bottom left"
+	LayoutShapeLabelTextpositionBottomCenter LayoutShapeLabelTextposition = "bottom center"
+	LayoutShapeLabelTextpositionBottomRight  LayoutShapeLabelTextposition = "bottom right"
+	LayoutShapeLabelTextpositionStart        LayoutShapeLabelTextposition = "start"
+	LayoutShapeLabelTextpositionMiddle       LayoutShapeLabelTextposition = "middle"
+	LayoutShapeLabelTextpositionEnd          LayoutShapeLabelTextposition = "end"
+)
+
+// LayoutShapeLabelXanchor Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.xanchor
+type LayoutShapeLabelXanchor string
+
+const (
+	LayoutShapeLabelXanchorAuto   LayoutShapeLabelXanchor = "auto"
+	LayoutShapeLabelXanchorLeft   LayoutShapeLabelXanchor = "left"
+	LayoutShapeLabelXanchorCenter LayoutShapeLabelXanchor = "center"
+	LayoutShapeLabelXanchorRight  LayoutShapeLabelXanchor = "right"
+)
+
+// LayoutShapeLabelYanchor Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
+// .schema.layout.layoutAttributes.shapes.items.shape.label.yanchor
+type LayoutShapeLabelYanchor string
+
+const (
+	LayoutShapeLabelYanchorTop    LayoutShapeLabelYanchor = "top"
+	LayoutShapeLabelYanchorMiddle LayoutShapeLabelYanchor = "middle"
+	LayoutShapeLabelYanchorBottom LayoutShapeLabelYanchor = "bottom"
+)
+
+// LayoutShapeLayer Specifies whether shapes are drawn below or above traces.
+// .schema.layout.layoutAttributes.shapes.items.shape.layer
+type LayoutShapeLayer string
+
+const (
+	LayoutShapeLayerBelow LayoutShapeLayer = "below"
+	LayoutShapeLayerAbove LayoutShapeLayer = "above"
+)
+
+// LayoutShapeType Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
+// .schema.layout.layoutAttributes.shapes.items.shape.type
+type LayoutShapeType string
+
+const (
+	LayoutShapeTypeCircle LayoutShapeType = "circle"
+	LayoutShapeTypeRect   LayoutShapeType = "rect"
+	LayoutShapeTypePath   LayoutShapeType = "path"
+	LayoutShapeTypeLine   LayoutShapeType = "line"
+)
+
+// LayoutShapeVisible Determines whether or not this shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
+// .schema.layout.layoutAttributes.shapes.items.shape.visible
+type LayoutShapeVisible interface{}
+
+var (
+	LayoutShapeVisibleTrue       LayoutShapeVisible = true
+	LayoutShapeVisibleFalse      LayoutShapeVisible = false
+	LayoutShapeVisibleLegendonly LayoutShapeVisible = "legendonly"
+)
+
+// LayoutShapeXref Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
+// .schema.layout.layoutAttributes.shapes.items.shape.xref
+type LayoutShapeXref string
+
+const (
+	LayoutShapeXrefPaper                                                                                                                   LayoutShapeXref = "paper"
+	LayoutShapeXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutShapeXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayoutShapeXsizemode Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
+// .schema.layout.layoutAttributes.shapes.items.shape.xsizemode
+type LayoutShapeXsizemode string
+
+const (
+	LayoutShapeXsizemodeScaled LayoutShapeXsizemode = "scaled"
+	LayoutShapeXsizemodePixel  LayoutShapeXsizemode = "pixel"
+)
+
+// LayoutShapeYref Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
+// .schema.layout.layoutAttributes.shapes.items.shape.yref
+type LayoutShapeYref string
+
+const (
+	LayoutShapeYrefPaper                                                                                                                   LayoutShapeYref = "paper"
+	LayoutShapeYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutShapeYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
+)
+
+// LayoutShapeYsizemode Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
+// .schema.layout.layoutAttributes.shapes.items.shape.ysizemode
+type LayoutShapeYsizemode string
+
+const (
+	LayoutShapeYsizemodeScaled LayoutShapeYsizemode = "scaled"
+	LayoutShapeYsizemodePixel  LayoutShapeYsizemode = "pixel"
+)
+
+// LayoutSliderCurrentvalueXanchor The alignment of the value readout relative to the length of the slider.
+// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.xanchor
+type LayoutSliderCurrentvalueXanchor string
+
+const (
+	LayoutSliderCurrentvalueXanchorLeft   LayoutSliderCurrentvalueXanchor = "left"
+	LayoutSliderCurrentvalueXanchorCenter LayoutSliderCurrentvalueXanchor = "center"
+	LayoutSliderCurrentvalueXanchorRight  LayoutSliderCurrentvalueXanchor = "right"
+)
+
+// LayoutSliderLenmode Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
+// .schema.layout.layoutAttributes.sliders.items.slider.lenmode
+type LayoutSliderLenmode string
+
+const (
+	LayoutSliderLenmodeFraction LayoutSliderLenmode = "fraction"
+	LayoutSliderLenmodePixels   LayoutSliderLenmode = "pixels"
+)
+
+// LayoutSliderStepMethod Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
+// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.method
+type LayoutSliderStepMethod string
+
+const (
+	LayoutSliderStepMethodRestyle  LayoutSliderStepMethod = "restyle"
+	LayoutSliderStepMethodRelayout LayoutSliderStepMethod = "relayout"
+	LayoutSliderStepMethodAnimate  LayoutSliderStepMethod = "animate"
+	LayoutSliderStepMethodUpdate   LayoutSliderStepMethod = "update"
+	LayoutSliderStepMethodSkip     LayoutSliderStepMethod = "skip"
+)
+
+// LayoutSliderTransitionEasing Sets the easing function of the slider transition
+// .schema.layout.layoutAttributes.sliders.items.slider.transition.easing
+type LayoutSliderTransitionEasing string
+
+const (
+	LayoutSliderTransitionEasingLinear       LayoutSliderTransitionEasing = "linear"
+	LayoutSliderTransitionEasingQuad         LayoutSliderTransitionEasing = "quad"
+	LayoutSliderTransitionEasingCubic        LayoutSliderTransitionEasing = "cubic"
+	LayoutSliderTransitionEasingSin          LayoutSliderTransitionEasing = "sin"
+	LayoutSliderTransitionEasingExp          LayoutSliderTransitionEasing = "exp"
+	LayoutSliderTransitionEasingCircle       LayoutSliderTransitionEasing = "circle"
+	LayoutSliderTransitionEasingElastic      LayoutSliderTransitionEasing = "elastic"
+	LayoutSliderTransitionEasingBack         LayoutSliderTransitionEasing = "back"
+	LayoutSliderTransitionEasingBounce       LayoutSliderTransitionEasing = "bounce"
+	LayoutSliderTransitionEasingLinearIn     LayoutSliderTransitionEasing = "linear-in"
+	LayoutSliderTransitionEasingQuadIn       LayoutSliderTransitionEasing = "quad-in"
+	LayoutSliderTransitionEasingCubicIn      LayoutSliderTransitionEasing = "cubic-in"
+	LayoutSliderTransitionEasingSinIn        LayoutSliderTransitionEasing = "sin-in"
+	LayoutSliderTransitionEasingExpIn        LayoutSliderTransitionEasing = "exp-in"
+	LayoutSliderTransitionEasingCircleIn     LayoutSliderTransitionEasing = "circle-in"
+	LayoutSliderTransitionEasingElasticIn    LayoutSliderTransitionEasing = "elastic-in"
+	LayoutSliderTransitionEasingBackIn       LayoutSliderTransitionEasing = "back-in"
+	LayoutSliderTransitionEasingBounceIn     LayoutSliderTransitionEasing = "bounce-in"
+	LayoutSliderTransitionEasingLinearOut    LayoutSliderTransitionEasing = "linear-out"
+	LayoutSliderTransitionEasingQuadOut      LayoutSliderTransitionEasing = "quad-out"
+	LayoutSliderTransitionEasingCubicOut     LayoutSliderTransitionEasing = "cubic-out"
+	LayoutSliderTransitionEasingSinOut       LayoutSliderTransitionEasing = "sin-out"
+	LayoutSliderTransitionEasingExpOut       LayoutSliderTransitionEasing = "exp-out"
+	LayoutSliderTransitionEasingCircleOut    LayoutSliderTransitionEasing = "circle-out"
+	LayoutSliderTransitionEasingElasticOut   LayoutSliderTransitionEasing = "elastic-out"
+	LayoutSliderTransitionEasingBackOut      LayoutSliderTransitionEasing = "back-out"
+	LayoutSliderTransitionEasingBounceOut    LayoutSliderTransitionEasing = "bounce-out"
+	LayoutSliderTransitionEasingLinearInOut  LayoutSliderTransitionEasing = "linear-in-out"
+	LayoutSliderTransitionEasingQuadInOut    LayoutSliderTransitionEasing = "quad-in-out"
+	LayoutSliderTransitionEasingCubicInOut   LayoutSliderTransitionEasing = "cubic-in-out"
+	LayoutSliderTransitionEasingSinInOut     LayoutSliderTransitionEasing = "sin-in-out"
+	LayoutSliderTransitionEasingExpInOut     LayoutSliderTransitionEasing = "exp-in-out"
+	LayoutSliderTransitionEasingCircleInOut  LayoutSliderTransitionEasing = "circle-in-out"
+	LayoutSliderTransitionEasingElasticInOut LayoutSliderTransitionEasing = "elastic-in-out"
+	LayoutSliderTransitionEasingBackInOut    LayoutSliderTransitionEasing = "back-in-out"
+	LayoutSliderTransitionEasingBounceInOut  LayoutSliderTransitionEasing = "bounce-in-out"
+)
+
+// LayoutSliderXanchor Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+// .schema.layout.layoutAttributes.sliders.items.slider.xanchor
+type LayoutSliderXanchor string
+
+const (
+	LayoutSliderXanchorAuto   LayoutSliderXanchor = "auto"
+	LayoutSliderXanchorLeft   LayoutSliderXanchor = "left"
+	LayoutSliderXanchorCenter LayoutSliderXanchor = "center"
+	LayoutSliderXanchorRight  LayoutSliderXanchor = "right"
+)
+
+// LayoutSliderYanchor Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+// .schema.layout.layoutAttributes.sliders.items.slider.yanchor
+type LayoutSliderYanchor string
+
+const (
+	LayoutSliderYanchorAuto   LayoutSliderYanchor = "auto"
+	LayoutSliderYanchorTop    LayoutSliderYanchor = "top"
+	LayoutSliderYanchorMiddle LayoutSliderYanchor = "middle"
+	LayoutSliderYanchorBottom LayoutSliderYanchor = "bottom"
+)
+
 // LayoutSmithImaginaryaxisLayer Sets the layer on which this axis is displayed. If *above traces*, this axis is displayed above all the subplot's traces If *below traces*, this axis is displayed below all the subplot's traces, but above the grid lines. Useful when used together with scatter-like traces with `cliponaxis` set to *false* to show markers and/or text nodes above this axis.
 // .schema.layout.layoutAttributes.smith.imaginaryaxis.layer
 type LayoutSmithImaginaryaxisLayer string
@@ -14285,6 +14604,60 @@ var (
 	LayoutUniformtextModeShow  LayoutUniformtextMode = "show"
 )
 
+// LayoutUpdatemenuButtonMethod Sets the Plotly method to be called on click. If the `skip` method is used, the API updatemenu will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to updatemenu events manually via JavaScript.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.buttons.items.button.method
+type LayoutUpdatemenuButtonMethod string
+
+const (
+	LayoutUpdatemenuButtonMethodRestyle  LayoutUpdatemenuButtonMethod = "restyle"
+	LayoutUpdatemenuButtonMethodRelayout LayoutUpdatemenuButtonMethod = "relayout"
+	LayoutUpdatemenuButtonMethodAnimate  LayoutUpdatemenuButtonMethod = "animate"
+	LayoutUpdatemenuButtonMethodUpdate   LayoutUpdatemenuButtonMethod = "update"
+	LayoutUpdatemenuButtonMethodSkip     LayoutUpdatemenuButtonMethod = "skip"
+)
+
+// LayoutUpdatemenuDirection Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.direction
+type LayoutUpdatemenuDirection string
+
+const (
+	LayoutUpdatemenuDirectionLeft  LayoutUpdatemenuDirection = "left"
+	LayoutUpdatemenuDirectionRight LayoutUpdatemenuDirection = "right"
+	LayoutUpdatemenuDirectionUp    LayoutUpdatemenuDirection = "up"
+	LayoutUpdatemenuDirectionDown  LayoutUpdatemenuDirection = "down"
+)
+
+// LayoutUpdatemenuType Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.type
+type LayoutUpdatemenuType string
+
+const (
+	LayoutUpdatemenuTypeDropdown LayoutUpdatemenuType = "dropdown"
+	LayoutUpdatemenuTypeButtons  LayoutUpdatemenuType = "buttons"
+)
+
+// LayoutUpdatemenuXanchor Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.xanchor
+type LayoutUpdatemenuXanchor string
+
+const (
+	LayoutUpdatemenuXanchorAuto   LayoutUpdatemenuXanchor = "auto"
+	LayoutUpdatemenuXanchorLeft   LayoutUpdatemenuXanchor = "left"
+	LayoutUpdatemenuXanchorCenter LayoutUpdatemenuXanchor = "center"
+	LayoutUpdatemenuXanchorRight  LayoutUpdatemenuXanchor = "right"
+)
+
+// LayoutUpdatemenuYanchor Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
+// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.yanchor
+type LayoutUpdatemenuYanchor string
+
+const (
+	LayoutUpdatemenuYanchorAuto   LayoutUpdatemenuYanchor = "auto"
+	LayoutUpdatemenuYanchorTop    LayoutUpdatemenuYanchor = "top"
+	LayoutUpdatemenuYanchorMiddle LayoutUpdatemenuYanchor = "middle"
+	LayoutUpdatemenuYanchorBottom LayoutUpdatemenuYanchor = "bottom"
+)
+
 // LayoutViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
 // .schema.traces.violin.layoutAttributes.violinmode
 type LayoutViolinmode string
@@ -14477,6 +14850,16 @@ const (
 	LayoutXaxisOverlayingSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutXaxisOverlaying = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
+// LayoutXaxisRangebreakPattern Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+// .schema.layout.layoutAttributes.xaxis.rangebreaks.items.rangebreak.pattern
+type LayoutXaxisRangebreakPattern string
+
+const (
+	LayoutXaxisRangebreakPatternDayOfWeek LayoutXaxisRangebreakPattern = "day of week"
+	LayoutXaxisRangebreakPatternHour      LayoutXaxisRangebreakPattern = "hour"
+	LayoutXaxisRangebreakPatternEmpty     LayoutXaxisRangebreakPattern = ""
+)
+
 // LayoutXaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
 // .schema.layout.layoutAttributes.xaxis.rangemode
 type LayoutXaxisRangemode string
@@ -14485,6 +14868,29 @@ const (
 	LayoutXaxisRangemodeNormal      LayoutXaxisRangemode = "normal"
 	LayoutXaxisRangemodeTozero      LayoutXaxisRangemode = "tozero"
 	LayoutXaxisRangemodeNonnegative LayoutXaxisRangemode = "nonnegative"
+)
+
+// LayoutXaxisRangeselectorButtonStep The unit of measurement that the `count` value will set the range by.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.step
+type LayoutXaxisRangeselectorButtonStep string
+
+const (
+	LayoutXaxisRangeselectorButtonStepMonth  LayoutXaxisRangeselectorButtonStep = "month"
+	LayoutXaxisRangeselectorButtonStepYear   LayoutXaxisRangeselectorButtonStep = "year"
+	LayoutXaxisRangeselectorButtonStepDay    LayoutXaxisRangeselectorButtonStep = "day"
+	LayoutXaxisRangeselectorButtonStepHour   LayoutXaxisRangeselectorButtonStep = "hour"
+	LayoutXaxisRangeselectorButtonStepMinute LayoutXaxisRangeselectorButtonStep = "minute"
+	LayoutXaxisRangeselectorButtonStepSecond LayoutXaxisRangeselectorButtonStep = "second"
+	LayoutXaxisRangeselectorButtonStepAll    LayoutXaxisRangeselectorButtonStep = "all"
+)
+
+// LayoutXaxisRangeselectorButtonStepmode Sets the range update mode. If *backward*, the range update shifts the start of range back *count* times *step* milliseconds. If *todate*, the range update shifts the start of range back to the first timestamp from *count* times *step* milliseconds back. For example, with `step` set to *year* and `count` set to *1* the range update shifts the start of the range back to January 01 of the current year. Month and year *todate* are currently available only for the built-in (Gregorian) calendar.
+// .schema.layout.layoutAttributes.xaxis.rangeselector.buttons.items.button.stepmode
+type LayoutXaxisRangeselectorButtonStepmode string
+
+const (
+	LayoutXaxisRangeselectorButtonStepmodeBackward LayoutXaxisRangeselectorButtonStepmode = "backward"
+	LayoutXaxisRangeselectorButtonStepmodeTodate   LayoutXaxisRangeselectorButtonStepmode = "todate"
 )
 
 // LayoutXaxisRangeselectorXanchor Sets the range selector's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
@@ -14836,6 +15242,16 @@ const (
 	LayoutYaxisOverlayingSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash LayoutYaxisOverlaying = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
 )
 
+// LayoutYaxisRangebreakPattern Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
+// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.pattern
+type LayoutYaxisRangebreakPattern string
+
+const (
+	LayoutYaxisRangebreakPatternDayOfWeek LayoutYaxisRangebreakPattern = "day of week"
+	LayoutYaxisRangebreakPatternHour      LayoutYaxisRangebreakPattern = "hour"
+	LayoutYaxisRangebreakPatternEmpty     LayoutYaxisRangebreakPattern = ""
+)
+
 // LayoutYaxisRangemode If *normal*, the range is computed in relation to the extrema of the input data. If *tozero*`, the range extends to 0, regardless of the input data If *nonnegative*, the range is non-negative, regardless of the input data. Applies only to linear axes.
 // .schema.layout.layoutAttributes.yaxis.rangemode
 type LayoutYaxisRangemode string
@@ -14989,307 +15405,17 @@ const (
 	LayoutYaxisTypeMulticategory LayoutYaxisType = "multicategory"
 )
 
-// RangebreakPattern Determines a pattern on the time line that generates breaks. If *day of week* - days of the week in English e.g. 'Sunday' or `sun` (matching is case-insensitive and considers only the first three characters), as well as Sunday-based integers between 0 and 6. If *hour* - hour (24-hour clock) as decimal numbers between 0 and 24. for more info. Examples: - { pattern: 'day of week', bounds: [6, 1] }  or simply { bounds: ['sat', 'mon'] }   breaks from Saturday to Monday (i.e. skips the weekends). - { pattern: 'hour', bounds: [17, 8] }   breaks from 5pm to 8am (i.e. skips non-work hours).
-// .schema.layout.layoutAttributes.yaxis.rangebreaks.items.rangebreak.pattern
-type RangebreakPattern string
-
-const (
-	RangebreakPatternDayOfWeek RangebreakPattern = "day of week"
-	RangebreakPatternHour      RangebreakPattern = "hour"
-	RangebreakPatternEmpty     RangebreakPattern = ""
-)
-
-// SelectionType Specifies the selection type to be drawn. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`) and (`x0`,`y1`). If *path*, draw a custom SVG path using `path`.
-// .schema.layout.layoutAttributes.selections.items.selection.type
-type SelectionType string
-
-const (
-	SelectionTypeRect SelectionType = "rect"
-	SelectionTypePath SelectionType = "path"
-)
-
-// SelectionXref Sets the selection's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
-// .schema.layout.layoutAttributes.selections.items.selection.xref
-type SelectionXref string
-
-const (
-	SelectionXrefPaper                                                                                                                   SelectionXref = "paper"
-	SelectionXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash SelectionXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// SelectionYref Sets the selection's x coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
-// .schema.layout.layoutAttributes.selections.items.selection.yref
-type SelectionYref string
-
-const (
-	SelectionYrefPaper                                                                                                                   SelectionYref = "paper"
-	SelectionYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash SelectionYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// ShapeFillrule Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
-// .schema.layout.layoutAttributes.shapes.items.shape.fillrule
-type ShapeFillrule string
-
-const (
-	ShapeFillruleEvenodd ShapeFillrule = "evenodd"
-	ShapeFillruleNonzero ShapeFillrule = "nonzero"
-)
-
-// ShapeLabelTextposition Sets the position of the label text relative to the shape. Supported values for rectangles, circles and paths are *top left*, *top center*, *top right*, *middle left*, *middle center*, *middle right*, *bottom left*, *bottom center*, and *bottom right*. Supported values for lines are *start*, *middle*, and *end*. Default: *middle center* for rectangles, circles, and paths; *middle* for lines.
-// .schema.layout.layoutAttributes.shapes.items.shape.label.textposition
-type ShapeLabelTextposition string
-
-const (
-	ShapeLabelTextpositionTopLeft      ShapeLabelTextposition = "top left"
-	ShapeLabelTextpositionTopCenter    ShapeLabelTextposition = "top center"
-	ShapeLabelTextpositionTopRight     ShapeLabelTextposition = "top right"
-	ShapeLabelTextpositionMiddleLeft   ShapeLabelTextposition = "middle left"
-	ShapeLabelTextpositionMiddleCenter ShapeLabelTextposition = "middle center"
-	ShapeLabelTextpositionMiddleRight  ShapeLabelTextposition = "middle right"
-	ShapeLabelTextpositionBottomLeft   ShapeLabelTextposition = "bottom left"
-	ShapeLabelTextpositionBottomCenter ShapeLabelTextposition = "bottom center"
-	ShapeLabelTextpositionBottomRight  ShapeLabelTextposition = "bottom right"
-	ShapeLabelTextpositionStart        ShapeLabelTextposition = "start"
-	ShapeLabelTextpositionMiddle       ShapeLabelTextposition = "middle"
-	ShapeLabelTextpositionEnd          ShapeLabelTextposition = "end"
-)
-
-// ShapeLabelXanchor Sets the label's horizontal position anchor This anchor binds the specified `textposition` to the *left*, *center* or *right* of the label text. For example, if `textposition` is set to *top right* and `xanchor` to *right* then the right-most portion of the label text lines up with the right-most edge of the shape.
-// .schema.layout.layoutAttributes.shapes.items.shape.label.xanchor
-type ShapeLabelXanchor string
-
-const (
-	ShapeLabelXanchorAuto   ShapeLabelXanchor = "auto"
-	ShapeLabelXanchorLeft   ShapeLabelXanchor = "left"
-	ShapeLabelXanchorCenter ShapeLabelXanchor = "center"
-	ShapeLabelXanchorRight  ShapeLabelXanchor = "right"
-)
-
-// ShapeLabelYanchor Sets the label's vertical position anchor This anchor binds the specified `textposition` to the *top*, *middle* or *bottom* of the label text. For example, if `textposition` is set to *top right* and `yanchor` to *top* then the top-most portion of the label text lines up with the top-most edge of the shape.
-// .schema.layout.layoutAttributes.shapes.items.shape.label.yanchor
-type ShapeLabelYanchor string
-
-const (
-	ShapeLabelYanchorTop    ShapeLabelYanchor = "top"
-	ShapeLabelYanchorMiddle ShapeLabelYanchor = "middle"
-	ShapeLabelYanchorBottom ShapeLabelYanchor = "bottom"
-)
-
-// ShapeLayer Specifies whether shapes are drawn below or above traces.
-// .schema.layout.layoutAttributes.shapes.items.shape.layer
-type ShapeLayer string
-
-const (
-	ShapeLayerBelow ShapeLayer = "below"
-	ShapeLayerAbove ShapeLayer = "above"
-)
-
-// ShapeType Specifies the shape type to be drawn. If *line*, a line is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect to the axes' sizing mode. If *circle*, a circle is drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with respect to the axes' sizing mode. If *rect*, a rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`), (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to the axes' sizing mode. If *path*, draw a custom SVG path using `path`. with respect to the axes' sizing mode.
-// .schema.layout.layoutAttributes.shapes.items.shape.type
-type ShapeType string
-
-const (
-	ShapeTypeCircle ShapeType = "circle"
-	ShapeTypeRect   ShapeType = "rect"
-	ShapeTypePath   ShapeType = "path"
-	ShapeTypeLine   ShapeType = "line"
-)
-
-// ShapeVisible Determines whether or not this shape is visible. If *legendonly*, the shape is not drawn, but can appear as a legend item (provided that the legend itself is visible).
-// .schema.layout.layoutAttributes.shapes.items.shape.visible
-type ShapeVisible interface{}
-
-var (
-	ShapeVisibleTrue       ShapeVisible = true
-	ShapeVisibleFalse      ShapeVisible = false
-	ShapeVisibleLegendonly ShapeVisible = "legendonly"
-)
-
-// ShapeXref Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
-// .schema.layout.layoutAttributes.shapes.items.shape.xref
-type ShapeXref string
-
-const (
-	ShapeXrefPaper                                                                                                                   ShapeXref = "paper"
-	ShapeXrefSlashCapexLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ShapeXref = "/^x([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// ShapeXsizemode Sets the shapes's sizing mode along the x axis. If set to *scaled*, `x0`, `x1` and x coordinates within `path` refer to data values on the x axis or a fraction of the plot area's width (`xref` set to *paper*). If set to *pixel*, `xanchor` specifies the x position in terms of data or plot fraction but `x0`, `x1` and x coordinates within `path` are pixels relative to `xanchor`. This way, the shape can have a fixed width while maintaining a position relative to data or plot fraction.
-// .schema.layout.layoutAttributes.shapes.items.shape.xsizemode
-type ShapeXsizemode string
-
-const (
-	ShapeXsizemodeScaled ShapeXsizemode = "scaled"
-	ShapeXsizemodePixel  ShapeXsizemode = "pixel"
-)
-
-// ShapeYref Sets the shape's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
-// .schema.layout.layoutAttributes.shapes.items.shape.yref
-type ShapeYref string
-
-const (
-	ShapeYrefPaper                                                                                                                   ShapeYref = "paper"
-	ShapeYrefSlashCapeyLparLbracket29RbracketOrLbracket19RbracketLbracket09RbracketPlusRparQuestionLparDomainRparQuestionDollarSlash ShapeYref = "/^y([2-9]|[1-9][0-9]+)?( domain)?$/"
-)
-
-// ShapeYsizemode Sets the shapes's sizing mode along the y axis. If set to *scaled*, `y0`, `y1` and y coordinates within `path` refer to data values on the y axis or a fraction of the plot area's height (`yref` set to *paper*). If set to *pixel*, `yanchor` specifies the y position in terms of data or plot fraction but `y0`, `y1` and y coordinates within `path` are pixels relative to `yanchor`. This way, the shape can have a fixed height while maintaining a position relative to data or plot fraction.
-// .schema.layout.layoutAttributes.shapes.items.shape.ysizemode
-type ShapeYsizemode string
-
-const (
-	ShapeYsizemodeScaled ShapeYsizemode = "scaled"
-	ShapeYsizemodePixel  ShapeYsizemode = "pixel"
-)
-
-// SliderCurrentvalueXanchor The alignment of the value readout relative to the length of the slider.
-// .schema.layout.layoutAttributes.sliders.items.slider.currentvalue.xanchor
-type SliderCurrentvalueXanchor string
-
-const (
-	SliderCurrentvalueXanchorLeft   SliderCurrentvalueXanchor = "left"
-	SliderCurrentvalueXanchorCenter SliderCurrentvalueXanchor = "center"
-	SliderCurrentvalueXanchorRight  SliderCurrentvalueXanchor = "right"
-)
-
-// SliderLenmode Determines whether this slider length is set in units of plot *fraction* or in *pixels. Use `len` to set the value.
-// .schema.layout.layoutAttributes.sliders.items.slider.lenmode
-type SliderLenmode string
-
-const (
-	SliderLenmodeFraction SliderLenmode = "fraction"
-	SliderLenmodePixels   SliderLenmode = "pixels"
-)
-
-// SliderTransitionEasing Sets the easing function of the slider transition
-// .schema.layout.layoutAttributes.sliders.items.slider.transition.easing
-type SliderTransitionEasing string
-
-const (
-	SliderTransitionEasingLinear       SliderTransitionEasing = "linear"
-	SliderTransitionEasingQuad         SliderTransitionEasing = "quad"
-	SliderTransitionEasingCubic        SliderTransitionEasing = "cubic"
-	SliderTransitionEasingSin          SliderTransitionEasing = "sin"
-	SliderTransitionEasingExp          SliderTransitionEasing = "exp"
-	SliderTransitionEasingCircle       SliderTransitionEasing = "circle"
-	SliderTransitionEasingElastic      SliderTransitionEasing = "elastic"
-	SliderTransitionEasingBack         SliderTransitionEasing = "back"
-	SliderTransitionEasingBounce       SliderTransitionEasing = "bounce"
-	SliderTransitionEasingLinearIn     SliderTransitionEasing = "linear-in"
-	SliderTransitionEasingQuadIn       SliderTransitionEasing = "quad-in"
-	SliderTransitionEasingCubicIn      SliderTransitionEasing = "cubic-in"
-	SliderTransitionEasingSinIn        SliderTransitionEasing = "sin-in"
-	SliderTransitionEasingExpIn        SliderTransitionEasing = "exp-in"
-	SliderTransitionEasingCircleIn     SliderTransitionEasing = "circle-in"
-	SliderTransitionEasingElasticIn    SliderTransitionEasing = "elastic-in"
-	SliderTransitionEasingBackIn       SliderTransitionEasing = "back-in"
-	SliderTransitionEasingBounceIn     SliderTransitionEasing = "bounce-in"
-	SliderTransitionEasingLinearOut    SliderTransitionEasing = "linear-out"
-	SliderTransitionEasingQuadOut      SliderTransitionEasing = "quad-out"
-	SliderTransitionEasingCubicOut     SliderTransitionEasing = "cubic-out"
-	SliderTransitionEasingSinOut       SliderTransitionEasing = "sin-out"
-	SliderTransitionEasingExpOut       SliderTransitionEasing = "exp-out"
-	SliderTransitionEasingCircleOut    SliderTransitionEasing = "circle-out"
-	SliderTransitionEasingElasticOut   SliderTransitionEasing = "elastic-out"
-	SliderTransitionEasingBackOut      SliderTransitionEasing = "back-out"
-	SliderTransitionEasingBounceOut    SliderTransitionEasing = "bounce-out"
-	SliderTransitionEasingLinearInOut  SliderTransitionEasing = "linear-in-out"
-	SliderTransitionEasingQuadInOut    SliderTransitionEasing = "quad-in-out"
-	SliderTransitionEasingCubicInOut   SliderTransitionEasing = "cubic-in-out"
-	SliderTransitionEasingSinInOut     SliderTransitionEasing = "sin-in-out"
-	SliderTransitionEasingExpInOut     SliderTransitionEasing = "exp-in-out"
-	SliderTransitionEasingCircleInOut  SliderTransitionEasing = "circle-in-out"
-	SliderTransitionEasingElasticInOut SliderTransitionEasing = "elastic-in-out"
-	SliderTransitionEasingBackInOut    SliderTransitionEasing = "back-in-out"
-	SliderTransitionEasingBounceInOut  SliderTransitionEasing = "bounce-in-out"
-)
-
-// SliderXanchor Sets the slider's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
-// .schema.layout.layoutAttributes.sliders.items.slider.xanchor
-type SliderXanchor string
-
-const (
-	SliderXanchorAuto   SliderXanchor = "auto"
-	SliderXanchorLeft   SliderXanchor = "left"
-	SliderXanchorCenter SliderXanchor = "center"
-	SliderXanchorRight  SliderXanchor = "right"
-)
-
-// SliderYanchor Sets the slider's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
-// .schema.layout.layoutAttributes.sliders.items.slider.yanchor
-type SliderYanchor string
-
-const (
-	SliderYanchorAuto   SliderYanchor = "auto"
-	SliderYanchorTop    SliderYanchor = "top"
-	SliderYanchorMiddle SliderYanchor = "middle"
-	SliderYanchorBottom SliderYanchor = "bottom"
-)
-
-// StepMethod Sets the Plotly method to be called when the slider value is changed. If the `skip` method is used, the API slider will function as normal but will perform no API calls and will not bind automatically to state updates. This may be used to create a component interface and attach to slider events manually via JavaScript.
-// .schema.layout.layoutAttributes.sliders.items.slider.steps.items.step.method
-type StepMethod string
-
-const (
-	StepMethodRestyle  StepMethod = "restyle"
-	StepMethodRelayout StepMethod = "relayout"
-	StepMethodAnimate  StepMethod = "animate"
-	StepMethodUpdate   StepMethod = "update"
-	StepMethodSkip     StepMethod = "skip"
-)
-
-// UpdatemenuDirection Determines the direction in which the buttons are laid out, whether in a dropdown menu or a row/column of buttons. For `left` and `up`, the buttons will still appear in left-to-right or top-to-bottom order respectively.
-// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.direction
-type UpdatemenuDirection string
-
-const (
-	UpdatemenuDirectionLeft  UpdatemenuDirection = "left"
-	UpdatemenuDirectionRight UpdatemenuDirection = "right"
-	UpdatemenuDirectionUp    UpdatemenuDirection = "up"
-	UpdatemenuDirectionDown  UpdatemenuDirection = "down"
-)
-
-// UpdatemenuType Determines whether the buttons are accessible via a dropdown menu or whether the buttons are stacked horizontally or vertically
-// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.type
-type UpdatemenuType string
-
-const (
-	UpdatemenuTypeDropdown UpdatemenuType = "dropdown"
-	UpdatemenuTypeButtons  UpdatemenuType = "buttons"
-)
-
-// UpdatemenuXanchor Sets the update menu's horizontal position anchor. This anchor binds the `x` position to the *left*, *center* or *right* of the range selector.
-// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.xanchor
-type UpdatemenuXanchor string
-
-const (
-	UpdatemenuXanchorAuto   UpdatemenuXanchor = "auto"
-	UpdatemenuXanchorLeft   UpdatemenuXanchor = "left"
-	UpdatemenuXanchorCenter UpdatemenuXanchor = "center"
-	UpdatemenuXanchorRight  UpdatemenuXanchor = "right"
-)
-
-// UpdatemenuYanchor Sets the update menu's vertical position anchor This anchor binds the `y` position to the *top*, *middle* or *bottom* of the range selector.
-// .schema.layout.layoutAttributes.updatemenus.items.updatemenu.yanchor
-type UpdatemenuYanchor string
-
-const (
-	UpdatemenuYanchorAuto   UpdatemenuYanchor = "auto"
-	UpdatemenuYanchorTop    UpdatemenuYanchor = "top"
-	UpdatemenuYanchorMiddle UpdatemenuYanchor = "middle"
-	UpdatemenuYanchorBottom UpdatemenuYanchor = "bottom"
-)
-
-// AnnotationArrowside Sets the annotation arrow head position.
+// LayoutAnnotationArrowside Sets the annotation arrow head position.
 // .schema.layout.layoutAttributes.annotations.items.annotation.arrowside
-type AnnotationArrowside string
+type LayoutAnnotationArrowside string
 
 const (
 	// Flags
-	AnnotationArrowsideEnd   AnnotationArrowside = "end"
-	AnnotationArrowsideStart AnnotationArrowside = "start"
+	LayoutAnnotationArrowsideEnd   LayoutAnnotationArrowside = "end"
+	LayoutAnnotationArrowsideStart LayoutAnnotationArrowside = "start"
 
 	// Extra
-	AnnotationArrowsideNone AnnotationArrowside = "none"
+	LayoutAnnotationArrowsideNone LayoutAnnotationArrowside = "none"
 )
 
 // LayoutClickmode Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
@@ -15316,6 +15442,19 @@ const (
 
 	// Extra
 	LayoutLegendTraceorderNormal LayoutLegendTraceorder = "normal"
+)
+
+// LayoutSceneAnnotationArrowside Sets the annotation arrow head position.
+// .schema.layout.layoutAttributes.scene.annotations.items.annotation.arrowside
+type LayoutSceneAnnotationArrowside string
+
+const (
+	// Flags
+	LayoutSceneAnnotationArrowsideEnd   LayoutSceneAnnotationArrowside = "end"
+	LayoutSceneAnnotationArrowsideStart LayoutSceneAnnotationArrowside = "start"
+
+	// Extra
+	LayoutSceneAnnotationArrowsideNone LayoutSceneAnnotationArrowside = "none"
 )
 
 // LayoutXaxisAutomargin Determines whether long tick labels automatically grow the figure margins.
