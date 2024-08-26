@@ -5,7 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+
+	"golang.org/x/exp/constraints"
 )
+
+type DataArrayTypeValues interface {
+	constraints.Ordered
+}
 
 // DataArrayType An {array} of data.
 // The value must represent an {array} or it will be ignored, but this array can be provided in several forms:
@@ -42,11 +48,14 @@ func (da *DataArrayType) Value() interface{} {
 	if da.values != nil {
 		return da.values
 	}
-	return BDataArrayType{
-		Dtype: da.dtype,
-		Bdata: da.bdata,
-		Shape: da.shape,
+	if da.bdata != nil {
+		return BDataArrayType{
+			Dtype: da.dtype,
+			Bdata: da.bdata,
+			Shape: da.shape,
+		}
 	}
+	return nil
 }
 
 type DataArrayShape []int
