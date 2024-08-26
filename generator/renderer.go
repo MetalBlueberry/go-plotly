@@ -133,7 +133,7 @@ func (r *Renderer) WriteTrace(traceName string, w io.Writer) error {
 		FlagLists: []flagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(".schema.traces."+traceName+".attributes", traceFile.MainType.Name, traceFile.MainType.Name, trace.Attributes.Names)
+	fields, err := traceFile.parseAttributes(".schema.traces."+traceName+".attributes", traceFile.MainType.Name, trace.Attributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -233,7 +233,7 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 		FlagLists: []flagList{},
 	}
 
-	fields, err := traceFile.parseAttributes(".schema.layout.layoutAttributes", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
+	fields, err := traceFile.parseAttributes(".schema.layout.layoutAttributes", traceFile.MainType.Name, r.root.Schema.Layout.LayoutAttributes.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -241,7 +241,8 @@ func (r *Renderer) WriteLayout(w io.Writer) error {
 
 	for _, name := range sortKeys(r.root.Schema.Traces) {
 		trace := r.root.Schema.Traces[name]
-		fields, err := traceFile.parseAttributes(".schema.traces."+name+".layoutAttributes", xstrings.ToCamelCase(name), "Layout", trace.LayoutAttributes.Names)
+		//here
+		fields, err := traceFile.parseAttributes(".schema.traces."+name+".layoutAttributes", xstrings.ToCamelCase(name), trace.LayoutAttributes.Names)
 		if err != nil {
 			return fmt.Errorf("cannot parse attributes, %w", err)
 		}
@@ -382,7 +383,7 @@ func (r *Renderer) WriteAnimation(w io.Writer) error {
 		Enums:     []enumFile{},
 		FlagLists: []flagList{},
 	}
-	fields, err := traceFile.parseAttributes(".schema.animation", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Animation.Names)
+	fields, err := traceFile.parseAttributes(".schema.animation", traceFile.MainType.Name, r.root.Schema.Animation.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -491,7 +492,7 @@ func (r *Renderer) WriteConfig(w io.Writer) error {
 		Enums:     []enumFile{},
 		FlagLists: []flagList{},
 	}
-	fields, err := traceFile.parseAttributes(".schema.config", traceFile.MainType.Name, traceFile.MainType.Name, r.root.Schema.Config.Names)
+	fields, err := traceFile.parseAttributes(".schema.config", traceFile.MainType.Name, r.root.Schema.Config.Names)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}

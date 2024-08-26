@@ -95,7 +95,10 @@ const (
 
 // parseAttributes returns a []StructField containing all the fields for the attributes parsed.
 // Nested structures found such as enums, flags u other objects are stored in the TypeFile caller.
-func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
+// JSONPath stores the actual path within the schema
+// typePrefix is the string appended to the type of every attributed parsed
+// attrs is the list of attributes to parse
+func (file *typeFile) parseAttributes(JSONPath string, typePrefix string, attrs map[string]*Attribute) ([]structField, error) {
 	fields := make([]structField, 0, len(attrs))
 
 	for _, name := range sortKeys(attrs) {
@@ -115,14 +118,14 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 				itemName = n
 				itemAttr = a
 			}
-			prefix := namePrefix + xstrings.ToCamelCase(itemName)
-			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, prefix, itemAttr.Attributes)
+			prefix := typePrefix + xstrings.ToCamelCase(itemName)
+			itemFields, err := file.parseAttributes(JSONPath+"."+attr.Name+".items."+itemName, prefix, itemAttr.Attributes)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to parse items inside object, %s", err)
 			}
 
 			object := sstruct{
-				Name:        namePrefix + xstrings.ToCamelCase(itemName),
+				Name:        typePrefix + xstrings.ToCamelCase(itemName),
 				Description: itemAttr.Description,
 				Fields:      itemFields,
 			}
@@ -131,7 +134,7 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 			fields = append(fields, structField{
 				Name:     xstrings.ToCamelCase(attr.Name),
 				JSONName: attr.Name,
-				Type:     "[]" + namePrefix + xstrings.ToCamelCase(itemName),
+				Type:     "[]" + typePrefix + xstrings.ToCamelCase(itemName),
 				Description: []string{
 					"role: Object",
 					fmt.Sprintf("items: %s", object.Name),
@@ -161,7 +164,7 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 			})
 
 		case attr.ValType == ValTypeFlagList:
-			name := namePrefix + xstrings.ToCamelCase(attr.Name)
+			name := typePrefix + xstrings.ToCamelCase(attr.Name)
 			err := file.parseFlaglist(JSONPath+"."+attr.Name, name, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse flaglist %s, %w", name, err)
@@ -185,8 +188,7 @@ func (file *typeFile) parseAttributes(JSONPath string, namePrefix string, typePr
 
 		case attr.ValType == ValTypeEnum:
 			typeName := typePrefix + xstrings.ToCamelCase(attr.Name)
-			valueName := namePrefix + xstrings.ToCamelCase(attr.Name)
-			err := file.parseEnum(JSONPath+"."+attr.Name, typeName, valueName, attr)
+			err := file.parseEnum(JSONPath+"."+attr.Name, typeName, attr)
 			if err != nil {
 				return nil, fmt.Errorf("cannot parse enum %s, %w", typeName, err)
 			}
@@ -257,7 +259,7 @@ func (file *typeFile) parseObject(JSONpath string, name string, attr *Attribute)
 		Fields:      []structField{},
 	}
 
-	fields, err := file.parseAttributes(JSONpath, objStruct.Name, objStruct.Name, attr.Attributes)
+	fields, err := file.parseAttributes(JSONpath, objStruct.Name, attr.Attributes)
 	if err != nil {
 		return fmt.Errorf("cannot parse attributes, %w", err)
 	}
@@ -267,7 +269,7 @@ func (file *typeFile) parseObject(JSONpath string, name string, attr *Attribute)
 	return nil
 }
 
-func (file *typeFile) parseEnum(JSONPath string, typeName string, valuePrefix string, attr *Attribute) error {
+func (file *typeFile) parseEnum(JSONPath string, typeName string, attr *Attribute) error {
 
 	values := make([]enumValue, 0, len(attr.Values))
 	for _, attrValue := range attr.Values {
@@ -276,25 +278,25 @@ func (file *typeFile) parseEnum(JSONPath string, typeName string, valuePrefix st
 			if v == "" {
 				values = append(values, enumValue{
 					Value: "\"\"",
-					Name:  valuePrefix + "Empty",
+					Name:  typeName + "Empty",
 				})
 			} else {
 				values = append(values, enumValue{
 					Value: "\"" + cleanValue(v) + "\"",
-					Name:  valuePrefix + xstrings.ToCamelCase(v),
+					Name:  typeName + xstrings.ToCamelCase(v),
 				})
 			}
 		case bool:
 			strBool := strconv.FormatBool(v)
 			values = append(values, enumValue{
 				Value: v,
-				Name:  valuePrefix + xstrings.ToCamelCase(strBool),
+				Name:  typeName + xstrings.ToCamelCase(strBool),
 			})
 		case float64:
 			strFloat := strings.Replace(strconv.FormatFloat(v, 'g', -1, 64), "-", "negative", 1)
 			values = append(values, enumValue{
 				Value: v,
-				Name:  valuePrefix + "Number" + xstrings.ToCamelCase(strFloat),
+				Name:  typeName + "Number" + xstrings.ToCamelCase(strFloat),
 			})
 
 		default:

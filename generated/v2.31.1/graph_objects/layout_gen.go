@@ -69,7 +69,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 	// .schema.traces.bar.layoutAttributes.barmode
-	Barmode LayoutBarmode `json:"barmode,omitempty"`
+	Barmode BarBarmode `json:"barmode,omitempty"`
 
 	// Barnorm
 	// arrayOK: false
@@ -77,7 +77,7 @@ type Layout struct {
 	// type: enumerated
 	// Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
 	// .schema.traces.bar.layoutAttributes.barnorm
-	Barnorm LayoutBarnorm `json:"barnorm,omitempty"`
+	Barnorm BarBarnorm `json:"barnorm,omitempty"`
 
 	// Boxgap
 	// arrayOK: false
@@ -99,7 +99,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
 	// .schema.traces.box.layoutAttributes.boxmode
-	Boxmode LayoutBoxmode `json:"boxmode,omitempty"`
+	Boxmode BoxBoxmode `json:"boxmode,omitempty"`
 
 	// Calendar
 	// arrayOK: false
@@ -233,7 +233,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 	// .schema.traces.funnel.layoutAttributes.funnelmode
-	Funnelmode LayoutFunnelmode `json:"funnelmode,omitempty"`
+	Funnelmode FunnelFunnelmode `json:"funnelmode,omitempty"`
 
 	// Geo
 	// arrayOK: false
@@ -423,7 +423,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
 	// .schema.traces.scatter.layoutAttributes.scattermode
-	Scattermode LayoutScattermode `json:"scattermode,omitempty"`
+	Scattermode ScatterScattermode `json:"scattermode,omitempty"`
 
 	// Scene
 	// arrayOK: false
@@ -569,7 +569,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
 	// .schema.traces.violin.layoutAttributes.violinmode
-	Violinmode LayoutViolinmode `json:"violinmode,omitempty"`
+	Violinmode ViolinViolinmode `json:"violinmode,omitempty"`
 
 	// Waterfallgap
 	// arrayOK: false
@@ -591,7 +591,7 @@ type Layout struct {
 	// type: enumerated
 	// Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
 	// .schema.traces.waterfall.layoutAttributes.waterfallmode
-	Waterfallmode LayoutWaterfallmode `json:"waterfallmode,omitempty"`
+	Waterfallmode WaterfallWaterfallmode `json:"waterfallmode,omitempty"`
 
 	// Width
 	// arrayOK: false
@@ -12168,6 +12168,85 @@ type LayoutYaxis struct {
 	Zerolinewidth types.NumberType `json:"zerolinewidth,omitempty"`
 }
 
+// BarBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.bar.layoutAttributes.barmode
+type BarBarmode string
+
+const (
+	BarBarmodeStack    BarBarmode = "stack"
+	BarBarmodeGroup    BarBarmode = "group"
+	BarBarmodeOverlay  BarBarmode = "overlay"
+	BarBarmodeRelative BarBarmode = "relative"
+)
+
+// BarBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
+// .schema.traces.bar.layoutAttributes.barnorm
+type BarBarnorm string
+
+const (
+	BarBarnormEmpty    BarBarnorm = ""
+	BarBarnormFraction BarBarnorm = "fraction"
+	BarBarnormPercent  BarBarnorm = "percent"
+)
+
+// BarpolarBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.barpolar.layoutAttributes.barmode
+type BarpolarBarmode string
+
+const (
+	BarpolarBarmodeStack   BarpolarBarmode = "stack"
+	BarpolarBarmodeOverlay BarpolarBarmode = "overlay"
+)
+
+// BoxBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
+// .schema.traces.box.layoutAttributes.boxmode
+type BoxBoxmode string
+
+const (
+	BoxBoxmodeGroup   BoxBoxmode = "group"
+	BoxBoxmodeOverlay BoxBoxmode = "overlay"
+)
+
+// CandlestickBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
+// .schema.traces.candlestick.layoutAttributes.boxmode
+type CandlestickBoxmode string
+
+const (
+	CandlestickBoxmodeGroup   CandlestickBoxmode = "group"
+	CandlestickBoxmodeOverlay CandlestickBoxmode = "overlay"
+)
+
+// FunnelFunnelmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.funnel.layoutAttributes.funnelmode
+type FunnelFunnelmode string
+
+const (
+	FunnelFunnelmodeStack   FunnelFunnelmode = "stack"
+	FunnelFunnelmodeGroup   FunnelFunnelmode = "group"
+	FunnelFunnelmodeOverlay FunnelFunnelmode = "overlay"
+)
+
+// HistogramBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.histogram.layoutAttributes.barmode
+type HistogramBarmode string
+
+const (
+	HistogramBarmodeStack    HistogramBarmode = "stack"
+	HistogramBarmodeGroup    HistogramBarmode = "group"
+	HistogramBarmodeOverlay  HistogramBarmode = "overlay"
+	HistogramBarmodeRelative HistogramBarmode = "relative"
+)
+
+// HistogramBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
+// .schema.traces.histogram.layoutAttributes.barnorm
+type HistogramBarnorm string
+
+const (
+	HistogramBarnormEmpty    HistogramBarnorm = ""
+	HistogramBarnormFraction HistogramBarnorm = "fraction"
+	HistogramBarnormPercent  HistogramBarnorm = "percent"
+)
+
 // LayoutAnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
 // .schema.layout.layoutAttributes.annotations.items.annotation.align
 type LayoutAnnotationAlign string
@@ -12263,47 +12342,6 @@ type LayoutAutotypenumbers string
 const (
 	LayoutAutotypenumbersConvertTypes LayoutAutotypenumbers = "convert types"
 	LayoutAutotypenumbersStrict       LayoutAutotypenumbers = "strict"
-)
-
-// LayoutBarmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *relative*, the bars are stacked on top of one another, with negative values below the axis, positive values above With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
-// .schema.traces.bar.layoutAttributes.barmode
-type LayoutBarmode string
-
-const (
-	BarBarmodeStack          LayoutBarmode = "stack"
-	BarBarmodeGroup          LayoutBarmode = "group"
-	BarBarmodeOverlay        LayoutBarmode = "overlay"
-	BarBarmodeRelative       LayoutBarmode = "relative"
-	BarpolarBarmodeStack     LayoutBarmode = "stack"
-	BarpolarBarmodeOverlay   LayoutBarmode = "overlay"
-	HistogramBarmodeStack    LayoutBarmode = "stack"
-	HistogramBarmodeGroup    LayoutBarmode = "group"
-	HistogramBarmodeOverlay  LayoutBarmode = "overlay"
-	HistogramBarmodeRelative LayoutBarmode = "relative"
-)
-
-// LayoutBarnorm Sets the normalization for bar traces on the graph. With *fraction*, the value of each bar is divided by the sum of all values at that location coordinate. *percent* is the same but multiplied by 100 to show percentages.
-// .schema.traces.bar.layoutAttributes.barnorm
-type LayoutBarnorm string
-
-const (
-	BarBarnormEmpty          LayoutBarnorm = ""
-	BarBarnormFraction       LayoutBarnorm = "fraction"
-	BarBarnormPercent        LayoutBarnorm = "percent"
-	HistogramBarnormEmpty    LayoutBarnorm = ""
-	HistogramBarnormFraction LayoutBarnorm = "fraction"
-	HistogramBarnormPercent  LayoutBarnorm = "percent"
-)
-
-// LayoutBoxmode Determines how boxes at the same location coordinate are displayed on the graph. If *group*, the boxes are plotted next to one another centered around the shared location. If *overlay*, the boxes are plotted over one another, you might need to set *opacity* to see them multiple boxes. Has no effect on traces that have *width* set.
-// .schema.traces.box.layoutAttributes.boxmode
-type LayoutBoxmode string
-
-const (
-	BoxBoxmodeGroup           LayoutBoxmode = "group"
-	BoxBoxmodeOverlay         LayoutBoxmode = "overlay"
-	CandlestickBoxmodeGroup   LayoutBoxmode = "group"
-	CandlestickBoxmodeOverlay LayoutBoxmode = "overlay"
 )
 
 // LayoutCalendar Sets the default calendar system to use for interpreting and displaying dates throughout the plot.
@@ -12514,16 +12552,6 @@ var (
 	LayoutDragmodeOrbit          LayoutDragmode = "orbit"
 	LayoutDragmodeTurntable      LayoutDragmode = "turntable"
 	LayoutDragmodeFalse          LayoutDragmode = false
-)
-
-// LayoutFunnelmode Determines how bars at the same location coordinate are displayed on the graph. With *stack*, the bars are stacked on top of one another With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
-// .schema.traces.funnel.layoutAttributes.funnelmode
-type LayoutFunnelmode string
-
-const (
-	FunnelFunnelmodeStack   LayoutFunnelmode = "stack"
-	FunnelFunnelmodeGroup   LayoutFunnelmode = "group"
-	FunnelFunnelmodeOverlay LayoutFunnelmode = "overlay"
 )
 
 // LayoutGeoFitbounds Determines if this subplot's view settings are auto-computed to fit trace data. On scoped maps, setting `fitbounds` leads to `center.lon` and `center.lat` getting auto-filled. On maps with a non-clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, and `projection.rotation.lon` getting auto-filled. On maps with a clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, `projection.rotation.lon`, `projection.rotation.lat`, `lonaxis.range` and `lonaxis.range` getting auto-filled. If *locations*, only the trace's visible locations are considered in the `fitbounds` computations. If *geojson*, the entire trace input `geojson` (if provided) is considered in the `fitbounds` computations, Defaults to *false*.
@@ -13362,15 +13390,6 @@ const (
 	LayoutPolarRadialaxisTypeLog          LayoutPolarRadialaxisType = "log"
 	LayoutPolarRadialaxisTypeDate         LayoutPolarRadialaxisType = "date"
 	LayoutPolarRadialaxisTypeCategory     LayoutPolarRadialaxisType = "category"
-)
-
-// LayoutScattermode Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
-// .schema.traces.scatter.layoutAttributes.scattermode
-type LayoutScattermode string
-
-const (
-	ScatterScattermodeGroup   LayoutScattermode = "group"
-	ScatterScattermodeOverlay LayoutScattermode = "overlay"
 )
 
 // LayoutSceneAnnotationAlign Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
@@ -14685,24 +14704,6 @@ const (
 	LayoutUpdatemenuYanchorBottom LayoutUpdatemenuYanchor = "bottom"
 )
 
-// LayoutViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
-// .schema.traces.violin.layoutAttributes.violinmode
-type LayoutViolinmode string
-
-const (
-	ViolinViolinmodeGroup   LayoutViolinmode = "group"
-	ViolinViolinmodeOverlay LayoutViolinmode = "overlay"
-)
-
-// LayoutWaterfallmode Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
-// .schema.traces.waterfall.layoutAttributes.waterfallmode
-type LayoutWaterfallmode string
-
-const (
-	WaterfallWaterfallmodeGroup   LayoutWaterfallmode = "group"
-	WaterfallWaterfallmodeOverlay LayoutWaterfallmode = "overlay"
-)
-
 // LayoutXaxisAnchor If set to an opposite-letter axis id (e.g. `x2`, `y`), this axis is bound to the corresponding opposite-letter axis. If set to *free*, this axis' position is determined by `position`.
 // .schema.layout.layoutAttributes.xaxis.anchor
 type LayoutXaxisAnchor string
@@ -15430,6 +15431,33 @@ const (
 	LayoutYaxisTypeDate          LayoutYaxisType = "date"
 	LayoutYaxisTypeCategory      LayoutYaxisType = "category"
 	LayoutYaxisTypeMulticategory LayoutYaxisType = "multicategory"
+)
+
+// ScatterScattermode Determines how scatter points at the same location coordinate are displayed on the graph. With *group*, the scatter points are plotted next to one another centered around the shared location. With *overlay*, the scatter points are plotted over one another, you might need to reduce *opacity* to see multiple scatter points.
+// .schema.traces.scatter.layoutAttributes.scattermode
+type ScatterScattermode string
+
+const (
+	ScatterScattermodeGroup   ScatterScattermode = "group"
+	ScatterScattermodeOverlay ScatterScattermode = "overlay"
+)
+
+// ViolinViolinmode Determines how violins at the same location coordinate are displayed on the graph. If *group*, the violins are plotted next to one another centered around the shared location. If *overlay*, the violins are plotted over one another, you might need to set *opacity* to see them multiple violins. Has no effect on traces that have *width* set.
+// .schema.traces.violin.layoutAttributes.violinmode
+type ViolinViolinmode string
+
+const (
+	ViolinViolinmodeGroup   ViolinViolinmode = "group"
+	ViolinViolinmodeOverlay ViolinViolinmode = "overlay"
+)
+
+// WaterfallWaterfallmode Determines how bars at the same location coordinate are displayed on the graph. With *group*, the bars are plotted next to one another centered around the shared location. With *overlay*, the bars are plotted over one another, you might need to reduce *opacity* to see multiple bars.
+// .schema.traces.waterfall.layoutAttributes.waterfallmode
+type WaterfallWaterfallmode string
+
+const (
+	WaterfallWaterfallmodeGroup   WaterfallWaterfallmode = "group"
+	WaterfallWaterfallmodeOverlay WaterfallWaterfallmode = "overlay"
 )
 
 // LayoutAnnotationArrowside Sets the annotation arrow head position.
