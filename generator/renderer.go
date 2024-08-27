@@ -611,7 +611,7 @@ var valTypeMap = map[ValType]string{
 	ValTypeInteger:    "types.IntegerType",
 	ValTypeString:     "types.StringType",
 	ValTypeColor:      "types.Color",
-	ValTypeColorlist:  "*types.ColorList",
+	ValTypeColorlist:  "types.ColorList",
 	ValTypeColorscale: "*types.ColorScale",
 	ValTypeAngle:      "types.NumberType",
 	ValTypeSubplotID:  "types.StringType",

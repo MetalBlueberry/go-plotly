@@ -134,7 +134,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default trace colors.
 	// .schema.layout.layoutAttributes.colorway
-	Colorway *types.ColorList `json:"colorway,omitempty"`
+	Colorway types.ColorList `json:"colorway,omitempty"`
 
 	// Computed
 	// arrayOK: false
@@ -211,7 +211,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
 	// .schema.traces.funnelarea.layoutAttributes.funnelareacolorway
-	Funnelareacolorway *types.ColorList `json:"funnelareacolorway,omitempty"`
+	Funnelareacolorway types.ColorList `json:"funnelareacolorway,omitempty"`
 
 	// Funnelgap
 	// arrayOK: false
@@ -311,7 +311,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
 	// .schema.traces.icicle.layoutAttributes.iciclecolorway
-	Iciclecolorway *types.ColorList `json:"iciclecolorway,omitempty"`
+	Iciclecolorway types.ColorList `json:"iciclecolorway,omitempty"`
 
 	// Images
 	// role: Object
@@ -395,7 +395,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
 	// .schema.traces.pie.layoutAttributes.piecolorway
-	Piecolorway *types.ColorList `json:"piecolorway,omitempty"`
+	Piecolorway types.ColorList `json:"piecolorway,omitempty"`
 
 	// PlotBgcolor
 	// arrayOK: false
@@ -496,7 +496,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
 	// .schema.traces.sunburst.layoutAttributes.sunburstcolorway
-	Sunburstcolorway *types.ColorList `json:"sunburstcolorway,omitempty"`
+	Sunburstcolorway types.ColorList `json:"sunburstcolorway,omitempty"`
 
 	// Template
 	// arrayOK: false
@@ -528,7 +528,7 @@ type Layout struct {
 	// type: colorlist
 	// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
 	// .schema.traces.treemap.layoutAttributes.treemapcolorway
-	Treemapcolorway *types.ColorList `json:"treemapcolorway,omitempty"`
+	Treemapcolorway types.ColorList `json:"treemapcolorway,omitempty"`
 
 	// Uirevision
 	// arrayOK: false
