@@ -119,6 +119,24 @@ Currently, most common use cases should be already covered. Feel free to create 
 
 ## FAQ
 
+### Is this cross platform?
+
+YES*
+
+*The output of the package is usually a webpage that renders the figure using plotly.js. That means it will work on almost any browser. For further details, check plotly.js docs
+
+### Why this library and not go-echarts
+
+go-echarts is an amazing library! It is the exact same idea as this library but for Apache ECharts.
+
+To make a meaningful choice, you should compare plotly.js features ve ECharts,
+
+### Why this library and not gonum/plot
+
+gonum/plot is focus on building static images while go-plotly has al the interactive features plotly.js provides.
+
+If you want interactive dashboards, this library is way better.
+
 ### What's the meaning of "grob"?
 
 In python, the component is called graph_objects, like in this package, but that's too long to write it over and over again. In Python, usually it's called "go" from Graph_Objects but in Go... that's not possible for a conflict with a keyword. as an alternative, I've decided to use "grob" from GRaph_OBjects.
