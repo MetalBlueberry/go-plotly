@@ -65,13 +65,17 @@ See the examples dir for more examples.
 
 ## Structure
 
+> Auto completion is your best friend on this package. It will get the right type (almost) every time!
+
 To keep the plotly.js independent of the version of this package, the generated directory contains a directory per plotly version supported. The plan is to support all minor releases and update as patches are released. But because I can not do it myself, I will accept PRs if anyone wants any specific version.
 
 Updates to the package will affect all schemas. This will be done as we improve the generator.
 
 Each trace type has its own file on **graph_objecs (grob)** package. The file contains the main structure and all the needed nested objects. Files ending with **_gen** are automatically generated files running `go generate`. This is executing the code in **generator** package to generate the structures from the plotly schema. The types are documented, but you can find more examples and extended documentation at [Plotly's documentation](https://plotly.com/python/).
 
-The values that can hold single values or arrays are defined as custom types that are a type definition of `interfaces{}`. Most common case are X and Y values. You can pass any number slice and it will work (`[]float64`,`[]int`,`[]int64`...). In case of Hovertext, you can provide a `[]string` to display a text for each point, a `string` to display the same for all or `[]int` to display a number.
+Types that can have single values or lists, are defined as `types.ArrayOK` types. You can use the helper methods `types.ArrayOKArray` and `types.ArrayOKValue` depending on which value you want to set.
+
+Basic types have been defined to follow plotly specs. Than means you will find types for strings, bools, numbers and integers. Those types are basically pointers to the equivalent value in Go, as plotly supports null values on any of those fields. To make it easier to work with the library, you can find utility functions to build such types. For example. `types.N()` will create a `types.Number` value from a `float64` value. `types.NS()` attempts to parse a string as a number to follow what plotly specifications says about Number type. `types.NA()` converts `[]float64` into `[]types.Number`. Equivalent functions can be found for other types.
 
 Nested Properties, are defined as new types. This is great for auto completion using vscode because you can write all the boilerplate with ctrl+space. For example, the field `Title.Text` is accessed by the property `Title` of type {{Type}}Title that contains the property `Text`. The Type is always the struct that contains the field. For Layout It is `LayoutTitle`.
 
@@ -83,34 +87,35 @@ The main focus is to have the structures to hold the data and provide auto compe
 
 Currently, most common use cases should be already covered. Feel free to create an issue if you find something that it's not working.
 
-- [x] Traces
-- [x] Layout
-- [x] Config
-- [x] Animation
-- [x] Frames
-  - [ ] defs
-    - [ ] defs valobjects
-      - [ ] angle **needs validations**
-      - [x] any
-      - [x] boolean
-      - [x] color
-      - [x] colorlist
-      - [x] colorscale
-      - [x] data_array
-      - [x] enumerated
-      - [x] flaglist
-      - [ ] info_array
-      - [x] integer
-      - [x] number
-      - [x] string
-      - [ ] subplotid
-    - [ ] defs_modifier
-      - [x] arrayOK
-      - [ ] min/max validations
-      - [x] dflt  **This is not needed in the output, as plotly will do it. But it would be nice to have a method to fetch it**
-      - [ ] noBlank validation
-      - [ ] strict validation
-      - [ ] values list validation
+- [x] Basic types
+  - [x] Traces
+  - [x] Layout
+  - [x] Config
+  - [x] Animation
+  - [x] Frames
+- [ ] Type definitions
+  - [ ] defs valobjects
+    - [ ] angle **needs validations**
+    - [x] any
+    - [x] boolean
+    - [x] color
+    - [x] colorlist
+    - [x] colorscale
+    - [x] data_array
+    - [x] enumerated
+    - [x] flaglist
+    - [ ] info_array
+    - [x] integer
+    - [x] number
+    - [x] string
+    - [ ] subplotid
+  - [ ] defs_modifier
+    - [x] arrayOK
+    - [ ] min/max validations
+    - [x] dflt  **This is not needed in the output, as plotly will do it. But it would be nice to have a method to fetch it**
+    - [ ] noBlank validation
+    - [ ] strict validation
+    - [ ] values list validation
 
 ## FAQ
 
