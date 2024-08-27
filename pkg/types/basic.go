@@ -11,6 +11,15 @@ func B(v bool) BoolType {
 	return BoolType(&v)
 }
 
+// BA converts a list of bool into BooleanType
+func BA(v []bool) []BoolType {
+	result := make([]BoolType, len(v))
+	for i := range v {
+		result[i] = B(v[i])
+	}
+	return result
+}
+
 var (
 	trueValue  bool = true
 	falseValue bool = false
@@ -38,6 +47,15 @@ func N(n float64) NumberType {
 	return NumberType(&n)
 }
 
+// NA converts a list of float64 to NumberType
+func NA(n []float64) []NumberType {
+	result := make([]NumberType, len(n))
+	for i := range n {
+		result[i] = N(n[i])
+	}
+	return result
+}
+
 // NS Given a string, parses it as a float64 number
 // Panics if the string is not a float number
 func NS(n string) NumberType {
@@ -53,6 +71,15 @@ type IntegerType *int
 
 func I(n int) IntegerType {
 	return IntegerType(&n)
+}
+
+// IA converts a list of int to IntegerType
+func IA(n []int) []IntegerType {
+	result := make([]IntegerType, len(n))
+	for i := range n {
+		result[i] = I(n[i])
+	}
+	return result
 }
 
 // IS Given a string, parses it as an integer number

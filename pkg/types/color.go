@@ -8,6 +8,18 @@ import (
 // Color A string describing color. Supported formats: - hex (e.g. '#d3d3d3') - rgb (e.g. 'rgb(255, 0, 0)') - rgba (e.g. 'rgb(255, 0, 0, 0.5)') - hsl (e.g. 'hsl(0, 100%, 50%)') - hsv (e.g. 'hsv(0, 100%, 100%)') - named colors (full list: http://www.w3.org/TR/css3-color/#svg-color)",
 type Color string
 
+func C(v string) Color {
+	return Color(v)
+}
+
+func CN(v []string) []Color {
+	result := make([]Color, len(v))
+	for i := range v {
+		result[i] = C(v[i])
+	}
+	return result
+}
+
 func UseColorScaleValues(in []float64) []ColorWithColorScale {
 	out := make([]ColorWithColorScale, len(in), len(in))
 	for i := 0; i < len(in); i++ {
