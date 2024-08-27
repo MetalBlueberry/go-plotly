@@ -61,7 +61,7 @@ This will open your browser and display the following plot
 
 And that's it.
 
-See the examples dir for more examples.
+See the [examples dir](./examples/) for more examples.
 
 ## Structure
 
