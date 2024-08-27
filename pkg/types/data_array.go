@@ -5,13 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
-
-	"golang.org/x/exp/constraints"
 )
-
-type DataArrayTypeValues interface {
-	constraints.Ordered
-}
 
 // DataArrayType An {array} of data.
 // The value must represent an {array} or it will be ignored, but this array can be provided in several forms:
