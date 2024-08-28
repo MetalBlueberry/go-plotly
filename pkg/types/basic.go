@@ -40,6 +40,14 @@ func S(v string) StringType {
 	return StringType(v)
 }
 
+func SA(v []string) []StringType {
+	result := make([]StringType, len(v))
+	for i := range v {
+		result[i] = S(v[i])
+	}
+	return result
+}
+
 // NumberType as defined by plotly schema
 type NumberType *float64
 
@@ -64,6 +72,13 @@ func NS(n string) NumberType {
 		panic(err)
 	}
 	return NumberType(&v)
+}
+func NSA(n []string) []NumberType {
+	result := make([]NumberType, len(n))
+	for i := range n {
+		result[i] = NS(n[i])
+	}
+	return result
 }
 
 // IntegerType as defined by plotly schema
@@ -90,4 +105,11 @@ func IS(n string) IntegerType {
 		panic(err)
 	}
 	return IntegerType(&v)
+}
+func ISA(n []string) []IntegerType {
+	result := make([]IntegerType, len(n))
+	for i := range n {
+		result[i] = IS(n[i])
+	}
+	return result
 }
