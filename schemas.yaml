@@ -23,3 +23,9 @@ versions:
     Path: schemas/v2.19.0/plot-schema.json
     Generated: generated/v2.19.0
     CDN: https://cdn.plot.ly/plotly-2.19.0.min.js
+  - Name: Plotly 3.0.1
+    Tag: v3.0.1
+    URL: https://raw.githubusercontent.com/plotly/plotly.js/v3.0.1/test/plot-schema.json
+    Path: schemas/v3.0.1/plot-schema.json
+    Generated: generated/v3.0.1
+    CDN: https://cdn.plot.ly/plotly-3.0.1.min.js
